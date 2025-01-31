@@ -1,37 +1,69 @@
-hero:
-  title: "Welcome to My Portfolio"
-  description: "Hi, I'm Pawan Kumar, a Principal Software Developer with expertise in building scalable web applications and SaaS platforms. Explore my work, projects, and blog to learn more about my journey in software development."
-  button_text: "View My Projects"
-  button_link: "/projects.html"
+title: "Welcome to My Portfolio"
 
-projects:
-  title: "Featured Projects"
-  list:
-    - name: "Project 1"
-      description: "A brief description of the project and its impact."
-      image: "https://placehold.co/400x250"
-      link: "/projects.html"
-    - name: "Project 2"
-      description: "A brief description of the project and its impact."
-      image: "https://placehold.co/400x250"
-      link: "/projects.html"
-    - name: "Project 3"
-      description: "A brief description of the project and its impact."
-      image: "https://placehold.co/400x250"
-      link: "/projects.html"
+hero:
+  name: "Pawan Kumar"
+  description: "Principal Software Developer | PHP | Laravel | JavaScript | Cloud Technologies"
+  image: "/assets/images/pawan.png"
 
 about:
   title: "About Me"
-  description: "I am a passionate software developer with over 9 years of experience in designing and developing web applications. My expertise lies in PHP, Laravel, JavaScript, and cloud technologies. I love solving complex problems and building scalable solutions that drive business success."
+  description: "I am a passionate software developer with over 9 years of experience in designing and developing web applications. My expertise includes backend and frontend technologies, cloud solutions, and agile methodologies."
+  details:
+    - "With over 9 years of experience, I have worked on diverse projects involving web development, cloud technologies, and SaaS platforms."
+    - "I specialize in PHP, Laravel, JavaScript, and AWS, helping businesses build scalable and high-performance applications."
+    - "My expertise extends to integrating APIs, optimizing databases, and leading development teams in Agile environments."
+    - "I am passionate about solving complex problems, staying updated with the latest technologies, and contributing to open-source projects."
+    - "My goal is to create innovative solutions that make an impact."
+  image: "https://placehold.co/500x400"
+  learn_more_link: "/about.html"
 
 skills:
-  title: "My Expertise"
+  title: "Skills & Expertise"
+  skills:
+  title: "Skills & Expertise"
   list:
-    - Backend Development (PHP, Laravel, CakePHP, RESTful APIs)
-    - Frontend Development (JavaScript, Tailwind CSS, Vue.js, React)
-    - Cloud & DevOps (AWS, Google APIs, Docker)
-    - Database Management (MySQL, MongoDB)
-    - Agile Development & Best Coding Practices
+    - name: "PHP"
+      icon: "fa-brands fa-php"
+    - name: "Laravel"
+      icon: "fa-brands fa-laravel"
+    - name: "JavaScript"
+      icon: "fa-brands fa-js"
+    - name: "MySQL"
+      icon: "fa-solid fa-database"
+    - name: "MongoDB"
+      icon: "fa-solid fa-leaf"
+    - name: "Tailwind CSS"
+      icon: "fa-brands fa-css3-alt"
+    - name: "AWS"
+      icon: "fa-brands fa-aws"
+    - name: "Docker"
+      icon: "fa-brands fa-docker"
+    - name: "Google Cloud"
+      icon: "fa-brands fa-google"
+    - name: "Kubernetes"
+      icon: "fa-brands fa-kubernetes"
+    - name: "Jenkins"
+      icon: "fa-brands fa-jenkins"
+    - name: "Node.js"
+      icon: "fa-brands fa-node"
+
+projects:
+  title: "Featured SaaS Projects"
+  list:
+    - name: "Multi-Location Digital Presence Management"
+      description: "A SaaS platform that enables businesses with multiple locations to manage their online presence efficiently. It offers centralized management of Google Business Profiles, localized marketing tools, and real-time analytics to boost visibility across digital platforms. Businesses can optimize customer engagement, track performance, and automate listings for seamless operations."
+      image: "https://placehold.co/400x250"
+      link: "/digital-presence.html"
+    
+    - name: "QuickSite - Instant Website Builder with Full Customization"
+      description: "QuickSite is an innovative SaaS solution designed to generate fully functional websites instantly. It includes advanced SEO tools, pre-built responsive templates, and a powerful admin panel that allows users to customize content, layout, and integrations without coding. Ideal for businesses looking to establish an online presence effortlessly, QuickSite ensures high performance, security, and scalability."
+      image: "https://placehold.co/400x250"
+      link: "/quicksite.html"
+    
+    - name: "TradeSmart - AI-Powered Share Market Insights"
+      description: "TradeSmart is a next-generation SaaS platform designed for investors and traders. It provides AI-driven insights, automated portfolio tracking, and real-time market analysis. Users can access predictive analytics, custom alerts, and in-depth financial reports to make informed trading decisions. TradeSmart is ideal for both novice and experienced investors looking for data-driven strategies."
+      image: "https://placehold.co/400x250"
+      link: "/tradesmart.html"
 
 contact:
   title: "Get in Touch"

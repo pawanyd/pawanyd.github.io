@@ -1,66 +1,83 @@
 ---
 layout: profile
-title: Home
+title: {{ site.data.home.title }}
 ---
 
 <!-- Hero Section -->
-<section class="relative bg-cover bg-center py-20 text-center text-white" style="background-image: url('https://placehold.co/1600x900');">
-    <div class="max-w-3xl mx-auto">
-        <h1 class="text-5xl font-bold">{{ site.data.home.hero.title }}</h1>
-        <p class="mt-4 text-lg">{{ site.data.home.hero.description }}</p>
-        <a href="{{ site.data.home.hero.button_link }}" class="mt-6 inline-block bg-blue-500 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-600">
-            {{ site.data.home.hero.button_text }}
-        </a>
-    </div>
-</section>
-
-<!-- Featured Projects -->
-<section class="py-16 bg-gray-100">
-    <div class="max-w-6xl mx-auto text-center">
-        <h2 class="text-4xl font-bold text-gray-800">{{ site.data.home.projects.title }}</h2>
-        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {% for project in site.data.home.projects.list %}
-            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-                <img src="{{ project.image }}" alt="{{ project.name }}" class="rounded-lg mb-4">
-                <h3 class="text-2xl font-semibold text-gray-800">{{ project.name }}</h3>
-                <p class="text-gray-600 mt-2">{{ project.description }}</p>
-                <a href="{{ project.link }}" class="text-blue-500 mt-4 inline-block font-semibold">Learn More →</a>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
+<section class="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20 text-center">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <img src="{{ site.data.home.hero.image }}" alt="Profile Photo"
+      class="rounded-full mx-auto shadow-xl border-4 border-white w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 object-cover">
+    <h1 class="text-4xl sm:text-5xl font-bold mt-6">{{ site.data.home.hero.name }}</h1>
+    <p class="text-lg mt-4 px-2 sm:px-4 md:px-6">{{ site.data.home.hero.description }}</p>
+  </div>
 </section>
 
 <!-- About Section -->
-<section class="py-16 flex flex-wrap items-center max-w-6xl mx-auto">
-    <div class="w-full md:w-1/2 text-center md:text-left">
-        <h2 class="text-4xl font-bold text-gray-800">{{ site.data.home.about.title }}</h2>
-        <p class="text-gray-600 mt-4">{{ site.data.home.about.description }}</p>
-    </div>
-    <div class="w-full md:w-1/2 text-center mt-6 md:mt-0">
-        <img src="https://placehold.co/500x400" alt="About Me" class="rounded-lg shadow-lg">
-    </div>
+<section class="py-16 bg-gray-100">
+  <div class="max-w-6xl mx-auto flex flex-wrap items-center">
+      <div class="w-full lg:w-1/2 p-6 flex flex-col justify-center">
+          <h2 class="text-4xl font-bold text-gray-800 text-center lg:text-left">{{ site.data.home.about.title }}</h2>
+          <p class="text-gray-600 mt-4 text-lg text-center lg:text-left">{{ site.data.home.about.description }}</p>
+          <div class="mt-4 space-y-4 text-center lg:text-left">
+              {% for detail in site.data.home.about.details %}
+              <p class="text-gray-600 text-lg">{{ detail }}</p>
+              {% endfor %}
+          </div>
+          <div class="text-center lg:text-left">
+              <a href="{{ site.data.home.about.learn_more_link }}" class="mt-6 inline-block bg-blue-600 text-white px-8 py-4 rounded-lg text-xl hover:bg-blue-700">
+                  Learn More
+              </a>
+          </div>
+      </div>
+      <div class="w-full lg:w-1/2 text-center p-6">
+          <img src="{{ site.data.home.about.image }}" alt="About Me" class="rounded-lg shadow-lg w-full max-w-lg mx-auto">
+      </div>
+  </div>
 </section>
+
+
 
 <!-- Skills Section -->
 <section class="py-16 bg-gray-100">
-    <div class="max-w-6xl mx-auto text-center">
-        <h2 class="text-4xl font-bold text-gray-800">{{ site.data.home.skills.title }}</h2>
-        <div class="mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {% for skill in site.data.home.skills.list %}
-            <div class="bg-white p-4 rounded-lg shadow-md text-center hover:bg-blue-50 transition">
-                <p class="text-lg font-semibold text-gray-800">{{ skill }}</p>
-            </div>
-            {% endfor %}
-        </div>
+  <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-4xl font-bold text-gray-800">{{ site.data.home.skills.title }}</h2>
+      <div class="mt-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {% for skill in site.data.home.skills.list %}
+          <div class="bg-white p-6 rounded-lg shadow-lg flex items-center justify-center space-x-4 hover:shadow-xl transition-transform duration-300 ease-in-out">
+              <i class="{{ skill.icon }} text-3xl text-blue-600"></i>
+              <p class="text-lg font-semibold text-gray-800">{{ skill.name }}</p>
+          </div>
+          {% endfor %}
+      </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section class="py-16 bg-gray-50">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-4xl font-bold text-gray-900">{{ site.data.home.projects.title }}</h2>
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% for project in site.data.home.projects.list %}
+      <div
+        class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 ease-in-out border border-gray-200">
+        <img src="{{ project.image }}" alt="{{ project.name }}" class="rounded-lg mb-4 w-full h-48 object-cover">
+        <h3 class="text-2xl font-semibold text-gray-900">{{ project.name }}</h3>
+        <p class="text-gray-700 mt-2">{{ project.description }}</p>
+        <a href="{{ project.link }}" class="text-blue-600 mt-4 inline-block font-semibold hover:text-blue-800">Learn
+          More →</a>
+      </div>
+      {% endfor %}
     </div>
+  </div>
 </section>
 
 <!-- Contact Section -->
-<section class="text-center py-16 bg-gray-800 text-white">
-    <h2 class="text-4xl font-bold">{{ site.data.home.contact.title }}</h2>
-    <p class="mt-4 text-lg">{{ site.data.home.contact.description }}</p>
-    <a href="{{ site.data.home.contact.button_link }}" class="mt-6 inline-block bg-blue-500 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-600">
-        {{ site.data.home.contact.button_text }}
-    </a>
+<section class="text-center py-16 bg-gradient-to-r from-indigo-600 to-blue-600 text-white">
+  <h2 class="text-4xl font-bold">{{ site.data.home.contact.title }}</h2>
+  <p class="mt-4 text-lg">{{ site.data.home.contact.description }}</p>
+  <a href="{{ site.data.home.contact.button_link }}"
+    class="mt-6 inline-block bg-white text-blue-600 px-6 py-3 rounded-lg text-lg hover:bg-gray-100 font-semibold">
+    {{ site.data.home.contact.button_text }}
+  </a>
 </section>

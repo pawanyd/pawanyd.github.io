@@ -1,0 +1,23 @@
+title: "My Projects"
+description: "Explore some of my recent work and projects that showcase my expertise in software development."
+
+list:
+  - name: "Multi-Location Digital Presence Management"
+    description: "A SaaS platform that enables businesses with multiple locations to manage their online presence efficiently. It offers centralized management of Google Business Profiles, localized marketing tools, and real-time analytics to boost visibility across digital platforms. Businesses can optimize customer engagement, track performance, and automate listings for seamless operations."
+    image: "https://placehold.co/400x250"
+    link: "/digital-presence.html"
+  
+  - name: "QuickSite - Instant Website Builder with Full Customization"
+    description: "QuickSite is an innovative SaaS solution designed to generate fully functional websites instantly. It includes advanced SEO tools, pre-built responsive templates, and a powerful admin panel that allows users to customize content, layout, and integrations without coding. Ideal for businesses looking to establish an online presence effortlessly, QuickSite ensures high performance, security, and scalability."
+    image: "https://placehold.co/400x250"
+    link: "/quicksite.html"
+  
+  - name: "TradeSmart - AI-Powered Share Market Insights"
+    description: "TradeSmart is a next-generation SaaS platform designed for investors and traders. It provides AI-driven insights, automated portfolio tracking, and real-time market analysis. Users can access predictive analytics, custom alerts, and in-depth financial reports to make informed trading decisions. TradeSmart is ideal for both novice and experienced investors looking for data-driven strategies."
+    image: "https://placehold.co/400x250"
+    link: "/tradesmart.html"
+
+contact_title: "Interested in Collaborating?"
+contact_description: "If you're looking for a developer to bring your ideas to life, feel free to get in touch."
+contact_button_text: "Contact Me"
+contact_button_link: "/contact.html"
