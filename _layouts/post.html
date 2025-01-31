@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<article class="prose max-w-4xl mx-auto py-8">
+    <header class="mb-8">
+        <h1 class="text-4xl font-bold text-gray-800">{{ page.title }}</h1>
+        <time class="text-gray-500">{{ page.date | date: "%b %d, %Y" }}</time>
+    </header>
+
+    <div class="text-gray-600 leading-relaxed">
+        {{ content }}
+    </div>
+
+    <a href="/blog" class="mt-8 inline-block text-blue-600 hover:text-blue-800">
+        &larr; Back to Blog
+    </a>
+</article>
