@@ -1,0 +1,43 @@
+hero:
+  title: "Welcome to My Portfolio"
+  description: "Hi, I'm Pawan Kumar, a Principal Software Developer with expertise in building scalable web applications and SaaS platforms. Explore my work, projects, and blog to learn more about my journey in software development."
+  button_text: "View My Projects"
+  button_link: "/projects.html"
+
+projects:
+  title: "Featured Projects"
+  list:
+    - name: "Project 1"
+      description: "A brief description of the project and its impact."
+      image: "https://placehold.co/400x250"
+      link: "/projects.html"
+    - name: "Project 2"
+      description: "A brief description of the project and its impact."
+      image: "https://placehold.co/400x250"
+      link: "/projects.html"
+    - name: "Project 3"
+      description: "A brief description of the project and its impact."
+      image: "https://placehold.co/400x250"
+      link: "/projects.html"
+
+about:
+  title: "About Me"
+  description: "I am a passionate software developer with over 9 years of experience in designing and developing web applications. My expertise lies in PHP, Laravel, JavaScript, and cloud technologies. I love solving complex problems and building scalable solutions that drive business success."
+
+skills:
+  title: "My Expertise"
+  list:
+    - Backend Development (PHP, Laravel, CakePHP, RESTful APIs)
+    - Frontend Development (JavaScript, Tailwind CSS, Vue.js, React)
+    - Cloud & DevOps (AWS, Google APIs, Docker)
+    - Database Management (MySQL, MongoDB)
+    - Agile Development & Best Coding Practices
+
+contact:
+  title: "Get in Touch"
+  description: "If you’d like to collaborate or have any questions, feel free to reach out."
+  button_text: "Contact Me"
+  button_link: "/contact.html"
+
+footer:
+  text: "Pawan Kumar. All Rights Reserved."

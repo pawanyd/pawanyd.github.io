@@ -1,5 +1,66 @@
 ---
-layout: default
+layout: profile
 title: Home
 ---
-<h1>{{ "Hello World! sdas" | downcase }}</h1>
+
+<!-- Hero Section -->
+<section class="relative bg-cover bg-center py-20 text-center text-white" style="background-image: url('https://placehold.co/1600x900');">
+    <div class="max-w-3xl mx-auto">
+        <h1 class="text-5xl font-bold">{{ site.data.home.hero.title }}</h1>
+        <p class="mt-4 text-lg">{{ site.data.home.hero.description }}</p>
+        <a href="{{ site.data.home.hero.button_link }}" class="mt-6 inline-block bg-blue-500 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-600">
+            {{ site.data.home.hero.button_text }}
+        </a>
+    </div>
+</section>
+
+<!-- Featured Projects -->
+<section class="py-16 bg-gray-100">
+    <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-gray-800">{{ site.data.home.projects.title }}</h2>
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for project in site.data.home.projects.list %}
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                <img src="{{ project.image }}" alt="{{ project.name }}" class="rounded-lg mb-4">
+                <h3 class="text-2xl font-semibold text-gray-800">{{ project.name }}</h3>
+                <p class="text-gray-600 mt-2">{{ project.description }}</p>
+                <a href="{{ project.link }}" class="text-blue-500 mt-4 inline-block font-semibold">Learn More →</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="py-16 flex flex-wrap items-center max-w-6xl mx-auto">
+    <div class="w-full md:w-1/2 text-center md:text-left">
+        <h2 class="text-4xl font-bold text-gray-800">{{ site.data.home.about.title }}</h2>
+        <p class="text-gray-600 mt-4">{{ site.data.home.about.description }}</p>
+    </div>
+    <div class="w-full md:w-1/2 text-center mt-6 md:mt-0">
+        <img src="https://placehold.co/500x400" alt="About Me" class="rounded-lg shadow-lg">
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section class="py-16 bg-gray-100">
+    <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-gray-800">{{ site.data.home.skills.title }}</h2>
+        <div class="mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {% for skill in site.data.home.skills.list %}
+            <div class="bg-white p-4 rounded-lg shadow-md text-center hover:bg-blue-50 transition">
+                <p class="text-lg font-semibold text-gray-800">{{ skill }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="text-center py-16 bg-gray-800 text-white">
+    <h2 class="text-4xl font-bold">{{ site.data.home.contact.title }}</h2>
+    <p class="mt-4 text-lg">{{ site.data.home.contact.description }}</p>
+    <a href="{{ site.data.home.contact.button_link }}" class="mt-6 inline-block bg-blue-500 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-600">
+        {{ site.data.home.contact.button_text }}
+    </a>
+</section>

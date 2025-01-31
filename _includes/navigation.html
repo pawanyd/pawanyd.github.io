@@ -1,7 +1,12 @@
-<nav>
-    {% for item in site.data.navigation %}
-    <a href="{{ item.link }}" {% if page.url==item.link %}style="color: red;" {% endif %}>
-        {{ item.name }}
-    </a>
-    {% endfor %}
+<nav class="bg-white shadow-md p-4">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <a href="/" class="text-xl font-bold text-gray-800">Pawan Kumar</a>
+        <ul class="flex space-x-6">
+            {% for item in site.data.navigation %}
+            <li>
+                <a href="{{ item.link }}" class="text-gray-600 hover:text-blue-500">{{ item.name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 </nav>
