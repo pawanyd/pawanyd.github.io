@@ -1,3 +1,10 @@
+# SEO Defaults
+url: "https://urbanluxes.in"
+title: "Pawan Kumar - Principal Software Developer"
+description: "Results-driven Principal Software Developer with 9+ years of experience in developing high-quality web applications"
+author:
+  name: "Pawan Kumar"
+  twitter: "@pawanyd"
 # Add these to existing config
 collections:
   posts:

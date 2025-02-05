@@ -1,0 +1,9 @@
+blog:
+  title: "Blog Details"
+  description: "In-depth insights, tutorials, and updates on the latest trends in technology and software development."
+  author: "Pawan Kumar"
+  related_posts_title: "Related Posts"
+  read_more_text: "Read More"
+  published_on_text: "Published on"
+  category_text: "Category"
+  no_posts_message: "No related posts available at the moment."
