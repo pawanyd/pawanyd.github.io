@@ -15,6 +15,9 @@ about:
     - "I am passionate about solving complex problems, staying updated with the latest technologies, and contributing to open-source projects."
     - "My goal is to create innovative solutions that make an impact."
   image: "https://placehold.co/500x400"
+  image-laugh: "/assets/images/pawan-laugh.png"
+  image-prof: "/assets/images/pawan-prof.png"
+  image-stand: "/assets/images/pawan-stand.png"
   learn_more_link: "/about.html"
 
 skills:
