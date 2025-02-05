@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- Primary Meta Tags -->
+    <title>
+        {% if page.meta_title %}{{ page.meta_title }}
+        {% elsif page.title %}{{ page.title }} | {{ site.title }}
+        {% else %}{{ site.title }}{% endif %}
+    </title>
+
+    <meta name="title"
+        content="{% if page.meta_title %}{{ page.meta_title }}{% else %}{{ page.title }} | {{ site.title }}{% endif %}">
+    <meta name="description"
+        content="{% if page.meta_description %}{{ page.meta_description }}{% else %}{{ site.description }}{% endif %}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:title"
+        content="{% if page.meta_title %}{{ page.meta_title }}{% else %}{{ page.title }} | {{ site.title }}{% endif %}">
+    <meta property="og:description"
+        content="{% if page.meta_description %}{{ page.meta_description }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:image"
+        content="{% if page.meta_image %}{{ site.url }}{{ page.meta_image }}{% else %}{{ site.url }}/assets/images/og-default.jpg{% endif %}">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="twitter:title"
+        content="{% if page.meta_title %}{{ page.meta_title }}{% else %}{{ page.title }} | {{ site.title }}{% endif %}">
+    <meta property="twitter:description"
+        content="{% if page.meta_description %}{{ page.meta_description }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="twitter:image"
+        content="{% if page.meta_image %}{{ site.url }}{{ page.meta_image }}{% else %}{{ site.url }}/assets/images/og-default.jpg{% endif %}">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "{{ page.title }}",
+        "description": "{% if page.meta_description %}{{ page.meta_description }}{% else %}{{ site.description }}{% endif %}",
+        "url": "{{ site.url }}{{ page.url }}",
+        {% if page.meta_image %}
+        "image": "{{ site.url }}{{ page.meta_image }}",
+        {% endif %}
+        "author": {
+        "@type": "Person",
+        "name": "{{ site.author.name }}",
+        "url": "{{ site.url }}"
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "{{ site.title }}",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "{{ site.url }}/assets/images/logo.png"
+        }
+        }
+    }
+    </script>
+
+    <title>{{ page.title }}</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style type="text/tailwindcss">
+        @theme {
+          --color-clifford: #da373d;
+        }
+      </style>
+    <style>
+        /* Ensure full responsiveness */
+        .container {
+            max-width: 100%;
+            width: 90%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+    <!-- Include Navigation -->
+    {% include navigation.html %}
+
+
+    <!-- Blog Detail Page -->
+    <section class="py-16 bg-gradient-to-r from-gray-50 to-gray-200 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-5xl font-extrabold text-gray-900">{{ page.title }}</h1>
+            <p class="text-gray-500 mt-4 text-sm">Published on {{ page.date | date: "%B %d, %Y" }} | Category: {{
+                page.category }}</p>
+        </div>
+    </section>
+
+
+    <!-- Blog Content -->
+    <section class="py-12">
+        <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+            <div class="relative w-full h-96 mb-6">
+                <img src="{{ page.image }}" alt="{{ page.title }}"
+                    class="w-full h-full object-cover rounded-lg shadow-md">
+                <span
+                    class="absolute top-4 left-4 bg-blue-600 text-white text-xs uppercase font-semibold px-3 py-1 rounded-lg shadow-lg">{{
+                    page.category }}</span>
+            </div>
+            <div class="prose prose-lg text-gray-800 leading-relaxed">
+                {{ content }}
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Related Posts -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-gray-900">Related Posts</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                {% for post in site.posts limit:2 %}
+                {% if post.url != page.url %}
+                <div
+                    class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 ease-in-out border border-gray-300">
+                    <img src="{{ post.image }}" alt="{{ post.title }}" class="w-full h-40 object-cover rounded-lg">
+                    <h3 class="text-xl font-bold text-gray-900 mt-4 hover:text-blue-600 transition duration-200">
+                        <a href="{{ post.url }}">{{ post.title }}</a>
+                    </h3>
+                    <p class="text-gray-600 mt-2 text-sm">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white py-6 text-center mt-12">
+        <p>&copy; {{ 'now' | date: "%Y" }} {{ site.data.home.footer.text }}</p>
+    </footer>
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            document.getElementById('menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>

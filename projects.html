@@ -1,0 +1,37 @@
+---
+layout: profile
+title: "Pawan Kumar's SaaS Projects & Development Portfolio"
+meta_title: "SaaS Projects by Pawan Kumar | Web Development & Cloud Solutions"
+meta_description: "Explore Pawan Kumar's SaaS projects, web development solutions, and cloud-based applications. Discover innovative, scalable, and high-performance software solutions."
+meta_image: "/assets/images/projects-meta.jpg"
+---
+
+
+<!-- Projects Page -->
+<section class="text-center py-12">
+    <h1 class="text-4xl font-bold text-gray-800">{{ site.data.projects.title }}</h1>
+    <p class="mt-4 text-gray-600 text-lg max-w-2xl mx-auto">{{ site.data.projects.description }}</p>
+</section>
+
+<!-- Projects List -->
+<section class="py-12 bg-gray-100">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% for project in site.data.projects.list %}
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 ease-in-out">
+            <img src="{{ project.image }}" alt="{{ project.name }}" class="rounded-lg mb-4 w-full h-48 object-cover">
+            <h3 class="text-2xl font-semibold text-gray-800">{{ project.name }}</h3>
+            <p class="text-gray-600 mt-2">{{ project.description }}</p>
+            <a href="{{ project.link }}" class="text-blue-500 mt-4 inline-block font-semibold hover:underline">Learn More →</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="text-center py-12">
+    <h2 class="text-3xl font-semibold text-gray-800">{{ site.data.projects.contact_title }}</h2>
+    <p class="mt-4 text-gray-600 text-lg max-w-2xl mx-auto">{{ site.data.projects.contact_description }}</p>
+    <a href="{{ site.data.projects.contact_button_link }}" class="mt-6 inline-block bg-blue-500 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-600">
+        {{ site.data.projects.contact_button_text }}
+    </a>
+</section>

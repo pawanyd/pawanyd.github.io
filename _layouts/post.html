@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<article class="post-content">
+    <header class="mb-12 text-center">
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">{{ page.title }}</h1>
+        <div class="flex items-center justify-center space-x-4 text-gray-500">
+            <time>{{ page.date | date: "%b %d, %Y" }}</time>
+            <span>•</span>
+            <span>{{ page.category }}</span>
+        </div>
+        <img src="{{ page.image }}" alt="{{ page.title }}" class="w-full max-h-96 object-cover mt-8 rounded-xl">
+    </header>
+
+    <div class="content">
+        {{ content }}
+    </div>
+
+    {% include post-footer.html %}
+</article>

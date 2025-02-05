@@ -1,0 +1,23 @@
+# SEO Defaults
+url: "https://urbanluxes.in"
+timezone: Asia/Kolkata # Your timezone
+title: "Pawan Kumar - Principal Software Developer"
+description: "Results-driven Principal Software Developer with 9+ years of experience in developing high-quality web applications"
+author:
+  name: "Pawan Kumar"
+  twitter: "@pawanyd"
+# Add these to existing config
+collections:
+  posts:
+    output: true
+    permalink: /blog/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+paginate: 2
+paginate_path: "/blog/page:num/"
