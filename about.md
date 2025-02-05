@@ -3,7 +3,7 @@ layout: profile
 title: "About Pawan Kumar - Software Developer & SaaS Expert"
 meta_title: "About Pawan Kumar | Software Developer & SaaS Architect"
 meta_description: "Learn more about Pawan Kumar, a Principal Software Developer with expertise in SaaS, PHP, Laravel, and cloud technologies. Discover his journey, skills, and professional achievements."
-meta_image: "/assets/images/about-meta.jpg"
+meta_image: "/assets/images/about-meta-im.jpg"
 ---
 
 <!-- About Me Page -->
