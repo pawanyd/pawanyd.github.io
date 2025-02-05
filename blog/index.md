@@ -4,6 +4,8 @@ title: "Pawan Kumar's Blog - Insights on SaaS, Web Development & Cloud"
 meta_title: "Tech Blog by Pawan Kumar | SaaS, Web Development & Cloud Solutions"
 meta_description: "Stay updated with Pawan Kumar's latest insights on SaaS development, web technologies, and cloud solutions. Read expert articles, tutorials, and industry trends."
 meta_image: "/assets/images/blog-listing-meta.jpg"
+pagination:
+  enabled: true
 ---
 
 <!-- Blog Listing Page -->
@@ -33,5 +35,19 @@ meta_image: "/assets/images/blog-listing-meta.jpg"
             </div>
         </div>
         {% endfor %}
+    </div>
+</section>
+
+
+<!-- Pagination -->
+<section class="py-8">
+    <div class="max-w-6xl mx-auto flex justify-center space-x-4">
+        {% if paginator.previous_page %}
+            <a href="{{ paginator.previous_page_path }}" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Previous</a>
+        {% endif %}
+        <span class="px-4 py-2 bg-gray-200 rounded-lg">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+        {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path }}" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Next</a>
+        {% endif %}
     </div>
 </section>
