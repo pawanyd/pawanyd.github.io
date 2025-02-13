@@ -27,4 +27,4 @@ paginate: 3
 paginate_path: "/blogs/page:num/"
 
 postcss:
-  cache: false
+  cache: true
