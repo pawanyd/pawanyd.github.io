@@ -80,13 +80,16 @@
     <!-- End Google Tag Manager -->
 
     <title>{{ page.title }}</title>
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://unpkg.com/@tailwindcss/browser@4"></script> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style type="text/tailwindcss">
-        @theme {
-          --color-clifford: #da373d;
-        }
-      </style>
+    <script>
+        tailwind.config = {
+            corePlugins: {
+                preflight: false,
+            },
+        };
+    </script>
     <style>
         /* Ensure full responsiveness */
         .container {
@@ -98,6 +101,11 @@
 </head>
 
 <body class="bg-gray-100 font-sans">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KWS9G49Z" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <!-- Include Navigation -->
     {% include navigation.html %}
