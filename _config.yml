@@ -21,3 +21,10 @@ defaults:
 
 paginate: 2
 paginate_path: "/blog/page:num/"
+
+# _config.yml
+plugins:
+  - jekyll-postcss
+
+postcss:
+  cache: false

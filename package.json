@@ -1,0 +1,21 @@
+{
+  "name": "pawanyd.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "npx tailwindcss -i ./assets/css/main.css -o ./assets/css/tailwind.css --minify",
+    "watch:css": "npx tailwindcss -i ./assets/css/main.css -o ./assets/css/tailwind.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.2"
+  },
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}

@@ -80,22 +80,50 @@
     <!-- End Google Tag Manager -->
 
     <title>{{ page.title }}</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="{{ '/assets/css/tailwind.css' | relative_url }}">
     <!-- <script src="https://unpkg.com/@tailwindcss/browser@4"></script> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            corePlugins: {
-                preflight: false,
-            },
-        };
-    </script>
     <style>
         /* Ensure full responsiveness */
         .container {
             max-width: 100%;
             width: 90%;
             margin: 0 auto;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: revert;
+            font-weight: revert;
+        }
+
+        menu,
+        ol,
+        ul {
+            list-style: revert;
+            margin: revert;
+            padding: revert;
+        }
+
+        blockquote,
+        dd,
+        dl,
+        figure,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        hr,
+        p,
+        pre {
+            margin: revert;
         }
     </style>
 </head>
