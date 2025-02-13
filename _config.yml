@@ -19,12 +19,12 @@ defaults:
     values:
       layout: "post"
 
-paginate: 2
-paginate_path: "/blogs/page:num/"
-
 plugins:
   - jekyll-postcss
   - jekyll-paginate
+
+paginate: 3
+paginate_path: "/blogs/page:num/"
 
 postcss:
   cache: false

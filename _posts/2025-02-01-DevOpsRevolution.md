@@ -2,7 +2,7 @@
 layout: post-detail
 title: "DevOps: Transforming Software Delivery and Shaping Modern IT Careers"
 date: 2025-02-01
-category: "AI"
+category: "DevOps"
 image: "/assets/images/posts/devops.jpg"
 excerpt: "In today’s fast-paced digital world, businesses need to deliver high-quality software quickly and reliably. This need has given rise to DevOps—a cultural and technical movement that merges software development (Dev) with IT operations (Ops). In this blog post, we’ll explore what DevOps is, examine the profile of a DevOps professional, highlight its practical uses, and look at the current market demand that’s driving careers in this space."
 ---
