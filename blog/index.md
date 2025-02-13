@@ -4,6 +4,7 @@ title: "Pawan Kumar's Blog - Insights on SaaS, Web Development & Cloud"
 meta_title: "Tech Blog by Pawan Kumar | SaaS, Web Development & Cloud Solutions"
 meta_description: "Stay updated with Pawan Kumar's latest insights on SaaS development, web technologies, and cloud solutions. Read expert articles, tutorials, and industry trends."
 meta_image: "/assets/images/blog-listing-meta.jpg"
+permalink: /blogs/
 pagination:
   enabled: true
 ---

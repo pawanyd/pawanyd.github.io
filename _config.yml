@@ -10,7 +10,7 @@ author:
 collections:
   posts:
     output: true
-    permalink: /blog/:title/
+    permalink: /blog/:year/:month/:day/:title.html
 
 defaults:
   - scope:
@@ -20,11 +20,11 @@ defaults:
       layout: "post"
 
 paginate: 2
-paginate_path: "/blog/page:num/"
+paginate_path: "/blogs/page:num/"
 
-# _config.yml
 plugins:
   - jekyll-postcss
+  - jekyll-paginate
 
 postcss:
   cache: false
