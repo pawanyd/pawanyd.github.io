@@ -7,31 +7,94 @@ meta_image: "/assets/images/projects-meta.jpg"
 ---
 
 
-<!-- Projects Page -->
-<section class="text-center py-12">
-    <h1 class="text-4xl font-bold text-gray-800">{{ site.data.projects.title }}</h1>
-    <p class="mt-4 text-gray-600 text-lg max-w-2xl mx-auto">{{ site.data.projects.description }}</p>
-</section>
-
-<!-- Projects List -->
-<section class="py-12 bg-gray-100">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {% for project in site.data.projects.list %}
-        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 ease-in-out">
-            <img src="{{ project.image }}" alt="{{ project.name }}" class="rounded-lg mb-4 w-full h-48 object-cover">
-            <h3 class="text-2xl font-semibold text-gray-800">{{ project.name }}</h3>
-            <p class="text-gray-600 mt-2">{{ project.description }}</p>
-            <a href="{{ project.link }}" class="text-blue-500 mt-4 inline-block font-semibold hover:underline">Learn More →</a>
+<!-- Projects Section -->
+<section class="py-16">
+    <div class="container mx-auto px-4">
+      
+      <!-- Page Title & Subtitle -->
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl font-bold mb-4">My Projects</h1>
+        <p class="max-w-2xl mx-auto text-gray-600">
+          Explore some of my recent work and projects that showcase my expertise in software development.
+        </p>
+      </div>
+      
+      <!-- Stats Row -->
+      <div class="flex flex-wrap justify-center gap-6 mb-12">
+        <div class="text-center">
+          <h3 class="text-2xl font-bold text-gray-800">25+</h3>
+          <p class="text-gray-500">Total Projects</p>
         </div>
-        {% endfor %}
+        <div class="text-center">
+          <h3 class="text-2xl font-bold text-gray-800">1.2k+</h3>
+          <p class="text-gray-500">GitHub Stars</p>
+        </div>
+        <div class="text-center">
+          <h3 class="text-2xl font-bold text-gray-800">15+</h3>
+          <p class="text-gray-500">Technologies</p>
+        </div>
+        <div class="text-center">
+          <h3 class="text-2xl font-bold text-gray-800">5+</h3>
+          <p class="text-gray-500">Years Experience</p>
+        </div>
+      </div>
+      
+      <!-- Filter Bar (static for now) -->
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <button class="px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300 text-gray-700">All</button>
+        <button class="px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300 text-gray-700">Web Apps</button>
+        <button class="px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300 text-gray-700">Mobile</button>
+        <button class="px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300 text-gray-700">AI/ML</button>
+        <button class="px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300 text-gray-700">Blockchain</button>
+      </div>
+      
+      <!-- Featured Projects -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold text-center mb-6">Featured Projects</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          {% for project in site.data.projects.featured_projects %}
+          <div class="bg-white rounded-lg shadow overflow-hidden transition duration-300 transform hover:scale-105">
+            <img src="{{ project.image }}" alt="{{ project.title }} Banner" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">{{ project.title }}</h3>
+              <p class="text-gray-600 mb-4">
+                {{ project.description }}
+              </p>
+              <div class="text-sm text-gray-500 mb-4">
+                <strong>Tech:</strong> {{ project.tech }}
+              </div>
+              <a href="{{ project.details_link }}" class="text-blue-500 hover:underline font-medium">
+                Learn More
+              </a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      
+      <!-- More Projects -->
+      <div>
+        <h2 class="text-2xl font-bold text-center mb-6">More Projects</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {% for project in site.data.projects.more_projects %}
+          <div class="bg-white rounded-lg shadow overflow-hidden transition duration-300 transform hover:scale-105">
+            <img src="{{ project.image }}" alt="{{ project.title }} Banner" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">{{ project.title }}</h3>
+              <p class="text-gray-600 mb-4">
+                {{ project.description }}
+              </p>
+              <div class="text-sm text-gray-500 mb-4">
+                <strong>Tech:</strong> {{ project.tech }}
+              </div>
+              <a href="{{ project.details_link }}" class="text-blue-500 hover:underline font-medium">
+                Learn More
+              </a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      
     </div>
-</section>
-
-<!-- Contact Section -->
-<section class="text-center py-12">
-    <h2 class="text-3xl font-semibold text-gray-800">{{ site.data.projects.contact_title }}</h2>
-    <p class="mt-4 text-gray-600 text-lg max-w-2xl mx-auto">{{ site.data.projects.contact_description }}</p>
-    <a href="{{ site.data.projects.contact_button_link }}" class="mt-6 inline-block bg-blue-500 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-600">
-        {{ site.data.projects.contact_button_text }}
-    </a>
-</section>
+  </section>

@@ -21,3 +21,35 @@ contact_title: "Interested in Collaborating?"
 contact_description: "If you're looking for a developer to bring your ideas to life, feel free to get in touch."
 contact_button_text: "Contact Me"
 contact_button_link: "/contact.html"
+
+featured_projects:
+  - title: "Multi-Location Digital Presence Management"
+    description: "A SaaS platform that enables businesses with multiple locations to manage their online presence efficiently. Offers centralized Google Business Profiles, localized marketing tools, and real-time analytics."
+    tech: "React, Node.js, MongoDB"
+    image: "https://placehold.co/600x400"
+    details_link: "/projects/multi-location-digital-presence-management.html"
+
+  - title: "QuickSite – Instant Website Builder"
+    description: "QuickSite is an innovative SaaS solution designed to generate fully functional websites instantly. It includes advanced SEO tools, pre-built responsive templates, and a powerful admin panel."
+    tech: "Next.js, TypeScript, Prisma"
+    image: "https://placehold.co/600x400"
+    details_link: "/projects/quicksite-instant-website-builder.html"
+
+more_projects:
+  - title: "TradeSmart – AI-Powered Share Market Insights"
+    description: "TradeSmart is a next-generation SaaS platform designed for investors and traders. It provides AI-driven insights, automated portfolio tracking, and real-time market data."
+    tech: "Python, TensorFlow, React"
+    image: "https://placehold.co/600x400"
+    details_link: "/projects/tradesmart-ai-powered-share-market-insights.html"
+
+  - title: "CryptoTracker Pro"
+    description: "Real-time cryptocurrency tracking and portfolio management application with advanced analytics and price predictions. Offers alerts and auto-trading features."
+    tech: "React Native, Node.js"
+    image: "https://placehold.co/600x400"
+    details_link: "/projects/cryptotracker-pro.html"
+
+  - title: "SmartHealth Connect"
+    description: "A comprehensive healthcare management system that connects providers, manages patient records, and streamlines appointment scheduling and billing."
+    tech: "React.js, Django, PostgreSQL"
+    image: "https://placehold.co/600x400"
+    details_link: "/projects/smarthealth-connect.html"
