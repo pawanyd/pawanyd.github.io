@@ -1,0 +1,26 @@
+<!-- Structured Data -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "{{ page.title }}",
+        "description": "{% if page.meta_description %}{{ page.meta_description }}{% else %}{{ site.description }}{% endif %}",
+        "url": "{{ site.url }}{{ page.url }}",
+        {% if page.meta_image %}
+        "image": "{{ site.url }}{{ page.meta_image }}",
+        {% endif %}
+        "author": {
+        "@type": "Person",
+        "name": "{{ site.author.name }}",
+        "url": "{{ site.url }}"
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "{{ site.title }}",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "{{ site.url }}/assets/images/logo.png"
+        }
+        }
+    }
+</script>

@@ -10,63 +10,12 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <!-- Primary Meta Tags -->
-    <title>
-        {% if page.meta_title %}{{ page.meta_title }}
-        {% elsif page.title %}{{ page.title }} | {{ site.title }}
-        {% else %}{{ site.title }}{% endif %}
-    </title>
+    
+    {% include meta.html %}
 
-    <meta name="title"
-        content="{% if page.meta_title %}{{ page.meta_title }}{% else %}{{ page.title }} | {{ site.title }}{% endif %}">
-    <meta name="description"
-        content="{% if page.meta_description %}{{ page.meta_description }}{% else %}{{ site.description }}{% endif %}">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-    <meta property="og:title"
-        content="{% if page.meta_title %}{{ page.meta_title }}{% else %}{{ page.title }} | {{ site.title }}{% endif %}">
-    <meta property="og:description"
-        content="{% if page.meta_description %}{{ page.meta_description }}{% else %}{{ site.description }}{% endif %}">
-    <meta property="og:image"
-        content="{% if page.meta_image %}{{ site.url }}{{ page.meta_image }}{% else %}{{ site.url }}/assets/images/og-default.jpg{% endif %}">
+    {% include schema.html %}
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="{{ site.url }}{{ page.url }}">
-    <meta property="twitter:title"
-        content="{% if page.meta_title %}{{ page.meta_title }}{% else %}{{ page.title }} | {{ site.title }}{% endif %}">
-    <meta property="twitter:description"
-        content="{% if page.meta_description %}{{ page.meta_description }}{% else %}{{ site.description }}{% endif %}">
-    <meta property="twitter:image"
-        content="{% if page.meta_image %}{{ site.url }}{{ page.meta_image }}{% else %}{{ site.url }}/assets/images/og-default.jpg{% endif %}">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "{{ page.title }}",
-        "description": "{% if page.meta_description %}{{ page.meta_description }}{% else %}{{ site.description }}{% endif %}",
-        "url": "{{ site.url }}{{ page.url }}",
-        {% if page.meta_image %}
-        "image": "{{ site.url }}{{ page.meta_image }}",
-        {% endif %}
-        "author": {
-        "@type": "Person",
-        "name": "{{ site.author.name }}",
-        "url": "{{ site.url }}"
-        },
-        "publisher": {
-        "@type": "Organization",
-        "name": "{{ site.title }}",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "{{ site.url }}/assets/images/logo.png"
-        }
-        }
-    }
-    </script>
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
@@ -79,15 +28,7 @@
     </script>
     <!-- End Google Tag Manager -->
 
-    <title>{{ page.title }}</title>
-    <!-- <script src="https://unpkg.com/@tailwindcss/browser@4"></script> -->
-    <link rel="stylesheet" href="{{ '/assets/css/tailwind.css' | relative_url }}">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
-    <style type="text/tailwindcss">
-        @theme {
-          --color-clifford: #da373d;
-        }
-      </style>
+    {% include css.html %}
     <style>
         /* Ensure full responsiveness */
         .container {
@@ -100,8 +41,10 @@
 
 <body class="bg-gray-100 font-sans">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KWS9G49Z" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KWS9G49Z" height="0" width="0"
+            style="display:none;visibility:hidden">
+        </iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
