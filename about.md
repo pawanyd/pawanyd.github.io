@@ -7,13 +7,13 @@ meta_image: "/assets/images/about-meta-image.jpg"
 ---
 
 <!-- About Me Page -->
-<section class="text-center py-12">
+<section class="text-center py-12" style="content-visibility:visible">
     <h1 class="text-4xl font-bold text-gray-800">{{ site.data.about.title }}</h1>
     <p class="mt-4 text-gray-600 text-lg max-w-2xl mx-auto">{{ site.data.about.description }}</p>
 </section>
 
 <!-- Personal Introduction -->
-<section class="py-12 bg-gray-100">
+<section class="py-12 bg-gray-100" style="content-visibility:visible">
     <div class="max-w-6xl mx-auto flex flex-wrap items-center">
         <div class="w-full md:w-1/2 text-center md:text-left p-6">
             <h2 class="text-3xl font-semibold text-gray-800">{{ site.data.about.intro_title }}</h2>
