@@ -3,7 +3,7 @@ title: "Welcome to My Portfolio"
 hero:
   name: "Pawan Kumar"
   description: "Principal Software Developer | PHP | Laravel | JavaScript | Cloud Technologies"
-  image: "/assets/images/pawan.png"
+  image: "/assets/images/pawan.webp"
 
 about:
   title: "About Me"
@@ -15,9 +15,9 @@ about:
     - "I am passionate about solving complex problems, staying updated with the latest technologies, and contributing to open-source projects."
     - "My goal is to create innovative solutions that make an impact."
   image: "https://placehold.co/500x400"
-  image-laugh: "/assets/images/pawan-laugh.png"
-  image-prof: "/assets/images/pawan-prof.png"
-  image-stand: "/assets/images/pawan-stand.png"
+  image-laugh: "/assets/images/pawan-laugh.webp"
+  image-prof: "/assets/images/pawan-prof.webp"
+  image-stand: "/assets/images/pawan-stand.webp"
   learn_more_link: "/about.html"
 
 skills:
