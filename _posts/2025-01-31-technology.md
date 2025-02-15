@@ -3,7 +3,7 @@ layout: post-detail
 title: "The AI-Powered Future of Coding: Augmenting Human Creativity and Efficiency"
 date: 2025-01-31
 category: "Technology"
-image: "/assets/images/posts/generative-ai-for-coding.jpg"
+image: "/assets/images/posts/generative-ai-for-coding.webp"
 excerpt: "Artificial intelligence is reshaping how software is written, tested, and maintained. Tools like GitHub Copilot and SWE-agent are rapidly transforming the software development landscape—boosting productivity and streamlining workflows while presenting new challenges in code quality and security. In this post, we explore the benefits and hurdles of AI-powered coding and discuss why these innovations are augmenting, not replacing, human expertise."
 ---
 
