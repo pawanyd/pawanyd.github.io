@@ -35,6 +35,30 @@ meta_image: "/assets/images/contact-meta.jpg"
     </div>
 </section>
 
+<!-- Contact Form -->
+<section class="py-12">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-800">Send Me a Message</h2>
+        <form action="https://formspree.io/f/xyzebelp" method="POST" class="mt-6 bg-white p-6 rounded-lg shadow-lg">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label for="name" class="block text-left text-gray-700 font-semibold">Name</label>
+                    <input type="text" id="name" name="name" required class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label for="email" class="block text-left text-gray-700 font-semibold">Email</label>
+                    <input type="email" id="email" name="email" required class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="message" class="block text-left text-gray-700 font-semibold">Message</label>
+                <textarea id="message" name="message" rows="5" required class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-blue-500 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-600">Send Message</button>
+        </form>
+    </div>
+</section>
+
 <!-- Social Media Section -->
 <section class="py-12 bg-gray-100 text-center">
     <h2 class="text-3xl font-bold text-gray-800">Connect with Me</h2>
