@@ -2,25 +2,24 @@
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "{{ page.title }}",
-        "description": "{% if page.meta_description %}{{ page.meta_description }}{% else %}{{ site.description }}{% endif %}",
-        "url": "{{ site.url }}{{ page.url }}",
-        {% if page.meta_image %}
-        "image": "{{ site.url }}{{ page.meta_image }}",
-        {% endif %}
-        "author": {
         "@type": "Person",
         "name": "{{ site.author.name }}",
-        "url": "{{ site.url }}"
+        "description": "{{ site.description }}",
+        "url": "{{ site.url }}",
+        "image": "{{ site.url }}/assets/images/pawan-prof.png",
+        "jobTitle": "Principal Software Engineer",
+        "sameAs": [
+            {% for social in site.data.social %}
+            "{{ social.url }}"{% if forloop.last == false %},{% endif %}
+            {% endfor %}
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Gurgaon",
+            "addressRegion": "Haryana",
+            "addressCountry": "India"
         },
-        "publisher": {
-        "@type": "Organization",
-        "name": "{{ site.title }}",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "{{ site.url }}/assets/images/logo.png"
-        }
-        }
+        "email": "pawanyd2012@gmail.com",
+        "telephone": "+91-7737507050"
     }
 </script>
