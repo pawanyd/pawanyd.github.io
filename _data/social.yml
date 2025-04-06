@@ -1,4 +1,7 @@
 social_links:
-  linkedin: "https://www.linkedin.com/in/pawanyd/"
-  twitter: "https://x.com/pawanydji"
-  github: "https://github.com/pawanyd"
+  - name: linkedin
+    url: "https://www.linkedin.com/in/pawanyd/"
+  - name: twitter
+    url: "https://x.com/pawanydji"
+  - name: github
+    url: "https://github.com/pawanyd"

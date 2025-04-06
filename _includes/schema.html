@@ -9,9 +9,9 @@
         "image": "{{ site.url }}/assets/images/pawan-prof.png",
         "jobTitle": "Principal Software Engineer",
         "sameAs": [
-            "{{ site.data.social.social_links.linkedin }}",
-            "{{ site.data.social.social_links.twitter }}",
-            "{{ site.data.social.social_links.github }}"
+            {% for social in site.data.social.social_links %}
+            "{{ social.url }}"{% if forloop.last == false %},{% endif %}
+            {% endfor %}
         ],
         "address": {
             "@type": "PostalAddress",

@@ -39,8 +39,10 @@ meta_image: "/assets/images/contact-meta.jpg"
 <section class="py-12 bg-gray-100 text-center">
     <h2 class="text-3xl font-bold text-gray-800">Connect with Me</h2>
     <div class="flex justify-center space-x-6 mt-6">
-        <a href="{{ site.data.social.social_links.linkedin }}" class="text-blue-600 text-3xl hover:text-blue-800" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="{{ site.data.social.social_links.github }}" class="text-gray-800 text-3xl hover:text-gray-900" target="_blank"><i class="fa-brands fa-github"></i></a>
-        <a href="{{ site.data.social.social_links.twitter }}" class="text-blue-400 text-3xl hover:text-blue-600" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+        {% for social in site.data.social.social_links %}
+        <a href="{{ social.url }}" class="text-blue-600 text-3xl hover:text-blue-800" target="_blank">
+            <i class="fa-brands fa-{{ social.name }}"></i>
+        </a>
+        {% endfor %}
     </div>
 </section>
