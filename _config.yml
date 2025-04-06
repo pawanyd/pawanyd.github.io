@@ -11,6 +11,9 @@ collections:
   posts:
     output: true
     permalink: /blog/:year/:month/:day/:title.html
+  case_studies:
+    output: true
+    permalink: /case-studies/:name/
 
 defaults:
   - scope:
@@ -18,6 +21,11 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+  - scope:
+      path: ""
+      type: "case_studies"
+    values:
+      layout: "case_study"
 
 plugins:
   - jekyll-postcss
