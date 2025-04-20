@@ -39,7 +39,8 @@ meta_image: "/assets/images/contact-meta.jpg"
 <section class="py-12">
     <div class="max-w-4xl mx-auto">
         <h2 class="text-3xl font-bold text-gray-800 mb-6">Send Me a Message</h2>
-        <form action="https://formspree.io/f/xyzebelp" method="POST" class="bg-white p-8 rounded-xl shadow-xl space-y-6">
+        <form id="contact-form" action="https://formspree.io/f/xyzebelp" method="POST" class="bg-white p-8 rounded-xl shadow-xl space-y-6">
+            <div id="form-status" class="hidden mb-4 text-center text-lg font-semibold rounded px-4 py-3"></div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                     <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
@@ -54,8 +55,50 @@ meta_image: "/assets/images/contact-meta.jpg"
                 <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
                 <textarea id="message" name="message" rows="5" required placeholder="Type your message here..." class="w-full p-4 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 transition placeholder-gray-400 resize-none"></textarea>
             </div>
-            <button type="submit" class="w-full bg-blue-600 text-white px-6 py-3 rounded text-lg font-semibold shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition">Send Message</button>
+            <button id="submit-btn" type="submit" class="w-full bg-blue-600 text-white px-6 py-3 rounded text-lg font-semibold shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition">Send Message</button>
         </form>
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('contact-form');
+            const status = document.getElementById('form-status');
+            const submitBtn = document.getElementById('submit-btn');
+            const defaultBtnText = submitBtn.textContent;
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                status.classList.add('hidden');
+                status.textContent = '';
+                const data = new FormData(form);
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: data,
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    if (response.ok) {
+                        status.textContent = 'Thank you! Your message has been sent.';
+                        status.className = 'mb-4 text-center text-lg font-semibold rounded px-4 py-3 bg-green-600 text-white';
+                        status.classList.remove('hidden');
+                        form.reset();
+                        submitBtn.textContent = 'Thank you! Your message has been sent.';
+                        submitBtn.disabled = true;
+                        setTimeout(() => {
+                            submitBtn.textContent = defaultBtnText;
+                            submitBtn.disabled = false;
+                        }, 5000);
+                    } else {
+                        const resData = await response.json();
+                        status.textContent = resData.errors ? resData.errors.map(e => e.message).join(', ') : 'Oops! Something went wrong.';
+                        status.className = 'mb-4 text-center text-lg font-semibold text-red-600';
+                        status.classList.remove('hidden');
+                    }
+                } catch (error) {
+                    status.textContent = 'Oops! There was a problem submitting your form.';
+                    status.className = 'mb-4 text-center text-lg font-semibold text-red-600';
+                    status.classList.remove('hidden');
+                }
+            });
+        });
+        </script>
     </div>
 </section>
 
