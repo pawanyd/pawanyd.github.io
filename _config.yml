@@ -24,7 +24,7 @@ plugins:
   - jekyll-paginate
 
 paginate: 3
-paginate_path: "/blogs/page:num/"
+paginate_path: "/blog/page:num/"
 
 postcss:
   cache: true
