@@ -1,0 +1,111 @@
+---
+layout: profile
+---
+
+<!-- Project Detail Section -->
+<section class="py-16 bg-gray-50">
+  <div class="max-w-4xl mx-auto px-4">
+    
+    <!-- Back Link -->
+    <a href="/projects.html" class="text-blue-600 hover:text-blue-800 font-semibold mb-8 inline-block">
+      ← Back to Projects
+    </a>
+    
+    <!-- Project Header -->
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
+      <img src="{{ page.image }}" alt="{{ page.title }}" class="w-full h-96 object-cover">
+      
+      <div class="p-8">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">{{ page.title }}</h1>
+        
+        <!-- Categories -->
+        {% if page.categories %}
+        <div class="flex flex-wrap gap-2 mb-6">
+          {% for cat in page.categories %}
+          <span class="text-xs font-bold px-3 py-1 rounded-full bg-blue-100 text-blue-700 border border-blue-300">
+            {{ cat }}
+          </span>
+          {% endfor %}
+        </div>
+        {% endif %}
+        
+        <!-- Meta Info -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 py-6 border-t border-b border-gray-200">
+          {% if page.year %}
+          <div>
+            <p class="text-sm text-gray-500 font-semibold">YEAR</p>
+            <p class="text-lg text-gray-900">{{ page.year }}</p>
+          </div>
+          {% endif %}
+          
+          {% if page.impact %}
+          <div>
+            <p class="text-sm text-gray-500 font-semibold">IMPACT</p>
+            <p class="text-lg text-green-700 font-semibold">{{ page.impact }}</p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    
+    <!-- Project Description -->
+    <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">About This Project</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+        {{ page.description }}
+      </p>
+      
+      <!-- Tech Stack -->
+      {% if page.tech %}
+      <div class="mt-8">
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Technologies Used</h3>
+        <div class="flex flex-wrap gap-3">
+          {% for tech in page.tech %}
+          <span class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium">{{ tech }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    
+    <!-- Key Features -->
+    {% if page.features %}
+    <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Key Features</h2>
+      <ul class="space-y-3">
+        {% for feature in page.features %}
+        <li class="flex items-start">
+          <span class="text-blue-600 font-bold mr-3">✓</span>
+          <span class="text-gray-700">{{ feature }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    
+    <!-- Challenges & Solutions -->
+    {% if page.challenges %}
+    <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Challenges & Solutions</h2>
+      <div class="space-y-6">
+        {% for challenge in page.challenges %}
+        <div>
+          <h3 class="font-bold text-gray-900 mb-2">{{ challenge.title }}</h3>
+          <p class="text-gray-700">{{ challenge.description }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+    
+    <!-- Call to Action -->
+    <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg shadow-lg p-8 text-center">
+      <h2 class="text-2xl font-bold mb-4">Interested in Similar Projects?</h2>
+      <p class="text-lg mb-6">Let's discuss how we can work together to bring your ideas to life.</p>
+      <a href="/contact.html" class="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+        Get in Touch
+      </a>
+    </div>
+    
+  </div>
+</section>

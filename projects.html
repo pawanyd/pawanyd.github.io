@@ -35,27 +35,33 @@ meta_image: "/assets/images/projects-meta.jpg"
     <!-- Projects Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
       {% for project in site.data.projects.list %}
-      <div class="project-card bg-white rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 ease-in-out border border-gray-200 overflow-hidden" 
+      <div class="project-card bg-white rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out border border-gray-200 overflow-hidden" 
            data-categories="{% for cat in project.categories %}{{ cat }}{% unless forloop.last %},{% endunless %}{% endfor %}">
         
         <!-- Project Image -->
-        <img src="{{ project.image }}" alt="{{ project.name }}" class="w-full h-48 object-cover">
+        <a href="/projects/{{ project.name | slugify }}.html">
+          <img src="{{ project.image }}" alt="{{ project.name }}" class="w-full h-48 object-cover hover:opacity-80 transition-opacity">
+        </a>
         
         <!-- Project Content -->
         <div class="p-6">
-          <h3 class="text-xl font-bold text-gray-900 mb-2">{{ project.name }}</h3>
+          <a href="/projects/{{ project.name | slugify }}.html" class="no-underline">
+            <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors">{{ project.name }}</h3>
+          </a>
           
-          <!-- Categories -->
+          <!-- Categories with Highlighted Badges -->
           {% if project.categories %}
-          <div class="flex flex-wrap gap-1 mb-3">
+          <div class="flex flex-wrap gap-2 mb-4">
             {% for cat in project.categories %}
-            <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">{{ cat }}</span>
+            <span class="text-xs font-bold px-3 py-1 rounded-full bg-blue-100 text-blue-700 border border-blue-300">
+              {{ cat }}
+            </span>
             {% endfor %}
           </div>
           {% endif %}
           
-          <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-            {{ project.description }}
+          <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+            {{ project.description | truncate: 120 }}
           </p>
           
           <!-- Tech Stack -->
@@ -72,7 +78,7 @@ meta_image: "/assets/images/projects-meta.jpg"
           </div>
           {% endif %}
           
-          <a href="{{ project.link }}" class="text-blue-600 hover:text-blue-800 font-semibold text-sm">
+          <a href="/projects/{{ project.name | slugify }}.html" class="text-blue-600 hover:text-blue-800 font-semibold text-sm inline-block">
             Learn More →
           </a>
         </div>

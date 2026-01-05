@@ -62,15 +62,28 @@ meta_image: "/assets/images/profile-meta.jpg"
     <h2 class="text-4xl font-bold text-gray-900">{{ site.data.home.projects.title }}</h2>
     <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {% for project in site.data.home.projects.list %}
-      <div
-        class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 ease-in-out border border-gray-200">
-        <img src="{{ project.image }}" alt="{{ project.name }}" class="rounded-lg mb-4 w-full h-48 object-cover">
-        <h3 class="text-2xl font-semibold text-gray-900">{{ project.name }}</h3>
-        <p class="text-gray-700 mt-2">{{ project.description }}</p>
-        <a href="{{ project.link }}" class="text-blue-600 mt-4 inline-block font-semibold hover:text-blue-800">Learn
-          More →</a>
+      <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out border border-gray-200 overflow-hidden">
+        <a href="{{ project.link }}" class="block">
+          <img src="{{ project.image }}" alt="{{ project.name }}" class="w-full h-48 object-cover hover:opacity-80 transition-opacity">
+        </a>
+        <div class="p-6">
+          <a href="{{ project.link }}" class="no-underline">
+            <h3 class="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">{{ project.name }}</h3>
+          </a>
+          <p class="text-gray-600 mt-3 text-sm leading-relaxed">{{ project.description }}</p>
+          <a href="{{ project.link }}" class="text-blue-600 mt-4 inline-block font-semibold hover:text-blue-800 transition-colors">
+            Learn More →
+          </a>
+        </div>
       </div>
       {% endfor %}
+    </div>
+    
+    <!-- View All Projects Link -->
+    <div class="mt-12 text-center">
+      <a href="/projects.html" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+        View All Projects →
+      </a>
     </div>
   </div>
 </section>
