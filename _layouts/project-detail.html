@@ -57,11 +57,58 @@ layout: profile
       
       <!-- Tech Stack -->
       {% if page.tech %}
-      <div class="mt-8">
-        <h3 class="text-xl font-bold text-gray-900 mb-4">Technologies Used</h3>
-        <div class="flex flex-wrap gap-3">
+      <div class="mt-8 pt-8 border-t border-gray-200">
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Technologies Used</h3>
+        <div class="flex flex-wrap gap-2">
           {% for tech in page.tech %}
-          <span class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium">{{ tech }}</span>
+          <span class="text-xs font-bold px-3 py-1 rounded-full bg-purple-100 text-purple-700 border border-purple-300 inline-flex items-center gap-1">
+            {% if tech == "Python" %}📘
+            {% elsif tech == "JavaScript" %}⚡
+            {% elsif tech == "React.js" or tech == "React" %}⚛️
+            {% elsif tech == "Node.js" or tech == "Node" %}🟢
+            {% elsif tech == "TypeScript" %}🔵
+            {% elsif tech == "PHP" %}🐘
+            {% elsif tech == "Java" %}☕
+            {% elsif tech == "Go" %}🐹
+            {% elsif tech == "Rust" %}🦀
+            {% elsif tech == "C++" %}⚙️
+            {% elsif tech == "Kubernetes" %}☸️
+            {% elsif tech == "Docker" %}🐳
+            {% elsif tech == "AWS" %}🟠
+            {% elsif tech == "MongoDB" %}🍃
+            {% elsif tech == "PostgreSQL" %}🐘
+            {% elsif tech == "MySQL" %}🐬
+            {% elsif tech == "Redis" %}❤️
+            {% elsif tech == "Apache Kafka" %}📨
+            {% elsif tech == "Elasticsearch" %}🔍
+            {% elsif tech == "TensorFlow" %}🧠
+            {% elsif tech == "Machine Learning" %}🤖
+            {% elsif tech == "FastAPI" %}⚡
+            {% elsif tech == "Django" %}🎻
+            {% elsif tech == "Vue.js" %}💚
+            {% elsif tech == "Angular" %}🔴
+            {% elsif tech == "WebRTC" %}📡
+            {% elsif tech == "GraphQL" %}🔷
+            {% elsif tech == "REST APIs" %}🔗
+            {% elsif tech == "Uvicorn" %}🚀
+            {% elsif tech == "Apache Spark" %}🔥
+            {% elsif tech == "AWS S3" %}📦
+            {% elsif tech == "AWS Lambda" %}⚡
+            {% elsif tech == "RabbitMQ" %}🐰
+            {% elsif tech == "Google Maps API" %}📍
+            {% elsif tech == "CakePHP" %}🍰
+            {% elsif tech == "WebSockets" %}🔌
+            {% elsif tech == "CUDA" %}🎮
+            {% elsif tech == "OpenCV" %}📷
+            {% elsif tech == "Redis Cache" %}❤️
+            {% elsif tech == "Redis Streams" %}⛓️
+            {% elsif tech == "Redis Cache" %}❤️
+            {% elsif tech == "Geospatial Database" %}🗺️
+            {% elsif tech == "PCI Compliance" %}🔒
+            {% else %}⚙️
+            {% endif %}
+            {{ tech }}
+          </span>
           {% endfor %}
         </div>
       </div>
