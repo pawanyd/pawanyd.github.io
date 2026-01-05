@@ -6,95 +6,132 @@ meta_description: "Explore Pawan Kumar's SaaS projects, web development solution
 meta_image: "/assets/images/projects-meta.jpg"
 ---
 
-
 <!-- Projects Section -->
-<section class="py-16">
-    <div class="container mx-auto px-4">
-      
-      <!-- Page Title & Subtitle -->
-      <div class="text-center mb-12">
-        <h1 class="text-3xl sm:text-4xl font-bold mb-4">My Projects</h1>
-        <p class="max-w-2xl mx-auto text-gray-600">
-          Explore some of my recent work and projects that showcase my expertise in software development.
-        </p>
-      </div>
-      
-      <!-- Stats Row -->
-      <div class="flex flex-wrap justify-center gap-6 mb-12">
-        <div class="text-center">
-          <h3 class="text-2xl font-bold text-gray-800">25+</h3>
-          <p class="text-gray-500">Total Projects</p>
-        </div>
-        <div class="text-center">
-          <h3 class="text-2xl font-bold text-gray-800">1.2k+</h3>
-          <p class="text-gray-500">GitHub Stars</p>
-        </div>
-        <div class="text-center">
-          <h3 class="text-2xl font-bold text-gray-800">15+</h3>
-          <p class="text-gray-500">Technologies</p>
-        </div>
-        <div class="text-center">
-          <h3 class="text-2xl font-bold text-gray-800">5+</h3>
-          <p class="text-gray-500">Years Experience</p>
-        </div>
-      </div>
-      
-      <!-- Filter Bar (static for now) -->
-      <div class="flex flex-wrap justify-center gap-4 mb-12">
-        <button class="px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300 text-gray-700">All</button>
-        <button class="px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300 text-gray-700">Web Apps</button>
-        <button class="px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300 text-gray-700">Mobile</button>
-        <button class="px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300 text-gray-700">AI/ML</button>
-        <button class="px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300 text-gray-700">Blockchain</button>
-      </div>
-      
-      <!-- Featured Projects -->
-      <div class="mb-12">
-        <h2 class="text-2xl font-bold text-center mb-6">Featured Projects</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-          {% for project in site.data.projects.featured_projects %}
-          <div class="bg-white rounded-lg shadow overflow-hidden transition duration-300 transform hover:scale-105">
-            <img src="{{ project.image }}" alt="{{ project.title }} Banner" class="w-full h-48 object-cover">
-            <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2">{{ project.title }}</h3>
-              <p class="text-gray-600 mb-4">
-                {{ project.description }}
-              </p>
-              <div class="text-sm text-gray-500 mb-4">
-                <strong>Tech:</strong> {{ project.tech }}
-              </div>
-              <a href="{{ project.details_link }}" class="text-blue-500 hover:underline font-medium">
-                Learn More
-              </a>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-      
-      <!-- More Projects -->
-      <div>
-        <h2 class="text-2xl font-bold text-center mb-6">More Projects</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-          {% for project in site.data.projects.more_projects %}
-          <div class="bg-white rounded-lg shadow overflow-hidden transition duration-300 transform hover:scale-105">
-            <img src="{{ project.image }}" alt="{{ project.title }} Banner" class="w-full h-48 object-cover">
-            <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2">{{ project.title }}</h3>
-              <p class="text-gray-600 mb-4">
-                {{ project.description }}
-              </p>
-              <div class="text-sm text-gray-500 mb-4">
-                <strong>Tech:</strong> {{ project.tech }}
-              </div>
-              <a href="{{ project.details_link }}" class="text-blue-500 hover:underline font-medium">
-                Learn More
-              </a>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-      
+<section class="py-16 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4">
+    
+    <!-- Page Title & Subtitle -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold mb-4 text-gray-900">{{ site.data.projects.title }}</h1>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        {{ site.data.projects.description }}
+      </p>
     </div>
-  </section>
+    
+    <!-- Filter Bar -->
+    <div class="bg-white rounded-lg shadow p-6 mb-12">
+      <h3 class="text-lg font-semibold text-gray-800 mb-4">Filter by Category:</h3>
+      <div class="flex flex-wrap gap-2">
+        {% for category in site.data.projects.categories %}
+        <button 
+          class="category-filter px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 {% if forloop.first %}bg-blue-600 text-white{% else %}bg-gray-200 text-gray-700 hover:bg-gray-300{% endif %}"
+          data-category="{{ category.id }}">
+          {{ category.name }}
+        </button>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+      {% for project in site.data.projects.list %}
+      <div class="project-card bg-white rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 ease-in-out border border-gray-200 overflow-hidden" 
+           data-categories="{% for cat in project.categories %}{{ cat }}{% unless forloop.last %},{% endunless %}{% endfor %}">
+        
+        <!-- Project Image -->
+        <img src="{{ project.image }}" alt="{{ project.name }}" class="w-full h-48 object-cover">
+        
+        <!-- Project Content -->
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">{{ project.name }}</h3>
+          
+          <!-- Categories -->
+          {% if project.categories %}
+          <div class="flex flex-wrap gap-1 mb-3">
+            {% for cat in project.categories %}
+            <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">{{ cat }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+          
+          <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+            {{ project.description }}
+          </p>
+          
+          <!-- Tech Stack -->
+          {% if project.tech %}
+          <div class="text-xs text-gray-500 mb-3">
+            <strong>Tech:</strong> {{ project.tech }}
+          </div>
+          {% endif %}
+          
+          <!-- Impact Badge -->
+          {% if project.impact %}
+          <div class="bg-green-50 border border-green-200 rounded p-2 mb-4">
+            <p class="text-xs text-green-700 font-semibold">{{ project.impact }}</p>
+          </div>
+          {% endif %}
+          
+          <a href="{{ project.link }}" class="text-blue-600 hover:text-blue-800 font-semibold text-sm">
+            Learn More →
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- No Results Message -->
+    <div id="no-results" class="hidden text-center py-12">
+      <p class="text-lg text-gray-600">No projects found for this category.</p>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="text-center py-16 bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded-lg">
+      <h2 class="text-3xl font-bold mb-4">{{ site.data.projects.contact_title }}</h2>
+      <p class="text-lg mb-8 max-w-2xl mx-auto">{{ site.data.projects.contact_description }}</p>
+      <a href="{{ site.data.projects.contact_button_link }}" class="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+        {{ site.data.projects.contact_button_text }}
+      </a>
+    </section>
+
+  </div>
+</section>
+
+<!-- JavaScript for Filter Functionality -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const filterButtons = document.querySelectorAll('.category-filter');
+  const projectCards = document.querySelectorAll('.project-card');
+  const noResults = document.getElementById('no-results');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const selectedCategory = this.getAttribute('data-category');
+      
+      // Update active button
+      filterButtons.forEach(btn => {
+        btn.classList.remove('bg-blue-600', 'text-white');
+        btn.classList.add('bg-gray-200', 'text-gray-700');
+      });
+      this.classList.add('bg-blue-600', 'text-white');
+      this.classList.remove('bg-gray-200', 'text-gray-700');
+      
+      // Filter projects
+      let visibleCount = 0;
+      projectCards.forEach(card => {
+        const categories = card.getAttribute('data-categories').split(',');
+        
+        if (selectedCategory === 'all' || categories.includes(selectedCategory)) {
+          card.style.display = 'block';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      
+      // Show/hide no results message
+      noResults.classList.toggle('hidden', visibleCount > 0);
+    });
+  });
+});
+</script>

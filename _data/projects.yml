@@ -1,83 +1,96 @@
 title: "My Projects"
 description: "Showcasing transformative projects that demonstrate innovation, technical excellence, and measurable business impact."
 
+categories:
+  - name: "All"
+    id: "all"
+  - name: "No-Code Platform"
+    id: "no-code"
+  - name: "AI/ML"
+    id: "ai-ml"
+  - name: "SaaS"
+    id: "saas"
+  - name: "Real-Time Systems"
+    id: "realtime"
+  - name: "Analytics"
+    id: "analytics"
+  - name: "Enterprise"
+    id: "enterprise"
+
 list:
   - name: "No-Code Website Builder"
-    description: "Revolutionary drag-and-drop website builder enabling non-technical users to design and launch professional websites in minutes. Reduced client onboarding from 2 months to 2 hours (99% improvement). Features component-based system, real-time preview, responsive design, and seamless publishing workflows. Empowering thousands of businesses to establish online presence without developers."
+    categories: ["no-code", "saas"]
+    description: "Revolutionary drag-and-drop website builder enabling non-technical users to design and launch professional websites in minutes. Reduced client onboarding from 2 months to 2 hours (99% improvement). Features component-based system, real-time preview, responsive design, and seamless publishing workflows."
     image: "https://placehold.co/400x250"
     link: "/projects/no-code-website-builder.html"
     impact: "99% reduction in onboarding time"
+    tech: "React, Node.js, MongoDB, Python"
+    year: "2023"
   
   - name: "AI-Powered Component Generation"
-    description: "Intelligent system that automatically generates website components based on design requirements and brand guidelines. Uses AI to learn user preferences and suggest optimal layouts based on industry best practices. Cut component development time by 70%. Designers and product managers can now generate custom components instantly without developer assistance."
+    categories: ["ai-ml", "no-code", "saas"]
+    description: "Intelligent system that automatically generates website components based on design requirements and brand guidelines. Uses AI to learn user preferences and suggest optimal layouts. Cut component development time by 70%."
     image: "https://placehold.co/400x250"
     link: "/projects/ai-component-generation.html"
     impact: "70% decrease in development time"
+    tech: "Python, TensorFlow, React, MongoDB"
+    year: "2023"
   
   - name: "Custom Validation Module"
-    description: "No-code validation system using Python, Uvicorn, and MongoDB. Empowers non-technical users to configure complex validation rules through intuitive UI - numeric ranges, string patterns, mobile formats, custom logic - without touching code. Eliminated developer bottlenecks and enabled support teams to handle requirements independently."
+    categories: ["no-code", "saas"]
+    description: "No-code validation system using Python, Uvicorn, and MongoDB. Empowers non-technical users to configure complex validation rules through intuitive UI without touching code. Eliminated developer bottlenecks entirely."
     image: "https://placehold.co/400x250"
     link: "/projects/custom-validation-module.html"
-    impact: "Zero developer dependency for rule changes"
+    impact: "Zero developer dependency"
+    tech: "Python, Uvicorn, MongoDB, React"
+    year: "2023"
   
   - name: "Global Event Tracking System"
-    description: "Comprehensive event tracking infrastructure using Google Tag Manager and Google Analytics. Captures custom events across platform modules and visualizes them in real-time dashboards. Provides clients with actionable insights into user behavior and engagement patterns. Drives data-informed decision making across organizations."
+    categories: ["analytics", "saas", "enterprise"]
+    description: "Comprehensive event tracking infrastructure using Google Tag Manager and Google Analytics. Captures custom events across platform modules and visualizes them in real-time dashboards. Provides actionable insights into user behavior."
     image: "https://placehold.co/400x250"
     link: "/projects/event-tracking-system.html"
+    impact: "Real-time analytics at scale"
+    tech: "Google Analytics, Google Tag Manager, JavaScript"
+    year: "2021"
   
   - name: "Universal Lead Management System"
-    description: "Dynamic lead capture solution accepting any form type. Integrates seamlessly with client websites and connects to virtually any CRM (Salesforce, HubSpot, custom systems) through simple configuration. Reduces integration from weeks to minutes. Centralized lead management across diverse business ecosystems."
+    categories: ["saas", "enterprise"]
+    description: "Dynamic lead capture solution accepting any form type. Integrates seamlessly with client websites and connects to virtually any CRM (Salesforce, HubSpot, custom systems). Reduces integration from weeks to minutes."
     image: "https://placehold.co/400x250"
     link: "/projects/lead-management-system.html"
+    impact: "Multi-CRM integration"
+    tech: "PHP, Node.js, MongoDB, REST APIs"
+    year: "2021"
   
   - name: "Emotion Detection Platform"
-    description: "Analyzed viewer responses for major entertainment studios (Marvel, Big Brother). Registered users watched trailers while WebRTC captured facial expressions. System processed recordings frame-by-frame analyzing emotions (happiness, anger, surprise, engagement) and mapped them to specific moments. Provided production houses unprecedented insights into audience emotional responses."
+    categories: ["ai-ml", "realtime", "enterprise"]
+    description: "Real-time emotion recognition system for major entertainment studios (Marvel, Big Brother). Analyzed viewer responses using WebRTC and face detection APIs. Processed recordings frame-by-frame analyzing emotions and mapped to specific moments."
     image: "https://placehold.co/400x250"
     link: "/projects/emotion-detection-platform.html"
+    impact: "Emotion analytics for studios"
+    tech: "WebRTC, Python, Face Detection APIs, Real-time Processing"
+    year: "2017"
   
   - name: "Stock Market Trading Platform"
-    description: "Enterprise-scale system handling millions of concurrent users with real-time stock data. Implemented sophisticated caching strategies, optimized database queries for high-traffic scenarios, and leveraged AWS services (EC2, S3, RDS, CloudFront). Demonstrated architectural thinking for handling massive scale without compromising performance."
+    categories: ["enterprise", "realtime", "analytics"]
+    description: "Enterprise-scale system handling millions of concurrent users with real-time stock data. Implemented sophisticated caching strategies, optimized database queries for high-traffic scenarios, and leveraged AWS services (EC2, S3, RDS, CloudFront)."
     image: "https://placehold.co/400x250"
     link: "/projects/stock-market-trading.html"
+    impact: "Millions of concurrent users"
+    tech: "PHP, MySQL, Redis, AWS, JavaScript"
+    year: "2018"
   
   - name: "Taxi Booking Platform"
-    description: "Full-featured application with separate interfaces for passengers and drivers. Implemented real-time ride management, geolocation-based matching, payment integration, and analytics-driven admin dashboard. End-to-end solution demonstrating expertise from user authentication to financial reporting."
+    categories: ["enterprise", "realtime", "saas"]
+    description: "Full-featured application with separate interfaces for passengers and drivers. Implemented real-time ride management, geolocation-based matching, payment integration, and analytics-driven admin dashboard. End-to-end solution from authentication to financial reporting."
     image: "https://placehold.co/400x250"
     link: "/projects/taxi-booking-platform.html"
+    impact: "Real-time ride matching"
+    tech: "PHP, CakePHP, MySQL, JavaScript, Google Maps API"
+    year: "2016"
 
 contact_title: "Interested in Collaborating?"
 contact_description: "If you're looking to create transformative technology or explore innovative solutions, let's connect."
 contact_button_text: "Contact Me"
 contact_button_link: "/contact.html"
-
-featured_projects:
-  - title: "No-Code Website Builder"
-    description: "Drag-and-drop platform reducing onboarding from 2 months to 2 hours. Served thousands of businesses with component-based architecture and real-time preview."
-    tech: "React, Node.js, MongoDB, Python"
-    image: "https://placehold.co/600x400"
-    details_link: "/projects/no-code-website-builder.html"
-
-  - title: "AI-Powered Component Generation"
-    description: "Intelligent component generation system cutting development time by 70%. Enables designers to generate custom components instantly without developer assistance."
-    tech: "Python, TensorFlow, React, MongoDB"
-    image: "https://placehold.co/600x400"
-    details_link: "/projects/ai-component-generation.html"
-
-more_projects:
-  - title: "Custom Validation Module"
-    description: "No-code validation enabling non-technical teams to configure complex validation rules independently. Eliminated developer bottlenecks entirely."
-    tech: "Python, Uvicorn, MongoDB, React"
-    image: "https://placehold.co/600x400"
-    details_link: "/projects/custom-validation-module.html"
-
-  - title: "Emotion Detection Platform"
-    description: "Real-time emotion recognition system for major entertainment studios. Analyzed viewer responses using WebRTC and face detection APIs."
-    tech: "WebRTC, Python, Face Detection APIs, Real-time Processing"
-    image: "https://placehold.co/600x400"
-    details_link: "/projects/emotion-detection-platform.html"
-
-  - title: "SmartHealth Connect"
-    description: "A comprehensive healthcare management system that connects providers, manages patient records, and streamlines appointment scheduling and billing."
-    tech: "React.js, Django, PostgreSQL"
-    image: "https://placehold.co/600x400"
-    details_link: "/projects/smarthealth-connect.html"
