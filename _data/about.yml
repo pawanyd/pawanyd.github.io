@@ -2,31 +2,122 @@ title: "About Me"
 description: "Get to know more about my professional journey, experience, and skills."
 
 intro_title: "Who I Am"
-intro_description: "I am a passionate software developer with over 9 years of experience in designing and developing web applications. My expertise includes backend and frontend technologies, cloud solutions, and agile methodologies."
+intro_description: "A seasoned technology professional with over 9 years of progressive experience in software engineering, system architecture, and innovative product development. I've evolved from a curious learner to a principal architect, consistently pushing the boundaries of what's possible with technology while solving complex business challenges at scale."
 image: "/assets/images/pawan.png"
+
+professional_title: "Professional Summary"
+professional_summary: "Pawan Kumar - Principal Software Developer & Technical Architect"
 
 experience_title: "Professional Experience"
 experience_list:
   - company: "SingleInterface"
     role: "Principal Software Developer"
     duration: "May 2019 - Present"
+    description: "Led transformative projects including no-code website builder (99% reduction in onboarding), AI-powered component generation (70% faster development), custom validation module, and microservices migration. Architected global event tracking and universal lead management systems serving millions of users."
+    highlights:
+      - "No-Code Website Builder: Reduced client onboarding from 2 months to 2 hours"
+      - "AI-Powered Component Generation: 70% decrease in component development time"
+      - "Custom Validation Module: Eliminated developer bottlenecks with no-code configuration"
+      - "Microservices Transformation: Strategic migration for improved scalability"
+  
   - company: "Always Infotech Pvt. Ltd."
-    role: "Senior Software Developer"
+    role: "Senior Software Engineer → Full Stack Software Developer"
     duration: "June 2018 - May 2019"
-  - company: "ASHMAR Technologies"
-    role: "Senior Software Developer"
+    description: "Developed reusable component libraries and architected Stock Market Trading Platform handling millions of concurrent users. Designed LLD/HLD for complex systems, implemented caching strategies, and pioneered microservices exploration."
+    highlights:
+      - "Stock Market Trading Platform for millions of concurrent users"
+      - "Reusable Component Library across teams"
+      - "System design expertise (LLD/HLD)"
+      - "AWS cloud services implementation"
+  
+  - company: "Monet Network (Ashmarip Company)"
+    role: "Software Engineer → Senior Software Engineer"
     duration: "Oct 2017 - May 2018"
+    description: "Built Emotion Detection Platform analyzing viewer responses for major entertainment studios including Marvel and Big Brother. Implemented WebRTC video capture, face detection APIs, and real-time emotion recognition."
+    highlights:
+      - "Emotion Detection Platform with real-time analysis"
+      - "WebRTC integration for video processing"
+      - "Face detection and emotion recognition APIs"
+      - "Comprehensive emotion graphs and sentiment timelines"
+  
   - company: "Grepix Infotech Pvt. Ltd."
-    role: "Software Developer"
+    role: "Associate Software Developer → Software Engineer"
     duration: "Mar 2016 - Oct 2017"
+    description: "Started as Associate Software Developer learning PHP, CakePHP, MySQL fundamentals. Promoted to Software Engineer where I developed Taxi Booking Platform with real-time ride management, geolocation-based matching, and payment integration."
+    highlights:
+      - "Taxi Booking Platform (passenger & driver interfaces)"
+      - "Real-time ride management system"
+      - "Geolocation-based matching"
+      - "Payment integration & analytics dashboard"
 
 skills_title: "Technical Skills"
-skills_list:
-  - PHP, Laravel, CakePHP, RESTful APIs
-  - JavaScript, Vue.js, React, Tailwind CSS
-  - Cloud Technologies: AWS, Google APIs, Docker
-  - Database Management: MySQL, MongoDB
-  - Agile Development & Best Coding Practices
+skills_category:
+  - category: "Backend Excellence"
+    skills:
+      - "PHP (expert-level), CakePHP, Python"
+      - "RESTful APIs, SOAP APIs"
+      - "MySQL (optimization, indexing), MongoDB, Redis"
+      - "Microservices, MVC Architecture, Event-Driven Architecture"
+      - "System Design (LLD/HLD)"
+  
+  - category: "Frontend Proficiency"
+    skills:
+      - "JavaScript, jQuery, AJAX, WebRTC"
+      - "Dynamic UI development, Real-time interfaces"
+      - "Responsive design"
+  
+  - category: "Cloud & DevOps"
+    skills:
+      - "AWS: EC2, S3, RDS, CloudFront, Load Balancers, Auto-scaling"
+      - "Linux Server Management"
+      - "Deployment Pipelines, Performance Monitoring"
+  
+  - category: "Google Ecosystem"
+    skills:
+      - "Google Analytics, Google Tag Manager"
+      - "Google My Business, Google Search Console"
+      - "Deep API integration experience"
+  
+  - category: "Emerging Technologies"
+    skills:
+      - "AI/ML: Emotion recognition, AI-powered generation, NLP"
+      - "Real-time Processing: WebRTC, Video processing, Face detection"
+      - "SaaS Development: Multi-tenant architecture, Scalable product design"
+  
+  - category: "Development Tools & Practices"
+    skills:
+      - "Postman, VSCode, Git"
+      - "Agile methodologies, Code review"
+      - "Mentoring, Technical documentation"
+
+core_strengths_title: "Core Strengths"
+core_strengths:
+  - title: "Architectural Thinking"
+    description: "Design systems with deep thinking about scalability, maintainability, and future growth. Approach problems with architectural rigor whether handling millions of concurrent users or designing independent microservices."
+  
+  - title: "Innovation with Purpose"
+    description: "Drawn to challenges that push technological boundaries. Focus on solving real problems in transformative ways with measurable business impact."
+  
+  - title: "Empowering Non-Technical Users"
+    description: "Democratize technology through tools like no-code website builders and validation modules that empower non-developers to accomplish technical tasks."
+  
+  - title: "Performance at Scale"
+    description: "Obsessed with performance - optimizing database queries, implementing caching strategies, architecting microservices for high availability."
+  
+  - title: "Mentorship & Leadership"
+    description: "Build teams not just systems. Mentor junior developers, conduct code reviews, establish standards, and champion best practices."
+  
+  - title: "Continuous Learning"
+    description: "Maintain insatiable curiosity - from PHP fundamentals to cutting-edge AI integration, treating every project as a learning opportunity."
+
+measurable_impact_title: "Measurable Impact"
+measurable_impact:
+  - "99% reduction in client onboarding time (2 months to 2 hours) with no-code website builder"
+  - "70% decrease in component development time through AI integration"
+  - "Millions of users served across high-traffic platforms with minimal latency"
+  - "Zero developer dependency for validation rule changes through custom validation module"
+  - "Multiple reusable packages adopted across teams reducing redundant development"
+  - "Enterprise-scale systems handling real-time stock trading and millions of concurrent sessions"
 
 contact_title: "Let's Connect"
 contact_description: "I'm always open to discussing new projects, innovative ideas, and opportunities to be part of your vision."
