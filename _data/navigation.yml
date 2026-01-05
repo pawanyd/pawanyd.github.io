@@ -8,6 +8,6 @@
   link: /contact
 - name: Blogs
   link: /blog
-- name: Download Resume
+- name: Resume
   link: /assets/resume.pdf
   target: _blank
