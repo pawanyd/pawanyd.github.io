@@ -83,5 +83,10 @@ contact:
   button_text: "Get in Touch"
   button_link: "/contact.html"
 
+rss:
+  title: "Stay Updated"
+  description: "Follow my latest insights on software development, system architecture, and technology trends. Subscribe to my RSS feed to never miss a post."
+  cta_text: "Subscribe to RSS Feed"
+
 footer:
   text: "Pawan Kumar - Principal Software Developer. All Rights Reserved."

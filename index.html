@@ -97,3 +97,19 @@ meta_image: "/assets/images/profile-meta.jpg"
     {{ site.data.home.contact.button_text }}
   </a>
 </section>
+
+<!-- RSS Feed Section -->
+<section class="text-center py-16 bg-gray-50">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-4xl font-bold text-gray-900">{{ site.data.home.rss.title }}</h2>
+    <p class="mt-4 text-lg text-gray-600">{{ site.data.home.rss.description }}</p>
+    <a href="/feed.xml"
+      class="mt-8 inline-flex items-center gap-3 bg-orange-500 text-white px-8 py-4 rounded-lg text-lg hover:bg-orange-600 font-semibold transition-colors duration-200 shadow-lg">
+      <i class="fas fa-rss text-xl"></i>
+      {{ site.data.home.rss.cta_text }}
+    </a>
+    <p class="mt-6 text-sm text-gray-600">
+      📱 Works with Feedly, Inoreader, and any RSS reader  |  📧 No spam, no ads, pure content
+    </p>
+  </div>
+</section>
