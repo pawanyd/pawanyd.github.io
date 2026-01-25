@@ -21,7 +21,7 @@ list:
   - name: "No-Code Website Builder"
     categories: ["no-code", "saas"]
     description: "Revolutionary drag-and-drop website builder enabling non-technical users to design and launch professional websites in minutes. Reduced client onboarding from 2 months to 2 hours (99% improvement). Features component-based system, real-time preview, responsive design, and seamless publishing workflows."
-    image: "https://placehold.co/400x250"
+    image: "/assets/images/projects/no-code-website-builder-ui-screenshot.webp"
     link: "/projects/no-code-website-builder.html"
     impact: "99% reduction in onboarding time"
     tech: "React, Node.js, MongoDB, Python"
@@ -30,7 +30,7 @@ list:
   - name: "AI-Powered Component Generation"
     categories: ["ai-ml", "no-code", "saas"]
     description: "Intelligent system that automatically generates website components based on design requirements and brand guidelines. Uses AI to learn user preferences and suggest optimal layouts. Cut component development time by 70%."
-    image: "https://placehold.co/400x250"
+    image: "/assets/images/projects/ai-powered-component-generation-interface.webp"
     link: "/projects/ai-component-generation.html"
     impact: "70% decrease in development time"
     tech: "Python, TensorFlow, React, MongoDB"
@@ -39,7 +39,7 @@ list:
   - name: "Custom Validation Module"
     categories: ["no-code", "saas"]
     description: "No-code validation system using Python, Uvicorn, and MongoDB. Empowers non-technical users to configure complex validation rules through intuitive UI without touching code. Eliminated developer bottlenecks entirely."
-    image: "https://placehold.co/400x250"
+    image: "/assets/images/projects/custom-validation-module-dashboard.webp"
     link: "/projects/custom-validation-module.html"
     impact: "Zero developer dependency"
     tech: "Python, Uvicorn, MongoDB, React"
@@ -48,7 +48,7 @@ list:
   - name: "Global Event Tracking System"
     categories: ["analytics", "saas", "enterprise"]
     description: "Comprehensive event tracking infrastructure using Google Tag Manager and Google Analytics. Captures custom events across platform modules and visualizes them in real-time dashboards. Provides actionable insights into user behavior."
-    image: "https://placehold.co/400x250"
+    image: "/assets/images/projects/event-tracking-analytics-dashboard.webp"
     link: "/projects/event-tracking-system.html"
     impact: "Real-time analytics at scale"
     tech: "Google Analytics, Google Tag Manager, JavaScript"
@@ -57,7 +57,7 @@ list:
   - name: "Universal Lead Management System"
     categories: ["saas", "enterprise"]
     description: "Dynamic lead capture solution accepting any form type. Integrates seamlessly with client websites and connects to virtually any CRM (Salesforce, HubSpot, custom systems). Reduces integration from weeks to minutes."
-    image: "https://placehold.co/400x250"
+    image: "/assets/images/projects/universal-lead-management-crm-system.webp"
     link: "/projects/lead-management-system.html"
     impact: "Multi-CRM integration"
     tech: "PHP, Node.js, MongoDB, REST APIs"
@@ -66,7 +66,7 @@ list:
   - name: "Emotion Detection Platform"
     categories: ["ai-ml", "realtime", "enterprise"]
     description: "Real-time emotion recognition system for major entertainment studios (Marvel, Big Brother). Analyzed viewer responses using WebRTC and face detection APIs. Processed recordings frame-by-frame analyzing emotions and mapped to specific moments."
-    image: "https://placehold.co/400x250"
+    image: "/assets/images/projects/emotion-detection-platform-interface.webp"
     link: "/projects/emotion-detection-platform.html"
     impact: "Emotion analytics for studios"
     tech: "WebRTC, Python, Face Detection APIs, Real-time Processing"
@@ -75,7 +75,7 @@ list:
   - name: "Stock Market Trading Platform"
     categories: ["enterprise", "realtime", "analytics"]
     description: "Enterprise-scale system handling millions of concurrent users with real-time stock data. Implemented sophisticated caching strategies, optimized database queries for high-traffic scenarios, and leveraged AWS services (EC2, S3, RDS, CloudFront)."
-    image: "https://placehold.co/400x250"
+    image: "/assets/images/projects/stock-market-trading-platform-dashboard.webp"
     link: "/projects/stock-market-trading.html"
     impact: "Millions of concurrent users"
     tech: "PHP, MySQL, Redis, AWS, JavaScript"
@@ -84,7 +84,7 @@ list:
   - name: "Taxi Booking Platform"
     categories: ["enterprise", "realtime", "saas"]
     description: "Full-featured application with separate interfaces for passengers and drivers. Implemented real-time ride management, geolocation-based matching, payment integration, and analytics-driven admin dashboard. End-to-end solution from authentication to financial reporting."
-    image: "https://placehold.co/400x250"
+    image: "/assets/images/projects/taxi-booking-platform-mobile-app.webp"
     link: "/projects/taxi-booking-platform.html"
     impact: "Real-time ride matching"
     tech: "PHP, CakePHP, MySQL, JavaScript, Google Maps API"
