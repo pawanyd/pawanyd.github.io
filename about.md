@@ -82,6 +82,35 @@ meta_image: "/assets/images/about-meta-image.jpg"
   </div>
 </section>
 
+<!-- GitHub Integration Widget Section -->
+<section class="github-widget-section">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-4xl font-bold text-gray-800">GitHub Presence</h2>
+    <p class="text-gray-700 text-lg max-w-2xl mx-auto mt-2">Check out my open-source contributions and projects on GitHub</p>
+    
+    <!-- GitHub Stats -->
+    <div id="github-stats" class="mt-8">
+      <div class="github-stat loading-skeleton" style="height: 120px;"></div>
+      <div class="github-stat loading-skeleton" style="height: 120px;"></div>
+      <div class="github-stat loading-skeleton" style="height: 120px;"></div>
+      <div class="github-stat loading-skeleton" style="height: 120px;"></div>
+    </div>
+
+    <!-- GitHub Repositories -->
+    <h3 class="text-2xl font-semibold text-gray-800 mt-12 mb-6">Featured Repositories</h3>
+    <div id="github-repos" class="mt-6">
+      <div class="github-repo-card loading-skeleton" style="height: 200px;"></div>
+      <div class="github-repo-card loading-skeleton" style="height: 200px;"></div>
+      <div class="github-repo-card loading-skeleton" style="height: 200px;"></div>
+    </div>
+
+    <!-- CTA Link -->
+    <a href="https://github.com/pawanyd" target="_blank" rel="noopener noreferrer" class="github-widget-cta">
+      <i class="fab fa-github"></i> Visit My GitHub Profile
+    </a>
+  </div>
+</section>
+
 <!-- Contact Section -->
 <section class="text-center py-12">
     <h2 class="text-3xl font-semibold text-gray-800">{{ site.data.about.contact_title }}</h2>
