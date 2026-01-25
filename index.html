@@ -102,16 +102,18 @@ meta_image: "/assets/images/profile-meta.jpg"
 <section class="text-center py-16 bg-gray-50">
   <div class="max-w-4xl mx-auto px-4">
     <h2 class="text-4xl font-bold text-gray-900">{{ site.data.home.rss.title }}</h2>
-    <p class="mt-4 text-lg text-gray-600">{{ site.data.home.rss.description }}</p>
-    <a href="/feed.xml"
-      class="mt-8 inline-flex items-center gap-3 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 shadow-lg"
-      style="background-color: #f97316; text-decoration: none;"
-      onmouseover="this.style.backgroundColor='#ea580c'"
-      onmouseout="this.style.backgroundColor='#f97316'">
-      <i class="fas fa-rss text-xl"></i>
-      {{ site.data.home.rss.cta_text }}
-    </a>
-    <p class="mt-6 text-sm text-gray-600">
+    <p class="mt-4 text-lg text-gray-600 mb-8">{{ site.data.home.rss.description }}</p>
+    <div class="flex justify-center">
+      <a href="/feed.xml"
+        class="flex items-center gap-3 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 shadow-lg"
+        style="background-color: #f97316; text-decoration: none;"
+        onmouseover="this.style.backgroundColor='#ea580c'"
+        onmouseout="this.style.backgroundColor='#f97316'">
+        <i class="fas fa-rss text-xl"></i>
+        {{ site.data.home.rss.cta_text }}
+      </a>
+    </div>
+    <p class="mt-8 text-sm text-gray-600">
       📱 Works with Feedly, Inoreader, and any RSS reader  |  📧 No spam, no ads, pure content
     </p>
   </div>
