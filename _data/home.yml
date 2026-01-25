@@ -54,17 +54,17 @@ projects:
   list:
     - name: "No-Code Website Builder"
       description: "Revolutionary drag-and-drop platform enabling non-technical users to build professional websites in minutes. Reduced client onboarding from 2 months to 2 hours—a 99% improvement."
-      image: "https://placehold.co/400x250"
+      image: "/assets/images/projects/no-code-website-builder-ui-screenshot.webp"
       link: "/projects/no-code-website-builder.html"
     
     - name: "AI-Powered Component Generation"
       description: "Intelligent system generating custom website components automatically. Cut component development time by 70%. Designers generate components instantly through AI, then refine in the editor."
-      image: "https://placehold.co/400x250"
+      image: "/assets/images/projects/ai-powered-component-generation-interface.webp"
       link: "/projects/ai-powered-component-generation.html"
     
     - name: "Custom Validation Module"
       description: "No-code validation system (Python, Uvicorn, MongoDB) empowering non-technical teams to configure complex validation rules—numeric ranges, patterns, custom logic—without code."
-      image: "https://placehold.co/400x250"
+      image: "/assets/images/projects/custom-validation-module-dashboard.webp"
       link: "/projects/custom-validation-module.html"
 
 highlights:
