@@ -8,10 +8,10 @@
   link: /contact
 - name: Blogs
   link: /blog
+- name: Resume
+  link: /assets/resume.pdf
+  target: _blank
 - name: RSS
   link: /feed.xml
   target: _blank
   icon: fas fa-rss
-- name: Resume
-  link: /assets/resume.pdf
-  target: _blank
