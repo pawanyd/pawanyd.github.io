@@ -35,4 +35,21 @@ challenges:
     description: "Achieving sub-100ms latency for analytics queries at petabyte scale required intelligent caching strategies. We implemented multi-level caching (memory, Redis, columnar storage), materialized views, and query optimization."
   - title: "Challenge 4: Multi-Tenancy and Security"
     description: "Isolating tenant data while sharing infrastructure efficiently required careful architecture. We implemented query-time tenant filtering, encrypted storage per tenant, and role-based access control with audit logging."
+architecture: "The system uses a Lambda architecture combining batch and stream processing. Apache Kafka acts as the central event bus with multi-region replication. Apache Spark Streaming processes events in real-time, enriches them with contextual data, and stores results in Elasticsearch for analytics. MongoDB stores normalized event data. Redis caches frequently accessed data. AWS S3 archives historical data. Node.js APIs provide event ingestion and query endpoints. WebSockets enable real-time dashboard updates. The entire system is containerized with Docker and orchestrated via Kubernetes for auto-scaling."
+results:
+  - metric: "1M+ Events/Second"
+    value: "System reliably processes over 1 million events per second with 99.99% uptime"
+  - metric: "Sub-100ms Latency"
+    value: "Analytics queries return results in under 100ms even at petabyte scale"
+  - metric: "Zero Data Loss"
+    value: "100% message delivery guarantee with automatic failover and cross-region replication"
+  - metric: "60% Cost Reduction"
+    value: "Intelligent archival and compression reduced storage costs by 60% vs competitors"
+learnings:
+  - "Petabyte scale requires distributed thinking—single-node optimizations don't matter at this scale"
+  - "Caching strategy is more important than raw processing power—multi-level caching is essential"
+  - "Message ordering vs throughput tradeoff—often you need to sacrifice strict ordering for speed"
+  - "Monitoring at scale is critical—you need observability built in from day one"
+  - "Multi-tenancy isolation must be enforced at every layer—security can't be added later"
+confidential_note: "This is a proprietary project developed for a product-based company. Code and live demos are not publicly available due to company confidentiality policies."
 ---

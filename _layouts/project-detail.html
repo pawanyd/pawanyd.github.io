@@ -136,12 +136,81 @@ layout: profile
       <h2 class="text-2xl font-bold text-gray-900 mb-6">Challenges & Solutions</h2>
       <div class="space-y-6">
         {% for challenge in page.challenges %}
-        <div>
+        <div class="border-l-4 border-blue-600 pl-6 py-2">
           <h3 class="font-bold text-gray-900 mb-2">{{ challenge.title }}</h3>
           <p class="text-gray-700">{{ challenge.description }}</p>
         </div>
         {% endfor %}
       </div>
+    </div>
+    {% endif %}
+    
+    <!-- Architecture/Technical Details -->
+    {% if page.architecture %}
+    <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Architecture & Design</h2>
+      <p class="text-gray-700 leading-relaxed">{{ page.architecture }}</p>
+    </div>
+    {% endif %}
+    
+    <!-- Results & Metrics -->
+    {% if page.results %}
+    <div class="bg-green-50 rounded-lg shadow-lg p-8 mb-8 border border-green-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Results & Impact Metrics</h2>
+      <div class="space-y-4">
+        {% for result in page.results %}
+        <div class="flex items-start">
+          <span class="text-green-600 font-bold text-2xl mr-4">📊</span>
+          <div>
+            <p class="font-semibold text-gray-900">{{ result.metric }}</p>
+            <p class="text-gray-700 text-sm">{{ result.value }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+    
+    <!-- Key Learnings -->
+    {% if page.learnings %}
+    <div class="bg-yellow-50 rounded-lg shadow-lg p-8 mb-8 border border-yellow-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Key Learnings & Insights</h2>
+      <ul class="space-y-3">
+        {% for learning in page.learnings %}
+        <li class="flex items-start">
+          <span class="text-yellow-600 font-bold mr-3">💡</span>
+          <span class="text-gray-700">{{ learning }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    
+    <!-- Links Section -->
+    {% if page.github_link or page.live_link %}
+    <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">View Project</h2>
+      <div class="flex flex-wrap gap-4">
+        {% if page.github_link %}
+        <a href="{{ page.github_link }}" target="_blank" class="inline-flex items-center gap-2 bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-colors font-semibold">
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
+        {% endif %}
+        {% if page.live_link %}
+        <a href="{{ page.live_link }}" target="_blank" class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
+          <i class="fas fa-external-link-alt"></i> Visit Live Project
+        </a>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+    
+    <!-- Confidentiality Note -->
+    {% if page.confidential_note %}
+    <div class="bg-blue-50 rounded-lg shadow-lg p-8 mb-8 border border-blue-200">
+      <p class="text-sm text-blue-700">
+        <i class="fas fa-lock mr-2"></i>{{ page.confidential_note }}
+      </p>
     </div>
     {% endif %}
     

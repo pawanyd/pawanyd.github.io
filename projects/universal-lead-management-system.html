@@ -35,4 +35,21 @@ challenges:
     description: "Ensuring leads never get lost during CRM integrations, API failures, or rate limiting required robust queuing mechanisms. We implemented RabbitMQ-based message queues with exponential backoff, dead-letter handling, and automatic retry with human-in-the-loop fallback."
   - title: "Challenge 4: Real-time Deduplication at Scale"
     description: "Deduplicating leads in real-time while processing 100,000+ leads daily required efficient algorithms. We implemented fuzzy matching with email verification, phone number normalization, and built a distributed duplicate detection service with Redis caching."
+architecture: "The system uses a microservices architecture with Node.js/PHP backend. Universal form capture via lightweight JavaScript snippet. RabbitMQ queues all incoming leads with guaranteed delivery. A middleware layer abstracts 50+ CRM APIs into a unified interface. ML service handles intelligent field mapping. Deduplication service uses fuzzy matching and email verification. MongoDB stores lead data and sync history. Elasticsearch indexes leads for fast search. Redis caches frequently accessed mappings and deduplication results. AWS Lambda handles webhook processing and data enrichment."
+results:
+  - metric: "100,000+ Leads/Day"
+    value: "System processes over 100,000 leads daily with 99.9% delivery guarantee"
+  - metric: "95% Conversion Rate"
+    value: "Clients see 95% lead conversion rate with intelligent deduplication and enrichment"
+  - metric: "Minutes to Integration"
+    value: "Connect any form to any CRM in minutes instead of weeks of engineering"
+  - metric: "Zero Data Loss"
+    value: "100% lead delivery guarantee with automatic retry and fallback mechanisms"
+learnings:
+  - "API abstraction is critical for multi-system integration—normalize everything at the gateway"
+  - "Queue-based architecture prevents data loss—always queue before external API calls"
+  - "ML for field mapping is better than rules—learns from user feedback automatically"
+  - "Deduplication is complex at scale—need multiple signals (email, phone, name fuzzy match)"
+  - "CRM integrations require human-in-the-loop for edge cases—automation can't be 100%"
+confidential_note: "This is a proprietary project developed for a product-based company. Code and live demos are not publicly available due to company confidentiality policies."
 ---

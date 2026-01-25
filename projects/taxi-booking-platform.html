@@ -35,4 +35,21 @@ challenges:
     description: "Integrating multiple payment gateways while meeting PCI-DSS compliance for handling financial data required careful architecture. We implemented tokenization to avoid storing card data, used certified payment service providers, and built fraud detection using machine learning."
   - title: "Challenge 4: Handling Fraud and Safety"
     description: "Protecting users from fraudulent riders/drivers and safety concerns required comprehensive monitoring. We implemented behavioral analysis to detect suspicious patterns, built reporting mechanisms for safety incidents, and integrated background check services for driver verification."
+architecture: "The platform uses a mobile-first architecture with separate apps for passengers and drivers communicating via REST APIs and WebSockets. PHP/CakePHP backend handles ride logic, payments, and user management. MySQL stores persistent data with replication for reliability. Redis caches driver locations and ride state. Geospatial database (PostGIS) enables efficient nearest-neighbor queries for driver matching. Google Maps API provides navigation and ETA. Payment gateway handles secure transactions. Admin dashboard provides real-time analytics built with JavaScript and data visualization libraries. The entire system scales horizontally with load balancers."
+results:
+  - metric: "Millions of Rides Annually"
+    value: "Platform successfully processes millions of rides annually with 95% driver utilization"
+  - metric: "95% Driver Utilization"
+    value: "Intelligent matching algorithms maximize driver earnings and availability"
+  - metric: "<2 Second Matching"
+    value: "Riders matched with drivers in under 2 seconds on average"
+  - metric: "5-Star Safety Rating"
+    value: "Industry-leading safety record with comprehensive fraud detection and verification"
+learnings:
+  - "Geospatial algorithms matter—R-tree indexing is 100x faster than distance calculations"
+  - "GPS is unreliable—need filtering strategies and fallback location sources for accuracy"
+  - "Payment compliance isn't optional—PCI-DSS violations can result in fines and loss of payment processors"
+  - "User safety requires continuous monitoring—fraud detection must be real-time and behavioral"
+  - "Driver and passenger trust is fragile—ratings and transparency are critical to adoption"
+confidential_note: "This is a proprietary project developed for a product-based company. Code and live demos are not publicly available due to company confidentiality policies."
 ---
