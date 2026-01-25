@@ -24,7 +24,7 @@
                     {% if maxRelatedCounter < maxRelated %}
                         <article class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
                             <a href="{{ post.url }}" class="block">
-                                <img src="{{ post.image }}" alt="{{ post.title }}" class="w-full h-40 object-cover">
+                                <img src="{{ post.image }}" alt="{{ post.title }}" class="w-full h-40 object-cover" loading="lazy">
                             </a>
                             <div class="p-4">
                                 <span class="text-xs font-semibold text-blue-600 uppercase">{{ post.category }}</span>
@@ -56,7 +56,7 @@
                 {% if post.url != page.url %}
                     <article class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
                         <a href="{{ post.url }}" class="block">
-                            <img src="{{ post.image }}" alt="{{ post.title }}" class="w-full h-40 object-cover">
+                            <img src="{{ post.image }}" alt="{{ post.title }}" class="w-full h-40 object-cover" loading="lazy">
                         </a>
                         <div class="p-4">
                             <span class="text-xs font-semibold text-blue-600 uppercase">{{ post.category }}</span>

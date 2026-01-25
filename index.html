@@ -34,7 +34,7 @@ meta_image: "/assets/images/profile-meta.jpg"
           </div>
       </div>
       <div class="w-full lg:w-1/2 text-center p-6">
-          <img src="{{ site.data.home.about.image-stand }}" alt="About Me" class="rounded-lg shadow-lg w-full max-w-lg mx-auto">
+          <img src="{{ site.data.home.about.image-stand }}" alt="About Me" class="rounded-lg shadow-lg w-full max-w-lg mx-auto" loading="lazy">
       </div>
   </div>
 </section>
@@ -64,7 +64,7 @@ meta_image: "/assets/images/profile-meta.jpg"
       {% for project in site.data.home.projects.list %}
       <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out border border-gray-200 overflow-hidden">
         <a href="{{ project.link }}" class="block">
-          <img src="{{ project.image }}" alt="{{ project.name }}" class="w-full h-48 object-cover hover:opacity-80 transition-opacity">
+          <img src="{{ project.image }}" alt="{{ project.name }}" class="w-full h-48 object-cover hover:opacity-80 transition-opacity" loading="lazy">
         </a>
         <div class="p-6">
           <a href="{{ project.link }}" class="no-underline">

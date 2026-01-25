@@ -117,7 +117,7 @@
         const resultsHTML = posts.map(post => `
             <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl hover:scale-105 transition-transform duration-300 ease-in-out border border-gray-300">
                 <div class="relative">
-                    <img src="${post.image}" alt="${escapeHtml(post.title)}" class="w-full h-56 object-cover">
+                    <img src="${post.image}" alt="${escapeHtml(post.title)}" class="w-full h-56 object-cover" loading="lazy">
                     <span class="absolute top-2 left-2 bg-blue-600 text-white text-xs uppercase font-semibold px-3 py-1 rounded-lg shadow-md">${escapeHtml(post.category)}</span>
                 </div>
                 <div class="p-6">

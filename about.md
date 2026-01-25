@@ -20,7 +20,7 @@ meta_image: "/assets/images/about-meta-image.jpg"
             <p class="text-gray-600 mt-4">{{ site.data.about.intro_description }}</p>
         </div>
         <div class="w-full md:w-1/2 text-center">
-            <img src="{{ site.data.home.about.image-prof }}" alt="About Me" class="rounded-lg shadow-lg w-full md:w-2/3">
+            <img src="{{ site.data.home.about.image-prof }}" alt="About Me" class="rounded-lg shadow-lg w-full md:w-2/3" loading="lazy">
         </div>
     </div>
 </section>
