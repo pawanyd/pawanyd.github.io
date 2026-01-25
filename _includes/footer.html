@@ -3,7 +3,7 @@
     <div class="max-w-6xl mx-auto px-4">
         <p>&copy; {{ 'now' | date: "%Y" }} {{ site.data.home.footer.text }}</p>
         <div class="mt-4 flex justify-center gap-4 text-sm">
-            <a href="/feed.xml" class="hover:text-orange-400 transition flex items-center gap-1" title="RSS Feed">
+            <a href="/feed.xml" class="transition flex items-center gap-1" title="RSS Feed" style="color: #f97316; text-decoration: none;" onmouseover="this.style.color='#ea580c'" onmouseout="this.style.color='#f97316'">
                 <i class="fas fa-rss"></i> RSS Feed
             </a>
             <span class="text-gray-600">|</span>
