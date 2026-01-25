@@ -1,6 +1,17 @@
 <!-- Footer Section -->
 <footer class="bg-gray-900 text-white py-8 text-center mt-12">
     <div class="max-w-6xl mx-auto px-4">
+        <!-- Social Media Icons -->
+        <div class="flex justify-center gap-6 mb-6">
+            {% for social in site.data.social.social_links %}
+            <a href="{{ social.url }}" target="_blank" rel="noopener noreferrer" 
+               class="text-gray-400 hover:text-white transition-colors duration-200" 
+               title="{{ social.name | capitalize }}">
+                <i class="fab fa-{{ social.name }} text-2xl"></i>
+            </a>
+            {% endfor %}
+        </div>
+        
         <p>&copy; {{ 'now' | date: "%Y" }} {{ site.data.home.footer.text }}</p>
         <div class="mt-4 flex justify-center gap-4 text-sm">
             <a href="/feed.xml" class="transition flex items-center gap-1" title="RSS Feed" style="color: #f97316; text-decoration: none;" onmouseover="this.style.color='#ea580c'" onmouseout="this.style.color='#f97316'">

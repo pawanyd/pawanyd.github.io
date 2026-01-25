@@ -5,13 +5,11 @@ gem "jekyll"
 
 # gem "rails"
 
-# Gemfile
+# Jekyll plugins
 group :jekyll_plugins do
     gem 'jekyll-postcss'
-end
-
-group :jekyll_plugins do
     gem 'jekyll-paginate'
+    gem 'jekyll-feed'
 end
 
 gem 'bigdecimal'

@@ -15,3 +15,7 @@
   link: /feed.xml
   target: _blank
   icon: fas fa-rss
+- name: GitHub
+  link: https://github.com/pawanyd
+  target: _blank
+  icon: fab fa-github

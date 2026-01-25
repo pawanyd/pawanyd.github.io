@@ -99,6 +99,18 @@ meta_image: "/assets/images/about-meta-image.jpg"
 <section class="text-center py-12">
     <h2 class="text-3xl font-semibold text-gray-800">{{ site.data.about.contact_title }}</h2>
     <p class="mt-4 text-gray-600 text-lg max-w-2xl mx-auto">{{ site.data.about.contact_description }}</p>
+    
+    <!-- Social Media Links -->
+    <div class="flex justify-center gap-6 mt-6 mb-6">
+        {% for social in site.data.social.social_links %}
+        <a href="{{ social.url }}" target="_blank" rel="noopener noreferrer" 
+           class="text-blue-600 hover:text-blue-800 transition-colors duration-200 transform hover:scale-110" 
+           title="{{ social.name | capitalize }}">
+            <i class="fab fa-{{ social.name }} text-4xl"></i>
+        </a>
+        {% endfor %}
+    </div>
+    
     <a href="{{ site.data.about.contact_button_link }}" class="mt-6 inline-block bg-blue-500 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-600">
         {{ site.data.about.contact_button_text }}
     </a>
