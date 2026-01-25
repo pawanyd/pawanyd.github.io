@@ -3,6 +3,7 @@ layout: post-detail
 title: "The AI-Powered Future of Coding"
 date: 2024-12-15
 category: "Code | AI"
+tags: ["AI", "Future of Work", "Development", "Automation", "Innovation"]
 image: "/assets/images/posts/ai-power.webp"
 excerpt: "Artificial intelligence is transforming the way we develop software. AI-powered tools such as GitHub Copilot and SWE-agent are reshaping coding practices by automating repetitive tasks, offering real-time suggestions, and streamlining workflows. While these technologies boost productivity and efficiency, they also present challenges around code quality and security. In this post, we explore how AI is augmenting—rather than replacing—the human element in coding, and what this means for the future of software development."
 ---

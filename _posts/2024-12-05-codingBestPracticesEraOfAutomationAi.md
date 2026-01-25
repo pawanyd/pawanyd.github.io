@@ -3,6 +3,7 @@ layout: post-detail
 title: "Coding Best Practices in the Era of Automation and AI"
 date: 2024-12-05
 category: "AI"
+tags: ["Best Practices", "Code Quality", "AI", "Automation", "Development"]
 image: "/assets/images/posts/codebestpracticesautoera.webp"
 excerpt: "As software development rapidly evolves, automation and AI tools are revolutionizing the way we code. Tools like GitHub Copilot, SWE-agent, and various CI/CD platforms are streamlining repetitive tasks and accelerating development cycles. However, with these innovations come challenges—especially in maintaining code quality, ensuring security, and fostering a culture of collaboration. In this detailed post, we delve into how developers can adopt AI-powered tools while upholding best practices that keep code robust, secure, and maintainable."
 ---

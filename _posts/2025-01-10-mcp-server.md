@@ -3,6 +3,7 @@ layout: post-detail
 title: "Understanding the Model Context Protocol (MCP) Server"
 date: 2025-01-10
 category: "Technology"
+tags: ["MCP", "AI", "Development", "Integration", "Tools"]
 image: "/assets/images/posts/mcp-server.webp"
 excerpt: "The Model Context Protocol (MCP) is a lightweight protocol designed to facilitate efficient server-client communication. This blog explores its purpose, setup, implementation, and testing, providing a comprehensive guide for developers."
 ---
