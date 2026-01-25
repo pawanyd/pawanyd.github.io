@@ -25,22 +25,6 @@ meta_image: "/assets/images/about-meta-image.jpg"
     </div>
 </section>
 
-<!-- Experience Section -->
-<section class="py-12">
-    <div class="max-w-6xl mx-auto text-center">
-        <h2 class="text-3xl font-semibold text-gray-800">{{ site.data.about.experience_title }}</h2>
-        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {% for experience in site.data.about.experience_list %}
-            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-                <h3 class="text-2xl font-semibold text-gray-800">{{ experience.company }}</h3>
-                <p class="text-gray-600 mt-2">{{ experience.role }}</p>
-                <p class="text-gray-500 text-sm">{{ experience.duration }}</p>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
 <!-- Experience Timeline Section -->
 <section class="py-16 bg-gray-100">
     <div class="max-w-6xl mx-auto">
