@@ -35,7 +35,11 @@
                                 </a>
                                 <p class="text-sm text-gray-600 mt-2 line-clamp-2">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
                                 <div class="flex items-center justify-between mt-4">
-                                    <time class="text-xs text-gray-500">{{ post.date | date: "%b %d, %Y" }}</time>
+                                    <div class="flex items-center gap-2 text-xs text-gray-500">
+                                        <time>{{ post.date | date: "%b %d, %Y" }}</time>
+                                        <span>•</span>
+                                        <span>📖 {% assign words = post.content | number_of_words %}{% if words < 360 %}1 min{% else %}{{ words | divided_by: 180 }} min{% endif %}</span>
+                                    </div>
                                     <a href="{{ post.url }}" class="text-sm text-blue-600 hover:text-blue-800 font-semibold">
                                         Read More →
                                     </a>
@@ -67,7 +71,11 @@
                             </a>
                             <p class="text-sm text-gray-600 mt-2 line-clamp-2">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
                             <div class="flex items-center justify-between mt-4">
-                                <time class="text-xs text-gray-500">{{ post.date | date: "%b %d, %Y" }}</time>
+                                <div class="flex items-center gap-2 text-xs text-gray-500">
+                                    <time>{{ post.date | date: "%b %d, %Y" }}</time>
+                                    <span>•</span>
+                                    <span>📖 {% assign words = post.content | number_of_words %}{% if words < 360 %}1 min{% else %}{{ words | divided_by: 180 }} min{% endif %}</span>
+                                </div>
                                 <a href="{{ post.url }}" class="text-sm text-blue-600 hover:text-blue-800 font-semibold">
                                     Read More →
                                 </a>

@@ -124,7 +124,11 @@
                     <h2 class="text-2xl font-bold text-gray-900 hover:text-blue-600 transition duration-200">
                         <a href="${post.url}">${highlightText(post.title, query)}</a>
                     </h2>
-                    <p class="text-gray-500 mt-2 text-sm">Published on ${post.date}</p>
+                    <div class="flex items-center gap-3 text-gray-500 mt-2 text-sm">
+                        <time>${post.date}</time>
+                        <span>•</span>
+                        <span>📖 ${calculateReadingTime(post.content)}</span>
+                    </div>
                     ${post.tags && post.tags.length > 0 ? `
                         <div class="flex flex-wrap gap-2 mt-3">
                             ${post.tags.map(tag => `<span class="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-full">${escapeHtml(tag)}</span>`).join('')}
@@ -210,6 +214,14 @@
     // Escape regex special characters
     function escapeRegex(text) {
         return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    // Calculate reading time
+    function calculateReadingTime(content) {
+        if (!content) return '1 min read';
+        const words = content.trim().split(/\s+/).length;
+        const minutes = Math.ceil(words / 180);
+        return minutes === 1 ? '1 min read' : `${minutes} min read`;
     }
 
     // Debounce function

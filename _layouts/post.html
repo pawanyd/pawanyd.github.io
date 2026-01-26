@@ -9,6 +9,8 @@ layout: default
             <time>{{ page.date | date: "%b %d, %Y" }}</time>
             <span>•</span>
             <span>{{ page.category }}</span>
+            <span>•</span>
+            <span>📖 {% assign words = page.content | number_of_words %}{% if words < 360 %}1 min read{% else %}{{ words | divided_by: 180 }} min read{% endif %}</span>
         </div>
         <img src="{{ page.image }}" alt="{{ page.title }}" class="w-full max-h-96 object-cover mt-8 rounded-xl">
     </header>
