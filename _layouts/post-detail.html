@@ -35,36 +35,37 @@
             margin: 0 auto;
         }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
+        /* Only apply revert styles to blog content, not navigation */
+        .prose h1,
+        .prose h2,
+        .prose h3,
+        .prose h4,
+        .prose h5,
+        .prose h6 {
             font-size: revert;
             font-weight: revert;
         }
 
-        ol,
-        ul {
+        .prose ol,
+        .prose ul {
             list-style: revert;
             margin: revert;
             padding: revert;
         }
 
-        blockquote,
-        dd,
-        dl,
-        figure,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        hr,
-        p,
-        pre {
+        .prose blockquote,
+        .prose dd,
+        .prose dl,
+        .prose figure,
+        .prose h1,
+        .prose h2,
+        .prose h3,
+        .prose h4,
+        .prose h5,
+        .prose h6,
+        .prose hr,
+        .prose p,
+        .prose pre {
             margin: revert;
         }
     </style>
