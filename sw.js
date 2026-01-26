@@ -5,8 +5,9 @@ const urlsToCache = [
   '/projects.html',
   '/about.html',
   '/contact.html',
-  '/assets/css/main.css',
-  '/assets/css/tailwind.css',
+  '/assets/css/tailwind.min.css',
+  '/assets/css/github-widget.min.css',
+  '/assets/css/search.min.css',
   '/assets/images/pawan.webp',
   '/manifest.json'
 ];

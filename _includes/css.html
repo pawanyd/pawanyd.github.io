@@ -1,3 +1,11 @@
-<link rel="stylesheet" href="{{ '/assets/css/tailwind.css' | relative_url }}">
-<link rel="stylesheet" href="{{ '/assets/css/github-widget.css' | relative_url }}">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<!-- Preload critical CSS -->
+<link rel="preload" href="{{ '/assets/css/tailwind.min.css' | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ '/assets/css/tailwind.min.css' | relative_url }}"></noscript>
+
+<!-- Defer non-critical CSS -->
+<link rel="stylesheet" href="{{ '/assets/css/github-widget.min.css' | relative_url }}" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="{{ '/assets/css/github-widget.min.css' | relative_url }}"></noscript>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
