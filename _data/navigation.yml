@@ -7,7 +7,7 @@
 - name: Contact
   link: /contact
 - name: Blogs
-  link: /blog
+  link: /blogs
 - name: Resume
   link: /assets/resume.pdf
   target: _blank
