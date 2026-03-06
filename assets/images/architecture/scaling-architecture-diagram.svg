@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#f8f9fa"/>
+  
+  <!-- DNS -->
+  <circle cx="80" cy="100" r="40" fill="#4a5568" stroke="#2d3748" stroke-width="3"/>
+  <text x="80" y="105" text-anchor="middle" fill="white" font-size="18" font-weight="bold">DNS</text>
+  <text x="80" y="160" text-anchor="middle" fill="#2d3748" font-size="14">DNS</text>
+  
+  <!-- User Box -->
+  <rect x="200" y="40" width="400" height="180" rx="15" fill="white" stroke="#4299e1" stroke-width="3"/>
+  <text x="220" y="70" fill="#2d3748" font-size="18" font-weight="bold">User</text>
+  
+  <!-- Web Browser -->
+  <rect x="240" y="90" width="80" height="60" rx="5" fill="white" stroke="#2d3748" stroke-width="2"/>
+  <rect x="245" y="95" width="70" height="40" fill="#e2e8f0"/>
+  <text x="280" y="165" text-anchor="middle" fill="#2d3748" font-size="14">Web browser</text>
+  
+  <!-- Mobile App -->
+  <rect x="440" y="90" width="50" height="80" rx="8" fill="white" stroke="#2d3748" stroke-width="2"/>
+  <rect x="445" y="95" width="40" height="60" fill="#e2e8f0"/>
+  <text x="465" y="185" text-anchor="middle" fill="#2d3748" font-size="14">Mobile app</text>
+  
+  <!-- CDN -->
+  <ellipse cx="950" cy="100" rx="80" ry="50" fill="#4299e1" opacity="0.3"/>
+  <path d="M 920 90 Q 950 70 980 90 Q 1000 100 980 110 Q 950 130 920 110 Q 900 100 920 90" fill="#4299e1"/>
+  <text x="950" y="105" text-anchor="middle" fill="white" font-size="16" font-weight="bold">⚡</text>
+  <text x="950" y="160" text-anchor="middle" fill="#2d3748" font-size="16" font-weight="bold">CDN</text>
+  
+  <!-- Arrows from User -->
+  <line x1="120" y1="100" x2="200" y2="100" stroke="#4a5568" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="100" x2="870" y2="100" stroke="#4299e1" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Load Balancer -->
+  <path d="M 380 280 L 420 280 L 410 320 L 390 320 Z" fill="#3182ce" stroke="#2c5282" stroke-width="2"/>
+  <text x="400" y="305" text-anchor="middle" fill="white" font-size="20">⇅</text>
+  <text x="500" y="305" text-anchor="middle" fill="#2d3748" font-size="16" font-weight="bold">Load balancer</text>
+  
+  <!-- URLs -->
+  <text x="280" y="250" text-anchor="middle" fill="#2d3748" font-size="13">www.mysite.com</text>
+  <text x="480" y="250" text-anchor="middle" fill="#2d3748" font-size="13">api.mysite.com</text>
+  
+  <!-- Arrows to Load Balancer -->
+  <line x1="280" y1="220" x2="390" y2="280" stroke="#4a5568" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="465" y1="220" x2="410" y2="280" stroke="#4a5568" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- DC1 US-East (Active) -->
+  <rect x="50" y="380" width="350" height="350" rx="15" fill="#e6f7e6" stroke="#48bb78" stroke-width="3" stroke-dasharray="10,5"/>
+  <text x="70" y="410" fill="#2d3748" font-size="16" font-weight="bold">DC1</text>
+  <text x="70" y="430" fill="#2d3748" font-size="14">US-East</text>
+  
+  <!-- Web Servers DC1 -->
+  <rect x="120" y="460" width="60" height="80" rx="5" fill="#48bb78" stroke="#38a169" stroke-width="2"/>
+  <rect x="125" y="470" width="50" height="15" fill="white" rx="2"/>
+  <rect x="125" y="490" width="50" height="15" fill="white" rx="2"/>
+  <rect x="125" y="510" width="50" height="15" fill="white" rx="2"/>
+  
+  <rect x="190" y="460" width="60" height="80" rx="5" fill="#48bb78" stroke="#38a169" stroke-width="2"/>
+  <rect x="195" y="470" width="50" height="15" fill="white" rx="2"/>
+  <rect x="195" y="490" width="50" height="15" fill="white" rx="2"/>
+  <rect x="195" y="510" width="50" height="15" fill="white" rx="2"/>
+  
+  <rect x="260" y="460" width="60" height="80" rx="5" fill="#48bb78" stroke="#38a169" stroke-width="2"/>
+  <rect x="265" y="470" width="50" height="15" fill="white" rx="2"/>
+  <rect x="265" y="490" width="50" height="15" fill="white" rx="2"/>
+  <rect x="265" y="510" width="50" height="15" fill="white" rx="2"/>
+  
+  <text x="220" y="565" text-anchor="middle" fill="#2d3748" font-size="14" font-weight="bold">Web servers</text>
+  
+  <!-- Databases DC1 -->
+  <g transform="translate(80, 600)">
+    <ellipse cx="40" cy="10" rx="35" ry="12" fill="#3182ce" stroke="#2c5282" stroke-width="2"/>
+    <rect x="5" y="10" width="70" height="30" fill="#3182ce" stroke="#2c5282" stroke-width="2"/>
+    <ellipse cx="40" cy="40" rx="35" ry="12" fill="#3182ce" stroke="#2c5282" stroke-width="2"/>
+    
+    <ellipse cx="70" cy="15" rx="35" ry="12" fill="#3182ce" stroke="#2c5282" stroke-width="2"/>
+    <rect x="35" y="15" width="70" height="30" fill="#3182ce" stroke="#2c5282" stroke-width="2"/>
+    <ellipse cx="70" cy="45" rx="35" ry="12" fill="#3182ce" stroke="#2c5282" stroke-width="2"/>
+  </g>
+  <text x="120" y="690" text-anchor="middle" fill="#2d3748" font-size="14" font-weight="bold">Databases</text>
+  
+  <!-- Caches DC1 -->
+  <g transform="translate(240, 600)">
+    <rect x="0" y="0" width="70" height="50" rx="8" fill="#4299e1" stroke="#3182ce" stroke-width="2"/>
+    <text x="35" y="25" text-anchor="middle" fill="white" font-size="12" font-weight="bold">CACHE</text>
+    <text x="35" y="40" text-anchor="middle" fill="white" font-size="10">CACHE</text>
+    
+    <rect x="20" y="15" width="70" height="50" rx="8" fill="#4299e1" stroke="#3182ce" stroke-width="2"/>
+    <text x="55" y="40" text-anchor="middle" fill="white" font-size="12" font-weight="bold">CACHE</text>
+    <text x="55" y="55" text-anchor="middle" fill="white" font-size="10">CACHE</text>
+  </g>
+  <text x="290" y="690" text-anchor="middle" fill="#2d3748" font-size="14" font-weight="bold">Caches</text>
+  
+  <!-- DC2 US-West (Offline) -->
+  <rect x="500" y="380" width="350" height="350" rx="15" fill="#f0f0f0" stroke="#cbd5e0" stroke-width="3" stroke-dasharray="10,5" opacity="0.5"/>
+  <text x="520" y="410" fill="#a0aec0" font-size="16" font-weight="bold">DC2</text>
+  <text x="520" y="430" fill="#a0aec0" font-size="14">US-West</text>
+  
+  <!-- Web Servers DC2 (Grayed out) -->
+  <rect x="570" y="460" width="60" height="80" rx="5" fill="#cbd5e0" stroke="#a0aec0" stroke-width="2" opacity="0.5"/>
+  <rect x="640" y="460" width="60" height="80" rx="5" fill="#cbd5e0" stroke="#a0aec0" stroke-width="2" opacity="0.5"/>
+  <rect x="710" y="460" width="60" height="80" rx="5" fill="#cbd5e0" stroke="#a0aec0" stroke-width="2" opacity="0.5"/>
+  <text x="670" y="565" text-anchor="middle" fill="#a0aec0" font-size="14" font-weight="bold" opacity="0.5">Web servers</text>
+  
+  <!-- NoSQL -->
+  <g transform="translate(920, 650)">
+    <path d="M 0 0 L 60 0 L 60 60 L 0 60 Z M 10 10 L 50 10 L 50 50 L 10 50 Z" fill="#3182ce" stroke="#2c5282" stroke-width="2"/>
+    <text x="30" y="35" text-anchor="middle" fill="white" font-size="16" font-weight="bold">{ }</text>
+  </g>
+  <text x="950" y="740" text-anchor="middle" fill="#2d3748" font-size="14" font-weight="bold">NoSQL</text>
+  
+  <!-- Arrows from Load Balancer -->
+  <line x1="400" y1="320" x2="220" y2="460" stroke="#4a5568" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="280" y="380" fill="#2d3748" font-size="13">100% traffic</text>
+  
+  <line x1="400" y1="320" x2="670" y2="460" stroke="#cbd5e0" stroke-width="3" stroke-dasharray="5,5" opacity="0.5"/>
+  
+  <!-- X mark for offline DC -->
+  <circle cx="520" cy="370" r="20" fill="#e53e3e"/>
+  <line x1="510" y1="360" x2="530" y2="380" stroke="white" stroke-width="3"/>
+  <line x1="530" y1="360" x2="510" y2="380" stroke="white" stroke-width="3"/>
+  
+  <!-- Arrows from Web Servers to Data stores -->
+  <line x1="220" y1="540" x2="150" y2="600" stroke="#4a5568" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="220" y1="540" x2="280" y2="600" stroke="#48bb78" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="220" y1="540" x2="950" y2="650" stroke="#805ad5" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#4a5568"/>
+    </marker>
+  </defs>
+</svg>

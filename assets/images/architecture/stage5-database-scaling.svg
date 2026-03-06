@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750">
+  <!-- Background -->
+  <rect width="1200" height="750" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" fill="#2d3748" font-size="24" font-weight="bold">Stage 5: Database Scaling (Read Replicas &amp; Sharding)</text>
+  
+  <!-- Load Balancer -->
+  <rect x="100" y="150" width="120" height="70" rx="10" fill="#48bb78" stroke="#38a169" stroke-width="3"/>
+  <text x="160" y="180" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Load</text>
+  <text x="160" y="200" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Balancer</text>
+  
+  <!-- Web Servers -->
+  <rect x="280" y="120" width="130" height="70" rx="8" fill="#4299e1" stroke="#2c5282" stroke-width="2"/>
+  <text x="345" y="150" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Web Server 1</text>
+  
+  <rect x="280" y="210" width="130" height="70" rx="8" fill="#4299e1" stroke="#2c5282" stroke-width="2"/>
+  <text x="345" y="240" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Web Server 2</text>
+  
+  <!-- Arrows -->
+  <line x1="220" y1="175" x2="280" y2="155" stroke="#48bb78" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="220" y1="195" x2="280" y2="245" stroke="#48bb78" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Cache -->
+  <rect x="480" y="150" width="140" height="90" rx="8" fill="#e53e3e" stroke="#c53030" stroke-width="2"/>
+  <text x="550" y="185" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Redis Cache</text>
+  <rect x="500" y="200" width="100" height="8" rx="2" fill="white"/>
+  <rect x="500" y="213" width="100" height="8" rx="2" fill="white"/>
+  <rect x="500" y="226" width="100" height="8" rx="2" fill="white"/>
+  
+  <!-- Arrows to Cache -->
+  <line x1="410" y1="155" x2="480" y2="185" stroke="#e53e3e" stroke-width="2"/>
+  <line x1="410" y1="245" x2="480" y2="205" stroke="#e53e3e" stroke-width="2"/>
+  
+  <!-- Primary Database -->
+  <g transform="translate(750, 200)">
+    <rect x="-110" y="-60" width="220" height="120" rx="8" fill="#fff5f5" stroke="#e53e3e" stroke-width="3"/>
+    <text x="0" y="-30" text-anchor="middle" fill="#c53030" font-size="14" font-weight="bold">Primary Database</text>
+    <text x="0" y="-10" text-anchor="middle" fill="#c53030" font-size="11">(Master - Writes)</text>
+    <ellipse cx="0" cy="10" rx="70" ry="18" fill="#3182ce" stroke="#2c5282" stroke-width="2"/>
+    <rect x="-70" y="10" width="140" height="25" fill="#3182ce" stroke="#2c5282" stroke-width="2"/>
+    <ellipse cx="0" cy="35" rx="70" ry="18" fill="#3182ce" stroke="#2c5282" stroke-width="2"/>
+  </g>
+  
+  <!-- Write Arrow -->
+  <line x1="620" y1="180" x2="640" y2="180" stroke="#e53e3e" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="630" y="170" text-anchor="middle" fill="#e53e3e" font-size="12" font-weight="bold">WRITE</text>
+  
+  <!-- Replication Arrows -->
+  <line x1="750" y1="260" x2="750" y2="320" stroke="#805ad5" stroke-width="3" marker-end="url(#arrowhead)" stroke-dasharray="8,4"/>
+  <text x="780" y="290" text-anchor="start" fill="#805ad5" font-size="11" font-weight="bold">Replication</text>
+  
+  <!-- Read Replica 1 -->
+  <g transform="translate(600, 400)">
+    <rect x="-100" y="-50" width="200" height="100" rx="8" fill="#e6f7ff" stroke="#4299e1" stroke-width="2"/>
+    <text x="0" y="-25" text-anchor="middle" fill="#2c5282" font-size="13" font-weight="bold">Read Replica 1</text>
+    <ellipse cx="0" cy="5" rx="60" ry="15" fill="#4299e1" stroke="#2c5282" stroke-width="2"/>
+    <rect x="-60" y="5" width="120" height="20" fill="#4299e1" stroke="#2c5282" stroke-width="2"/>
+    <ellipse cx="0" cy="25" rx="60" ry="15" fill="#4299e1" stroke="#2c5282" stroke-width="2"/>
+  </g>
+  
+  <!-- Read Replica 2 -->
+  <g transform="translate(900, 400)">
+    <rect x="-100" y="-50" width="200" height="100" rx="8" fill="#e6f7ff" stroke="#4299e1" stroke-width="2"/>
+    <text x="0" y="-25" text-anchor="middle" fill="#2c5282" font-size="13" font-weight="bold">Read Replica 2</text>
+    <ellipse cx="0" cy="5" rx="60" ry="15" fill="#4299e1" stroke="#2c5282" stroke-width="2"/>
+    <rect x="-60" y="5" width="120" height="20" fill="#4299e1" stroke="#2c5282" stroke-width="2"/>
+    <ellipse cx="0" cy="25" rx="60" ry="15" fill="#4299e1" stroke="#2c5282" stroke-width="2"/>
+  </g>
+  
+  <!-- Read Arrows -->
+  <line x1="620" y1="210" x2="500" y2="350" stroke="#4299e1" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="620" y1="210" x2="800" y2="350" stroke="#4299e1" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="560" y="280" text-anchor="middle" fill="#4299e1" font-size="12" font-weight="bold">READ</text>
+  
+  <!-- Sharding Section -->
+  <text x="600" y="540" text-anchor="middle" fill="#2d3748" font-size="18" font-weight="bold">Database Sharding (Horizontal Partitioning)</text>
+  
+  <!-- Shard 1 -->
+  <g transform="translate(250, 620)">
+    <rect x="-90" y="-40" width="180" height="80" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="2"/>
+    <text x="0" y="-15" text-anchor="middle" fill="#22543d" font-size="12" font-weight="bold">Shard 1</text>
+    <text x="0" y="0" text-anchor="middle" fill="#22543d" font-size="10">Users 1-1M</text>
+    <ellipse cx="0" cy="20" rx="50" ry="12" fill="#48bb78" stroke="#38a169" stroke-width="1"/>
+  </g>
+  
+  <!-- Shard 2 -->
+  <g transform="translate(500, 620)">
+    <rect x="-90" y="-40" width="180" height="80" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="2"/>
+    <text x="0" y="-15" text-anchor="middle" fill="#22543d" font-size="12" font-weight="bold">Shard 2</text>
+    <text x="0" y="0" text-anchor="middle" fill="#22543d" font-size="10">Users 1M-2M</text>
+    <ellipse cx="0" cy="20" rx="50" ry="12" fill="#48bb78" stroke="#38a169" stroke-width="1"/>
+  </g>
+  
+  <!-- Shard 3 -->
+  <g transform="translate(750, 620)">
+    <rect x="-90" y="-40" width="180" height="80" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="2"/>
+    <text x="0" y="-15" text-anchor="middle" fill="#22543d" font-size="12" font-weight="bold">Shard 3</text>
+    <text x="0" y="0" text-anchor="middle" fill="#22543d" font-size="10">Users 2M-3M</text>
+    <ellipse cx="0" cy="20" rx="50" ry="12" fill="#48bb78" stroke="#38a169" stroke-width="1"/>
+  </g>
+  
+  <!-- Shard 4 -->
+  <g transform="translate(1000, 620)">
+    <rect x="-90" y="-40" width="180" height="80" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="2"/>
+    <text x="0" y="-15" text-anchor="middle" fill="#22543d" font-size="12" font-weight="bold">Shard 4</text>
+    <text x="0" y="0" text-anchor="middle" fill="#22543d" font-size="10">Users 3M+</text>
+    <ellipse cx="0" cy="20" rx="50" ry="12" fill="#48bb78" stroke="#38a169" stroke-width="1"/>
+  </g>
+  
+  <!-- Benefits Box -->
+  <rect x="50" y="50" width="350" height="60" rx="8" fill="#c6f6d5" stroke="#48bb78" stroke-width="2"/>
+  <text x="225" y="75" text-anchor="middle" fill="#22543d" font-size="13" font-weight="bold">✓ Read Replicas: 70% load reduction</text>
+  <text x="225" y="95" text-anchor="middle" fill="#22543d" font-size="11">Writes → Primary | Reads → Replicas</text>
+  
+  <!-- Sharding Benefits -->
+  <rect x="800" y="50" width="350" height="60" rx="8" fill="#bee3f8" stroke="#4299e1" stroke-width="2"/>
+  <text x="975" y="75" text-anchor="middle" fill="#1a365d" font-size="13" font-weight="bold">✓ Sharding: Unlimited horizontal scale</text>
+  <text x="975" y="95" text-anchor="middle" fill="#1a365d" font-size="11">Data distributed by user ID hash</text>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#4a5568"/>
+    </marker>
+  </defs>
+</svg>

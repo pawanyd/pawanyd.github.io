@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Background Gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="serverGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4299e1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2c5282;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Grid Pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- Title -->
+  <text x="600" y="100" text-anchor="middle" fill="white" font-size="56" font-weight="bold" font-family="Arial, sans-serif">
+    Scaling from Zero to Millions
+  </text>
+  <text x="600" y="150" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="32" font-family="Arial, sans-serif">
+    A System Architecture Journey
+  </text>
+  
+  <!-- Server Icons representing growth -->
+  <!-- Stage 1: Single Server -->
+  <g transform="translate(150, 300)">
+    <rect x="-30" y="-40" width="60" height="80" rx="5" fill="url(#serverGradient)" stroke="white" stroke-width="2"/>
+    <rect x="-20" y="-25" width="40" height="8" rx="2" fill="white" opacity="0.8"/>
+    <rect x="-20" y="-10" width="40" height="8" rx="2" fill="white" opacity="0.8"/>
+    <rect x="-20" y="5" width="40" height="8" rx="2" fill="white" opacity="0.8"/>
+    <text x="0" y="70" text-anchor="middle" fill="white" font-size="18" font-weight="bold">1 Server</text>
+    <text x="0" y="95" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="14">1K Users</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 220 300 L 320 300" stroke="white" stroke-width="3" fill="none" marker-end="url(#arrowWhite)"/>
+  
+  <!-- Stage 2: Multiple Servers -->
+  <g transform="translate(400, 300)">
+    <rect x="-50" y="-40" width="40" height="80" rx="5" fill="url(#serverGradient)" stroke="white" stroke-width="2"/>
+    <rect x="-42" y="-25" width="24" height="6" rx="1" fill="white" opacity="0.8"/>
+    <rect x="-42" y="-12" width="24" height="6" rx="1" fill="white" opacity="0.8"/>
+    
+    <rect x="-5" y="-40" width="40" height="80" rx="5" fill="url(#serverGradient)" stroke="white" stroke-width="2"/>
+    <rect x="3" y="-25" width="24" height="6" rx="1" fill="white" opacity="0.8"/>
+    <rect x="3" y="-12" width="24" height="6" rx="1" fill="white" opacity="0.8"/>
+    
+    <rect x="40" y="-40" width="40" height="80" rx="5" fill="url(#serverGradient)" stroke="white" stroke-width="2"/>
+    <rect x="48" y="-25" width="24" height="6" rx="1" fill="white" opacity="0.8"/>
+    <rect x="48" y="-12" width="24" height="6" rx="1" fill="white" opacity="0.8"/>
+    
+    <text x="15" y="70" text-anchor="middle" fill="white" font-size="18" font-weight="bold">3 Servers</text>
+    <text x="15" y="95" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="14">100K Users</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 490 300 L 590 300" stroke="white" stroke-width="3" fill="none" marker-end="url(#arrowWhite)"/>
+  
+  <!-- Stage 3: Cluster -->
+  <g transform="translate(700, 300)">
+    <!-- Row 1 -->
+    <rect x="-70" y="-50" width="35" height="50" rx="4" fill="url(#serverGradient)" stroke="white" stroke-width="1.5"/>
+    <rect x="-30" y="-50" width="35" height="50" rx="4" fill="url(#serverGradient)" stroke="white" stroke-width="1.5"/>
+    <rect x="10" y="-50" width="35" height="50" rx="4" fill="url(#serverGradient)" stroke="white" stroke-width="1.5"/>
+    <rect x="50" y="-50" width="35" height="50" rx="4" fill="url(#serverGradient)" stroke="white" stroke-width="1.5"/>
+    
+    <!-- Row 2 -->
+    <rect x="-70" y="10" width="35" height="50" rx="4" fill="url(#serverGradient)" stroke="white" stroke-width="1.5"/>
+    <rect x="-30" y="10" width="35" height="50" rx="4" fill="url(#serverGradient)" stroke="white" stroke-width="1.5"/>
+    <rect x="10" y="10" width="35" height="50" rx="4" fill="url(#serverGradient)" stroke="white" stroke-width="1.5"/>
+    <rect x="50" y="10" width="35" height="50" rx="4" fill="url(#serverGradient)" stroke="white" stroke-width="1.5"/>
+    
+    <text x="-10" y="90" text-anchor="middle" fill="white" font-size="18" font-weight="bold">8+ Servers</text>
+    <text x="-10" y="115" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="14">500K Users</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 790 300 L 890 300" stroke="white" stroke-width="3" fill="none" marker-end="url(#arrowWhite)"/>
+  
+  <!-- Stage 4: Global -->
+  <g transform="translate(1000, 300)">
+    <!-- Globe representation -->
+    <circle cx="0" cy="-10" r="50" fill="none" stroke="white" stroke-width="3"/>
+    <ellipse cx="0" cy="-10" rx="50" ry="20" fill="none" stroke="white" stroke-width="2"/>
+    <ellipse cx="0" cy="-10" rx="20" ry="50" fill="none" stroke="white" stroke-width="2"/>
+    <line x1="-50" y1="-10" x2="50" y2="-10" stroke="white" stroke-width="2"/>
+    
+    <!-- Server dots around globe -->
+    <circle cx="-35" cy="-35" r="5" fill="#48bb78"/>
+    <circle cx="35" cy="-35" r="5" fill="#48bb78"/>
+    <circle cx="-40" cy="10" r="5" fill="#48bb78"/>
+    <circle cx="40" cy="10" r="5" fill="#48bb78"/>
+    <circle cx="0" cy="35" r="5" fill="#48bb78"/>
+    
+    <text x="0" y="75" text-anchor="middle" fill="white" font-size="18" font-weight="bold">Global CDN</text>
+    <text x="0" y="100" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="14">Millions</text>
+  </g>
+  
+  <!-- Bottom Stats -->
+  <g transform="translate(600, 500)">
+    <rect x="-400" y="0" width="800" height="80" rx="10" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+    
+    <text x="-300" y="30" text-anchor="middle" fill="white" font-size="16" font-weight="bold">7 Stages</text>
+    <text x="-300" y="55" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="13">Architecture Evolution</text>
+    
+    <text x="-100" y="30" text-anchor="middle" fill="white" font-size="16" font-weight="bold">0 → 5M+</text>
+    <text x="-100" y="55" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="13">User Growth</text>
+    
+    <text x="100" y="30" text-anchor="middle" fill="white" font-size="16" font-weight="bold">99.99%</text>
+    <text x="100" y="55" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="13">Uptime Target</text>
+    
+    <text x="300" y="30" text-anchor="middle" fill="white" font-size="16" font-weight="bold">&lt;50ms</text>
+    <text x="300" y="55" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="13">Response Time</text>
+  </g>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowWhite" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="white"/>
+    </marker>
+  </defs>
+</svg>
