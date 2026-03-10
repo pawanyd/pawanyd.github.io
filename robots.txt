@@ -1,8 +1,4 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /login/
-Disallow: /signup/
-Disallow: /cart/
-Disallow: /checkout/
+Allow: /
 
 Sitemap: https://pawanyd.github.io/sitemap.xml
