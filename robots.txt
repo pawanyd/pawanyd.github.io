@@ -5,4 +5,4 @@ Disallow: /signup/
 Disallow: /cart/
 Disallow: /checkout/
 
-Sitemap: {{ site.url }}/sitemap.xml
+Sitemap: https://pawanyd.github.io/sitemap.xml
