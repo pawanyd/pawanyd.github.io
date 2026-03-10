@@ -1,0 +1,168 @@
+<svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="450" y="30" font-size="22" font-weight="bold" text-anchor="middle" fill="#1f2937">Token Bucket Algorithm</text>
+  
+  <!-- Time Step 1: Initial State -->
+  <g transform="translate(50, 80)">
+    <text x="100" y="0" font-size="14" font-weight="bold" text-anchor="middle" fill="#1f2937">Time: 0s (Initial)</text>
+    
+    <!-- Bucket -->
+    <path d="M 30 40 L 30 180 Q 30 200 50 200 L 150 200 Q 170 200 170 180 L 170 40 Z" 
+          fill="#dbeafe" stroke="#3b82f6" stroke-width="3"/>
+    <text x="100" y="30" font-size="12" text-anchor="middle" fill="#1f2937">Capacity: 10</text>
+    
+    <!-- Tokens (circles) -->
+    <circle cx="60" cy="100" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="90" cy="100" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="120" cy="100" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="150" cy="100" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="60" cy="130" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="90" cy="130" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="120" cy="130" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="150" cy="130" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="60" cy="160" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="90" cy="160" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    
+    <text x="100" y="230" font-size="13" font-weight="bold" text-anchor="middle" fill="#10b981">Tokens: 10/10</text>
+    <text x="100" y="250" font-size="11" text-anchor="middle" fill="#1f2937">Bucket Full</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 230 160 L 280 160" stroke="#1f2937" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="255" y="150" font-size="10" text-anchor="middle" fill="#dc2626">3 Requests</text>
+  
+  <!-- Time Step 2: After Requests -->
+  <g transform="translate(300, 80)">
+    <text x="100" y="0" font-size="14" font-weight="bold" text-anchor="middle" fill="#1f2937">Time: 0.5s</text>
+    
+    <!-- Bucket -->
+    <path d="M 30 40 L 30 180 Q 30 200 50 200 L 150 200 Q 170 200 170 180 L 170 40 Z" 
+          fill="#dbeafe" stroke="#3b82f6" stroke-width="3"/>
+    <text x="100" y="30" font-size="12" text-anchor="middle" fill="#1f2937">Capacity: 10</text>
+    
+    <!-- Remaining Tokens -->
+    <circle cx="60" cy="120" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="90" cy="120" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="120" cy="120" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="150" cy="120" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="60" cy="150" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="90" cy="150" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="120" cy="150" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    
+    <!-- Removed tokens (faded) -->
+    <circle cx="150" cy="150" r="12" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2" opacity="0.3"/>
+    <circle cx="60" cy="180" r="12" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2" opacity="0.3"/>
+    <circle cx="90" cy="180" r="12" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2" opacity="0.3"/>
+    
+    <text x="100" y="230" font-size="13" font-weight="bold" text-anchor="middle" fill="#f59e0b">Tokens: 7/10</text>
+    <text x="100" y="250" font-size="11" text-anchor="middle" fill="#1f2937">3 tokens consumed</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 480 160 L 530 160" stroke="#1f2937" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="505" y="150" font-size="10" text-anchor="middle" fill="#10b981">+2 Tokens</text>
+  <text x="505" y="175" font-size="9" text-anchor="middle" fill="#6b7280">(Refill rate:</text>
+  <text x="505" y="188" font-size="9" text-anchor="middle" fill="#6b7280">4 tokens/sec)</text>
+  
+  <!-- Time Step 3: After Refill -->
+  <g transform="translate(550, 80)">
+    <text x="100" y="0" font-size="14" font-weight="bold" text-anchor="middle" fill="#1f2937">Time: 1.0s</text>
+    
+    <!-- Bucket -->
+    <path d="M 30 40 L 30 180 Q 30 200 50 200 L 150 200 Q 170 200 170 180 L 170 40 Z" 
+          fill="#dbeafe" stroke="#3b82f6" stroke-width="3"/>
+    <text x="100" y="30" font-size="12" text-anchor="middle" fill="#1f2937">Capacity: 10</text>
+    
+    <!-- Tokens after refill -->
+    <circle cx="60" cy="100" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="90" cy="100" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="120" cy="100" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="150" cy="100" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="60" cy="130" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="90" cy="130" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="120" cy="130" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="150" cy="130" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="60" cy="160" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    
+    <!-- New tokens (highlighted) -->
+    <circle cx="90" cy="160" r="12" fill="#34d399" stroke="#10b981" stroke-width="3"/>
+    <circle cx="120" cy="160" r="12" fill="#34d399" stroke="#10b981" stroke-width="3"/>
+    
+    <text x="100" y="230" font-size="13" font-weight="bold" text-anchor="middle" fill="#10b981">Tokens: 9/10</text>
+    <text x="100" y="250" font-size="11" text-anchor="middle" fill="#1f2937">Refilled +2 tokens</text>
+  </g>
+  
+  <!-- Algorithm Flow -->
+  <text x="450" y="320" font-size="18" font-weight="bold" text-anchor="middle" fill="#1f2937">Algorithm Flow</text>
+  
+  <!-- Flow diagram -->
+  <g transform="translate(150, 350)">
+    <!-- Request arrives -->
+    <rect x="0" y="0" width="140" height="50" fill="#60a5fa" stroke="#3b82f6" stroke-width="2" rx="6"/>
+    <text x="70" y="28" font-size="12" text-anchor="middle" fill="#fff">Request Arrives</text>
+    
+    <path d="M 70 50 L 70 80" stroke="#1f2937" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <!-- Check tokens -->
+    <path d="M 0 80 L 70 110 L 140 80 L 70 50 Z" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <text x="70" y="90" font-size="11" text-anchor="middle" fill="#1f2937">Tokens</text>
+    <text x="70" y="103" font-size="11" text-anchor="middle" fill="#1f2937">Available?</text>
+    
+    <!-- Yes path -->
+    <path d="M 140 80 L 200 80" stroke="#10b981" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="170" y="70" font-size="10" fill="#10b981">Yes</text>
+    
+    <rect x="200" y="55" width="120" height="50" fill="#d1fae5" stroke="#10b981" stroke-width="2" rx="6"/>
+    <text x="260" y="78" font-size="11" text-anchor="middle" fill="#065f46">Allow Request</text>
+    <text x="260" y="93" font-size="10" text-anchor="middle" fill="#065f46">Remove 1 token</text>
+    
+    <!-- No path -->
+    <path d="M 0 80 L -60 80" stroke="#dc2626" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="-30" y="70" font-size="10" fill="#dc2626">No</text>
+    
+    <rect x="-180" y="55" width="120" height="50" fill="#fee2e2" stroke="#dc2626" stroke-width="2" rx="6"/>
+    <text x="-120" y="78" font-size="11" text-anchor="middle" fill="#7f1d1d">Reject Request</text>
+    <text x="-120" y="93" font-size="10" text-anchor="middle" fill="#7f1d1d">429 Error</text>
+    
+    <!-- Refill process -->
+    <rect x="200" y="140" width="120" height="50" fill="#ddd6fe" stroke="#7c3aed" stroke-width="2" rx="6"/>
+    <text x="260" y="163" font-size="11" text-anchor="middle" fill="#5b21b6">Refill Tokens</text>
+    <text x="260" y="178" font-size="10" text-anchor="middle" fill="#5b21b6">At Fixed Rate</text>
+    
+    <path d="M 260 140 L 260 105" stroke="#7c3aed" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4,4"/>
+  </g>
+  
+  <!-- Parameters -->
+  <g transform="translate(550, 350)">
+    <rect x="0" y="0" width="280" height="180" fill="#f3f4f6" stroke="#6b7280" stroke-width="2" rx="8"/>
+    <text x="140" y="25" font-size="14" font-weight="bold" text-anchor="middle" fill="#1f2937">Key Parameters</text>
+    
+    <text x="15" y="50" font-size="12" font-weight="bold" fill="#1f2937">Bucket Capacity:</text>
+    <text x="15" y="68" font-size="11" fill="#4b5563">Maximum tokens the bucket can hold</text>
+    <text x="15" y="83" font-size="11" fill="#059669">Example: 100 tokens</text>
+    
+    <text x="15" y="105" font-size="12" font-weight="bold" fill="#1f2937">Refill Rate:</text>
+    <text x="15" y="123" font-size="11" fill="#4b5563">Tokens added per time unit</text>
+    <text x="15" y="138" font-size="11" fill="#059669">Example: 10 tokens/second</text>
+    
+    <text x="15" y="160" font-size="12" font-weight="bold" fill="#1f2937">Token Cost:</text>
+    <text x="15" y="178" font-size="11" fill="#4b5563">Tokens consumed per request (usually 1)</text>
+  </g>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#1f2937"/>
+    </marker>
+  </defs>
+  
+  <!-- Example calculation -->
+  <g transform="translate(50, 580)">
+    <rect x="0" y="0" width="800" height="90" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/>
+    <text x="400" y="25" font-size="13" font-weight="bold" text-anchor="middle" fill="#92400e">Example: API Rate Limit</text>
+    
+    <text x="20" y="48" font-size="11" fill="#1f2937">• Bucket Capacity: 100 tokens (allows burst of 100 requests)</text>
+    <text x="20" y="65" font-size="11" fill="#1f2937">• Refill Rate: 10 tokens/second (sustained rate of 10 requests/second)</text>
+    <text x="20" y="82" font-size="11" fill="#1f2937">• User can burst to 100 req/sec briefly, then sustain 10 req/sec continuously</text>
+  </g>
+</svg>

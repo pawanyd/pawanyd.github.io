@@ -1,0 +1,146 @@
+<svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="450" y="30" font-size="22" font-weight="bold" text-anchor="middle" fill="#1f2937">Fixed Window Counter Algorithm</text>
+  
+  <!-- Timeline -->
+  <g transform="translate(50, 80)">
+    <text x="400" y="0" font-size="14" font-weight="bold" text-anchor="middle" fill="#1f2937">Time Windows (1 minute each, limit: 5 requests/window)</text>
+    
+    <!-- Window 1: 00:00 - 00:59 -->
+    <g transform="translate(0, 40)">
+      <rect x="0" y="0" width="200" height="150" fill="#d1fae5" stroke="#10b981" stroke-width="3" rx="6"/>
+      <text x="100" y="25" font-size="13" font-weight="bold" text-anchor="middle" fill="#065f46">Window 1</text>
+      <text x="100" y="43" font-size="11" text-anchor="middle" fill="#065f46">00:00 - 00:59</text>
+      
+      <!-- Request markers -->
+      <circle cx="30" cy="70" r="8" fill="#34d399" stroke="#10b981" stroke-width="2"/>
+      <text x="30" y="90" font-size="9" text-anchor="middle" fill="#065f46">00:10</text>
+      
+      <circle cx="70" cy="70" r="8" fill="#34d399" stroke="#10b981" stroke-width="2"/>
+      <text x="70" y="90" font-size="9" text-anchor="middle" fill="#065f46">00:25</text>
+      
+      <circle cx="110" cy="70" r="8" fill="#34d399" stroke="#10b981" stroke-width="2"/>
+      <text x="110" y="90" font-size="9" text-anchor="middle" fill="#065f46">00:40</text>
+      
+      <circle cx="150" cy="70" r="8" fill="#34d399" stroke="#10b981" stroke-width="2"/>
+      <text x="150" y="90" font-size="9" text-anchor="middle" fill="#065f46">00:55</text>
+      
+      <text x="100" y="120" font-size="13" font-weight="bold" text-anchor="middle" fill="#10b981">Count: 4/5</text>
+      <text x="100" y="140" font-size="11" text-anchor="middle" fill="#065f46">✓ All Allowed</text>
+    </g>
+    
+    <!-- Window 2: 01:00 - 01:59 -->
+    <g transform="translate(220, 40)">
+      <rect x="0" y="0" width="200" height="150" fill="#dbeafe" stroke="#3b82f6" stroke-width="3" rx="6"/>
+      <text x="100" y="25" font-size="13" font-weight="bold" text-anchor="middle" fill="#1e40af">Window 2</text>
+      <text x="100" y="43" font-size="11" text-anchor="middle" fill="#1e40af">01:00 - 01:59</text>
+      
+      <!-- Counter resets -->
+      <text x="100" y="65" font-size="10" font-style="italic" text-anchor="middle" fill="#f59e0b">Counter Reset!</text>
+      
+      <!-- Request markers -->
+      <circle cx="25" cy="85" r="8" fill="#60a5fa" stroke="#3b82f6" stroke-width="2"/>
+      <circle cx="55" cy="85" r="8" fill="#60a5fa" stroke="#3b82f6" stroke-width="2"/>
+      <circle cx="85" cy="85" r="8" fill="#60a5fa" stroke="#3b82f6" stroke-width="2"/>
+      <circle cx="115" cy="85" r="8" fill="#60a5fa" stroke="#3b82f6" stroke-width="2"/>
+      <circle cx="145" cy="85" r="8" fill="#60a5fa" stroke="#3b82f6" stroke-width="2"/>
+      <circle cx="175" cy="85" r="8" fill="#60a5fa" stroke="#3b82f6" stroke-width="2"/>
+      
+      <text x="100" y="120" font-size="13" font-weight="bold" text-anchor="middle" fill="#3b82f6">Count: 6/5</text>
+      <text x="100" y="140" font-size="11" text-anchor="middle" fill="#dc2626">✗ 1 Rejected</text>
+    </g>
+    
+    <!-- Window 3: 02:00 - 02:59 -->
+    <g transform="translate(440, 40)">
+      <rect x="0" y="0" width="200" height="150" fill="#fef3c7" stroke="#f59e0b" stroke-width="3" rx="6"/>
+      <text x="100" y="25" font-size="13" font-weight="bold" text-anchor="middle" fill="#92400e">Window 3</text>
+      <text x="100" y="43" font-size="11" text-anchor="middle" fill="#92400e">02:00 - 02:59</text>
+      
+      <text x="100" y="65" font-size="10" font-style="italic" text-anchor="middle" fill="#f59e0b">Counter Reset!</text>
+      
+      <!-- Request markers -->
+      <circle cx="50" cy="85" r="8" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+      <circle cx="100" cy="85" r="8" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+      <circle cx="150" cy="85" r="8" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+      
+      <text x="100" y="120" font-size="13" font-weight="bold" text-anchor="middle" fill="#f59e0b">Count: 3/5</text>
+      <text x="100" y="140" font-size="11" text-anchor="middle" fill="#065f46">✓ All Allowed</text>
+    </g>
+    
+    <!-- Timeline arrow -->
+    <path d="M 0 210 L 640 210" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow-gray)"/>
+    <text x="660" y="215" font-size="12" fill="#6b7280">Time</text>
+    
+    <!-- Time markers -->
+    <line x1="0" y1="205" x2="0" y2="215" stroke="#6b7280" stroke-width="2"/>
+    <text x="0" y="235" font-size="11" text-anchor="middle" fill="#6b7280">00:00</text>
+    
+    <line x1="200" y1="205" x2="200" y2="215" stroke="#6b7280" stroke-width="2"/>
+    <text x="200" y="235" font-size="11" text-anchor="middle" fill="#6b7280">01:00</text>
+    
+    <line x1="420" y1="205" x2="420" y2="215" stroke="#6b7280" stroke-width="2"/>
+    <text x="420" y="235" font-size="11" text-anchor="middle" fill="#6b7280">02:00</text>
+    
+    <line x1="640" y1="205" x2="640" y2="215" stroke="#6b7280" stroke-width="2"/>
+    <text x="640" y="235" font-size="11" text-anchor="middle" fill="#6b7280">03:00</text>
+  </g>
+  
+  <!-- The Problem: Boundary Issue -->
+  <g transform="translate(50, 350)">
+    <rect x="0" y="0" width="800" height="200" fill="#fee2e2" stroke="#dc2626" stroke-width="3" rx="8"/>
+    <text x="400" y="30" font-size="16" font-weight="bold" text-anchor="middle" fill="#7f1d1d">⚠️ The Boundary Problem</text>
+    
+    <text x="400" y="55" font-size="12" text-anchor="middle" fill="#1f2937">Limit: 5 requests/minute - But user can make 10 requests in 2 seconds!</text>
+    
+    <!-- Window boundary visualization -->
+    <g transform="translate(100, 70)">
+      <!-- Window 1 end -->
+      <rect x="0" y="0" width="150" height="80" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="4"/>
+      <text x="75" y="20" font-size="11" font-weight="bold" text-anchor="middle" fill="#92400e">Window 1 End</text>
+      <text x="75" y="38" font-size="10" text-anchor="middle" fill="#92400e">00:59:00 - 00:59:59</text>
+      
+      <!-- 5 requests at end -->
+      <circle cx="20" cy="60" r="6" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+      <circle cx="45" cy="60" r="6" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+      <circle cx="70" cy="60" r="6" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+      <circle cx="95" cy="60" r="6" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+      <circle cx="120" cy="60" r="6" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+      
+      <text x="75" y="100" font-size="11" font-weight="bold" text-anchor="middle" fill="#f59e0b">5 requests</text>
+      <text x="75" y="115" font-size="10" text-anchor="middle" fill="#065f46">✓ Allowed</text>
+    </g>
+    
+    <!-- Boundary line -->
+    <line x1="250" y1="70" x2="250" y2="150" stroke="#dc2626" stroke-width="3" stroke-dasharray="5,5"/>
+    <text x="255" y="110" font-size="11" font-weight="bold" fill="#dc2626">Window</text>
+    <text x="255" y="125" font-size="11" font-weight="bold" fill="#dc2626">Boundary</text>
+    
+    <g transform="translate(270, 70)">
+      <!-- Window 2 start -->
+      <rect x="0" y="0" width="150" height="80" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" rx="4"/>
+      <text x="75" y="20" font-size="11" font-weight="bold" text-anchor="middle" fill="#1e40af">Window 2 Start</text>
+      <text x="75" y="38" font-size="10" text-anchor="middle" fill="#1e40af">01:00:00 - 01:00:01</text>
+      
+      <!-- 5 more requests at start -->
+      <circle cx="20" cy="60" r="6" fill="#60a5fa" stroke="#3b82f6" stroke-width="2"/>
+      <circle cx="45" cy="60" r="6" fill="#60a5fa" stroke="#3b82f6" stroke-width="2"/>
+      <circle cx="70" cy="60" r="6" fill="#60a5fa" stroke="#3b82f6" stroke-width="2"/>
+      <circle cx="95" cy="60" r="6" fill="#60a5fa" stroke="#3b82f6" stroke-width="2"/>
+      <circle cx="120" cy="60" r="6" fill="#60a5fa" stroke="#3b82f6" stroke-width="2"/>
+      
+      <text x="75" y="100" font-size="11" font-weight="bold" text-anchor="middle" fill="#3b82f6">5 requests</text>
+      <text x="75" y="115" font-size="10" text-anchor="middle" fill="#065f46">✓ Allowed</text>
+    </g>
+    
+    <!-- Problem explanation -->
+    <text x="400" y="175" font-size="12" font-weight="bold" text-anchor="middle" fill="#dc2626">Result: 10 requests in 2 seconds, but limit is 5/minute!</text>
+    <text x="400" y="192" font-size="11" text-anchor="middle" fill="#7f1d1d">This is the main weakness of Fixed Window Counter</text>
+  </g>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#6b7280"/>
+    </marker>
+  </defs>
+</svg>

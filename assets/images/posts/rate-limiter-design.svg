@@ -1,0 +1,133 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f9fafb"/>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-size="32" font-weight="bold" text-anchor="middle" fill="#1f2937">Rate Limiter Design</text>
+  <text x="400" y="80" font-size="16" text-anchor="middle" fill="#6b7280">System Design Interview Guide</text>
+  
+  <!-- Main visual: Traffic flow -->
+  <g transform="translate(100, 150)">
+    <!-- Incoming traffic (many requests) -->
+    <g>
+      <text x="50" y="-10" font-size="14" font-weight="bold" fill="#dc2626">High Traffic</text>
+      <!-- Multiple arrows representing requests -->
+      <path d="M 20 20 L 20 80" stroke="#dc2626" stroke-width="4" marker-end="url(#arrow-red)"/>
+      <path d="M 40 10 L 40 80" stroke="#dc2626" stroke-width="4" marker-end="url(#arrow-red)"/>
+      <path d="M 60 25 L 60 80" stroke="#dc2626" stroke-width="4" marker-end="url(#arrow-red)"/>
+      <path d="M 80 15 L 80 80" stroke="#dc2626" stroke-width="4" marker-end="url(#arrow-red)"/>
+      <path d="M 100 30 L 100 80" stroke="#dc2626" stroke-width="4" marker-end="url(#arrow-red)"/>
+    </g>
+    
+    <!-- Rate Limiter Box -->
+    <g transform="translate(0, 100)">
+      <rect x="0" y="0" width="120" height="100" fill="#10b981" stroke="#065f46" stroke-width="3" rx="8"/>
+      <text x="60" y="35" font-size="14" font-weight="bold" text-anchor="middle" fill="#fff">Rate Limiter</text>
+      <text x="60" y="55" font-size="11" text-anchor="middle" fill="#d1fae5">Sliding Window</text>
+      <text x="60" y="75" font-size="11" text-anchor="middle" fill="#d1fae5">100 req/min</text>
+      <text x="60" y="90" font-size="10" text-anchor="middle" fill="#d1fae5">Redis + Lua</text>
+    </g>
+    
+    <!-- Allowed traffic (controlled) -->
+    <g transform="translate(0, 220)">
+      <text x="50" y="0" font-size="14" font-weight="bold" fill="#10b981">Controlled</text>
+      <path d="M 30 20 L 30 60" stroke="#10b981" stroke-width="4" marker-end="url(#arrow-green)"/>
+      <path d="M 60 20 L 60 60" stroke="#10b981" stroke-width="4" marker-end="url(#arrow-green)"/>
+      <path d="M 90 20 L 90 60" stroke="#10b981" stroke-width="4" marker-end="url(#arrow-green)"/>
+    </g>
+    
+    <!-- Rejected traffic -->
+    <g transform="translate(140, 150)">
+      <path d="M 0 0 L 60 0" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow-red)" stroke-dasharray="5,5"/>
+      <text x="70" y="5" font-size="12" fill="#dc2626">429</text>
+      <text x="70" y="20" font-size="10" fill="#dc2626">Rejected</text>
+    </g>
+  </g>
+  
+  <!-- Key algorithms -->
+  <g transform="translate(300, 150)">
+    <rect x="0" y="0" width="450" height="280" fill="#fff" stroke="#e5e7eb" stroke-width="2" rx="8"/>
+    <text x="225" y="30" font-size="16" font-weight="bold" text-anchor="middle" fill="#1f2937">Rate Limiting Algorithms</text>
+    
+    <!-- Algorithm 1 -->
+    <g transform="translate(20, 50)">
+      <circle cx="10" cy="10" r="8" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+      <text x="25" y="15" font-size="13" font-weight="bold" fill="#1f2937">Token Bucket</text>
+      <text x="25" y="32" font-size="10" fill="#6b7280">Allows bursts, smooth refill</text>
+    </g>
+    
+    <!-- Algorithm 2 -->
+    <g transform="translate(20, 90)">
+      <circle cx="10" cy="10" r="8" fill="#60a5fa" stroke="#3b82f6" stroke-width="2"/>
+      <text x="25" y="15" font-size="13" font-weight="bold" fill="#1f2937">Leaky Bucket</text>
+      <text x="25" y="32" font-size="10" fill="#6b7280">Constant output rate, queues requests</text>
+    </g>
+    
+    <!-- Algorithm 3 -->
+    <g transform="translate(20, 130)">
+      <circle cx="10" cy="10" r="8" fill="#a78bfa" stroke="#7c3aed" stroke-width="2"/>
+      <text x="25" y="15" font-size="13" font-weight="bold" fill="#1f2937">Fixed Window</text>
+      <text x="25" y="32" font-size="10" fill="#6b7280">Simple but has boundary problem</text>
+    </g>
+    
+    <!-- Algorithm 4 -->
+    <g transform="translate(20, 170)">
+      <circle cx="10" cy="10" r="8" fill="#f472b6" stroke="#ec4899" stroke-width="2"/>
+      <text x="25" y="15" font-size="13" font-weight="bold" fill="#1f2937">Sliding Window Log</text>
+      <text x="25" y="32" font-size="10" fill="#6b7280">Accurate but memory intensive</text>
+    </g>
+    
+    <!-- Algorithm 5 (Recommended) -->
+    <g transform="translate(20, 210)">
+      <rect x="0" y="0" width="410" height="50" fill="#d1fae5" stroke="#10b981" stroke-width="2" rx="6"/>
+      <circle cx="10" cy="20" r="8" fill="#34d399" stroke="#10b981" stroke-width="2"/>
+      <text x="25" y="20" font-size="13" font-weight="bold" fill="#065f46">Sliding Window Counter ⭐</text>
+      <text x="25" y="37" font-size="10" fill="#065f46">Best balance: accurate, efficient, scalable</text>
+      <text x="380" y="25" font-size="11" font-weight="bold" fill="#10b981">RECOMMENDED</text>
+    </g>
+  </g>
+  
+  <!-- Key components -->
+  <g transform="translate(50, 460)">
+    <rect x="0" y="0" width="700" height="120" fill="#f3f4f6" stroke="#6b7280" stroke-width="2" rx="8"/>
+    <text x="350" y="25" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">Key Design Components</text>
+    
+    <g transform="translate(30, 45)">
+      <rect x="0" y="0" width="150" height="60" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" rx="4"/>
+      <text x="75" y="25" font-size="12" font-weight="bold" text-anchor="middle" fill="#1e40af">API Gateway</text>
+      <text x="75" y="42" font-size="10" text-anchor="middle" fill="#1e40af">Stateless</text>
+      <text x="75" y="55" font-size="10" text-anchor="middle" fill="#1e40af">Middleware</text>
+    </g>
+    
+    <g transform="translate(200, 45)">
+      <rect x="0" y="0" width="150" height="60" fill="#fee2e2" stroke="#dc2626" stroke-width="2" rx="4"/>
+      <text x="75" y="25" font-size="12" font-weight="bold" text-anchor="middle" fill="#7f1d1d">Redis Cluster</text>
+      <text x="75" y="42" font-size="10" text-anchor="middle" fill="#7f1d1d">In-Memory</text>
+      <text x="75" y="55" font-size="10" text-anchor="middle" fill="#7f1d1d">Counters</text>
+    </g>
+    
+    <g transform="translate(370, 45)">
+      <rect x="0" y="0" width="150" height="60" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="4"/>
+      <text x="75" y="25" font-size="12" font-weight="bold" text-anchor="middle" fill="#92400e">Rules Engine</text>
+      <text x="75" y="42" font-size="10" text-anchor="middle" fill="#92400e">Dynamic</text>
+      <text x="75" y="55" font-size="10" text-anchor="middle" fill="#92400e">Configuration</text>
+    </g>
+    
+    <g transform="translate(540, 45)">
+      <rect x="0" y="0" width="130" height="60" fill="#e0e7ff" stroke="#6366f1" stroke-width="2" rx="4"/>
+      <text x="65" y="25" font-size="12" font-weight="bold" text-anchor="middle" fill="#4338ca">Monitoring</text>
+      <text x="65" y="42" font-size="10" text-anchor="middle" fill="#4338ca">Metrics &</text>
+      <text x="65" y="55" font-size="10" text-anchor="middle" fill="#4338ca">Alerts</text>
+    </g>
+  </g>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#10b981"/>
+    </marker>
+  </defs>
+</svg>
