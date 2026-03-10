@@ -1,0 +1,94 @@
+<svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="500" y="35" font-size="24" font-weight="bold" text-anchor="middle" fill="#1f2937">Adding a Server: Minimal Key Redistribution</text>
+  
+  <!-- Before: 3 servers -->
+  <g transform="translate(200, 150)">
+    <text x="0" y="0" font-size="18" font-weight="bold" text-anchor="middle" fill="#1f2937">Before: 3 Servers</text>
+    
+    <!-- Ring -->
+    <circle cx="0" cy="150" r="100" fill="none" stroke="#3b82f6" stroke-width="4"/>
+    
+    <!-- Servers -->
+    <circle cx="0" cy="50" r="18" fill="#10b981" stroke="#059669" stroke-width="2"/>
+    <text x="0" y="55" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">A</text>
+    
+    <circle cx="87" cy="150" r="18" fill="#10b981" stroke="#059669" stroke-width="2"/>
+    <text x="87" y="155" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">B</text>
+    
+    <circle cx="-87" cy="150" r="18" fill="#10b981" stroke="#059669" stroke-width="2"/>
+    <text x="-87" y="155" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">C</text>
+    
+    <!-- Keys -->
+    <circle cx="30" cy="70" r="8" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="70" cy="100" r="8" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="50" cy="200" r="8" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="-30" cy="200" r="8" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="-70" cy="100" r="8" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="-30" cy="70" r="8" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    
+    <!-- Key distribution -->
+    <text x="0" y="280" font-size="13" text-anchor="middle" fill="#1f2937">Each server handles ~33% of keys</text>
+  </g>
+  
+  <!-- Arrow -->
+  <g transform="translate(400, 300)">
+    <path d="M 0 0 L 100 0" stroke="#8b5cf6" stroke-width="4" marker-end="url(#arrowPurple)"/>
+    <text x="50" y="-10" font-size="14" font-weight="bold" text-anchor="middle" fill="#8b5cf6">Add Server D</text>
+  </g>
+  
+  <!-- After: 4 servers -->
+  <g transform="translate(750, 150)">
+    <text x="0" y="0" font-size="18" font-weight="bold" text-anchor="middle" fill="#1f2937">After: 4 Servers</text>
+    
+    <!-- Ring -->
+    <circle cx="0" cy="150" r="100" fill="none" stroke="#3b82f6" stroke-width="4"/>
+    
+    <!-- Existing servers -->
+    <circle cx="0" cy="50" r="18" fill="#10b981" stroke="#059669" stroke-width="2"/>
+    <text x="0" y="55" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">A</text>
+    
+    <circle cx="87" cy="150" r="18" fill="#10b981" stroke="#059669" stroke-width="2"/>
+    <text x="87" y="155" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">B</text>
+    
+    <circle cx="-87" cy="150" r="18" fill="#10b981" stroke="#059669" stroke-width="2"/>
+    <text x="-87" y="155" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">C</text>
+    
+    <!-- New server D -->
+    <circle cx="0" cy="250" r="18" fill="#8b5cf6" stroke="#7c3aed" stroke-width="3"/>
+    <text x="0" y="255" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">D</text>
+    <text x="0" y="275" font-size="11" font-weight="bold" text-anchor="middle" fill="#8b5cf6">NEW</text>
+    
+    <!-- Keys - some moved -->
+    <circle cx="30" cy="70" r="8" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="70" cy="100" r="8" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="50" cy="200" r="8" fill="#ef4444" stroke="#dc2626" stroke-width="2"/>
+    <circle cx="-30" cy="200" r="8" fill="#ef4444" stroke="#dc2626" stroke-width="2"/>
+    <circle cx="-70" cy="100" r="8" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="-30" cy="70" r="8" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    
+    <!-- Legend -->
+    <g transform="translate(-80, 290)">
+      <circle cx="0" cy="0" r="6" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+      <text x="15" y="4" font-size="11" fill="#1f2937">Stayed</text>
+      
+      <circle cx="70" cy="0" r="6" fill="#ef4444" stroke="#dc2626" stroke-width="2"/>
+      <text x="85" y="4" font-size="11" fill="#1f2937">Moved</text>
+    </g>
+  </g>
+  
+  <!-- Key insight box -->
+  <g transform="translate(200, 480)">
+    <rect x="0" y="0" width="600" height="90" fill="#d1fae5" stroke="#10b981" stroke-width="2" rx="8"/>
+    <text x="300" y="30" font-size="16" font-weight="bold" text-anchor="middle" fill="#065f46">Key Insight</text>
+    <text x="300" y="55" font-size="14" text-anchor="middle" fill="#1f2937">Only 2 out of 6 keys moved (33%) - not all 6 keys!</text>
+    <text x="300" y="75" font-size="13" text-anchor="middle" fill="#059669">With simple hashing, 4-5 keys would have moved (67-83%)</text>
+  </g>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#8b5cf6"/>
+    </marker>
+  </defs>
+</svg>
