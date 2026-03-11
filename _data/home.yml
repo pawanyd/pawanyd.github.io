@@ -8,13 +8,12 @@ hero:
 
 about:
   title: "About Me"
-  description: "A seasoned technology professional with over 9 years of progressive experience in software engineering, system architecture, and innovative product development. Evolved from a curious learner to a principal architect, consistently pushing the boundaries of what's possible with technology while solving complex business challenges at scale."
+  description: "Over the past nine years, I've grown from an eager Associate Software Developer into a Principal Architect who thrives on solving complex technical challenges. My journey has taken me through diverse industries—from building emotion detection platforms for Marvel to architecting stock trading systems handling millions of concurrent users, and most recently, creating no-code tools that democratize technology for non-technical users. I'm passionate about designing systems that not only scale elegantly but also deliver measurable business impact, whether that's reducing client onboarding from two months to two hours or cutting development time by 70% through AI integration."
   details:
-    - "Journey from Associate Software Developer to Principal Architect: Growth through diverse technologies, industries, and challenges."
-    - "Full-stack expertise: PHP, Python, JavaScript, AWS, MySQL, MongoDB, Redis, Microservices, AI/ML."
-    - "Impact: 99% reduction in client onboarding time (2 months → 2 hours), 70% faster component development with AI."
-    - "Architected systems serving millions of concurrent users - from emotion detection platforms to stock market trading to no-code website builders."
-    - "Passionate about democratizing technology: empowering non-technical users and building systems that scale elegantly."
+    - "My career began in 2016 as an Associate Software Developer, learning PHP and MySQL fundamentals. Fast forward to today, I'm a Principal Architect designing systems that serve millions of users across the globe."
+    - "I've built emotion detection platforms for entertainment giants like Marvel, architected real-time stock trading systems handling massive concurrent loads, and created no-code tools that empower non-technical teams to build professional websites in hours instead of months."
+    - "My technical toolkit spans the full stack: PHP, Python, JavaScript on the backend; AWS for cloud infrastructure; MySQL, MongoDB, and Redis for data; plus cutting-edge AI/ML integration. But more than the technologies, I focus on solving real business problems with measurable impact."
+    - "What drives me? Democratizing technology. Whether it's reducing client onboarding by 99% or cutting development time by 70% through AI, I'm passionate about building systems that make complex tasks simple and accessible to everyone."
   image: "https://placehold.co/500x400"
   image-laugh: "/assets/images/pawan-laugh.webp"
   learn_more_link: "/about.html"
