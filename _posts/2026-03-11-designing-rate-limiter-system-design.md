@@ -145,7 +145,7 @@ Place rate limiting in a dedicated middleware layer or API gateway.
 
 ### Architecture Diagram: Where to Place Rate Limiter
 
-Let me create an SVG diagram showing the placement options:
+Here's how the different placement options look:
 
 
 ![Rate Limiter Placement](/assets/images/posts/rate-limiter-placement.svg)
@@ -197,7 +197,7 @@ Bucket: 100       Bucket: 95        Bucket: 90
                   -15 requests      -20 requests
 ```
 
-Let me create a detailed SVG diagram:
+Here's how the token bucket works visually:
 
 
 ![Token Bucket Algorithm](/assets/images/posts/token-bucket-algorithm.svg)

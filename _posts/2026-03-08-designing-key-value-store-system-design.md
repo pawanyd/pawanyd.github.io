@@ -314,42 +314,4 @@ Reads are a bit more complex because data might be in memory or on disk:
 2. Coordinator hashes the key to find replicas
 3. Coordinator sends read request to R replicas
 4. Each replica checks its memory cache first
-5. If not in memory, replica checks a Bloom filter (probabilistic data structure that tells you if a key might be in an SSTable)
-6. Replica reads from the appropriate SSTables on disk
-7. Replicas return their versions (with vector clocks) to coordinator
-8. Coordinator picks the latest version (or detects conflicts)
-9. Coordinator returns the value to client
-10. If replicas had different versions, coordinator triggers read repair to sync them
-
-Bloom filters are a clever optimization. They're a space-efficient probabilistic data structure that can tell you "definitely not in this SSTable" or "might be in this SSTable". This saves you from reading every SSTable on disk.
-
----
-
-## The Big Lessons
-
-Design for failure from day one. Servers will crash, networks will partition, disks will fail. Your system needs to handle these gracefully, not as edge cases.
-
-There's no perfect consistency model. Strong consistency is great until it makes your system unavailable. Eventual consistency is great until users see stale data. Pick the right trade-off for your use case, and make it tunable.
-
-Decentralization is powerful. No master node means no single point of failure. Every node is equal, which makes the system more robust and easier to scale.
-
-Simple interfaces enable complex implementations. The key-value API is dead simple, but underneath you have consistent hashing, quorum consensus, vector clocks, Merkle trees, and gossip protocols. That's okay—the complexity is hidden from users.
-
-Learn from the giants. DynamoDB, Cassandra, and Riak all use these techniques. They've been battle-tested at massive scale. Don't reinvent the wheel—understand these patterns and apply them.
-
----
-
-## The Bottom Line
-
-Building a distributed key-value store is one of the best ways to learn distributed systems. You'll encounter every classic problem: data partitioning, replication, consistency, failure detection, and conflict resolution.
-
-The techniques we've covered—consistent hashing, quorum consensus, vector clocks, gossip protocol, Merkle trees—are fundamental building blocks. Master these, and you'll understand how most distributed databases work under the hood.
-
-Start simple. Build a single-server version first. Then add replication. Then add partitioning. Then add failure handling. Each step teaches you something new about the trade-offs involved.
-
-And remember: there's no perfect design. Every choice is a trade-off. The key is understanding those trade-offs and making informed decisions based on your specific requirements.
-
----
-
-*Building a distributed system and need architecture advice? [Let's talk](/contact.html) about your specific challenges.*
-
+5. If not in memory, replica checks a Bloom filter (probabilistic data structure that tells you if a key might b

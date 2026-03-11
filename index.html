@@ -18,23 +18,20 @@ meta_image: "/assets/images/profile-meta.jpg"
 
 <!-- About Section -->
 <section class="py-16 bg-gray-100" style="content-visibility:visible">
-  <div class="max-w-6xl mx-auto flex flex-wrap items-center">
-      <div class="w-full lg:w-1/2 p-6 flex flex-col justify-center">
-          <h2 class="text-4xl font-bold text-gray-800 text-center lg:text-left">{{ site.data.home.about.title }}</h2>
-          <p class="text-gray-600 mt-4 text-lg text-center lg:text-left">{{ site.data.home.about.description }}</p>
-          <div class="mt-4 space-y-4 text-center lg:text-left">
+  <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col justify-center text-center">
+          <h2 class="text-4xl font-bold text-gray-800">{{ site.data.home.about.title }}</h2>
+          <p class="text-gray-600 mt-4 text-lg">{{ site.data.home.about.description }}</p>
+          <div class="mt-4 space-y-4">
               {% for detail in site.data.home.about.details %}
               <p class="text-gray-600 text-lg">{{ detail }}</p>
               {% endfor %}
           </div>
-          <div class="text-center lg:text-left">
+          <div>
               <a href="{{ site.data.home.about.learn_more_link }}" class="mt-6 inline-block bg-blue-600 text-white px-8 py-4 rounded-lg text-xl hover:bg-blue-700">
                   Learn More
               </a>
           </div>
-      </div>
-      <div class="w-full lg:w-1/2 text-center p-6">
-          <img src="{{ site.data.home.about.image-stand }}" alt="About Me" class="rounded-lg shadow-lg w-full max-w-lg mx-auto" loading="lazy">
       </div>
   </div>
 </section>
