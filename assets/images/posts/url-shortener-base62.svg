@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <rect width="800" height="400" fill="#f3f4f6" rx="8"/>
+  
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1f2937" text-anchor="middle">Base62 Conversion: The Collision-Free Way</text>
+
+  <!-- ID Generator -->
+  <rect x="100" y="150" width="160" height="80" rx="8" fill="#3b82f6"/>
+  <text x="180" y="185" font-family="Arial, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold">Ticket Server</text>
+  <text x="180" y="210" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">Generates Unique ID</text>
+
+  <!-- Base62 Converter -->
+  <rect x="350" y="150" width="160" height="80" rx="8" fill="#8b5cf6"/>
+  <text x="430" y="185" font-family="Arial, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold">Base62 Converter</text>
+  <text x="430" y="210" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">[0-9, a-z, A-Z]</text>
+
+  <!-- Short URL -->
+  <rect x="600" y="150" width="140" height="80" rx="8" fill="#10b981"/>
+  <text x="670" y="185" font-family="Arial, sans-serif" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="bold">TX9zp</text>
+  <text x="670" y="210" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">Short String</text>
+
+  <!-- Arrow 1 -->
+  <path d="M 260 190 L 340 190" stroke="#1f2937" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <polygon points="340,190 330,185 330,195" fill="#1f2937"/>
+  <text x="300" y="180" font-family="Arial, sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">ID: 11157</text>
+
+  <!-- Arrow 2 -->
+  <path d="M 510 190 L 590 190" stroke="#1f2937" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <polygon points="590,190 580,185 580,195" fill="#1f2937"/>
+  <text x="550" y="180" font-family="Arial, sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="bold">Converts to</text>
+
+  <!-- Benefits -->
+  <g transform="translate(100, 300)" font-family="Arial, sans-serif" font-size="16" fill="#10b981" font-weight="bold">
+    <text x="0" y="0">✓ Zero Collisions</text>
+    <text x="250" y="0">✓ Math-based Conversion</text>
+    <text x="500" y="0">✓ Highly Predictable Length</text>
+  </g>
+</svg>

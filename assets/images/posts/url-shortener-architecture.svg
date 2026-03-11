@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="1000" height="600" fill="#f3f4f6" rx="8"/>
+  
+  <text x="500" y="50" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#1f2937" text-anchor="middle">URL Shortener Architecture at Scale</text>
+
+  <!-- Client -->
+  <rect x="50" y="250" width="120" height="80" rx="8" fill="#3b82f6"/>
+  <text x="110" y="295" font-family="Arial, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold">Client</text>
+  
+  <!-- Load Balancer -->
+  <rect x="250" y="200" width="100" height="180" rx="8" fill="#10b981"/>
+  <text x="300" y="295" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold" transform="rotate(-90 300 295)">Load Balancer</text>
+
+  <!-- API Servers -->
+  <rect x="420" y="150" width="140" height="280" rx="8" fill="#3b82f6" fill-opacity="0.2" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="490" y="140" font-family="Arial, sans-serif" font-size="16" fill="#3b82f6" text-anchor="middle" font-weight="bold">API Layer</text>
+
+  <rect x="440" y="170" width="100" height="60" rx="8" fill="#3b82f6"/>
+  <text x="490" y="205" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">API Node 1</text>
+  
+  <rect x="440" y="260" width="100" height="60" rx="8" fill="#3b82f6"/>
+  <text x="490" y="295" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">API Node 2</text>
+  
+  <rect x="440" y="350" width="100" height="60" rx="8" fill="#3b82f6"/>
+  <text x="490" y="385" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">API Node N</text>
+
+  <!-- Cache (Redis) -->
+  <rect x="700" y="120" width="160" height="80" rx="8" fill="#ef4444"/>
+  <text x="780" y="165" font-family="Arial, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold">Redis Cache</text>
+
+  <!-- Database (Cassandra/NoSQL) -->
+  <rect x="700" y="260" width="160" height="100" rx="8" fill="#f59e0b"/>
+  <text x="780" y="310" font-family="Arial, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold">NoSQL DB</text>
+  <text x="780" y="335" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">URL Mappings</text>
+
+  <!-- Ticket Server -->
+  <rect x="700" y="420" width="160" height="80" rx="8" fill="#8b5cf6"/>
+  <text x="780" y="465" font-family="Arial, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold">Ticket Server</text>
+
+  <!-- Connectors -->
+  <!-- Client to LB -->
+  <path d="M 170 290 L 240 290" stroke="#1f2937" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <polygon points="240,290 230,285 230,295" fill="#1f2937"/>
+  
+  <!-- LB to API Nodes -->
+  <path d="M 350 240 L 430 200" stroke="#1f2937" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <polygon points="430,200 420,200 425,208" fill="#1f2937"/>
+  
+  <path d="M 350 290 L 430 290" stroke="#1f2937" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <polygon points="430,290 420,285 420,295" fill="#1f2937"/>
+  
+  <path d="M 350 340 L 430 380" stroke="#1f2937" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <polygon points="430,380 425,372 420,380" fill="#1f2937"/>
+
+  <!-- API to Components -->
+  <!-- To Cache -->
+  <path d="M 540 200 L 690 160" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-dasharray="8,4" fill="none"/>
+  <polygon points="690,160 680,160 685,168" fill="#ef4444"/>
+
+  <!-- To DB -->
+  <path d="M 540 290 L 690 310" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <polygon points="690,310 680,305 683,315" fill="#f59e0b"/>
+
+  <!-- To Ticket Server -->
+  <path d="M 540 380 L 690 460" stroke="#8b5cf6" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <polygon points="690,460 680,455 685,465" fill="#8b5cf6"/>
+
+  <!-- Note for Reads vs Writes -->
+  <g transform="translate(100, 520)" font-family="Arial, sans-serif" font-size="14" fill="#1f2937">
+    <text x="0" y="0" font-weight="bold">Flow:</text>
+    <text x="0" y="25">1. Reads hit API → Cache → Return. (Cache Miss → DB → Cache)</text>
+    <text x="0" y="50">2. Writes hit API → Ticket Server for ID → DB.</text>
+  </g>
+</svg>
