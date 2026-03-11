@@ -14,13 +14,10 @@ meta_image: "/assets/images/about-meta-image.jpg"
 
 <!-- Personal Introduction -->
 <section class="py-12 bg-gray-100" style="content-visibility:visible">
-    <div class="max-w-6xl mx-auto flex flex-wrap items-center">
-        <div class="w-full md:w-1/2 text-center md:text-left p-6">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center">
             <h2 class="text-3xl font-semibold text-gray-800">{{ site.data.about.intro_title }}</h2>
-            <p class="text-gray-600 mt-4">{{ site.data.about.intro_description }}</p>
-        </div>
-        <div class="w-full md:w-1/2 text-center">
-            <img src="{{ site.data.home.about.image-prof }}" alt="About Me" class="rounded-lg shadow-lg w-full md:w-2/3" loading="lazy">
+            <p class="text-gray-600 mt-4 max-w-3xl mx-auto">{{ site.data.about.intro_description }}</p>
         </div>
     </div>
 </section>
