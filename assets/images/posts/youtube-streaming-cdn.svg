@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="500" fill="url(#bgGrad)" rx="12"/>
+  <text x="450" y="35" font-family="Arial" font-size="18" font-weight="bold" fill="white" text-anchor="middle">Video Streaming - CDN &amp; Adaptive Bitrate</text>
+
+  <!-- User device -->
+  <rect x="30" y="100" width="120" height="80" rx="8" fill="#1f2937" stroke="#3b82f6" stroke-width="2"/>
+  <text x="90" y="128" font-family="Arial" font-size="24" text-anchor="middle">📱</text>
+  <text x="90" y="150" font-family="Arial" font-size="11" fill="#93c5fd" text-anchor="middle">User Device</text>
+  <text x="90" y="165" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">ABR Player</text>
+
+  <!-- DNS Resolver -->
+  <rect x="210" y="100" width="130" height="80" rx="8" fill="#1f2937" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="275" y="125" font-family="Arial" font-size="11" font-weight="bold" fill="#c4b5fd" text-anchor="middle">DNS / Anycast</text>
+  <text x="275" y="142" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Routes to nearest</text>
+  <text x="275" y="156" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">CDN Point of Presence</text>
+  <text x="275" y="170" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">~200 PoPs globally</text>
+
+  <!-- CDN Edge Nodes -->
+  <rect x="400" y="40" width="220" height="230" rx="10" fill="#1e3a5f20" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="510" y="62" font-family="Arial" font-size="12" font-weight="bold" fill="#f59e0b" text-anchor="middle">CDN Edge (Local PoP)</text>
+
+  <rect x="415" y="70" width="185" height="50" rx="8" fill="#1f2937" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="508" y="92" font-family="Arial" font-size="10" font-weight="bold" fill="#fcd34d" text-anchor="middle">Edge Cache</text>
+  <text x="508" y="106" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Hot videos cached at edge</text>
+  <text x="508" y="119" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">HLS chunks pre-warmed</text>
+
+  <line x1="508" y1="120" x2="508" y2="150" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrowOrange)"/>
+
+  <rect x="415" y="150" width="185" height="50" rx="8" fill="#1f2937" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="508" y="172" font-family="Arial" font-size="10" font-weight="bold" fill="#fcd34d" text-anchor="middle">Cache Miss Handler</text>
+  <text x="508" y="186" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Fetches from origin GCS</text>
+  <text x="508" y="199" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Caches for future requests</text>
+
+  <line x1="508" y1="200" x2="508" y2="230" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrowOrange)"/>
+
+  <rect x="415" y="230" width="185" height="40" rx="8" fill="#1f2937" stroke="#10b981" stroke-width="1.5"/>
+  <text x="508" y="252" font-family="Arial" font-size="10" font-weight="bold" fill="#6ee7b7" text-anchor="middle">HLS Segment Server</text>
+  <text x="508" y="265" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">2-10 sec segments</text>
+
+  <!-- Origin (GCS) -->
+  <rect x="680" y="100" width="180" height="180" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="770" y="122" font-family="Arial" font-size="11" font-weight="bold" fill="#fca5a5" text-anchor="middle">Origin Storage (GCS)</text>
+
+  <rect x="695" y="135" width="150" height="30" rx="6" fill="#1f2937" stroke="#ef4444" stroke-width="1"/>
+  <text x="770" y="153" font-family="Arial" font-size="10" fill="#fca5a5" text-anchor="middle">360p segments</text>
+
+  <rect x="695" y="172" width="150" height="30" rx="6" fill="#1f2937" stroke="#ef4444" stroke-width="1"/>
+  <text x="770" y="190" font-family="Arial" font-size="10" fill="#fca5a5" text-anchor="middle">720p HD segments</text>
+
+  <rect x="695" y="209" width="150" height="30" rx="6" fill="#1f2937" stroke="#ef4444" stroke-width="1"/>
+  <text x="770" y="227" font-family="Arial" font-size="10" fill="#fca5a5" text-anchor="middle">1080p FHD segments</text>
+
+  <rect x="695" y="246" width="150" height="30" rx="6" fill="#1f2937" stroke="#ef4444" stroke-width="1"/>
+  <text x="770" y="264" font-family="Arial" font-size="10" fill="#fca5a5" text-anchor="middle">4K UHD segments</text>
+
+  <!-- Arrows -->
+  <line x1="150" y1="140" x2="210" y2="140" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+  <text x="180" y="132" font-family="Arial" font-size="9" fill="#3b82f6" text-anchor="middle">Request</text>
+
+  <line x1="340" y1="140" x2="400" y2="140" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="370" y="132" font-family="Arial" font-size="9" fill="#94a3b8" text-anchor="middle">Route to PoP</text>
+
+  <line x1="620" y1="180" x2="680" y2="180" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" stroke-dasharray="4,3"/>
+  <text x="650" y="170" font-family="Arial" font-size="9" fill="#94a3b8" text-anchor="middle">Cache Miss</text>
+
+  <!-- ABR Logic Box -->
+  <rect x="30" y="310" width="840" height="165" rx="10" fill="#1f2937" stroke="#334155" stroke-width="1"/>
+  <text x="450" y="335" font-family="Arial" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Adaptive Bitrate (ABR) - How Quality Auto-Switches</text>
+
+  <!-- Bandwidth scenarios -->
+  <rect x="50" y="345" width="175" height="115" rx="8" fill="#0f172a"/>
+  <text x="138" y="365" font-family="Arial" font-size="10" font-weight="bold" fill="#10b981" text-anchor="middle">Good Connection</text>
+  <text x="138" y="380" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Bandwidth: &gt;25 Mbps</text>
+  <rect x="60" y="388" width="155" height="15" rx="3" fill="#10b981"/>
+  <text x="138" y="400" font-family="Arial" font-size="9" fill="white" text-anchor="middle">4K / 1080p HDR</text>
+  <text x="138" y="425" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Buffer: 30s ahead</text>
+  <text x="138" y="440" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Startup: &lt;1s</text>
+
+  <rect x="245" y="345" width="175" height="115" rx="8" fill="#0f172a"/>
+  <text x="333" y="365" font-family="Arial" font-size="10" font-weight="bold" fill="#f59e0b" text-anchor="middle">Average Connection</text>
+  <text x="333" y="380" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Bandwidth: 5-25 Mbps</text>
+  <rect x="255" y="388" width="155" height="15" rx="3" fill="#f59e0b"/>
+  <text x="333" y="400" font-family="Arial" font-size="9" fill="white" text-anchor="middle">720p / 1080p</text>
+  <text x="333" y="425" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Buffer: 15s ahead</text>
+  <text x="333" y="440" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Startup: ~2s</text>
+
+  <rect x="440" y="345" width="175" height="115" rx="8" fill="#0f172a"/>
+  <text x="528" y="365" font-family="Arial" font-size="10" font-weight="bold" fill="#ef4444" text-anchor="middle">Poor Connection</text>
+  <text x="528" y="380" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Bandwidth: &lt;5 Mbps</text>
+  <rect x="450" y="388" width="155" height="15" rx="3" fill="#ef4444"/>
+  <text x="528" y="400" font-family="Arial" font-size="9" fill="white" text-anchor="middle">360p / 480p</text>
+  <text x="528" y="425" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Buffer: 5s ahead</text>
+  <text x="528" y="440" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Avoids buffering</text>
+
+  <rect x="635" y="345" width="215" height="115" rx="8" fill="#0f172a"/>
+  <text x="743" y="365" font-family="Arial" font-size="10" font-weight="bold" fill="#8b5cf6" text-anchor="middle">ABR Algorithm Inputs</text>
+  <text x="643" y="385" font-family="Arial" font-size="9" fill="#64748b">• Current buffer length</text>
+  <text x="643" y="400" font-family="Arial" font-size="9" fill="#64748b">• Measured download speed</text>
+  <text x="643" y="415" font-family="Arial" font-size="9" fill="#64748b">• Segment fetch time</text>
+  <text x="643" y="430" font-family="Arial" font-size="9" fill="#64748b">• Device type (mobile/TV)</text>
+  <text x="643" y="445" font-family="Arial" font-size="9" fill="#64748b">• User bandwidth history</text>
+</svg>

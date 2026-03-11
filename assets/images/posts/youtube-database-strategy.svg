@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="500" fill="url(#bgGrad)" rx="12"/>
+  <text x="450" y="35" font-family="Arial" font-size="18" font-weight="bold" fill="white" text-anchor="middle">Database Strategy - Polyglot Persistence</text>
+  <text x="450" y="54" font-family="Arial" font-size="12" fill="#64748b" text-anchor="middle">Different data types need different databases — don't fight your data</text>
+
+  <!-- User Data -->
+  <rect x="20" y="70" width="195" height="185" rx="10" fill="#1f2937" stroke="#3b82f6" stroke-width="2"/>
+  <text x="118" y="95" font-family="Arial" font-size="13" font-weight="bold" fill="#3b82f6" text-anchor="middle">User Data</text>
+  <rect x="35" y="105" width="165" height="35" rx="6" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="118" y="120" font-family="Arial" font-size="10" font-weight="bold" fill="#93c5fd" text-anchor="middle">MySQL / Cloud Spanner</text>
+  <text x="118" y="133" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">ACID, strong consistency</text>
+
+  <text x="35" y="160" font-family="Arial" font-size="9" fill="#94a3b8">• User profiles, preferences</text>
+  <text x="35" y="175" font-family="Arial" font-size="9" fill="#94a3b8">• Subscriptions, channel data</text>
+  <text x="35" y="190" font-family="Arial" font-size="9" fill="#94a3b8">• Payment information</text>
+  <text x="35" y="205" font-family="Arial" font-size="9" fill="#94a3b8">• Relational, consistent</text>
+  <rect x="35" y="218" width="165" height="22" rx="4" fill="#1e3a5f"/>
+  <text x="118" y="233" font-family="Arial" font-size="9" fill="#3b82f6" text-anchor="middle">~2B rows, sharded by region</text>
+
+  <!-- Video Metadata -->
+  <rect x="235" y="70" width="195" height="185" rx="10" fill="#1f2937" stroke="#10b981" stroke-width="2"/>
+  <text x="333" y="95" font-family="Arial" font-size="13" font-weight="bold" fill="#10b981" text-anchor="middle">Video Metadata</text>
+  <rect x="250" y="105" width="165" height="35" rx="6" fill="#14532d" stroke="#10b981" stroke-width="1"/>
+  <text x="333" y="120" font-family="Arial" font-size="10" font-weight="bold" fill="#6ee7b7" text-anchor="middle">Bigtable / Cassandra</text>
+  <text x="333" y="133" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Wide-column, high write</text>
+
+  <text x="250" y="160" font-family="Arial" font-size="9" fill="#94a3b8">• Video title, description, tags</text>
+  <text x="250" y="175" font-family="Arial" font-size="9" fill="#94a3b8">• Upload timestamp, duration</text>
+  <text x="250" y="190" font-family="Arial" font-size="9" fill="#94a3b8">• CDN URLs, quality variants</text>
+  <text x="250" y="205" font-family="Arial" font-size="9" fill="#94a3b8">• View count, like count</text>
+  <rect x="250" y="218" width="165" height="22" rx="4" fill="#14532d"/>
+  <text x="333" y="233" font-family="Arial" font-size="9" fill="#10b981" text-anchor="middle">~800M videos, append-optimized</text>
+
+  <!-- Engagement Data -->
+  <rect x="450" y="70" width="195" height="185" rx="10" fill="#1f2937" stroke="#f59e0b" stroke-width="2"/>
+  <text x="548" y="95" font-family="Arial" font-size="13" font-weight="bold" fill="#f59e0b" text-anchor="middle">Engagement Data</text>
+  <rect x="465" y="105" width="165" height="35" rx="6" fill="#451a03" stroke="#f59e0b" stroke-width="1"/>
+  <text x="548" y="120" font-family="Arial" font-size="10" font-weight="bold" fill="#fcd34d" text-anchor="middle">Redis + Kafka + BigQuery</text>
+  <text x="548" y="133" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Real-time hot + cold storage</text>
+
+  <text x="465" y="160" font-family="Arial" font-size="9" fill="#94a3b8">• Watch history, events</text>
+  <text x="465" y="175" font-family="Arial" font-size="9" fill="#94a3b8">• Like/dislike events</text>
+  <text x="465" y="190" font-family="Arial" font-size="9" fill="#94a3b8">• Comments, replies</text>
+  <text x="465" y="205" font-family="Arial" font-size="9" fill="#94a3b8">• Click-through, watch time</text>
+  <rect x="465" y="218" width="165" height="22" rx="4" fill="#451a03"/>
+  <text x="548" y="233" font-family="Arial" font-size="9" fill="#f59e0b" text-anchor="middle">Petabytes/day, event streaming</text>
+
+  <!-- Search Index -->
+  <rect x="665" y="70" width="215" height="185" rx="10" fill="#1f2937" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="773" y="95" font-family="Arial" font-size="13" font-weight="bold" fill="#8b5cf6" text-anchor="middle">Search Index</text>
+  <rect x="680" y="105" width="185" height="35" rx="6" fill="#2e1065" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="773" y="120" font-family="Arial" font-size="10" font-weight="bold" fill="#c4b5fd" text-anchor="middle">Elasticsearch</text>
+  <text x="773" y="133" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Full-text search, inverted index</text>
+
+  <text x="680" y="160" font-family="Arial" font-size="9" fill="#94a3b8">• Video titles, descriptions</text>
+  <text x="680" y="175" font-family="Arial" font-size="9" fill="#94a3b8">• Tags, auto-suggest</text>
+  <text x="680" y="190" font-family="Arial" font-size="9" fill="#94a3b8">• Ranking signals (views, likes)</text>
+  <text x="680" y="205" font-family="Arial" font-size="9" fill="#94a3b8">• Channel, creator search</text>
+  <rect x="680" y="218" width="185" height="22" rx="4" fill="#2e1065"/>
+  <text x="773" y="233" font-family="Arial" font-size="9" fill="#8b5cf6" text-anchor="middle">800M+ docs, &lt;100ms searches</text>
+
+  <!-- Cache Layer -->
+  <rect x="20" y="275" width="860" height="95" rx="10" fill="#1f2937" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="450" y="298" font-family="Arial" font-size="14" font-weight="bold" fill="#ef4444" text-anchor="middle">Cache Layer (Redis Cluster) — The Speed Secret</text>
+
+  <rect x="35" y="310" width="180" height="45" rx="6" fill="#0f172a"/>
+  <text x="125" y="328" font-family="Arial" font-size="10" font-weight="bold" fill="#fca5a5" text-anchor="middle">Hot Video Metadata</text>
+  <text x="125" y="343" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Top 5% videos = 90% traffic</text>
+  <text x="125" y="355" font-family="Arial" font-size="9" fill="#475569" text-anchor="middle">TTL: 5 min</text>
+
+  <rect x="230" y="310" width="180" height="45" rx="6" fill="#0f172a"/>
+  <text x="320" y="328" font-family="Arial" font-size="10" font-weight="bold" fill="#fca5a5" text-anchor="middle">Session Tokens</text>
+  <text x="320" y="343" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Auth tokens, user sessions</text>
+  <text x="320" y="355" font-family="Arial" font-size="9" fill="#475569" text-anchor="middle">TTL: 24 hr</text>
+
+  <rect x="425" y="310" width="180" height="45" rx="6" fill="#0f172a"/>
+  <text x="515" y="328" font-family="Arial" font-size="10" font-weight="bold" fill="#fca5a5" text-anchor="middle">View Counters</text>
+  <text x="515" y="343" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Approx counts (HLL)</text>
+  <text x="515" y="355" font-family="Arial" font-size="9" fill="#475569" text-anchor="middle">Flush to DB every 30s</text>
+
+  <rect x="620" y="310" width="245" height="45" rx="6" fill="#0f172a"/>
+  <text x="743" y="328" font-family="Arial" font-size="10" font-weight="bold" fill="#fca5a5" text-anchor="middle">Feed &amp; Recommendations Cache</text>
+  <text x="743" y="343" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Pre-computed home feeds per user</text>
+  <text x="743" y="355" font-family="Arial" font-size="9" fill="#475569" text-anchor="middle">TTL: 10 min, refreshed on activity</text>
+
+  <!-- Bottom comparison table -->
+  <rect x="20" y="382" width="860" height="100" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="450" y="402" font-family="Arial" font-size="12" font-weight="bold" fill="#94a3b8" text-anchor="middle">Why Not One Database For Everything?</text>
+
+  <text x="40" y="422" font-family="Arial" font-size="10" fill="#10b981">✓ Bigtable</text>
+  <text x="110" y="422" font-family="Arial" font-size="10" fill="#64748b">— 10M+ writes/sec, no joins needed on video events</text>
+
+  <text x="40" y="440" font-family="Arial" font-size="10" fill="#3b82f6">✓ MySQL</text>
+  <text x="110" y="440" font-family="Arial" font-size="10" fill="#64748b">— ACID for billing/payments, relational data</text>
+
+  <text x="40" y="458" font-family="Arial" font-size="10" fill="#f59e0b">✓ Redis</text>
+  <text x="110" y="458" font-family="Arial" font-size="10" fill="#64748b">— &lt;1ms latency for hot paths, counters, sessions</text>
+
+  <text x="480" y="422" font-family="Arial" font-size="10" fill="#8b5cf6">✓ Elasticsearch</text>
+  <text x="570" y="422" font-family="Arial" font-size="10" fill="#64748b">— Inverted index for sub-100ms video search</text>
+
+  <text x="480" y="440" font-family="Arial" font-size="10" fill="#ef4444">✓ BigQuery</text>
+  <text x="570" y="440" font-family="Arial" font-size="10" fill="#64748b">— Analytical queries on petabyte-scale event data</text>
+
+  <text x="480" y="458" font-family="Arial" font-size="10" fill="#f59e0b">✓ GCS</text>
+  <text x="570" y="458" font-family="Arial" font-size="10" fill="#64748b">— Cheap blob storage for video files, exabyte scale</text>
+
+  <text x="450" y="475" font-family="Arial" font-size="9" fill="#475569" text-anchor="middle">Key insight: Optimize each data type for its access pattern — not one-size-fits-all</text>
+</svg>

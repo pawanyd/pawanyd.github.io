@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="460" fill="url(#bgGrad)" rx="12"/>
+  <text x="450" y="35" font-family="Arial" font-size="18" font-weight="bold" fill="white" text-anchor="middle">Recommendation &amp; Feed System</text>
+
+  <!-- Input signals -->
+  <rect x="20" y="60" width="170" height="300" rx="10" fill="#1f2937" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="105" y="82" font-family="Arial" font-size="12" font-weight="bold" fill="#3b82f6" text-anchor="middle">Input Signals</text>
+
+  <rect x="30" y="92" width="150" height="30" rx="6" fill="#1e3a5f"/>
+  <text x="105" y="111" font-family="Arial" font-size="9" fill="#93c5fd" text-anchor="middle">Watch history (long-term)</text>
+
+  <rect x="30" y="130" width="150" height="30" rx="6" fill="#1e3a5f"/>
+  <text x="105" y="149" font-family="Arial" font-size="9" fill="#93c5fd" text-anchor="middle">Recent sessions (short-term)</text>
+
+  <rect x="30" y="168" width="150" height="30" rx="6" fill="#1e3a5f"/>
+  <text x="105" y="187" font-family="Arial" font-size="9" fill="#93c5fd" text-anchor="middle">Likes, saves, shares</text>
+
+  <rect x="30" y="206" width="150" height="30" rx="6" fill="#1e3a5f"/>
+  <text x="105" y="225" font-family="Arial" font-size="9" fill="#93c5fd" text-anchor="middle">Search queries</text>
+
+  <rect x="30" y="244" width="150" height="30" rx="6" fill="#1e3a5f"/>
+  <text x="105" y="263" font-family="Arial" font-size="9" fill="#93c5fd" text-anchor="middle">Subscriptions, channels</text>
+
+  <rect x="30" y="282" width="150" height="30" rx="6" fill="#1e3a5f"/>
+  <text x="105" y="301" font-family="Arial" font-size="9" fill="#93c5fd" text-anchor="middle">Device, location, time of day</text>
+
+  <rect x="30" y="320" width="150" height="30" rx="6" fill="#1e3a5f"/>
+  <text x="105" y="339" font-family="Arial" font-size="9" fill="#93c5fd" text-anchor="middle">Click-through rates</text>
+
+  <!-- ML Pipeline -->
+  <rect x="220" y="60" width="240" height="300" rx="10" fill="#1f2937" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="340" y="82" font-family="Arial" font-size="12" font-weight="bold" fill="#8b5cf6" text-anchor="middle">ML Ranking Pipeline</text>
+
+  <rect x="235" y="95" width="210" height="50" rx="8" fill="#2e1065" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="340" y="115" font-family="Arial" font-size="11" font-weight="bold" fill="#c4b5fd" text-anchor="middle">Retrieval (Candidate Gen)</text>
+  <text x="340" y="130" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">From billions → hundreds of candidates</text>
+  <text x="340" y="143" font-family="Arial" font-size="9" fill="#475569" text-anchor="middle">Collaborative filtering, matrix factorization</text>
+
+  <line x1="340" y1="145" x2="340" y2="168" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="235" y="168" width="210" height="50" rx="8" fill="#2e1065" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="340" y="188" font-family="Arial" font-size="11" font-weight="bold" fill="#c4b5fd" text-anchor="middle">Ranking</text>
+  <text x="340" y="203" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Hundreds → top 50 with scores</text>
+  <text x="340" y="216" font-family="Arial" font-size="9" fill="#475569" text-anchor="middle">Deep learning model (DNN)</text>
+
+  <line x1="340" y1="218" x2="340" y2="241" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="235" y="241" width="210" height="50" rx="8" fill="#2e1065" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="340" y="261" font-family="Arial" font-size="11" font-weight="bold" fill="#c4b5fd" text-anchor="middle">Post-Ranking Filters</text>
+  <text x="340" y="276" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Diversity, freshness, safety</text>
+  <text x="340" y="289" font-family="Arial" font-size="9" fill="#475569" text-anchor="middle">Dedupe, policy enforcement</text>
+
+  <line x1="340" y1="291" x2="340" y2="314" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="235" y="314" width="210" height="40" rx="8" fill="#1f2937" stroke="#10b981" stroke-width="1.5"/>
+  <text x="340" y="335" font-family="Arial" font-size="10" font-weight="bold" fill="#6ee7b7" text-anchor="middle">Final Feed (20-50 videos)</text>
+  <text x="340" y="347" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Cached in Redis, refreshed every 10m</text>
+
+  <!-- Video features -->
+  <rect x="490" y="60" width="200" height="300" rx="10" fill="#1f2937" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="590" y="82" font-family="Arial" font-size="12" font-weight="bold" fill="#f59e0b" text-anchor="middle">Video Features</text>
+
+  <rect x="505" y="95" width="170" height="30" rx="6" fill="#451a03"/>
+  <text x="590" y="114" font-family="Arial" font-size="9" fill="#fcd34d" text-anchor="middle">Video embeddings (thumbnail AI)</text>
+
+  <rect x="505" y="133" width="170" height="30" rx="6" fill="#451a03"/>
+  <text x="590" y="152" font-family="Arial" font-size="9" fill="#fcd34d" text-anchor="middle">Category, topic, language</text>
+
+  <rect x="505" y="171" width="170" height="30" rx="6" fill="#451a03"/>
+  <text x="590" y="190" font-family="Arial" font-size="9" fill="#fcd34d" text-anchor="middle">Upload recency (freshness)</text>
+
+  <rect x="505" y="209" width="170" height="30" rx="6" fill="#451a03"/>
+  <text x="590" y="228" font-family="Arial" font-size="9" fill="#fcd34d" text-anchor="middle">Avg watch % (completion rate)</text>
+
+  <rect x="505" y="247" width="170" height="30" rx="6" fill="#451a03"/>
+  <text x="590" y="266" font-family="Arial" font-size="9" fill="#fcd34d" text-anchor="middle">Like/dislike ratio</text>
+
+  <rect x="505" y="285" width="170" height="30" rx="6" fill="#451a03"/>
+  <text x="590" y="304" font-family="Arial" font-size="9" fill="#fcd34d" text-anchor="middle">Creator engagement score</text>
+
+  <rect x="505" y="323" width="170" height="30" rx="6" fill="#451a03"/>
+  <text x="590" y="342" font-family="Arial" font-size="9" fill="#fcd34d" text-anchor="middle">Historical CTR by context</text>
+
+  <!-- Result -->
+  <rect x="718" y="150" width="162" height="215" rx="10" fill="#1f2937" stroke="#10b981" stroke-width="2"/>
+  <text x="799" y="175" font-family="Arial" font-size="13" font-weight="bold" fill="#10b981" text-anchor="middle">Output</text>
+  <text x="799" y="195" font-family="Arial" font-size="28" text-anchor="middle">🏠</text>
+  <text x="799" y="225" font-family="Arial" font-size="10" font-weight="bold" fill="#6ee7b7" text-anchor="middle">Home Feed</text>
+  <text x="799" y="241" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Personalized for you</text>
+
+  <text x="799" y="270" font-family="Arial" font-size="28" text-anchor="middle">⏭️</text>
+  <text x="799" y="298" font-family="Arial" font-size="10" font-weight="bold" fill="#6ee7b7" text-anchor="middle">Up Next / Sidebar</text>
+  <text x="799" y="314" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Related videos</text>
+
+  <text x="799" y="343" font-family="Arial" font-size="13" text-anchor="middle">📬</text>
+  <text x="799" y="356" font-family="Arial" font-size="10" font-weight="bold" fill="#6ee7b7" text-anchor="middle">Notifications</text>
+
+  <!-- Arrows -->
+  <line x1="190" y1="210" x2="220" y2="210" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="460" y1="210" x2="490" y2="210" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="590" y1="210" x2="718" y2="250" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="460" y1="250" x2="718" y2="250" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Stats bar -->
+  <rect x="20" y="380" width="860" height="60" rx="8" fill="#1f2937" stroke="#334155" stroke-width="1"/>
+  <text x="450" y="400" font-family="Arial" font-size="12" font-weight="bold" fill="#94a3b8" text-anchor="middle">The Numbers That Matter</text>
+
+  <text x="50" y="425" font-family="Arial" font-size="10" fill="#3b82f6">70%</text>
+  <text x="75" y="425" font-family="Arial" font-size="10" fill="#64748b">of watch time driven by recommendations</text>
+
+  <text x="320" y="425" font-family="Arial" font-size="10" fill="#10b981">~1B users</text>
+  <text x="380" y="425" font-family="Arial" font-size="10" fill="#64748b">get personalized feeds daily</text>
+
+  <text x="570" y="425" font-family="Arial" font-size="10" fill="#f59e0b">&lt;200ms</text>
+  <text x="615" y="425" font-family="Arial" font-size="10" fill="#64748b">recommendation latency (cached)</text>
+</svg>
