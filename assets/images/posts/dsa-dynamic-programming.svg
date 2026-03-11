@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="460" fill="url(#bgGrad)" rx="12"/>
+  <text x="450" y="33" font-family="Arial" font-size="17" font-weight="bold" fill="white" text-anchor="middle">Dynamic Programming — The Interview Boss</text>
+
+  <!-- DP intro -->
+  <text x="40" y="60" font-family="Arial" font-size="12" font-weight="bold" fill="#fbbf24">The Core Idea: Remember what you've already solved.</text>
+  <text x="40" y="78" font-family="Arial" font-size="11" fill="#64748b">DP = Recursion + Memoization. Break problem into sub-problems, cache results, never solve the same sub-problem twice.</text>
+
+  <!-- Fibonacci example -->
+  <rect x="30" y="92" width="400" height="200" rx="10" fill="#1f2937" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="230" y="113" font-family="Arial" font-size="12" font-weight="bold" fill="#f59e0b" text-anchor="middle">Classic Example: Fibonacci</text>
+
+  <!-- Without DP (bad) -->
+  <rect x="40" y="120" width="180" height="160" rx="8" fill="#0f172a"/>
+  <text x="130" y="140" font-family="Arial" font-size="10" font-weight="bold" fill="#ef4444" text-anchor="middle">Without DP — O(2ⁿ) ✗</text>
+  <!-- Tree of duplicate calls -->
+  <text x="130" y="158" font-family="Arial" font-size="9" fill="#475569" text-anchor="middle">fib(5)</text>
+  <text x="90" y="175" font-family="Arial" font-size="9" fill="#475569" text-anchor="middle">fib(4)</text>
+  <text x="170" y="175" font-family="Arial" font-size="9" fill="#475569" text-anchor="middle">fib(3)</text>
+  <text x="60" y="193" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">fib(3)</text>
+  <text x="115" y="193" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">fib(2)</text>
+  <text x="148" y="193" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">fib(2)</text>
+  <text x="200" y="193" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">fib(1)</text>
+  <!-- Lines -->
+  <line x1="130" y1="162" x2="95" y2="170" stroke="#334155" stroke-width="1"/>
+  <line x1="130" y1="162" x2="168" y2="170" stroke="#334155" stroke-width="1"/>
+  <line x1="95" y1="179" x2="68" y2="187" stroke="#334155" stroke-width="1"/>
+  <line x1="95" y1="179" x2="118" y2="187" stroke="#334155" stroke-width="1"/>
+  <line x1="168" y1="179" x2="150" y2="187" stroke="#334155" stroke-width="1"/>
+  <line x1="168" y1="179" x2="198" y2="187" stroke="#334155" stroke-width="1"/>
+
+  <rect x="55" y="203" width="25" height="12" rx="2" fill="#ef4444" opacity="0.5"/>
+  <text x="68" y="213" font-family="Arial" font-size="7" fill="#fca5a5" text-anchor="middle">dup!</text>
+  <rect x="110" y="203" width="25" height="12" rx="2" fill="#ef4444" opacity="0.5"/>
+  <text x="123" y="213" font-family="Arial" font-size="7" fill="#fca5a5" text-anchor="middle">dup!</text>
+  <rect x="143" y="203" width="25" height="12" rx="2" fill="#ef4444" opacity="0.5"/>
+  <text x="156" y="213" font-family="Arial" font-size="7" fill="#fca5a5" text-anchor="middle">dup!</text>
+
+  <text x="130" y="248" font-family="Arial" font-size="9" fill="#fca5a5" text-anchor="middle">fib(3) computed 2x</text>
+  <text x="130" y="264" font-family="Arial" font-size="9" fill="#fca5a5" text-anchor="middle">Exponential time — useless!</text>
+  <text x="130" y="273" font-family="Arial" font-size="8" fill="#64748b" text-anchor="middle">fib(50) = billions of calls</text>
+
+  <!-- With DP (good) -->
+  <rect x="230" y="120" width="190" height="160" rx="8" fill="#0f172a"/>
+  <text x="325" y="140" font-family="Arial" font-size="10" font-weight="bold" fill="#10b981" text-anchor="middle">With Memoization — O(n) ✓</text>
+
+  <text x="240" y="160" font-family="Arial" font-size="9" fill="#64748b">cache = {}</text>
+  <text x="240" y="176" font-family="Arial" font-size="9" fill="#64748b">fib(5): not cached — compute</text>
+  <text x="240" y="192" font-family="Arial" font-size="9" fill="#64748b">fib(4): not cached — compute</text>
+  <text x="240" y="208" font-family="Arial" font-size="9" fill="#64748b">fib(3): not cached — compute</text>
+  <text x="240" y="224" font-family="Arial" font-size="9" fill="#6ee7b7">fib(3): ✓ CACHED → return!</text>
+  <text x="240" y="240" font-family="Arial" font-size="9" fill="#6ee7b7">fib(2): ✓ CACHED → return!</text>
+  <text x="240" y="258" font-family="Arial" font-size="9" fill="#34d399">Only 5 unique calls total!</text>
+
+  <!-- DP patterns right -->
+  <rect x="445" y="55" width="435" height="390" rx="10" fill="#1f2937" stroke="#334155" stroke-width="1.5"/>
+  <text x="663" y="77" font-family="Arial" font-size="13" font-weight="bold" fill="#94a3b8" text-anchor="middle">The 5 DP Problem Categories</text>
+
+  <!-- 1D DP -->
+  <rect x="455" y="87" width="415" height="70" rx="8" fill="#2e1065"/>
+  <text x="663" y="106" font-family="Arial" font-size="11" font-weight="bold" fill="#a78bfa" text-anchor="middle">1. Linear / 1D DP</text>
+  <text x="463" y="122" font-family="Arial" font-size="9" fill="#c4b5fd">dp[i] = best answer for first i elements</text>
+  <text x="463" y="137" font-family="Arial" font-size="9" fill="#64748b">Problems: Climbing Stairs, House Robber, Fibonacci, Min Cost Climbing</text>
+  <text x="463" y="149" font-family="Arial" font-size="9" fill="#fcd34d">Template: dp[i] = max(dp[i-1], dp[i-2] + arr[i])</text>
+
+  <!-- 2D DP -->
+  <rect x="455" y="165" width="415" height="70" rx="8" fill="#1e3a5f"/>
+  <text x="663" y="184" font-family="Arial" font-size="11" font-weight="bold" fill="#60a5fa" text-anchor="middle">2. Grid / 2D DP</text>
+  <text x="463" y="200" font-family="Arial" font-size="9" fill="#93c5fd">dp[i][j] = answer for grid cell (i,j)</text>
+  <text x="463" y="215" font-family="Arial" font-size="9" fill="#64748b">Problems: Unique Paths, Minimum Path Sum, Dungeon Game, Edit Distance</text>
+  <text x="463" y="227" font-family="Arial" font-size="9" fill="#fcd34d">Template: dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i][j]</text>
+
+  <!-- Knapsack -->
+  <rect x="455" y="243" width="415" height="70" rx="8" fill="#14532d"/>
+  <text x="663" y="262" font-family="Arial" font-size="11" font-weight="bold" fill="#34d399" text-anchor="middle">3. Knapsack / Partitioning</text>
+  <text x="463" y="278" font-family="Arial" font-size="9" fill="#6ee7b7">dp[i][w] = max value with first i items, weight limit w</text>
+  <text x="463" y="293" font-family="Arial" font-size="9" fill="#64748b">Problems: 0/1 Knapsack, Partition Equal Subset, Coin Change</text>
+  <text x="463" y="305" font-family="Arial" font-size="9" fill="#fcd34d">Key: Each item — include it or skip it?</text>
+
+  <!-- Subsequence -->
+  <rect x="455" y="321" width="415" height="60" rx="8" fill="#451a03"/>
+  <text x="663" y="340" font-family="Arial" font-size="11" font-weight="bold" fill="#fbbf24" text-anchor="middle">4. Subsequence / String DP</text>
+  <text x="463" y="356" font-family="Arial" font-size="9" fill="#fcd34d">Longest Common Subsequence, Longest Palindrome, Edit Distance</text>
+  <text x="463" y="371" font-family="Arial" font-size="9" fill="#64748b">Typically 2D DP comparing two strings character by character</text>
+
+  <!-- State machine -->
+  <rect x="455" y="389" width="415" height="50" rx="8" fill="#1f2937" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="663" y="408" font-family="Arial" font-size="11" font-weight="bold" fill="#a78bfa" text-anchor="middle">5. State Machine DP</text>
+  <text x="463" y="424" font-family="Arial" font-size="9" fill="#c4b5fd">Multiple states at each position. Stock trading problems (hold/sell/cooldown)</text>
+  <text x="463" y="437" font-family="Arial" font-size="9" fill="#64748b">Best Time to Buy/Sell Stock series — the hardest of the DP classics</text>
+
+  <!-- Bottom tips -->
+  <rect x="30" y="302" width="400" height="140" rx="8" fill="#1f2937" stroke="#334155" stroke-width="1"/>
+  <text x="230" y="323" font-family="Arial" font-size="12" font-weight="bold" fill="#94a3b8" text-anchor="middle">How to Approach Any DP Problem</text>
+
+  <text x="42" y="343" font-family="Arial" font-size="10" fill="#a78bfa">Step 1:</text>
+  <text x="90" y="343" font-family="Arial" font-size="10" fill="#64748b">Identify if it asks for max/min/count of ways</text>
+
+  <text x="42" y="362" font-family="Arial" font-size="10" fill="#60a5fa">Step 2:</text>
+  <text x="90" y="362" font-family="Arial" font-size="10" fill="#64748b">Define what dp[i] means in plain English</text>
+
+  <text x="42" y="381" font-family="Arial" font-size="10" fill="#34d399">Step 3:</text>
+  <text x="90" y="381" font-family="Arial" font-size="10" fill="#64748b">Write the recurrence: dp[i] = ??? using dp[i-1]</text>
+
+  <text x="42" y="400" font-family="Arial" font-size="10" fill="#fbbf24">Step 4:</text>
+  <text x="90" y="400" font-family="Arial" font-size="10" fill="#64748b">Set base cases: dp[0], dp[1]</text>
+
+  <text x="42" y="419" font-family="Arial" font-size="10" fill="#f59e0b">Step 5:</text>
+  <text x="90" y="419" font-family="Arial" font-size="10" fill="#64748b">Code it bottom-up (tabulation) for best performance</text>
+
+  <text x="230" y="435" font-family="Arial" font-size="9" fill="#ef4444" text-anchor="middle">"DP is not magic. It's just smart caching." — Every Senior Dev</text>
+</svg>

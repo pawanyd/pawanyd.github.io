@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#059669"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#3b82f6"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="450" fill="url(#bgGrad)" rx="12"/>
+  <text x="450" y="33" font-family="Arial" font-size="17" font-weight="bold" fill="white" text-anchor="middle">Graphs — Where Algorithms Get Interesting</text>
+
+  <!-- Graph visualization -->
+  <text x="40" y="58" font-family="Arial" font-size="12" font-weight="bold" fill="#34d399">A Graph with 6 Nodes</text>
+
+  <!-- Nodes -->
+  <circle cx="150" cy="130" r="22" fill="#059669" stroke="#10b981" stroke-width="2"/>
+  <text x="150" y="136" font-family="Arial" font-size="13" font-weight="bold" fill="white" text-anchor="middle">A</text>
+
+  <circle cx="80" cy="220" r="22" fill="#14532d" stroke="#10b981" stroke-width="2"/>
+  <text x="80" y="226" font-family="Arial" font-size="13" font-weight="bold" fill="white" text-anchor="middle">B</text>
+
+  <circle cx="220" cy="220" r="22" fill="#14532d" stroke="#10b981" stroke-width="2"/>
+  <text x="220" y="226" font-family="Arial" font-size="13" font-weight="bold" fill="white" text-anchor="middle">C</text>
+
+  <circle cx="80" cy="310" r="22" fill="#14532d" stroke="#10b981" stroke-width="2"/>
+  <text x="80" y="316" font-family="Arial" font-size="13" font-weight="bold" fill="white" text-anchor="middle">D</text>
+
+  <circle cx="220" cy="310" r="22" fill="#14532d" stroke="#10b981" stroke-width="2"/>
+  <text x="220" y="316" font-family="Arial" font-size="13" font-weight="bold" fill="white" text-anchor="middle">E</text>
+
+  <circle cx="150" cy="390" r="22" fill="#14532d" stroke="#10b981" stroke-width="2"/>
+  <text x="150" y="396" font-family="Arial" font-size="13" font-weight="bold" fill="white" text-anchor="middle">F</text>
+
+  <!-- Edges -->
+  <line x1="132" y1="147" x2="97" y2="203" stroke="#10b981" stroke-width="2"/>
+  <line x1="168" y1="147" x2="203" y2="203" stroke="#10b981" stroke-width="2"/>
+  <line x1="80" y1="242" x2="80" y2="288" stroke="#10b981" stroke-width="2"/>
+  <line x1="102" y1="220" x2="198" y2="220" stroke="#10b981" stroke-width="2"/>
+  <line x1="220" y1="242" x2="220" y2="288" stroke="#10b981" stroke-width="2"/>
+  <line x1="102" y1="310" x2="198" y2="310" stroke="#10b981" stroke-width="2"/>
+  <line x1="97" y1="327" x2="133" y2="373" stroke="#10b981" stroke-width="2"/>
+  <line x1="203" y1="327" x2="168" y2="373" stroke="#10b981" stroke-width="2"/>
+
+  <!-- Edge weights -->
+  <text x="97" y="178" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">4</text>
+  <text x="200" y="178" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">2</text>
+  <text x="60" y="268" font-family="Arial" font-size="9" fill="#64748b">7</text>
+  <text x="149" y="215" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">1</text>
+  <text x="240" y="268" font-family="Arial" font-size="9" fill="#64748b">3</text>
+  <text x="160" y="305" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">5</text>
+
+  <!-- BFS vs DFS column -->
+  <rect x="290" y="50" width="280" height="385" rx="10" fill="#1f2937" stroke="#334155" stroke-width="1.5"/>
+  <text x="430" y="73" font-family="Arial" font-size="13" font-weight="bold" fill="#94a3b8" text-anchor="middle">BFS vs. DFS</text>
+
+  <!-- BFS -->
+  <rect x="302" y="82" width="256" height="180" rx="8" fill="#1e3a5f"/>
+  <text x="430" y="103" font-family="Arial" font-size="12" font-weight="bold" fill="#60a5fa" text-anchor="middle">BFS — Breadth First Search</text>
+
+  <text x="312" y="122" font-family="Arial" font-size="10" fill="#93c5fd">Think: Ripple in a pond</text>
+  <text x="312" y="139" font-family="Arial" font-size="9" fill="#64748b">• Uses a Queue (FIFO)</text>
+  <text x="312" y="155" font-family="Arial" font-size="9" fill="#64748b">• Visits level by level</text>
+  <text x="312" y="171" font-family="Arial" font-size="9" fill="#64748b">• Finds SHORTEST PATH (unweighted)</text>
+  <text x="312" y="187" font-family="Arial" font-size="9" fill="#64748b">• Good for: nearest node, min steps</text>
+
+  <!-- BFS order visualization -->
+  <text x="312" y="205" font-family="Arial" font-size="9" fill="#fcd34d">BFS order: A → B,C → D,E → F</text>
+
+  <circle cx="318" cy="222" r="10" fill="#2563eb"/>
+  <text x="318" y="227" font-family="Arial" font-size="8" fill="white" text-anchor="middle">A</text>
+  <text x="318" y="240" font-family="Arial" font-size="7" fill="#64748b" text-anchor="middle">1st</text>
+
+  <circle cx="338" cy="222" r="10" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="338" y="227" font-family="Arial" font-size="8" fill="white" text-anchor="middle">B</text>
+  <text x="338" y="240" font-family="Arial" font-size="7" fill="#64748b" text-anchor="middle">2nd</text>
+
+  <circle cx="358" cy="222" r="10" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="358" y="227" font-family="Arial" font-size="8" fill="white" text-anchor="middle">C</text>
+  <text x="358" y="240" font-family="Arial" font-size="7" fill="#64748b" text-anchor="middle">3rd</text>
+
+  <circle cx="378" cy="222" r="10" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="378" y="227" font-family="Arial" font-size="8" fill="white" text-anchor="middle">D</text>
+  <text x="378" y="240" font-family="Arial" font-size="7" fill="#64748b" text-anchor="middle">4th</text>
+
+  <circle cx="398" cy="222" r="10" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="398" y="227" font-family="Arial" font-size="8" fill="white" text-anchor="middle">E</text>
+  <text x="398" y="240" font-family="Arial" font-size="7" fill="#64748b" text-anchor="middle">5th</text>
+
+  <circle cx="418" cy="222" r="10" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="418" y="227" font-family="Arial" font-size="8" fill="white" text-anchor="middle">F</text>
+  <text x="418" y="240" font-family="Arial" font-size="7" fill="#64748b" text-anchor="middle">6th</text>
+
+  <!-- DFS -->
+  <rect x="302" y="272" width="256" height="155" rx="8" fill="#14532d"/>
+  <text x="430" y="293" font-family="Arial" font-size="12" font-weight="bold" fill="#34d399" text-anchor="middle">DFS — Depth First Search</text>
+
+  <text x="312" y="312" font-family="Arial" font-size="10" fill="#6ee7b7">Think: Go as far as possible, then backtrack</text>
+  <text x="312" y="329" font-family="Arial" font-size="9" fill="#64748b">• Uses Stack (or recursion)</text>
+  <text x="312" y="345" font-family="Arial" font-size="9" fill="#64748b">• Goes deep before exploring wide</text>
+  <text x="312" y="361" font-family="Arial" font-size="9" fill="#64748b">• Good for: cycle detection, paths, topological sort</text>
+  <text x="312" y="377" font-family="Arial" font-size="9" fill="#fcd34d">DFS order: A → B → D → F → E → C</text>
+  <text x="312" y="395" font-family="Arial" font-size="9" fill="#64748b">Complexity: O(V+E) for both BFS and DFS</text>
+
+  <!-- Algorithms side -->
+  <rect x="582" y="50" width="300" height="385" rx="10" fill="#1f2937" stroke="#334155" stroke-width="1.5"/>
+  <text x="732" y="72" font-family="Arial" font-size="13" font-weight="bold" fill="#94a3b8" text-anchor="middle">Key Graph Algorithms</text>
+
+  <rect x="592" y="82" width="280" height="80" rx="8" fill="#2e1065"/>
+  <text x="732" y="101" font-family="Arial" font-size="11" font-weight="bold" fill="#a78bfa" text-anchor="middle">Dijkstra's Algorithm</text>
+  <text x="600" y="118" font-family="Arial" font-size="9" fill="#c4b5fd">Shortest path in weighted graph (no neg weights)</text>
+  <text x="600" y="133" font-family="Arial" font-size="9" fill="#64748b">Uses a Min-Heap (Priority Queue)</text>
+  <text x="600" y="148" font-family="Arial" font-size="9" fill="#64748b">Time: O((V+E)·log V) — Good for roads, networks</text>
+
+  <rect x="592" y="172" width="280" height="80" rx="8" fill="#1e3a5f"/>
+  <text x="732" y="191" font-family="Arial" font-size="11" font-weight="bold" fill="#60a5fa" text-anchor="middle">Union-Find (DSU)</text>
+  <text x="600" y="208" font-family="Arial" font-size="9" fill="#93c5fd">Detect cycles, find connected components</text>
+  <text x="600" y="223" font-family="Arial" font-size="9" fill="#64748b">Operations: Find, Union — nearly O(1) amortized</text>
+  <text x="600" y="238" font-family="Arial" font-size="9" fill="#64748b">Used in: Kruskal's MST, network connectivity</text>
+
+  <rect x="592" y="262" width="280" height="80" rx="8" fill="#14532d"/>
+  <text x="732" y="281" font-family="Arial" font-size="11" font-weight="bold" fill="#34d399" text-anchor="middle">Topological Sort</text>
+  <text x="600" y="298" font-family="Arial" font-size="9" fill="#6ee7b7">Ordering of tasks with dependencies</text>
+  <text x="600" y="313" font-family="Arial" font-size="9" fill="#64748b">Only works on DAGs (Directed Acyclic Graphs)</text>
+  <text x="600" y="328" font-family="Arial" font-size="9" fill="#64748b">Use: Kahn's (BFS) or DFS post-order</text>
+
+  <rect x="592" y="352" width="280" height="75" rx="8" fill="#451a03"/>
+  <text x="732" y="371" font-family="Arial" font-size="11" font-weight="bold" fill="#fbbf24" text-anchor="middle">Key Interview Patterns</text>
+  <text x="600" y="388" font-family="Arial" font-size="9" fill="#fcd34d">Number of Islands (BFS/DFS on grid)</text>
+  <text x="600" y="403" font-family="Arial" font-size="9" fill="#fcd34d">Clone Graph — store visited map</text>
+  <text x="600" y="418" font-family="Arial" font-size="9" fill="#fcd34d">Course Schedule — cycle detection + topo sort</text>
+</svg>

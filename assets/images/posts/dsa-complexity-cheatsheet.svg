@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="480" fill="url(#bgGrad)" rx="12"/>
+  <text x="450" y="33" font-family="Arial" font-size="17" font-weight="bold" fill="white" text-anchor="middle">Big-O Complexity Cheat Sheet — Commit This to Memory</text>
+
+  <!-- Complexity spectrum bar -->
+  <rect x="30" y="50" width="840" height="30" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="30" y="50" width="120" height="30" rx="6" fill="#10b981" opacity="0.9"/>
+  <rect x="150" y="50" width="120" height="30" fill="#3b82f6" opacity="0.9"/>
+  <rect x="270" y="50" width="120" height="30" fill="#8b5cf6" opacity="0.9"/>
+  <rect x="390" y="50" width="120" height="30" fill="#f59e0b" opacity="0.9"/>
+  <rect x="510" y="50" width="120" height="30" fill="#ef4444" opacity="0.9"/>
+  <rect x="630" y="50" width="120" height="30" fill="#dc2626" opacity="0.95"/>
+  <rect x="750" y="50" width="120" height="30" rx="6" fill="#7f1d1d" opacity="0.95"/>
+
+  <text x="90" y="70" font-family="Arial" font-size="10" fill="white" text-anchor="middle" font-weight="bold">O(1)</text>
+  <text x="210" y="70" font-family="Arial" font-size="10" fill="white" text-anchor="middle" font-weight="bold">O(log n)</text>
+  <text x="330" y="70" font-family="Arial" font-size="10" fill="white" text-anchor="middle" font-weight="bold">O(n)</text>
+  <text x="450" y="70" font-family="Arial" font-size="10" fill="white" text-anchor="middle" font-weight="bold">O(n log n)</text>
+  <text x="570" y="70" font-family="Arial" font-size="10" fill="white" text-anchor="middle" font-weight="bold">O(n²)</text>
+  <text x="690" y="70" font-family="Arial" font-size="10" fill="white" text-anchor="middle" font-weight="bold">O(2ⁿ)</text>
+  <text x="810" y="70" font-family="Arial" font-size="10" fill="white" text-anchor="middle" font-weight="bold">O(n!)</text>
+
+  <text x="90" y="95" font-family="Arial" font-size="9" fill="#10b981" text-anchor="middle">Best</text>
+  <text x="810" y="95" font-family="Arial" font-size="9" fill="#7f1d1d" text-anchor="middle">Worst</text>
+
+  <!-- Main table -->
+  <rect x="30" y="105" width="840" height="235" rx="8" fill="#1f2937" stroke="#334155" stroke-width="1"/>
+
+  <!-- Header row -->
+  <rect x="30" y="105" width="840" height="30" rx="8" fill="#334155"/>
+  <rect x="30" y="125" width="840" height="10" fill="#334155"/>
+  <text x="120" y="125" font-family="Arial" font-size="11" font-weight="bold" fill="#94a3b8" text-anchor="middle">Complexity</text>
+  <text x="300" y="125" font-family="Arial" font-size="11" font-weight="bold" fill="#94a3b8" text-anchor="middle">Name</text>
+  <text x="490" y="125" font-family="Arial" font-size="11" font-weight="bold" fill="#94a3b8" text-anchor="middle">Example Operations</text>
+  <text x="760" y="125" font-family="Arial" font-size="11" font-weight="bold" fill="#94a3b8" text-anchor="middle">n=1,000,000 ops</text>
+
+  <!-- Rows -->
+  <rect x="35" y="138" width="830" height="27" rx="4" fill="#0f172a"/>
+  <text x="120" y="156" font-family="Arial" font-size="11" font-weight="bold" fill="#10b981" text-anchor="middle">O(1)</text>
+  <text x="300" y="156" font-family="Arial" font-size="10" fill="#64748b" text-anchor="middle">Constant</text>
+  <text x="490" y="156" font-family="Arial" font-size="10" fill="#94a3b8" text-anchor="middle">Array access, Hash map get, Stack push/pop</text>
+  <text x="760" y="156" font-family="Arial" font-size="10" fill="#10b981" text-anchor="middle">1</text>
+
+  <rect x="35" y="168" width="830" height="27" rx="4" fill="#1f2937"/>
+  <text x="120" y="186" font-family="Arial" font-size="11" font-weight="bold" fill="#3b82f6" text-anchor="middle">O(log n)</text>
+  <text x="300" y="186" font-family="Arial" font-size="10" fill="#64748b" text-anchor="middle">Logarithmic</text>
+  <text x="490" y="186" font-family="Arial" font-size="10" fill="#94a3b8" text-anchor="middle">Binary search, Balanced BST operations</text>
+  <text x="760" y="186" font-family="Arial" font-size="10" fill="#3b82f6" text-anchor="middle">20</text>
+
+  <rect x="35" y="198" width="830" height="27" rx="4" fill="#0f172a"/>
+  <text x="120" y="216" font-family="Arial" font-size="11" font-weight="bold" fill="#8b5cf6" text-anchor="middle">O(n)</text>
+  <text x="300" y="216" font-family="Arial" font-size="10" fill="#64748b" text-anchor="middle">Linear</text>
+  <text x="490" y="216" font-family="Arial" font-size="10" fill="#94a3b8" text-anchor="middle">Linear search, Array traversal, Linked list</text>
+  <text x="760" y="216" font-family="Arial" font-size="10" fill="#8b5cf6" text-anchor="middle">1,000,000</text>
+
+  <rect x="35" y="228" width="830" height="27" rx="4" fill="#1f2937"/>
+  <text x="120" y="246" font-family="Arial" font-size="11" font-weight="bold" fill="#f59e0b" text-anchor="middle">O(n log n)</text>
+  <text x="300" y="246" font-family="Arial" font-size="10" fill="#64748b" text-anchor="middle">Linearithmic</text>
+  <text x="490" y="246" font-family="Arial" font-size="10" fill="#94a3b8" text-anchor="middle">Merge sort, Quick sort, Heap sort</text>
+  <text x="760" y="246" font-family="Arial" font-size="10" fill="#f59e0b" text-anchor="middle">20,000,000</text>
+
+  <rect x="35" y="258" width="830" height="27" rx="4" fill="#0f172a"/>
+  <text x="120" y="276" font-family="Arial" font-size="11" font-weight="bold" fill="#ef4444" text-anchor="middle">O(n²)</text>
+  <text x="300" y="276" font-family="Arial" font-size="10" fill="#64748b" text-anchor="middle">Quadratic</text>
+  <text x="490" y="276" font-family="Arial" font-size="10" fill="#94a3b8" text-anchor="middle">Bubble sort, Insertion sort, Brute-force pairs</text>
+  <text x="760" y="276" font-family="Arial" font-size="10" fill="#ef4444" text-anchor="middle">1,000,000,000,000</text>
+
+  <rect x="35" y="288" width="830" height="27" rx="4" fill="#1f2937"/>
+  <text x="120" y="306" font-family="Arial" font-size="11" font-weight="bold" fill="#dc2626" text-anchor="middle">O(2ⁿ)</text>
+  <text x="300" y="306" font-family="Arial" font-size="10" fill="#64748b" text-anchor="middle">Exponential</text>
+  <text x="490" y="306" font-family="Arial" font-size="10" fill="#94a3b8" text-anchor="middle">Naive Fibonacci, all subsets, brute force DP</text>
+  <text x="760" y="306" font-family="Arial" font-size="10" fill="#dc2626" text-anchor="middle">Way too large</text>
+
+  <rect x="35" y="318" width="830" height="20" rx="4" fill="#0f172a"/>
+  <text x="120" y="332" font-family="Arial" font-size="11" font-weight="bold" fill="#7f1d1d" text-anchor="middle">O(n!)</text>
+  <text x="300" y="332" font-family="Arial" font-size="10" fill="#64748b" text-anchor="middle">Factorial</text>
+  <text x="490" y="332" font-family="Arial" font-size="10" fill="#94a3b8" text-anchor="middle">Brute force permutations, TSP brute force</text>
+  <text x="760" y="332" font-family="Arial" font-size="10" fill="#7f1d1d" text-anchor="middle">Impossible</text>
+
+  <!-- Quick reference: DS complexities -->
+  <rect x="30" y="350" width="415" height="115" rx="8" fill="#1f2937" stroke="#334155" stroke-width="1"/>
+  <text x="238" y="370" font-family="Arial" font-size="12" font-weight="bold" fill="#94a3b8" text-anchor="middle">Data Structure Complexity Reference</text>
+
+  <text x="45" y="390" font-family="Arial" font-size="9" fill="#94a3b8">Data Structure</text>
+  <text x="205" y="390" font-family="Arial" font-size="9" fill="#94a3b8">Access</text>
+  <text x="265" y="390" font-family="Arial" font-size="9" fill="#94a3b8">Search</text>
+  <text x="325" y="390" font-family="Arial" font-size="9" fill="#94a3b8">Insert</text>
+  <text x="390" y="390" font-family="Arial" font-size="9" fill="#94a3b8">Delete</text>
+
+  <text x="45" y="406" font-family="Arial" font-size="9" fill="#c4b5fd">Array</text>
+  <text x="205" y="406" font-family="Arial" font-size="9" fill="#10b981">O(1)</text>
+  <text x="265" y="406" font-family="Arial" font-size="9" fill="#ef4444">O(n)</text>
+  <text x="325" y="406" font-family="Arial" font-size="9" fill="#ef4444">O(n)</text>
+  <text x="390" y="406" font-family="Arial" font-size="9" fill="#ef4444">O(n)</text>
+
+  <text x="45" y="421" font-family="Arial" font-size="9" fill="#93c5fd">Linked List</text>
+  <text x="205" y="421" font-family="Arial" font-size="9" fill="#ef4444">O(n)</text>
+  <text x="265" y="421" font-family="Arial" font-size="9" fill="#ef4444">O(n)</text>
+  <text x="325" y="421" font-family="Arial" font-size="9" fill="#10b981">O(1)</text>
+  <text x="390" y="421" font-family="Arial" font-size="9" fill="#10b981">O(1)</text>
+
+  <text x="45" y="436" font-family="Arial" font-size="9" fill="#6ee7b7">Hash Map</text>
+  <text x="205" y="436" font-family="Arial" font-size="9" fill="#10b981">O(1)</text>
+  <text x="265" y="436" font-family="Arial" font-size="9" fill="#10b981">O(1)</text>
+  <text x="325" y="436" font-family="Arial" font-size="9" fill="#10b981">O(1)</text>
+  <text x="390" y="436" font-family="Arial" font-size="9" fill="#10b981">O(1)</text>
+
+  <text x="45" y="451" font-family="Arial" font-size="9" fill="#fcd34d">Balanced BST</text>
+  <text x="205" y="451" font-family="Arial" font-size="9" fill="#3b82f6">O(logn)</text>
+  <text x="265" y="451" font-family="Arial" font-size="9" fill="#3b82f6">O(logn)</text>
+  <text x="325" y="451" font-family="Arial" font-size="9" fill="#3b82f6">O(logn)</text>
+  <text x="390" y="451" font-family="Arial" font-size="9" fill="#3b82f6">O(logn)</text>
+
+  <text x="45" y="466" font-family="Arial" font-size="9" fill="#fbbf24">Heap</text>
+  <text x="205" y="466" font-family="Arial" font-size="9" fill="#10b981">O(1)*</text>
+  <text x="265" y="466" font-family="Arial" font-size="9" fill="#ef4444">O(n)</text>
+  <text x="325" y="466" font-family="Arial" font-size="9" fill="#3b82f6">O(logn)</text>
+  <text x="390" y="466" font-family="Arial" font-size="9" fill="#3b82f6">O(logn)</text>
+
+  <!-- Interview time constraints -->
+  <rect x="455" y="350" width="415" height="115" rx="8" fill="#1f2937" stroke="#334155" stroke-width="1"/>
+  <text x="663" y="370" font-family="Arial" font-size="12" font-weight="bold" fill="#94a3b8" text-anchor="middle">Interview Time Complexity Targets</text>
+  <text x="663" y="387" font-family="Arial" font-size="10" fill="#64748b" text-anchor="middle">(for n = 10⁶ unless specified)</text>
+
+  <text x="465" y="406" font-family="Arial" font-size="10" fill="#10b981">✓ Great:</text>
+  <text x="510" y="406" font-family="Arial" font-size="10" fill="#64748b">O(1), O(log n), O(n), O(n log n)</text>
+
+  <text x="465" y="424" font-family="Arial" font-size="10" fill="#f59e0b">⚠ Acceptable:</text>
+  <text x="530" y="424" font-family="Arial" font-size="10" fill="#64748b">O(n log n), O(n√n) sometimes</text>
+
+  <text x="465" y="442" font-family="Arial" font-size="10" fill="#ef4444">✗ Usually TLE:</text>
+  <text x="535" y="442" font-family="Arial" font-size="10" fill="#64748b">O(n²) for n &gt; 10,000</text>
+
+  <text x="465" y="460" font-family="Arial" font-size="10" fill="#7f1d1d">✗✗ Never:</text>
+  <text x="510" y="460" font-family="Arial" font-size="10" fill="#64748b">O(2ⁿ) or O(n!) unless n &lt; 25</text>
+</svg>

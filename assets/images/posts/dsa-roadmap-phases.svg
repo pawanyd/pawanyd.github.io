@@ -1,0 +1,233 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 580">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1000" height="580" fill="url(#bgGrad)" rx="12"/>
+  <text x="500" y="38" font-family="Arial" font-size="18" font-weight="bold" fill="white" text-anchor="middle">The DSA Learning Roadmap — Phase by Phase</text>
+  <text x="500" y="58" font-family="Arial" font-size="12" fill="#64748b" text-anchor="middle">Follow this path. Don't skip phases. Each builds on the last.</text>
+
+  <!-- Phase 1 -->
+  <rect x="20" y="75" width="185" height="465" rx="10" fill="#2e1065" stroke="#7c3aed" stroke-width="2"/>
+  <rect x="20" y="75" width="185" height="42" rx="10" fill="#7c3aed"/>
+  <rect x="20" y="107" width="185" height="10" fill="#7c3aed"/>
+  <text x="113" y="102" font-family="Arial" font-size="13" font-weight="bold" fill="white" text-anchor="middle">Phase 1 — Foundation</text>
+  <text x="113" y="115" font-family="Arial" font-size="10" fill="#c4b5fd" text-anchor="middle">Weeks 1-3</text>
+
+  <rect x="32" y="130" width="161" height="32" rx="6" fill="#1f2937" stroke="#7c3aed" stroke-width="1"/>
+  <text x="53" y="148" font-family="Arial" font-size="10" fill="#c4b5fd">📦 Arrays</text>
+  <text x="165" y="148" font-family="Arial" font-size="8" fill="#7c3aed" text-anchor="end">Core</text>
+
+  <rect x="32" y="170" width="161" height="32" rx="6" fill="#1f2937" stroke="#7c3aed" stroke-width="1"/>
+  <text x="53" y="188" font-family="Arial" font-size="10" fill="#c4b5fd">🔗 Linked Lists</text>
+  <text x="165" y="188" font-family="Arial" font-size="8" fill="#7c3aed" text-anchor="end">Core</text>
+
+  <rect x="32" y="210" width="161" height="32" rx="6" fill="#1f2937" stroke="#7c3aed" stroke-width="1"/>
+  <text x="53" y="228" font-family="Arial" font-size="10" fill="#c4b5fd">📚 Strings</text>
+  <text x="165" y="228" font-family="Arial" font-size="8" fill="#7c3aed" text-anchor="end">Core</text>
+
+  <rect x="32" y="250" width="161" height="32" rx="6" fill="#1f2937" stroke="#7c3aed" stroke-width="1"/>
+  <text x="53" y="268" font-family="Arial" font-size="10" fill="#c4b5fd">📋 Stack + Queue</text>
+  <text x="165" y="268" font-family="Arial" font-size="8" fill="#7c3aed" text-anchor="end">Core</text>
+
+  <rect x="32" y="290" width="161" height="32" rx="6" fill="#1f2937" stroke="#7c3aed" stroke-width="1"/>
+  <text x="53" y="308" font-family="Arial" font-size="10" fill="#c4b5fd">🔢 Recursion Basics</text>
+  <text x="165" y="308" font-family="Arial" font-size="8" fill="#7c3aed" text-anchor="end">Algo</text>
+
+  <rect x="32" y="330" width="161" height="32" rx="6" fill="#1f2937" stroke="#7c3aed" stroke-width="1"/>
+  <text x="53" y="348" font-family="Arial" font-size="10" fill="#c4b5fd">🔍 Binary Search</text>
+  <text x="165" y="348" font-family="Arial" font-size="8" fill="#7c3aed" text-anchor="end">Algo</text>
+
+  <rect x="32" y="370" width="161" height="32" rx="6" fill="#1f2937" stroke="#7c3aed" stroke-width="1"/>
+  <text x="53" y="388" font-family="Arial" font-size="10" fill="#c4b5fd">🔀 Two Pointers</text>
+  <text x="165" y="388" font-family="Arial" font-size="8" fill="#7c3aed" text-anchor="end">Pattern</text>
+
+  <rect x="32" y="410" width="161" height="32" rx="6" fill="#1f2937" stroke="#7c3aed" stroke-width="1"/>
+  <text x="53" y="428" font-family="Arial" font-size="10" fill="#c4b5fd">🪟 Sliding Window</text>
+  <text x="165" y="428" font-family="Arial" font-size="8" fill="#7c3aed" text-anchor="end">Pattern</text>
+
+  <text x="113" y="475" font-family="Arial" font-size="10" fill="#7c3aed" text-anchor="middle">Target: 30 LeetCode Easy</text>
+  <rect x="40" y="490" width="145" height="16" rx="8" fill="#3b0764"/>
+  <rect x="40" y="490" width="90" height="16" rx="8" fill="#7c3aed"/>
+  <text x="113" y="502" font-family="Arial" font-size="9" fill="white" text-anchor="middle">60% complete</text>
+  <text x="113" y="525" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle" font-style="italic">Don't rush. Understand deeply.</text>
+
+  <!-- Phase 2 -->
+  <rect x="215" y="75" width="185" height="465" rx="10" fill="#1e3a5f" stroke="#3b82f6" stroke-width="2"/>
+  <rect x="215" y="75" width="185" height="42" rx="10" fill="#2563eb"/>
+  <rect x="215" y="107" width="185" height="10" fill="#2563eb"/>
+  <text x="308" y="102" font-family="Arial" font-size="13" font-weight="bold" fill="white" text-anchor="middle">Phase 2 — Core DS</text>
+  <text x="308" y="115" font-family="Arial" font-size="10" fill="#bfdbfe" text-anchor="middle">Weeks 4-7</text>
+
+  <rect x="227" y="130" width="161" height="32" rx="6" fill="#1f2937" stroke="#3b82f6" stroke-width="1"/>
+  <text x="248" y="148" font-family="Arial" font-size="10" fill="#93c5fd">🌳 Binary Trees</text>
+  <text x="360" y="148" font-family="Arial" font-size="8" fill="#3b82f6" text-anchor="end">DS</text>
+
+  <rect x="227" y="170" width="161" height="32" rx="6" fill="#1f2937" stroke="#3b82f6" stroke-width="1"/>
+  <text x="248" y="188" font-family="Arial" font-size="10" fill="#93c5fd">🔍 BST</text>
+  <text x="360" y="188" font-family="Arial" font-size="8" fill="#3b82f6" text-anchor="end">DS</text>
+
+  <rect x="227" y="210" width="161" height="32" rx="6" fill="#1f2937" stroke="#3b82f6" stroke-width="1"/>
+  <text x="248" y="228" font-family="Arial" font-size="10" fill="#93c5fd">🔒 Hash Map/Set</text>
+  <text x="360" y="228" font-family="Arial" font-size="8" fill="#3b82f6" text-anchor="end">DS</text>
+
+  <rect x="227" y="250" width="161" height="32" rx="6" fill="#1f2937" stroke="#3b82f6" stroke-width="1"/>
+  <text x="248" y="268" font-family="Arial" font-size="10" fill="#93c5fd">⛰️ Heap / Priority Q</text>
+  <text x="360" y="268" font-family="Arial" font-size="8" fill="#3b82f6" text-anchor="end">DS</text>
+
+  <rect x="227" y="290" width="161" height="32" rx="6" fill="#1f2937" stroke="#3b82f6" stroke-width="1"/>
+  <text x="248" y="308" font-family="Arial" font-size="10" fill="#93c5fd">🔁 DFS / BFS</text>
+  <text x="360" y="308" font-family="Arial" font-size="8" fill="#3b82f6" text-anchor="end">Algo</text>
+
+  <rect x="227" y="330" width="161" height="32" rx="6" fill="#1f2937" stroke="#3b82f6" stroke-width="1"/>
+  <text x="248" y="348" font-family="Arial" font-size="10" fill="#93c5fd">🔀 Merge Sort / Quick</text>
+  <text x="360" y="348" font-family="Arial" font-size="8" fill="#3b82f6" text-anchor="end">Algo</text>
+
+  <rect x="227" y="370" width="161" height="32" rx="6" fill="#1f2937" stroke="#3b82f6" stroke-width="1"/>
+  <text x="248" y="388" font-family="Arial" font-size="10" fill="#93c5fd">🪙 Greedy</text>
+  <text x="360" y="388" font-family="Arial" font-size="8" fill="#3b82f6" text-anchor="end">Pattern</text>
+
+  <rect x="227" y="410" width="161" height="32" rx="6" fill="#1f2937" stroke="#3b82f6" stroke-width="1"/>
+  <text x="248" y="428" font-family="Arial" font-size="10" fill="#93c5fd">🧩 Backtracking</text>
+  <text x="360" y="428" font-family="Arial" font-size="8" fill="#3b82f6" text-anchor="end">Pattern</text>
+
+  <text x="308" y="475" font-family="Arial" font-size="10" fill="#3b82f6" text-anchor="middle">Target: 60 LeetCode Medium</text>
+  <rect x="235" y="490" width="145" height="16" rx="8" fill="#1e3a5f"/>
+  <rect x="235" y="490" width="100" height="16" rx="8" fill="#2563eb"/>
+  <text x="308" y="502" font-family="Arial" font-size="9" fill="white" text-anchor="middle">70% complete</text>
+  <text x="308" y="525" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle" font-style="italic">Patterns > memorization.</text>
+
+  <!-- Phase 3 -->
+  <rect x="410" y="75" width="185" height="465" rx="10" fill="#14532d" stroke="#10b981" stroke-width="2"/>
+  <rect x="410" y="75" width="185" height="42" rx="10" fill="#059669"/>
+  <rect x="410" y="107" width="185" height="10" fill="#059669"/>
+  <text x="503" y="102" font-family="Arial" font-size="13" font-weight="bold" fill="white" text-anchor="middle">Phase 3 — Advanced DS</text>
+  <text x="503" y="115" font-family="Arial" font-size="10" fill="#a7f3d0" text-anchor="middle">Weeks 8-12</text>
+
+  <rect x="422" y="130" width="161" height="32" rx="6" fill="#1f2937" stroke="#10b981" stroke-width="1"/>
+  <text x="443" y="148" font-family="Arial" font-size="10" fill="#6ee7b7">📊 Graphs (DFS/BFS)</text>
+  <text x="555" y="148" font-family="Arial" font-size="8" fill="#10b981" text-anchor="end">DS</text>
+
+  <rect x="422" y="170" width="161" height="32" rx="6" fill="#1f2937" stroke="#10b981" stroke-width="1"/>
+  <text x="443" y="188" font-family="Arial" font-size="10" fill="#6ee7b7">📡 Trie</text>
+  <text x="555" y="188" font-family="Arial" font-size="8" fill="#10b981" text-anchor="end">DS</text>
+
+  <rect x="422" y="210" width="161" height="32" rx="6" fill="#1f2937" stroke="#10b981" stroke-width="1"/>
+  <text x="443" y="228" font-family="Arial" font-size="10" fill="#6ee7b7">🧮 Segment Tree</text>
+  <text x="555" y="228" font-family="Arial" font-size="8" fill="#10b981" text-anchor="end">DS</text>
+
+  <rect x="422" y="250" width="161" height="32" rx="6" fill="#1f2937" stroke="#10b981" stroke-width="1"/>
+  <text x="443" y="268" font-family="Arial" font-size="10" fill="#6ee7b7">💡 Dynamic Programming</text>
+  <text x="555" y="268" font-family="Arial" font-size="8" fill="#10b981" text-anchor="end">Algo</text>
+
+  <rect x="422" y="290" width="161" height="32" rx="6" fill="#1f2937" stroke="#10b981" stroke-width="1"/>
+  <text x="443" y="308" font-family="Arial" font-size="10" fill="#6ee7b7">🗺️ Dijkstra / Bellman</text>
+  <text x="555" y="308" font-family="Arial" font-size="8" fill="#10b981" text-anchor="end">Algo</text>
+
+  <rect x="422" y="330" width="161" height="32" rx="6" fill="#1f2937" stroke="#10b981" stroke-width="1"/>
+  <text x="443" y="348" font-family="Arial" font-size="10" fill="#6ee7b7">🌲 Union Find (DSU)</text>
+  <text x="555" y="348" font-family="Arial" font-size="8" fill="#10b981" text-anchor="end">DS</text>
+
+  <rect x="422" y="370" width="161" height="32" rx="6" fill="#1f2937" stroke="#10b981" stroke-width="1"/>
+  <text x="443" y="388" font-family="Arial" font-size="10" fill="#6ee7b7">📈 Monotonic Stack</text>
+  <text x="555" y="388" font-family="Arial" font-size="8" fill="#10b981" text-anchor="end">Pattern</text>
+
+  <rect x="422" y="410" width="161" height="32" rx="6" fill="#1f2937" stroke="#10b981" stroke-width="1"/>
+  <text x="443" y="428" font-family="Arial" font-size="10" fill="#6ee7b7">🧠 Bit Manipulation</text>
+  <text x="555" y="428" font-family="Arial" font-size="8" fill="#10b981" text-anchor="end">Algo</text>
+
+  <text x="503" y="475" font-family="Arial" font-size="10" fill="#10b981" text-anchor="middle">Target: 100+ Medium+Hard</text>
+  <rect x="430" y="490" width="145" height="16" rx="8" fill="#14532d"/>
+  <rect x="430" y="490" width="130" height="16" rx="8" fill="#059669"/>
+  <text x="503" y="502" font-family="Arial" font-size="9" fill="white" text-anchor="middle">90% complete</text>
+  <text x="503" y="525" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle" font-style="italic">This is where interviews live.</text>
+
+  <!-- Phase 4 -->
+  <rect x="605" y="75" width="185" height="465" rx="10" fill="#451a03" stroke="#f59e0b" stroke-width="2"/>
+  <rect x="605" y="75" width="185" height="42" rx="10" fill="#d97706"/>
+  <rect x="605" y="107" width="185" height="10" fill="#d97706"/>
+  <text x="698" y="102" font-family="Arial" font-size="13" font-weight="bold" fill="white" text-anchor="middle">Phase 4 — Expert</text>
+  <text x="698" y="115" font-family="Arial" font-size="10" fill="#fde68a" text-anchor="middle">Weeks 13+</text>
+
+  <rect x="617" y="130" width="161" height="32" rx="6" fill="#1f2937" stroke="#f59e0b" stroke-width="1"/>
+  <text x="638" y="148" font-family="Arial" font-size="10" fill="#fcd34d">🏆 Advanced DP</text>
+  <text x="750" y="148" font-family="Arial" font-size="8" fill="#f59e0b" text-anchor="end">Expert</text>
+
+  <rect x="617" y="170" width="161" height="32" rx="6" fill="#1f2937" stroke="#f59e0b" stroke-width="1"/>
+  <text x="638" y="188" font-family="Arial" font-size="10" fill="#fcd34d">🌐 Advanced Graphs</text>
+  <text x="750" y="188" font-family="Arial" font-size="8" fill="#f59e0b" text-anchor="end">Expert</text>
+
+  <rect x="617" y="210" width="161" height="32" rx="6" fill="#1f2937" stroke="#f59e0b" stroke-width="1"/>
+  <text x="638" y="228" font-family="Arial" font-size="10" fill="#fcd34d">⚡ KMP / Z-Algo</text>
+  <text x="750" y="228" font-family="Arial" font-size="8" fill="#f59e0b" text-anchor="end">Expert</text>
+
+  <rect x="617" y="250" width="161" height="32" rx="6" fill="#1f2937" stroke="#f59e0b" stroke-width="1"/>
+  <text x="638" y="268" font-family="Arial" font-size="10" fill="#fcd34d">🕸️ Heavy-Light Dec.</text>
+  <text x="750" y="268" font-family="Arial" font-size="8" fill="#f59e0b" text-anchor="end">Expert</text>
+
+  <rect x="617" y="290" width="161" height="32" rx="6" fill="#1f2937" stroke="#f59e0b" stroke-width="1"/>
+  <text x="638" y="308" font-family="Arial" font-size="10" fill="#fcd34d">📐 Math / Number Theory</text>
+  <text x="750" y="308" font-family="Arial" font-size="8" fill="#f59e0b" text-anchor="end">Expert</text>
+
+  <rect x="617" y="330" width="161" height="32" rx="6" fill="#1f2937" stroke="#f59e0b" stroke-width="1"/>
+  <text x="638" y="348" font-family="Arial" font-size="10" fill="#fcd34d">🎯 Competitive Patterns</text>
+  <text x="750" y="348" font-family="Arial" font-size="8" fill="#f59e0b" text-anchor="end">Expert</text>
+
+  <rect x="617" y="370" width="161" height="32" rx="6" fill="#1f2937" stroke="#f59e0b" stroke-width="1"/>
+  <text x="638" y="388" font-family="Arial" font-size="10" fill="#fcd34d">🔬 System Design DSA</text>
+  <text x="750" y="388" font-family="Arial" font-size="8" fill="#f59e0b" text-anchor="end">Combined</text>
+
+  <rect x="617" y="410" width="161" height="32" rx="6" fill="#1f2937" stroke="#f59e0b" stroke-width="1"/>
+  <text x="638" y="428" font-family="Arial" font-size="10" fill="#fcd34d">🏅 Mock Interviews</text>
+  <text x="750" y="428" font-family="Arial" font-size="8" fill="#f59e0b" text-anchor="end">Practice</text>
+
+  <text x="698" y="475" font-family="Arial" font-size="10" fill="#f59e0b" text-anchor="middle">Target: FAANG Ready</text>
+  <rect x="625" y="490" width="145" height="16" rx="8" fill="#451a03"/>
+  <rect x="625" y="490" width="145" height="16" rx="8" fill="#d97706"/>
+  <text x="698" y="502" font-family="Arial" font-size="9" fill="white" text-anchor="middle">Interview Ready! 🚀</text>
+  <text x="698" y="525" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle" font-style="italic">Crack any interview now.</text>
+
+  <!-- Phase arrows between columns -->
+  <text x="205" y="320" font-family="Arial" font-size="18" fill="#4f46e5" text-anchor="middle">→</text>
+  <text x="400" y="320" font-family="Arial" font-size="18" fill="#1d4ed8" text-anchor="middle">→</text>
+  <text x="595" y="320" font-family="Arial" font-size="18" fill="#059669" text-anchor="middle">→</text>
+
+  <!-- Total timeline -->
+  <rect x="800" y="80" width="185" height="460" rx="10" fill="#1f2937" stroke="#334155" stroke-width="1.5"/>
+  <text x="893" y="102" font-family="Arial" font-size="13" font-weight="bold" fill="#94a3b8" text-anchor="middle">At a Glance</text>
+
+  <text x="820" y="130" font-family="Arial" font-size="11" font-weight="bold" fill="#a78bfa">📅 Timeline</text>
+  <text x="820" y="148" font-family="Arial" font-size="10" fill="#64748b">Phase 1: ~3 weeks</text>
+  <text x="820" y="164" font-family="Arial" font-size="10" fill="#64748b">Phase 2: ~4 weeks</text>
+  <text x="820" y="180" font-family="Arial" font-size="10" fill="#64748b">Phase 3: ~5 weeks</text>
+  <text x="820" y="196" font-family="Arial" font-size="10" fill="#64748b">Phase 4: ongoing</text>
+  <text x="820" y="212" font-family="Arial" font-size="10" fill="#f59e0b">Total: 3-6 months</text>
+
+  <line x1="812" y1="225" x2="973" y2="225" stroke="#334155" stroke-width="1"/>
+
+  <text x="820" y="245" font-family="Arial" font-size="11" font-weight="bold" fill="#60a5fa">🎯 LeetCode Goal</text>
+  <text x="820" y="263" font-family="Arial" font-size="10" fill="#64748b">Easy:  100+ problems</text>
+  <text x="820" y="279" font-family="Arial" font-size="10" fill="#64748b">Medium: 200+ problems</text>
+  <text x="820" y="295" font-family="Arial" font-size="10" fill="#64748b">Hard:  50+ problems</text>
+  <text x="820" y="311" font-family="Arial" font-size="10" fill="#10b981">Total: 350+ problems</text>
+
+  <line x1="812" y1="324" x2="973" y2="324" stroke="#334155" stroke-width="1"/>
+
+  <text x="820" y="344" font-family="Arial" font-size="11" font-weight="bold" fill="#34d399">✓ Key Principles</text>
+  <text x="820" y="362" font-family="Arial" font-size="9" fill="#64748b">• Understand, don't memorize</text>
+  <text x="820" y="378" font-family="Arial" font-size="9" fill="#64748b">• Patterns over solutions</text>
+  <text x="820" y="394" font-family="Arial" font-size="9" fill="#64748b">• Time complexity matters</text>
+  <text x="820" y="410" font-family="Arial" font-size="9" fill="#64748b">• Consistency &gt; intensity</text>
+  <text x="820" y="426" font-family="Arial" font-size="9" fill="#64748b">• Review your wrong answers</text>
+  <text x="820" y="442" font-family="Arial" font-size="9" fill="#64748b">• Code on paper sometimes</text>
+
+  <line x1="812" y1="455" x2="973" y2="455" stroke="#334155" stroke-width="1"/>
+
+  <text x="820" y="475" font-family="Arial" font-size="11" font-weight="bold" fill="#fbbf24">⚠️ Avoid These</text>
+  <text x="820" y="493" font-family="Arial" font-size="9" fill="#64748b">• Skipping phases</text>
+  <text x="820" y="509" font-family="Arial" font-size="9" fill="#64748b">• Googling before trying</text>
+  <text x="820" y="525" font-family="Arial" font-size="9" fill="#64748b">• Ignoring complexity</text>
+</svg>
