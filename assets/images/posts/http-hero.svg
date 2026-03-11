@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#020617"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0891b2"/>
+      <stop offset="100%" style="stop-color:#0e7490"/>
+    </linearGradient>
+    <linearGradient id="glowBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:0.03"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+
+  <!-- Grid -->
+  <g stroke="#0c1a3a" stroke-width="1" opacity="0.5">
+    <line x1="0" y1="105" x2="1200" y2="105"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+
+  <!-- Background glows -->
+  <circle cx="950" cy="180" r="280" fill="url(#glowBlue)" opacity="0.7"/>
+  <circle cx="180" cy="480" r="200" fill="url(#glowBlue)" opacity="0.5"/>
+
+  <!-- Right side visual: HTTP flow mini diagram -->
+  <g opacity="0.85">
+    <!-- Browser -->
+    <rect x="680" y="100" width="130" height="70" rx="10" fill="#0f2744" stroke="#0ea5e9" stroke-width="1.5"/>
+    <text x="745" y="125" font-family="Arial" font-size="11" fill="#7dd3fc" text-anchor="middle">🌐 Browser</text>
+    <text x="745" y="142" font-family="Arial" font-size="10" fill="#64748b" text-anchor="middle">GET /index.html</text>
+    <text x="745" y="156" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Host: example.com</text>
+
+    <!-- Arrow right -->
+    <line x1="812" y1="135" x2="878" y2="135" stroke="#0ea5e9" stroke-width="2"/>
+    <polygon points="875,129 885,135 875,141" fill="#0ea5e9"/>
+    <text x="845" y="125" font-family="Arial" font-size="8" fill="#0ea5e9" text-anchor="middle">Request</text>
+
+    <!-- Server -->
+    <rect x="890" y="100" width="130" height="70" rx="10" fill="#0f2744" stroke="#10b981" stroke-width="1.5"/>
+    <text x="955" y="125" font-family="Arial" font-size="11" fill="#6ee7b7" text-anchor="middle">🖥️ Server</text>
+    <text x="955" y="142" font-family="Arial" font-size="10" fill="#64748b" text-anchor="middle">HTTP/1.1 200 OK</text>
+    <text x="955" y="156" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Content-Type: html</text>
+
+    <!-- Arrow back -->
+    <line x1="890" y1="185" x2="812" y2="185" stroke="#10b981" stroke-width="2"/>
+    <polygon points="815,179 805,185 815,191" fill="#10b981"/>
+    <text x="851" y="200" font-family="Arial" font-size="8" fill="#10b981" text-anchor="middle">Response</text>
+
+    <!-- Version timeline -->
+    <rect x="680" y="230" width="340" height="120" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+    <text x="850" y="250" font-family="Arial" font-size="10" font-weight="bold" fill="#94a3b8" text-anchor="middle">HTTP Versions</text>
+
+    <rect x="690" y="258" width="70" height="28" rx="4" fill="#1e293b"/>
+    <text x="725" y="276" font-family="Arial" font-size="9" fill="#94a3b8" text-anchor="middle">HTTP/0.9</text>
+    <text x="725" y="289" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">1991</text>
+
+    <rect x="768" y="258" width="70" height="28" rx="4" fill="#0f2744" stroke="#0ea5e9" stroke-width="1"/>
+    <text x="803" y="276" font-family="Arial" font-size="9" fill="#7dd3fc" text-anchor="middle">HTTP/1.1</text>
+    <text x="803" y="289" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">1997</text>
+
+    <rect x="846" y="258" width="70" height="28" rx="4" fill="#14532d" stroke="#10b981" stroke-width="1"/>
+    <text x="881" y="276" font-family="Arial" font-size="9" fill="#6ee7b7" text-anchor="middle">HTTP/2</text>
+    <text x="881" y="289" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">2015</text>
+
+    <rect x="924" y="258" width="70" height="28" rx="4" fill="#2e1065" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="959" y="276" font-family="Arial" font-size="9" fill="#c4b5fd" text-anchor="middle">HTTP/3</text>
+    <text x="959" y="289" font-family="Arial" font-size="8" fill="#475569" text-anchor="middle">2022</text>
+
+    <!-- Status code pills -->
+    <rect x="690" y="305" width="48" height="20" rx="10" fill="#14532d" stroke="#10b981" stroke-width="1"/>
+    <text x="714" y="319" font-family="Arial" font-size="9" fill="#6ee7b7" text-anchor="middle">2xx ✓</text>
+    <rect x="744" y="305" width="48" height="20" rx="10" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+    <text x="768" y="319" font-family="Arial" font-size="9" fill="#93c5fd" text-anchor="middle">3xx →</text>
+    <rect x="798" y="305" width="48" height="20" rx="10" fill="#451a03" stroke="#f59e0b" stroke-width="1"/>
+    <text x="822" y="319" font-family="Arial" font-size="9" fill="#fcd34d" text-anchor="middle">4xx ⚠</text>
+    <rect x="852" y="305" width="48" height="20" rx="10" fill="#450a0a" stroke="#ef4444" stroke-width="1"/>
+    <text x="876" y="319" font-family="Arial" font-size="9" fill="#fca5a5" text-anchor="middle">5xx ✗</text>
+
+    <!-- Methods group -->
+    <rect x="680" y="370" width="340" height="85" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+    <text x="850" y="390" font-family="Arial" font-size="10" font-weight="bold" fill="#94a3b8" text-anchor="middle">HTTP Methods</text>
+    <rect x="690" y="398" width="42" height="22" rx="4" fill="#14532d" stroke="#10b981" stroke-width="1"/>
+    <text x="711" y="413" font-family="Arial" font-size="9" fill="#6ee7b7" text-anchor="middle">GET</text>
+    <rect x="738" y="398" width="44" height="22" rx="4" fill="#14532d" stroke="#10b981" stroke-width="1"/>
+    <text x="760" y="413" font-family="Arial" font-size="9" fill="#6ee7b7" text-anchor="middle">POST</text>
+    <rect x="788" y="398" width="40" height="22" rx="4" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+    <text x="808" y="413" font-family="Arial" font-size="9" fill="#93c5fd" text-anchor="middle">PUT</text>
+    <rect x="834" y="398" width="57" height="22" rx="4" fill="#450a0a" stroke="#ef4444" stroke-width="1"/>
+    <text x="863" y="413" font-family="Arial" font-size="9" fill="#fca5a5" text-anchor="middle">DELETE</text>
+    <rect x="897" y="398" width="48" height="22" rx="4" fill="#451a03" stroke="#f59e0b" stroke-width="1"/>
+    <text x="921" y="413" font-family="Arial" font-size="9" fill="#fcd34d" text-anchor="middle">PATCH</text>
+    <text x="850" y="443" font-family="Arial" font-size="9" fill="#475569" text-anchor="middle">+ HEAD · OPTIONS · CONNECT · TRACE</text>
+  </g>
+
+  <!-- Main title text -->
+  <text x="70" y="190" font-family="Arial" font-size="28" font-weight="bold" fill="#94a3b8" filter="url(#softglow)">Everything You Need to Know</text>
+  <text x="70" y="270" font-family="Arial" font-size="80" font-weight="bold" fill="white" filter="url(#softglow)">HTTP</text>
+  <text x="70" y="330" font-family="Arial" font-size="24" font-weight="bold" fill="url(#tealGrad)">The Protocol Powering the Web</text>
+
+  <text x="70" y="372" font-family="Arial" font-size="16" fill="#475569">From /0.9 to /3 — how the web's backbone evolved</text>
+
+  <!-- Tags -->
+  <rect x="70" y="400" width="80" height="27" rx="13" fill="#0891b220" stroke="#0891b2" stroke-width="1"/>
+  <text x="110" y="418" font-family="Arial" font-size="11" fill="#22d3ee" text-anchor="middle">HTTP</text>
+  <rect x="165" y="400" width="95" height="27" rx="13" fill="#3b82f620" stroke="#3b82f6" stroke-width="1"/>
+  <text x="213" y="418" font-family="Arial" font-size="11" fill="#60a5fa" text-anchor="middle">Networking</text>
+  <rect x="275" y="400" width="110" height="27" rx="13" fill="#10b98120" stroke="#10b981" stroke-width="1"/>
+  <text x="330" y="418" font-family="Arial" font-size="11" fill="#34d399" text-anchor="middle">Web Protocol</text>
+  <rect x="400" y="400" width="78" height="27" rx="13" fill="#8b5cf620" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="439" y="418" font-family="Arial" font-size="11" fill="#a78bfa" text-anchor="middle">HTTPS</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="600" width="1200" height="30" fill="#020617" opacity="0.9"/>
+  <text x="600" y="620" font-family="Arial" font-size="11" fill="#1e3a5f" text-anchor="middle">pawanyd.github.io · Technology &amp; Web Fundamentals</text>
+</svg>

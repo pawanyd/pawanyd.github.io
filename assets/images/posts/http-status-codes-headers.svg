@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="480" fill="url(#bgGrad)" rx="12"/>
+  <text x="450" y="33" font-family="Arial" font-size="17" font-weight="bold" fill="white" text-anchor="middle">HTTP Status Codes &amp; Headers — Your Daily Tools</text>
+
+  <!-- 2xx Success -->
+  <rect x="20" y="52" width="335" height="200" rx="10" fill="#052e16" stroke="#10b981" stroke-width="2"/>
+  <rect x="20" y="52" width="335" height="36" rx="10" fill="#059669"/>
+  <rect x="20" y="78" width="335" height="10" fill="#059669"/>
+  <text x="188" y="75" font-family="Arial" font-size="13" font-weight="bold" fill="white" text-anchor="middle">2xx — Success ✓</text>
+
+  <rect x="32" y="96" width="148" height="30" rx="6" fill="#0f172a"/>
+  <text x="50" y="113" font-family="Arial" font-size="11" fill="#6ee7b7" font-weight="bold">200 OK</text>
+  <text x="200" y="113" font-family="Arial" font-size="9" fill="#64748b">Request succeeded</text>
+
+  <rect x="32" y="130" width="148" height="30" rx="6" fill="#0f172a"/>
+  <text x="50" y="147" font-family="Arial" font-size="11" fill="#6ee7b7" font-weight="bold">201 Created</text>
+  <text x="200" y="147" font-family="Arial" font-size="9" fill="#64748b">Resource created (POST)</text>
+
+  <rect x="32" y="164" width="148" height="30" rx="6" fill="#0f172a"/>
+  <text x="50" y="181" font-family="Arial" font-size="11" fill="#6ee7b7" font-weight="bold">204 No Content</text>
+  <text x="200" y="181" font-family="Arial" font-size="9" fill="#64748b">Success, no body (DELETE)</text>
+
+  <rect x="32" y="198" width="148" height="30" rx="6" fill="#0f172a"/>
+  <text x="50" y="215" font-family="Arial" font-size="11" fill="#6ee7b7" font-weight="bold">206 Partial</text>
+  <text x="200" y="215" font-family="Arial" font-size="9" fill="#64748b">Range request (streaming)</text>
+
+  <text x="32" y="242" font-family="Arial" font-size="9" fill="#64748b" font-style="italic">Always return 201 on POST create, not 200. Matters!</text>
+
+  <!-- 3xx Redirect -->
+  <rect x="365" y="52" width="170" height="200" rx="10" fill="#082f49" stroke="#0ea5e9" stroke-width="2"/>
+  <rect x="365" y="52" width="170" height="36" rx="10" fill="#0369a1"/>
+  <rect x="365" y="78" width="170" height="10" fill="#0369a1"/>
+  <text x="450" y="75" font-family="Arial" font-size="13" font-weight="bold" fill="white" text-anchor="middle">3xx — Redirect →</text>
+
+  <rect x="377" y="96" width="146" height="30" rx="6" fill="#0f172a"/>
+  <text x="393" y="113" font-family="Arial" font-size="10" fill="#7dd3fc" font-weight="bold">301 Moved Perm.</text>
+  <text x="393" y="126" font-family="Arial" font-size="8" fill="#64748b">Update your bookmarks</text>
+
+  <rect x="377" y="130" width="146" height="30" rx="6" fill="#0f172a"/>
+  <text x="393" y="147" font-family="Arial" font-size="10" fill="#7dd3fc" font-weight="bold">302 Found</text>
+  <text x="393" y="160" font-family="Arial" font-size="8" fill="#64748b">Temporary redirect</text>
+
+  <rect x="377" y="164" width="146" height="30" rx="6" fill="#0f172a"/>
+  <text x="393" y="181" font-family="Arial" font-size="10" fill="#7dd3fc" font-weight="bold">304 Not Modified</text>
+  <text x="393" y="194" font-family="Arial" font-size="8" fill="#64748b">Use your cache copy</text>
+
+  <rect x="377" y="198" width="146" height="30" rx="6" fill="#0f172a"/>
+  <text x="393" y="215" font-family="Arial" font-size="10" fill="#7dd3fc" font-weight="bold">307 Temp Redirect</text>
+  <text x="393" y="228" font-family="Arial" font-size="8" fill="#64748b">Keep HTTP method</text>
+
+  <text x="395" y="248" font-family="Arial" font-size="8" fill="#64748b" font-style="italic">304 is how caching saves billions</text>
+
+  <!-- 4xx Client Error -->
+  <rect x="545" y="52" width="340" height="200" rx="10" fill="#431407" stroke="#f97316" stroke-width="2"/>
+  <rect x="545" y="52" width="340" height="36" rx="10" fill="#ea580c"/>
+  <rect x="545" y="78" width="340" height="10" fill="#ea580c"/>
+  <text x="715" y="75" font-family="Arial" font-size="13" font-weight="bold" fill="white" text-anchor="middle">4xx — Client Error ⚠</text>
+
+  <rect x="557" y="96" width="148" height="30" rx="6" fill="#0f172a"/>
+  <text x="575" y="113" font-family="Arial" font-size="11" fill="#fdba74" font-weight="bold">400 Bad Request</text>
+  <text x="720" y="113" font-family="Arial" font-size="9" fill="#64748b">Malformed input</text>
+
+  <rect x="557" y="130" width="148" height="30" rx="6" fill="#0f172a"/>
+  <text x="575" y="147" font-family="Arial" font-size="11" fill="#fdba74" font-weight="bold">401 Unauthorized</text>
+  <text x="720" y="147" font-family="Arial" font-size="9" fill="#64748b">Not logged in</text>
+
+  <rect x="557" y="164" width="148" height="30" rx="6" fill="#0f172a"/>
+  <text x="575" y="181" font-family="Arial" font-size="11" fill="#fdba74" font-weight="bold">403 Forbidden</text>
+  <text x="720" y="181" font-family="Arial" font-size="9" fill="#64748b">Logged in, no permission</text>
+
+  <rect x="557" y="198" width="148" height="30" rx="6" fill="#0f172a"/>
+  <text x="575" y="215" font-family="Arial" font-size="11" fill="#fdba74" font-weight="bold">404 Not Found</text>
+  <text x="720" y="215" font-family="Arial" font-size="9" fill="#64748b">Resource doesn't exist</text>
+
+  <text x="557" y="248" font-family="Arial" font-size="9" fill="#64748b" font-style="italic">401 vs 403: "Who are you?" vs "I know who you are, no."</text>
+
+  <!-- 5xx Server Error -->
+  <rect x="20" y="265" width="235" height="195" rx="10" fill="#450a0a" stroke="#ef4444" stroke-width="2"/>
+  <rect x="20" y="265" width="235" height="36" rx="10" fill="#dc2626"/>
+  <rect x="20" y="291" width="235" height="10" fill="#dc2626"/>
+  <text x="138" y="289" font-family="Arial" font-size="13" font-weight="bold" fill="white" text-anchor="middle">5xx — Server Error ✗</text>
+
+  <rect x="32" y="308" width="210" height="25" rx="6" fill="#0f172a"/>
+  <text x="50" y="322" font-family="Arial" font-size="10" fill="#fca5a5" font-weight="bold">500 Internal Server Error</text>
+
+  <rect x="32" y="337" width="210" height="25" rx="6" fill="#0f172a"/>
+  <text x="50" y="351" font-family="Arial" font-size="10" fill="#fca5a5" font-weight="bold">502 Bad Gateway</text>
+
+  <rect x="32" y="366" width="210" height="25" rx="6" fill="#0f172a"/>
+  <text x="50" y="380" font-family="Arial" font-size="10" fill="#fca5a5" font-weight="bold">503 Service Unavailable</text>
+
+  <rect x="32" y="395" width="210" height="25" rx="6" fill="#0f172a"/>
+  <text x="50" y="409" font-family="Arial" font-size="10" fill="#fca5a5" font-weight="bold">504 Gateway Timeout</text>
+
+  <text x="32" y="453" font-family="Arial" font-size="8" fill="#64748b" font-style="italic">5xx = your fault. 4xx = user's fault. Know the difference.</text>
+
+  <!-- Important Headers -->
+  <rect x="268" y="265" width="617" height="195" rx="10" fill="#1f2937" stroke="#334155" stroke-width="1.5"/>
+  <text x="577" y="290" font-family="Arial" font-size="13" font-weight="bold" fill="#94a3b8" text-anchor="middle">Essential HTTP Headers</text>
+
+  <!-- Request headers -->
+  <rect x="280" y="300" width="285" height="150" rx="8" fill="#0f172a"/>
+  <text x="423" y="318" font-family="Arial" font-size="11" font-weight="bold" fill="#7dd3fc" text-anchor="middle">Request Headers</text>
+  <text x="290" y="334" font-family="Arial" font-size="9" fill="#64748b">Authorization: Bearer &lt;jwt-token&gt;</text>
+  <text x="290" y="349" font-family="Arial" font-size="9" fill="#64748b">Content-Type: application/json</text>
+  <text x="290" y="364" font-family="Arial" font-size="9" fill="#64748b">Accept: application/json, text/html</text>
+  <text x="290" y="379" font-family="Arial" font-size="9" fill="#64748b">Host: api.example.com</text>
+  <text x="290" y="394" font-family="Arial" font-size="9" fill="#64748b">User-Agent: Mozilla/5.0 ...</text>
+  <text x="290" y="409" font-family="Arial" font-size="9" fill="#64748b">Accept-Encoding: gzip, br, zstd</text>
+  <text x="290" y="424" font-family="Arial" font-size="9" fill="#64748b">Cookie: session_id=abc123</text>
+  <text x="290" y="439" font-family="Arial" font-size="9" fill="#64748b">If-None-Match: "abc123etag"</text>
+
+  <!-- Response headers -->
+  <rect x="575" y="300" width="298" height="150" rx="8" fill="#0f172a"/>
+  <text x="724" y="318" font-family="Arial" font-size="11" font-weight="bold" fill="#6ee7b7" text-anchor="middle">Response Headers</text>
+  <text x="585" y="334" font-family="Arial" font-size="9" fill="#64748b">Content-Type: application/json</text>
+  <text x="585" y="349" font-family="Arial" font-size="9" fill="#64748b">Content-Length: 1024</text>
+  <text x="585" y="364" font-family="Arial" font-size="9" fill="#64748b">Cache-Control: max-age=3600, public</text>
+  <text x="585" y="379" font-family="Arial" font-size="9" fill="#64748b">ETag: "33a64df5"</text>
+  <text x="585" y="394" font-family="Arial" font-size="9" fill="#64748b">Set-Cookie: token=abc; Secure; HttpOnly</text>
+  <text x="585" y="409" font-family="Arial" font-size="9" fill="#64748b">X-RateLimit-Remaining: 98</text>
+  <text x="585" y="424" font-family="Arial" font-size="9" fill="#64748b">Strict-Transport-Security: max-age=...</text>
+  <text x="585" y="439" font-family="Arial" font-size="9" fill="#64748b">Access-Control-Allow-Origin: *</text>
+
+  <!-- 429 extra -->
+  <rect x="722" y="165" width="160" height="25" rx="6" fill="#0f172a"/>
+  <text x="740" y="179" font-family="Arial" font-size="10" fill="#fdba74" font-weight="bold">422 Unprocessable</text>
+  <rect x="722" y="198" width="160" height="25" rx="6" fill="#0f172a"/>
+  <text x="740" y="212" font-family="Arial" font-size="10" fill="#fdba74" font-weight="bold">429 Too Many Req.</text>
+  <text x="740" y="249" font-family="Arial" font-size="9" fill="#64748b" font-style="italic">Rate limiting → 429</text>
+</svg>

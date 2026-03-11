@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="520" fill="url(#bgGrad)" rx="12"/>
+  <text x="450" y="33" font-family="Arial" font-size="17" font-weight="bold" fill="white" text-anchor="middle">HTTP Versions — The Evolution of the Web's Protocol</text>
+
+  <!-- HTTP/1.0 column -->
+  <rect x="20" y="52" width="195" height="435" rx="10" fill="#1f2937" stroke="#475569" stroke-width="1.5"/>
+  <rect x="20" y="52" width="195" height="38" rx="10" fill="#374151"/>
+  <rect x="20" y="80" width="195" height="10" fill="#374151"/>
+  <text x="118" y="76" font-family="Arial" font-size="13" font-weight="bold" fill="#9ca3af" text-anchor="middle">HTTP/1.0</text>
+  <text x="118" y="104" font-family="Arial" font-size="10" fill="#6b7280" text-anchor="middle">1996 — The Basic One</text>
+
+  <!-- Connection diagram for 1.0 -->
+  <rect x="33" y="115" width="169" height="120" rx="6" fill="#111827"/>
+  <text x="118" y="135" font-family="Arial" font-size="10" font-weight="bold" fill="#9ca3af" text-anchor="middle">One Request Per Connection</text>
+  <line x1="50" y1="155" x2="180" y2="155" stroke="#374151" stroke-width="1.5"/>
+  <text x="40" y="153" font-family="Arial" font-size="8" fill="#6b7280">TCP</text>
+  <rect x="50" y="160" width="130" height="12" rx="2" fill="#374151"/>
+  <text x="115" y="170" font-family="Arial" font-size="7" fill="#9ca3af" text-anchor="middle">GET /index.html</text>
+  <line x1="50" y1="182" x2="180" y2="182" stroke="#374151" stroke-width="1.5"/>
+  <text x="40" y="180" font-family="Arial" font-size="8" fill="#6b7280">TCP</text>
+  <rect x="50" y="187" width="130" height="12" rx="2" fill="#374151"/>
+  <text x="115" y="197" font-family="Arial" font-size="7" fill="#9ca3af" text-anchor="middle">GET /style.css</text>
+  <line x1="50" y1="210" x2="180" y2="210" stroke="#374151" stroke-width="1.5"/>
+  <text x="40" y="208" font-family="Arial" font-size="8" fill="#6b7280">TCP</text>
+  <rect x="50" y="215" width="130" height="12" rx="2" fill="#374151"/>
+  <text x="115" y="225" font-family="Arial" font-size="7" fill="#9ca3af" text-anchor="middle">GET /script.js</text>
+  <text x="118" y="244" font-family="Arial" font-size="8" fill="#ef4444" text-anchor="middle">3 TCP handshakes = slow!</text>
+
+  <text x="30" y="262" font-family="Arial" font-size="9" fill="#6b7280">• New TCP connection per request</text>
+  <text x="30" y="278" font-family="Arial" font-size="9" fill="#6b7280">• No support for virtual hosts</text>
+  <text x="30" y="294" font-family="Arial" font-size="9" fill="#6b7280">• GET, POST, HEAD only</text>
+  <text x="30" y="310" font-family="Arial" font-size="9" fill="#6b7280">• No persistent connections</text>
+  <text x="30" y="326" font-family="Arial" font-size="9" fill="#6b7280">• No chunked transfer</text>
+
+  <rect x="30" y="345" width="172" height="28" rx="6" fill="#111827" stroke="#374151"/>
+  <text x="116" y="363" font-family="Arial" font-size="9" fill="#6b7280" text-anchor="middle">Status: ⚰️ Effectively dead</text>
+
+  <!-- HTTP/1.1 column -->
+  <rect x="225" y="52" width="195" height="435" rx="10" fill="#1f2937" stroke="#0ea5e9" stroke-width="2"/>
+  <rect x="225" y="52" width="195" height="38" rx="10" fill="#0c4a6e"/>
+  <rect x="225" y="80" width="195" height="10" fill="#0c4a6e"/>
+  <text x="323" y="76" font-family="Arial" font-size="13" font-weight="bold" fill="#7dd3fc" text-anchor="middle">HTTP/1.1</text>
+  <text x="323" y="104" font-family="Arial" font-size="10" fill="#7dd3fc" text-anchor="middle">1997 — The Workhorse</text>
+
+  <rect x="238" y="115" width="169" height="120" rx="6" fill="#082f49"/>
+  <text x="323" y="135" font-family="Arial" font-size="10" font-weight="bold" fill="#7dd3fc" text-anchor="middle">Persistent Connection</text>
+  <line x1="255" y1="150" x2="385" y2="150" stroke="#0ea5e9" stroke-width="2"/>
+  <text x="245" y="148" font-family="Arial" font-size="7" fill="#7dd3fc">TCP</text>
+  <rect x="255" y="155" width="125" height="10" rx="2" fill="#0c4a6e"/>
+  <text x="317" y="163" font-family="Arial" font-size="7" fill="#7dd3fc" text-anchor="middle">GET /index.html</text>
+  <rect x="255" y="170" width="125" height="10" rx="2" fill="#0c4a6e"/>
+  <text x="317" y="178" font-family="Arial" font-size="7" fill="#7dd3fc" text-anchor="middle">GET /style.css</text>
+  <rect x="255" y="185" width="125" height="10" rx="2" fill="#0c4a6e"/>
+  <text x="317" y="193" font-family="Arial" font-size="7" fill="#7dd3fc" text-anchor="middle">GET /script.js</text>
+  <text x="323" y="215" font-family="Arial" font-size="8" fill="#10b981" text-anchor="middle">1 TCP handshake — better!</text>
+  <text x="323" y="229" font-family="Arial" font-size="8" fill="#f59e0b" text-anchor="middle">But: Head-of-line blocking ⚠</text>
+
+  <text x="235" y="255" font-family="Arial" font-size="9" fill="#93c5fd">✓ Persistent connections (keep-alive)</text>
+  <text x="235" y="271" font-family="Arial" font-size="9" fill="#93c5fd">✓ Chunked transfer encoding</text>
+  <text x="235" y="287" font-family="Arial" font-size="9" fill="#93c5fd">✓ Virtual hosting (Host header)</text>
+  <text x="235" y="303" font-family="Arial" font-size="9" fill="#93c5fd">✓ Cache control headers</text>
+  <text x="235" y="319" font-family="Arial" font-size="9" fill="#93c5fd">✓ Range requests (resume downloads)</text>
+  <text x="235" y="335" font-family="Arial" font-size="9" fill="#fca5a5">✗ Text-based (verbose headers)</text>
+  <text x="235" y="351" font-family="Arial" font-size="9" fill="#fca5a5">✗ HOL blocking in pipeline</text>
+
+  <rect x="235" y="370" width="172" height="28" rx="6" fill="#082f49" stroke="#0ea5e9"/>
+  <text x="321" y="388" font-family="Arial" font-size="9" fill="#7dd3fc" text-anchor="middle">Status: 🏆 Still ~50% of traffic</text>
+
+  <!-- HTTP/2 column -->
+  <rect x="430" y="52" width="205" height="435" rx="10" fill="#1f2937" stroke="#10b981" stroke-width="2"/>
+  <rect x="430" y="52" width="205" height="38" rx="10" fill="#14532d"/>
+  <rect x="430" y="80" width="205" height="10" fill="#14532d"/>
+  <text x="533" y="76" font-family="Arial" font-size="13" font-weight="bold" fill="#6ee7b7" text-anchor="middle">HTTP/2</text>
+  <text x="533" y="104" font-family="Arial" font-size="10" fill="#6ee7b7" text-anchor="middle">2015 — The Multiplexer</text>
+
+  <rect x="443" y="115" width="179" height="120" rx="6" fill="#052e16"/>
+  <text x="533" y="135" font-family="Arial" font-size="10" font-weight="bold" fill="#6ee7b7" text-anchor="middle">Multiplexing</text>
+  <line x1="457" y1="148" x2="610" y2="148" stroke="#10b981" stroke-width="2"/>
+  <text x="447" y="146" font-family="Arial" font-size="7" fill="#6ee7b7">TCP</text>
+  <!-- Multiple streams on one connection -->
+  <rect x="457" y="153" width="153" height="8" rx="2" fill="#059669"/>
+  <text x="533" y="160" font-family="Arial" font-size="6" fill="white" text-anchor="middle">Stream 1: /index.html</text>
+  <rect x="457" y="165" width="100" height="8" rx="2" fill="#047857"/>
+  <text x="507" y="172" font-family="Arial" font-size="6" fill="white" text-anchor="middle">Stream 2: /style.css</text>
+  <rect x="457" y="177" width="120" height="8" rx="2" fill="#065f46"/>
+  <text x="517" y="184" font-family="Arial" font-size="6" fill="white" text-anchor="middle">Stream 3: /script.js</text>
+  <text x="533" y="203" font-family="Arial" font-size="8" fill="#10b981" text-anchor="middle">All parallel, 1 connection! ✓</text>
+  <text x="533" y="217" font-family="Arial" font-size="8" fill="#f59e0b" text-anchor="middle">TCP HOL still lurks ⚠</text>
+  <text x="533" y="229" font-family="Arial" font-size="8" fill="#64748b" text-anchor="middle">(packet loss = all streams blocked)</text>
+
+  <text x="443" y="253" font-family="Arial" font-size="9" fill="#6ee7b7">✓ Multiplexing — parallel streams</text>
+  <text x="443" y="269" font-family="Arial" font-size="9" fill="#6ee7b7">✓ Binary framing (compact)</text>
+  <text x="443" y="285" font-family="Arial" font-size="9" fill="#6ee7b7">✓ Header compression (HPACK)</text>
+  <text x="443" y="301" font-family="Arial" font-size="9" fill="#6ee7b7">✓ Server push</text>
+  <text x="443" y="317" font-family="Arial" font-size="9" fill="#6ee7b7">✓ Stream prioritization</text>
+  <text x="443" y="333" font-family="Arial" font-size="9" fill="#fca5a5">✗ TCP head-of-line blocking</text>
+  <text x="443" y="349" font-family="Arial" font-size="9" fill="#fca5a5">✗ Server push rarely used</text>
+
+  <rect x="443" y="370" width="179" height="28" rx="6" fill="#052e16" stroke="#10b981"/>
+  <text x="533" y="388" font-family="Arial" font-size="9" fill="#6ee7b7" text-anchor="middle">Status: 🚀 ~40%+ of modern traffic</text>
+
+  <!-- HTTP/3 column -->
+  <rect x="645" y="52" width="230" height="435" rx="10" fill="#1f2937" stroke="#8b5cf6" stroke-width="2"/>
+  <rect x="645" y="52" width="230" height="38" rx="10" fill="#2e1065"/>
+  <rect x="645" y="80" width="230" height="10" fill="#2e1065"/>
+  <text x="760" y="76" font-family="Arial" font-size="13" font-weight="bold" fill="#c4b5fd" text-anchor="middle">HTTP/3</text>
+  <text x="760" y="104" font-family="Arial" font-size="10" fill="#c4b5fd" text-anchor="middle">2022 — The QUIC Revolution</text>
+
+  <rect x="658" y="115" width="204" height="120" rx="6" fill="#1e1b4b"/>
+  <text x="760" y="133" font-family="Arial" font-size="10" font-weight="bold" fill="#c4b5fd" text-anchor="middle">QUIC Transport (UDP-based)</text>
+  <!-- QUIC streams -->
+  <rect x="666" y="143" width="188" height="16" rx="3" fill="#4c1d95"/>
+  <text x="760" y="155" font-family="Arial" font-size="7" fill="#c4b5fd" text-anchor="middle">QUIC Connection (already encrypted)</text>
+  <rect x="666" y="163" width="80" height="10" rx="2" fill="#6d28d9"/>
+  <text x="706" y="171" font-family="Arial" font-size="6" fill="white" text-anchor="middle">Stream 1: /index</text>
+  <rect x="666" y="177" width="95" height="10" rx="2" fill="#7c3aed"/>
+  <text x="713" y="185" font-family="Arial" font-size="6" fill="white" text-anchor="middle">Stream 2: /style.css</text>
+  <rect x="666" y="191" width="110" height="10" rx="2" fill="#6d28d9"/>
+  <text x="721" y="199" font-family="Arial" font-size="6" fill="white" text-anchor="middle">Stream 3: /script.js</text>
+  <text x="760" y="218" font-family="Arial" font-size="8" fill="#10b981" text-anchor="middle">Packet loss only affects one stream!</text>
+  <text x="760" y="230" font-family="Arial" font-size="8" fill="#10b981" text-anchor="middle">0-RTT resumption! ⚡</text>
+
+  <text x="658" y="255" font-family="Arial" font-size="9" fill="#c4b5fd">✓ QUIC = UDP + reliability + crypto</text>
+  <text x="658" y="271" font-family="Arial" font-size="9" fill="#c4b5fd">✓ 0-RTT connection resumption</text>
+  <text x="658" y="287" font-family="Arial" font-size="9" fill="#c4b5fd">✓ No TCP HOL — streams independent</text>
+  <text x="658" y="303" font-family="Arial" font-size="9" fill="#c4b5fd">✓ Connection migration (IP change)</text>
+  <text x="658" y="319" font-family="Arial" font-size="9" fill="#c4b5fd">✓ TLS 1.3 baked in by default</text>
+  <text x="658" y="335" font-family="Arial" font-size="9" fill="#c4b5fd">✓ Much faster on mobile networks</text>
+  <text x="658" y="351" font-family="Arial" font-size="9" fill="#fca5a5">✗ UDP blocked on some networks</text>
+
+  <rect x="658" y="370" width="204" height="28" rx="6" fill="#1e1b4b" stroke="#8b5cf6"/>
+  <text x="760" y="388" font-family="Arial" font-size="9" fill="#c4b5fd" text-anchor="middle">Status: ⚡ Growing fast (~25%+)</text>
+
+  <!-- Bottom comparison bar -->
+  <rect x="20" y="497" width="855" height="0" rx="4" fill="#334155"/>
+</svg>

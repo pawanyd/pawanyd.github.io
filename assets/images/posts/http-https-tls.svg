@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#10b981"/>
+    </marker>
+    <marker id="arrowTeal" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#0ea5e9"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="460" fill="url(#bgGrad)" rx="12"/>
+  <text x="450" y="33" font-family="Arial" font-size="17" font-weight="bold" fill="white" text-anchor="middle">HTTPS &amp; TLS Handshake — How Encryption Works</text>
+
+  <!-- Client -->
+  <rect x="20" y="60" width="130" height="375" rx="10" fill="#0f2744" stroke="#0ea5e9" stroke-width="2"/>
+  <text x="85" y="83" font-family="Arial" font-size="12" font-weight="bold" fill="#7dd3fc" text-anchor="middle">Client</text>
+
+  <!-- Server -->
+  <rect x="750" y="60" width="130" height="375" rx="10" fill="#0f2744" stroke="#10b981" stroke-width="2"/>
+  <text x="815" y="83" font-family="Arial" font-size="12" font-weight="bold" fill="#6ee7b7" text-anchor="middle">Server</text>
+
+  <!-- Steps area -->
+  <!-- Step 1: Client Hello -->
+  <rect x="165" y="90" width="555" height="50" rx="6" fill="#0f172a" stroke="#0ea5e9" stroke-width="1"/>
+  <text x="245" y="112" font-family="Arial" font-size="10" font-weight="bold" fill="#7dd3fc">Step 1: ClientHello</text>
+  <text x="245" y="127" font-family="Arial" font-size="9" fill="#64748b">TLS version, supported cipher suites, random number (Client Random)</text>
+  <line x1="150" y1="115" x2="165" y2="115" stroke="#0ea5e9" stroke-width="1.5" marker-end="url(#arrowTeal)"/>
+  <line x1="720" y1="115" x2="750" y2="115" stroke="#0ea5e9" stroke-width="1.5" marker-end="url(#arrowTeal)"/>
+
+  <!-- Step 2: Server Hello + Certificate -->
+  <rect x="165" y="152" width="555" height="65" rx="6" fill="#0f172a" stroke="#10b981" stroke-width="1"/>
+  <text x="245" y="174" font-family="Arial" font-size="10" font-weight="bold" fill="#6ee7b7">Step 2: ServerHello + Certificate</text>
+  <text x="245" y="189" font-family="Arial" font-size="9" fill="#64748b">Chosen cipher, Server Random, Certificate (public key + domain + CA signature)</text>
+  <text x="245" y="204" font-family="Arial" font-size="9" fill="#64748b">Certificate signed by a trusted Certificate Authority (CA) like Let's Encrypt</text>
+  <line x1="750" y1="185" x2="720" y2="185" stroke="#10b981" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+  <line x1="165" y1="185" x2="150" y2="185" stroke="#10b981" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+
+  <!-- Step 3: Key Exchange -->
+  <rect x="165" y="230" width="555" height="55" rx="6" fill="#0f172a" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="245" y="252" font-family="Arial" font-size="10" font-weight="bold" fill="#c4b5fd">Step 3: Key Exchange (ECDHE)</text>
+  <text x="245" y="267" font-family="Arial" font-size="9" fill="#64748b">Client verifies server cert. Both sides derive session keys independently</text>
+  <text x="245" y="280" font-family="Arial" font-size="9" fill="#64748b">using Diffie-Hellman — no key ever transmitted over the wire!</text>
+  <line x1="150" y1="258" x2="165" y2="258" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrowTeal)"/>
+  <line x1="720" y1="258" x2="750" y2="258" stroke="#8b5cf6" stroke-width="1.5" marker-end="url(#arrowTeal)"/>
+
+  <!-- Step 4: Finished -->
+  <rect x="165" y="298" width="555" height="50" rx="6" fill="#0f172a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="245" y="320" font-family="Arial" font-size="10" font-weight="bold" fill="#fcd34d">Step 4: Finished (Handshake Complete)</text>
+  <text x="245" y="335" font-family="Arial" font-size="9" fill="#64748b">Both sides send Finished message encrypted with session key. Handshake verified.</text>
+  <line x1="750" y1="320" x2="720" y2="320" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+  <line x1="150" y1="320" x2="165" y2="320" stroke="#10b981" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+
+  <!-- Step 5: Encrypted HTTP -->
+  <rect x="165" y="360" width="555" height="40" rx="6" fill="#14532d" stroke="#10b981" stroke-width="1.5"/>
+  <text x="443" y="382" font-family="Arial" font-size="10" font-weight="bold" fill="#6ee7b7" text-anchor="middle">Step 5: Encrypted HTTP Traffic (AES-256-GCM) 🔒</text>
+  <line x1="150" y1="380" x2="165" y2="380" stroke="#0ea5e9" stroke-width="1.5" marker-end="url(#arrowTeal)"/>
+  <line x1="720" y1="380" x2="750" y2="380" stroke="#0ea5e9" stroke-width="1.5" marker-end="url(#arrowTeal)"/>
+
+  <!-- Timeline labels on left -->
+  <text x="85" y="115" font-family="Arial" font-size="8" fill="#64748b" text-anchor="middle">→</text>
+  <text x="85" y="185" font-family="Arial" font-size="8" fill="#64748b" text-anchor="middle">←</text>
+  <text x="85" y="258" font-family="Arial" font-size="8" fill="#64748b" text-anchor="middle">→</text>
+  <text x="85" y="320" font-family="Arial" font-size="8" fill="#64748b" text-anchor="middle">← →</text>
+  <text x="85" y="380" font-family="Arial" font-size="8" fill="#64748b" text-anchor="middle">↔</text>
+
+  <!-- Info boxes at bottom -->
+  <rect x="20" y="418" width="270" height="35" rx="6" fill="#1f2937" stroke="#334155"/>
+  <text x="155" y="432" font-family="Arial" font-size="9" font-weight="bold" fill="#94a3b8" text-anchor="middle">TLS 1.2 vs TLS 1.3</text>
+  <text x="155" y="447" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">TLS 1.3 = 1-RTT (vs 2-RTT in 1.2). Always use TLS 1.3.</text>
+
+  <rect x="305" y="418" width="270" height="35" rx="6" fill="#1f2937" stroke="#334155"/>
+  <text x="440" y="432" font-family="Arial" font-size="9" font-weight="bold" fill="#94a3b8" text-anchor="middle">Why HTTPS, Not Just HTTP?</text>
+  <text x="440" y="447" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Confidentiality + Integrity + Authentication</text>
+
+  <rect x="590" y="418" width="290" height="35" rx="6" fill="#1f2937" stroke="#334155"/>
+  <text x="735" y="432" font-family="Arial" font-size="9" font-weight="bold" fill="#94a3b8" text-anchor="middle">Certificate Authorities</text>
+  <text x="735" y="447" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">Let's Encrypt (free), DigiCert, Comodo — they vouch for you</text>
+</svg>
