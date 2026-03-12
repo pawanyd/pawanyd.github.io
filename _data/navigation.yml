@@ -9,7 +9,8 @@
     - name: Tools
       subsubmenu:
         - name: Js Debugger
-          link: https://pawanyd.github.io/js-debugger/
+          link: /js-debugger/
+          target: _blank
     - name: Resources
       link: /ecosystem/resources
     - name: Community

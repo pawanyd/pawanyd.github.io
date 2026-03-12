@@ -31,7 +31,7 @@
                                         <ul class="submenu hidden md:group-hover/sub:block md:absolute md:left-full md:top-0 md:mt-0 md:bg-white md:shadow-lg md:rounded-lg md:min-w-[200px] md:py-2 pl-6 md:pl-0 z-50">
                                             {% for subsubitem in subitem.subsubmenu %}
                                             <li>
-                                                <a href="{{ subsubitem.link }}" class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 block px-4 py-3 md:py-2 transition-colors text-sm">
+                                                <a href="{{ subsubitem.link }}" {% if subsubitem.target %}target="{{ subsubitem.target }}"{% endif %} class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 block px-4 py-3 md:py-2 transition-colors text-sm">
                                                     {{ subsubitem.name }}
                                                 </a>
                                             </li>
@@ -39,7 +39,7 @@
                                         </ul>
                                     </div>
                                 {% else %}
-                                    <a href="{{ subitem.link }}" class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 block px-4 py-3 md:py-2 transition-colors text-sm">
+                                    <a href="{{ subitem.link }}" {% if subitem.target %}target="{{ subitem.target }}"{% endif %} class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 block px-4 py-3 md:py-2 transition-colors text-sm">
                                         {{ subitem.name }}
                                     </a>
                                 {% endif %}
