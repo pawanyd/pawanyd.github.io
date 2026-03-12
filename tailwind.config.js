@@ -1,4 +1,3 @@
-// tailwind.config.js
 module.exports = {
     content: [
       './_layouts/**/*.html',
@@ -6,6 +5,7 @@ module.exports = {
       './_posts/**/*.md',
       './blog/**/*.html',
       './projects/**/*.html',
+      './ecosystem/**/*.html',
       './*.html',
       './*.md',
       './assets/js/**/*.js'
