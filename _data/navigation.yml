@@ -9,7 +9,10 @@
     - name: Tools
       subsubmenu:
         - name: Js Debugger
-          link: /js-debugger/
+          link: /js-debugger
+          target: _blank
+        - name: Free Invoice System
+          link: /free-transport-invoice
           target: _blank
     - name: Resources
       link: /ecosystem/resources
