@@ -4,6 +4,16 @@
   link: /about
 - name: Projects
   link: /projects
+- name: Ecosystem
+  submenu:
+    - name: Tools
+      subsubmenu:
+        - name: Js Debugger
+          link: https://pawanyd.github.io/js-debugger/
+    - name: Resources
+      link: /ecosystem/resources
+    - name: Community
+      link: /ecosystem/community
 - name: Contact
   link: /contact
 - name: Blogs

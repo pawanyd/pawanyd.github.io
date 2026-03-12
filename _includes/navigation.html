@@ -3,17 +3,56 @@
         <a href="/" class="text-xl font-bold text-gray-800">Pawan Kumar</a>
         
         <!-- Hamburger Menu Button -->
-        <button id="menu-toggle" class="md:hidden text-gray-800 focus:outline-none hover:text-blue-600 transition-colors" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMobileMenu()">
+        <button id="menu-toggle" class="md:hidden text-gray-800 focus:outline-none hover:text-blue-600 transition-colors" aria-label="Toggle menu" aria-expanded="false">
             <i class="fa-solid fa-bars text-2xl"></i>
         </button>
         
         <!-- Navigation Links -->
         <ul id="menu" class="hidden md:flex md:space-x-4 lg:space-x-6 fixed md:relative top-16 md:top-0 left-0 right-0 md:left-auto md:right-auto w-full md:w-auto bg-white md:bg-transparent shadow-lg md:shadow-none max-h-[calc(100vh-4rem)] md:max-h-none overflow-y-auto md:overflow-visible z-40">
             {% for item in site.data.navigation %}
-            <li class="border-b md:border-b-0 border-gray-100 last:border-b-0">
-                <a href="{{ item.link }}" {% if item.target %}target="{{ item.target }}"{% endif %} class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 md:hover:bg-transparent block px-6 py-4 md:px-0 md:py-0 transition-colors text-base md:text-sm font-medium whitespace-nowrap">
-                    {% if item.icon %}<i class="{{ item.icon }} mr-2 md:mr-1 text-gray-500"></i>{% endif %}<span class="md:inline">{{ item.name }}</span>
-                </a>
+            <li class="border-b md:border-b-0 border-gray-100 last:border-b-0 {% if item.submenu %}relative group{% endif %}">
+                {% if item.submenu %}
+                    <!-- Menu item with submenu -->
+                    <div class="submenu-container h-full">
+                        <a href="{% if item.link %}{{ item.link }}{% else %}#{% endif %}" class="submenu-toggle text-gray-700 hover:text-blue-600 hover:bg-blue-50 md:hover:bg-transparent w-full text-left px-6 py-4 md:px-2 md:py-2 transition-colors text-base md:text-sm font-medium whitespace-nowrap flex items-center justify-between md:justify-start h-full">
+                            <span>{{ item.name }}</span>
+                            <i class="fa-solid fa-chevron-down ml-2 text-xs transition-transform md:group-hover:rotate-180"></i>
+                        </a>
+                        <!-- Submenu -->
+                        <ul class="submenu hidden md:group-hover:block md:absolute md:left-0 md:top-full md:mt-0 md:bg-white md:shadow-lg md:rounded-b-lg md:min-w-[200px] md:py-2 pl-6 md:pl-0 z-50">
+                            {% for subitem in item.submenu %}
+                            <li class="{% if subitem.subsubmenu %}relative group/sub{% endif %}">
+                                {% if subitem.subsubmenu %}
+                                    <div class="submenu-container">
+                                        <a href="{% if subitem.link %}{{ subitem.link }}{% else %}#{% endif %}" class="submenu-toggle text-gray-700 hover:text-blue-600 hover:bg-blue-50 w-full text-left flex items-center justify-between px-4 py-3 md:py-2 transition-colors text-sm">
+                                            <span>{{ subitem.name }}</span>
+                                            <i class="fa-solid fa-chevron-right ml-2 text-xs transition-transform md:group-hover/sub:rotate-90"></i>
+                                        </a>
+                                        <ul class="submenu hidden md:group-hover/sub:block md:absolute md:left-full md:top-0 md:mt-0 md:bg-white md:shadow-lg md:rounded-lg md:min-w-[200px] md:py-2 pl-6 md:pl-0 z-50">
+                                            {% for subsubitem in subitem.subsubmenu %}
+                                            <li>
+                                                <a href="{{ subsubitem.link }}" class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 block px-4 py-3 md:py-2 transition-colors text-sm">
+                                                    {{ subsubitem.name }}
+                                                </a>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                {% else %}
+                                    <a href="{{ subitem.link }}" class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 block px-4 py-3 md:py-2 transition-colors text-sm">
+                                        {{ subitem.name }}
+                                    </a>
+                                {% endif %}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% else %}
+                    <!-- Regular menu item -->
+                    <a href="{{ item.link }}" {% if item.target %}target="{{ item.target }}"{% endif %} class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 md:hover:bg-transparent block px-6 py-4 md:px-2 md:py-2 transition-colors text-base md:text-sm font-medium whitespace-nowrap">
+                        {% if item.icon %}<i class="{{ item.icon }} mr-2 md:mr-1 text-gray-500"></i>{% endif %}<span>{{ item.name }}</span>
+                    </a>
+                {% endif %}
             </li>
             {% endfor %}
         </ul>
@@ -21,59 +60,95 @@
 </nav>
 
 <script>
-// Inline fallback for mobile menu
-function toggleMobileMenu() {
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
-    const button = document.getElementById('menu-toggle');
-    const icon = button.querySelector('i');
+    const submenuToggles = document.querySelectorAll('.submenu-toggle');
     
-    if (menu.classList.contains('hidden')) {
-        menu.classList.remove('hidden');
-        if (icon) {
+    // Mobile menu toggle
+    menuToggle.addEventListener('click', function() {
+        const icon = this.querySelector('i');
+        if (menu.classList.contains('hidden')) {
+            menu.classList.remove('hidden');
             icon.classList.remove('fa-bars');
             icon.classList.add('fa-times');
-        }
-    } else {
-        menu.classList.add('hidden');
-        if (icon) {
+        } else {
+            menu.classList.add('hidden');
             icon.classList.remove('fa-times');
             icon.classList.add('fa-bars');
+            
+            // Close all submenus when closing main menu
+            document.querySelectorAll('.submenu').forEach(s => s.classList.add('hidden'));
+            document.querySelectorAll('.submenu-toggle i').forEach(i => i.style.transform = '');
         }
-    }
-}
-
-// Close menu when clicking a link on mobile
-document.addEventListener('DOMContentLoaded', function() {
-    const menu = document.getElementById('menu');
-    const menuLinks = menu.querySelectorAll('a');
+    });
     
-    menuLinks.forEach(function(link) {
-        link.addEventListener('click', function() {
-            if (window.innerWidth < 768) {
-                menu.classList.add('hidden');
-                const button = document.getElementById('menu-toggle');
-                const icon = button.querySelector('i');
-                if (icon) {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
+    // Submenu toggles (Mobile only click logic)
+    submenuToggles.forEach(function(toggle) {
+        toggle.addEventListener('click', function(e) {
+            if (window.innerWidth >= 768) {
+                // On desktop, follow the link if it exists, CSS handles the hover
+                if (this.getAttribute('href') === '#') {
+                    e.preventDefault();
                 }
+                return;
+            }
+            
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const submenu = this.nextElementSibling;
+            const icon = this.querySelector('i');
+            const isHidden = submenu.classList.contains('hidden');
+            
+            // Close sibling submenus (keep parent open)
+            const parentDropdown = this.closest('.submenu');
+            const siblingSubmenus = parentDropdown ? parentDropdown.querySelectorAll(':scope > li > .submenu-container > .submenu') : document.querySelectorAll('#menu > li > .submenu-container > .submenu');
+            
+            siblingSubmenus.forEach(function(s) {
+                if (s !== submenu) {
+                    s.classList.add('hidden');
+                    const otherIcon = s.previousElementSibling.querySelector('i');
+                    if (otherIcon) {
+                        otherIcon.style.transform = '';
+                    }
+                    // Also close deep submenus
+                    s.querySelectorAll('.submenu').forEach(deepS => {
+                        deepS.classList.add('hidden');
+                    });
+                    s.querySelectorAll('.submenu-toggle i').forEach(deepI => {
+                        deepI.style.transform = '';
+                    });
+                }
+            });
+            
+            // Toggle current submenu
+            if (isHidden) {
+                submenu.classList.remove('hidden');
+                // Check if it's a side chevron or down chevron
+                if (icon.classList.contains('fa-chevron-right')) {
+                    icon.style.transform = 'rotate(90deg)';
+                } else {
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            } else {
+                submenu.classList.add('hidden');
+                icon.style.transform = '';
             }
         });
     });
     
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-        const button = document.getElementById('menu-toggle');
-        if (!menu.contains(e.target) && !button.contains(e.target)) {
-            if (!menu.classList.contains('hidden') && window.innerWidth < 768) {
+    // Close mobile menu when clicking a link
+    const menuLinks = menu.querySelectorAll('a:not(.submenu-toggle)');
+    menuLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            if (window.innerWidth < 768) {
                 menu.classList.add('hidden');
-                const icon = button.querySelector('i');
-                if (icon) {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
+                const icon = menuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
             }
-        }
+        });
     });
 });
 </script>

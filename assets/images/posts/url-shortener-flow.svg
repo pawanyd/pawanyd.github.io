@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f3f4f6"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1f2937" text-anchor="middle">
+    URL Shortening Flow
+  </text>
+  
+  <!-- Step 1: User submits URL -->
+  <g id="step1">
+    <rect x="50" y="80" width="200" height="80" rx="8" fill="#3b82f6"/>
+    <text x="150" y="110" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      1. User Submits
+    </text>
+    <text x="150" y="135" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">
+      POST /shorten
+    </text>
+    <text x="150" y="150" font-family="Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">
+      Long URL
+    </text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 250 120 L 300 120" stroke="#1f2937" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 2: Generate ID -->
+  <g id="step2">
+    <rect x="300" y="80" width="200" height="80" rx="8" fill="#10b981"/>
+    <text x="400" y="110" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      2. Generate ID
+    </text>
+    <text x="400" y="135" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">
+      Distributed ID Gen
+    </text>
+    <text x="400" y="150" font-family="Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">
+      Convert to Base62
+    </text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 500 120 L 550 120" stroke="#1f2937" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 3: Store -->
+  <g id="step3">
+    <rect x="550" y="80" width="200" height="80" rx="8" fill="#8b5cf6"/>
+    <text x="650" y="110" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      3. Store Mapping
+    </text>
+    <text x="650" y="135" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">
+      Database + Cache
+    </text>
+    <text x="650" y="150" font-family="Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">
+      aB3xY9 → long_url
+    </text>
+  </g>
+  
+  <!-- Arrow down -->
+  <path d="M 650 160 L 650 210" stroke="#1f2937" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 4: Return -->
+  <g id="step4">
+    <rect x="550" y="210" width="200" height="80" rx="8" fill="#f59e0b"/>
+    <text x="650" y="240" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      4. Return Short URL
+    </text>
+    <text x="650" y="265" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">
+      short.url/aB3xY9
+    </text>
+  </g>
+  
+  <!-- Redirect Flow -->
+  <text x="400" y="350" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1f2937" text-anchor="middle">
+    Redirect Flow
+  </text>
+  
+  <!-- Step 1: User clicks -->
+  <g id="redirect1">
+    <rect x="50" y="380" width="150" height="80" rx="8" fill="#3b82f6"/>
+    <text x="125" y="410" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      1. User Clicks
+    </text>
+    <text x="125" y="435" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">
+      GET /aB3xY9
+    </text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 200 420 L 250 420" stroke="#1f2937" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 2: Check cache -->
+  <g id="redirect2">
+    <rect x="250" y="380" width="150" height="80" rx="8" fill="#10b981"/>
+    <text x="325" y="410" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      2. Check Cache
+    </text>
+    <text x="325" y="435" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">
+      Redis Lookup
+    </text>
+    <text x="325" y="450" font-family="Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">
+      95% hit rate
+    </text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 400 420 L 450 420" stroke="#1f2937" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 3: Redirect -->
+  <g id="redirect3">
+    <rect x="450" y="380" width="150" height="80" rx="8" fill="#8b5cf6"/>
+    <text x="525" y="410" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      3. Redirect
+    </text>
+    <text x="525" y="435" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">
+      301 Redirect
+    </text>
+    <text x="525" y="450" font-family="Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">
+      5-50ms
+    </text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 600 420 L 650 420" stroke="#1f2937" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 4: Analytics -->
+  <g id="redirect4">
+    <rect x="650" y="380" width="130" height="80" rx="8" fill="#ef4444"/>
+    <text x="715" y="410" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      4. Analytics
+    </text>
+    <text x="715" y="435" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">
+      Async Queue
+    </text>
+    <text x="715" y="450" font-family="Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">
+      No wait
+    </text>
+  </g>
+  
+  <!-- Performance note -->
+  <rect x="50" y="500" width="700" height="60" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="2"/>
+  <text x="400" y="525" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1f2937" text-anchor="middle">
+    Performance: 95% of redirects served from cache in &lt;10ms
+  </text>
+  <text x="400" y="545" font-family="Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">
+    Analytics processed asynchronously - no impact on redirect speed
+  </text>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#1f2937" />
+    </marker>
+  </defs>
+</svg>
