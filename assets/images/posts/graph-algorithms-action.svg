@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="700" viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280" />
+    </marker>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="700" fill="url(#bgGrad)"/>
+  
+  <!-- Title -->
+  <text x="500" y="40" text-anchor="middle" fill="#1f2937" font-family="Arial, sans-serif" font-size="28" font-weight="bold">
+    Graph Algorithms in Action
+  </text>
+  
+  <!-- BFS Example -->
+  <g transform="translate(50, 80)">
+    <rect x="0" y="0" width="220" height="280" fill="white" stroke="#e5e7eb" stroke-width="2" rx="12"/>
+    <text x="110" y="25" text-anchor="middle" fill="#1f2937" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Breadth-First Search (BFS)
+    </text>
+    <text x="110" y="45" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="12">
+      "Ripples in a pond"
+    </text>
+    
+    <!-- BFS visualization -->
+    <!-- Start node -->
+    <circle cx="110" cy="90" r="18" fill="#ef4444" stroke="#dc2626" stroke-width="2" filter="url(#glow)"/>
+    <text x="110" y="97" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">S</text>
+    <text x="110" y="115" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="10">Start</text>
+    
+    <!-- Level 1 nodes -->
+    <circle cx="60" cy="150" r="15" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+    <text x="60" y="157" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">A</text>
+    <text x="60" y="175" text-anchor="middle" fill="#f59e0b" font-family="Arial, sans-serif" font-size="9">Level 1</text>
+    
+    <circle cx="160" cy="150" r="15" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+    <text x="160" y="157" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">B</text>
+    <text x="160" y="175" text-anchor="middle" fill="#f59e0b" font-family="Arial, sans-serif" font-size="9">Level 1</text>
+    
+    <!-- Level 2 nodes -->
+    <circle cx="30" cy="210" r="15" fill="#10b981" stroke="#059669" stroke-width="2"/>
+    <text x="30" y="217" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">C</text>
+    <text x="30" y="235" text-anchor="middle" fill="#10b981" font-family="Arial, sans-serif" font-size="9">Level 2</text>
+    
+    <circle cx="90" cy="210" r="15" fill="#10b981" stroke="#059669" stroke-width="2"/>
+    <text x="90" y="217" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">D</text>
+    <text x="90" y="235" text-anchor="middle" fill="#10b981" font-family="Arial, sans-serif" font-size="9">Level 2</text>
+    
+    <circle cx="190" cy="210" r="15" fill="#10b981" stroke="#059669" stroke-width="2"/>
+    <text x="190" y="217" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">E</text>
+    <text x="190" y="235" text-anchor="middle" fill="#10b981" font-family="Arial, sans-serif" font-size="9">Level 2</text>
+    
+    <!-- Edges -->
+    <line x1="95" y1="100" x2="75" y2="140" stroke="#6b7280" stroke-width="2"/>
+    <line x1="125" y1="100" x2="145" y2="140" stroke="#6b7280" stroke-width="2"/>
+    <line x1="50" y1="165" x2="40" y2="195" stroke="#6b7280" stroke-width="2"/>
+    <line x1="70" y1="165" x2="80" y2="195" stroke="#6b7280" stroke-width="2"/>
+    <line x1="170" y1="165" x2="180" y2="195" stroke="#6b7280" stroke-width="2"/>
+    
+    <text x="110" y="260" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="11">
+      Perfect for shortest paths
+    </text>
+  </g>
+  
+  <!-- DFS Example -->
+  <g transform="translate(290, 80)">
+    <rect x="0" y="0" width="220" height="280" fill="white" stroke="#e5e7eb" stroke-width="2" rx="12"/>
+    <text x="110" y="25" text-anchor="middle" fill="#1f2937" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Depth-First Search (DFS)
+    </text>
+    <text x="110" y="45" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="12">
+      "Deep dive explorer"
+    </text>
+    
+    <!-- DFS visualization with path -->
+    <circle cx="110" cy="90" r="18" fill="#ef4444" stroke="#dc2626" stroke-width="2" filter="url(#glow)"/>
+    <text x="110" y="97" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">S</text>
+    <text x="125" y="85" fill="#ef4444" font-family="Arial, sans-serif" font-size="10">1</text>
+    
+    <circle cx="60" cy="150" r="15" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/>
+    <text x="60" y="157" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">A</text>
+    <text x="75" y="145" fill="#8b5cf6" font-family="Arial, sans-serif" font-size="10">2</text>
+    
+    <circle cx="160" cy="150" r="15" fill="#6b7280" stroke="#4b5563" stroke-width="2"/>
+    <text x="160" y="157" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">B</text>
+    <text x="175" y="145" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">6</text>
+    
+    <circle cx="30" cy="210" r="15" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/>
+    <text x="30" y="217" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">C</text>
+    <text x="45" y="205" fill="#8b5cf6" font-family="Arial, sans-serif" font-size="10">3</text>
+    
+    <circle cx="90" cy="210" r="15" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/>
+    <text x="90" y="217" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">D</text>
+    <text x="105" y="205" fill="#8b5cf6" font-family="Arial, sans-serif" font-size="10">4</text>
+    
+    <circle cx="190" cy="210" r="15" fill="#6b7280" stroke="#4b5563" stroke-width="2"/>
+    <text x="190" y="217" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">E</text>
+    <text x="205" y="205" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">7</text>
+    
+    <!-- DFS path highlighted -->
+    <line x1="95" y1="100" x2="75" y2="140" stroke="#8b5cf6" stroke-width="3"/>
+    <line x1="50" y1="165" x2="40" y2="195" stroke="#8b5cf6" stroke-width="3"/>
+    <line x1="70" y1="165" x2="80" y2="195" stroke="#8b5cf6" stroke-width="3"/>
+    
+    <!-- Other edges -->
+    <line x1="125" y1="100" x2="145" y2="140" stroke="#d1d5db" stroke-width="2"/>
+    <line x1="170" y1="165" x2="180" y2="195" stroke="#d1d5db" stroke-width="2"/>
+    
+    <text x="110" y="260" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="11">
+      Great for cycle detection
+    </text>
+  </g>
+  
+  <!-- Dijkstra's Algorithm -->
+  <g transform="translate(530, 80)">
+    <rect x="0" y="0" width="220" height="280" fill="white" stroke="#e5e7eb" stroke-width="2" rx="12"/>
+    <text x="110" y="25" text-anchor="middle" fill="#1f2937" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Dijkstra's Algorithm
+    </text>
+    <text x="110" y="45" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="12">
+      "Shortest path finder"
+    </text>
+    
+    <!-- Weighted graph for Dijkstra -->
+    <circle cx="50" cy="90" r="18" fill="#ef4444" stroke="#dc2626" stroke-width="2" filter="url(#glow)"/>
+    <text x="50" y="97" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">A</text>
+    <text x="50" y="115" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="10">Start</text>
+    
+    <circle cx="170" cy="90" r="18" fill="#10b981" stroke="#059669" stroke-width="2"/>
+    <text x="170" y="97" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">B</text>
+    <text x="170" y="115" text-anchor="middle" fill="#10b981" font-family="Arial, sans-serif" font-size="10">Dist: 4</text>
+    
+    <circle cx="50" cy="180" r="18" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+    <text x="50" y="187" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">C</text>
+    <text x="50" y="205" text-anchor="middle" fill="#f59e0b" font-family="Arial, sans-serif" font-size="10">Dist: 2</text>
+    
+    <circle cx="170" cy="180" r="18" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/>
+    <text x="170" y="187" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">D</text>
+    <text x="170" y="205" text-anchor="middle" fill="#8b5cf6" font-family="Arial, sans-serif" font-size="10">Dist: 5</text>
+    
+    <!-- Weighted edges -->
+    <line x1="68" y1="90" x2="152" y2="90" stroke="#10b981" stroke-width="3"/>
+    <rect x="105" y="82" width="15" height="14" fill="#dcfce7" stroke="#10b981" stroke-width="1" rx="2"/>
+    <text x="112" y="92" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="10" font-weight="bold">4</text>
+    
+    <line x1="50" y1="108" x2="50" y2="162" stroke="#f59e0b" stroke-width="3"/>
+    <rect x="42" y="130" width="15" height="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="2"/>
+    <text x="49" y="140" text-anchor="middle" fill="#d97706" font-family="Arial, sans-serif" font-size="10" font-weight="bold">2</text>
+    
+    <line x1="68" y1="180" x2="152" y2="180" stroke="#8b5cf6" stroke-width="3"/>
+    <rect x="105" y="172" width="15" height="14" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1" rx="2"/>
+    <text x="112" y="182" text-anchor="middle" fill="#7c3aed" font-family="Arial, sans-serif" font-size="10" font-weight="bold">3</text>
+    
+    <line x1="152" y1="108" x2="68" y2="162" stroke="#d1d5db" stroke-width="2"/>
+    <rect x="105" y="130" width="15" height="14" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1" rx="2"/>
+    <text x="112" y="140" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">7</text>
+    
+    <text x="110" y="240" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="11">
+      Finds optimal routes
+    </text>
+    <text x="110" y="260" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">
+      Used in GPS navigation
+    </text>
+  </g>
+  
+  <!-- Topological Sort -->
+  <g transform="translate(770, 80)">
+    <rect x="0" y="0" width="200" height="280" fill="white" stroke="#e5e7eb" stroke-width="2" rx="12"/>
+    <text x="100" y="25" text-anchor="middle" fill="#1f2937" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Topological Sort
+    </text>
+    <text x="100" y="45" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="12">
+      "Dependency resolver"
+    </text>
+    
+    <!-- Task dependency graph -->
+    <circle cx="100" cy="80" r="15" fill="#3b82f6" stroke="#1e40af" stroke-width="2"/>
+    <text x="100" y="87" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">A</text>
+    <text x="85" y="75" fill="#3b82f6" font-family="Arial, sans-serif" font-size="9">1st</text>
+    
+    <circle cx="60" cy="130" r="15" fill="#10b981" stroke="#059669" stroke-width="2"/>
+    <text x="60" y="137" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">B</text>
+    <text x="45" y="125" fill="#10b981" font-family="Arial, sans-serif" font-size="9">2nd</text>
+    
+    <circle cx="140" cy="130" r="15" fill="#10b981" stroke="#059669" stroke-width="2"/>
+    <text x="140" y="137" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">C</text>
+    <text x="155" y="125" fill="#10b981" font-family="Arial, sans-serif" font-size="9">2nd</text>
+    
+    <circle cx="100" cy="180" r="15" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+    <text x="100" y="187" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">D</text>
+    <text x="115" y="175" fill="#f59e0b" font-family="Arial, sans-serif" font-size="9">3rd</text>
+    
+    <!-- Dependency arrows -->
+    <line x1="90" y1="95" x2="70" y2="115" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="110" y1="95" x2="130" y2="115" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="70" y1="145" x2="90" y2="165" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="130" y1="145" x2="110" y2="165" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <text x="100" y="220" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="11">
+      Orders tasks by dependencies
+    </text>
+    <text x="100" y="240" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">
+      Build systems, scheduling
+    </text>
+    <text x="100" y="260" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">
+      Order: A → B,C → D
+    </text>
+  </g>
+  
+  <!-- Real-world applications -->
+  <g transform="translate(50, 400)">
+    <text x="450" y="30" text-anchor="middle" fill="#1f2937" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+      Real-World Applications
+    </text>
+    
+    <!-- Social Networks -->
+    <rect x="0" y="50" width="180" height="120" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" rx="8"/>
+    <text x="90" y="75" text-anchor="middle" fill="#1e40af" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+      Social Networks
+    </text>
+    <text x="90" y="95" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="11">
+      • Friend suggestions (BFS)
+    </text>
+    <text x="90" y="110" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="11">
+      • Community detection
+    </text>
+    <text x="90" y="125" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="11">
+      • Influence analysis
+    </text>
+    <text x="90" y="145" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">
+      Facebook, LinkedIn, Twitter
+    </text>
+    
+    <!-- Navigation -->
+    <rect x="200" y="50" width="180" height="120" fill="#dcfce7" stroke="#10b981" stroke-width="2" rx="8"/>
+    <text x="290" y="75" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+      GPS Navigation
+    </text>
+    <text x="290" y="95" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="11">
+      • Shortest routes (Dijkstra)
+    </text>
+    <text x="290" y="110" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="11">
+      • Traffic optimization
+    </text>
+    <text x="290" y="125" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="11">
+      • Alternative paths
+    </text>
+    <text x="290" y="145" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">
+      Google Maps, Waze, Uber
+    </text>
+    
+    <!-- Web Search -->
+    <rect x="400" y="50" width="180" height="120" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/>
+    <text x="490" y="75" text-anchor="middle" fill="#d97706" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+      Web Search
+    </text>
+    <text x="490" y="95" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="11">
+      • PageRank algorithm
+    </text>
+    <text x="490" y="110" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="11">
+      • Link analysis
+    </text>
+    <text x="490" y="125" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="11">
+      • Authority scoring
+    </text>
+    <text x="490" y="145" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">
+      Google, Bing, DuckDuckGo
+    </text>
+    
+    <!-- Build Systems -->
+    <rect x="600" y="50" width="180" height="120" fill="#fce7f3" stroke="#ec4899" stroke-width="2" rx="8"/>
+    <text x="690" y="75" text-anchor="middle" fill="#be185d" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+      Build Systems
+    </text>
+    <text x="690" y="95" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="11">
+      • Dependency resolution
+    </text>
+    <text x="690" y="110" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="11">
+      • Compilation order
+    </text>
+    <text x="690" y="125" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="11">
+      • Package management
+    </text>
+    <text x="690" y="145" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">
+      npm, Maven, Make, Gradle
+    </text>
+  </g>
+  
+  <!-- Bottom message -->
+  <text x="500" y="650" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="16">
+    Each algorithm solves different types of graph problems efficiently
+  </text>
+  <text x="500" y="680" text-anchor="middle" fill="#9ca3af" font-family="Arial, sans-serif" font-size="14">
+    Choose the right algorithm based on your specific use case
+  </text>
+</svg>

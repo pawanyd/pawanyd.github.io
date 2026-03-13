@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bgGrad)"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#1f2937" font-family="Arial, sans-serif" font-size="24" font-weight="bold">
+    Graph Basics: Nodes &amp; Edges
+  </text>
+  
+  <!-- Simple graph example -->
+  <g transform="translate(50, 80)">
+    <text x="150" y="20" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+      Simple Graph
+    </text>
+    
+    <!-- Nodes -->
+    <circle cx="50" cy="80" r="25" fill="#3b82f6" stroke="#1e40af" stroke-width="2"/>
+    <text x="50" y="87" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">A</text>
+    
+    <circle cx="200" cy="80" r="25" fill="#3b82f6" stroke="#1e40af" stroke-width="2"/>
+    <text x="200" y="87" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">B</text>
+    
+    <circle cx="125" cy="180" r="25" fill="#3b82f6" stroke="#1e40af" stroke-width="2"/>
+    <text x="125" y="187" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">C</text>
+    
+    <circle cx="275" cy="150" r="25" fill="#3b82f6" stroke="#1e40af" stroke-width="2"/>
+    <text x="275" y="157" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">D</text>
+    
+    <!-- Edges -->
+    <line x1="75" y1="80" x2="175" y2="80" stroke="#6b7280" stroke-width="3"/>
+    <line x1="65" y1="100" x2="110" y2="165" stroke="#6b7280" stroke-width="3"/>
+    <line x1="150" y1="180" x2="225" y2="80" stroke="#6b7280" stroke-width="3"/>
+    <line x1="225" y1="80" x2="250" y2="150" stroke="#6b7280" stroke-width="3"/>
+    <line x1="150" y1="180" x2="250" y2="150" stroke="#6b7280" stroke-width="3"/>
+    
+    <!-- Labels -->
+    <text x="150" y="240" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="12">
+      Nodes (vertices) connected by edges
+    </text>
+  </g>
+  
+  <!-- Directed graph example -->
+  <g transform="translate(450, 80)">
+    <text x="150" y="20" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+      Directed Graph
+    </text>
+    
+    <!-- Nodes -->
+    <circle cx="50" cy="80" r="25" fill="#10b981" stroke="#059669" stroke-width="2"/>
+    <text x="50" y="87" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">A</text>
+    
+    <circle cx="200" cy="80" r="25" fill="#10b981" stroke="#059669" stroke-width="2"/>
+    <text x="200" y="87" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">B</text>
+    
+    <circle cx="125" cy="180" r="25" fill="#10b981" stroke="#059669" stroke-width="2"/>
+    <text x="125" y="187" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">C</text>
+    
+    <circle cx="275" cy="150" r="25" fill="#10b981" stroke="#059669" stroke-width="2"/>
+    <text x="275" y="157" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">D</text>
+    
+    <!-- Directed edges with arrows -->
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+       refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280" />
+      </marker>
+    </defs>
+    
+    <line x1="75" y1="80" x2="175" y2="80" stroke="#6b7280" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <line x1="65" y1="100" x2="110" y2="165" stroke="#6b7280" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <line x1="150" y1="180" x2="225" y2="80" stroke="#6b7280" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <line x1="225" y1="80" x2="250" y2="150" stroke="#6b7280" stroke-width="3" marker-end="url(#arrowhead)"/>
+    
+    <!-- Labels -->
+    <text x="150" y="240" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="12">
+      Edges have direction (like one-way streets)
+    </text>
+  </g>
+  
+  <!-- Real-world examples -->
+  <g transform="translate(50, 320)">
+    <text x="350" y="20" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+      Real-World Graph Examples
+    </text>
+    
+    <!-- Social network -->
+    <rect x="0" y="40" width="160" height="100" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" rx="8"/>
+    <text x="80" y="60" text-anchor="middle" fill="#1e40af" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+      Social Network
+    </text>
+    <text x="80" y="80" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">
+      People = Nodes
+    </text>
+    <text x="80" y="100" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">
+      Friendships = Edges
+    </text>
+    <text x="80" y="120" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">
+      Facebook, LinkedIn
+    </text>
+    
+    <!-- Web pages -->
+    <rect x="180" y="40" width="160" height="100" fill="#dcfce7" stroke="#10b981" stroke-width="2" rx="8"/>
+    <text x="260" y="60" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+      Web Pages
+    </text>
+    <text x="260" y="80" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">
+      Pages = Nodes
+    </text>
+    <text x="260" y="100" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">
+      Links = Edges
+    </text>
+    <text x="260" y="120" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">
+      Google PageRank
+    </text>
+    
+    <!-- Transportation -->
+    <rect x="360" y="40" width="160" height="100" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/>
+    <text x="440" y="60" text-anchor="middle" fill="#d97706" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+      Transportation
+    </text>
+    <text x="440" y="80" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">
+      Cities = Nodes
+    </text>
+    <text x="440" y="100" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">
+      Routes = Edges
+    </text>
+    <text x="440" y="120" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">
+      GPS Navigation
+    </text>
+    
+    <!-- Dependencies -->
+    <rect x="540" y="40" width="160" height="100" fill="#fce7f3" stroke="#ec4899" stroke-width="2" rx="8"/>
+    <text x="620" y="60" text-anchor="middle" fill="#be185d" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+      Dependencies
+    </text>
+    <text x="620" y="80" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">
+      Tasks = Nodes
+    </text>
+    <text x="620" y="100" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">
+      Dependencies = Edges
+    </text>
+    <text x="620" y="120" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">
+      Build Systems
+    </text>
+  </g>
+</svg>
