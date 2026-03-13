@@ -1,0 +1,316 @@
+---
+layout: profile
+title: "Beta Profile | Ecosystem"
+permalink: /ecosystem/beta-profile/
+---
+
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16 text-center" style="content-visibility:visible">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h1 class="text-4xl sm:text-5xl font-bold mt-6">Beta Profile</h1>
+    <p class="text-lg mt-4 px-2 sm:px-4 md:px-6">Experience my redesigned profile with enhanced UI/UX</p>
+    <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+      <button onclick="toggleFullscreen()" class="bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+        <i class="fas fa-expand mr-2"></i>
+        Toggle Fullscreen
+      </button>
+      <a href="https://devpawanyadav.github.io/?utm_source=pawanyd.github.io&utm_medium=beta_profile&utm_campaign=external_visit" target="_blank" class="border-2 border-white text-white px-6 py-2 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+        <i class="fas fa-external-link-alt mr-2"></i>
+        Open in New Tab
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Beta Profile Notice -->
+<section class="py-8 bg-yellow-50 border-b border-yellow-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-center">
+      <div class="bg-yellow-100 rounded-lg p-4 flex items-center">
+        <i class="fas fa-flask text-yellow-600 text-xl mr-3"></i>
+        <div>
+          <h3 class="text-lg font-semibold text-yellow-800">Beta Version</h3>
+          <p class="text-yellow-700 text-sm">
+            This is my experimental profile design with enhanced animations and modern UI components. 
+            <span class="font-medium">Your feedback is valuable!</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Loading Indicator -->
+<div id="loading-indicator" class="flex items-center justify-center py-16 bg-gray-50">
+  <div class="text-center">
+    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+    <p class="text-gray-600">Loading Beta Profile...</p>
+  </div>
+</div>
+
+<!-- Iframe Container -->
+<section class="bg-gray-50" id="iframe-container" style="display: none;">
+  <div class="max-w-full mx-auto">
+    <div class="relative">
+      <!-- Iframe -->
+      <iframe 
+        id="beta-profile-iframe"
+        src="https://devpawanyadav.github.io/"
+        class="w-full border-0"
+        style="height: 100vh; min-height: 800px;"
+        frameborder="0"
+        scrolling="yes"
+        allowfullscreen
+        title="Beta Profile - Enhanced Design"
+        onload="handleIframeLoad()"
+        onerror="handleIframeError()">
+      </iframe>
+      
+      <!-- Overlay for mobile responsiveness notice -->
+      <div id="mobile-notice" class="absolute top-0 left-0 right-0 bg-blue-600 text-white p-3 text-center text-sm md:hidden">
+        <i class="fas fa-mobile-alt mr-2"></i>
+        For best experience, view on desktop or rotate your device
+        <button onclick="hideMobileNotice()" class="ml-3 text-blue-200 hover:text-white">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Error Fallback -->
+<section id="error-fallback" class="py-16 bg-gray-50 text-center" style="display: none;">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-red-50 rounded-lg p-8">
+      <i class="fas fa-exclamation-triangle text-red-500 text-4xl mb-4"></i>
+      <h3 class="text-xl font-bold text-red-800 mb-4">Unable to Load Beta Profile</h3>
+      <p class="text-red-700 mb-6">
+        There seems to be an issue loading the beta profile. This might be due to browser security settings or network issues.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button onclick="retryLoad()" class="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+          <i class="fas fa-redo mr-2"></i>
+          Retry Loading
+        </button>
+        <a href="https://devpawanyadav.github.io/?utm_source=pawanyd.github.io&utm_medium=beta_profile&utm_campaign=fallback_visit" target="_blank" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+          <i class="fas fa-external-link-alt mr-2"></i>
+          Visit Beta Profile Directly
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Highlight -->
+<section class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">What's New in Beta Profile</h2>
+      <p class="text-lg text-gray-600">Enhanced design elements and improved user experience</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="text-center p-6 bg-gray-50 rounded-lg">
+        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+          <i class="fas fa-palette text-blue-600 text-2xl"></i>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 mb-2">Modern Design</h3>
+        <p class="text-gray-600 text-sm">Updated color schemes and typography for better visual appeal</p>
+      </div>
+      
+      <div class="text-center p-6 bg-gray-50 rounded-lg">
+        <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+          <i class="fas fa-magic text-green-600 text-2xl"></i>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 mb-2">Smooth Animations</h3>
+        <p class="text-gray-600 text-sm">Enhanced micro-interactions and smooth transitions</p>
+      </div>
+      
+      <div class="text-center p-6 bg-gray-50 rounded-lg">
+        <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+          <i class="fas fa-mobile-alt text-purple-600 text-2xl"></i>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 mb-2">Responsive Layout</h3>
+        <p class="text-gray-600 text-sm">Optimized for all devices with improved mobile experience</p>
+      </div>
+      
+      <div class="text-center p-6 bg-gray-50 rounded-lg">
+        <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+          <i class="fas fa-rocket text-orange-600 text-2xl"></i>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 mb-2">Performance</h3>
+        <p class="text-gray-600 text-sm">Faster loading times and optimized user experience</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Feedback Section -->
+<section class="py-16 bg-blue-50">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-bold text-gray-900 mb-4">Your Feedback Matters</h2>
+    <p class="text-lg text-gray-600 mb-8">
+      Help me improve the beta profile by sharing your thoughts and suggestions.
+    </p>
+    
+    <div class="bg-white rounded-lg p-8 shadow-lg">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="text-left">
+          <h3 class="text-lg font-bold text-gray-900 mb-3">What I'm Testing:</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
+              <span>New visual design and layout</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
+              <span>Enhanced user interactions</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
+              <span>Mobile responsiveness</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-green-500 mt-1 mr-2 text-sm"></i>
+              <span>Loading performance</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="text-left">
+          <h3 class="text-lg font-bold text-gray-900 mb-3">Share Your Thoughts:</h3>
+          <div class="space-y-3">
+            <a href="/contact.html" class="block bg-blue-600 text-white px-4 py-2 rounded-lg text-center font-semibold hover:bg-blue-700 transition-colors">
+              <i class="fas fa-envelope mr-2"></i>
+              Send Feedback
+            </a>
+            <a href="https://linkedin.com/in/pawanyd?utm_source=pawanyd.github.io&utm_medium=beta_profile&utm_campaign=feedback_request" target="_blank" class="block bg-blue-100 text-blue-600 px-4 py-2 rounded-lg text-center font-semibold hover:bg-blue-200 transition-colors">
+              <i class="fab fa-linkedin mr-2"></i>
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// Handle iframe loading
+function handleIframeLoad() {
+  document.getElementById('loading-indicator').style.display = 'none';
+  document.getElementById('iframe-container').style.display = 'block';
+  
+  // Track successful load
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'beta_profile_loaded', {
+      'event_category': 'iframe',
+      'event_label': 'beta_profile'
+    });
+  }
+}
+
+// Handle iframe error
+function handleIframeError() {
+  document.getElementById('loading-indicator').style.display = 'none';
+  document.getElementById('error-fallback').style.display = 'block';
+  
+  // Track error
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'beta_profile_error', {
+      'event_category': 'iframe',
+      'event_label': 'load_failed'
+    });
+  }
+}
+
+// Retry loading
+function retryLoad() {
+  document.getElementById('error-fallback').style.display = 'none';
+  document.getElementById('loading-indicator').style.display = 'block';
+  
+  const iframe = document.getElementById('beta-profile-iframe');
+  iframe.src = iframe.src; // Reload iframe
+}
+
+// Toggle fullscreen
+function toggleFullscreen() {
+  const container = document.getElementById('iframe-container');
+  const iframe = document.getElementById('beta-profile-iframe');
+  
+  if (!document.fullscreenElement) {
+    container.requestFullscreen().then(() => {
+      iframe.style.height = '100vh';
+    }).catch(err => {
+      console.log('Fullscreen not supported');
+    });
+  } else {
+    document.exitFullscreen().then(() => {
+      iframe.style.height = '100vh';
+    });
+  }
+}
+
+// Hide mobile notice
+function hideMobileNotice() {
+  document.getElementById('mobile-notice').style.display = 'none';
+}
+
+// Auto-hide mobile notice after 5 seconds
+setTimeout(() => {
+  const mobileNotice = document.getElementById('mobile-notice');
+  if (mobileNotice) {
+    mobileNotice.style.opacity = '0';
+    setTimeout(() => {
+      mobileNotice.style.display = 'none';
+    }, 300);
+  }
+}, 5000);
+
+// Handle iframe communication (if needed)
+window.addEventListener('message', function(event) {
+  // Only accept messages from your beta profile domain
+  if (event.origin !== 'https://devpawanyadav.github.io') {
+    return;
+  }
+  
+  // Handle any messages from the iframe if needed
+  console.log('Message from beta profile:', event.data);
+});
+</script>
+
+<style>
+/* Custom styles for iframe container */
+#iframe-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Smooth transitions */
+#loading-indicator,
+#iframe-container,
+#error-fallback {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Mobile notice styling */
+#mobile-notice {
+  z-index: 10;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Fullscreen styles */
+#iframe-container:fullscreen {
+  background: white;
+}
+
+#iframe-container:fullscreen #beta-profile-iframe {
+  height: 100vh !important;
+}
+
+/* Loading animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
