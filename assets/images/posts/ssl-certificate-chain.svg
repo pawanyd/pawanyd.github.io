@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="rootGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="intermediateGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <marker id="trustArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280" />
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f9fafb"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1f2937" text-anchor="middle">SSL Certificate Trust Chain</text>
+  
+  <!-- Browser Trust Store -->
+  <rect x="50" y="80" width="150" height="100" rx="8" fill="#3b82f6" opacity="0.1" stroke="#3b82f6" stroke-width="2"/>
+  <text x="125" y="105" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#3b82f6" text-anchor="middle">Browser</text>
+  <text x="125" y="120" font-family="Arial, sans-serif" font-size="12" fill="#3b82f6" text-anchor="middle">Trust Store</text>
+  <text x="125" y="140" font-family="Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">Pre-installed</text>
+  <text x="125" y="155" font-family="Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">Root CAs</text>
+  <text x="125" y="170" font-family="Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">(~150 CAs)</text>
+  
+  <!-- Root CA Certificate -->
+  <rect x="300" y="80" width="200" height="100" rx="8" fill="url(#rootGradient)"/>
+  <text x="400" y="105" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">Root CA Certificate</text>
+  <text x="400" y="125" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">DigiCert Global Root CA</text>
+  <text x="400" y="145" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">Self-signed</text>
+  <text x="400" y="160" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">Valid: 2006-2031</text>
+  
+  <!-- Trust Arrow -->
+  <line x1="200" y1="130" x2="290" y2="130" stroke="#3b82f6" stroke-width="3" marker-end="url(#trustArrow)"/>
+  <text x="245" y="120" font-family="Arial, sans-serif" font-size="10" fill="#3b82f6" text-anchor="middle">Trusts</text>
+  
+  <!-- Intermediate CA Certificate -->
+  <rect x="300" y="220" width="200" height="100" rx="8" fill="url(#intermediateGradient)"/>
+  <text x="400" y="245" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">Intermediate CA</text>
+  <text x="400" y="265" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">DigiCert SHA2 Secure</text>
+  <text x="400" y="280" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Server CA</text>
+  <text x="400" y="300" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">Signed by Root CA</text>
+  
+  <!-- Signing Arrow -->
+  <line x1="400" y1="180" x2="400" y2="210" stroke="#ef4444" stroke-width="3" marker-end="url(#trustArrow)"/>
+  <text x="420" y="195" font-family="Arial, sans-serif" font-size="10" fill="#ef4444">Signs</text>
+  
+  <!-- End-Entity Certificate -->
+  <rect x="300" y="360" width="200" height="100" rx="8" fill="url(#leafGradient)"/>
+  <text x="400" y="385" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">End-Entity Cert</text>
+  <text x="400" y="405" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">*.example.com</text>
+  <text x="400" y="425" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">Signed by Intermediate</text>
+  <text x="400" y="440" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">Valid: 2025-2026</text>
+  
+  <!-- Signing Arrow -->
+  <line x1="400" y1="320" x2="400" y2="350" stroke="#f59e0b" stroke-width="3" marker-end="url(#trustArrow)"/>
+  <text x="420" y="335" font-family="Arial, sans-serif" font-size="10" fill="#f59e0b">Signs</text>
+  
+  <!-- Website Server -->
+  <rect x="550" y="360" width="150" height="100" rx="8" fill="#374151"/>
+  <text x="625" y="385" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Web Server</text>
+  <text x="625" y="405" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">example.com</text>
+  <text x="625" y="425" font-family="Arial, sans-serif" font-size="10" fill="#d1d5db" text-anchor="middle">Presents certificate</text>
+  <text x="625" y="440" font-family="Arial, sans-serif" font-size="10" fill="#d1d5db" text-anchor="middle">chain to browser</text>
+  
+  <!-- Certificate Presentation -->
+  <line x1="500" y1="410" x2="540" y2="410" stroke="#10b981" stroke-width="3" marker-end="url(#trustArrow)"/>
+  <text x="520" y="400" font-family="Arial, sans-serif" font-size="10" fill="#10b981" text-anchor="middle">Uses</text>
+  
+  <!-- Verification Process -->
+  <rect x="50" y="500" width="700" height="80" rx="8" fill="#f3f4f6" stroke="#d1d5db" stroke-width="2"/>
+  <text x="70" y="525" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1f2937">Certificate Verification Process:</text>
+  <text x="70" y="545" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">1. Browser receives certificate chain from server</text>
+  <text x="70" y="560" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">2. Verifies each certificate signature using parent's public key</text>
+  <text x="70" y="575" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">3. Checks if root CA is in browser's trust store</text>
+  
+  <!-- Security Benefits -->
+  <rect x="550" y="80" width="200" height="250" rx="8" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2"/>
+  <text x="650" y="105" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#10b981" text-anchor="middle">Security Benefits</text>
+  
+  <text x="570" y="130" font-family="Arial, sans-serif" font-size="11" fill="#10b981">✓ Hierarchical trust</text>
+  <text x="570" y="150" font-family="Arial, sans-serif" font-size="11" fill="#10b981">✓ Root CA isolation</text>
+  <text x="570" y="170" font-family="Arial, sans-serif" font-size="11" fill="#10b981">✓ Intermediate revocation</text>
+  <text x="570" y="190" font-family="Arial, sans-serif" font-size="11" fill="#10b981">✓ Domain validation</text>
+  <text x="570" y="210" font-family="Arial, sans-serif" font-size="11" fill="#10b981">✓ Expiration dates</text>
+  
+  <text x="570" y="240" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#6b7280">What can go wrong:</text>
+  <text x="570" y="255" font-family="Arial, sans-serif" font-size="10" fill="#ef4444">✗ CA compromise</text>
+  <text x="570" y="270" font-family="Arial, sans-serif" font-size="10" fill="#ef4444">✗ Certificate misissuance</text>
+  <text x="570" y="285" font-family="Arial, sans-serif" font-size="10" fill="#ef4444">✗ Weak validation</text>
+  <text x="570" y="300" font-family="Arial, sans-serif" font-size="10" fill="#ef4444">✗ Nation-state attacks</text>
+  
+  <!-- Chain of Trust Label -->
+  <path d="M 250 200 Q 200 250 250 300" stroke="#8b5cf6" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+  <text x="180" y="250" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#8b5cf6" text-anchor="middle">Chain</text>
+  <text x="180" y="265" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#8b5cf6" text-anchor="middle">of</text>
+  <text x="180" y="280" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#8b5cf6" text-anchor="middle">Trust</text>
+</svg>
