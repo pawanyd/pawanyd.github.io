@@ -14,12 +14,12 @@
         - name: Free Invoice System
           link: /free-transport-invoice
           target: _blank
+        - name: Playground
+          link: /ecosystem/playground
     - name: Resources
       link: /ecosystem/resources
     - name: Community
       link: /ecosystem/community
-    - name: Beta Profile
-      link: /ecosystem/beta-profile
 - name: Contact
   link: /contact
 - name: Blogs

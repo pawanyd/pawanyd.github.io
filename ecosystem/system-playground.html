@@ -1,0 +1,592 @@
+---
+layout: profile
+title: "System Architecture Playground | Ecosystem"
+permalink: /ecosystem/system-playground/
+---
+
+<div class="system-playground">
+
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-16 text-center">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h1 class="text-4xl sm:text-5xl font-bold mb-4">System Architecture Playground</h1>
+    <p class="text-lg mb-6 opacity-90">
+      Interactive system design experience based on real-world architectures I've built for millions of users
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <button onclick="startTutorial()" class="hero-button-white px-6 py-3 rounded-lg font-semibold transition-colors">
+        <i class="fas fa-play mr-2"></i>
+        Start Tutorial
+      </button>
+      <button onclick="loadTemplate('ecommerce')" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-indigo-600 transition-colors">
+        <i class="fas fa-rocket mr-2"></i>
+        Load Example
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Playground Controls -->
+<section class="controls-section py-4 border-b">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <!-- System Templates -->
+      <div class="flex items-center gap-2">
+        <label class="text-sm font-medium text-gray-700">Templates:</label>
+        <select id="template-selector" onchange="loadTemplate(this.value)" class="px-3 py-1 border border-gray-300 rounded-md text-sm">
+          <option value="">Choose Template</option>
+          <option value="ecommerce">E-commerce Platform</option>
+          <option value="social">Social Media App</option>
+          <option value="trading">Stock Trading System</option>
+          <option value="streaming">Video Streaming</option>
+        </select>
+      </div>
+      
+      <!-- Traffic Simulation -->
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-2">
+          <label class="text-sm font-medium text-gray-700">Traffic:</label>
+          <input type="range" id="traffic-slider" min="100" max="10000000" value="1000" 
+                 onchange="updateTraffic(this.value)" class="w-24">
+          <span id="traffic-display" class="text-sm font-mono bg-white px-2 py-1 rounded border">1K</span>
+        </div>
+        
+        <button onclick="simulateTrafficSpike()" class="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition-colors font-medium">
+          <i class="fas fa-bolt mr-1"></i>
+          Traffic Spike
+        </button>
+        
+        <button onclick="clearCanvas()" class="bg-gray-700 text-white px-3 py-1 rounded text-sm hover:bg-gray-800 transition-colors font-medium">
+          <i class="fas fa-trash mr-1"></i>
+          Clear
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main Playground -->
+<section class="bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+      
+      <!-- Component Palette -->
+      <div class="lg:col-span-1">
+        <div class="bg-gray-50 rounded-lg p-4 sticky top-4">
+          <h3 class="text-lg font-bold text-gray-900 mb-4">Components</h3>
+          
+          <!-- Client Tier -->
+          <div class="mb-6">
+            <h4 class="text-sm font-semibold text-gray-700 mb-2 flex items-center">
+              <i class="fas fa-desktop text-blue-500 mr-2"></i>
+              Client Tier
+            </h4>
+            <div class="space-y-2">
+              <div class="component-item" draggable="true" data-type="web-client">
+                <i class="fas fa-globe text-blue-500"></i>
+                <span>Web Client</span>
+              </div>
+              <div class="component-item" draggable="true" data-type="mobile-app">
+                <i class="fas fa-mobile-alt text-green-500"></i>
+                <span>Mobile App</span>
+              </div>
+              <div class="component-item" draggable="true" data-type="cdn">
+                <i class="fas fa-cloud text-orange-500"></i>
+                <span>CDN</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Load Balancing -->
+          <div class="mb-6">
+            <h4 class="text-sm font-semibold text-gray-700 mb-2 flex items-center">
+              <i class="fas fa-balance-scale text-purple-500 mr-2"></i>
+              Load Balancing
+            </h4>
+            <div class="space-y-2">
+              <div class="component-item" draggable="true" data-type="load-balancer">
+                <i class="fas fa-balance-scale text-purple-500"></i>
+                <span>Load Balancer</span>
+              </div>
+              <div class="component-item" draggable="true" data-type="api-gateway">
+                <i class="fas fa-door-open text-indigo-500"></i>
+                <span>API Gateway</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Application Tier -->
+          <div class="mb-6">
+            <h4 class="text-sm font-semibold text-gray-700 mb-2 flex items-center">
+              <i class="fas fa-server text-green-500 mr-2"></i>
+              Application
+            </h4>
+            <div class="space-y-2">
+              <div class="component-item" draggable="true" data-type="web-server">
+                <i class="fas fa-server text-green-500"></i>
+                <span>Web Server</span>
+              </div>
+              <div class="component-item" draggable="true" data-type="app-server">
+                <i class="fas fa-cube text-blue-500"></i>
+                <span>App Server</span>
+              </div>
+              <div class="component-item" draggable="true" data-type="microservice">
+                <i class="fas fa-cubes text-purple-500"></i>
+                <span>Microservice</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Data Tier -->
+          <div class="mb-6">
+            <h4 class="text-sm font-semibold text-gray-700 mb-2 flex items-center">
+              <i class="fas fa-database text-red-500 mr-2"></i>
+              Data Storage
+            </h4>
+            <div class="space-y-2">
+              <div class="component-item" draggable="true" data-type="database">
+                <i class="fas fa-database text-red-500"></i>
+                <span>Database</span>
+              </div>
+              <div class="component-item" draggable="true" data-type="cache">
+                <i class="fas fa-memory text-orange-500"></i>
+                <span>Cache (Redis)</span>
+              </div>
+              <div class="component-item" draggable="true" data-type="message-queue">
+                <i class="fas fa-stream text-yellow-500"></i>
+                <span>Message Queue</span>
+              </div>
+              <div class="component-item" draggable="true" data-type="search">
+                <i class="fas fa-search text-green-500"></i>
+                <span>Search Engine</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Monitoring -->
+          <div class="mb-6">
+            <h4 class="text-sm font-semibold text-gray-700 mb-2 flex items-center">
+              <i class="fas fa-chart-line text-blue-500 mr-2"></i>
+              Monitoring
+            </h4>
+            <div class="space-y-2">
+              <div class="component-item" draggable="true" data-type="monitoring">
+                <i class="fas fa-chart-line text-blue-500"></i>
+                <span>Monitoring</span>
+              </div>
+              <div class="component-item" draggable="true" data-type="logging">
+                <i class="fas fa-file-alt text-gray-500"></i>
+                <span>Logging</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Canvas Area -->
+      <div class="lg:col-span-3">
+        <div class="bg-gray-50 rounded-lg border-2 border-dashed border-gray-300 relative" 
+             style="min-height: 600px;" id="canvas-area">
+          
+          <!-- Canvas Grid -->
+          <div class="absolute inset-0 opacity-20">
+            <svg width="100%" height="100%">
+              <defs>
+                <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#e5e7eb" stroke-width="1"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#grid)" />
+            </svg>
+          </div>
+          
+          <!-- Drop Zone Message -->
+          <div id="drop-zone-message" class="absolute inset-0 flex items-center justify-center text-gray-500">
+            <div class="text-center">
+              <i class="fas fa-mouse-pointer text-4xl mb-4"></i>
+              <p class="text-lg font-medium">Drag components here to build your system</p>
+              <p class="text-sm">Or load a template to get started</p>
+            </div>
+          </div>
+          
+          <!-- Canvas Components Container -->
+          <div id="canvas-components" class="absolute inset-0 p-4"></div>
+          
+          <!-- Connection Lines SVG -->
+          <svg id="connections-svg" class="absolute inset-0 pointer-events-none" style="z-index: 1;">
+          </svg>
+        </div>
+        
+        <!-- System Metrics -->
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div class="bg-white rounded-lg border p-4 text-center">
+            <div class="text-2xl font-bold text-blue-600" id="metric-rps">0</div>
+            <div class="text-sm text-gray-600">Requests/sec</div>
+          </div>
+          <div class="bg-white rounded-lg border p-4 text-center">
+            <div class="text-2xl font-bold text-green-600" id="metric-latency">0ms</div>
+            <div class="text-sm text-gray-600">Avg Latency</div>
+          </div>
+          <div class="bg-white rounded-lg border p-4 text-center">
+            <div class="text-2xl font-bold text-purple-600" id="metric-throughput">0</div>
+            <div class="text-sm text-gray-600">Throughput</div>
+          </div>
+          <div class="bg-white rounded-lg border p-4 text-center">
+            <div class="text-2xl font-bold text-orange-600" id="metric-cost">$0</div>
+            <div class="text-sm text-gray-600">Est. Cost/month</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- System Analysis Panel -->
+<section class="bg-gray-50 py-8" id="analysis-panel" style="display: none;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white rounded-lg shadow-lg p-6">
+      <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+        <i class="fas fa-brain text-purple-500 mr-2"></i>
+        System Analysis & Recommendations
+      </h3>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Strengths -->
+        <div>
+          <h4 class="text-lg font-semibold text-green-600 mb-3">✅ Strengths</h4>
+          <ul id="analysis-strengths" class="space-y-2 text-sm text-gray-700">
+            <!-- Dynamic content -->
+          </ul>
+        </div>
+        
+        <!-- Recommendations -->
+        <div>
+          <h4 class="text-lg font-semibold text-blue-600 mb-3">💡 Recommendations</h4>
+          <ul id="analysis-recommendations" class="space-y-2 text-sm text-gray-700">
+            <!-- Dynamic content -->
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Bottlenecks -->
+      <div class="mt-6">
+        <h4 class="text-lg font-semibold text-red-600 mb-3">⚠️ Potential Bottlenecks</h4>
+        <div id="analysis-bottlenecks" class="text-sm text-gray-700">
+          <!-- Dynamic content -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Real-World Examples -->
+<section class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Based on Real Systems I've Built</h2>
+      <p class="text-lg text-gray-600">
+        These templates are inspired by actual architectures I've designed and implemented in production
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer" onclick="loadTemplate('trading')">
+        <div class="flex items-center mb-4">
+          <div class="bg-red-100 p-3 rounded-lg mr-4">
+            <i class="fas fa-chart-line text-red-600 text-xl"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-gray-900">Stock Trading Platform</h3>
+            <p class="text-sm text-gray-600">Millions of concurrent users</p>
+          </div>
+        </div>
+        <p class="text-gray-700 text-sm mb-4">
+          High-frequency trading system with real-time data processing, optimized for low latency and high throughput.
+        </p>
+        <div class="flex items-center text-blue-600 text-sm">
+          <i class="fas fa-users mr-2"></i>
+          <span>5M+ concurrent users</span>
+        </div>
+      </div>
+      
+      <div class="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer" onclick="loadTemplate('ecommerce')">
+        <div class="flex items-center mb-4">
+          <div class="bg-green-100 p-3 rounded-lg mr-4">
+            <i class="fas fa-shopping-cart text-green-600 text-xl"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-gray-900">E-commerce Platform</h3>
+            <p class="text-sm text-gray-600">Scalable retail solution</p>
+          </div>
+        </div>
+        <p class="text-gray-700 text-sm mb-4">
+          Complete e-commerce architecture with inventory management, payment processing, and recommendation engine.
+        </p>
+        <div class="flex items-center text-blue-600 text-sm">
+          <i class="fas fa-rocket mr-2"></i>
+          <span>99% uptime achieved</span>
+        </div>
+      </div>
+      
+      <div class="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer" onclick="loadTemplate('social')">
+        <div class="flex items-center mb-4">
+          <div class="bg-blue-100 p-3 rounded-lg mr-4">
+            <i class="fas fa-users text-blue-600 text-xl"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-gray-900">Social Media App</h3>
+            <p class="text-sm text-gray-600">Real-time interactions</p>
+          </div>
+        </div>
+        <p class="text-gray-700 text-sm mb-4">
+          Social platform with real-time messaging, content feeds, and notification systems at scale.
+        </p>
+        <div class="flex items-center text-blue-600 text-sm">
+          <i class="fas fa-bolt mr-2"></i>
+          <span>Real-time messaging</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div> <!-- End system-playground wrapper -->
+
+<style>
+.component-item {
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: move;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.component-item:hover {
+  border-color: #93c5fd;
+  background: #eff6ff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.component-item i {
+  margin-right: 8px;
+  width: 16px;
+  text-align: center;
+}
+
+.component-item span {
+  color: #374151;
+  font-weight: 500;
+}
+
+.canvas-component {
+  position: absolute;
+  background: white;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: move;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  min-width: 120px;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.canvas-component:hover {
+  border-color: #60a5fa;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.canvas-component.selected {
+  border-color: #3b82f6;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  background: #eff6ff;
+}
+
+.canvas-component .component-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+  display: block;
+  text-align: center;
+}
+
+.canvas-component .component-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  display: block;
+  color: #374151;
+  line-height: 1.2;
+}
+
+.connection-line {
+  stroke: #6366f1;
+  stroke-width: 2;
+  fill: none;
+  marker-end: url(#arrowhead);
+}
+
+.traffic-flow {
+  stroke: #10b981;
+  stroke-width: 3;
+  fill: none;
+  opacity: 0.8;
+  animation: flow 2s linear infinite;
+}
+
+@keyframes flow {
+  0% { stroke-dasharray: 0 10; }
+  100% { stroke-dasharray: 10 0; }
+}
+
+.bottleneck {
+  @apply border-red-500 bg-red-50;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Ensure proper z-index layering */
+#canvas-area {
+  position: relative;
+}
+
+#canvas-components {
+  position: relative;
+  z-index: 5;
+}
+
+#connections-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Drop zone styling */
+#drop-zone-message {
+  z-index: 2;
+  background: rgba(249, 250, 251, 0.8);
+}
+
+/* Component palette styling */
+.component-item {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Ensure text is always visible */
+.canvas-component .component-label {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2px 4px;
+  border-radius: 4px;
+  margin-top: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .canvas-component {
+    min-width: 100px;
+    min-height: 70px;
+    padding: 8px;
+  }
+  
+  .canvas-component .component-icon {
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+  
+  .canvas-component .component-label {
+    font-size: 10px;
+  }
+}
+
+/* Button styling fixes - ONLY for system playground */
+.system-playground button {
+  font-weight: 500 !important;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.system-playground button:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Specific button overrides - ONLY for system playground */
+.system-playground .bg-red-500 {
+  background-color: #ef4444 !important;
+  color: white !important;
+}
+
+.system-playground .bg-red-500:hover {
+  background-color: #dc2626 !important;
+}
+
+.system-playground .bg-gray-700 {
+  background-color: #374151 !important;
+  color: white !important;
+}
+
+.system-playground .bg-gray-700:hover {
+  background-color: #1f2937 !important;
+}
+
+.system-playground .hero-button-white {
+  background-color: white !important;
+  color: #4f46e5 !important;
+  border: 1px solid #4f46e5 !important;
+}
+
+.system-playground .hero-button-white:hover {
+  background-color: #f3f4f6 !important;
+  color: #4338ca !important;
+}
+
+/* Control section styling - ONLY for system playground */
+.system-playground .controls-section {
+  background-color: #f3f4f6 !important;
+}
+
+.system-playground .controls-section label {
+  color: #374151 !important;
+  font-weight: 500;
+}
+
+.system-playground .controls-section select {
+  background-color: white !important;
+  color: #374151 !important;
+  border: 1px solid #d1d5db !important;
+}
+
+/* Traffic display styling - ONLY for system playground */
+.system-playground #traffic-display {
+  background-color: white !important;
+  color: #374151 !important;
+  border: 1px solid #d1d5db !important;
+  font-weight: 600;
+}
+</style>
+
+<script src="/assets/js/system-playground.js"></script>
