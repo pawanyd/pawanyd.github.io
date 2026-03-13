@@ -7,7 +7,6 @@ const urlsToCache = [
   '/contact.html',
   '/assets/css/tailwind.min.css',
   '/assets/css/github-widget.min.css',
-  '/assets/css/search.min.css',
   '/assets/images/pawan.webp',
   '/manifest.json'
 ];

@@ -1,278 +1,377 @@
-// Blog Search with Lunr.js
-(function() {
+// Blog Search, Category Filter & Visit Tracker
+(function () {
     'use strict';
 
-    const searchConfig = {
-        searchInput: document.getElementById('blog-search-input'),
-        searchResults: document.getElementById('search-results'),
+    // ─── DOM References ───────────────────────────────────────────────────────────
+    const els = {
+        searchInput:          document.getElementById('sidebar-search-input'),
+        clearBtn:             document.getElementById('sidebar-clear-search'),
+        searchCount:          document.getElementById('sidebar-search-count'),
         searchResultsSection: document.getElementById('search-results-section'),
-        searchCount: document.getElementById('search-count'),
-        clearButton: document.getElementById('clear-search'),
-        blogPosts: document.getElementById('blog-posts'),
-        blogPostsSection: document.getElementById('blog-posts-section'),
-        paginationSection: document.getElementById('pagination-section')
+        searchResults:        document.getElementById('search-results'),
+        blogPosts:            document.getElementById('blog-posts'),
+        paginationSection:    document.getElementById('pagination-section'),
+        categoryPills:        document.querySelectorAll('.cat-pill'),
+        activeBanner:         document.getElementById('active-filter-banner'),
+        activeBannerText:     document.getElementById('active-filter-text'),
+        clearCatBtn:          document.getElementById('clear-category-filter'),
+        noCatResults:         document.getElementById('no-category-results'),
+        mostVisitedList:      document.getElementById('most-visited-list'),
+        recentlyVisitedList:  document.getElementById('recently-visited-list'),
     };
 
-    let searchIndex = null;
-    let searchData = [];
+    // ─── State ────────────────────────────────────────────────────────────────────
+    let searchIndex    = null;
+    let searchData     = [];
+    let activeCategory = 'all';
+    // Save the original paginated HTML so we can restore it when "All" is clicked
+    const originalBlogPostsHTML = els.blogPosts ? els.blogPosts.innerHTML : '';
 
-    // Initialize search
+    // ─── LocalStorage Keys ────────────────────────────────────────────────────────
+    const VISITS_KEY = 'blog_visits';  // { url: { title, image, count } }
+    const RECENT_KEY = 'blog_recent';  // [ { url, title, image, ts } ] max 10
+
+    // ═══════════════════════════════════════════════════════════════════════════════
+    // SEARCH
+    // ═══════════════════════════════════════════════════════════════════════════════
+
     async function initSearch() {
         try {
-            // Fetch search data
-            const response = await fetch('/search.json');
-            searchData = await response.json();
-
-            // Build Lunr index
-            searchIndex = lunr(function() {
+            const res = await fetch('/search.json');
+            searchData = await res.json();
+            searchIndex = lunr(function () {
                 this.ref('id');
-                this.field('title', { boost: 10 });
-                this.field('category', { boost: 5 });
-                this.field('tags', { boost: 5 });
-                this.field('excerpt', { boost: 3 });
+                this.field('title',    { boost: 10 });
+                this.field('category', { boost: 5  });
+                this.field('tags',     { boost: 5  });
+                this.field('excerpt',  { boost: 3  });
                 this.field('content');
-
-                searchData.forEach(function(doc) {
-                    this.add(doc);
-                }, this);
+                searchData.forEach(function (d) { this.add(d); }, this);
             });
-
-            console.log('Search index built successfully with', searchData.length, 'posts');
-        } catch (error) {
-            console.error('Error initializing search:', error);
-        }
+        } catch (e) { console.error('Search init error:', e); }
     }
 
-    // Perform search
     function performSearch(query) {
-        if (!searchIndex || !query || query.trim().length < 2) {
-            resetSearch();
-            return;
+        if (!searchIndex || !query || query.trim().length < 2) { resetSearch(); return; }
+        let results = [];
+        try { results = searchIndex.search(query + '*'); } catch (_) {}
+        if (!results.length) { try { results = searchIndex.search(query + '~1'); } catch (_) {} }
+        if (!results.length) { try { results = searchIndex.search(query); }       catch (_) {} }
+
+        const posts = results.map(r => searchData.find(p => p.id === r.ref)).filter(Boolean);
+        if (!posts.length) { showNoSearchResults(query); return; }
+        displaySearchResults(posts, query);
+    }
+
+    function displaySearchResults(posts, query) {
+        showSearchMode();
+        if (els.searchCount) {
+            els.searchCount.textContent = `Found ${posts.length} result${posts.length !== 1 ? 's' : ''} for "${query}"`;
+        }
+        els.searchResults.innerHTML = posts.map(post => `
+            <article class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                <a href="${escHtml(post.url)}" class="block relative overflow-hidden h-48 sm:h-44 md:h-52 lg:h-48" onclick="trackVisit('${escHtml(post.url)}','${escHtml(post.title)}','${escHtml(post.image||'')}')">
+                    <img src="${escHtml(post.image||'')}" alt="${escHtml(post.title)}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+                    <span class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full shadow-md">${escHtml(post.category)}</span>
+                </a>
+                <div class="p-4 lg:p-5 flex flex-col flex-1">
+                    <h2 class="text-base font-bold text-gray-900 leading-snug mb-2">
+                        <a href="${escHtml(post.url)}" class="hover:text-blue-600 transition-colors duration-200">${highlightText(post.title, query)}</a>
+                    </h2>
+                    <div class="flex items-center gap-2 text-gray-500 text-xs mb-3">
+                        <time>${escHtml(post.date)}</time>
+                        <span class="text-gray-300">•</span>
+                        <span>📖 ${calcReadTime(post.content)}</span>
+                    </div>
+                    ${post.tags && post.tags.length ? `<div class="flex flex-wrap gap-1 mb-3">${post.tags.slice(0,3).map(t=>`<span class="text-xs px-2 py-0.5 bg-blue-50 text-blue-600 rounded-full font-medium">${escHtml(t)}</span>`).join('')}</div>` : ''}
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4 flex-1">${escHtml(post.excerpt||'').split(' ').slice(0,18).join(' ')}...</p>
+                    <a href="${escHtml(post.url)}" class="inline-flex items-center gap-2 text-blue-600 text-sm font-semibold hover:gap-3 transition-all duration-200">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+                </div>
+            </article>
+        `).join('');
+    }
+
+    function showNoSearchResults(query) {
+        showSearchMode();
+        if (els.searchCount) els.searchCount.textContent = `No results for "${query}"`;
+        els.searchResults.innerHTML = `
+            <div class="col-span-2 text-center py-14 text-gray-400">
+                <i class="fas fa-search text-5xl mb-4 block"></i>
+                <p class="text-base font-medium text-gray-500">No posts found matching "<strong>${escHtml(query)}</strong>"</p>
+                <p class="text-sm text-gray-400 mt-1">Try different keywords or browse the categories.</p>
+            </div>`;
+    }
+
+    function showSearchMode() {
+        if (els.blogPosts)           els.blogPosts.classList.add('hidden');
+        if (els.paginationSection)   els.paginationSection.classList.add('hidden');
+        if (els.activeBanner)        els.activeBanner.classList.add('hidden');
+        if (els.noCatResults)        els.noCatResults.classList.add('hidden');
+        if (els.searchResultsSection) els.searchResultsSection.classList.remove('hidden');
+    }
+
+    function resetSearch() {
+        if (els.searchResultsSection) els.searchResultsSection.classList.add('hidden');
+        if (els.searchResults)        els.searchResults.innerHTML = '';
+        if (els.searchCount)          els.searchCount.textContent = 'Start typing to search...';
+        if (els.blogPosts)            els.blogPosts.classList.remove('hidden');
+        if (els.paginationSection)    els.paginationSection.classList.remove('hidden');
+        if (activeCategory !== 'all') applyCategoryFilter(activeCategory);
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════════
+    // CATEGORY FILTER
+    // ═══════════════════════════════════════════════════════════════════════════════
+
+    function buildPostCard(post) {
+        const tags = Array.isArray(post.tags) ? post.tags : (post.tags ? [post.tags] : []);
+        const tagsHtml = tags.length
+            ? `<div class="flex flex-wrap gap-1 mb-3">${tags.slice(0, 3).map(t => `<span class="text-xs px-2 py-0.5 bg-blue-50 text-blue-600 rounded-full font-medium">${escHtml(t)}</span>`).join('')}</div>`
+            : '';
+        return `
+            <article class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col" data-category="${escHtml(post.category)}" data-url="${escHtml(post.url)}">
+                <a href="${escHtml(post.url)}" class="block relative overflow-hidden h-48 sm:h-44 md:h-52 lg:h-48" onclick="trackVisit('${escHtml(post.url)}','${escHtml(post.title)}','${escHtml(post.image||'')}')">
+                    <img src="${escHtml(post.image||'')}" alt="${escHtml(post.title)}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+                    <span class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full shadow-md">${escHtml(post.category)}</span>
+                </a>
+                <div class="p-4 lg:p-5 flex flex-col flex-1">
+                    <h2 class="text-base font-bold text-gray-900 leading-snug mb-2">
+                        <a href="${escHtml(post.url)}" class="hover:text-blue-600 transition-colors duration-200">${escHtml(post.title)}</a>
+                    </h2>
+                    <div class="flex items-center gap-2 text-gray-500 text-xs mb-3">
+                        <time>${escHtml(post.date)}</time>
+                        <span class="text-gray-300">•</span>
+                        <span>📖 ${calcReadTime(post.content)}</span>
+                    </div>
+                    ${tagsHtml}
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4 flex-1">${escHtml(post.excerpt||'').split(' ').slice(0, 18).join(' ')}...</p>
+                    <a href="${escHtml(post.url)}" class="inline-flex items-center gap-2 text-blue-600 text-sm font-semibold hover:gap-3 transition-all duration-200">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+                </div>
+            </article>`;
+    }
+
+    function applyCategoryFilter(cat) {
+        activeCategory = cat;
+
+        if (cat === 'all') {
+            // Restore original paginated HTML
+            if (els.blogPosts) els.blogPosts.innerHTML = originalBlogPostsHTML;
+            if (els.activeBanner)      els.activeBanner.classList.add('hidden');
+            if (els.noCatResults)      els.noCatResults.classList.add('hidden');
+            if (els.paginationSection) els.paginationSection.classList.remove('hidden');
+        } else {
+            // Filter ALL posts (from search.json) by category and render them
+            const filtered = searchData.filter(p =>
+                (p.category || '').toLowerCase() === cat.toLowerCase()
+            );
+            if (els.blogPosts) {
+                els.blogPosts.innerHTML = filtered.length
+                    ? filtered.map(buildPostCard).join('')
+                    : '';
+            }
+            if (els.activeBanner) {
+                els.activeBanner.classList.remove('hidden');
+                els.activeBannerText.textContent = `Showing: ${cat} (${filtered.length} post${filtered.length !== 1 ? 's' : ''})`;
+            }
+            if (els.noCatResults) {
+                els.noCatResults.classList.toggle('hidden', filtered.length > 0);
+            }
+            if (els.paginationSection) els.paginationSection.classList.add('hidden');
         }
 
+        // Update active pill styling with tailwind classes
+        els.categoryPills.forEach(p => {
+            const isActive = p.dataset.cat === cat;
+            if (isActive) {
+                p.classList.remove('bg-gray-50', 'text-gray-600', 'border-gray-200', 'hover:border-blue-300', 'hover:bg-blue-50', 'hover:text-blue-600');
+                p.classList.add('bg-blue-600', 'text-white', 'border-blue-600', 'shadow-md', 'active');
+                const countSpan = p.querySelector('span');
+                if (countSpan) {
+                    countSpan.classList.remove('text-gray-400');
+                    countSpan.classList.add('text-white', 'opacity-80');
+                }
+            } else {
+                p.classList.remove('bg-blue-600', 'text-white', 'border-blue-600', 'shadow-md', 'active');
+                p.classList.add('bg-gray-50', 'text-gray-600', 'border-gray-200', 'hover:border-blue-300', 'hover:bg-blue-50', 'hover:text-blue-600');
+                const countSpan = p.querySelector('span');
+                if (countSpan) {
+                    countSpan.classList.remove('text-white', 'opacity-80');
+                    countSpan.classList.add('text-gray-400', 'opacity-60');
+                }
+            }
+        });
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════════
+    // VISIT TRACKING
+    // ═══════════════════════════════════════════════════════════════════════════════
+
+    window.trackVisit = function (url, title, image) {
         try {
-            // Search with Lunr - try multiple search strategies
-            let results = searchIndex.search(query + '*'); // Wildcard for partial matches
-            
-            // If no results, try fuzzy search
-            if (results.length === 0) {
-                results = searchIndex.search(query + '~1'); // Fuzzy search with edit distance 1
-            }
-            
-            // If still no results, try without wildcards
-            if (results.length === 0) {
-                results = searchIndex.search(query);
-            }
-            
-            if (results.length === 0) {
-                showNoResults(query);
+            // Most Visited
+            const visits = JSON.parse(localStorage.getItem(VISITS_KEY) || '{}');
+            if (!visits[url]) visits[url] = { title, image, count: 0 };
+            visits[url].count++;
+            visits[url].title = title;
+            visits[url].image = image;
+            localStorage.setItem(VISITS_KEY, JSON.stringify(visits));
+
+            // Recently Visited
+            let recent = JSON.parse(localStorage.getItem(RECENT_KEY) || '[]');
+            recent = recent.filter(r => r.url !== url);
+            recent.unshift({ url, title, image, ts: Date.now() });
+            if (recent.length > 10) recent = recent.slice(0, 10);
+            localStorage.setItem(RECENT_KEY, JSON.stringify(recent));
+
+            renderSidebarWidgets();
+        } catch (e) { console.warn('trackVisit error:', e); }
+    };
+
+    function renderSidebarWidgets() {
+        renderMostVisited();
+        renderRecentlyVisited();
+    }
+
+    function renderMostVisited() {
+        const list = els.mostVisitedList;
+        if (!list) return;
+        try {
+            const visits = JSON.parse(localStorage.getItem(VISITS_KEY) || '{}');
+            const sorted = Object.entries(visits).sort((a, b) => b[1].count - a[1].count).slice(0, 5);
+            if (!sorted.length) {
+                list.innerHTML = `<li class="flex items-center gap-2 text-xs text-gray-400 py-1"><i class="fas fa-chart-bar text-gray-300"></i> Visit some posts to see stats here.</li>`;
                 return;
             }
-
-            // Get full post data for results
-            const posts = results.map(result => {
-                return searchData.find(post => post.id === result.ref);
-            }).filter(post => post !== undefined);
-
-            displayResults(posts, query);
-        } catch (error) {
-            console.error('Search error:', error);
-            // Try simple search without special characters
-            try {
-                const results = searchIndex.search(query);
-                if (results.length > 0) {
-                    const posts = results.map(result => {
-                        return searchData.find(post => post.id === result.ref);
-                    }).filter(post => post !== undefined);
-                    displayResults(posts, query);
-                } else {
-                    showNoResults(query);
-                }
-            } catch (e) {
-                console.error('Fallback search also failed:', e);
-                showNoResults(query);
-            }
-        }
-    }
-
-    // Display search results
-    function displayResults(posts, query) {
-        if (!searchConfig.searchResults || !searchConfig.blogPostsSection) return;
-
-        // Hide original blog posts and pagination
-        searchConfig.blogPostsSection.style.display = 'none';
-        if (searchConfig.paginationSection) {
-            searchConfig.paginationSection.style.display = 'none';
-        }
-        
-        // Show search results container
-        searchConfig.searchResultsSection.classList.remove('hidden');
-        
-        // Update count
-        if (searchConfig.searchCount) {
-            searchConfig.searchCount.textContent = `Found ${posts.length} result${posts.length !== 1 ? 's' : ''} for "${query}"`;
-        }
-
-        // Build results HTML
-        const resultsHTML = posts.map(post => `
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl hover:scale-105 transition-transform duration-300 ease-in-out border border-gray-300">
-                <div class="relative">
-                    <img src="${post.image}" alt="${escapeHtml(post.title)}" class="w-full h-56 object-cover" loading="lazy">
-                    <span class="absolute top-2 left-2 bg-blue-600 text-white text-xs uppercase font-semibold px-3 py-1 rounded-lg shadow-md">${escapeHtml(post.category)}</span>
-                </div>
-                <div class="p-6">
-                    <h2 class="text-2xl font-bold text-gray-900 hover:text-blue-600 transition duration-200">
-                        <a href="${post.url}">${highlightText(post.title, query)}</a>
-                    </h2>
-                    <div class="flex items-center gap-3 text-gray-500 mt-2 text-sm">
-                        <time>${post.date}</time>
-                        <span>•</span>
-                        <span>📖 ${calculateReadingTime(post.content)}</span>
+            list.innerHTML = sorted.map(([url, d], i) => `
+                <li class="flex items-start gap-3 group">
+                    <span class="flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-[10px] font-extrabold flex-shrink-0 mt-0.5">${i + 1}</span>
+                    <img src="${escHtml(d.image||'')}" alt="" class="w-12 h-12 rounded-lg object-cover flex-shrink-0 border border-gray-200" loading="lazy" onerror="this.style.display='none'">
+                    <div class="flex flex-col gap-1 min-w-0">
+                        <a href="${escHtml(url)}" class="text-[13px] font-semibold text-slate-900 leading-snug line-clamp-2 transition-colors group-hover:text-blue-600" onclick="trackVisit('${escHtml(url)}','${escHtml(d.title)}','${escHtml(d.image||'')}')">${escHtml(d.title)}</a>
+                        <span class="flex items-center gap-1.5 text-[11px] text-slate-400"><i class="fas fa-eye text-slate-300"></i> ${d.count} view${d.count !== 1 ? 's' : ''}</span>
                     </div>
-                    ${post.tags && post.tags.length > 0 ? `
-                        <div class="flex flex-wrap gap-2 mt-3">
-                            ${post.tags.map(tag => `<span class="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-full">${escapeHtml(tag)}</span>`).join('')}
-                        </div>
-                    ` : ''}
-                    <p class="text-gray-600 mt-3">${post.excerpt}</p>
-                    <a href="${post.url}" class="inline-block mt-4 text-blue-600 font-semibold hover:underline">Read More</a>
-                </div>
-            </div>
-        `).join('');
-
-        searchConfig.searchResults.innerHTML = `
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                ${resultsHTML}
-            </div>
-        `;
-    }
-
-    // Show no results message
-    function showNoResults(query) {
-        if (!searchConfig.searchResults || !searchConfig.blogPostsSection) return;
-
-        searchConfig.blogPostsSection.style.display = 'none';
-        if (searchConfig.paginationSection) {
-            searchConfig.paginationSection.style.display = 'none';
-        }
-        searchConfig.searchResultsSection.classList.remove('hidden');
-        
-        if (searchConfig.searchCount) {
-            searchConfig.searchCount.textContent = `No results found for "${query}"`;
-        }
-
-        searchConfig.searchResults.innerHTML = `
-            <div class="text-center py-12">
-                <i class="fas fa-search text-6xl text-gray-300 mb-4"></i>
-                <p class="text-xl text-gray-600 mb-2">No posts found matching "${escapeHtml(query)}"</p>
-                <p class="text-gray-500">Try different keywords or browse all posts below.</p>
-                <button onclick="document.getElementById('clear-search').click()" class="mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-                    Clear Search
-                </button>
-            </div>
-        `;
-    }
-
-    // Reset search
-    function resetSearch() {
-        if (!searchConfig.searchResults || !searchConfig.blogPostsSection) return;
-
-        searchConfig.searchResultsSection.classList.add('hidden');
-        searchConfig.searchResults.innerHTML = '';
-        searchConfig.blogPostsSection.style.display = 'block';
-        if (searchConfig.paginationSection) {
-            searchConfig.paginationSection.style.display = 'block';
-        }
-        
-        if (searchConfig.searchCount) {
-            searchConfig.searchCount.textContent = '';
+                </li>
+            `).join('');
+        } catch (e) {
+            list.innerHTML = `<li class="flex items-center gap-2 text-xs text-gray-400 py-1">Could not load stats.</li>`;
         }
     }
 
-    // Highlight matching text
+    function renderRecentlyVisited() {
+        const list = els.recentlyVisitedList;
+        if (!list) return;
+        try {
+            const recent = JSON.parse(localStorage.getItem(RECENT_KEY) || '[]').slice(0, 5);
+            if (!recent.length) {
+                list.innerHTML = `<li class="flex items-center gap-2 text-xs text-gray-400 py-1"><i class="fas fa-history text-gray-300"></i> Your reading history will appear here.</li>`;
+                return;
+            }
+            list.innerHTML = recent.map(r => `
+                <li class="flex items-start gap-3 group">
+                    <img src="${escHtml(r.image||'')}" alt="" class="w-12 h-12 rounded-lg object-cover flex-shrink-0 border border-gray-200" loading="lazy" onerror="this.style.display='none'">
+                    <div class="flex flex-col gap-1 min-w-0">
+                        <a href="${escHtml(r.url)}" class="text-[13px] font-semibold text-slate-900 leading-snug line-clamp-2 transition-colors group-hover:text-blue-600" onclick="trackVisit('${escHtml(r.url)}','${escHtml(r.title)}','${escHtml(r.image||'')}')">${escHtml(r.title)}</a>
+                        <span class="flex items-center gap-1.5 text-[11px] text-slate-400"><i class="fas fa-clock text-slate-300"></i> ${timeAgo(r.ts)}</span>
+                    </div>
+                </li>
+            `).join('');
+        } catch (e) {
+            list.innerHTML = `<li class="flex items-center gap-2 text-xs text-gray-400 py-1">Could not load history.</li>`;
+        }
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════════
+    // UTILITIES
+    // ═══════════════════════════════════════════════════════════════════════════════
+
     function highlightText(text, query) {
-        if (!query || !text) return escapeHtml(text);
-        
-        const words = query.split(' ').filter(w => w.length > 0);
-        let result = escapeHtml(text);
-        
-        words.forEach(word => {
-            const regex = new RegExp(`(${escapeRegex(word)})`, 'gi');
-            result = result.replace(regex, '<mark class="bg-yellow-200 font-semibold">$1</mark>');
+        if (!query || !text) return escHtml(text);
+        const words = query.trim().split(/\s+/).filter(Boolean);
+        let result = escHtml(text);
+        words.forEach(w => {
+            result = result.replace(new RegExp(`(${escRegex(w)})`, 'gi'), '<mark class="bg-yellow-200 font-semibold">$1</mark>');
         });
-        
         return result;
     }
 
-    // Escape HTML
-    function escapeHtml(text) {
-        const div = document.createElement('div');
-        div.textContent = text;
-        return div.innerHTML;
+    function escHtml(t) {
+        if (!t) return '';
+        const d = document.createElement('div');
+        d.textContent = String(t);
+        return d.innerHTML;
     }
 
-    // Escape regex special characters
-    function escapeRegex(text) {
-        return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    }
+    function escRegex(t) { return t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
 
-    // Calculate reading time
-    function calculateReadingTime(content) {
+    function calcReadTime(content) {
         if (!content) return '1 min read';
-        const words = content.trim().split(/\s+/).length;
-        const minutes = Math.ceil(words / 180);
-        return minutes === 1 ? '1 min read' : `${minutes} min read`;
+        const min = Math.ceil(content.trim().split(/\s+/).length / 180);
+        return `${min} min read`;
     }
 
-    // Debounce function
-    function debounce(func, wait) {
-        let timeout;
-        return function executedFunction(...args) {
-            const later = () => {
-                clearTimeout(timeout);
-                func(...args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-        };
+    function timeAgo(ts) {
+        const diff = Date.now() - ts, mins = Math.floor(diff / 60000);
+        if (mins < 1)  return 'just now';
+        if (mins < 60) return `${mins}m ago`;
+        const hrs = Math.floor(mins / 60);
+        if (hrs < 24)  return `${hrs}h ago`;
+        return `${Math.floor(hrs / 24)}d ago`;
     }
 
-    // Event listeners
-    if (searchConfig.searchInput) {
-        // Search on input with debounce
-        searchConfig.searchInput.addEventListener('input', debounce(function(e) {
-            const query = e.target.value.trim();
-            performSearch(query);
-            
-            // Show/hide clear button
-            if (searchConfig.clearButton) {
-                searchConfig.clearButton.style.display = query ? 'block' : 'none';
-            }
+    function debounce(fn, wait) {
+        let t;
+        return function (...args) { clearTimeout(t); t = setTimeout(() => fn.apply(this, args), wait); };
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════════
+    // EVENT LISTENERS
+    // ═══════════════════════════════════════════════════════════════════════════════
+
+    if (els.searchInput) {
+        els.searchInput.addEventListener('input', debounce(function (e) {
+            const q = e.target.value.trim();
+            if (els.clearBtn) els.clearBtn.style.display = q ? 'flex' : 'none';
+            performSearch(q);
         }, 300));
-
-        // Clear search
-        if (searchConfig.clearButton) {
-            searchConfig.clearButton.addEventListener('click', function() {
-                searchConfig.searchInput.value = '';
-                searchConfig.clearButton.style.display = 'none';
-                resetSearch();
-                searchConfig.searchInput.focus();
-            });
-        }
-
-        // Handle Enter key
-        searchConfig.searchInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                performSearch(e.target.value.trim());
-            }
+        els.searchInput.addEventListener('keydown', e => {
+            if (e.key === 'Enter') { e.preventDefault(); performSearch(e.target.value.trim()); }
         });
     }
 
-    // Initialize on page load
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initSearch);
-    } else {
-        initSearch();
+    if (els.clearBtn) {
+        els.clearBtn.addEventListener('click', () => {
+            els.searchInput.value = '';
+            els.clearBtn.style.display = 'none';
+            resetSearch();
+            els.searchInput.focus();
+        });
     }
+
+    els.categoryPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+            if (els.searchInput && els.searchInput.value) {
+                els.searchInput.value = '';
+                if (els.clearBtn) els.clearBtn.style.display = 'none';
+                resetSearch();
+            }
+            applyCategoryFilter(pill.dataset.cat);
+        });
+    });
+
+    if (els.clearCatBtn) {
+        els.clearCatBtn.addEventListener('click', () => applyCategoryFilter('all'));
+    }
+
+    // ─── Init ─────────────────────────────────────────────────────────────────────
+    function init() {
+        initSearch();
+        renderSidebarWidgets();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+
 })();

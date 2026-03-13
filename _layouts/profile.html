@@ -19,6 +19,11 @@
     <!-- Primary Stylesheets -->
     {% include css.html %}
 
+    <!-- Page-specific extra CSS -->
+    {% if page.extra_css %}
+    <link rel="stylesheet" href="{{ page.extra_css }}">
+    {% endif %}
+
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
