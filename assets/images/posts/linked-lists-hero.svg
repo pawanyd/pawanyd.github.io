@@ -1,0 +1,95 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="nodeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#heroGradient)"/>
+  
+  <!-- Title -->
+  <text x="400" y="50" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="32" font-weight="bold">
+    Linked Lists: Dynamic Data Structures
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="400" y="80" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="16">
+    Flexible, Dynamic, and Powerful
+  </text>
+  
+  <!-- Linked List Visualization -->
+  <!-- Node 1 -->
+  <g transform="translate(100, 150)">
+    <rect x="0" y="0" width="80" height="60" rx="8" fill="url(#nodeGradient)" stroke="white" stroke-width="2"/>
+    <text x="25" y="25" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Data</text>
+    <text x="40" y="40" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">A</text>
+    <rect x="60" y="10" width="15" height="15" fill="rgba(255,255,255,0.3)" stroke="white" stroke-width="1"/>
+    <text x="67" y="21" fill="white" font-family="Arial, sans-serif" font-size="10">→</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path d="M 185 180 Q 220 160 255 180" stroke="white" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Node 2 -->
+  <g transform="translate(260, 150)">
+    <rect x="0" y="0" width="80" height="60" rx="8" fill="url(#nodeGradient)" stroke="white" stroke-width="2"/>
+    <text x="25" y="25" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Data</text>
+    <text x="40" y="40" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">B</text>
+    <rect x="60" y="10" width="15" height="15" fill="rgba(255,255,255,0.3)" stroke="white" stroke-width="1"/>
+    <text x="67" y="21" fill="white" font-family="Arial, sans-serif" font-size="10">→</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <path d="M 345 180 Q 380 160 415 180" stroke="white" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Node 3 -->
+  <g transform="translate(420, 150)">
+    <rect x="0" y="0" width="80" height="60" rx="8" fill="url(#nodeGradient)" stroke="white" stroke-width="2"/>
+    <text x="25" y="25" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Data</text>
+    <text x="40" y="40" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">C</text>
+    <rect x="60" y="10" width="15" height="15" fill="rgba(255,255,255,0.3)" stroke="white" stroke-width="1"/>
+    <text x="67" y="21" fill="white" font-family="Arial, sans-serif" font-size="10">→</text>
+  </g>
+  
+  <!-- Arrow 3 -->
+  <path d="M 505 180 Q 540 160 575 180" stroke="white" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Node 4 (NULL) -->
+  <g transform="translate(580, 150)">
+    <rect x="0" y="0" width="80" height="60" rx="8" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="40" y="35" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">NULL</text>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="white"/>
+    </marker>
+  </defs>
+  
+  <!-- Head pointer -->
+  <text x="100" y="130" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">HEAD</text>
+  <path d="M 130 135 L 130 145" stroke="white" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Key Features -->
+  <g transform="translate(50, 280)">
+    <text x="0" y="0" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Key Features:</text>
+    <text x="0" y="25" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="14">• Dynamic sizing - grow and shrink as needed</text>
+    <text x="0" y="45" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="14">• Efficient insertion/deletion at any position</text>
+    <text x="0" y="65" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="14">• Memory allocated only when needed</text>
+  </g>
+  
+  <!-- Performance indicators -->
+  <g transform="translate(450, 280)">
+    <text x="0" y="0" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Performance:</text>
+    <text x="0" y="25" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="14">• Insert/Delete at start: O(1)</text>
+    <text x="0" y="45" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="14">• Search: O(n)</text>
+    <text x="0" y="65" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="14">• Access by index: O(n)</text>
+  </g>
+</svg>

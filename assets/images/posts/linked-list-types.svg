@@ -1,0 +1,225 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e9ecef;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+    <marker id="arrowWhite" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="white"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGradient)"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#333" font-family="Arial, sans-serif" font-size="28" font-weight="bold">
+    Types of Linked Lists
+  </text>
+  
+  <!-- Singly Linked List -->
+  <g transform="translate(0, 80)">
+    <text x="50" y="30" fill="#333" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+      1. Singly Linked List
+    </text>
+    <text x="50" y="50" fill="#666" font-family="Arial, sans-serif" font-size="14">
+      Each node points to the next node
+    </text>
+    
+    <!-- Nodes -->
+    <g transform="translate(50, 70)">
+      <!-- Node 1 -->
+      <rect x="0" y="0" width="60" height="40" rx="5" fill="url(#nodeGrad)" stroke="#333" stroke-width="1"/>
+      <text x="20" y="25" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">A</text>
+      <rect x="40" y="10" width="15" height="20" fill="rgba(255,255,255,0.3)" stroke="white" stroke-width="1"/>
+      <text x="47" y="23" fill="white" font-family="Arial, sans-serif" font-size="10">→</text>
+      
+      <!-- Arrow -->
+      <path d="M 65 20 L 95 20" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+      
+      <!-- Node 2 -->
+      <rect x="100" y="0" width="60" height="40" rx="5" fill="url(#nodeGrad)" stroke="#333" stroke-width="1"/>
+      <text x="120" y="25" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">B</text>
+      <rect x="140" y="10" width="15" height="20" fill="rgba(255,255,255,0.3)" stroke="white" stroke-width="1"/>
+      <text x="147" y="23" fill="white" font-family="Arial, sans-serif" font-size="10">→</text>
+      
+      <!-- Arrow -->
+      <path d="M 165 20 L 195 20" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+      
+      <!-- Node 3 -->
+      <rect x="200" y="0" width="60" height="40" rx="5" fill="url(#nodeGrad)" stroke="#333" stroke-width="1"/>
+      <text x="220" y="25" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">C</text>
+      <rect x="240" y="10" width="15" height="20" fill="rgba(255,255,255,0.3)" stroke="white" stroke-width="1"/>
+      <text x="247" y="23" fill="white" font-family="Arial, sans-serif" font-size="10">∅</text>
+    </g>
+  </g>
+  
+  <!-- Doubly Linked List -->
+  <g transform="translate(0, 220)">
+    <text x="50" y="30" fill="#333" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+      2. Doubly Linked List
+    </text>
+    <text x="50" y="50" fill="#666" font-family="Arial, sans-serif" font-size="14">
+      Each node has pointers to both next and previous nodes
+    </text>
+    
+    <!-- Nodes -->
+    <g transform="translate(50, 70)">
+      <!-- Node 1 -->
+      <rect x="0" y="0" width="80" height="40" rx="5" fill="url(#nodeGrad)" stroke="#333" stroke-width="1"/>
+      <rect x="5" y="10" width="15" height="20" fill="rgba(255,255,255,0.3)" stroke="white" stroke-width="1"/>
+      <text x="12" y="23" fill="white" font-family="Arial, sans-serif" font-size="10">∅</text>
+      <text x="35" y="25" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">A</text>
+      <rect x="60" y="10" width="15" height="20" fill="rgba(255,255,255,0.3)" stroke="white" stroke-width="1"/>
+      <text x="67" y="23" fill="white" font-family="Arial, sans-serif" font-size="10">→</text>
+      
+      <!-- Forward Arrow -->
+      <path d="M 85 20 L 115 20" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+      <!-- Backward Arrow -->
+      <path d="M 115 30 L 85 30" stroke="#666" stroke-width="1" marker-end="url(#arrow)"/>
+      
+      <!-- Node 2 -->
+      <rect x="120" y="0" width="80" height="40" rx="5" fill="url(#nodeGrad)" stroke="#333" stroke-width="1"/>
+      <rect x="125" y="10" width="15" height="20" fill="rgba(255,255,255,0.3)" stroke="white" stroke-width="1"/>
+      <text x="132" y="23" fill="white" font-family="Arial, sans-serif" font-size="10">←</text>
+      <text x="155" y="25" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">B</text>
+      <rect x="180" y="10" width="15" height="20" fill="rgba(255,255,255,0.3)" stroke="white" stroke-width="1"/>
+      <text x="187" y="23" fill="white" font-family="Arial, sans-serif" font-size="10">→</text>
+      
+      <!-- Forward Arrow -->
+      <path d="M 205 20 L 235 20" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+      <!-- Backward Arrow -->
+      <path d="M 235 30 L 205 30" stroke="#666" stroke-width="1" marker-end="url(#arrow)"/>
+      
+      <!-- Node 3 -->
+      <rect x="240" y="0" width="80" height="40" rx="5" fill="url(#nodeGrad)" stroke="#333" stroke-width="1"/>
+      <rect x="245" y="10" width="15" height="20" fill="rgba(255,255,255,0.3)" stroke="white" stroke-width="1"/>
+      <text x="252" y="23" fill="white" font-family="Arial, sans-serif" font-size="10">←</text>
+      <text x="275" y="25" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">C</text>
+      <rect x="300" y="10" width="15" height="20" fill="rgba(255,255,255,0.3)" stroke="white" stroke-width="1"/>
+      <text x="307" y="23" fill="white" font-family="Arial, sans-serif" font-size="10">∅</text>
+    </g>
+  </g>
+  
+  <!-- Circular Linked List -->
+  <g transform="translate(0, 380)">
+    <text x="50" y="30" fill="#333" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+      3. Circular Linked List
+    </text>
+    <text x="50" y="50" fill="#666" font-family="Arial, sans-serif" font-size="14">
+      Last node points back to the first node, creating a cycle
+    </text>
+    
+    <!-- Nodes -->
+    <g transform="translate(50, 70)">
+      <!-- Node 1 -->
+      <rect x="0" y="0" width="60" height="40" rx="5" fill="url(#nodeGrad)" stroke="#333" stroke-width="1"/>
+      <text x="20" y="25" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">A</text>
+      <rect x="40" y="10" width="15" height="20" fill="rgba(255,255,255,0.3)" stroke="white" stroke-width="1"/>
+      <text x="47" y="23" fill="white" font-family="Arial, sans-serif" font-size="10">→</text>
+      
+      <!-- Arrow -->
+      <path d="M 65 20 L 95 20" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+      
+      <!-- Node 2 -->
+      <rect x="100" y="0" width="60" height="40" rx="5" fill="url(#nodeGrad)" stroke="#333" stroke-width="1"/>
+      <text x="120" y="25" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">B</text>
+      <rect x="140" y="10" width="15" height="20" fill="rgba(255,255,255,0.3)" stroke="white" stroke-width="1"/>
+      <text x="147" y="23" fill="white" font-family="Arial, sans-serif" font-size="10">→</text>
+      
+      <!-- Arrow -->
+      <path d="M 165 20 L 195 20" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+      
+      <!-- Node 3 -->
+      <rect x="200" y="0" width="60" height="40" rx="5" fill="url(#nodeGrad)" stroke="#333" stroke-width="1"/>
+      <text x="220" y="25" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">C</text>
+      <rect x="240" y="10" width="15" height="20" fill="rgba(255,255,255,0.3)" stroke="white" stroke-width="1"/>
+      <text x="247" y="23" fill="white" font-family="Arial, sans-serif" font-size="10">→</text>
+      
+      <!-- Circular Arrow -->
+      <path d="M 265 20 Q 300 20 300 60 Q 300 100 130 100 Q 30 100 30 60 Q 30 20 -5 20" 
+            stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+    </g>
+  </g>
+  
+  <!-- Use Cases -->
+  <g transform="translate(450, 120)">
+    <rect x="0" y="0" width="320" height="420" rx="10" fill="rgba(255,255,255,0.8)" stroke="#ddd" stroke-width="1"/>
+    
+    <text x="160" y="30" text-anchor="middle" fill="#333" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+      Common Use Cases
+    </text>
+    
+    <!-- Singly Linked List Uses -->
+    <text x="20" y="60" fill="#333" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Singly Linked List:
+    </text>
+    <text x="20" y="80" fill="#666" font-family="Arial, sans-serif" font-size="13">
+      • Simple queues and stacks
+    </text>
+    <text x="20" y="95" fill="#666" font-family="Arial, sans-serif" font-size="13">
+      • Basic dynamic lists
+    </text>
+    <text x="20" y="110" fill="#666" font-family="Arial, sans-serif" font-size="13">
+      • Memory-constrained environments
+    </text>
+    <text x="20" y="125" fill="#666" font-family="Arial, sans-serif" font-size="13">
+      • Forward-only traversal needed
+    </text>
+    
+    <!-- Doubly Linked List Uses -->
+    <text x="20" y="160" fill="#333" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Doubly Linked List:
+    </text>
+    <text x="20" y="180" fill="#666" font-family="Arial, sans-serif" font-size="13">
+      • Browser history navigation
+    </text>
+    <text x="20" y="195" fill="#666" font-family="Arial, sans-serif" font-size="13">
+      • Music playlist (prev/next)
+    </text>
+    <text x="20" y="210" fill="#666" font-family="Arial, sans-serif" font-size="13">
+      • Undo/Redo functionality
+    </text>
+    <text x="20" y="225" fill="#666" font-family="Arial, sans-serif" font-size="13">
+      • LRU cache implementation
+    </text>
+    
+    <!-- Circular Linked List Uses -->
+    <text x="20" y="260" fill="#333" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Circular Linked List:
+    </text>
+    <text x="20" y="280" fill="#666" font-family="Arial, sans-serif" font-size="13">
+      • Round-robin scheduling
+    </text>
+    <text x="20" y="295" fill="#666" font-family="Arial, sans-serif" font-size="13">
+      • Multiplayer game turns
+    </text>
+    <text x="20" y="310" fill="#666" font-family="Arial, sans-serif" font-size="13">
+      • Circular buffers
+    </text>
+    <text x="20" y="325" fill="#666" font-family="Arial, sans-serif" font-size="13">
+      • Josephus problem solutions
+    </text>
+    
+    <!-- Performance Comparison -->
+    <text x="20" y="360" fill="#333" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Performance Notes:
+    </text>
+    <text x="20" y="380" fill="#666" font-family="Arial, sans-serif" font-size="13">
+      • Singly: Lowest memory overhead
+    </text>
+    <text x="20" y="395" fill="#666" font-family="Arial, sans-serif" font-size="13">
+      • Doubly: Faster backward traversal
+    </text>
+    <text x="20" y="410" fill="#666" font-family="Arial, sans-serif" font-size="13">
+      • Circular: No null pointer checks
+    </text>
+  </g>
+</svg>
