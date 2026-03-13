@@ -1,7 +1,7 @@
 ---
 layout: post-detail
 title: "Linked Lists: The Complete Guide to Understanding and Mastering Dynamic Data Structures"
-date: 2026-03-14
+date: 2025-05-10
 category: "Technology"
 tags: ["Data Structures", "Algorithms", "Programming", "Computer Science", "Software Development", "Coding"]
 image: "/assets/images/posts/linked-lists-hero.svg"
