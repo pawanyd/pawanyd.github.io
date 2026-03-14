@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="650" viewBox="0 0 1000 650" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="hashmap-title hashmap-desc">
+  <title id="hashmap-title">Hash Map Visualization</title>
+  <desc id="hashmap-desc">Visual representation of how hash maps work with hash function, buckets, and collision handling</desc>
+  
+  <!-- Background -->
+  <rect width="1000" height="650" fill="#f9fafb"/>
+  
+  <!-- Title -->
+  <text x="500" y="40" text-anchor="middle" fill="#1f2937" font-family="Arial, sans-serif" font-size="28" font-weight="bold">
+    Hash Map: O(1) Lookup Magic
+  </text>
+  
+  <!-- Problem statement -->
+  <g transform="translate(100, 70)">
+    <rect x="0" y="0" width="800" height="50" fill="#eff6ff" rx="8" stroke="#3b82f6" stroke-width="2"/>
+    <text x="400" y="32" text-anchor="middle" fill="#1e40af" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+      Store key-value pairs with instant lookup: hash(key) → index → value
+    </text>
+  </g>
+  
+  <!-- Hash Function -->
+  <g transform="translate(100, 150)">
+    <text x="200" y="0" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+      Step 1: Hash Function Converts Key to Index
+    </text>
+    
+    <g transform="translate(0, 30)">
+      <!-- Input keys -->
+      <rect x="0" y="0" width="120" height="50" fill="#dbeafe" rx="5" stroke="#3b82f6" stroke-width="2"/>
+      <text x="60" y="32" text-anchor="middle" fill="#1e40af" font-family="Arial, sans-serif" font-size="14" font-weight="bold">"apple"</text>
+      
+      <rect x="0" y="60" width="120" height="50" fill="#dbeafe" rx="5" stroke="#3b82f6" stroke-width="2"/>
+      <text x="60" y="92" text-anchor="middle" fill="#1e40af" font-family="Arial, sans-serif" font-size="14" font-weight="bold">"banana"</text>
+      
+      <rect x="0" y="120" width="120" height="50" fill="#dbeafe" rx="5" stroke="#3b82f6" stroke-width="2"/>
+      <text x="60" y="152" text-anchor="middle" fill="#1e40af" font-family="Arial, sans-serif" font-size="14" font-weight="bold">"cherry"</text>
+      
+      <!-- Hash function box -->
+      <rect x="150" y="50" width="100" height="80" fill="#fef3c7" rx="8" stroke="#f59e0b" stroke-width="2"/>
+      <text x="200" y="80" text-anchor="middle" fill="#92400e" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Hash</text>
+      <text x="200" y="98" text-anchor="middle" fill="#92400e" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Function</text>
+      <text x="200" y="118" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">hash(key) % 8</text>
+      
+      <!-- Arrows to hash function -->
+      <path d="M 120 25 L 145 90" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowblue)"/>
+      <path d="M 120 85 L 145 90" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowblue)"/>
+      <path d="M 120 145 L 145 90" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrowblue)"/>
+      
+      <!-- Output indices -->
+      <path d="M 250 90 L 275 25" stroke="#10b981" stroke-width="2" marker-end="url(#arrowgreen)"/>
+      <text x="310" y="30" fill="#059669" font-family="Arial, sans-serif" font-size="14" font-weight="bold">→ index 2</text>
+      
+      <path d="M 250 90 L 275 85" stroke="#10b981" stroke-width="2" marker-end="url(#arrowgreen)"/>
+      <text x="310" y="90" fill="#059669" font-family="Arial, sans-serif" font-size="14" font-weight="bold">→ index 5</text>
+      
+      <path d="M 250 90 L 275 145" stroke="#10b981" stroke-width="2" marker-end="url(#arrowgreen)"/>
+      <text x="310" y="150" fill="#059669" font-family="Arial, sans-serif" font-size="14" font-weight="bold">→ index 7</text>
+    </g>
+  </g>
+  
+  <!-- Hash Table Array -->
+  <g transform="translate(550, 150)">
+    <text x="200" y="0" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+      Step 2: Store in Array at Computed Index
+    </text>
+    
+    <g transform="translate(80, 30)">
+      <!-- Array buckets -->
+      <rect x="0" y="0" width="80" height="40" fill="#e5e7eb" rx="3" stroke="#9ca3af" stroke-width="1"/>
+      <text x="40" y="25" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="12">[0] null</text>
+      
+      <rect x="0" y="45" width="80" height="40" fill="#e5e7eb" rx="3" stroke="#9ca3af" stroke-width="1"/>
+      <text x="40" y="70" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="12">[1] null</text>
+      
+      <rect x="0" y="90" width="80" height="40" fill="#d1fae5" rx="3" stroke="#10b981" stroke-width="2"/>
+      <text x="40" y="108" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="11" font-weight="bold">[2] apple</text>
+      <text x="40" y="122" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="9">→ 5</text>
+      
+      <rect x="0" y="135" width="80" height="40" fill="#e5e7eb" rx="3" stroke="#9ca3af" stroke-width="1"/>
+      <text x="40" y="160" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="12">[3] null</text>
+      
+      <rect x="0" y="180" width="80" height="40" fill="#e5e7eb" rx="3" stroke="#9ca3af" stroke-width="1"/>
+      <text x="40" y="205" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="12">[4] null</text>
+      
+      <rect x="0" y="225" width="80" height="40" fill="#d1fae5" rx="3" stroke="#10b981" stroke-width="2"/>
+      <text x="40" y="243" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="11" font-weight="bold">[5] banana</text>
+      <text x="40" y="257" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="9">→ 3</text>
+      
+      <rect x="0" y="270" width="80" height="40" fill="#e5e7eb" rx="3" stroke="#9ca3af" stroke-width="1"/>
+      <text x="40" y="295" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="12">[6] null</text>
+      
+      <rect x="0" y="315" width="80" height="40" fill="#d1fae5" rx="3" stroke="#10b981" stroke-width="2"/>
+      <text x="40" y="333" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="11" font-weight="bold">[7] cherry</text>
+      <text x="40" y="347" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="9">→ 7</text>
+      
+      <text x="100" y="110" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">key → value</text>
+    </g>
+  </g>
+  
+  <!-- Collision handling -->
+  <g transform="translate(100, 480)">
+    <rect x="0" y="0" width="800" height="150" fill="#fef2f2" rx="10" stroke="#ef4444" stroke-width="2"/>
+    
+    <text x="400" y="28" text-anchor="middle" fill="#991b1b" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Collision Handling: When Two Keys Hash to Same Index
+    </text>
+    
+    <g transform="translate(30, 45)">
+      <text x="0" y="20" fill="#374151" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+        Method 1: Chaining (Linked List)
+      </text>
+      
+      <!-- Chaining visualization -->
+      <rect x="20" y="30" width="100" height="35" fill="#dbeafe" rx="5" stroke="#3b82f6" stroke-width="2"/>
+      <text x="70" y="52" text-anchor="middle" fill="#1e40af" font-family="Arial, sans-serif" font-size="11" font-weight="bold">[5] banana</text>
+      
+      <path d="M 120 47 L 140 47" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowgray)"/>
+      
+      <rect x="145" y="30" width="100" height="35" fill="#dbeafe" rx="5" stroke="#3b82f6" stroke-width="2"/>
+      <text x="195" y="52" text-anchor="middle" fill="#1e40af" font-family="Arial, sans-serif" font-size="11" font-weight="bold">grape</text>
+      
+      <path d="M 245 47 L 265 47" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowgray)"/>
+      
+      <rect x="270" y="30" width="60" height="35" fill="#e5e7eb" rx="5" stroke="#9ca3af" stroke-width="1"/>
+      <text x="300" y="52" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="11">null</text>
+      
+      <text x="20" y="85" fill="#6b7280" font-family="Arial, sans-serif" font-size="11">
+        Multiple items at same index form a linked list
+      </text>
+    </g>
+    
+    <g transform="translate(420, 45)">
+      <text x="0" y="20" fill="#374151" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+        Method 2: Open Addressing
+      </text>
+      
+      <text x="20" y="45" fill="#6b7280" font-family="Arial, sans-serif" font-size="11">
+        If index 5 is taken, try index 6, then 7, etc.
+      </text>
+      
+      <text x="20" y="65" fill="#6b7280" font-family="Arial, sans-serif" font-size="11">
+        Keep probing until empty slot found
+      </text>
+      
+      <text x="20" y="85" fill="#6b7280" font-family="Arial, sans-serif" font-size="11">
+        Simpler but can cause clustering
+      </text>
+    </g>
+  </g>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowblue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#3b82f6" />
+    </marker>
+    <marker id="arrowgreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#10b981" />
+    </marker>
+    <marker id="arrowgray" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#6b7280" />
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="700" viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="recursion-title recursion-desc">
+  <title id="recursion-title">Recursion Call Stack Visualization</title>
+  <desc id="recursion-desc">Visual representation of how factorial(4) creates nested recursive calls on the call stack</desc>
+  
+  <!-- Background -->
+  <rect width="1000" height="700" fill="#f9fafb"/>
+  
+  <!-- Title -->
+  <text x="500" y="40" text-anchor="middle" fill="#1f2937" font-family="Arial, sans-serif" font-size="28" font-weight="bold">
+    Recursion: How factorial(4) Works on the Call Stack
+  </text>
+  
+  <!-- Problem statement -->
+  <g transform="translate(100, 70)">
+    <rect x="0" y="0" width="800" height="50" fill="#eff6ff" rx="8" stroke="#3b82f6" stroke-width="2"/>
+    <text x="400" y="25" text-anchor="middle" fill="#1e40af" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+      factorial(n) = n * factorial(n-1) | Base case: factorial(1) = 1
+    </text>
+  </g>
+  
+  <!-- Call Stack Building (Left Side) -->
+  <g transform="translate(80, 150)">
+    <text x="180" y="0" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+      Building the Stack (Going Down)
+    </text>
+    
+    <!-- Stack frames -->
+    <g transform="translate(20, 30)">
+      <!-- Frame 1: main() -->
+      <rect x="0" y="0" width="320" height="70" fill="#e5e7eb" rx="8" stroke="#9ca3af" stroke-width="2"/>
+      <text x="160" y="30" text-anchor="middle" fill="#374151" font-family="Courier New, monospace" font-size="14" font-weight="bold">
+        main()
+      </text>
+      <text x="160" y="50" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="12">
+        calls factorial(4)
+      </text>
+      
+      <!-- Frame 2: factorial(4) -->
+      <rect x="0" y="80" width="320" height="70" fill="#dbeafe" rx="8" stroke="#3b82f6" stroke-width="2"/>
+      <text x="160" y="110" text-anchor="middle" fill="#1e40af" font-family="Courier New, monospace" font-size="14" font-weight="bold">
+        factorial(4)
+      </text>
+      <text x="160" y="130" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="12">
+        return 4 * factorial(3)
+      </text>
+      
+      <!-- Frame 3: factorial(3) -->
+      <rect x="0" y="160" width="320" height="70" fill="#dbeafe" rx="8" stroke="#3b82f6" stroke-width="2"/>
+      <text x="160" y="190" text-anchor="middle" fill="#1e40af" font-family="Courier New, monospace" font-size="14" font-weight="bold">
+        factorial(3)
+      </text>
+      <text x="160" y="210" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="12">
+        return 3 * factorial(2)
+      </text>
+      
+      <!-- Frame 4: factorial(2) -->
+      <rect x="0" y="240" width="320" height="70" fill="#dbeafe" rx="8" stroke="#3b82f6" stroke-width="2"/>
+      <text x="160" y="270" text-anchor="middle" fill="#1e40af" font-family="Courier New, monospace" font-size="14" font-weight="bold">
+        factorial(2)
+      </text>
+      <text x="160" y="290" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="12">
+        return 2 * factorial(1)
+      </text>
+      
+      <!-- Frame 5: factorial(1) - BASE CASE -->
+      <rect x="0" y="320" width="320" height="70" fill="#d1fae5" rx="8" stroke="#10b981" stroke-width="3"/>
+      <text x="160" y="350" text-anchor="middle" fill="#059669" font-family="Courier New, monospace" font-size="14" font-weight="bold">
+        factorial(1)
+      </text>
+      <text x="160" y="370" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="12" font-weight="bold">
+        return 1 (BASE CASE!)
+      </text>
+    </g>
+    
+    <text x="180" y="430" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="12" font-style="italic">
+      Stack grows as each call waits for the next
+    </text>
+  </g>
+  
+  <!-- Unwinding Stack (Right Side) -->
+  <g transform="translate(520, 150)">
+    <text x="180" y="0" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+      Unwinding the Stack (Going Up)
+    </text>
+    
+    <!-- Stack frames unwinding -->
+    <g transform="translate(20, 30)">
+      <!-- Frame 1: main() -->
+      <rect x="0" y="0" width="320" height="70" fill="#e5e7eb" rx="8" stroke="#9ca3af" stroke-width="2"/>
+      <text x="160" y="30" text-anchor="middle" fill="#374151" font-family="Courier New, monospace" font-size="14" font-weight="bold">
+        main()
+      </text>
+      <text x="160" y="50" text-anchor="middle" fill="#10b981" font-family="Arial, sans-serif" font-size="12" font-weight="bold">
+        receives 24 ✓
+      </text>
+      
+      <!-- Frame 2: factorial(4) returns -->
+      <rect x="0" y="80" width="320" height="70" fill="#d1fae5" rx="8" stroke="#10b981" stroke-width="2"/>
+      <text x="160" y="110" text-anchor="middle" fill="#059669" font-family="Courier New, monospace" font-size="14" font-weight="bold">
+        factorial(4)
+      </text>
+      <text x="160" y="130" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="12">
+        4 * 6 = 24 → return 24
+      </text>
+      
+      <!-- Frame 3: factorial(3) returns -->
+      <rect x="0" y="160" width="320" height="70" fill="#d1fae5" rx="8" stroke="#10b981" stroke-width="2"/>
+      <text x="160" y="190" text-anchor="middle" fill="#059669" font-family="Courier New, monospace" font-size="14" font-weight="bold">
+        factorial(3)
+      </text>
+      <text x="160" y="210" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="12">
+        3 * 2 = 6 → return 6
+      </text>
+      
+      <!-- Frame 4: factorial(2) returns -->
+      <rect x="0" y="240" width="320" height="70" fill="#d1fae5" rx="8" stroke="#10b981" stroke-width="2"/>
+      <text x="160" y="270" text-anchor="middle" fill="#059669" font-family="Courier New, monospace" font-size="14" font-weight="bold">
+        factorial(2)
+      </text>
+      <text x="160" y="290" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="12">
+        2 * 1 = 2 → return 2
+      </text>
+      
+      <!-- Frame 5: factorial(1) already returned -->
+      <rect x="0" y="320" width="320" height="70" fill="#fecaca" rx="8" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,5" opacity="0.3"/>
+      <text x="160" y="350" text-anchor="middle" fill="#991b1b" font-family="Courier New, monospace" font-size="14" opacity="0.5">
+        factorial(1)
+      </text>
+      <text x="160" y="370" text-anchor="middle" fill="#991b1b" font-family="Arial, sans-serif" font-size="12" opacity="0.5">
+        returned 1 (popped off)
+      </text>
+    </g>
+    
+    <text x="180" y="430" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="12" font-style="italic">
+      Stack unwinds as each call returns its value
+    </text>
+  </g>
+  
+  <!-- Arrow showing flow -->
+  <path d="M 420 300 L 500 300" stroke="#f59e0b" stroke-width="4" marker-end="url(#arroworange)"/>
+  <text x="460" y="290" text-anchor="middle" fill="#f59e0b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+    Base case reached
+  </text>
+  <text x="460" y="310" text-anchor="middle" fill="#f59e0b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+    Start returning
+  </text>
+  
+  <!-- Key insights box -->
+  <g transform="translate(100, 610)">
+    <rect x="0" y="0" width="800" height="75" fill="#fef3c7" rx="10" stroke="#f59e0b" stroke-width="2"/>
+    
+    <text x="400" y="25" text-anchor="middle" fill="#92400e" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Key Recursion Insights
+    </text>
+    
+    <text x="30" y="48" fill="#374151" font-family="Arial, sans-serif" font-size="13">
+      • Each call waits for the next call to complete (stack builds up)
+    </text>
+    
+    <text x="30" y="66" fill="#374151" font-family="Arial, sans-serif" font-size="13">
+      • Base case stops recursion and starts returning values back up
+    </text>
+    
+    <text x="450" y="48" fill="#374151" font-family="Arial, sans-serif" font-size="13">
+      • Space complexity: O(n) for call stack
+    </text>
+    
+    <text x="450" y="66" fill="#374151" font-family="Arial, sans-serif" font-size="13">
+      • Trust the recursion - don't trace every call!
+    </text>
+  </g>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arroworange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#f59e0b" />
+    </marker>
+  </defs>
+</svg>
