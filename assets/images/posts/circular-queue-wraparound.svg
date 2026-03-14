@@ -258,26 +258,26 @@
   </g>
   
   <!-- Formula box -->
-  <g transform="translate(50, 570)">
-    <rect x="0" y="0" width="900" height="100" fill="#fef3c7" rx="10" stroke="#f59e0b" stroke-width="2"/>
+  <g transform="translate(50, 580)">
+    <rect x="0" y="0" width="900" height="105" fill="#fef3c7" rx="10" stroke="#f59e0b" stroke-width="2"/>
     
-    <text x="450" y="30" text-anchor="middle" fill="#92400e" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+    <text x="450" y="32" text-anchor="middle" fill="#92400e" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
       Key Formulas for Circular Queue
     </text>
     
-    <text x="30" y="55" fill="#374151" font-family="Courier New, monospace" font-size="13">
+    <text x="30" y="58" fill="#374151" font-family="Courier New, monospace" font-size="13">
       • Next Rear Position: rear = (rear + 1) % capacity
     </text>
     
-    <text x="30" y="75" fill="#374151" font-family="Courier New, monospace" font-size="13">
+    <text x="30" y="82" fill="#374151" font-family="Courier New, monospace" font-size="13">
       • Next Front Position: front = (front + 1) % capacity
     </text>
     
-    <text x="500" y="55" fill="#374151" font-family="Courier New, monospace" font-size="13">
+    <text x="500" y="58" fill="#374151" font-family="Courier New, monospace" font-size="13">
       • Is Full: (rear + 1) % capacity == front
     </text>
     
-    <text x="500" y="75" fill="#374151" font-family="Courier New, monospace" font-size="13">
+    <text x="500" y="82" fill="#374151" font-family="Courier New, monospace" font-size="13">
       • Is Empty: front == rear (when empty)
     </text>
   </g>

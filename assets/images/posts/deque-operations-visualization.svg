@@ -175,8 +175,8 @@
   </g>
   
   <!-- Summary box -->
-  <g transform="translate(100, 500)">
-    <rect x="0" y="0" width="800" height="130" fill="#f3e8ff" rx="10" stroke="#8b5cf6" stroke-width="3"/>
+  <g transform="translate(100, 510)">
+    <rect x="0" y="0" width="800" height="120" fill="#f3e8ff" rx="10" stroke="#8b5cf6" stroke-width="3"/>
     
     <text x="400" y="30" text-anchor="middle" fill="#5b21b6" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
       Deque: The Most Flexible Linear Data Structure
@@ -203,7 +203,7 @@
         • <tspan fill="#ef4444" font-weight="bold">removeRear()</tspan> - Remove and return rear element
       </text>
       
-      <text x="0" y="70" fill="#5b21b6" font-family="Arial, sans-serif" font-size="13" font-weight="bold">
+      <text x="0" y="68" fill="#5b21b6" font-family="Arial, sans-serif" font-size="13" font-weight="bold">
         Can act as both Stack AND Queue!
       </text>
       <text x="20" y="88" fill="#6b7280" font-family="Arial, sans-serif" font-size="12">
