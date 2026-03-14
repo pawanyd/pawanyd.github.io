@@ -104,15 +104,15 @@ But here's the tradeoff: if you want to insert a car in the middle, every car to
 
 **The patterns you must nail on arrays:**
 
-The **Two Pointer** pattern is how you avoid nested loops on sorted arrays. Instead of comparing every pair with O(n²), you put one pointer at each end and march them toward each other. Classic example: given a sorted array, find two numbers that sum to a target. You check the sum — too big, move the right pointer left; too small, move the left pointer right. O(n) instead of O(n²). That's the kind of thinking that impresses interviewers.
+The **<span data-algorithm="two_pointers">Two Pointer</span>** pattern is how you avoid nested loops on sorted arrays. Instead of comparing every pair with O(n²), you put one pointer at each end and march them toward each other. Classic example: given a sorted array, find two numbers that sum to a target. You check the sum — too big, move the right pointer left; too small, move the left pointer right. O(n) instead of O(n²). That's the kind of thinking that impresses interviewers.
 
 ![Two Pointers Pattern](/assets/images/posts/dsa-two-pointers-visualization.svg)
 
-The **Sliding Window** pattern is for any problem that asks about subarrays or substrings. You maintain a window that slides across the array, tracking whatever state you need (sum, character counts, etc.). When the window violates a condition, shrink it from the left. When it doesn't, expand it to the right. Problems like "Maximum Sum Subarray of Size K" or "Longest Substring Without Repeating Characters" — both classic examples.
+The **<span data-algorithm="sliding_window">Sliding Window</span>** pattern is for any problem that asks about subarrays or substrings. You maintain a window that slides across the array, tracking whatever state you need (sum, character counts, etc.). When the window violates a condition, shrink it from the left. When it doesn't, expand it to the right. Problems like "Maximum Sum Subarray of Size K" or "Longest Substring Without Repeating Characters" — both classic examples.
 
 ![Sliding Window Pattern](/assets/images/posts/dsa-sliding-window-visualization.svg)
 
-**Binary Search** deserves a whole conversation by itself. It only works on sorted arrays, but when it applies, it turns O(n) searches into O(log n). For a million elements, that's the difference between 1,000,000 operations and 20 operations. Every time you see a sorted array in a problem, your first thought should be: "Can I binary search here?"
+**<span data-algorithm="binary_search">Binary Search</span>** deserves a whole conversation by itself. It only works on sorted arrays, but when it applies, it turns O(n) searches into O(log n). For a million elements, that's the difference between 1,000,000 operations and 20 operations. Every time you see a sorted array in a problem, your first thought should be: "Can I binary search here?"
 
 **Prefix sums** are a technique that almost nobody learns early enough. You precompute cumulative sums, and suddenly any range sum query becomes O(1) instead of O(n). It's a one-time O(n) investment that pays dividends on every query.
 

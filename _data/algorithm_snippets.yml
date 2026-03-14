@@ -1,0 +1,385 @@
+# Algorithm Code Snippets Configuration
+# Add new algorithms here with code in multiple languages
+
+sliding_window:
+  name: "Sliding Window"
+  description: "Find maximum sum of subarray of size K"
+  languages:
+    python: |
+      def sliding_window(arr, k):
+          """Find maximum sum of any subarray of size k"""
+          if len(arr) < k:
+              return None
+          
+          # Calculate sum of first window
+          window_sum = sum(arr[:k])
+          max_sum = window_sum
+          
+          # Slide the window
+          for i in range(k, len(arr)):
+              window_sum = window_sum - arr[i-k] + arr[i]
+              max_sum = max(max_sum, window_sum)
+          
+          return max_sum
+    
+    javascript: |
+      function slidingWindow(arr, k) {
+        // Find maximum sum of any subarray of size k
+        if (arr.length < k) return null;
+        
+        // Calculate sum of first window
+        let windowSum = arr.slice(0, k).reduce((a, b) => a + b, 0);
+        let maxSum = windowSum;
+        
+        // Slide the window
+        for (let i = k; i < arr.length; i++) {
+          windowSum = windowSum - arr[i - k] + arr[i];
+          maxSum = Math.max(maxSum, windowSum);
+        }
+        
+        return maxSum;
+      }
+    
+    typescript: |
+      function slidingWindow(arr: number[], k: number): number | null {
+        // Find maximum sum of any subarray of size k
+        if (arr.length < k) return null;
+        
+        // Calculate sum of first window
+        let windowSum: number = arr.slice(0, k).reduce((a, b) => a + b, 0);
+        let maxSum: number = windowSum;
+        
+        // Slide the window
+        for (let i = k; i < arr.length; i++) {
+          windowSum = windowSum - arr[i - k] + arr[i];
+          maxSum = Math.max(maxSum, windowSum);
+        }
+        
+        return maxSum;
+      }
+    
+    java: |
+      public class SlidingWindow {
+          public static Integer slidingWindow(int[] arr, int k) {
+              // Find maximum sum of any subarray of size k
+              if (arr.length < k) return null;
+              
+              // Calculate sum of first window
+              int windowSum = 0;
+              for (int i = 0; i < k; i++) {
+                  windowSum += arr[i];
+              }
+              int maxSum = windowSum;
+              
+              // Slide the window
+              for (int i = k; i < arr.length; i++) {
+                  windowSum = windowSum - arr[i - k] + arr[i];
+                  maxSum = Math.max(maxSum, windowSum);
+              }
+              
+              return maxSum;
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      #include <algorithm>
+      using namespace std;
+      
+      int slidingWindow(vector<int>& arr, int k) {
+          // Find maximum sum of any subarray of size k
+          if (arr.size() < k) return -1;
+          
+          // Calculate sum of first window
+          int windowSum = 0;
+          for (int i = 0; i < k; i++) {
+              windowSum += arr[i];
+          }
+          int maxSum = windowSum;
+          
+          // Slide the window
+          for (int i = k; i < arr.size(); i++) {
+              windowSum = windowSum - arr[i - k] + arr[i];
+              maxSum = max(maxSum, windowSum);
+          }
+          
+          return maxSum;
+      }
+    
+    php: |
+      <?php
+      function slidingWindow($arr, $k) {
+          // Find maximum sum of any subarray of size k
+          if (count($arr) < $k) return null;
+          
+          // Calculate sum of first window
+          $windowSum = array_sum(array_slice($arr, 0, $k));
+          $maxSum = $windowSum;
+          
+          // Slide the window
+          for ($i = $k; $i < count($arr); $i++) {
+              $windowSum = $windowSum - $arr[$i - $k] + $arr[$i];
+              $maxSum = max($maxSum, $windowSum);
+          }
+          
+          return $maxSum;
+      }
+      ?>
+
+two_pointers:
+  name: "Two Pointers"
+  description: "Find two numbers that sum to target in sorted array"
+  languages:
+    python: |
+      def two_sum_sorted(arr, target):
+          """Find two numbers that sum to target in sorted array"""
+          left, right = 0, len(arr) - 1
+          
+          while left < right:
+              current_sum = arr[left] + arr[right]
+              
+              if current_sum == target:
+                  return [arr[left], arr[right]]
+              elif current_sum < target:
+                  left += 1
+              else:
+                  right -= 1
+          
+          return None
+    
+    javascript: |
+      function twoSumSorted(arr, target) {
+        // Find two numbers that sum to target in sorted array
+        let left = 0, right = arr.length - 1;
+        
+        while (left < right) {
+          const currentSum = arr[left] + arr[right];
+          
+          if (currentSum === target) {
+            return [arr[left], arr[right]];
+          } else if (currentSum < target) {
+            left++;
+          } else {
+            right--;
+          }
+        }
+        
+        return null;
+      }
+    
+    typescript: |
+      function twoSumSorted(arr: number[], target: number): number[] | null {
+        // Find two numbers that sum to target in sorted array
+        let left = 0, right = arr.length - 1;
+        
+        while (left < right) {
+          const currentSum = arr[left] + arr[right];
+          
+          if (currentSum === target) {
+            return [arr[left], arr[right]];
+          } else if (currentSum < target) {
+            left++;
+          } else {
+            right--;
+          }
+        }
+        
+        return null;
+      }
+    
+    java: |
+      public class TwoPointers {
+          public static int[] twoSumSorted(int[] arr, int target) {
+              // Find two numbers that sum to target in sorted array
+              int left = 0, right = arr.length - 1;
+              
+              while (left < right) {
+                  int currentSum = arr[left] + arr[right];
+                  
+                  if (currentSum == target) {
+                      return new int[]{arr[left], arr[right]};
+                  } else if (currentSum < target) {
+                      left++;
+                  } else {
+                      right--;
+                  }
+              }
+              
+              return null;
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      using namespace std;
+      
+      vector<int> twoSumSorted(vector<int>& arr, int target) {
+          // Find two numbers that sum to target in sorted array
+          int left = 0, right = arr.size() - 1;
+          
+          while (left < right) {
+              int currentSum = arr[left] + arr[right];
+              
+              if (currentSum == target) {
+                  return {arr[left], arr[right]};
+              } else if (currentSum < target) {
+                  left++;
+              } else {
+                  right--;
+              }
+          }
+          
+          return {};
+      }
+    
+    php: |
+      <?php
+      function twoSumSorted($arr, $target) {
+          // Find two numbers that sum to target in sorted array
+          $left = 0;
+          $right = count($arr) - 1;
+          
+          while ($left < $right) {
+              $currentSum = $arr[$left] + $arr[$right];
+              
+              if ($currentSum == $target) {
+                  return [$arr[$left], $arr[$right]];
+              } elseif ($currentSum < $target) {
+                  $left++;
+              } else {
+                  $right--;
+              }
+          }
+          
+          return null;
+      }
+      ?>
+
+binary_search:
+  name: "Binary Search"
+  description: "Search for target in sorted array"
+  languages:
+    python: |
+      def binary_search(arr, target):
+          """Search for target in sorted array"""
+          left, right = 0, len(arr) - 1
+          
+          while left <= right:
+              mid = left + (right - left) // 2
+              
+              if arr[mid] == target:
+                  return mid
+              elif arr[mid] < target:
+                  left = mid + 1
+              else:
+                  right = mid - 1
+          
+          return -1
+    
+    javascript: |
+      function binarySearch(arr, target) {
+        // Search for target in sorted array
+        let left = 0, right = arr.length - 1;
+        
+        while (left <= right) {
+          const mid = Math.floor(left + (right - left) / 2);
+          
+          if (arr[mid] === target) {
+            return mid;
+          } else if (arr[mid] < target) {
+            left = mid + 1;
+          } else {
+            right = mid - 1;
+          }
+        }
+        
+        return -1;
+      }
+    
+    typescript: |
+      function binarySearch(arr: number[], target: number): number {
+        // Search for target in sorted array
+        let left = 0, right = arr.length - 1;
+        
+        while (left <= right) {
+          const mid = Math.floor(left + (right - left) / 2);
+          
+          if (arr[mid] === target) {
+            return mid;
+          } else if (arr[mid] < target) {
+            left = mid + 1;
+          } else {
+            right = mid - 1;
+          }
+        }
+        
+        return -1;
+      }
+    
+    java: |
+      public class BinarySearch {
+          public static int binarySearch(int[] arr, int target) {
+              // Search for target in sorted array
+              int left = 0, right = arr.length - 1;
+              
+              while (left <= right) {
+                  int mid = left + (right - left) / 2;
+                  
+                  if (arr[mid] == target) {
+                      return mid;
+                  } else if (arr[mid] < target) {
+                      left = mid + 1;
+                  } else {
+                      right = mid - 1;
+                  }
+              }
+              
+              return -1;
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      using namespace std;
+      
+      int binarySearch(vector<int>& arr, int target) {
+          // Search for target in sorted array
+          int left = 0, right = arr.size() - 1;
+          
+          while (left <= right) {
+              int mid = left + (right - left) / 2;
+              
+              if (arr[mid] == target) {
+                  return mid;
+              } else if (arr[mid] < target) {
+                  left = mid + 1;
+              } else {
+                  right = mid - 1;
+              }
+          }
+          
+          return -1;
+      }
+    
+    php: |
+      <?php
+      function binarySearch($arr, $target) {
+          // Search for target in sorted array
+          $left = 0;
+          $right = count($arr) - 1;
+          
+          while ($left <= $right) {
+              $mid = $left + intval(($right - $left) / 2);
+              
+              if ($arr[$mid] == $target) {
+                  return $mid;
+              } elseif ($arr[$mid] < $target) {
+                  $left = $mid + 1;
+              } else {
+                  $right = $mid - 1;
+              }
+          }
+          
+          return -1;
+      }
+      ?>
