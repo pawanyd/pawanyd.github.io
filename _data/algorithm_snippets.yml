@@ -3759,3 +3759,879 @@ lru_cache:
           }
       }
       ?>
+
+# ============================================
+# BINARY SEARCH TREE ALGORITHMS
+# ============================================
+
+bst_search:
+  name: "BST Search"
+  description: "Search for a value in Binary Search Tree"
+  time_complexity: "O(log n) average, O(n) worst case"
+  space_complexity: "O(log n) recursion stack"
+  languages:
+    python: |
+      class TreeNode:
+          def __init__(self, val=0, left=None, right=None):
+              self.val = val
+              self.left = left
+              self.right = right
+      
+      def search_bst(root, val):
+          """Search for value in BST"""
+          if not root or root.val == val:
+              return root
+          
+          if val < root.val:
+              return search_bst(root.left, val)
+          else:
+              return search_bst(root.right, val)
+    
+    javascript: |
+      class TreeNode {
+        constructor(val = 0, left = null, right = null) {
+          this.val = val;
+          this.left = left;
+          this.right = right;
+        }
+      }
+      
+      function searchBST(root, val) {
+        if (!root || root.val === val) {
+          return root;
+        }
+        
+        if (val < root.val) {
+          return searchBST(root.left, val);
+        } else {
+          return searchBST(root.right, val);
+        }
+      }
+    
+    typescript: |
+      class TreeNode {
+        val: number;
+        left: TreeNode | null;
+        right: TreeNode | null;
+        
+        constructor(val: number = 0, left: TreeNode | null = null, right: TreeNode | null = null) {
+          this.val = val;
+          this.left = left;
+          this.right = right;
+        }
+      }
+      
+      function searchBST(root: TreeNode | null, val: number): TreeNode | null {
+        if (!root || root.val === val) {
+          return root;
+        }
+        
+        if (val < root.val) {
+          return searchBST(root.left, val);
+        } else {
+          return searchBST(root.right, val);
+        }
+      }
+    
+    java: |
+      class TreeNode {
+          int val;
+          TreeNode left, right;
+          TreeNode(int val) { this.val = val; }
+      }
+      
+      public class BSTSearch {
+          public static TreeNode searchBST(TreeNode root, int val) {
+              if (root == null || root.val == val) {
+                  return root;
+              }
+              
+              if (val < root.val) {
+                  return searchBST(root.left, val);
+              } else {
+                  return searchBST(root.right, val);
+              }
+          }
+      }
+    
+    cpp: |
+      struct TreeNode {
+          int val;
+          TreeNode* left;
+          TreeNode* right;
+          TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+      };
+      
+      TreeNode* searchBST(TreeNode* root, int val) {
+          if (!root || root->val == val) {
+              return root;
+          }
+          
+          if (val < root->val) {
+              return searchBST(root->left, val);
+          } else {
+              return searchBST(root->right, val);
+          }
+      }
+    
+    php: |
+      <?php
+      class TreeNode {
+          public $val;
+          public $left;
+          public $right;
+          function __construct($val = 0, $left = null, $right = null) {
+              $this->val = $val;
+              $this->left = $left;
+              $this->right = $right;
+          }
+      }
+      
+      function searchBST($root, $val) {
+          if ($root === null || $root->val === $val) {
+              return $root;
+          }
+          
+          if ($val < $root->val) {
+              return searchBST($root->left, $val);
+          } else {
+              return searchBST($root->right, $val);
+          }
+      }
+      ?>
+
+bst_insert:
+  name: "BST Insert"
+  description: "Insert a value into Binary Search Tree"
+  time_complexity: "O(log n) average, O(n) worst case"
+  space_complexity: "O(log n) recursion stack"
+  languages:
+    python: |
+      def insert_bst(root, val):
+          """Insert value into BST"""
+          if not root:
+              return TreeNode(val)
+          
+          if val < root.val:
+              root.left = insert_bst(root.left, val)
+          elif val > root.val:
+              root.right = insert_bst(root.right, val)
+          
+          return root
+    
+    javascript: |
+      function insertIntoBST(root, val) {
+        if (!root) {
+          return new TreeNode(val);
+        }
+        
+        if (val < root.val) {
+          root.left = insertIntoBST(root.left, val);
+        } else if (val > root.val) {
+          root.right = insertIntoBST(root.right, val);
+        }
+        
+        return root;
+      }
+    
+    typescript: |
+      function insertIntoBST(root: TreeNode | null, val: number): TreeNode {
+        if (!root) {
+          return new TreeNode(val);
+        }
+        
+        if (val < root.val) {
+          root.left = insertIntoBST(root.left, val);
+        } else if (val > root.val) {
+          root.right = insertIntoBST(root.right, val);
+        }
+        
+        return root;
+      }
+    
+    java: |
+      public class BSTInsert {
+          public static TreeNode insertIntoBST(TreeNode root, int val) {
+              if (root == null) {
+                  return new TreeNode(val);
+              }
+              
+              if (val < root.val) {
+                  root.left = insertIntoBST(root.left, val);
+              } else if (val > root.val) {
+                  root.right = insertIntoBST(root.right, val);
+              }
+              
+              return root;
+          }
+      }
+    
+    cpp: |
+      TreeNode* insertIntoBST(TreeNode* root, int val) {
+          if (!root) {
+              return new TreeNode(val);
+          }
+          
+          if (val < root->val) {
+              root->left = insertIntoBST(root->left, val);
+          } else if (val > root->val) {
+              root->right = insertIntoBST(root->right, val);
+          }
+          
+          return root;
+      }
+    
+    php: |
+      <?php
+      function insertIntoBST($root, $val) {
+          if ($root === null) {
+              return new TreeNode($val);
+          }
+          
+          if ($val < $root->val) {
+              $root->left = insertIntoBST($root->left, $val);
+          } elseif ($val > $root->val) {
+              $root->right = insertIntoBST($root->right, $val);
+          }
+          
+          return $root;
+      }
+      ?>
+
+bst_delete:
+  name: "BST Delete"
+  description: "Delete a value from Binary Search Tree"
+  time_complexity: "O(log n) average, O(n) worst case"
+  space_complexity: "O(log n) recursion stack"
+  languages:
+    python: |
+      def delete_bst(root, val):
+          """Delete value from BST"""
+          if not root:
+              return root
+          
+          if val < root.val:
+              root.left = delete_bst(root.left, val)
+          elif val > root.val:
+              root.right = delete_bst(root.right, val)
+          else:
+              # Node to delete found
+              if not root.left:
+                  return root.right
+              elif not root.right:
+                  return root.left
+              
+              # Node has two children - find inorder successor
+              min_node = find_min(root.right)
+              root.val = min_node.val
+              root.right = delete_bst(root.right, min_node.val)
+          
+          return root
+      
+      def find_min(root):
+          """Find minimum value node in subtree"""
+          while root.left:
+              root = root.left
+          return root
+    
+    javascript: |
+      function deleteNode(root, val) {
+        if (!root) return root;
+        
+        if (val < root.val) {
+          root.left = deleteNode(root.left, val);
+        } else if (val > root.val) {
+          root.right = deleteNode(root.right, val);
+        } else {
+          // Node to delete found
+          if (!root.left) {
+            return root.right;
+          } else if (!root.right) {
+            return root.left;
+          }
+          
+          // Node has two children
+          const minNode = findMin(root.right);
+          root.val = minNode.val;
+          root.right = deleteNode(root.right, minNode.val);
+        }
+        
+        return root;
+      }
+      
+      function findMin(root) {
+        while (root.left) {
+          root = root.left;
+        }
+        return root;
+      }
+    
+    typescript: |
+      function deleteNode(root: TreeNode | null, val: number): TreeNode | null {
+        if (!root) return root;
+        
+        if (val < root.val) {
+          root.left = deleteNode(root.left, val);
+        } else if (val > root.val) {
+          root.right = deleteNode(root.right, val);
+        } else {
+          // Node to delete found
+          if (!root.left) {
+            return root.right;
+          } else if (!root.right) {
+            return root.left;
+          }
+          
+          // Node has two children
+          const minNode = findMin(root.right);
+          root.val = minNode.val;
+          root.right = deleteNode(root.right, minNode.val);
+        }
+        
+        return root;
+      }
+      
+      function findMin(root: TreeNode): TreeNode {
+        while (root.left) {
+          root = root.left;
+        }
+        return root;
+      }
+    
+    java: |
+      public class BSTDelete {
+          public static TreeNode deleteNode(TreeNode root, int val) {
+              if (root == null) return root;
+              
+              if (val < root.val) {
+                  root.left = deleteNode(root.left, val);
+              } else if (val > root.val) {
+                  root.right = deleteNode(root.right, val);
+              } else {
+                  // Node to delete found
+                  if (root.left == null) {
+                      return root.right;
+                  } else if (root.right == null) {
+                      return root.left;
+                  }
+                  
+                  // Node has two children
+                  TreeNode minNode = findMin(root.right);
+                  root.val = minNode.val;
+                  root.right = deleteNode(root.right, minNode.val);
+              }
+              
+              return root;
+          }
+          
+          private static TreeNode findMin(TreeNode root) {
+              while (root.left != null) {
+                  root = root.left;
+              }
+              return root;
+          }
+      }
+    
+    cpp: |
+      TreeNode* findMin(TreeNode* root) {
+          while (root->left) {
+              root = root->left;
+          }
+          return root;
+      }
+      
+      TreeNode* deleteNode(TreeNode* root, int val) {
+          if (!root) return root;
+          
+          if (val < root->val) {
+              root->left = deleteNode(root->left, val);
+          } else if (val > root->val) {
+              root->right = deleteNode(root->right, val);
+          } else {
+              // Node to delete found
+              if (!root->left) {
+                  TreeNode* temp = root->right;
+                  delete root;
+                  return temp;
+              } else if (!root->right) {
+                  TreeNode* temp = root->left;
+                  delete root;
+                  return temp;
+              }
+              
+              // Node has two children
+              TreeNode* minNode = findMin(root->right);
+              root->val = minNode->val;
+              root->right = deleteNode(root->right, minNode->val);
+          }
+          
+          return root;
+      }
+    
+    php: |
+      <?php
+      function findMin($root) {
+          while ($root->left !== null) {
+              $root = $root->left;
+          }
+          return $root;
+      }
+      
+      function deleteNode($root, $val) {
+          if ($root === null) return $root;
+          
+          if ($val < $root->val) {
+              $root->left = deleteNode($root->left, $val);
+          } elseif ($val > $root->val) {
+              $root->right = deleteNode($root->right, $val);
+          } else {
+              // Node to delete found
+              if ($root->left === null) {
+                  return $root->right;
+              } elseif ($root->right === null) {
+                  return $root->left;
+              }
+              
+              // Node has two children
+              $minNode = findMin($root->right);
+              $root->val = $minNode->val;
+              $root->right = deleteNode($root->right, $minNode->val);
+          }
+          
+          return $root;
+      }
+      ?>
+
+validate_bst:
+  name: "Validate BST"
+  description: "Check if binary tree is a valid Binary Search Tree"
+  time_complexity: "O(n)"
+  space_complexity: "O(h) where h is tree height"
+  languages:
+    python: |
+      def is_valid_bst(root):
+          """Validate if tree is a valid BST"""
+          def validate(node, min_val, max_val):
+              if not node:
+                  return True
+              
+              if node.val <= min_val or node.val >= max_val:
+                  return False
+              
+              return (validate(node.left, min_val, node.val) and 
+                      validate(node.right, node.val, max_val))
+          
+          return validate(root, float('-inf'), float('inf'))
+    
+    javascript: |
+      function isValidBST(root) {
+        function validate(node, minVal, maxVal) {
+          if (!node) return true;
+          
+          if (node.val <= minVal || node.val >= maxVal) {
+            return false;
+          }
+          
+          return validate(node.left, minVal, node.val) && 
+                 validate(node.right, node.val, maxVal);
+        }
+        
+        return validate(root, -Infinity, Infinity);
+      }
+    
+    typescript: |
+      function isValidBST(root: TreeNode | null): boolean {
+        function validate(node: TreeNode | null, minVal: number, maxVal: number): boolean {
+          if (!node) return true;
+          
+          if (node.val <= minVal || node.val >= maxVal) {
+            return false;
+          }
+          
+          return validate(node.left, minVal, node.val) && 
+                 validate(node.right, node.val, maxVal);
+        }
+        
+        return validate(root, -Infinity, Infinity);
+      }
+    
+    java: |
+      public class ValidateBST {
+          public static boolean isValidBST(TreeNode root) {
+              return validate(root, Long.MIN_VALUE, Long.MAX_VALUE);
+          }
+          
+          private static boolean validate(TreeNode node, long minVal, long maxVal) {
+              if (node == null) return true;
+              
+              if (node.val <= minVal || node.val >= maxVal) {
+                  return false;
+              }
+              
+              return validate(node.left, minVal, node.val) && 
+                     validate(node.right, node.val, maxVal);
+          }
+      }
+    
+    cpp: |
+      bool validate(TreeNode* node, long minVal, long maxVal) {
+          if (!node) return true;
+          
+          if (node->val <= minVal || node->val >= maxVal) {
+              return false;
+          }
+          
+          return validate(node->left, minVal, node->val) && 
+                 validate(node->right, node->val, maxVal);
+      }
+      
+      bool isValidBST(TreeNode* root) {
+          return validate(root, LONG_MIN, LONG_MAX);
+      }
+    
+    php: |
+      <?php
+      function validate($node, $minVal, $maxVal) {
+          if ($node === null) return true;
+          
+          if ($node->val <= $minVal || $node->val >= $maxVal) {
+              return false;
+          }
+          
+          return validate($node->left, $minVal, $node->val) && 
+                 validate($node->right, $node->val, $maxVal);
+      }
+      
+      function isValidBST($root) {
+          return validate($root, PHP_INT_MIN, PHP_INT_MAX);
+      }
+      ?>
+tree_height:
+  name: "Tree Height Calculation"
+  description: "Calculate the height of a binary tree"
+  time_complexity: "O(n)"
+  space_complexity: "O(h) where h is tree height"
+  languages:
+    python: |
+      def tree_height(root):
+          """Calculate height of binary tree"""
+          if not root:
+              return -1  # Height of empty tree is -1
+          
+          left_height = tree_height(root.left)
+          right_height = tree_height(root.right)
+          
+          return 1 + max(left_height, right_height)
+    
+    javascript: |
+      function treeHeight(root) {
+        if (!root) return -1;
+        
+        const leftHeight = treeHeight(root.left);
+        const rightHeight = treeHeight(root.right);
+        
+        return 1 + Math.max(leftHeight, rightHeight);
+      }
+    
+    typescript: |
+      function treeHeight(root: TreeNode | null): number {
+        if (!root) return -1;
+        
+        const leftHeight = treeHeight(root.left);
+        const rightHeight = treeHeight(root.right);
+        
+        return 1 + Math.max(leftHeight, rightHeight);
+      }
+    
+    java: |
+      public class TreeHeight {
+          public static int treeHeight(TreeNode root) {
+              if (root == null) return -1;
+              
+              int leftHeight = treeHeight(root.left);
+              int rightHeight = treeHeight(root.right);
+              
+              return 1 + Math.max(leftHeight, rightHeight);
+          }
+      }
+    
+    cpp: |
+      int treeHeight(TreeNode* root) {
+          if (!root) return -1;
+          
+          int leftHeight = treeHeight(root->left);
+          int rightHeight = treeHeight(root->right);
+          
+          return 1 + max(leftHeight, rightHeight);
+      }
+    
+    php: |
+      <?php
+      function treeHeight($root) {
+          if ($root === null) return -1;
+          
+          $leftHeight = treeHeight($root->left);
+          $rightHeight = treeHeight($root->right);
+          
+          return 1 + max($leftHeight, $rightHeight);
+      }
+      ?>
+
+trie_autocomplete:
+  name: "Trie Autocomplete"
+  description: "Build autocomplete system using Trie (Prefix Tree)"
+  time_complexity: "O(m) insert, O(m + k) search where m is word length, k is results"
+  space_complexity: "O(ALPHABET_SIZE * N * M) where N is number of words"
+  languages:
+    python: |
+      class TrieNode:
+          def __init__(self):
+              self.children = {}
+              self.is_end_word = False
+              self.suggestions = []
+      
+      class Trie:
+          def __init__(self):
+              self.root = TrieNode()
+          
+          def insert(self, word):
+              node = self.root
+              for char in word:
+                  if char not in node.children:
+                      node.children[char] = TrieNode()
+                  node = node.children[char]
+                  node.suggestions.append(word)
+                  node.suggestions.sort()
+                  if len(node.suggestions) > 3:  # Keep top 3
+                      node.suggestions.pop()
+              node.is_end_word = True
+          
+          def autocomplete(self, prefix):
+              node = self.root
+              for char in prefix:
+                  if char not in node.children:
+                      return []
+                  node = node.children[char]
+              return node.suggestions
+    
+    javascript: |
+      class TrieNode {
+        constructor() {
+          this.children = {};
+          this.isEndWord = false;
+          this.suggestions = [];
+        }
+      }
+      
+      class Trie {
+        constructor() {
+          this.root = new TrieNode();
+        }
+        
+        insert(word) {
+          let node = this.root;
+          for (const char of word) {
+            if (!node.children[char]) {
+              node.children[char] = new TrieNode();
+            }
+            node = node.children[char];
+            node.suggestions.push(word);
+            node.suggestions.sort();
+            if (node.suggestions.length > 3) {
+              node.suggestions.pop();
+            }
+          }
+          node.isEndWord = true;
+        }
+        
+        autocomplete(prefix) {
+          let node = this.root;
+          for (const char of prefix) {
+            if (!node.children[char]) {
+              return [];
+            }
+            node = node.children[char];
+          }
+          return node.suggestions;
+        }
+      }
+    
+    typescript: |
+      class TrieNode {
+        children: { [key: string]: TrieNode } = {};
+        isEndWord: boolean = false;
+        suggestions: string[] = [];
+      }
+      
+      class Trie {
+        private root: TrieNode;
+        
+        constructor() {
+          this.root = new TrieNode();
+        }
+        
+        insert(word: string): void {
+          let node = this.root;
+          for (const char of word) {
+            if (!node.children[char]) {
+              node.children[char] = new TrieNode();
+            }
+            node = node.children[char];
+            node.suggestions.push(word);
+            node.suggestions.sort();
+            if (node.suggestions.length > 3) {
+              node.suggestions.pop();
+            }
+          }
+          node.isEndWord = true;
+        }
+        
+        autocomplete(prefix: string): string[] {
+          let node = this.root;
+          for (const char of prefix) {
+            if (!node.children[char]) {
+              return [];
+            }
+            node = node.children[char];
+          }
+          return node.suggestions;
+        }
+      }
+    
+    java: |
+      import java.util.*;
+      
+      class TrieNode {
+          Map<Character, TrieNode> children = new HashMap<>();
+          boolean isEndWord = false;
+          List<String> suggestions = new ArrayList<>();
+      }
+      
+      public class Trie {
+          private TrieNode root;
+          
+          public Trie() {
+              root = new TrieNode();
+          }
+          
+          public void insert(String word) {
+              TrieNode node = root;
+              for (char c : word.toCharArray()) {
+                  node.children.putIfAbsent(c, new TrieNode());
+                  node = node.children.get(c);
+                  node.suggestions.add(word);
+                  Collections.sort(node.suggestions);
+                  if (node.suggestions.size() > 3) {
+                      node.suggestions.remove(node.suggestions.size() - 1);
+                  }
+              }
+              node.isEndWord = true;
+          }
+          
+          public List<String> autocomplete(String prefix) {
+              TrieNode node = root;
+              for (char c : prefix.toCharArray()) {
+                  if (!node.children.containsKey(c)) {
+                      return new ArrayList<>();
+                  }
+                  node = node.children.get(c);
+              }
+              return node.suggestions;
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      #include <string>
+      #include <unordered_map>
+      #include <algorithm>
+      using namespace std;
+      
+      struct TrieNode {
+          unordered_map<char, TrieNode*> children;
+          bool isEndWord = false;
+          vector<string> suggestions;
+      };
+      
+      class Trie {
+      private:
+          TrieNode* root;
+          
+      public:
+          Trie() {
+              root = new TrieNode();
+          }
+          
+          void insert(string word) {
+              TrieNode* node = root;
+              for (char c : word) {
+                  if (node->children.find(c) == node->children.end()) {
+                      node->children[c] = new TrieNode();
+                  }
+                  node = node->children[c];
+                  node->suggestions.push_back(word);
+                  sort(node->suggestions.begin(), node->suggestions.end());
+                  if (node->suggestions.size() > 3) {
+                      node->suggestions.pop_back();
+                  }
+              }
+              node->isEndWord = true;
+          }
+          
+          vector<string> autocomplete(string prefix) {
+              TrieNode* node = root;
+              for (char c : prefix) {
+                  if (node->children.find(c) == node->children.end()) {
+                      return {};
+                  }
+                  node = node->children[c];
+              }
+              return node->suggestions;
+          }
+      };
+    
+    php: |
+      <?php
+      class TrieNode {
+          public $children = [];
+          public $isEndWord = false;
+          public $suggestions = [];
+      }
+      
+      class Trie {
+          private $root;
+          
+          public function __construct() {
+              $this->root = new TrieNode();
+          }
+          
+          public function insert($word) {
+              $node = $this->root;
+              for ($i = 0; $i < strlen($word); $i++) {
+                  $char = $word[$i];
+                  if (!isset($node->children[$char])) {
+                      $node->children[$char] = new TrieNode();
+                  }
+                  $node = $node->children[$char];
+                  $node->suggestions[] = $word;
+                  sort($node->suggestions);
+                  if (count($node->suggestions) > 3) {
+                      array_pop($node->suggestions);
+                  }
+              }
+              $node->isEndWord = true;
+          }
+          
+          public function autocomplete($prefix) {
+              $node = $this->root;
+              for ($i = 0; $i < strlen($prefix); $i++) {
+                  $char = $prefix[$i];
+                  if (!isset($node->children[$char])) {
+                      return [];
+                  }
+                  $node = $node->children[$char];
+              }
+              return $node->suggestions;
+          }
+      }
+      ?>

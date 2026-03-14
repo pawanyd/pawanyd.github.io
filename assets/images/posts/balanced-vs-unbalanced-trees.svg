@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="balancedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="unbalancedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="22" font-weight="bold">Balanced vs Unbalanced Trees: Performance Impact</text>
+  
+  <!-- Balanced Tree -->
+  <g transform="translate(100, 80)">
+    <text x="150" y="20" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="18" font-weight="bold">Balanced Tree</text>
+    
+    <!-- Tree structure -->
+    <circle cx="150" cy="50" r="18" fill="url(#balancedGrad)" stroke="#1e293b" stroke-width="2"/>
+    <text x="150" y="57" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">4</text>
+    
+    <line x1="135" y1="65" x2="100" y2="95" stroke="#64748b" stroke-width="2"/>
+    <circle cx="100" cy="100" r="18" fill="url(#balancedGrad)" stroke="#1e293b" stroke-width="2"/>
+    <text x="100" y="107" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">2</text>
+    
+    <line x1="165" y1="65" x2="200" y2="95" stroke="#64748b" stroke-width="2"/>
+    <circle cx="200" cy="100" r="18" fill="url(#balancedGrad)" stroke="#1e293b" stroke-width="2"/>
+    <text x="200" y="107" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">6</text>
+    
+    <line x1="85" y1="115" x2="60" y2="145" stroke="#64748b" stroke-width="2"/>
+    <circle cx="60" cy="150" r="18" fill="url(#balancedGrad)" stroke="#1e293b" stroke-width="2"/>
+    <text x="60" y="157" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">1</text>
+    
+    <line x1="115" y1="115" x2="140" y2="145" stroke="#64748b" stroke-width="2"/>
+    <circle cx="140" cy="150" r="18" fill="url(#balancedGrad)" stroke="#1e293b" stroke-width="2"/>
+    <text x="140" y="157" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">3</text>
+    
+    <line x1="185" y1="115" x2="160" y2="145" stroke="#64748b" stroke-width="2"/>
+    <circle cx="160" cy="150" r="18" fill="url(#balancedGrad)" stroke="#1e293b" stroke-width="2"/>
+    <text x="160" y="157" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">5</text>
+    
+    <line x1="215" y1="115" x2="240" y2="145" stroke="#64748b" stroke-width="2"/>
+    <circle cx="240" cy="150" r="18" fill="url(#balancedGrad)" stroke="#1e293b" stroke-width="2"/>
+    <text x="240" y="157" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">7</text>
+    
+    <!-- Performance metrics -->
+    <rect x="50" y="180" width="200" height="80" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="150" y="200" text-anchor="middle" fill="#15803d" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Performance</text>
+    <text x="150" y="220" text-anchor="middle" fill="#166534" font-family="Arial, sans-serif" font-size="12">Height: 3</text>
+    <text x="150" y="235" text-anchor="middle" fill="#166534" font-family="Arial, sans-serif" font-size="12">Search: O(log n) = 3 steps max</text>
+    <text x="150" y="250" text-anchor="middle" fill="#166534" font-family="Arial, sans-serif" font-size="12">Consistent performance ✓</text>
+  </g>
+  
+  <!-- Unbalanced Tree -->
+  <g transform="translate(500, 80)">
+    <text x="150" y="20" text-anchor="middle" fill="#dc2626" font-family="Arial, sans-serif" font-size="18" font-weight="bold">Unbalanced Tree (Degenerate)</text>
+    
+    <!-- Tree structure (linked list) -->
+    <circle cx="50" cy="50" r="18" fill="url(#unbalancedGrad)" stroke="#1e293b" stroke-width="2"/>
+    <text x="50" y="57" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">1</text>
+    
+    <line x1="65" y1="65" x2="80" y2="80" stroke="#64748b" stroke-width="2"/>
+    <circle cx="80" cy="85" r="18" fill="url(#unbalancedGrad)" stroke="#1e293b" stroke-width="2"/>
+    <text x="80" y="92" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">2</text>
+    
+    <line x1="95" y1="100" x2="110" y2="115" stroke="#64748b" stroke-width="2"/>
+    <circle cx="110" cy="120" r="18" fill="url(#unbalancedGrad)" stroke="#1e293b" stroke-width="2"/>
+    <text x="110" y="127" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">3</text>
+    
+    <line x1="125" y1="135" x2="140" y2="150" stroke="#64748b" stroke-width="2"/>
+    <circle cx="140" cy="155" r="18" fill="url(#unbalancedGrad)" stroke="#1e293b" stroke-width="2"/>
+    <text x="140" y="162" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">4</text>
+    
+    <line x1="155" y1="170" x2="170" y2="185" stroke="#64748b" stroke-width="2"/>
+    <circle cx="170" cy="190" r="18" fill="url(#unbalancedGrad)" stroke="#1e293b" stroke-width="2"/>
+    <text x="170" y="197" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">5</text>
+    
+    <line x1="185" y1="205" x2="200" y2="220" stroke="#64748b" stroke-width="2"/>
+    <circle cx="200" cy="225" r="18" fill="url(#unbalancedGrad)" stroke="#1e293b" stroke-width="2"/>
+    <text x="200" y="232" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">6</text>
+    
+    <line x1="215" y1="240" x2="230" y2="255" stroke="#64748b" stroke-width="2"/>
+    <circle cx="230" cy="260" r="18" fill="url(#unbalancedGrad)" stroke="#1e293b" stroke-width="2"/>
+    <text x="230" y="267" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">7</text>
+    
+    <!-- Performance metrics -->
+    <rect x="50" y="290" width="200" height="80" rx="8" fill="#fecaca" stroke="#ef4444" stroke-width="2"/>
+    <text x="150" y="310" text-anchor="middle" fill="#dc2626" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Performance</text>
+    <text x="150" y="330" text-anchor="middle" fill="#b91c1c" font-family="Arial, sans-serif" font-size="12">Height: 7</text>
+    <text x="150" y="345" text-anchor="middle" fill="#b91c1c" font-family="Arial, sans-serif" font-size="12">Search: O(n) = 7 steps max</text>
+    <text x="150" y="360" text-anchor="middle" fill="#b91c1c" font-family="Arial, sans-serif" font-size="12">Degraded to linked list ✗</text>
+  </g>
+  
+  <!-- Comparison Table -->
+  <g transform="translate(150, 400)">
+    <rect x="0" y="0" width="600" height="80" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="300" y="25" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Performance Comparison (7 nodes)</text>
+    
+    <g transform="translate(50, 35)">
+      <text x="0" y="15" fill="#475569" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Operation</text>
+      <text x="150" y="15" fill="#059669" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Balanced Tree</text>
+      <text x="350" y="15" fill="#dc2626" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Unbalanced Tree</text>
+      
+      <text x="0" y="35" fill="#64748b" font-family="Arial, sans-serif" font-size="12">Search worst case:</text>
+      <text x="150" y="35" fill="#059669" font-family="Arial, sans-serif" font-size="12">3 comparisons</text>
+      <text x="350" y="35" fill="#dc2626" font-family="Arial, sans-serif" font-size="12">7 comparisons</text>
+    </g>
+    
+    <!-- Scale impact -->
+    <text x="300" y="95" text-anchor="middle" fill="#7c3aed" font-family="Arial, sans-serif" font-size="14" font-weight="bold">At scale (1M nodes): Balanced = 20 steps, Unbalanced = 1M steps!</text>
+  </g>
+</svg>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="20" font-weight="bold">Tree Terminology and Structure</text>
+  
+  <!-- Main Tree -->
+  <g transform="translate(200, 80)">
+    <!-- Root -->
+    <circle cx="200" cy="40" r="20" fill="url(#nodeGrad)" stroke="#1e293b" stroke-width="2"/>
+    <text x="200" y="47" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">A</text>
+    <text x="200" y="15" text-anchor="middle" fill="#dc2626" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Root</text>
+    
+    <!-- Level 2 -->
+    <line x1="180" y1="55" x2="120" y2="95" stroke="#64748b" stroke-width="2"/>
+    <circle cx="120" cy="100" r="20" fill="url(#nodeGrad)" stroke="#1e293b" stroke-width="2"/>
+    <text x="120" y="107" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">B</text>
+    
+    <line x1="220" y1="55" x2="280" y2="95" stroke="#64748b" stroke-width="2"/>
+    <circle cx="280" cy="100" r="20" fill="url(#nodeGrad)" stroke="#1e293b" stroke-width="2"/>
+    <text x="280" y="107" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">C</text>
+    
+    <!-- Level 3 -->
+    <line x1="100" y1="115" x2="60" y2="155" stroke="#64748b" stroke-width="2"/>
+    <circle cx="60" cy="160" r="20" fill="url(#nodeGrad)" stroke="#1e293b" stroke-width="2"/>
+    <text x="60" y="167" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">D</text>
+    
+    <line x1="140" y1="115" x2="180" y2="155" stroke="#64748b" stroke-width="2"/>
+    <circle cx="180" cy="160" r="20" fill="url(#nodeGrad)" stroke="#1e293b" stroke-width="2"/>
+    <text x="180" y="167" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">E</text>
+    
+    <line x1="260" y1="115" x2="220" y2="155" stroke="#64748b" stroke-width="2"/>
+    <circle cx="220" cy="160" r="20" fill="url(#nodeGrad)" stroke="#1e293b" stroke-width="2"/>
+    <text x="220" y="167" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">F</text>
+    
+    <line x1="300" y1="115" x2="340" y2="155" stroke="#64748b" stroke-width="2"/>
+    <circle cx="340" cy="160" r="20" fill="url(#nodeGrad)" stroke="#1e293b" stroke-width="2"/>
+    <text x="340" y="167" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">G</text>
+    
+    <!-- Level 4 (Leaves) -->
+    <line x1="40" y1="175" x2="20" y2="215" stroke="#64748b" stroke-width="2"/>
+    <circle cx="20" cy="220" r="20" fill="url(#nodeGrad)" stroke="#1e293b" stroke-width="2"/>
+    <text x="20" y="227" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">H</text>
+    <text x="20" y="250" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Leaf</text>
+    
+    <line x1="80" y1="175" x2="100" y2="215" stroke="#64748b" stroke-width="2"/>
+    <circle cx="100" cy="220" r="20" fill="url(#nodeGrad)" stroke="#1e293b" stroke-width="2"/>
+    <text x="100" y="227" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">I</text>
+    <text x="100" y="250" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Leaf</text>
+  </g>
+  
+  <!-- Terminology Box -->
+  <g transform="translate(50, 320)">
+    <rect x="0" y="0" width="700" height="150" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="20" y="25" fill="#1e293b" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Key Terminology:</text>
+    
+    <g transform="translate(20, 40)">
+      <!-- Column 1 -->
+      <text x="0" y="20" fill="#475569" font-family="Arial, sans-serif" font-size="13"><tspan font-weight="bold" fill="#dc2626">Root:</tspan> Top node (A) - every tree has exactly one</text>
+      <text x="0" y="40" fill="#475569" font-family="Arial, sans-serif" font-size="13"><tspan font-weight="bold" fill="#3b82f6">Parent:</tspan> Node with children (A is parent of B and C)</text>
+      <text x="0" y="60" fill="#475569" font-family="Arial, sans-serif" font-size="13"><tspan font-weight="bold" fill="#8b5cf6">Child:</tspan> Node connected below another (B and C are children of A)</text>
+      
+      <!-- Column 2 -->
+      <text x="350" y="20" fill="#475569" font-family="Arial, sans-serif" font-size="13"><tspan font-weight="bold" fill="#059669">Leaf:</tspan> Node with no children (H, I, E, F, G)</text>
+      <text x="350" y="40" fill="#475569" font-family="Arial, sans-serif" font-size="13"><tspan font-weight="bold" fill="#f59e0b">Height:</tspan> Longest path from root to leaf (3 levels)</text>
+      <text x="350" y="60" fill="#475569" font-family="Arial, sans-serif" font-size="13"><tspan font-weight="bold" fill="#ef4444">Depth:</tspan> Distance from root (H is at depth 3)</text>
+    </g>
+    
+    <!-- Visual indicators -->
+    <g transform="translate(20, 110)">
+      <text x="0" y="15" fill="#64748b" font-family="Arial, sans-serif" font-size="12" font-style="italic">Subtree: Any node and all its descendants form a subtree</text>
+      <text x="350" y="15" fill="#64748b" font-family="Arial, sans-serif" font-size="12" font-style="italic">Binary Tree: Each node has at most 2 children (left and right)</text>
+    </g>
+  </g>
+  
+  <!-- Arrows and labels -->
+  <g transform="translate(200, 80)">
+    <!-- Parent-child relationship -->
+    <path d="M 150 85 Q 165 75 180 85" stroke="#8b5cf6" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+    <text x="165" y="75" text-anchor="middle" fill="#8b5cf6" font-family="Arial, sans-serif" font-size="10">parent-child</text>
+    
+    <!-- Height indicator -->
+    <line x1="380" y1="40" x2="380" y2="220" stroke="#f59e0b" stroke-width="2" stroke-dasharray="3,3"/>
+    <text x="390" y="130" fill="#f59e0b" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Height = 3</text>
+  </g>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#8b5cf6"/>
+    </marker>
+  </defs>
+</svg>

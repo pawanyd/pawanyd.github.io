@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="patternGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:0.3" />
+    </linearGradient>
+    <linearGradient id="patternGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:0.3" />
+    </linearGradient>
+    <linearGradient id="patternGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#ef4444;stop-opacity:0.3" />
+    </linearGradient>
+    <linearGradient id="patternGradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.3" />
+    </linearGradient>
+    <linearGradient id="patternGradient5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0.3" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#f8fafc"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="80" fill="url(#headerGradient)"/>
+  <text x="600" y="45" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="28" font-weight="bold">
+    Common Tree Interview Patterns
+  </text>
+  
+  <!-- Pattern 1: Tree Validation -->
+  <g transform="translate(50, 120)">
+    <rect x="0" y="0" width="220" height="140" rx="12" fill="url(#patternGradient1)" stroke="#10b981" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" fill="#065f46" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Pattern 1: Validation
+    </text>
+    <text x="110" y="45" text-anchor="middle" fill="#047857" font-family="Arial, sans-serif" font-size="12">
+      Check if tree is valid BST
+    </text>
+    
+    <!-- Mini BST example -->
+    <circle cx="110" cy="70" r="12" fill="#10b981" stroke="white" stroke-width="2"/>
+    <text x="110" y="75" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">5</text>
+    
+    <circle cx="85" cy="100" r="10" fill="#10b981" stroke="white" stroke-width="2"/>
+    <text x="85" y="104" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">3</text>
+    
+    <circle cx="135" cy="100" r="10" fill="#10b981" stroke="white" stroke-width="2"/>
+    <text x="135" y="104" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">7</text>
+    
+    <line x1="110" y1="82" x2="85" y2="90" stroke="#10b981" stroke-width="2"/>
+    <line x1="110" y1="82" x2="135" y2="90" stroke="#10b981" stroke-width="2"/>
+    
+    <text x="110" y="125" text-anchor="middle" fill="#047857" font-family="Arial, sans-serif" font-size="10">
+      Range validation: O(n)
+    </text>
+  </g>
+  
+  <!-- Pattern 2: Lowest Common Ancestor -->
+  <g transform="translate(290, 120)">
+    <rect x="0" y="0" width="220" height="140" rx="12" fill="url(#patternGradient2)" stroke="#f59e0b" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" fill="#92400e" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Pattern 2: LCA
+    </text>
+    <text x="110" y="45" text-anchor="middle" fill="#d97706" font-family="Arial, sans-serif" font-size="12">
+      Find lowest common ancestor
+    </text>
+    
+    <!-- LCA example -->
+    <circle cx="110" cy="70" r="12" fill="#f59e0b" stroke="white" stroke-width="2"/>
+    <text x="110" y="75" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">6</text>
+    
+    <circle cx="85" cy="100" r="10" fill="#f59e0b" stroke="white" stroke-width="2"/>
+    <text x="85" y="104" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">2</text>
+    
+    <circle cx="135" cy="100" r="10" fill="#f59e0b" stroke="white" stroke-width="2"/>
+    <text x="135" y="104" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">8</text>
+    
+    <line x1="110" y1="82" x2="85" y2="90" stroke="#f59e0b" stroke-width="2"/>
+    <line x1="110" y1="82" x2="135" y2="90" stroke="#f59e0b" stroke-width="2"/>
+    
+    <!-- Highlight LCA -->
+    <circle cx="110" cy="70" r="16" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="3,3"/>
+    
+    <text x="110" y="125" text-anchor="middle" fill="#d97706" font-family="Arial, sans-serif" font-size="10">
+      BST property: O(log n)
+    </text>
+  </g>
+  
+  <!-- Pattern 3: Serialization -->
+  <g transform="translate(530, 120)">
+    <rect x="0" y="0" width="220" height="140" rx="12" fill="url(#patternGradient3)" stroke="#ef4444" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" fill="#991b1b" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Pattern 3: Serialization
+    </text>
+    <text x="110" y="45" text-anchor="middle" fill="#dc2626" font-family="Arial, sans-serif" font-size="12">
+      Convert tree to/from string
+    </text>
+    
+    <!-- Serialization example -->
+    <rect x="20" y="60" width="170" height="20" rx="4" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
+    <text x="105" y="74" text-anchor="middle" fill="#dc2626" font-family="Arial, sans-serif" font-size="10">
+      "1,2,null,null,3,4,null,null,5"
+    </text>
+    
+    <text x="105" y="95" text-anchor="middle" fill="#dc2626" font-family="Arial, sans-serif" font-size="12">
+      ↕
+    </text>
+    
+    <!-- Mini tree -->
+    <circle cx="105" cy="110" r="8" fill="#ef4444" stroke="white" stroke-width="1"/>
+    <text x="105" y="113" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8">1</text>
+    
+    <text x="110" y="125" text-anchor="middle" fill="#dc2626" font-family="Arial, sans-serif" font-size="10">
+      Preorder + null markers
+    </text>
+  </g>
+  
+  <!-- Pattern 4: Tree Height -->
+  <g transform="translate(770, 120)">
+    <rect x="0" y="0" width="220" height="140" rx="12" fill="url(#patternGradient4)" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" fill="#581c87" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Pattern 4: Height
+    </text>
+    <text x="110" y="45" text-anchor="middle" fill="#7c3aed" font-family="Arial, sans-serif" font-size="12">
+      Calculate tree height
+    </text>
+    
+    <!-- Height visualization -->
+    <circle cx="110" cy="70" r="10" fill="#8b5cf6" stroke="white" stroke-width="2"/>
+    <text x="110" y="74" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">A</text>
+    
+    <circle cx="90" cy="95" r="8" fill="#8b5cf6" stroke="white" stroke-width="2"/>
+    <text x="90" y="98" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8">B</text>
+    
+    <circle cx="130" cy="95" r="8" fill="#8b5cf6" stroke="white" stroke-width="2"/>
+    <text x="130" y="98" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8">C</text>
+    
+    <line x1="110" y1="80" x2="90" y2="87" stroke="#8b5cf6" stroke-width="2"/>
+    <line x1="110" y1="80" x2="130" y2="87" stroke="#8b5cf6" stroke-width="2"/>
+    
+    <text x="150" y="85" fill="#7c3aed" font-family="Arial, sans-serif" font-size="10">h=2</text>
+    
+    <text x="110" y="125" text-anchor="middle" fill="#7c3aed" font-family="Arial, sans-serif" font-size="10">
+      1 + max(left, right)
+    </text>
+  </g>
+  
+  <!-- Pattern 5: Range Queries -->
+  <g transform="translate(170, 300)">
+    <rect x="0" y="0" width="220" height="140" rx="12" fill="url(#patternGradient5)" stroke="#3b82f6" stroke-width="2"/>
+    <text x="110" y="25" text-anchor="middle" fill="#1e40af" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Pattern 5: Range Query
+    </text>
+    <text x="110" y="45" text-anchor="middle" fill="#2563eb" font-family="Arial, sans-serif" font-size="12">
+      Find values in range [x, y]
+    </text>
+    
+    <!-- Range query example -->
+    <circle cx="110" cy="70" r="12" fill="#3b82f6" stroke="white" stroke-width="2"/>
+    <text x="110" y="75" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">5</text>
+    
+    <circle cx="85" cy="100" r="10" fill="#10b981" stroke="white" stroke-width="2"/>
+    <text x="85" y="104" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">3</text>
+    
+    <circle cx="135" cy="100" r="10" fill="#10b981" stroke="white" stroke-width="2"/>
+    <text x="135" y="104" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">7</text>
+    
+    <line x1="110" y1="82" x2="85" y2="90" stroke="#3b82f6" stroke-width="2"/>
+    <line x1="110" y1="82" x2="135" y2="90" stroke="#3b82f6" stroke-width="2"/>
+    
+    <text x="110" y="125" text-anchor="middle" fill="#2563eb" font-family="Arial, sans-serif" font-size="10">
+      Prune search space
+    </text>
+  </g>
+  
+  <!-- Key Insights -->
+  <g transform="translate(410, 300)">
+    <rect x="0" y="0" width="380" height="140" rx="12" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <text x="190" y="25" text-anchor="middle" fill="#334155" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+      Key Interview Insights
+    </text>
+    
+    <text x="20" y="50" fill="#475569" font-family="Arial, sans-serif" font-size="12">
+      • Always consider tree balance - affects time complexity
+    </text>
+    <text x="20" y="70" fill="#475569" font-family="Arial, sans-serif" font-size="12">
+      • BST property enables efficient pruning strategies
+    </text>
+    <text x="20" y="90" fill="#475569" font-family="Arial, sans-serif" font-size="12">
+      • Recursive solutions often have iterative alternatives
+    </text>
+    <text x="20" y="110" fill="#475569" font-family="Arial, sans-serif" font-size="12">
+      • Edge cases: empty tree, single node, unbalanced tree
+    </text>
+    <text x="20" y="130" fill="#475569" font-family="Arial, sans-serif" font-size="12">
+      • Space complexity: O(h) for recursion stack
+    </text>
+  </g>
+  
+  <!-- Complexity Analysis -->
+  <g transform="translate(50, 480)">
+    <rect x="0" y="0" width="1100" height="280" rx="12" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="550" y="30" text-anchor="middle" fill="#1f2937" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+      Time &amp; Space Complexity Summary
+    </text>
+    
+    <!-- Table Header -->
+    <rect x="20" y="50" width="1060" height="40" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="120" y="75" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Pattern</text>
+    <text x="300" y="75" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Time Complexity</text>
+    <text x="500" y="75" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Space Complexity</text>
+    <text x="750" y="75" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Key Technique</text>
+    <text x="950" y="75" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Best For</text>
+    
+    <!-- Table Rows -->
+    <g transform="translate(0, 90)">
+      <!-- Row 1 -->
+      <rect x="20" y="0" width="1060" height="35" fill="#fefefe" stroke="#e5e7eb" stroke-width="1"/>
+      <text x="120" y="22" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">Tree Validation</text>
+      <text x="300" y="22" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="12" font-weight="bold">O(n)</text>
+      <text x="500" y="22" text-anchor="middle" fill="#dc2626" font-family="Arial, sans-serif" font-size="12" font-weight="bold">O(h)</text>
+      <text x="750" y="22" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">Range validation</text>
+      <text x="950" y="22" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">Data integrity</text>
+      
+      <!-- Row 2 -->
+      <rect x="20" y="35" width="1060" height="35" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+      <text x="120" y="57" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">LCA</text>
+      <text x="300" y="57" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="12" font-weight="bold">O(log n)</text>
+      <text x="500" y="57" text-anchor="middle" fill="#dc2626" font-family="Arial, sans-serif" font-size="12" font-weight="bold">O(log n)</text>
+      <text x="750" y="57" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">BST property</text>
+      <text x="950" y="57" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">Hierarchies</text>
+      
+      <!-- Row 3 -->
+      <rect x="20" y="70" width="1060" height="35" fill="#fefefe" stroke="#e5e7eb" stroke-width="1"/>
+      <text x="120" y="92" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">Serialization</text>
+      <text x="300" y="92" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="12" font-weight="bold">O(n)</text>
+      <text x="500" y="92" text-anchor="middle" fill="#dc2626" font-family="Arial, sans-serif" font-size="12" font-weight="bold">O(n)</text>
+      <text x="750" y="92" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">Preorder + nulls</text>
+      <text x="950" y="92" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">Persistence</text>
+      
+      <!-- Row 4 -->
+      <rect x="20" y="105" width="1060" height="35" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+      <text x="120" y="127" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">Height Calc</text>
+      <text x="300" y="127" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="12" font-weight="bold">O(n)</text>
+      <text x="500" y="127" text-anchor="middle" fill="#dc2626" font-family="Arial, sans-serif" font-size="12" font-weight="bold">O(h)</text>
+      <text x="750" y="127" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">Max depth</text>
+      <text x="950" y="127" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">Balance check</text>
+      
+      <!-- Row 5 -->
+      <rect x="20" y="140" width="1060" height="35" fill="#fefefe" stroke="#e5e7eb" stroke-width="1"/>
+      <text x="120" y="162" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">Range Query</text>
+      <text x="300" y="162" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="12" font-weight="bold">O(log n + k)</text>
+      <text x="500" y="162" text-anchor="middle" fill="#dc2626" font-family="Arial, sans-serif" font-size="12" font-weight="bold">O(log n)</text>
+      <text x="750" y="162" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">Pruning</text>
+      <text x="950" y="162" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">Database queries</text>
+    </g>
+    
+    <!-- Legend -->
+    <text x="50" y="250" fill="#6b7280" font-family="Arial, sans-serif" font-size="11">
+      * h = tree height, k = number of results, n = number of nodes
+    </text>
+    <text x="50" y="265" fill="#6b7280" font-family="Arial, sans-serif" font-size="11">
+      * Balanced tree: h = O(log n), Unbalanced tree: h = O(n)
+    </text>
+  </g>
+</svg>
