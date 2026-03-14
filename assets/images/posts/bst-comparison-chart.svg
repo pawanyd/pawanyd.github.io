@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="700" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bstGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="arrayGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="hashGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="700" fill="#f8fafc"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="70" fill="url(#headerGradient)"/>
+  <text x="600" y="40" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="28" font-weight="bold">
+    BST vs Other Data Structures
+  </text>
+  
+  <!-- Main Comparison Section -->
+  <g transform="translate(50, 100)">
+    
+    <!-- BST Section -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="350" height="500" rx="12" fill="url(#bstGradient)" stroke="#059669" stroke-width="2"/>
+      <text x="175" y="35" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+        Binary Search Tree
+      </text>
+      
+      <!-- BST Advantages -->
+      <text x="25" y="70" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">✓ Advantages:</text>
+      <text x="25" y="95" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• O(log n) search, insert, delete</text>
+      <text x="25" y="115" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Maintains sorted order naturally</text>
+      <text x="25" y="135" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Efficient range queries</text>
+      <text x="25" y="155" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Inorder traversal gives sorted data</text>
+      <text x="25" y="175" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• No hash collisions</text>
+      <text x="25" y="195" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Predictable performance</text>
+      
+      <!-- BST Disadvantages -->
+      <text x="25" y="230" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">✗ Disadvantages:</text>
+      <text x="25" y="255" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Can become unbalanced (O(n) worst case)</text>
+      <text x="25" y="275" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Pointer overhead (extra memory)</text>
+      <text x="25" y="295" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Not cache-friendly</text>
+      <text x="25" y="315" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Complex deletion logic</text>
+      
+      <!-- BST Use Cases -->
+      <text x="25" y="350" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">🎯 Best For:</text>
+      <text x="25" y="375" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Database indexes</text>
+      <text x="25" y="395" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Range queries</text>
+      <text x="25" y="415" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Maintaining sorted data</text>
+      <text x="25" y="435" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Expression parsing</text>
+      <text x="25" y="455" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• File system hierarchies</text>
+    </g>
+    
+    <!-- Array Section -->
+    <g transform="translate(375, 0)">
+      <rect x="0" y="0" width="350" height="500" rx="12" fill="url(#arrayGradient)" stroke="#d97706" stroke-width="2"/>
+      <text x="175" y="35" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+        Array (Sorted)
+      </text>
+      
+      <!-- Array Advantages -->
+      <text x="25" y="70" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">✓ Advantages:</text>
+      <text x="25" y="95" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• O(1) random access by index</text>
+      <text x="25" y="115" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Excellent cache locality</text>
+      <text x="25" y="135" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Minimal memory overhead</text>
+      <text x="25" y="155" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Simple implementation</text>
+      <text x="25" y="175" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• O(log n) binary search</text>
+      <text x="25" y="195" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Contiguous memory layout</text>
+      
+      <!-- Array Disadvantages -->
+      <text x="25" y="230" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">✗ Disadvantages:</text>
+      <text x="25" y="255" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• O(n) insertion/deletion</text>
+      <text x="25" y="275" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Fixed size (static arrays)</text>
+      <text x="25" y="295" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Expensive to maintain order</text>
+      <text x="25" y="315" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Memory reallocation costs</text>
+      
+      <!-- Array Use Cases -->
+      <text x="25" y="350" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">🎯 Best For:</text>
+      <text x="25" y="375" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Mathematical computations</text>
+      <text x="25" y="395" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Sequential data processing</text>
+      <text x="25" y="415" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• When size is known</text>
+      <text x="25" y="435" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• High-performance computing</text>
+      <text x="25" y="455" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Embedded systems</text>
+    </g>
+    
+    <!-- Hash Table Section -->
+    <g transform="translate(750, 0)">
+      <rect x="0" y="0" width="350" height="500" rx="12" fill="url(#hashGradient)" stroke="#dc2626" stroke-width="2"/>
+      <text x="175" y="35" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+        Hash Table
+      </text>
+      
+      <!-- Hash Table Advantages -->
+      <text x="25" y="70" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">✓ Advantages:</text>
+      <text x="25" y="95" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• O(1) average search/insert/delete</text>
+      <text x="25" y="115" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Fast key-value lookups</text>
+      <text x="25" y="135" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Simple to implement</text>
+      <text x="25" y="155" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Dynamic sizing</text>
+      <text x="25" y="175" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Excellent for caching</text>
+      <text x="25" y="195" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Handles any key type</text>
+      
+      <!-- Hash Table Disadvantages -->
+      <text x="25" y="230" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">✗ Disadvantages:</text>
+      <text x="25" y="255" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• No ordering of elements</text>
+      <text x="25" y="275" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Hash collisions possible</text>
+      <text x="25" y="295" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• O(n) worst case performance</text>
+      <text x="25" y="315" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• No range queries</text>
+      <text x="25" y="335" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Memory overhead for buckets</text>
+      
+      <!-- Hash Table Use Cases -->
+      <text x="25" y="370" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">🎯 Best For:</text>
+      <text x="25" y="395" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Caches and memoization</text>
+      <text x="25" y="415" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Database indexing</text>
+      <text x="25" y="435" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Symbol tables</text>
+      <text x="25" y="455" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">• Fast lookups</text>
+    </g>
+  </g>
+  
+  <!-- Performance Comparison Chart -->
+  <g transform="translate(50, 620)">
+    <rect x="0" y="0" width="1100" height="60" rx="8" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+    <text x="550" y="20" text-anchor="middle" fill="#1f2937" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Performance Summary
+    </text>
+    
+    <text x="50" y="40" fill="#059669" font-family="Arial, sans-serif" font-size="13" font-weight="bold">BST:</text>
+    <text x="90" y="40" fill="#374151" font-family="Arial, sans-serif" font-size="12">O(log n) balanced operations, ordered data</text>
+    
+    <text x="350" y="40" fill="#d97706" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Array:</text>
+    <text x="400" y="40" fill="#374151" font-family="Arial, sans-serif" font-size="12">O(1) access, O(n) modifications</text>
+    
+    <text x="650" y="40" fill="#dc2626" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Hash:</text>
+    <text x="700" y="40" fill="#374151" font-family="Arial, sans-serif" font-size="12">O(1) average, no ordering</text>
+    
+    <text x="900" y="50" fill="#6b7280" font-family="Arial, sans-serif" font-size="11" font-style="italic">
+      Choose based on your primary operations and requirements
+    </text>
+  </g>
+</svg>
