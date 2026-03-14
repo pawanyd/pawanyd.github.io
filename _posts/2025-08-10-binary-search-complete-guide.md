@@ -1,8 +1,8 @@
 ---
-layout: post
+layout: post-detail
 title: "Binary Search: The Algorithm That Powers Billions of Searches Daily"
 date: 2025-08-10
-categories: [DSA, Algorithms]
+category: DSA
 tags: [binary-search, searching-algorithms, divide-and-conquer, optimization, interview-prep]
 description: "Master binary search with real-world examples from Google, Netflix, and Amazon. Learn when to use it, common pitfalls, and advanced variations."
 author: "Pawan Kumar"

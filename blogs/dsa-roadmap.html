@@ -1,0 +1,386 @@
+---
+layout: profile
+title: "DSA Learning Roadmap - Pawan Kumar's Blog"
+meta_title: "Data Structures & Algorithms Learning Path | Interactive Roadmap"
+meta_description: "Follow a structured learning path to master Data Structures and Algorithms. Interactive roadmap with prerequisites, progress tracking, and sequential learning."
+meta_image: "/assets/images/dsa-roadmap-meta.svg"
+---
+
+<!-- Hero Section -->
+<section class="bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 py-12 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">
+            DSA Learning Roadmap
+        </h1>
+        <p class="text-xl text-gray-200 mb-6">
+            Master Data Structures & Algorithms with a structured, sequential learning path
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 text-sm">
+            <div class="bg-white bg-opacity-10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white border-opacity-20">
+                <span class="text-gray-300">📚 Sequential Learning</span>
+            </div>
+            <div class="bg-white bg-opacity-10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white border-opacity-20">
+                <span class="text-gray-300">✅ Progress Tracking</span>
+            </div>
+            <div class="bg-white bg-opacity-10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white border-opacity-20">
+                <span class="text-gray-300">🎯 Clear Prerequisites</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Roadmap Content -->
+<section class="bg-gray-50 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        
+        <!-- Progress Bar -->
+        <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 mb-12 shadow-sm border border-gray-200">
+            <div class="flex justify-between items-center mb-3">
+                <h3 class="text-lg font-bold text-gray-900">Your Learning Progress</h3>
+                <span class="text-sm text-gray-600"><span id="completed-count" class="font-bold text-blue-600">0</span> of <span id="total-count" class="font-bold">0</span> completed</span>
+            </div>
+            <div class="h-3 bg-gray-200 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-green-500 to-green-600 rounded-full transition-all duration-500 ease-out" id="progress-fill" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <!-- Fundamentals Level -->
+        <div class="mb-16">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                    1
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900">Fundamentals</h2>
+                    <p class="text-gray-600 mt-1">Master the building blocks of programming and problem-solving</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="fundamentals-grid">
+                <!-- Topics will be dynamically inserted -->
+            </div>
+        </div>
+
+        <!-- Connector -->
+        <div class="flex justify-center mb-16">
+            <div class="w-1 h-16 bg-gradient-to-b from-gray-300 to-gray-400 rounded-full relative">
+                <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-12 border-l-transparent border-r-transparent border-t-gray-400"></div>
+            </div>
+        </div>
+
+        <!-- Intermediate Level -->
+        <div class="mb-16">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                    2
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900">Intermediate</h2>
+                    <p class="text-gray-600 mt-1">Dive deeper into advanced data structures and efficient algorithms</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="intermediate-grid">
+                <!-- Topics will be dynamically inserted -->
+            </div>
+        </div>
+
+        <!-- Connector -->
+        <div class="flex justify-center mb-16">
+            <div class="w-1 h-16 bg-gradient-to-b from-gray-300 to-gray-400 rounded-full relative">
+                <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-12 border-l-transparent border-r-transparent border-t-gray-400"></div>
+            </div>
+        </div>
+
+        <!-- Advanced Level -->
+        <div class="mb-16">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                    3
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900">Advanced</h2>
+                    <p class="text-gray-600 mt-1">Master complex algorithms and optimization techniques</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="advanced-grid">
+                <!-- Topics will be dynamically inserted -->
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+// DSA Roadmap Data
+const roadmapData = {
+    fundamentals: [
+        {
+            id: 'arrays-strings',
+            title: 'Arrays & Strings',
+            subtitle: 'Foundation of data structures',
+            description: 'Master the most fundamental data structures used in every programming language.',
+            time: '2-3 hours',
+            difficulty: 'Beginner',
+            tags: ['Arrays', 'Strings', 'Two Pointers'],
+            url: null,
+            prerequisites: []
+        },
+        {
+            id: 'linked-lists',
+            title: 'Linked Lists',
+            subtitle: 'Dynamic data structures',
+            description: 'Learn pointer manipulation and dynamic memory allocation with linked lists.',
+            time: '3-4 hours',
+            difficulty: 'Beginner',
+            tags: ['Pointers', 'Memory', 'Traversal'],
+            url: '/blog/2025/05/10/linked-lists-complete-guide.html',
+            prerequisites: []
+        },
+        {
+            id: 'stacks-queues',
+            title: 'Stacks & Queues',
+            subtitle: 'LIFO and FIFO structures',
+            description: 'Understand stack and queue operations used in parsing, scheduling, and more.',
+            time: '2-3 hours',
+            difficulty: 'Beginner',
+            tags: ['Stack', 'Queue', 'Deque'],
+            url: '/blog/2025/06/02/stacks-queues-complete-guide.html',
+            prerequisites: ['arrays-strings']
+        },
+        {
+            id: 'hash-tables',
+            title: 'Hash Tables',
+            subtitle: 'O(1) lookups and insertions',
+            description: 'Master hash tables for fast data retrieval and frequency counting.',
+            time: '3-4 hours',
+            difficulty: 'Beginner',
+            tags: ['Hashing', 'HashMap', 'HashSet'],
+            url: '/blog/2025/06/20/hash-tables-complete-guide.html',
+            prerequisites: ['arrays-strings']
+        }
+    ],
+    intermediate: [
+        {
+            id: 'trees-bst',
+            title: 'Trees & BST',
+            subtitle: 'Hierarchical data structures',
+            description: 'Explore binary trees, BST, and tree traversal algorithms.',
+            time: '4-5 hours',
+            difficulty: 'Intermediate',
+            tags: ['Binary Tree', 'BST', 'Traversal'],
+            url: '/blog/2025/07/03/trees-binary-search-trees-complete-guide.html',
+            prerequisites: ['linked-lists']
+        },
+        {
+            id: 'heaps-priority-queues',
+            title: 'Heaps & Priority Queues',
+            subtitle: 'Efficient priority management',
+            description: 'Learn heap data structure and priority queue operations for optimization problems.',
+            time: '3-4 hours',
+            difficulty: 'Intermediate',
+            tags: ['Heap', 'Priority Queue', 'Heapify'],
+            url: '/blog/2025/07/15/heaps-priority-queues-complete-guide.html',
+            prerequisites: ['trees-bst']
+        },
+        {
+            id: 'sorting-algorithms',
+            title: 'Sorting Algorithms',
+            subtitle: 'Organize data efficiently',
+            description: 'Master various sorting techniques from bubble sort to quicksort and merge sort.',
+            time: '4-5 hours',
+            difficulty: 'Intermediate',
+            tags: ['Sorting', 'QuickSort', 'MergeSort'],
+            url: '/blog/2025/07/28/sorting-algorithms-complete-guide.html',
+            prerequisites: ['arrays-strings']
+        },
+        {
+            id: 'binary-search',
+            title: 'Binary Search',
+            subtitle: 'Logarithmic time searching',
+            description: 'Master binary search and its variations for efficient searching in sorted data.',
+            time: '3-4 hours',
+            difficulty: 'Intermediate',
+            tags: ['Binary Search', 'Divide & Conquer', 'Optimization'],
+            url: '/blog/2025/08/10/binary-search-complete-guide.html',
+            prerequisites: ['arrays-strings', 'sorting-algorithms']
+        }
+    ],
+    advanced: [
+        {
+            id: 'graph-algorithms',
+            title: 'Graph Algorithms',
+            subtitle: 'Network and relationship modeling',
+            description: 'Master graph traversal, shortest paths, and advanced graph algorithms.',
+            time: '6-8 hours',
+            difficulty: 'Advanced',
+            tags: ['Graphs', 'DFS', 'BFS', 'Dijkstra'],
+            url: '/blog/2025/05/26/graph-data-structures-complete-guide.html',
+            prerequisites: ['trees-bst', 'stacks-queues']
+        },
+        {
+            id: 'dynamic-programming',
+            title: 'Dynamic Programming',
+            subtitle: 'Optimization through memoization',
+            description: 'Learn to solve complex problems by breaking them into overlapping subproblems.',
+            time: '8-10 hours',
+            difficulty: 'Advanced',
+            tags: ['DP', 'Memoization', 'Optimization'],
+            url: null,
+            prerequisites: ['arrays-strings']
+        },
+        {
+            id: 'backtracking',
+            title: 'Backtracking',
+            subtitle: 'Exhaustive search with pruning',
+            description: 'Master backtracking for solving constraint satisfaction and combinatorial problems.',
+            time: '5-6 hours',
+            difficulty: 'Advanced',
+            tags: ['Backtracking', 'Recursion', 'Pruning'],
+            url: null,
+            prerequisites: []
+        },
+        {
+            id: 'advanced-trees',
+            title: 'Advanced Trees',
+            subtitle: 'Self-balancing and specialized trees',
+            description: 'Explore AVL trees, Red-Black trees, Segment trees, and Trie data structures.',
+            time: '6-7 hours',
+            difficulty: 'Advanced',
+            tags: ['AVL', 'Red-Black', 'Segment Tree', 'Trie'],
+            url: null,
+            prerequisites: ['trees-bst']
+        }
+    ]
+};
+
+// Progress tracking
+let completedTopics = JSON.parse(localStorage.getItem('dsa-progress') || '[]');
+
+function isTopicCompleted(topicId) {
+    return completedTopics.includes(topicId);
+}
+
+function arePrerequisitesMet(prerequisites) {
+    if (!prerequisites || prerequisites.length === 0) return true;
+    return prerequisites.every(prereq => isTopicCompleted(prereq));
+}
+
+function toggleTopicCompletion(topicId) {
+    if (completedTopics.includes(topicId)) {
+        completedTopics = completedTopics.filter(id => id !== topicId);
+    } else {
+        completedTopics.push(topicId);
+    }
+    localStorage.setItem('dsa-progress', JSON.stringify(completedTopics));
+    renderRoadmap();
+}
+
+function createTopicCard(topic) {
+    const isCompleted = isTopicCompleted(topic.id);
+    const prerequisitesMet = arePrerequisitesMet(topic.prerequisites);
+    const isLocked = !prerequisitesMet && !isCompleted;
+    
+    const statusIcon = isCompleted ? '✓' : (isLocked ? '🔒' : '📖');
+    
+    const card = document.createElement('div');
+    card.className = `bg-white rounded-2xl p-6 shadow-sm border-2 transition-all duration-300 ${
+        isCompleted ? 'border-green-500 bg-gradient-to-br from-green-50 to-white' : 
+        isLocked ? 'border-gray-200 opacity-60 cursor-not-allowed bg-gray-50' : 
+        'border-gray-200 hover:border-blue-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer'
+    }`;
+    
+    card.innerHTML = `
+        <div class="flex justify-between items-start mb-4">
+            <div class="flex-1 pr-3">
+                <h3 class="text-lg font-bold text-gray-900 mb-1">${topic.title}</h3>
+                <div class="text-sm text-gray-600">${topic.subtitle}</div>
+            </div>
+            <div class="w-10 h-10 rounded-full flex items-center justify-center text-lg flex-shrink-0 ${
+                isCompleted ? 'bg-green-500 text-white' : 
+                isLocked ? 'bg-gray-200 text-gray-500' : 
+                'bg-blue-100 text-blue-600'
+            }">
+                ${statusIcon}
+            </div>
+        </div>
+        
+        <div class="flex gap-3 mb-3 text-sm text-gray-600">
+            <span class="flex items-center gap-1">⏱️ ${topic.time}</span>
+            <span class="flex items-center gap-1">📊 ${topic.difficulty}</span>
+        </div>
+        
+        <p class="text-gray-700 text-sm leading-relaxed mb-4">
+            ${topic.description}
+        </p>
+        
+        <div class="flex flex-wrap gap-2 mb-4">
+            ${topic.tags.map(tag => `<span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium">${tag}</span>`).join('')}
+        </div>
+        
+        <div class="pt-4 border-t border-gray-100">
+            <div class="flex items-center gap-3">
+                ${topic.url ? 
+                    `<a href="${topic.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm transition-all shadow-sm hover:shadow-md ${
+                        isCompleted ? 
+                        'bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700' : 
+                        'bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700'
+                    }">
+                        ${isCompleted ? 'Read Again' : 'Start Learning'}
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    </a>` :
+                    `<div class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm bg-gray-200 text-gray-500 cursor-not-allowed">
+                        Coming Soon
+                    </div>`
+                }
+                ${topic.url ? 
+                    `<label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600 hover:text-gray-900 select-none">
+                        <input type="checkbox" ${isCompleted ? 'checked' : ''} 
+                               onchange="toggleTopicCompletion('${topic.id}')"
+                               class="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-0 cursor-pointer">
+                        <span>Mark complete</span>
+                    </label>` : ''
+                }
+            </div>
+        </div>
+    `;
+    
+    return card;
+}
+
+function updateProgress() {
+    const allTopics = [...roadmapData.fundamentals, ...roadmapData.intermediate, ...roadmapData.advanced];
+    const totalCount = allTopics.length;
+    const completedCount = completedTopics.length;
+    const percentage = (completedCount / totalCount) * 100;
+    
+    document.getElementById('total-count').textContent = totalCount;
+    document.getElementById('completed-count').textContent = completedCount;
+    document.getElementById('progress-fill').style.width = `${percentage}%`;
+}
+
+function renderRoadmap() {
+    document.getElementById('fundamentals-grid').innerHTML = '';
+    document.getElementById('intermediate-grid').innerHTML = '';
+    document.getElementById('advanced-grid').innerHTML = '';
+    
+    roadmapData.fundamentals.forEach(topic => {
+        document.getElementById('fundamentals-grid').appendChild(createTopicCard(topic));
+    });
+    
+    roadmapData.intermediate.forEach(topic => {
+        document.getElementById('intermediate-grid').appendChild(createTopicCard(topic));
+    });
+    
+    roadmapData.advanced.forEach(topic => {
+        document.getElementById('advanced-grid').appendChild(createTopicCard(topic));
+    });
+    
+    updateProgress();
+}
+
+document.addEventListener('DOMContentLoaded', renderRoadmap);
+</script>

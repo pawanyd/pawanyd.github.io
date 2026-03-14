@@ -17,7 +17,7 @@ meta_image: "/assets/images/dsa-category-meta.svg"
             <p class="text-gray-300 text-base sm:text-lg mb-4">
                 Master the fundamentals that power every great software system
             </p>
-            <div class="flex flex-wrap gap-2">
+            <div class="flex flex-wrap gap-2 mb-4">
                 <span class="bg-purple-600 bg-opacity-80 text-white text-xs font-semibold px-3 py-1 rounded-full">
                     Practical Guides
                 </span>
@@ -28,6 +28,10 @@ meta_image: "/assets/images/dsa-category-meta.svg"
                     Interview Prep
                 </span>
             </div>
+            <a href="/blogs/dsa-roadmap.html" class="inline-flex items-center gap-2 bg-white text-purple-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl">
+                <i class="fas fa-route"></i>
+                View Learning Roadmap
+            </a>
         </div>
         <div class="flex gap-3 sm:gap-4">
             {% assign dsa_posts = site.posts | where: "category", "DSA" %}
