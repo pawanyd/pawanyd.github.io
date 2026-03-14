@@ -1,9 +1,16 @@
 # Algorithm Code Snippets Configuration
 # Add new algorithms here with code in multiple languages
+# Format: algorithm_key, name, description, languages (python, javascript, typescript, java, cpp, php)
+
+# ============================================
+# ARRAY PATTERNS
+# ============================================
 
 sliding_window:
   name: "Sliding Window"
   description: "Find maximum sum of subarray of size K"
+  time_complexity: "O(n)"
+  space_complexity: "O(1)"
   languages:
     python: |
       def sliding_window(arr, k):
@@ -129,6 +136,8 @@ sliding_window:
 two_pointers:
   name: "Two Pointers"
   description: "Find two numbers that sum to target in sorted array"
+  time_complexity: "O(n)"
+  space_complexity: "O(1)"
   languages:
     python: |
       def two_sum_sorted(arr, target):
@@ -258,6 +267,8 @@ two_pointers:
 binary_search:
   name: "Binary Search"
   description: "Search for target in sorted array"
+  time_complexity: "O(log n)"
+  space_complexity: "O(1)"
   languages:
     python: |
       def binary_search(arr, target):
@@ -381,5 +392,2613 @@ binary_search:
           }
           
           return -1;
+      }
+      ?>
+
+kadanes_algorithm:
+  name: "Kadane's Algorithm"
+  description: "Find maximum sum of contiguous subarray"
+  time_complexity: "O(n)"
+  space_complexity: "O(1)"
+  languages:
+    python: |
+      def max_subarray_sum(arr):
+          """Find maximum sum of contiguous subarray (Kadane's Algorithm)"""
+          if not arr:
+              return 0
+          
+          max_sum = current_sum = arr[0]
+          
+          for num in arr[1:]:
+              current_sum = max(num, current_sum + num)
+              max_sum = max(max_sum, current_sum)
+          
+          return max_sum
+    
+    javascript: |
+      function maxSubarraySum(arr) {
+        // Find maximum sum of contiguous subarray
+        if (arr.length === 0) return 0;
+        
+        let maxSum = arr[0];
+        let currentSum = arr[0];
+        
+        for (let i = 1; i < arr.length; i++) {
+          currentSum = Math.max(arr[i], currentSum + arr[i]);
+          maxSum = Math.max(maxSum, currentSum);
+        }
+        
+        return maxSum;
+      }
+    
+    typescript: |
+      function maxSubarraySum(arr: number[]): number {
+        // Find maximum sum of contiguous subarray
+        if (arr.length === 0) return 0;
+        
+        let maxSum: number = arr[0];
+        let currentSum: number = arr[0];
+        
+        for (let i = 1; i < arr.length; i++) {
+          currentSum = Math.max(arr[i], currentSum + arr[i]);
+          maxSum = Math.max(maxSum, currentSum);
+        }
+        
+        return maxSum;
+      }
+    
+    java: |
+      public class KadanesAlgorithm {
+          public static int maxSubarraySum(int[] arr) {
+              if (arr.length == 0) return 0;
+              
+              int maxSum = arr[0];
+              int currentSum = arr[0];
+              
+              for (int i = 1; i < arr.length; i++) {
+                  currentSum = Math.max(arr[i], currentSum + arr[i]);
+                  maxSum = Math.max(maxSum, currentSum);
+              }
+              
+              return maxSum;
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      #include <algorithm>
+      using namespace std;
+      
+      int maxSubarraySum(vector<int>& arr) {
+          if (arr.empty()) return 0;
+          
+          int maxSum = arr[0];
+          int currentSum = arr[0];
+          
+          for (int i = 1; i < arr.size(); i++) {
+              currentSum = max(arr[i], currentSum + arr[i]);
+              maxSum = max(maxSum, currentSum);
+          }
+          
+          return maxSum;
+      }
+    
+    php: |
+      <?php
+      function maxSubarraySum($arr) {
+          if (empty($arr)) return 0;
+          
+          $maxSum = $arr[0];
+          $currentSum = $arr[0];
+          
+          for ($i = 1; $i < count($arr); $i++) {
+              $currentSum = max($arr[$i], $currentSum + $arr[$i]);
+              $maxSum = max($maxSum, $currentSum);
+          }
+          
+          return $maxSum;
+      }
+      ?>
+
+prefix_sum:
+  name: "Prefix Sum"
+  description: "Precompute cumulative sums for O(1) range queries"
+  time_complexity: "O(n) build, O(1) query"
+  space_complexity: "O(n)"
+  languages:
+    python: |
+      def build_prefix_sum(arr):
+          """Build prefix sum array for range sum queries"""
+          prefix = [0]
+          for num in arr:
+              prefix.append(prefix[-1] + num)
+          return prefix
+      
+      def range_sum(prefix, left, right):
+          """Get sum of elements from index left to right (inclusive)"""
+          return prefix[right + 1] - prefix[left]
+    
+    javascript: |
+      function buildPrefixSum(arr) {
+        // Build prefix sum array for range sum queries
+        const prefix = [0];
+        for (const num of arr) {
+          prefix.push(prefix[prefix.length - 1] + num);
+        }
+        return prefix;
+      }
+      
+      function rangeSum(prefix, left, right) {
+        // Get sum of elements from index left to right (inclusive)
+        return prefix[right + 1] - prefix[left];
+      }
+    
+    typescript: |
+      function buildPrefixSum(arr: number[]): number[] {
+        // Build prefix sum array for range sum queries
+        const prefix: number[] = [0];
+        for (const num of arr) {
+          prefix.push(prefix[prefix.length - 1] + num);
+        }
+        return prefix;
+      }
+      
+      function rangeSum(prefix: number[], left: number, right: number): number {
+        // Get sum of elements from index left to right (inclusive)
+        return prefix[right + 1] - prefix[left];
+      }
+    
+    java: |
+      public class PrefixSum {
+          public static int[] buildPrefixSum(int[] arr) {
+              int[] prefix = new int[arr.length + 1];
+              for (int i = 0; i < arr.length; i++) {
+                  prefix[i + 1] = prefix[i] + arr[i];
+              }
+              return prefix;
+          }
+          
+          public static int rangeSum(int[] prefix, int left, int right) {
+              return prefix[right + 1] - prefix[left];
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      using namespace std;
+      
+      vector<int> buildPrefixSum(vector<int>& arr) {
+          vector<int> prefix(arr.size() + 1, 0);
+          for (int i = 0; i < arr.size(); i++) {
+              prefix[i + 1] = prefix[i] + arr[i];
+          }
+          return prefix;
+      }
+      
+      int rangeSum(vector<int>& prefix, int left, int right) {
+          return prefix[right + 1] - prefix[left];
+      }
+    
+    php: |
+      <?php
+      function buildPrefixSum($arr) {
+          $prefix = [0];
+          foreach ($arr as $num) {
+              $prefix[] = end($prefix) + $num;
+          }
+          return $prefix;
+      }
+      
+      function rangeSum($prefix, $left, $right) {
+          return $prefix[$right + 1] - $prefix[$left];
+      }
+      ?>
+
+
+# ============================================
+# LINKED LIST PATTERNS
+# ============================================
+
+reverse_linked_list:
+  name: "Reverse Linked List"
+  description: "Reverse a singly linked list in-place"
+  time_complexity: "O(n)"
+  space_complexity: "O(1)"
+  languages:
+    python: |
+      class ListNode:
+          def __init__(self, val=0, next=None):
+              self.val = val
+              self.next = next
+      
+      def reverse_list(head):
+          """Reverse a singly linked list"""
+          prev = None
+          current = head
+          
+          while current:
+              next_node = current.next
+              current.next = prev
+              prev = current
+              current = next_node
+          
+          return prev
+    
+    javascript: |
+      class ListNode {
+        constructor(val = 0, next = null) {
+          this.val = val;
+          this.next = next;
+        }
+      }
+      
+      function reverseList(head) {
+        let prev = null;
+        let current = head;
+        
+        while (current !== null) {
+          const nextNode = current.next;
+          current.next = prev;
+          prev = current;
+          current = nextNode;
+        }
+        
+        return prev;
+      }
+    
+    typescript: |
+      class ListNode {
+        val: number;
+        next: ListNode | null;
+        
+        constructor(val: number = 0, next: ListNode | null = null) {
+          this.val = val;
+          this.next = next;
+        }
+      }
+      
+      function reverseList(head: ListNode | null): ListNode | null {
+        let prev: ListNode | null = null;
+        let current: ListNode | null = head;
+        
+        while (current !== null) {
+          const nextNode: ListNode | null = current.next;
+          current.next = prev;
+          prev = current;
+          current = nextNode;
+        }
+        
+        return prev;
+      }
+    
+    java: |
+      class ListNode {
+          int val;
+          ListNode next;
+          ListNode(int val) { this.val = val; }
+      }
+      
+      public class ReverseLinkedList {
+          public static ListNode reverseList(ListNode head) {
+              ListNode prev = null;
+              ListNode current = head;
+              
+              while (current != null) {
+                  ListNode nextNode = current.next;
+                  current.next = prev;
+                  prev = current;
+                  current = nextNode;
+              }
+              
+              return prev;
+          }
+      }
+    
+    cpp: |
+      struct ListNode {
+          int val;
+          ListNode* next;
+          ListNode(int x) : val(x), next(nullptr) {}
+      };
+      
+      ListNode* reverseList(ListNode* head) {
+          ListNode* prev = nullptr;
+          ListNode* current = head;
+          
+          while (current != nullptr) {
+              ListNode* nextNode = current->next;
+              current->next = prev;
+              prev = current;
+              current = nextNode;
+          }
+          
+          return prev;
+      }
+    
+    php: |
+      <?php
+      class ListNode {
+          public $val;
+          public $next;
+          function __construct($val = 0, $next = null) {
+              $this->val = $val;
+              $this->next = $next;
+          }
+      }
+      
+      function reverseList($head) {
+          $prev = null;
+          $current = $head;
+          
+          while ($current !== null) {
+              $nextNode = $current->next;
+              $current->next = $prev;
+              $prev = $current;
+              $current = $nextNode;
+          }
+          
+          return $prev;
+      }
+      ?>
+
+floyd_cycle_detection:
+  name: "Floyd's Cycle Detection"
+  description: "Detect cycle in linked list using fast and slow pointers"
+  time_complexity: "O(n)"
+  space_complexity: "O(1)"
+  languages:
+    python: |
+      def has_cycle(head):
+          """Detect if linked list has a cycle"""
+          if not head or not head.next:
+              return False
+          
+          slow = head
+          fast = head
+          
+          while fast and fast.next:
+              slow = slow.next
+              fast = fast.next.next
+              
+              if slow == fast:
+                  return True
+          
+          return False
+    
+    javascript: |
+      function hasCycle(head) {
+        if (!head || !head.next) return false;
+        
+        let slow = head;
+        let fast = head;
+        
+        while (fast && fast.next) {
+          slow = slow.next;
+          fast = fast.next.next;
+          
+          if (slow === fast) return true;
+        }
+        
+        return false;
+      }
+    
+    typescript: |
+      function hasCycle(head: ListNode | null): boolean {
+        if (!head || !head.next) return false;
+        
+        let slow: ListNode | null = head;
+        let fast: ListNode | null = head;
+        
+        while (fast && fast.next) {
+          slow = slow!.next;
+          fast = fast.next.next;
+          
+          if (slow === fast) return true;
+        }
+        
+        return false;
+      }
+    
+    java: |
+      public class FloydCycleDetection {
+          public static boolean hasCycle(ListNode head) {
+              if (head == null || head.next == null) return false;
+              
+              ListNode slow = head;
+              ListNode fast = head;
+              
+              while (fast != null && fast.next != null) {
+                  slow = slow.next;
+                  fast = fast.next.next;
+                  
+                  if (slow == fast) return true;
+              }
+              
+              return false;
+          }
+      }
+    
+    cpp: |
+      bool hasCycle(ListNode* head) {
+          if (!head || !head->next) return false;
+          
+          ListNode* slow = head;
+          ListNode* fast = head;
+          
+          while (fast && fast->next) {
+              slow = slow->next;
+              fast = fast->next->next;
+              
+              if (slow == fast) return true;
+          }
+          
+          return false;
+      }
+    
+    php: |
+      <?php
+      function hasCycle($head) {
+          if ($head === null || $head->next === null) return false;
+          
+          $slow = $head;
+          $fast = $head;
+          
+          while ($fast !== null && $fast->next !== null) {
+              $slow = $slow->next;
+              $fast = $fast->next->next;
+              
+              if ($slow === $fast) return true;
+          }
+          
+          return false;
+      }
+      ?>
+
+
+# ============================================
+# TREE ALGORITHMS
+# ============================================
+
+tree_inorder_traversal:
+  name: "Inorder Traversal"
+  description: "Traverse binary tree in Left-Root-Right order"
+  time_complexity: "O(n)"
+  space_complexity: "O(h) where h is tree height"
+  languages:
+    python: |
+      class TreeNode:
+          def __init__(self, val=0, left=None, right=None):
+              self.val = val
+              self.left = left
+              self.right = right
+      
+      def inorder_traversal(root):
+          """Inorder traversal: Left -> Root -> Right"""
+          result = []
+          
+          def traverse(node):
+              if not node:
+                  return
+              traverse(node.left)
+              result.append(node.val)
+              traverse(node.right)
+          
+          traverse(root)
+          return result
+    
+    javascript: |
+      class TreeNode {
+        constructor(val = 0, left = null, right = null) {
+          this.val = val;
+          this.left = left;
+          this.right = right;
+        }
+      }
+      
+      function inorderTraversal(root) {
+        const result = [];
+        
+        function traverse(node) {
+          if (!node) return;
+          traverse(node.left);
+          result.push(node.val);
+          traverse(node.right);
+        }
+        
+        traverse(root);
+        return result;
+      }
+    
+    typescript: |
+      class TreeNode {
+        val: number;
+        left: TreeNode | null;
+        right: TreeNode | null;
+        
+        constructor(val: number = 0, left: TreeNode | null = null, right: TreeNode | null = null) {
+          this.val = val;
+          this.left = left;
+          this.right = right;
+        }
+      }
+      
+      function inorderTraversal(root: TreeNode | null): number[] {
+        const result: number[] = [];
+        
+        function traverse(node: TreeNode | null): void {
+          if (!node) return;
+          traverse(node.left);
+          result.push(node.val);
+          traverse(node.right);
+        }
+        
+        traverse(root);
+        return result;
+      }
+    
+    java: |
+      class TreeNode {
+          int val;
+          TreeNode left, right;
+          TreeNode(int val) { this.val = val; }
+      }
+      
+      public class InorderTraversal {
+          public static List<Integer> inorderTraversal(TreeNode root) {
+              List<Integer> result = new ArrayList<>();
+              traverse(root, result);
+              return result;
+          }
+          
+          private static void traverse(TreeNode node, List<Integer> result) {
+              if (node == null) return;
+              traverse(node.left, result);
+              result.add(node.val);
+              traverse(node.right, result);
+          }
+      }
+    
+    cpp: |
+      struct TreeNode {
+          int val;
+          TreeNode* left;
+          TreeNode* right;
+          TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+      };
+      
+      void traverse(TreeNode* node, vector<int>& result) {
+          if (!node) return;
+          traverse(node->left, result);
+          result.push_back(node->val);
+          traverse(node->right, result);
+      }
+      
+      vector<int> inorderTraversal(TreeNode* root) {
+          vector<int> result;
+          traverse(root, result);
+          return result;
+      }
+    
+    php: |
+      <?php
+      class TreeNode {
+          public $val;
+          public $left;
+          public $right;
+          function __construct($val = 0, $left = null, $right = null) {
+              $this->val = $val;
+              $this->left = $left;
+              $this->right = $right;
+          }
+      }
+      
+      function inorderTraversal($root) {
+          $result = [];
+          
+          function traverse($node, &$result) {
+              if ($node === null) return;
+              traverse($node->left, $result);
+              $result[] = $node->val;
+              traverse($node->right, $result);
+          }
+          
+          traverse($root, $result);
+          return $result;
+      }
+      ?>
+
+
+tree_level_order_bfs:
+  name: "Level Order Traversal (BFS)"
+  description: "Traverse tree level by level using queue"
+  time_complexity: "O(n)"
+  space_complexity: "O(w) where w is max width"
+  languages:
+    python: |
+      from collections import deque
+      
+      def level_order(root):
+          """Level order traversal using BFS"""
+          if not root:
+              return []
+          
+          result = []
+          queue = deque([root])
+          
+          while queue:
+              level_size = len(queue)
+              current_level = []
+              
+              for _ in range(level_size):
+                  node = queue.popleft()
+                  current_level.append(node.val)
+                  
+                  if node.left:
+                      queue.append(node.left)
+                  if node.right:
+                      queue.append(node.right)
+              
+              result.append(current_level)
+          
+          return result
+    
+    javascript: |
+      function levelOrder(root) {
+        if (!root) return [];
+        
+        const result = [];
+        const queue = [root];
+        
+        while (queue.length > 0) {
+          const levelSize = queue.length;
+          const currentLevel = [];
+          
+          for (let i = 0; i < levelSize; i++) {
+            const node = queue.shift();
+            currentLevel.push(node.val);
+            
+            if (node.left) queue.push(node.left);
+            if (node.right) queue.push(node.right);
+          }
+          
+          result.push(currentLevel);
+        }
+        
+        return result;
+      }
+    
+    typescript: |
+      function levelOrder(root: TreeNode | null): number[][] {
+        if (!root) return [];
+        
+        const result: number[][] = [];
+        const queue: TreeNode[] = [root];
+        
+        while (queue.length > 0) {
+          const levelSize = queue.length;
+          const currentLevel: number[] = [];
+          
+          for (let i = 0; i < levelSize; i++) {
+            const node = queue.shift()!;
+            currentLevel.push(node.val);
+            
+            if (node.left) queue.push(node.left);
+            if (node.right) queue.push(node.right);
+          }
+          
+          result.push(currentLevel);
+        }
+        
+        return result;
+      }
+    
+    java: |
+      import java.util.*;
+      
+      public class LevelOrderTraversal {
+          public static List<List<Integer>> levelOrder(TreeNode root) {
+              List<List<Integer>> result = new ArrayList<>();
+              if (root == null) return result;
+              
+              Queue<TreeNode> queue = new LinkedList<>();
+              queue.offer(root);
+              
+              while (!queue.isEmpty()) {
+                  int levelSize = queue.size();
+                  List<Integer> currentLevel = new ArrayList<>();
+                  
+                  for (int i = 0; i < levelSize; i++) {
+                      TreeNode node = queue.poll();
+                      currentLevel.add(node.val);
+                      
+                      if (node.left != null) queue.offer(node.left);
+                      if (node.right != null) queue.offer(node.right);
+                  }
+                  
+                  result.add(currentLevel);
+              }
+              
+              return result;
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      #include <queue>
+      using namespace std;
+      
+      vector<vector<int>> levelOrder(TreeNode* root) {
+          vector<vector<int>> result;
+          if (!root) return result;
+          
+          queue<TreeNode*> q;
+          q.push(root);
+          
+          while (!q.empty()) {
+              int levelSize = q.size();
+              vector<int> currentLevel;
+              
+              for (int i = 0; i < levelSize; i++) {
+                  TreeNode* node = q.front();
+                  q.pop();
+                  currentLevel.push_back(node->val);
+                  
+                  if (node->left) q.push(node->left);
+                  if (node->right) q.push(node->right);
+              }
+              
+              result.push_back(currentLevel);
+          }
+          
+          return result;
+      }
+    
+    php: |
+      <?php
+      function levelOrder($root) {
+          if ($root === null) return [];
+          
+          $result = [];
+          $queue = [$root];
+          
+          while (!empty($queue)) {
+              $levelSize = count($queue);
+              $currentLevel = [];
+              
+              for ($i = 0; $i < $levelSize; $i++) {
+                  $node = array_shift($queue);
+                  $currentLevel[] = $node->val;
+                  
+                  if ($node->left !== null) $queue[] = $node->left;
+                  if ($node->right !== null) $queue[] = $node->right;
+              }
+              
+              $result[] = $currentLevel;
+          }
+          
+          return $result;
+      }
+      ?>
+
+
+# ============================================
+# GRAPH ALGORITHMS
+# ============================================
+
+graph_bfs:
+  name: "Graph BFS"
+  description: "Breadth-First Search for shortest path in unweighted graph"
+  time_complexity: "O(V + E)"
+  space_complexity: "O(V)"
+  languages:
+    python: |
+      from collections import deque
+      
+      def bfs(graph, start):
+          """BFS traversal of graph"""
+          visited = set([start])
+          queue = deque([start])
+          result = []
+          
+          while queue:
+              node = queue.popleft()
+              result.append(node)
+              
+              for neighbor in graph[node]:
+                  if neighbor not in visited:
+                      visited.add(neighbor)
+                      queue.append(neighbor)
+          
+          return result
+    
+    javascript: |
+      function bfs(graph, start) {
+        const visited = new Set([start]);
+        const queue = [start];
+        const result = [];
+        
+        while (queue.length > 0) {
+          const node = queue.shift();
+          result.push(node);
+          
+          for (const neighbor of graph[node]) {
+            if (!visited.has(neighbor)) {
+              visited.add(neighbor);
+              queue.push(neighbor);
+            }
+          }
+        }
+        
+        return result;
+      }
+    
+    typescript: |
+      function bfs(graph: Map<number, number[]>, start: number): number[] {
+        const visited = new Set<number>([start]);
+        const queue: number[] = [start];
+        const result: number[] = [];
+        
+        while (queue.length > 0) {
+          const node = queue.shift()!;
+          result.push(node);
+          
+          for (const neighbor of graph.get(node) || []) {
+            if (!visited.has(neighbor)) {
+              visited.add(neighbor);
+              queue.push(neighbor);
+            }
+          }
+        }
+        
+        return result;
+      }
+    
+    java: |
+      import java.util.*;
+      
+      public class GraphBFS {
+          public static List<Integer> bfs(Map<Integer, List<Integer>> graph, int start) {
+              Set<Integer> visited = new HashSet<>();
+              Queue<Integer> queue = new LinkedList<>();
+              List<Integer> result = new ArrayList<>();
+              
+              visited.add(start);
+              queue.offer(start);
+              
+              while (!queue.isEmpty()) {
+                  int node = queue.poll();
+                  result.add(node);
+                  
+                  for (int neighbor : graph.get(node)) {
+                      if (!visited.contains(neighbor)) {
+                          visited.add(neighbor);
+                          queue.offer(neighbor);
+                      }
+                  }
+              }
+              
+              return result;
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      #include <queue>
+      #include <unordered_set>
+      #include <unordered_map>
+      using namespace std;
+      
+      vector<int> bfs(unordered_map<int, vector<int>>& graph, int start) {
+          unordered_set<int> visited;
+          queue<int> q;
+          vector<int> result;
+          
+          visited.insert(start);
+          q.push(start);
+          
+          while (!q.empty()) {
+              int node = q.front();
+              q.pop();
+              result.push_back(node);
+              
+              for (int neighbor : graph[node]) {
+                  if (visited.find(neighbor) == visited.end()) {
+                      visited.insert(neighbor);
+                      q.push(neighbor);
+                  }
+              }
+          }
+          
+          return result;
+      }
+    
+    php: |
+      <?php
+      function bfs($graph, $start) {
+          $visited = [$start => true];
+          $queue = [$start];
+          $result = [];
+          
+          while (!empty($queue)) {
+              $node = array_shift($queue);
+              $result[] = $node;
+              
+              foreach ($graph[$node] as $neighbor) {
+                  if (!isset($visited[$neighbor])) {
+                      $visited[$neighbor] = true;
+                      $queue[] = $neighbor;
+                  }
+              }
+          }
+          
+          return $result;
+      }
+      ?>
+
+graph_dfs:
+  name: "Graph DFS"
+  description: "Depth-First Search for graph traversal"
+  time_complexity: "O(V + E)"
+  space_complexity: "O(V)"
+  languages:
+    python: |
+      def dfs(graph, start, visited=None):
+          """DFS traversal of graph"""
+          if visited is None:
+              visited = set()
+          
+          visited.add(start)
+          result = [start]
+          
+          for neighbor in graph[start]:
+              if neighbor not in visited:
+                  result.extend(dfs(graph, neighbor, visited))
+          
+          return result
+    
+    javascript: |
+      function dfs(graph, start, visited = new Set()) {
+        visited.add(start);
+        const result = [start];
+        
+        for (const neighbor of graph[start]) {
+          if (!visited.has(neighbor)) {
+            result.push(...dfs(graph, neighbor, visited));
+          }
+        }
+        
+        return result;
+      }
+    
+    typescript: |
+      function dfs(graph: Map<number, number[]>, start: number, visited: Set<number> = new Set()): number[] {
+        visited.add(start);
+        const result: number[] = [start];
+        
+        for (const neighbor of graph.get(start) || []) {
+          if (!visited.has(neighbor)) {
+            result.push(...dfs(graph, neighbor, visited));
+          }
+        }
+        
+        return result;
+      }
+    
+    java: |
+      import java.util.*;
+      
+      public class GraphDFS {
+          public static List<Integer> dfs(Map<Integer, List<Integer>> graph, int start) {
+              Set<Integer> visited = new HashSet<>();
+              List<Integer> result = new ArrayList<>();
+              dfsHelper(graph, start, visited, result);
+              return result;
+          }
+          
+          private static void dfsHelper(Map<Integer, List<Integer>> graph, int node, 
+                                       Set<Integer> visited, List<Integer> result) {
+              visited.add(node);
+              result.add(node);
+              
+              for (int neighbor : graph.get(node)) {
+                  if (!visited.contains(neighbor)) {
+                      dfsHelper(graph, neighbor, visited, result);
+                  }
+              }
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      #include <unordered_set>
+      #include <unordered_map>
+      using namespace std;
+      
+      void dfsHelper(unordered_map<int, vector<int>>& graph, int node,
+                     unordered_set<int>& visited, vector<int>& result) {
+          visited.insert(node);
+          result.push_back(node);
+          
+          for (int neighbor : graph[node]) {
+              if (visited.find(neighbor) == visited.end()) {
+                  dfsHelper(graph, neighbor, visited, result);
+              }
+          }
+      }
+      
+      vector<int> dfs(unordered_map<int, vector<int>>& graph, int start) {
+          unordered_set<int> visited;
+          vector<int> result;
+          dfsHelper(graph, start, visited, result);
+          return result;
+      }
+    
+    php: |
+      <?php
+      function dfs($graph, $start, &$visited = null) {
+          if ($visited === null) {
+              $visited = [];
+          }
+          
+          $visited[$start] = true;
+          $result = [$start];
+          
+          foreach ($graph[$start] as $neighbor) {
+              if (!isset($visited[$neighbor])) {
+                  $result = array_merge($result, dfs($graph, $neighbor, $visited));
+              }
+          }
+          
+          return $result;
+      }
+      ?>
+
+
+# ============================================
+# SORTING ALGORITHMS
+# ============================================
+
+merge_sort:
+  name: "Merge Sort"
+  description: "O(n log n) divide and conquer sorting algorithm"
+  time_complexity: "O(n log n)"
+  space_complexity: "O(n)"
+  languages:
+    python: |
+      def merge_sort(arr):
+          """Merge sort - O(n log n) time, O(n) space"""
+          if len(arr) <= 1:
+              return arr
+          
+          mid = len(arr) // 2
+          left = merge_sort(arr[:mid])
+          right = merge_sort(arr[mid:])
+          
+          return merge(left, right)
+      
+      def merge(left, right):
+          result = []
+          i = j = 0
+          
+          while i < len(left) and j < len(right):
+              if left[i] <= right[j]:
+                  result.append(left[i])
+                  i += 1
+              else:
+                  result.append(right[j])
+                  j += 1
+          
+          result.extend(left[i:])
+          result.extend(right[j:])
+          return result
+    
+    javascript: |
+      function mergeSort(arr) {
+        if (arr.length <= 1) return arr;
+        
+        const mid = Math.floor(arr.length / 2);
+        const left = mergeSort(arr.slice(0, mid));
+        const right = mergeSort(arr.slice(mid));
+        
+        return merge(left, right);
+      }
+      
+      function merge(left, right) {
+        const result = [];
+        let i = 0, j = 0;
+        
+        while (i < left.length && j < right.length) {
+          if (left[i] <= right[j]) {
+            result.push(left[i++]);
+          } else {
+            result.push(right[j++]);
+          }
+        }
+        
+        return result.concat(left.slice(i)).concat(right.slice(j));
+      }
+    
+    typescript: |
+      function mergeSort(arr: number[]): number[] {
+        if (arr.length <= 1) return arr;
+        
+        const mid = Math.floor(arr.length / 2);
+        const left = mergeSort(arr.slice(0, mid));
+        const right = mergeSort(arr.slice(mid));
+        
+        return merge(left, right);
+      }
+      
+      function merge(left: number[], right: number[]): number[] {
+        const result: number[] = [];
+        let i = 0, j = 0;
+        
+        while (i < left.length && j < right.length) {
+          if (left[i] <= right[j]) {
+            result.push(left[i++]);
+          } else {
+            result.push(right[j++]);
+          }
+        }
+        
+        return result.concat(left.slice(i)).concat(right.slice(j));
+      }
+    
+    java: |
+      public class MergeSort {
+          public static int[] mergeSort(int[] arr) {
+              if (arr.length <= 1) return arr;
+              
+              int mid = arr.length / 2;
+              int[] left = mergeSort(Arrays.copyOfRange(arr, 0, mid));
+              int[] right = mergeSort(Arrays.copyOfRange(arr, mid, arr.length));
+              
+              return merge(left, right);
+          }
+          
+          private static int[] merge(int[] left, int[] right) {
+              int[] result = new int[left.length + right.length];
+              int i = 0, j = 0, k = 0;
+              
+              while (i < left.length && j < right.length) {
+                  if (left[i] <= right[j]) {
+                      result[k++] = left[i++];
+                  } else {
+                      result[k++] = right[j++];
+                  }
+              }
+              
+              while (i < left.length) result[k++] = left[i++];
+              while (j < right.length) result[k++] = right[j++];
+              
+              return result;
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      using namespace std;
+      
+      vector<int> merge(vector<int>& left, vector<int>& right) {
+          vector<int> result;
+          int i = 0, j = 0;
+          
+          while (i < left.size() && j < right.size()) {
+              if (left[i] <= right[j]) {
+                  result.push_back(left[i++]);
+              } else {
+                  result.push_back(right[j++]);
+              }
+          }
+          
+          while (i < left.size()) result.push_back(left[i++]);
+          while (j < right.size()) result.push_back(right[j++]);
+          
+          return result;
+      }
+      
+      vector<int> mergeSort(vector<int>& arr) {
+          if (arr.size() <= 1) return arr;
+          
+          int mid = arr.size() / 2;
+          vector<int> left(arr.begin(), arr.begin() + mid);
+          vector<int> right(arr.begin() + mid, arr.end());
+          
+          left = mergeSort(left);
+          right = mergeSort(right);
+          
+          return merge(left, right);
+      }
+    
+    php: |
+      <?php
+      function mergeSort($arr) {
+          if (count($arr) <= 1) return $arr;
+          
+          $mid = intval(count($arr) / 2);
+          $left = mergeSort(array_slice($arr, 0, $mid));
+          $right = mergeSort(array_slice($arr, $mid));
+          
+          return merge($left, $right);
+      }
+      
+      function merge($left, $right) {
+          $result = [];
+          $i = $j = 0;
+          
+          while ($i < count($left) && $j < count($right)) {
+              if ($left[$i] <= $right[$j]) {
+                  $result[] = $left[$i++];
+              } else {
+                  $result[] = $right[$j++];
+              }
+          }
+          
+          return array_merge($result, array_slice($left, $i), array_slice($right, $j));
+      }
+      ?>
+
+
+quick_sort:
+  name: "Quick Sort"
+  description: "O(n log n) average case sorting with in-place partitioning"
+  time_complexity: "O(n log n) average, O(n²) worst"
+  space_complexity: "O(log n) recursion stack"
+  languages:
+    python: |
+      def quick_sort(arr):
+          """Quick sort - O(n log n) average, O(n²) worst case"""
+          if len(arr) <= 1:
+              return arr
+          
+          pivot = arr[len(arr) // 2]
+          left = [x for x in arr if x < pivot]
+          middle = [x for x in arr if x == pivot]
+          right = [x for x in arr if x > pivot]
+          
+          return quick_sort(left) + middle + quick_sort(right)
+    
+    javascript: |
+      function quickSort(arr) {
+        if (arr.length <= 1) return arr;
+        
+        const pivot = arr[Math.floor(arr.length / 2)];
+        const left = arr.filter(x => x < pivot);
+        const middle = arr.filter(x => x === pivot);
+        const right = arr.filter(x => x > pivot);
+        
+        return [...quickSort(left), ...middle, ...quickSort(right)];
+      }
+    
+    typescript: |
+      function quickSort(arr: number[]): number[] {
+        if (arr.length <= 1) return arr;
+        
+        const pivot = arr[Math.floor(arr.length / 2)];
+        const left = arr.filter(x => x < pivot);
+        const middle = arr.filter(x => x === pivot);
+        const right = arr.filter(x => x > pivot);
+        
+        return [...quickSort(left), ...middle, ...quickSort(right)];
+      }
+    
+    java: |
+      import java.util.*;
+      
+      public class QuickSort {
+          public static void quickSort(int[] arr, int low, int high) {
+              if (low < high) {
+                  int pi = partition(arr, low, high);
+                  quickSort(arr, low, pi - 1);
+                  quickSort(arr, pi + 1, high);
+              }
+          }
+          
+          private static int partition(int[] arr, int low, int high) {
+              int pivot = arr[high];
+              int i = low - 1;
+              
+              for (int j = low; j < high; j++) {
+                  if (arr[j] < pivot) {
+                      i++;
+                      int temp = arr[i];
+                      arr[i] = arr[j];
+                      arr[j] = temp;
+                  }
+              }
+              
+              int temp = arr[i + 1];
+              arr[i + 1] = arr[high];
+              arr[high] = temp;
+              
+              return i + 1;
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      using namespace std;
+      
+      int partition(vector<int>& arr, int low, int high) {
+          int pivot = arr[high];
+          int i = low - 1;
+          
+          for (int j = low; j < high; j++) {
+              if (arr[j] < pivot) {
+                  i++;
+                  swap(arr[i], arr[j]);
+              }
+          }
+          
+          swap(arr[i + 1], arr[high]);
+          return i + 1;
+      }
+      
+      void quickSort(vector<int>& arr, int low, int high) {
+          if (low < high) {
+              int pi = partition(arr, low, high);
+              quickSort(arr, low, pi - 1);
+              quickSort(arr, pi + 1, high);
+          }
+      }
+    
+    php: |
+      <?php
+      function quickSort($arr) {
+          if (count($arr) <= 1) return $arr;
+          
+          $pivot = $arr[intval(count($arr) / 2)];
+          $left = array_filter($arr, function($x) use ($pivot) { return $x < $pivot; });
+          $middle = array_filter($arr, function($x) use ($pivot) { return $x === $pivot; });
+          $right = array_filter($arr, function($x) use ($pivot) { return $x > $pivot; });
+          
+          return array_merge(quickSort($left), $middle, quickSort($right));
+      }
+      ?>
+
+# ============================================
+# DYNAMIC PROGRAMMING
+# ============================================
+
+fibonacci_dp:
+  name: "Fibonacci (DP)"
+  description: "Calculate Fibonacci number using dynamic programming"
+  time_complexity: "O(n)"
+  space_complexity: "O(1)"
+  languages:
+    python: |
+      def fibonacci(n):
+          """Fibonacci using DP - O(n) time, O(1) space"""
+          if n <= 1:
+              return n
+          
+          prev, curr = 0, 1
+          
+          for _ in range(2, n + 1):
+              prev, curr = curr, prev + curr
+          
+          return curr
+    
+    javascript: |
+      function fibonacci(n) {
+        if (n <= 1) return n;
+        
+        let prev = 0, curr = 1;
+        
+        for (let i = 2; i <= n; i++) {
+          [prev, curr] = [curr, prev + curr];
+        }
+        
+        return curr;
+      }
+    
+    typescript: |
+      function fibonacci(n: number): number {
+        if (n <= 1) return n;
+        
+        let prev = 0, curr = 1;
+        
+        for (let i = 2; i <= n; i++) {
+          [prev, curr] = [curr, prev + curr];
+        }
+        
+        return curr;
+      }
+    
+    java: |
+      public class Fibonacci {
+          public static int fibonacci(int n) {
+              if (n <= 1) return n;
+              
+              int prev = 0, curr = 1;
+              
+              for (int i = 2; i <= n; i++) {
+                  int temp = curr;
+                  curr = prev + curr;
+                  prev = temp;
+              }
+              
+              return curr;
+          }
+      }
+    
+    cpp: |
+      int fibonacci(int n) {
+          if (n <= 1) return n;
+          
+          int prev = 0, curr = 1;
+          
+          for (int i = 2; i <= n; i++) {
+              int temp = curr;
+              curr = prev + curr;
+              prev = temp;
+          }
+          
+          return curr;
+      }
+    
+    php: |
+      <?php
+      function fibonacci($n) {
+          if ($n <= 1) return $n;
+          
+          $prev = 0;
+          $curr = 1;
+          
+          for ($i = 2; $i <= $n; $i++) {
+              $temp = $curr;
+              $curr = $prev + $curr;
+              $prev = $temp;
+          }
+          
+          return $curr;
+      }
+      ?>
+
+longest_common_subsequence:
+  name: "Longest Common Subsequence"
+  description: "Find length of longest common subsequence using DP"
+  time_complexity: "O(m × n)"
+  space_complexity: "O(m × n)"
+  languages:
+    python: |
+      def lcs(text1, text2):
+          """Longest Common Subsequence - O(m*n) time and space"""
+          m, n = len(text1), len(text2)
+          dp = [[0] * (n + 1) for _ in range(m + 1)]
+          
+          for i in range(1, m + 1):
+              for j in range(1, n + 1):
+                  if text1[i-1] == text2[j-1]:
+                      dp[i][j] = dp[i-1][j-1] + 1
+                  else:
+                      dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+          
+          return dp[m][n]
+    
+    javascript: |
+      function lcs(text1, text2) {
+        const m = text1.length, n = text2.length;
+        const dp = Array(m + 1).fill(0).map(() => Array(n + 1).fill(0));
+        
+        for (let i = 1; i <= m; i++) {
+          for (let j = 1; j <= n; j++) {
+            if (text1[i-1] === text2[j-1]) {
+              dp[i][j] = dp[i-1][j-1] + 1;
+            } else {
+              dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
+            }
+          }
+        }
+        
+        return dp[m][n];
+      }
+    
+    typescript: |
+      function lcs(text1: string, text2: string): number {
+        const m = text1.length, n = text2.length;
+        const dp: number[][] = Array(m + 1).fill(0).map(() => Array(n + 1).fill(0));
+        
+        for (let i = 1; i <= m; i++) {
+          for (let j = 1; j <= n; j++) {
+            if (text1[i-1] === text2[j-1]) {
+              dp[i][j] = dp[i-1][j-1] + 1;
+            } else {
+              dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
+            }
+          }
+        }
+        
+        return dp[m][n];
+      }
+    
+    java: |
+      public class LCS {
+          public static int lcs(String text1, String text2) {
+              int m = text1.length(), n = text2.length();
+              int[][] dp = new int[m + 1][n + 1];
+              
+              for (int i = 1; i <= m; i++) {
+                  for (int j = 1; j <= n; j++) {
+                      if (text1.charAt(i-1) == text2.charAt(j-1)) {
+                          dp[i][j] = dp[i-1][j-1] + 1;
+                      } else {
+                          dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
+                      }
+                  }
+              }
+              
+              return dp[m][n];
+          }
+      }
+    
+    cpp: |
+      #include <string>
+      #include <vector>
+      #include <algorithm>
+      using namespace std;
+      
+      int lcs(string text1, string text2) {
+          int m = text1.length(), n = text2.length();
+          vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));
+          
+          for (int i = 1; i <= m; i++) {
+              for (int j = 1; j <= n; j++) {
+                  if (text1[i-1] == text2[j-1]) {
+                      dp[i][j] = dp[i-1][j-1] + 1;
+                  } else {
+                      dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
+                  }
+              }
+          }
+          
+          return dp[m][n];
+      }
+    
+    php: |
+      <?php
+      function lcs($text1, $text2) {
+          $m = strlen($text1);
+          $n = strlen($text2);
+          $dp = array_fill(0, $m + 1, array_fill(0, $n + 1, 0));
+          
+          for ($i = 1; $i <= $m; $i++) {
+              for ($j = 1; $j <= $n; $j++) {
+                  if ($text1[$i-1] === $text2[$j-1]) {
+                      $dp[$i][$j] = $dp[$i-1][$j-1] + 1;
+                  } else {
+                      $dp[$i][$j] = max($dp[$i-1][$j], $dp[$i][$j-1]);
+                  }
+              }
+          }
+          
+          return $dp[$m][$n];
+      }
+      ?>
+
+
+knapsack_01:
+  name: "0/1 Knapsack"
+  description: "Classic DP problem - maximize value within weight constraint"
+  time_complexity: "O(n × W)"
+  space_complexity: "O(n × W)"
+  languages:
+    python: |
+      def knapsack(weights, values, capacity):
+          """0/1 Knapsack - O(n*W) time and space"""
+          n = len(weights)
+          dp = [[0] * (capacity + 1) for _ in range(n + 1)]
+          
+          for i in range(1, n + 1):
+              for w in range(capacity + 1):
+                  if weights[i-1] <= w:
+                      dp[i][w] = max(
+                          values[i-1] + dp[i-1][w - weights[i-1]],
+                          dp[i-1][w]
+                      )
+                  else:
+                      dp[i][w] = dp[i-1][w]
+          
+          return dp[n][capacity]
+    
+    javascript: |
+      function knapsack(weights, values, capacity) {
+        const n = weights.length;
+        const dp = Array(n + 1).fill(0).map(() => Array(capacity + 1).fill(0));
+        
+        for (let i = 1; i <= n; i++) {
+          for (let w = 0; w <= capacity; w++) {
+            if (weights[i-1] <= w) {
+              dp[i][w] = Math.max(
+                values[i-1] + dp[i-1][w - weights[i-1]],
+                dp[i-1][w]
+              );
+            } else {
+              dp[i][w] = dp[i-1][w];
+            }
+          }
+        }
+        
+        return dp[n][capacity];
+      }
+    
+    typescript: |
+      function knapsack(weights: number[], values: number[], capacity: number): number {
+        const n = weights.length;
+        const dp: number[][] = Array(n + 1).fill(0).map(() => Array(capacity + 1).fill(0));
+        
+        for (let i = 1; i <= n; i++) {
+          for (let w = 0; w <= capacity; w++) {
+            if (weights[i-1] <= w) {
+              dp[i][w] = Math.max(
+                values[i-1] + dp[i-1][w - weights[i-1]],
+                dp[i-1][w]
+              );
+            } else {
+              dp[i][w] = dp[i-1][w];
+            }
+          }
+        }
+        
+        return dp[n][capacity];
+      }
+    
+    java: |
+      public class Knapsack {
+          public static int knapsack(int[] weights, int[] values, int capacity) {
+              int n = weights.length;
+              int[][] dp = new int[n + 1][capacity + 1];
+              
+              for (int i = 1; i <= n; i++) {
+                  for (int w = 0; w <= capacity; w++) {
+                      if (weights[i-1] <= w) {
+                          dp[i][w] = Math.max(
+                              values[i-1] + dp[i-1][w - weights[i-1]],
+                              dp[i-1][w]
+                          );
+                      } else {
+                          dp[i][w] = dp[i-1][w];
+                      }
+                  }
+              }
+              
+              return dp[n][capacity];
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      #include <algorithm>
+      using namespace std;
+      
+      int knapsack(vector<int>& weights, vector<int>& values, int capacity) {
+          int n = weights.size();
+          vector<vector<int>> dp(n + 1, vector<int>(capacity + 1, 0));
+          
+          for (int i = 1; i <= n; i++) {
+              for (int w = 0; w <= capacity; w++) {
+                  if (weights[i-1] <= w) {
+                      dp[i][w] = max(
+                          values[i-1] + dp[i-1][w - weights[i-1]],
+                          dp[i-1][w]
+                      );
+                  } else {
+                      dp[i][w] = dp[i-1][w];
+                  }
+              }
+          }
+          
+          return dp[n][capacity];
+      }
+    
+    php: |
+      <?php
+      function knapsack($weights, $values, $capacity) {
+          $n = count($weights);
+          $dp = array_fill(0, $n + 1, array_fill(0, $capacity + 1, 0));
+          
+          for ($i = 1; $i <= $n; $i++) {
+              for ($w = 0; $w <= $capacity; $w++) {
+                  if ($weights[$i-1] <= $w) {
+                      $dp[$i][$w] = max(
+                          $values[$i-1] + $dp[$i-1][$w - $weights[$i-1]],
+                          $dp[$i-1][$w]
+                      );
+                  } else {
+                      $dp[$i][$w] = $dp[$i-1][$w];
+                  }
+              }
+          }
+          
+          return $dp[$n][$capacity];
+      }
+      ?>
+
+# ============================================
+# BACKTRACKING
+# ============================================
+
+permutations:
+  name: "Generate Permutations"
+  description: "Generate all permutations using backtracking"
+  time_complexity: "O(n!)"
+  space_complexity: "O(n)"
+  languages:
+    python: |
+      def permute(nums):
+          """Generate all permutations using backtracking"""
+          result = []
+          
+          def backtrack(path, remaining):
+              if not remaining:
+                  result.append(path[:])
+                  return
+              
+              for i in range(len(remaining)):
+                  path.append(remaining[i])
+                  backtrack(path, remaining[:i] + remaining[i+1:])
+                  path.pop()
+          
+          backtrack([], nums)
+          return result
+    
+    javascript: |
+      function permute(nums) {
+        const result = [];
+        
+        function backtrack(path, remaining) {
+          if (remaining.length === 0) {
+            result.push([...path]);
+            return;
+          }
+          
+          for (let i = 0; i < remaining.length; i++) {
+            path.push(remaining[i]);
+            backtrack(path, [...remaining.slice(0, i), ...remaining.slice(i + 1)]);
+            path.pop();
+          }
+        }
+        
+        backtrack([], nums);
+        return result;
+      }
+    
+    typescript: |
+      function permute(nums: number[]): number[][] {
+        const result: number[][] = [];
+        
+        function backtrack(path: number[], remaining: number[]): void {
+          if (remaining.length === 0) {
+            result.push([...path]);
+            return;
+          }
+          
+          for (let i = 0; i < remaining.length; i++) {
+            path.push(remaining[i]);
+            backtrack(path, [...remaining.slice(0, i), ...remaining.slice(i + 1)]);
+            path.pop();
+          }
+        }
+        
+        backtrack([], nums);
+        return result;
+      }
+    
+    java: |
+      import java.util.*;
+      
+      public class Permutations {
+          public static List<List<Integer>> permute(int[] nums) {
+              List<List<Integer>> result = new ArrayList<>();
+              backtrack(result, new ArrayList<>(), nums);
+              return result;
+          }
+          
+          private static void backtrack(List<List<Integer>> result, List<Integer> path, int[] nums) {
+              if (path.size() == nums.length) {
+                  result.add(new ArrayList<>(path));
+                  return;
+              }
+              
+              for (int num : nums) {
+                  if (path.contains(num)) continue;
+                  path.add(num);
+                  backtrack(result, path, nums);
+                  path.remove(path.size() - 1);
+              }
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      using namespace std;
+      
+      void backtrack(vector<vector<int>>& result, vector<int>& path, vector<int>& nums, vector<bool>& used) {
+          if (path.size() == nums.size()) {
+              result.push_back(path);
+              return;
+          }
+          
+          for (int i = 0; i < nums.size(); i++) {
+              if (used[i]) continue;
+              
+              path.push_back(nums[i]);
+              used[i] = true;
+              backtrack(result, path, nums, used);
+              path.pop_back();
+              used[i] = false;
+          }
+      }
+      
+      vector<vector<int>> permute(vector<int>& nums) {
+          vector<vector<int>> result;
+          vector<int> path;
+          vector<bool> used(nums.size(), false);
+          backtrack(result, path, nums, used);
+          return result;
+      }
+    
+    php: |
+      <?php
+      function permute($nums) {
+          $result = [];
+          
+          function backtrack(&$result, $path, $remaining) {
+              if (empty($remaining)) {
+                  $result[] = $path;
+                  return;
+              }
+              
+              for ($i = 0; $i < count($remaining); $i++) {
+                  $newPath = $path;
+                  $newPath[] = $remaining[$i];
+                  $newRemaining = array_merge(
+                      array_slice($remaining, 0, $i),
+                      array_slice($remaining, $i + 1)
+                  );
+                  backtrack($result, $newPath, $newRemaining);
+              }
+          }
+          
+          backtrack($result, [], $nums);
+          return $result;
+      }
+      ?>
+
+
+# ============================================
+# ADVANCED ALGORITHMS
+# ============================================
+
+dijkstra:
+  name: "Dijkstra's Algorithm"
+  description: "Shortest path in weighted graph with non-negative weights"
+  time_complexity: "O((V + E) log V)"
+  space_complexity: "O(V)"
+  languages:
+    python: |
+      import heapq
+      
+      def dijkstra(graph, start):
+          """Dijkstra's shortest path - O((V+E) log V)"""
+          distances = {node: float('inf') for node in graph}
+          distances[start] = 0
+          pq = [(0, start)]
+          
+          while pq:
+              current_dist, current = heapq.heappop(pq)
+              
+              if current_dist > distances[current]:
+                  continue
+              
+              for neighbor, weight in graph[current]:
+                  distance = current_dist + weight
+                  
+                  if distance < distances[neighbor]:
+                      distances[neighbor] = distance
+                      heapq.heappush(pq, (distance, neighbor))
+          
+          return distances
+    
+    javascript: |
+      function dijkstra(graph, start) {
+        const distances = {};
+        const pq = [[0, start]];
+        
+        for (const node in graph) {
+          distances[node] = Infinity;
+        }
+        distances[start] = 0;
+        
+        while (pq.length > 0) {
+          pq.sort((a, b) => a[0] - b[0]);
+          const [currentDist, current] = pq.shift();
+          
+          if (currentDist > distances[current]) continue;
+          
+          for (const [neighbor, weight] of graph[current]) {
+            const distance = currentDist + weight;
+            
+            if (distance < distances[neighbor]) {
+              distances[neighbor] = distance;
+              pq.push([distance, neighbor]);
+            }
+          }
+        }
+        
+        return distances;
+      }
+    
+    typescript: |
+      function dijkstra(graph: Map<string, [string, number][]>, start: string): Map<string, number> {
+        const distances = new Map<string, number>();
+        const pq: [number, string][] = [[0, start]];
+        
+        for (const node of graph.keys()) {
+          distances.set(node, Infinity);
+        }
+        distances.set(start, 0);
+        
+        while (pq.length > 0) {
+          pq.sort((a, b) => a[0] - b[0]);
+          const [currentDist, current] = pq.shift()!;
+          
+          if (currentDist > distances.get(current)!) continue;
+          
+          for (const [neighbor, weight] of graph.get(current) || []) {
+            const distance = currentDist + weight;
+            
+            if (distance < distances.get(neighbor)!) {
+              distances.set(neighbor, distance);
+              pq.push([distance, neighbor]);
+            }
+          }
+        }
+        
+        return distances;
+      }
+    
+    java: |
+      import java.util.*;
+      
+      public class Dijkstra {
+          public static Map<String, Integer> dijkstra(Map<String, List<int[]>> graph, String start) {
+              Map<String, Integer> distances = new HashMap<>();
+              PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[0] - b[0]);
+              
+              for (String node : graph.keySet()) {
+                  distances.put(node, Integer.MAX_VALUE);
+              }
+              distances.put(start, 0);
+              pq.offer(new int[]{0, start.hashCode()});
+              
+              while (!pq.isEmpty()) {
+                  int[] current = pq.poll();
+                  int currentDist = current[0];
+                  String currentNode = start; // Simplified
+                  
+                  if (currentDist > distances.get(currentNode)) continue;
+                  
+                  for (int[] edge : graph.get(currentNode)) {
+                      String neighbor = start; // Simplified
+                      int weight = edge[1];
+                      int distance = currentDist + weight;
+                      
+                      if (distance < distances.get(neighbor)) {
+                          distances.put(neighbor, distance);
+                          pq.offer(new int[]{distance, neighbor.hashCode()});
+                      }
+                  }
+              }
+              
+              return distances;
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      #include <queue>
+      #include <unordered_map>
+      #include <limits>
+      using namespace std;
+      
+      unordered_map<int, int> dijkstra(unordered_map<int, vector<pair<int, int>>>& graph, int start) {
+          unordered_map<int, int> distances;
+          priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+          
+          for (auto& [node, _] : graph) {
+              distances[node] = numeric_limits<int>::max();
+          }
+          distances[start] = 0;
+          pq.push({0, start});
+          
+          while (!pq.empty()) {
+              auto [currentDist, current] = pq.top();
+              pq.pop();
+              
+              if (currentDist > distances[current]) continue;
+              
+              for (auto& [neighbor, weight] : graph[current]) {
+                  int distance = currentDist + weight;
+                  
+                  if (distance < distances[neighbor]) {
+                      distances[neighbor] = distance;
+                      pq.push({distance, neighbor});
+                  }
+              }
+          }
+          
+          return distances;
+      }
+    
+    php: |
+      <?php
+      function dijkstra($graph, $start) {
+          $distances = [];
+          $pq = [[$start, 0]];
+          
+          foreach ($graph as $node => $_) {
+              $distances[$node] = PHP_INT_MAX;
+          }
+          $distances[$start] = 0;
+          
+          while (!empty($pq)) {
+              usort($pq, function($a, $b) { return $a[1] - $b[1]; });
+              list($current, $currentDist) = array_shift($pq);
+              
+              if ($currentDist > $distances[$current]) continue;
+              
+              foreach ($graph[$current] as list($neighbor, $weight)) {
+                  $distance = $currentDist + $weight;
+                  
+                  if ($distance < $distances[$neighbor]) {
+                      $distances[$neighbor] = $distance;
+                      $pq[] = [$neighbor, $distance];
+                  }
+              }
+          }
+          
+          return $distances;
+      }
+      ?>
+
+
+trie:
+  name: "Trie (Prefix Tree)"
+  description: "Efficient string prefix search data structure"
+  time_complexity: "O(m) insert/search, m = word length"
+  space_complexity: "O(ALPHABET_SIZE × N × M)"
+  languages:
+    python: |
+      class TrieNode:
+          def __init__(self):
+              self.children = {}
+              self.is_end = False
+      
+      class Trie:
+          def __init__(self):
+              self.root = TrieNode()
+          
+          def insert(self, word):
+              node = self.root
+              for char in word:
+                  if char not in node.children:
+                      node.children[char] = TrieNode()
+                  node = node.children[char]
+              node.is_end = True
+          
+          def search(self, word):
+              node = self.root
+              for char in word:
+                  if char not in node.children:
+                      return False
+                  node = node.children[char]
+              return node.is_end
+          
+          def starts_with(self, prefix):
+              node = self.root
+              for char in prefix:
+                  if char not in node.children:
+                      return False
+                  node = node.children[char]
+              return True
+    
+    javascript: |
+      class TrieNode {
+        constructor() {
+          this.children = {};
+          this.isEnd = false;
+        }
+      }
+      
+      class Trie {
+        constructor() {
+          this.root = new TrieNode();
+        }
+        
+        insert(word) {
+          let node = this.root;
+          for (const char of word) {
+            if (!node.children[char]) {
+              node.children[char] = new TrieNode();
+            }
+            node = node.children[char];
+          }
+          node.isEnd = true;
+        }
+        
+        search(word) {
+          let node = this.root;
+          for (const char of word) {
+            if (!node.children[char]) return false;
+            node = node.children[char];
+          }
+          return node.isEnd;
+        }
+        
+        startsWith(prefix) {
+          let node = this.root;
+          for (const char of prefix) {
+            if (!node.children[char]) return false;
+            node = node.children[char];
+          }
+          return true;
+        }
+      }
+    
+    typescript: |
+      class TrieNode {
+        children: Map<string, TrieNode>;
+        isEnd: boolean;
+        
+        constructor() {
+          this.children = new Map();
+          this.isEnd = false;
+        }
+      }
+      
+      class Trie {
+        root: TrieNode;
+        
+        constructor() {
+          this.root = new TrieNode();
+        }
+        
+        insert(word: string): void {
+          let node = this.root;
+          for (const char of word) {
+            if (!node.children.has(char)) {
+              node.children.set(char, new TrieNode());
+            }
+            node = node.children.get(char)!;
+          }
+          node.isEnd = true;
+        }
+        
+        search(word: string): boolean {
+          let node = this.root;
+          for (const char of word) {
+            if (!node.children.has(char)) return false;
+            node = node.children.get(char)!;
+          }
+          return node.isEnd;
+        }
+        
+        startsWith(prefix: string): boolean {
+          let node = this.root;
+          for (const char of prefix) {
+            if (!node.children.has(char)) return false;
+            node = node.children.get(char)!;
+          }
+          return true;
+        }
+      }
+    
+    java: |
+      import java.util.*;
+      
+      class TrieNode {
+          Map<Character, TrieNode> children;
+          boolean isEnd;
+          
+          TrieNode() {
+              children = new HashMap<>();
+              isEnd = false;
+          }
+      }
+      
+      public class Trie {
+          private TrieNode root;
+          
+          public Trie() {
+              root = new TrieNode();
+          }
+          
+          public void insert(String word) {
+              TrieNode node = root;
+              for (char c : word.toCharArray()) {
+                  node.children.putIfAbsent(c, new TrieNode());
+                  node = node.children.get(c);
+              }
+              node.isEnd = true;
+          }
+          
+          public boolean search(String word) {
+              TrieNode node = root;
+              for (char c : word.toCharArray()) {
+                  if (!node.children.containsKey(c)) return false;
+                  node = node.children.get(c);
+              }
+              return node.isEnd;
+          }
+          
+          public boolean startsWith(String prefix) {
+              TrieNode node = root;
+              for (char c : prefix.toCharArray()) {
+                  if (!node.children.containsKey(c)) return false;
+                  node = node.children.get(c);
+              }
+              return true;
+          }
+      }
+    
+    cpp: |
+      #include <unordered_map>
+      #include <string>
+      using namespace std;
+      
+      class TrieNode {
+      public:
+          unordered_map<char, TrieNode*> children;
+          bool isEnd;
+          
+          TrieNode() : isEnd(false) {}
+      };
+      
+      class Trie {
+      private:
+          TrieNode* root;
+          
+      public:
+          Trie() {
+              root = new TrieNode();
+          }
+          
+          void insert(string word) {
+              TrieNode* node = root;
+              for (char c : word) {
+                  if (node->children.find(c) == node->children.end()) {
+                      node->children[c] = new TrieNode();
+                  }
+                  node = node->children[c];
+              }
+              node->isEnd = true;
+          }
+          
+          bool search(string word) {
+              TrieNode* node = root;
+              for (char c : word) {
+                  if (node->children.find(c) == node->children.end()) {
+                      return false;
+                  }
+                  node = node->children[c];
+              }
+              return node->isEnd;
+          }
+          
+          bool startsWith(string prefix) {
+              TrieNode* node = root;
+              for (char c : prefix) {
+                  if (node->children.find(c) == node->children.end()) {
+                      return false;
+                  }
+                  node = node->children[c];
+              }
+              return true;
+          }
+      };
+    
+    php: |
+      <?php
+      class TrieNode {
+          public $children = [];
+          public $isEnd = false;
+      }
+      
+      class Trie {
+          private $root;
+          
+          public function __construct() {
+              $this->root = new TrieNode();
+          }
+          
+          public function insert($word) {
+              $node = $this->root;
+              for ($i = 0; $i < strlen($word); $i++) {
+                  $char = $word[$i];
+                  if (!isset($node->children[$char])) {
+                      $node->children[$char] = new TrieNode();
+                  }
+                  $node = $node->children[$char];
+              }
+              $node->isEnd = true;
+          }
+          
+          public function search($word) {
+              $node = $this->root;
+              for ($i = 0; $i < strlen($word); $i++) {
+                  $char = $word[$i];
+                  if (!isset($node->children[$char])) {
+                      return false;
+                  }
+                  $node = $node->children[$char];
+              }
+              return $node->isEnd;
+          }
+          
+          public function startsWith($prefix) {
+              $node = $this->root;
+              for ($i = 0; $i < strlen($prefix); $i++) {
+                  $char = $prefix[$i];
+                  if (!isset($node->children[$char])) {
+                      return false;
+                  }
+                  $node = $node->children[$char];
+              }
+              return true;
+          }
+      }
+      ?>
+
+
+union_find:
+  name: "Union Find (Disjoint Set)"
+  description: "Efficiently track connected components with path compression"
+  time_complexity: "O(α(n)) amortized per operation"
+  space_complexity: "O(n)"
+  languages:
+    python: |
+      class UnionFind:
+          """Union Find with path compression and union by rank"""
+          def __init__(self, n):
+              self.parent = list(range(n))
+              self.rank = [0] * n
+          
+          def find(self, x):
+              if self.parent[x] != x:
+                  self.parent[x] = self.find(self.parent[x])  # Path compression
+              return self.parent[x]
+          
+          def union(self, x, y):
+              root_x = self.find(x)
+              root_y = self.find(y)
+              
+              if root_x == root_y:
+                  return False
+              
+              # Union by rank
+              if self.rank[root_x] < self.rank[root_y]:
+                  self.parent[root_x] = root_y
+              elif self.rank[root_x] > self.rank[root_y]:
+                  self.parent[root_y] = root_x
+              else:
+                  self.parent[root_y] = root_x
+                  self.rank[root_x] += 1
+              
+              return True
+          
+          def connected(self, x, y):
+              return self.find(x) == self.find(y)
+    
+    javascript: |
+      class UnionFind {
+        constructor(n) {
+          this.parent = Array.from({length: n}, (_, i) => i);
+          this.rank = Array(n).fill(0);
+        }
+        
+        find(x) {
+          if (this.parent[x] !== x) {
+            this.parent[x] = this.find(this.parent[x]); // Path compression
+          }
+          return this.parent[x];
+        }
+        
+        union(x, y) {
+          const rootX = this.find(x);
+          const rootY = this.find(y);
+          
+          if (rootX === rootY) return false;
+          
+          // Union by rank
+          if (this.rank[rootX] < this.rank[rootY]) {
+            this.parent[rootX] = rootY;
+          } else if (this.rank[rootX] > this.rank[rootY]) {
+            this.parent[rootY] = rootX;
+          } else {
+            this.parent[rootY] = rootX;
+            this.rank[rootX]++;
+          }
+          
+          return true;
+        }
+        
+        connected(x, y) {
+          return this.find(x) === this.find(y);
+        }
+      }
+    
+    typescript: |
+      class UnionFind {
+        private parent: number[];
+        private rank: number[];
+        
+        constructor(n: number) {
+          this.parent = Array.from({length: n}, (_, i) => i);
+          this.rank = Array(n).fill(0);
+        }
+        
+        find(x: number): number {
+          if (this.parent[x] !== x) {
+            this.parent[x] = this.find(this.parent[x]); // Path compression
+          }
+          return this.parent[x];
+        }
+        
+        union(x: number, y: number): boolean {
+          const rootX = this.find(x);
+          const rootY = this.find(y);
+          
+          if (rootX === rootY) return false;
+          
+          // Union by rank
+          if (this.rank[rootX] < this.rank[rootY]) {
+            this.parent[rootX] = rootY;
+          } else if (this.rank[rootX] > this.rank[rootY]) {
+            this.parent[rootY] = rootX;
+          } else {
+            this.parent[rootY] = rootX;
+            this.rank[rootX]++;
+          }
+          
+          return true;
+        }
+        
+        connected(x: number, y: number): boolean {
+          return this.find(x) === this.find(y);
+        }
+      }
+    
+    java: |
+      public class UnionFind {
+          private int[] parent;
+          private int[] rank;
+          
+          public UnionFind(int n) {
+              parent = new int[n];
+              rank = new int[n];
+              for (int i = 0; i < n; i++) {
+                  parent[i] = i;
+              }
+          }
+          
+          public int find(int x) {
+              if (parent[x] != x) {
+                  parent[x] = find(parent[x]); // Path compression
+              }
+              return parent[x];
+          }
+          
+          public boolean union(int x, int y) {
+              int rootX = find(x);
+              int rootY = find(y);
+              
+              if (rootX == rootY) return false;
+              
+              // Union by rank
+              if (rank[rootX] < rank[rootY]) {
+                  parent[rootX] = rootY;
+              } else if (rank[rootX] > rank[rootY]) {
+                  parent[rootY] = rootX;
+              } else {
+                  parent[rootY] = rootX;
+                  rank[rootX]++;
+              }
+              
+              return true;
+          }
+          
+          public boolean connected(int x, int y) {
+              return find(x) == find(y);
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      using namespace std;
+      
+      class UnionFind {
+      private:
+          vector<int> parent;
+          vector<int> rank;
+          
+      public:
+          UnionFind(int n) : parent(n), rank(n, 0) {
+              for (int i = 0; i < n; i++) {
+                  parent[i] = i;
+              }
+          }
+          
+          int find(int x) {
+              if (parent[x] != x) {
+                  parent[x] = find(parent[x]); // Path compression
+              }
+              return parent[x];
+          }
+          
+          bool unionSets(int x, int y) {
+              int rootX = find(x);
+              int rootY = find(y);
+              
+              if (rootX == rootY) return false;
+              
+              // Union by rank
+              if (rank[rootX] < rank[rootY]) {
+                  parent[rootX] = rootY;
+              } else if (rank[rootX] > rank[rootY]) {
+                  parent[rootY] = rootX;
+              } else {
+                  parent[rootY] = rootX;
+                  rank[rootX]++;
+              }
+              
+              return true;
+          }
+          
+          bool connected(int x, int y) {
+              return find(x) == find(y);
+          }
+      };
+    
+    php: |
+      <?php
+      class UnionFind {
+          private $parent;
+          private $rank;
+          
+          public function __construct($n) {
+              $this->parent = range(0, $n - 1);
+              $this->rank = array_fill(0, $n, 0);
+          }
+          
+          public function find($x) {
+              if ($this->parent[$x] != $x) {
+                  $this->parent[$x] = $this->find($this->parent[$x]); // Path compression
+              }
+              return $this->parent[$x];
+          }
+          
+          public function union($x, $y) {
+              $rootX = $this->find($x);
+              $rootY = $this->find($y);
+              
+              if ($rootX == $rootY) return false;
+              
+              // Union by rank
+              if ($this->rank[$rootX] < $this->rank[$rootY]) {
+                  $this->parent[$rootX] = $rootY;
+              } elseif ($this->rank[$rootX] > $this->rank[$rootY]) {
+                  $this->parent[$rootY] = $rootX;
+              } else {
+                  $this->parent[$rootY] = $rootX;
+                  $this->rank[$rootX]++;
+              }
+              
+              return true;
+          }
+          
+          public function connected($x, $y) {
+              return $this->find($x) == $this->find($y);
+          }
       }
       ?>

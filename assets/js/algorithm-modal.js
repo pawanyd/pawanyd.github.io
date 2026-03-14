@@ -14,6 +14,8 @@
   const modal = document.getElementById('algorithm-code-modal');
   const modalTitle = document.getElementById('algo-modal-title');
   const modalDescription = document.getElementById('algo-modal-description');
+  const timeComplexity = document.getElementById('algo-time-complexity');
+  const spaceComplexity = document.getElementById('algo-space-complexity');
   const codeDisplay = document.getElementById('algo-code-display');
   const copyBtn = document.querySelector('.algo-copy-btn');
   const closeBtn = document.querySelector('.algo-modal-close');
@@ -46,6 +48,8 @@
     // Update modal content
     modalTitle.textContent = algorithm.name;
     modalDescription.textContent = algorithm.description;
+    timeComplexity.textContent = algorithm.time_complexity || 'Not specified';
+    spaceComplexity.textContent = algorithm.space_complexity || 'Not specified';
     
     // Set active tab to user's preferred language
     updateActiveTab(currentLanguage);
