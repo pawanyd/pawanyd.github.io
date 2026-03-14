@@ -1,0 +1,17 @@
+# Experience Configuration
+# Update this file when experience changes
+
+years: 10
+display_text: "10+"
+start_date: "2016-03-01"  # March 1, 2016
+description: "10+ years of experience"
+
+# Calculated fields for easy reference
+career_start_year: 2016
+current_title: "Principal Software Developer"
+journey_description: "From Associate to Principal"
+
+# For different contexts
+short_description: "10+ years of experience"
+long_description: "Over the past 10 years"
+hero_description: "10+ years of experience | System Architecture | Product Development | Scaling at Millions of Users"

@@ -3,12 +3,12 @@ title: "Welcome to My Portfolio"
 hero:
   name: "Pawan Kumar"
   title: "Principal Software Developer & Technical Architect"
-  description: "9+ years of experience | System Architecture | Product Development | Scaling at Millions of Users"
+  description: "10+ years of experience | System Architecture | Product Development | Scaling at Millions of Users"
   image: "/assets/images/pawan.webp"
 
 about:
   title: "About Me"
-  description: "Over the past nine years, I've grown from an eager Associate Software Developer into a Principal Architect who thrives on solving complex technical challenges. My journey has taken me through diverse industries—from building emotion detection platforms for Marvel to architecting stock trading systems handling millions of concurrent users, and most recently, creating no-code tools that democratize technology for non-technical users. I'm passionate about designing systems that not only scale elegantly but also deliver measurable business impact, whether that's reducing client onboarding from two months to two hours or cutting development time by 70% through AI integration."
+  description: "Over the past 10 years, I've grown from an eager Associate Software Developer into a Principal Architect who thrives on solving complex technical challenges. My journey has taken me through diverse industries—from building emotion detection platforms for Marvel to architecting stock trading systems handling millions of concurrent users, and most recently, creating no-code tools that democratize technology for non-technical users. I'm passionate about designing systems that not only scale elegantly but also deliver measurable business impact, whether that's reducing client onboarding from two months to two hours or cutting development time by 70% through AI integration."
   details:
     - "My career began in 2016 as an Associate Software Developer, learning PHP and MySQL fundamentals. Fast forward to today, I'm a Principal Architect designing systems that serve millions of users across the globe."
     - "I've built emotion detection platforms for entertainment giants like Marvel, architected real-time stock trading systems handling massive concurrent loads, and created no-code tools that empower non-technical teams to build professional websites in hours instead of months."

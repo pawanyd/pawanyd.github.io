@@ -1,7 +1,10 @@
+---
+layout: null
+---
 {
   "name": "Pawan Kumar - Principal Software Developer",
   "short_name": "Pawan Kumar",
-  "description": "Professional portfolio showcasing 9+ years of expertise in PHP, Laravel, JavaScript, and cloud solutions. Specializing in SaaS development, scalable architecture, and full-stack engineering.",
+  "description": "Professional portfolio showcasing 10+ years of expertise in PHP, Laravel, JavaScript, and cloud solutions. Specializing in SaaS development, scalable architecture, and full-stack engineering.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
