@@ -5,6 +5,9 @@ date: 2025-07-03
 category: "DSA"
 tags: ["Trees", "Binary Search Trees", "Data Structures", "DSA", "Interview Prep", "Algorithms"]
 image: "/assets/images/posts/trees-bst-hero.svg"
+meta_title: "Trees & Binary Search Trees: Complete Guide to Hierarchical Data Structures"
+meta_description: "Master trees and BSTs — the hierarchical data structures that power everything from file systems to databases, with O(log n) search that beats arrays every time. Complete guide with visual examples."
+meta_image: "/assets/images/posts/trees-bst-hero.svg"
 excerpt: "Master trees and BSTs — the hierarchical data structures that power everything from file systems to databases, with O(log n) search that beats arrays every time."
 ---
 
