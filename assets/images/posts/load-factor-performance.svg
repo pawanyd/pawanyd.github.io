@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="performanceGradient" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ef4444;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="20" font-weight="bold">Load Factor vs Performance: The Critical Relationship</text>
+  
+  <!-- Chart Area -->
+  <g transform="translate(80, 60)">
+    <!-- Axes -->
+    <line x1="0" y1="280" x2="600" y2="280" stroke="#64748b" stroke-width="2"/>
+    <line x1="0" y1="0" x2="0" y2="280" stroke="#64748b" stroke-width="2"/>
+    
+    <!-- X-axis labels -->
+    <text x="0" y="300" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="12">0%</text>
+    <text x="120" y="300" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="12">25%</text>
+    <text x="240" y="300" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="12">50%</text>
+    <text x="360" y="300" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="12">75%</text>
+    <text x="480" y="300" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="12">90%</text>
+    <text x="570" y="300" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="12">95%</text>
+    
+    <!-- Y-axis labels -->
+    <text x="-15" y="285" text-anchor="end" fill="#64748b" font-family="Arial, sans-serif" font-size="12">1</text>
+    <text x="-15" y="240" text-anchor="end" fill="#64748b" font-family="Arial, sans-serif" font-size="12">2</text>
+    <text x="-15" y="200" text-anchor="end" fill="#64748b" font-family="Arial, sans-serif" font-size="12">4</text>
+    <text x="-15" y="160" text-anchor="end" fill="#64748b" font-family="Arial, sans-serif" font-size="12">6</text>
+    <text x="-15" y="120" text-anchor="end" fill="#64748b" font-family="Arial, sans-serif" font-size="12">8</text>
+    <text x="-15" y="80" text-anchor="end" fill="#64748b" font-family="Arial, sans-serif" font-size="12">10</text>
+    <text x="-15" y="40" text-anchor="end" fill="#64748b" font-family="Arial, sans-serif" font-size="12">15</text>
+    
+    <!-- Axis labels -->
+    <text x="300" y="330" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Load Factor (%)</text>
+    <text x="-50" y="140" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold" transform="rotate(-90, -50, 140)">Average Probes</text>
+    
+    <!-- Performance curve -->
+    <path d="M 0 270 Q 120 265 240 250 Q 360 220 480 120 Q 520 80 570 40" 
+          stroke="#3b82f6" stroke-width="4" fill="none"/>
+    
+    <!-- Performance zones -->
+    <rect x="0" y="0" width="240" height="280" fill="#10b981" fill-opacity="0.1"/>
+    <text x="120" y="20" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Good Performance</text>
+    <text x="120" y="35" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="12">&lt; 50% Load Factor</text>
+    
+    <rect x="240" y="0" width="120" height="280" fill="#f59e0b" fill-opacity="0.1"/>
+    <text x="300" y="20" text-anchor="middle" fill="#d97706" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Acceptable</text>
+    <text x="300" y="35" text-anchor="middle" fill="#d97706" font-family="Arial, sans-serif" font-size="12">50-75%</text>
+    
+    <rect x="360" y="0" width="240" height="280" fill="#ef4444" fill-opacity="0.1"/>
+    <text x="480" y="20" text-anchor="middle" fill="#dc2626" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Poor Performance</text>
+    <text x="480" y="35" text-anchor="middle" fill="#dc2626" font-family="Arial, sans-serif" font-size="12">&gt; 75% Load Factor</text>
+    
+    <!-- Key points -->
+    <circle cx="240" cy="250" r="4" fill="#10b981"/>
+    <text x="245" y="245" fill="#059669" font-family="Arial, sans-serif" font-size="10">50%: 1.5 probes</text>
+    
+    <circle cx="360" cy="220" r="4" fill="#f59e0b"/>
+    <text x="365" y="215" fill="#d97706" font-family="Arial, sans-serif" font-size="10">75%: 2.5 probes</text>
+    
+    <circle cx="480" cy="120" r="4" fill="#ef4444"/>
+    <text x="485" y="115" fill="#dc2626" font-family="Arial, sans-serif" font-size="10">90%: 5.5 probes</text>
+    
+    <circle cx="570" cy="40" r="4" fill="#dc2626"/>
+    <text x="500" y="35" fill="#dc2626" font-family="Arial, sans-serif" font-size="10">95%: 10+ probes</text>
+  </g>
+  
+  <!-- Key Insights -->
+  <g transform="translate(50, 350)">
+    <rect x="0" y="0" width="700" height="40" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="20" y="20" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Key Insight:</text>
+    <text x="110" y="20" fill="#475569" font-family="Arial, sans-serif" font-size="14">Performance doesn't degrade linearly — it falls off a cliff after 75% load factor!</text>
+    <text x="20" y="35" fill="#059669" font-family="Arial, sans-serif" font-size="12">Most hash tables resize automatically at 75% to maintain O(1) performance.</text>
+  </g>
+</svg>

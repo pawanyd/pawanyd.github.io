@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="occupiedGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="20" font-weight="bold">Collision Resolution: Open Addressing (Linear Probing)</text>
+  
+  <!-- Hash Table Array -->
+  <g transform="translate(50, 60)">
+    <text x="0" y="15" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Hash Table (Linear Probing)</text>
+    
+    <!-- Bucket 0 -->
+    <rect x="0" y="20" width="80" height="30" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="10" y="35" fill="#64748b" font-family="Arial, sans-serif" font-size="10">0:</text>
+    <text x="25" y="45" fill="#64748b" font-family="Arial, sans-serif" font-size="10">empty</text>
+    
+    <!-- Bucket 1 -->
+    <rect x="0" y="55" width="80" height="30" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+    <text x="10" y="70" fill="#15803d" font-family="Arial, sans-serif" font-size="10">1:</text>
+    <text x="25" y="80" fill="#15803d" font-family="Arial, sans-serif" font-size="10">"user123"</text>
+    
+    <!-- Bucket 2 -->
+    <rect x="0" y="90" width="80" height="30" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="10" y="105" fill="#64748b" font-family="Arial, sans-serif" font-size="10">2:</text>
+    <text x="25" y="115" fill="#64748b" font-family="Arial, sans-serif" font-size="10">empty</text>
+    
+    <!-- Bucket 3 - Original hash location -->
+    <rect x="0" y="125" width="80" height="30" fill="url(#occupiedGradient)" stroke="#f59e0b" stroke-width="2"/>
+    <text x="10" y="140" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">3:</text>
+    <text x="25" y="150" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">"admin"</text>
+    
+    <!-- Bucket 4 - Probed location -->
+    <rect x="0" y="160" width="80" height="30" fill="#fbbf24" stroke="#f59e0b" stroke-width="1"/>
+    <text x="10" y="175" fill="#92400e" font-family="Arial, sans-serif" font-size="10">4:</text>
+    <text x="25" y="185" fill="#92400e" font-family="Arial, sans-serif" font-size="10">"guest"</text>
+    
+    <!-- Bucket 5 - Another probed location -->
+    <rect x="0" y="195" width="80" height="30" fill="#fbbf24" stroke="#f59e0b" stroke-width="1"/>
+    <text x="10" y="210" fill="#92400e" font-family="Arial, sans-serif" font-size="10">5:</text>
+    <text x="25" y="220" fill="#92400e" font-family="Arial, sans-serif" font-size="10">"test"</text>
+    
+    <!-- Bucket 6 -->
+    <rect x="0" y="230" width="80" height="30" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="10" y="245" fill="#64748b" font-family="Arial, sans-serif" font-size="10">6:</text>
+    <text x="25" y="255" fill="#64748b" font-family="Arial, sans-serif" font-size="10">empty</text>
+    
+    <text x="40" y="280" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="12">...</text>
+  </g>
+  
+  <!-- Probing Process -->
+  <g transform="translate(200, 60)">
+    <text x="0" y="15" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Probing Process</text>
+    
+    <!-- Step 1 -->
+    <g transform="translate(0, 30)">
+      <circle cx="10" cy="10" r="8" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1"/>
+      <text x="10" y="15" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">1</text>
+      <text x="25" y="15" fill="#475569" font-family="Arial, sans-serif" font-size="12">hash("admin") = 3, store at index 3</text>
+    </g>
+    
+    <!-- Step 2 -->
+    <g transform="translate(0, 55)">
+      <circle cx="10" cy="10" r="8" fill="#f59e0b" stroke="#d97706" stroke-width="1"/>
+      <text x="10" y="15" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">2</text>
+      <text x="25" y="15" fill="#475569" font-family="Arial, sans-serif" font-size="12">hash("guest") = 3, but index 3 occupied!</text>
+    </g>
+    
+    <!-- Step 3 -->
+    <g transform="translate(0, 80)">
+      <circle cx="10" cy="10" r="8" fill="#f59e0b" stroke="#d97706" stroke-width="1"/>
+      <text x="10" y="15" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">3</text>
+      <text x="25" y="15" fill="#475569" font-family="Arial, sans-serif" font-size="12">Try index 4 (3+1), it's empty, store "guest"</text>
+    </g>
+    
+    <!-- Step 4 -->
+    <g transform="translate(0, 105)">
+      <circle cx="10" cy="10" r="8" fill="#f59e0b" stroke="#d97706" stroke-width="1"/>
+      <text x="10" y="15" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">4</text>
+      <text x="25" y="15" fill="#475569" font-family="Arial, sans-serif" font-size="12">hash("test") = 3, index 3 &amp; 4 occupied</text>
+    </g>
+    
+    <!-- Step 5 -->
+    <g transform="translate(0, 130)">
+      <circle cx="10" cy="10" r="8" fill="#f59e0b" stroke="#d97706" stroke-width="1"/>
+      <text x="10" y="15" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">5</text>
+      <text x="25" y="15" fill="#475569" font-family="Arial, sans-serif" font-size="12">Try index 5 (3+2), it's empty, store "test"</text>
+    </g>
+  </g>
+  
+  <!-- Probing Strategies -->
+  <g transform="translate(450, 60)">
+    <rect x="0" y="0" width="300" height="160" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+    
+    <text x="150" y="25" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Probing Strategies</text>
+    
+    <text x="20" y="50" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Linear Probing:</text>
+    <text x="20" y="70" fill="#475569" font-family="Arial, sans-serif" font-size="12">Try h(k), h(k)+1, h(k)+2, ...</text>
+    
+    <text x="20" y="95" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Quadratic Probing:</text>
+    <text x="20" y="115" fill="#475569" font-family="Arial, sans-serif" font-size="12">Try h(k), h(k)+1², h(k)+2², ...</text>
+    
+    <text x="20" y="140" fill="#1e293b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Double Hashing:</text>
+    <text x="20" y="160" fill="#475569" font-family="Arial, sans-serif" font-size="12">Use second hash function for step size</text>
+  </g>
+  
+  <!-- Pros and Cons -->
+  <g transform="translate(50, 300)">
+    <rect x="0" y="0" width="700" height="120" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+    
+    <text x="20" y="25" fill="#1e293b" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Open Addressing: Pros &amp; Cons</text>
+    
+    <!-- Pros -->
+    <g transform="translate(20, 40)">
+      <text x="0" y="0" fill="#059669" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Pros:</text>
+      <text x="0" y="20" fill="#475569" font-family="Arial, sans-serif" font-size="12">✓ Better cache performance</text>
+      <text x="0" y="35" fill="#475569" font-family="Arial, sans-serif" font-size="12">✓ No extra memory for pointers</text>
+      <text x="0" y="50" fill="#475569" font-family="Arial, sans-serif" font-size="12">✓ Memory efficient</text>
+      <text x="0" y="65" fill="#475569" font-family="Arial, sans-serif" font-size="12">✓ Good for small collision clusters</text>
+    </g>
+    
+    <!-- Cons -->
+    <g transform="translate(350, 40)">
+      <text x="0" y="0" fill="#dc2626" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Cons:</text>
+      <text x="0" y="20" fill="#475569" font-family="Arial, sans-serif" font-size="12">✗ Complex deletion (tombstones)</text>
+      <text x="0" y="35" fill="#475569" font-family="Arial, sans-serif" font-size="12">✗ Performance degrades quickly</text>
+      <text x="0" y="50" fill="#475569" font-family="Arial, sans-serif" font-size="12">✗ Clustering problems</text>
+      <text x="0" y="65" fill="#475569" font-family="Arial, sans-serif" font-size="12">✗ Requires load factor management</text>
+    </g>
+  </g>
+</svg>

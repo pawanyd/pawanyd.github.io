@@ -3002,3 +3002,760 @@ union_find:
           }
       }
       ?>
+
+# ============================================
+# HASH TABLE ALGORITHMS
+# ============================================
+
+hash_table_basic:
+  name: "Basic Hash Table Implementation"
+  description: "Simple hash table with chaining collision resolution"
+  time_complexity: "O(1) average, O(n) worst case"
+  space_complexity: "O(n)"
+  languages:
+    python: |
+      class HashTable:
+          def __init__(self, size=10):
+              self.size = size
+              self.table = [[] for _ in range(size)]
+          
+          def _hash(self, key):
+              """Simple hash function using built-in hash()"""
+              return hash(key) % self.size
+          
+          def put(self, key, value):
+              """Insert or update key-value pair"""
+              index = self._hash(key)
+              bucket = self.table[index]
+              
+              # Update existing key
+              for i, (k, v) in enumerate(bucket):
+                  if k == key:
+                      bucket[i] = (key, value)
+                      return
+              
+              # Add new key-value pair
+              bucket.append((key, value))
+          
+          def get(self, key):
+              """Retrieve value by key"""
+              index = self._hash(key)
+              bucket = self.table[index]
+              
+              for k, v in bucket:
+                  if k == key:
+                      return v
+              
+              raise KeyError(key)
+    
+    javascript: |
+      class HashTable {
+        constructor(size = 10) {
+          this.size = size;
+          this.table = Array(size).fill(null).map(() => []);
+        }
+        
+        _hash(key) {
+          // Simple hash function for strings
+          let hash = 0;
+          for (let i = 0; i < key.length; i++) {
+            hash = (hash + key.charCodeAt(i) * i) % this.size;
+          }
+          return hash;
+        }
+        
+        put(key, value) {
+          const index = this._hash(key);
+          const bucket = this.table[index];
+          
+          // Update existing key
+          for (let i = 0; i < bucket.length; i++) {
+            if (bucket[i][0] === key) {
+              bucket[i][1] = value;
+              return;
+            }
+          }
+          
+          // Add new key-value pair
+          bucket.push([key, value]);
+        }
+        
+        get(key) {
+          const index = this._hash(key);
+          const bucket = this.table[index];
+          
+          for (const [k, v] of bucket) {
+            if (k === key) return v;
+          }
+          
+          throw new Error(`Key ${key} not found`);
+        }
+      }
+    
+    typescript: |
+      class HashTable<T> {
+        private size: number;
+        private table: Array<Array<[string, T]>>;
+        
+        constructor(size: number = 10) {
+          this.size = size;
+          this.table = Array(size).fill(null).map(() => []);
+        }
+        
+        private _hash(key: string): number {
+          let hash = 0;
+          for (let i = 0; i < key.length; i++) {
+            hash = (hash + key.charCodeAt(i) * i) % this.size;
+          }
+          return hash;
+        }
+        
+        put(key: string, value: T): void {
+          const index = this._hash(key);
+          const bucket = this.table[index];
+          
+          // Update existing key
+          for (let i = 0; i < bucket.length; i++) {
+            if (bucket[i][0] === key) {
+              bucket[i][1] = value;
+              return;
+            }
+          }
+          
+          // Add new key-value pair
+          bucket.push([key, value]);
+        }
+        
+        get(key: string): T {
+          const index = this._hash(key);
+          const bucket = this.table[index];
+          
+          for (const [k, v] of bucket) {
+            if (k === key) return v;
+          }
+          
+          throw new Error(`Key ${key} not found`);
+        }
+      }
+    
+    java: |
+      import java.util.*;
+      
+      public class HashTable<K, V> {
+          private static class Entry<K, V> {
+              K key;
+              V value;
+              Entry<K, V> next;
+              
+              Entry(K key, V value) {
+                  this.key = key;
+                  this.value = value;
+              }
+          }
+          
+          private Entry<K, V>[] table;
+          private int size;
+          private int capacity;
+          
+          @SuppressWarnings("unchecked")
+          public HashTable(int capacity) {
+              this.capacity = capacity;
+              this.table = new Entry[capacity];
+              this.size = 0;
+          }
+          
+          private int hash(K key) {
+              return Math.abs(key.hashCode()) % capacity;
+          }
+          
+          public void put(K key, V value) {
+              int index = hash(key);
+              Entry<K, V> entry = table[index];
+              
+              // Update existing key
+              while (entry != null) {
+                  if (entry.key.equals(key)) {
+                      entry.value = value;
+                      return;
+                  }
+                  entry = entry.next;
+              }
+              
+              // Add new entry at head of chain
+              Entry<K, V> newEntry = new Entry<>(key, value);
+              newEntry.next = table[index];
+              table[index] = newEntry;
+              size++;
+          }
+          
+          public V get(K key) {
+              int index = hash(key);
+              Entry<K, V> entry = table[index];
+              
+              while (entry != null) {
+                  if (entry.key.equals(key)) {
+                      return entry.value;
+                  }
+                  entry = entry.next;
+              }
+              
+              throw new RuntimeException("Key not found: " + key);
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      #include <list>
+      #include <functional>
+      
+      template<typename K, typename V>
+      class HashTable {
+      private:
+          std::vector<std::list<std::pair<K, V>>> table;
+          size_t table_size;
+          
+          size_t hash(const K& key) const {
+              return std::hash<K>{}(key) % table_size;
+          }
+          
+      public:
+          HashTable(size_t size = 10) : table_size(size) {
+              table.resize(table_size);
+          }
+          
+          void put(const K& key, const V& value) {
+              size_t index = hash(key);
+              auto& bucket = table[index];
+              
+              // Update existing key
+              for (auto& pair : bucket) {
+                  if (pair.first == key) {
+                      pair.second = value;
+                      return;
+                  }
+              }
+              
+              // Add new key-value pair
+              bucket.emplace_back(key, value);
+          }
+          
+          V get(const K& key) const {
+              size_t index = hash(key);
+              const auto& bucket = table[index];
+              
+              for (const auto& pair : bucket) {
+                  if (pair.first == key) {
+                      return pair.second;
+                  }
+              }
+              
+              throw std::runtime_error("Key not found");
+          }
+      };
+    
+    php: |
+      <?php
+      class HashTable {
+          private $table;
+          private $size;
+          
+          public function __construct($size = 10) {
+              $this->size = $size;
+              $this->table = array_fill(0, $size, []);
+          }
+          
+          private function hash($key) {
+              // Simple hash function for strings
+              $hash = 0;
+              for ($i = 0; $i < strlen($key); $i++) {
+                  $hash = ($hash + ord($key[$i]) * $i) % $this->size;
+              }
+              return $hash;
+          }
+          
+          public function put($key, $value) {
+              $index = $this->hash($key);
+              $bucket = &$this->table[$index];
+              
+              // Update existing key
+              for ($i = 0; $i < count($bucket); $i++) {
+                  if ($bucket[$i][0] === $key) {
+                      $bucket[$i][1] = $value;
+                      return;
+                  }
+              }
+              
+              // Add new key-value pair
+              $bucket[] = [$key, $value];
+          }
+          
+          public function get($key) {
+              $index = $this->hash($key);
+              $bucket = $this->table[$index];
+              
+              foreach ($bucket as $pair) {
+                  if ($pair[0] === $key) {
+                      return $pair[1];
+                  }
+              }
+              
+              throw new Exception("Key not found: " . $key);
+          }
+      }
+      ?>
+
+lru_cache:
+  name: "LRU Cache Implementation"
+  description: "Least Recently Used cache using hash table + doubly linked list"
+  time_complexity: "O(1) for get and put operations"
+  space_complexity: "O(capacity)"
+  languages:
+    python: |
+      class LRUCache:
+          def __init__(self, capacity):
+              self.capacity = capacity
+              self.cache = {}  # key -> node
+              
+              # Create dummy head and tail nodes
+              self.head = Node(0, 0)
+              self.tail = Node(0, 0)
+              self.head.next = self.tail
+              self.tail.prev = self.head
+          
+          def get(self, key):
+              if key in self.cache:
+                  node = self.cache[key]
+                  # Move to head (mark as recently used)
+                  self._remove(node)
+                  self._add_to_head(node)
+                  return node.value
+              return -1
+          
+          def put(self, key, value):
+              if key in self.cache:
+                  # Update existing key
+                  node = self.cache[key]
+                  node.value = value
+                  self._remove(node)
+                  self._add_to_head(node)
+              else:
+                  # Add new key
+                  if len(self.cache) >= self.capacity:
+                      # Remove least recently used (tail)
+                      lru = self.tail.prev
+                      self._remove(lru)
+                      del self.cache[lru.key]
+                  
+                  # Add new node to head
+                  new_node = Node(key, value)
+                  self._add_to_head(new_node)
+                  self.cache[key] = new_node
+          
+          def _remove(self, node):
+              """Remove node from linked list"""
+              node.prev.next = node.next
+              node.next.prev = node.prev
+          
+          def _add_to_head(self, node):
+              """Add node right after head"""
+              node.prev = self.head
+              node.next = self.head.next
+              self.head.next.prev = node
+              self.head.next = node
+      
+      class Node:
+          def __init__(self, key, value):
+              self.key = key
+              self.value = value
+              self.prev = None
+              self.next = None
+    
+    javascript: |
+      class LRUCache {
+        constructor(capacity) {
+          this.capacity = capacity;
+          this.cache = new Map(); // key -> node
+          
+          // Create dummy head and tail
+          this.head = new Node(0, 0);
+          this.tail = new Node(0, 0);
+          this.head.next = this.tail;
+          this.tail.prev = this.head;
+        }
+        
+        get(key) {
+          if (this.cache.has(key)) {
+            const node = this.cache.get(key);
+            // Move to head (mark as recently used)
+            this._remove(node);
+            this._addToHead(node);
+            return node.value;
+          }
+          return -1;
+        }
+        
+        put(key, value) {
+          if (this.cache.has(key)) {
+            // Update existing key
+            const node = this.cache.get(key);
+            node.value = value;
+            this._remove(node);
+            this._addToHead(node);
+          } else {
+            // Add new key
+            if (this.cache.size >= this.capacity) {
+              // Remove LRU (tail)
+              const lru = this.tail.prev;
+              this._remove(lru);
+              this.cache.delete(lru.key);
+            }
+            
+            // Add new node to head
+            const newNode = new Node(key, value);
+            this._addToHead(newNode);
+            this.cache.set(key, newNode);
+          }
+        }
+        
+        _remove(node) {
+          node.prev.next = node.next;
+          node.next.prev = node.prev;
+        }
+        
+        _addToHead(node) {
+          node.prev = this.head;
+          node.next = this.head.next;
+          this.head.next.prev = node;
+          this.head.next = node;
+        }
+      }
+      
+      class Node {
+        constructor(key, value) {
+          this.key = key;
+          this.value = value;
+          this.prev = null;
+          this.next = null;
+        }
+      }
+    
+    typescript: |
+      class LRUCache {
+        private capacity: number;
+        private cache: Map<number, Node>;
+        private head: Node;
+        private tail: Node;
+        
+        constructor(capacity: number) {
+          this.capacity = capacity;
+          this.cache = new Map();
+          
+          // Create dummy head and tail
+          this.head = new Node(0, 0);
+          this.tail = new Node(0, 0);
+          this.head.next = this.tail;
+          this.tail.prev = this.head;
+        }
+        
+        get(key: number): number {
+          if (this.cache.has(key)) {
+            const node = this.cache.get(key)!;
+            // Move to head (mark as recently used)
+            this._remove(node);
+            this._addToHead(node);
+            return node.value;
+          }
+          return -1;
+        }
+        
+        put(key: number, value: number): void {
+          if (this.cache.has(key)) {
+            // Update existing key
+            const node = this.cache.get(key)!;
+            node.value = value;
+            this._remove(node);
+            this._addToHead(node);
+          } else {
+            // Add new key
+            if (this.cache.size >= this.capacity) {
+              // Remove LRU (tail)
+              const lru = this.tail.prev!;
+              this._remove(lru);
+              this.cache.delete(lru.key);
+            }
+            
+            // Add new node to head
+            const newNode = new Node(key, value);
+            this._addToHead(newNode);
+            this.cache.set(key, newNode);
+          }
+        }
+        
+        private _remove(node: Node): void {
+          node.prev!.next = node.next;
+          node.next!.prev = node.prev;
+        }
+        
+        private _addToHead(node: Node): void {
+          node.prev = this.head;
+          node.next = this.head.next;
+          this.head.next!.prev = node;
+          this.head.next = node;
+        }
+      }
+      
+      class Node {
+        key: number;
+        value: number;
+        prev: Node | null;
+        next: Node | null;
+        
+        constructor(key: number, value: number) {
+          this.key = key;
+          this.value = value;
+          this.prev = null;
+          this.next = null;
+        }
+      }
+    
+    java: |
+      import java.util.*;
+      
+      public class LRUCache {
+          private class Node {
+              int key, value;
+              Node prev, next;
+              
+              Node(int key, int value) {
+                  this.key = key;
+                  this.value = value;
+              }
+          }
+          
+          private int capacity;
+          private Map<Integer, Node> cache;
+          private Node head, tail;
+          
+          public LRUCache(int capacity) {
+              this.capacity = capacity;
+              this.cache = new HashMap<>();
+              
+              // Create dummy head and tail
+              this.head = new Node(0, 0);
+              this.tail = new Node(0, 0);
+              this.head.next = this.tail;
+              this.tail.prev = this.head;
+          }
+          
+          public int get(int key) {
+              if (cache.containsKey(key)) {
+                  Node node = cache.get(key);
+                  // Move to head (mark as recently used)
+                  remove(node);
+                  addToHead(node);
+                  return node.value;
+              }
+              return -1;
+          }
+          
+          public void put(int key, int value) {
+              if (cache.containsKey(key)) {
+                  // Update existing key
+                  Node node = cache.get(key);
+                  node.value = value;
+                  remove(node);
+                  addToHead(node);
+              } else {
+                  // Add new key
+                  if (cache.size() >= capacity) {
+                      // Remove LRU (tail)
+                      Node lru = tail.prev;
+                      remove(lru);
+                      cache.remove(lru.key);
+                  }
+                  
+                  // Add new node to head
+                  Node newNode = new Node(key, value);
+                  addToHead(newNode);
+                  cache.put(key, newNode);
+              }
+          }
+          
+          private void remove(Node node) {
+              node.prev.next = node.next;
+              node.next.prev = node.prev;
+          }
+          
+          private void addToHead(Node node) {
+              node.prev = head;
+              node.next = head.next;
+              head.next.prev = node;
+              head.next = node;
+          }
+      }
+    
+    cpp: |
+      #include <unordered_map>
+      using namespace std;
+      
+      class LRUCache {
+      private:
+          struct Node {
+              int key, value;
+              Node* prev;
+              Node* next;
+              
+              Node(int k, int v) : key(k), value(v), prev(nullptr), next(nullptr) {}
+          };
+          
+          int capacity;
+          unordered_map<int, Node*> cache;
+          Node* head;
+          Node* tail;
+          
+          void remove(Node* node) {
+              node->prev->next = node->next;
+              node->next->prev = node->prev;
+          }
+          
+          void addToHead(Node* node) {
+              node->prev = head;
+              node->next = head->next;
+              head->next->prev = node;
+              head->next = node;
+          }
+          
+      public:
+          LRUCache(int capacity) : capacity(capacity) {
+              // Create dummy head and tail
+              head = new Node(0, 0);
+              tail = new Node(0, 0);
+              head->next = tail;
+              tail->prev = head;
+          }
+          
+          ~LRUCache() {
+              Node* current = head;
+              while (current) {
+                  Node* next = current->next;
+                  delete current;
+                  current = next;
+              }
+          }
+          
+          int get(int key) {
+              if (cache.find(key) != cache.end()) {
+                  Node* node = cache[key];
+                  // Move to head (mark as recently used)
+                  remove(node);
+                  addToHead(node);
+                  return node->value;
+              }
+              return -1;
+          }
+          
+          void put(int key, int value) {
+              if (cache.find(key) != cache.end()) {
+                  // Update existing key
+                  Node* node = cache[key];
+                  node->value = value;
+                  remove(node);
+                  addToHead(node);
+              } else {
+                  // Add new key
+                  if (cache.size() >= capacity) {
+                      // Remove LRU (tail)
+                      Node* lru = tail->prev;
+                      remove(lru);
+                      cache.erase(lru->key);
+                      delete lru;
+                  }
+                  
+                  // Add new node to head
+                  Node* newNode = new Node(key, value);
+                  addToHead(newNode);
+                  cache[key] = newNode;
+              }
+          }
+      };
+    
+    php: |
+      <?php
+      class LRUCache {
+          private $capacity;
+          private $cache;
+          private $head;
+          private $tail;
+          
+          public function __construct($capacity) {
+              $this->capacity = $capacity;
+              $this->cache = [];
+              
+              // Create dummy head and tail
+              $this->head = new Node(0, 0);
+              $this->tail = new Node(0, 0);
+              $this->head->next = $this->tail;
+              $this->tail->prev = $this->head;
+          }
+          
+          public function get($key) {
+              if (isset($this->cache[$key])) {
+                  $node = $this->cache[$key];
+                  // Move to head (mark as recently used)
+                  $this->remove($node);
+                  $this->addToHead($node);
+                  return $node->value;
+              }
+              return -1;
+          }
+          
+          public function put($key, $value) {
+              if (isset($this->cache[$key])) {
+                  // Update existing key
+                  $node = $this->cache[$key];
+                  $node->value = $value;
+                  $this->remove($node);
+                  $this->addToHead($node);
+              } else {
+                  // Add new key
+                  if (count($this->cache) >= $this->capacity) {
+                      // Remove LRU (tail)
+                      $lru = $this->tail->prev;
+                      $this->remove($lru);
+                      unset($this->cache[$lru->key]);
+                  }
+                  
+                  // Add new node to head
+                  $newNode = new Node($key, $value);
+                  $this->addToHead($newNode);
+                  $this->cache[$key] = $newNode;
+              }
+          }
+          
+          private function remove($node) {
+              $node->prev->next = $node->next;
+              $node->next->prev = $node->prev;
+          }
+          
+          private function addToHead($node) {
+              $node->prev = $this->head;
+              $node->next = $this->head->next;
+              $this->head->next->prev = $node;
+              $this->head->next = $node;
+          }
+      }
+      
+      class Node {
+          public $key;
+          public $value;
+          public $prev;
+          public $next;
+          
+          public function __construct($key, $value) {
+              $this->key = $key;
+              $this->value = $value;
+              $this->prev = null;
+              $this->next = null;
+          }
+      }
+      ?>
