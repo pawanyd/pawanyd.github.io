@@ -29,7 +29,7 @@
       link: /blogs
     - name: Data Structures & Algorithms
       link: /blogs/data-structures-algorithms
-    - name: System Design
+    - name: System Design & Architecture
       link: /blogs/system-design
 - name: Resume
   link: /assets/resume.pdf
