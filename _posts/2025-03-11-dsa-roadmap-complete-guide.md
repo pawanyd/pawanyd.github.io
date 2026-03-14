@@ -370,17 +370,17 @@ Here's what actually gets asked at top companies. I've seen these patterns acros
 Here are the resources that actually matter, in order of importance:
 
 ### Practice Platforms
-- **[LeetCode](https://leetcode.com?utm_source=pawanyd.github.io&utm_medium=blog&utm_campaign=dsa_resources&utm_content=leetcode_link)** - The gold standard. Start with their "Top Interview Questions" list
-- **[NeetCode](https://neetcode.io?utm_source=pawanyd.github.io&utm_medium=blog&utm_campaign=dsa_resources&utm_content=neetcode_link)** - Curated list of 150 essential problems with video explanations
-- **[HackerRank](https://hackerrank.com?utm_source=pawanyd.github.io&utm_medium=blog&utm_campaign=dsa_resources&utm_content=hackerrank_link)** - Good for interview prep kits and skill assessments
+- **<a href="https://leetcode.com?utm_source=pawanyd.github.io&utm_medium=blog&utm_campaign=dsa_resources&utm_content=leetcode_link" target="_blank" rel="noopener noreferrer">LeetCode</a>** - The gold standard. Start with their "Top Interview Questions" list
+- **<a href="https://neetcode.io?utm_source=pawanyd.github.io&utm_medium=blog&utm_campaign=dsa_resources&utm_content=neetcode_link" target="_blank" rel="noopener noreferrer">NeetCode</a>** - Curated list of 150 essential problems with video explanations
+- **<a href="https://hackerrank.com?utm_source=pawanyd.github.io&utm_medium=blog&utm_campaign=dsa_resources&utm_content=hackerrank_link" target="_blank" rel="noopener noreferrer">HackerRank</a>** - Good for interview prep kits and skill assessments
 
 ### Visualization Tools
-- **[VisuAlgo](https://visualgo.net?utm_source=pawanyd.github.io&utm_medium=blog&utm_campaign=dsa_resources&utm_content=visualgo_link)** - Animated visualizations of algorithms and data structures
-- **[Algorithm Visualizer](https://algorithm-visualizer.org?utm_source=pawanyd.github.io&utm_medium=blog&utm_campaign=dsa_resources&utm_content=algo_visualizer)** - Interactive algorithm animations
+- **<a href="https://visualgo.net?utm_source=pawanyd.github.io&utm_medium=blog&utm_campaign=dsa_resources&utm_content=visualgo_link" target="_blank" rel="noopener noreferrer">VisuAlgo</a>** - Animated visualizations of algorithms and data structures
+- **<a href="https://algorithm-visualizer.org?utm_source=pawanyd.github.io&utm_medium=blog&utm_campaign=dsa_resources&utm_content=algo_visualizer" target="_blank" rel="noopener noreferrer">Algorithm Visualizer</a>** - Interactive algorithm animations
 
 ### Learning Resources
-- **[GeeksforGeeks](https://geeksforgeeks.org?utm_source=pawanyd.github.io&utm_medium=blog&utm_campaign=dsa_resources&utm_content=gfg_link)** - Comprehensive tutorials and explanations
-- **[Big-O Cheat Sheet](https://bigocheatsheet.com?utm_source=pawanyd.github.io&utm_medium=blog&utm_campaign=dsa_resources&utm_content=bigocheat_link)** - Quick reference for complexity analysis
+- **<a href="https://geeksforgeeks.org?utm_source=pawanyd.github.io&utm_medium=blog&utm_campaign=dsa_resources&utm_content=gfg_link" target="_blank" rel="noopener noreferrer">GeeksforGeeks</a>** - Comprehensive tutorials and explanations
+- **<a href="https://bigocheatsheet.com?utm_source=pawanyd.github.io&utm_medium=blog&utm_campaign=dsa_resources&utm_content=bigocheat_link" target="_blank" rel="noopener noreferrer">Big-O Cheat Sheet</a>** - Quick reference for complexity analysis
 
 ### Books Worth Reading
 - **Cracking the Coding Interview** by Gayle Laakmann McDowell - The interview bible
