@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="700" viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="overflow-title overflow-desc">
+  <title id="overflow-title">Stack Overflow Visualization</title>
+  <desc id="overflow-desc">Visual representation of what happens when you exceed stack capacity with recursive calls</desc>
+  
+  <!-- Background -->
+  <rect width="900" height="700" fill="#f9fafb"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" fill="#1f2937" font-family="Arial, sans-serif" font-size="28" font-weight="bold">
+    Stack Overflow: When Recursion Goes Wrong
+  </text>
+  
+  <!-- Normal recursion -->
+  <g transform="translate(50, 80)">
+    <text x="150" y="0" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+      Normal Recursion (Healthy)
+    </text>
+    
+    <!-- Stack visualization -->
+    <g transform="translate(30, 30)">
+      <rect x="0" y="0" width="240" height="400" fill="white" rx="8" stroke="#10b981" stroke-width="3"/>
+      
+      <text x="120" y="25" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+        Call Stack
+      </text>
+      
+      <!-- Stack frames -->
+      <rect x="20" y="320" width="200" height="60" fill="#10b981" rx="5" stroke="#059669" stroke-width="2"/>
+      <text x="120" y="345" text-anchor="middle" fill="white" font-family="Courier New, monospace" font-size="12" font-weight="bold">factorial(1)</text>
+      <text x="120" y="365" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">return 1</text>
+      
+      <rect x="20" y="250" width="200" height="60" fill="#10b981" rx="5" stroke="#059669" stroke-width="2"/>
+      <text x="120" y="275" text-anchor="middle" fill="white" font-family="Courier New, monospace" font-size="12" font-weight="bold">factorial(2)</text>
+      <text x="120" y="295" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">return 2 * factorial(1)</text>
+      
+      <rect x="20" y="180" width="200" height="60" fill="#10b981" rx="5" stroke="#059669" stroke-width="2"/>
+      <text x="120" y="205" text-anchor="middle" fill="white" font-family="Courier New, monospace" font-size="12" font-weight="bold">factorial(3)</text>
+      <text x="120" y="225" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">return 3 * factorial(2)</text>
+      
+      <rect x="20" y="110" width="200" height="60" fill="#10b981" rx="5" stroke="#059669" stroke-width="2"/>
+      <text x="120" y="135" text-anchor="middle" fill="white" font-family="Courier New, monospace" font-size="12" font-weight="bold">factorial(4)</text>
+      <text x="120" y="155" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">return 4 * factorial(3)</text>
+      
+      <rect x="20" y="40" width="200" height="60" fill="#10b981" rx="5" stroke="#059669" stroke-width="2"/>
+      <text x="120" y="65" text-anchor="middle" fill="white" font-family="Courier New, monospace" font-size="12" font-weight="bold">main()</text>
+      <text x="120" y="85" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">calls factorial(4)</text>
+    </g>
+    
+    <g transform="translate(30, 450)">
+      <text x="120" y="0" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="13" font-weight="bold">
+        ✓ Base case reached
+      </text>
+      <text x="120" y="18" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="11">
+        Stack unwinds gracefully
+      </text>
+      <text x="120" y="36" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="11">
+        Depth: 5 frames
+      </text>
+    </g>
+  </g>
+  
+  <!-- Infinite recursion leading to overflow -->
+  <g transform="translate(350, 80)">
+    <text x="250" y="0" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+      Infinite Recursion (Stack Overflow!)
+    </text>
+    
+    <!-- Stack visualization -->
+    <g transform="translate(50, 30)">
+      <rect x="0" y="0" width="400" height="400" fill="white" rx="8" stroke="#ef4444" stroke-width="3"/>
+      
+      <text x="200" y="25" text-anchor="middle" fill="#dc2626" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+        Call Stack (OVERFLOWING!)
+      </text>
+      
+      <!-- Many stack frames -->
+      <rect x="20" y="350" width="360" height="35" fill="#ef4444" rx="3" stroke="#dc2626" stroke-width="1"/>
+      <text x="200" y="372" text-anchor="middle" fill="white" font-family="Courier New, monospace" font-size="10">buggyFunction() // call #10000</text>
+      
+      <rect x="20" y="310" width="360" height="35" fill="#ef4444" rx="3" stroke="#dc2626" stroke-width="1"/>
+      <text x="200" y="332" text-anchor="middle" fill="white" font-family="Courier New, monospace" font-size="10">buggyFunction() // call #9999</text>
+      
+      <rect x="20" y="270" width="360" height="35" fill="#ef4444" rx="3" stroke="#dc2626" stroke-width="1"/>
+      <text x="200" y="292" text-anchor="middle" fill="white" font-family="Courier New, monospace" font-size="10">buggyFunction() // call #9998</text>
+      
+      <rect x="20" y="230" width="360" height="35" fill="#ef4444" rx="3" stroke="#dc2626" stroke-width="1"/>
+      <text x="200" y="252" text-anchor="middle" fill="white" font-family="Courier New, monospace" font-size="10">buggyFunction() // call #9997</text>
+      
+      <!-- Dots indicating many more -->
+      <text x="200" y="210" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="20" font-weight="bold">...</text>
+      <text x="200" y="190" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">(thousands more frames)</text>
+      <text x="200" y="170" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="20" font-weight="bold">...</text>
+      
+      <rect x="20" y="130" width="360" height="35" fill="#ef4444" rx="3" stroke="#dc2626" stroke-width="1"/>
+      <text x="200" y="152" text-anchor="middle" fill="white" font-family="Courier New, monospace" font-size="10">buggyFunction() // call #4</text>
+      
+      <rect x="20" y="90" width="360" height="35" fill="#ef4444" rx="3" stroke="#dc2626" stroke-width="1"/>
+      <text x="200" y="112" text-anchor="middle" fill="white" font-family="Courier New, monospace" font-size="10">buggyFunction() // call #3</text>
+      
+      <rect x="20" y="50" width="360" height="35" fill="#ef4444" rx="3" stroke="#dc2626" stroke-width="1"/>
+      <text x="200" y="72" text-anchor="middle" fill="white" font-family="Courier New, monospace" font-size="10">buggyFunction() // call #2</text>
+      
+      <rect x="20" y="10" width="360" height="35" fill="#fca5a5" rx="3" stroke="#dc2626" stroke-width="1"/>
+      <text x="200" y="32" text-anchor="middle" fill="#7f1d1d" font-family="Courier New, monospace" font-size="10">main() // initial call</text>
+      
+      <!-- Overflow indicator -->
+      <path d="M 410 200 L 450 200" stroke="#ef4444" stroke-width="4" marker-end="url(#arrowred)"/>
+      <text x="460" y="180" fill="#dc2626" font-family="Arial, sans-serif" font-size="14" font-weight="bold">OVERFLOW!</text>
+      <text x="460" y="200" fill="#991b1b" font-family="Arial, sans-serif" font-size="11">Stack limit</text>
+      <text x="460" y="215" fill="#991b1b" font-family="Arial, sans-serif" font-size="11">exceeded</text>
+    </g>
+    
+    <g transform="translate(50, 450)">
+      <text x="200" y="0" text-anchor="middle" fill="#dc2626" font-family="Arial, sans-serif" font-size="13" font-weight="bold">
+        ✗ No base case - infinite recursion
+      </text>
+      <text x="200" y="18" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="11">
+        Stack grows until memory exhausted
+      </text>
+      <text x="200" y="36" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="11">
+        Depth: 10,000+ frames → CRASH!
+      </text>
+    </g>
+  </g>
+  
+  <!-- Code examples -->
+  <g transform="translate(50, 550)">
+    <rect x="0" y="0" width="800" height="130" fill="#fef2f2" rx="10" stroke="#ef4444" stroke-width="2"/>
+    
+    <text x="400" y="25" text-anchor="middle" fill="#991b1b" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Common Causes of Stack Overflow
+    </text>
+    
+    <g transform="translate(30, 40)">
+      <text x="0" y="0" fill="#374151" font-family="Arial, sans-serif" font-size="13" font-weight="bold">
+        1. Missing Base Case:
+      </text>
+      <text x="20" y="20" fill="#6b7280" font-family="Courier New, monospace" font-size="11">
+        function factorial(n) { return n * factorial(n-1); } // No base case!
+      </text>
+      
+      <text x="0" y="45" fill="#374151" font-family="Arial, sans-serif" font-size="13" font-weight="bold">
+        2. Wrong Base Case:
+      </text>
+      <text x="20" y="65" fill="#6b7280" font-family="Courier New, monospace" font-size="11">
+        function countdown(n) { if (n &gt; 0) countdown(n-1); } // Called with negative!
+      </text>
+      
+      <text x="400" y="0" fill="#374151" font-family="Arial, sans-serif" font-size="13" font-weight="bold">
+        3. Excessive Depth:
+      </text>
+      <text x="420" y="20" fill="#6b7280" font-family="Courier New, monospace" font-size="11">
+        fibonacci(50) // Too deep, even with base case
+      </text>
+      
+      <text x="400" y="45" fill="#374151" font-family="Arial, sans-serif" font-size="13" font-weight="bold">
+        4. Mutual Recursion Loop:
+      </text>
+      <text x="420" y="65" fill="#6b7280" font-family="Courier New, monospace" font-size="11">
+        funcA() calls funcB(), funcB() calls funcA()
+      </text>
+    </g>
+  </g>
+  
+  <!-- Prevention tips -->
+  <g transform="translate(50, 690)">
+    <text x="0" y="0" fill="#059669" font-family="Arial, sans-serif" font-size="12" font-weight="bold">
+      Prevention: Always have a base case | Use iteration for deep recursion | Set recursion limits | Use tail call optimization
+    </text>
+  </g>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowred" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ef4444" />
+    </marker>
+  </defs>
+</svg>

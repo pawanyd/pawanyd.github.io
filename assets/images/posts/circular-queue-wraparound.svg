@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="700" viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="circular-title circular-desc">
+  <title id="circular-title">Circular Queue Wraparound Animation</title>
+  <desc id="circular-desc">Step-by-step visualization of how front and rear pointers wrap around in a circular queue</desc>
+  
+  <!-- Background -->
+  <rect width="1000" height="700" fill="#f9fafb"/>
+  
+  <!-- Title -->
+  <text x="500" y="40" text-anchor="middle" fill="#1f2937" font-family="Arial, sans-serif" font-size="28" font-weight="bold">
+    Circular Queue: Wraparound in Action
+  </text>
+  
+  <!-- Step 1: Initial State -->
+  <g transform="translate(80, 100)">
+    <text x="150" y="-10" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Step 1: Initial State
+    </text>
+    
+    <!-- Array representation -->
+    <g transform="translate(0, 10)">
+      <rect x="0" y="0" width="50" height="50" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+      <text x="25" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">A</text>
+      <text x="25" y="65" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[0]</text>
+      
+      <rect x="60" y="0" width="50" height="50" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+      <text x="85" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">B</text>
+      <text x="85" y="65" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[1]</text>
+      
+      <rect x="120" y="0" width="50" height="50" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+      <text x="145" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">C</text>
+      <text x="145" y="65" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[2]</text>
+      
+      <rect x="180" y="0" width="50" height="50" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+      <text x="205" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">D</text>
+      <text x="205" y="65" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[3]</text>
+      
+      <rect x="240" y="0" width="50" height="50" fill="#e5e7eb" rx="5" stroke="#9ca3af" stroke-width="2" stroke-dasharray="3,3"/>
+      <text x="265" y="30" text-anchor="middle" fill="#9ca3af" font-family="Arial, sans-serif" font-size="12">-</text>
+      <text x="265" y="65" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[4]</text>
+      
+      <!-- Pointers -->
+      <path d="M 25 -10 L 25 -5" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowred)"/>
+      <text x="25" y="-15" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="11" font-weight="bold">F</text>
+      
+      <path d="M 205 75 L 205 55" stroke="#10b981" stroke-width="2" marker-end="url(#arrowgreen)"/>
+      <text x="205" y="90" text-anchor="middle" fill="#10b981" font-family="Arial, sans-serif" font-size="11" font-weight="bold">R</text>
+    </g>
+    
+    <text x="150" y="110" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="11">
+      Front=0, Rear=3, Size=4
+    </text>
+  </g>
+  
+  <!-- Step 2: Dequeue twice -->
+  <g transform="translate(420, 100)">
+    <text x="150" y="-10" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Step 2: Dequeue A, B
+    </text>
+    
+    <g transform="translate(0, 10)">
+      <rect x="0" y="0" width="50" height="50" fill="#fecaca" rx="5" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,5" opacity="0.4"/>
+      <text x="25" y="30" text-anchor="middle" fill="#991b1b" font-family="Arial, sans-serif" font-size="14" opacity="0.5">A</text>
+      <text x="25" y="65" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[0]</text>
+      
+      <rect x="60" y="0" width="50" height="50" fill="#fecaca" rx="5" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,5" opacity="0.4"/>
+      <text x="85" y="30" text-anchor="middle" fill="#991b1b" font-family="Arial, sans-serif" font-size="14" opacity="0.5">B</text>
+      <text x="85" y="65" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[1]</text>
+      
+      <rect x="120" y="0" width="50" height="50" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+      <text x="145" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">C</text>
+      <text x="145" y="65" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[2]</text>
+      
+      <rect x="180" y="0" width="50" height="50" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+      <text x="205" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">D</text>
+      <text x="205" y="65" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[3]</text>
+      
+      <rect x="240" y="0" width="50" height="50" fill="#e5e7eb" rx="5" stroke="#9ca3af" stroke-width="2" stroke-dasharray="3,3"/>
+      <text x="265" y="30" text-anchor="middle" fill="#9ca3af" font-family="Arial, sans-serif" font-size="12">-</text>
+      <text x="265" y="65" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[4]</text>
+      
+      <!-- Pointers -->
+      <path d="M 145 -10 L 145 -5" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowred)"/>
+      <text x="145" y="-15" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="11" font-weight="bold">F</text>
+      
+      <path d="M 205 75 L 205 55" stroke="#10b981" stroke-width="2" marker-end="url(#arrowgreen)"/>
+      <text x="205" y="90" text-anchor="middle" fill="#10b981" font-family="Arial, sans-serif" font-size="11" font-weight="bold">R</text>
+    </g>
+    
+    <text x="150" y="110" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="11">
+      Front=2, Rear=3, Size=2
+    </text>
+  </g>
+  
+  <!-- Step 3: Enqueue E -->
+  <g transform="translate(80, 250)">
+    <text x="150" y="-10" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Step 3: Enqueue E
+    </text>
+    
+    <g transform="translate(0, 10)">
+      <rect x="0" y="0" width="50" height="50" fill="#e5e7eb" rx="5" stroke="#9ca3af" stroke-width="2" stroke-dasharray="3,3"/>
+      <text x="25" y="30" text-anchor="middle" fill="#9ca3af" font-family="Arial, sans-serif" font-size="12">-</text>
+      <text x="25" y="65" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[0]</text>
+      
+      <rect x="60" y="0" width="50" height="50" fill="#e5e7eb" rx="5" stroke="#9ca3af" stroke-width="2" stroke-dasharray="3,3"/>
+      <text x="85" y="30" text-anchor="middle" fill="#9ca3af" font-family="Arial, sans-serif" font-size="12">-</text>
+      <text x="85" y="65" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[1]</text>
+      
+      <rect x="120" y="0" width="50" height="50" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+      <text x="145" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">C</text>
+      <text x="145" y="65" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[2]</text>
+      
+      <rect x="180" y="0" width="50" height="50" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+      <text x="205" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">D</text>
+      <text x="205" y="65" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[3]</text>
+      
+      <rect x="240" y="0" width="50" height="50" fill="#10b981" rx="5" stroke="#059669" stroke-width="3"/>
+      <text x="265" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">E</text>
+      <text x="265" y="65" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[4]</text>
+      
+      <!-- Pointers -->
+      <path d="M 145 -10 L 145 -5" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowred)"/>
+      <text x="145" y="-15" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="11" font-weight="bold">F</text>
+      
+      <path d="M 265 75 L 265 55" stroke="#10b981" stroke-width="2" marker-end="url(#arrowgreen)"/>
+      <text x="265" y="90" text-anchor="middle" fill="#10b981" font-family="Arial, sans-serif" font-size="11" font-weight="bold">R</text>
+    </g>
+    
+    <text x="150" y="110" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="11">
+      Front=2, Rear=4, Size=3
+    </text>
+  </g>
+  
+  <!-- Step 4: Enqueue F (Wraparound!) -->
+  <g transform="translate(420, 250)">
+    <text x="150" y="-10" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Step 4: Enqueue F 🔄
+    </text>
+    
+    <g transform="translate(0, 10)">
+      <rect x="0" y="0" width="50" height="50" fill="#10b981" rx="5" stroke="#059669" stroke-width="3"/>
+      <text x="25" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">F</text>
+      <text x="25" y="65" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[0]</text>
+      
+      <rect x="60" y="0" width="50" height="50" fill="#e5e7eb" rx="5" stroke="#9ca3af" stroke-width="2" stroke-dasharray="3,3"/>
+      <text x="85" y="30" text-anchor="middle" fill="#9ca3af" font-family="Arial, sans-serif" font-size="12">-</text>
+      <text x="85" y="65" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[1]</text>
+      
+      <rect x="120" y="0" width="50" height="50" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+      <text x="145" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">C</text>
+      <text x="145" y="65" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[2]</text>
+      
+      <rect x="180" y="0" width="50" height="50" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+      <text x="205" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">D</text>
+      <text x="205" y="65" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[3]</text>
+      
+      <rect x="240" y="0" width="50" height="50" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+      <text x="265" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">E</text>
+      <text x="265" y="65" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[4]</text>
+      
+      <!-- Wraparound arrow -->
+      <path d="M 290 25 Q 320 25 320 -20 Q 320 -40 150 -40 Q -20 -40 -20 25 L -10 25" 
+            stroke="#f59e0b" stroke-width="3" fill="none" marker-end="url(#arroworange)"/>
+      <text x="150" y="-50" text-anchor="middle" fill="#f59e0b" font-family="Arial, sans-serif" font-size="12" font-weight="bold">
+        WRAPAROUND!
+      </text>
+      
+      <!-- Pointers -->
+      <path d="M 145 -10 L 145 -5" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowred)"/>
+      <text x="145" y="-15" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="11" font-weight="bold">F</text>
+      
+      <path d="M 25 75 L 25 55" stroke="#10b981" stroke-width="2" marker-end="url(#arrowgreen)"/>
+      <text x="25" y="90" text-anchor="middle" fill="#10b981" font-family="Arial, sans-serif" font-size="11" font-weight="bold">R</text>
+    </g>
+    
+    <text x="150" y="110" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="11">
+      Front=2, Rear=0 (wrapped!), Size=4
+    </text>
+  </g>
+  
+  <!-- Step 5: Queue Full -->
+  <g transform="translate(80, 400)">
+    <text x="150" y="-10" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Step 5: Enqueue G
+    </text>
+    
+    <g transform="translate(0, 10)">
+      <rect x="0" y="0" width="50" height="50" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+      <text x="25" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">F</text>
+      <text x="25" y="65" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[0]</text>
+      
+      <rect x="60" y="0" width="50" height="50" fill="#10b981" rx="5" stroke="#059669" stroke-width="3"/>
+      <text x="85" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">G</text>
+      <text x="85" y="65" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[1]</text>
+      
+      <rect x="120" y="0" width="50" height="50" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+      <text x="145" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">C</text>
+      <text x="145" y="65" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[2]</text>
+      
+      <rect x="180" y="0" width="50" height="50" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+      <text x="205" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">D</text>
+      <text x="205" y="65" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[3]</text>
+      
+      <rect x="240" y="0" width="50" height="50" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+      <text x="265" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">E</text>
+      <text x="265" y="65" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[4]</text>
+      
+      <!-- Pointers -->
+      <path d="M 145 -10 L 145 -5" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowred)"/>
+      <text x="145" y="-15" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="11" font-weight="bold">F</text>
+      
+      <path d="M 85 75 L 85 55" stroke="#10b981" stroke-width="2" marker-end="url(#arrowgreen)"/>
+      <text x="85" y="90" text-anchor="middle" fill="#10b981" font-family="Arial, sans-serif" font-size="11" font-weight="bold">R</text>
+    </g>
+    
+    <text x="150" y="110" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="11" font-weight="bold">
+      Front=2, Rear=1, Size=5 (FULL!)
+    </text>
+  </g>
+  
+  <!-- Circular visualization -->
+  <g transform="translate(650, 400)">
+    <text x="150" y="-10" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Circular View
+    </text>
+    
+    <circle cx="150" cy="80" r="90" fill="none" stroke="#d1d5db" stroke-width="2" stroke-dasharray="5,5"/>
+    
+    <!-- Elements in circle -->
+    <rect x="130" y="-10" width="40" height="35" fill="#3b82f6" rx="5"/>
+    <text x="150" y="12" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">C</text>
+    <text x="150" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8">[2]</text>
+    
+    <rect x="200" y="40" width="40" height="35" fill="#3b82f6" rx="5"/>
+    <text x="220" y="62" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">D</text>
+    <text x="220" y="72" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8">[3]</text>
+    
+    <rect x="180" y="120" width="40" height="35" fill="#3b82f6" rx="5"/>
+    <text x="200" y="142" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">E</text>
+    <text x="200" y="152" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8">[4]</text>
+    
+    <rect x="110" y="140" width="40" height="35" fill="#3b82f6" rx="5"/>
+    <text x="130" y="162" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">F</text>
+    <text x="130" y="172" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8">[0]</text>
+    
+    <rect x="50" y="100" width="40" height="35" fill="#3b82f6" rx="5"/>
+    <text x="70" y="122" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">G</text>
+    <text x="70" y="132" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8">[1]</text>
+    
+    <!-- Circular arrow -->
+    <path d="M 150 -20 Q 250 80 150 180 Q 50 80 150 -20" 
+          stroke="#f59e0b" stroke-width="2" fill="none" marker-end="url(#arroworange)"/>
+    
+    <text x="150" y="210" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="11" font-style="italic">
+      Rear wraps to index 0
+    </text>
+  </g>
+  
+  <!-- Formula box -->
+  <g transform="translate(50, 570)">
+    <rect x="0" y="0" width="900" height="100" fill="#fef3c7" rx="10" stroke="#f59e0b" stroke-width="2"/>
+    
+    <text x="450" y="30" text-anchor="middle" fill="#92400e" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Key Formulas for Circular Queue
+    </text>
+    
+    <text x="30" y="55" fill="#374151" font-family="Courier New, monospace" font-size="13">
+      • Next Rear Position: rear = (rear + 1) % capacity
+    </text>
+    
+    <text x="30" y="75" fill="#374151" font-family="Courier New, monospace" font-size="13">
+      • Next Front Position: front = (front + 1) % capacity
+    </text>
+    
+    <text x="500" y="55" fill="#374151" font-family="Courier New, monospace" font-size="13">
+      • Is Full: (rear + 1) % capacity == front
+    </text>
+    
+    <text x="500" y="75" fill="#374151" font-family="Courier New, monospace" font-size="13">
+      • Is Empty: front == rear (when empty)
+    </text>
+  </g>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowred" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ef4444" />
+    </marker>
+    <marker id="arrowgreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#10b981" />
+    </marker>
+    <marker id="arroworange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#f59e0b" />
+    </marker>
+  </defs>
+</svg>

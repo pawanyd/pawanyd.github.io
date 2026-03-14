@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="hero-title hero-desc">
+  <title id="hero-title">Stacks and Queues Data Structures</title>
+  <desc id="hero-desc">Visual representation of stack (LIFO) and queue (FIFO) data structures with real-world analogies</desc>
+  
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3730a3;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="stackGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="queueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Title -->
+  <text x="600" y="80" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="48" font-weight="bold">
+    Stacks &amp; Queues
+  </text>
+  <text x="600" y="120" text-anchor="middle" fill="#e5e7eb" font-family="Arial, sans-serif" font-size="24">
+    The Foundation of Every Developer's Toolkit
+  </text>
+  
+  <!-- Stack Section (Left) -->
+  <g transform="translate(150, 180)">
+    <!-- Stack title -->
+    <text x="150" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="28" font-weight="bold">
+      Stack (LIFO)
+    </text>
+    <text x="150" y="55" text-anchor="middle" fill="#fca5a5" font-family="Arial, sans-serif" font-size="16">
+      Last In, First Out
+    </text>
+    
+    <!-- Stack visualization -->
+    <g transform="translate(75, 80)">
+      <!-- Stack base -->
+      <rect x="0" y="240" width="150" height="20" fill="#374151" rx="5"/>
+      
+      <!-- Stack elements -->
+      <rect x="10" y="200" width="130" height="40" fill="url(#stackGradient)" rx="5"/>
+      <text x="75" y="225" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Element 3</text>
+      
+      <rect x="10" y="160" width="130" height="40" fill="url(#stackGradient)" rx="5" opacity="0.8"/>
+      <text x="75" y="185" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Element 2</text>
+      
+      <rect x="10" y="120" width="130" height="40" fill="url(#stackGradient)" rx="5" opacity="0.6"/>
+      <text x="75" y="145" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Element 1</text>
+      
+      <!-- Push arrow -->
+      <path d="M 180 100 L 180 80 L 190 90 L 180 80 L 170 90" stroke="#fbbf24" stroke-width="3" fill="none"/>
+      <text x="200" y="95" fill="#fbbf24" font-family="Arial, sans-serif" font-size="14" font-weight="bold">PUSH</text>
+      
+      <!-- Pop arrow -->
+      <path d="M 200 140 L 200 120 L 210 130 L 200 120 L 190 130" stroke="#fbbf24" stroke-width="3" fill="none"/>
+      <text x="220" y="135" fill="#fbbf24" font-family="Arial, sans-serif" font-size="14" font-weight="bold">POP</text>
+    </g>
+    
+    <!-- Stack examples -->
+    <text x="150" y="360" text-anchor="middle" fill="#e5e7eb" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+      Real-world examples:
+    </text>
+    <text x="150" y="380" text-anchor="middle" fill="#d1d5db" font-family="Arial, sans-serif" font-size="12">
+      • Browser Back Button
+    </text>
+    <text x="150" y="395" text-anchor="middle" fill="#d1d5db" font-family="Arial, sans-serif" font-size="12">
+      • Undo Operations
+    </text>
+    <text x="150" y="410" text-anchor="middle" fill="#d1d5db" font-family="Arial, sans-serif" font-size="12">
+      • Function Calls
+    </text>
+  </g>
+  
+  <!-- Queue Section (Right) -->
+  <g transform="translate(650, 180)">
+    <!-- Queue title -->
+    <text x="150" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="28" font-weight="bold">
+      Queue (FIFO)
+    </text>
+    <text x="150" y="55" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="16">
+      First In, First Out
+    </text>
+    
+    <!-- Queue visualization -->
+    <g transform="translate(25, 100)">
+      <!-- Queue elements -->
+      <rect x="0" y="80" width="60" height="40" fill="url(#queueGradient)" rx="5"/>
+      <text x="30" y="105" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">E1</text>
+      
+      <rect x="70" y="80" width="60" height="40" fill="url(#queueGradient)" rx="5" opacity="0.8"/>
+      <text x="100" y="105" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">E2</text>
+      
+      <rect x="140" y="80" width="60" height="40" fill="url(#queueGradient)" rx="5" opacity="0.6"/>
+      <text x="170" y="105" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">E3</text>
+      
+      <rect x="210" y="80" width="60" height="40" fill="url(#queueGradient)" rx="5" opacity="0.4"/>
+      <text x="240" y="105" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">E4</text>
+      
+      <!-- Enqueue arrow -->
+      <path d="M 290 100 L 310 100 L 300 90 L 310 100 L 300 110" stroke="#fbbf24" stroke-width="3" fill="none"/>
+      <text x="320" y="95" fill="#fbbf24" font-family="Arial, sans-serif" font-size="12" font-weight="bold">ENQUEUE</text>
+      <text x="335" y="110" fill="#fbbf24" font-family="Arial, sans-serif" font-size="12">(Rear)</text>
+      
+      <!-- Dequeue arrow -->
+      <path d="M -20 100 L -40 100 L -30 90 L -40 100 L -30 110" stroke="#fbbf24" stroke-width="3" fill="none"/>
+      <text x="-90" y="95" fill="#fbbf24" font-family="Arial, sans-serif" font-size="12" font-weight="bold">DEQUEUE</text>
+      <text x="-75" y="110" fill="#fbbf24" font-family="Arial, sans-serif" font-size="12">(Front)</text>
+      
+      <!-- Front and Rear labels -->
+      <text x="30" y="140" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="14" font-weight="bold">FRONT</text>
+      <text x="240" y="140" text-anchor="middle" fill="#86efac" font-family="Arial, sans-serif" font-size="14" font-weight="bold">REAR</text>
+    </g>
+    
+    <!-- Queue examples -->
+    <text x="150" y="280" text-anchor="middle" fill="#e5e7eb" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+      Real-world examples:
+    </text>
+    <text x="150" y="300" text-anchor="middle" fill="#d1d5db" font-family="Arial, sans-serif" font-size="12">
+      • Print Queue
+    </text>
+    <text x="150" y="315" text-anchor="middle" fill="#d1d5db" font-family="Arial, sans-serif" font-size="12">
+      • Task Scheduling
+    </text>
+    <text x="150" y="330" text-anchor="middle" fill="#d1d5db" font-family="Arial, sans-serif" font-size="12">
+      • BFS Algorithm
+    </text>
+  </g>
+  
+  <!-- VS separator -->
+  <circle cx="600" cy="350" r="40" fill="#374151" stroke="#6b7280" stroke-width="3"/>
+  <text x="600" y="360" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">VS</text>
+  
+  <!-- Bottom tagline -->
+  <text x="600" y="580" text-anchor="middle" fill="#d1d5db" font-family="Arial, sans-serif" font-size="18">
+    Master the patterns that power modern software systems
+  </text>
+</svg>

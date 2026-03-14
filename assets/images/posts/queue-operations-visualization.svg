@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="queue-ops-title queue-ops-desc">
+  <title id="queue-ops-title">Queue Operations Visualization</title>
+  <desc id="queue-ops-desc">Step-by-step visualization of enqueue, dequeue, and front operations on a queue</desc>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f9fafb"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#1f2937" font-family="Arial, sans-serif" font-size="28" font-weight="bold">
+    Queue Operations in Action
+  </text>
+  
+  <!-- Initial State -->
+  <g transform="translate(50, 100)">
+    <text x="150" y="-10" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Initial State
+    </text>
+    
+    <!-- Queue elements -->
+    <rect x="0" y="50" width="70" height="50" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+    <text x="35" y="80" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">10</text>
+    
+    <rect x="80" y="50" width="70" height="50" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+    <text x="115" y="80" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">20</text>
+    
+    <rect x="160" y="50" width="70" height="50" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+    <text x="195" y="80" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">30</text>
+    
+    <!-- Front pointer -->
+    <path d="M 35 30 L 35 45" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowred)"/>
+    <text x="35" y="20" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="12" font-weight="bold">FRONT</text>
+    
+    <!-- Rear pointer -->
+    <path d="M 195 120 L 195 105" stroke="#10b981" stroke-width="2" marker-end="url(#arrowgreen)"/>
+    <text x="195" y="135" text-anchor="middle" fill="#10b981" font-family="Arial, sans-serif" font-size="12" font-weight="bold">REAR</text>
+  </g>
+  
+  <!-- After Enqueue(40) -->
+  <g transform="translate(350, 100)">
+    <text x="170" y="-10" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      After Enqueue(40)
+    </text>
+    
+    <!-- Queue elements -->
+    <rect x="0" y="50" width="70" height="50" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+    <text x="35" y="80" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">10</text>
+    
+    <rect x="80" y="50" width="70" height="50" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+    <text x="115" y="80" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">20</text>
+    
+    <rect x="160" y="50" width="70" height="50" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+    <text x="195" y="80" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">30</text>
+    
+    <!-- New element -->
+    <rect x="240" y="50" width="70" height="50" fill="#10b981" rx="5" stroke="#059669" stroke-width="3"/>
+    <text x="275" y="80" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">40</text>
+    
+    <!-- Front pointer -->
+    <path d="M 35 30 L 35 45" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowred)"/>
+    <text x="35" y="20" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="12" font-weight="bold">FRONT</text>
+    
+    <!-- Rear pointer -->
+    <path d="M 275 120 L 275 105" stroke="#10b981" stroke-width="2" marker-end="url(#arrowgreen)"/>
+    <text x="275" y="135" text-anchor="middle" fill="#10b981" font-family="Arial, sans-serif" font-size="12" font-weight="bold">REAR</text>
+    
+    <!-- Enqueue arrow -->
+    <path d="M 320 75 L 340 75" stroke="#10b981" stroke-width="3" marker-end="url(#arrowgreen2)"/>
+    <text x="350" y="70" fill="#10b981" font-family="Arial, sans-serif" font-size="12" font-weight="bold">ENQUEUE</text>
+    <text x="360" y="85" fill="#10b981" font-family="Arial, sans-serif" font-size="10">(Add to rear)</text>
+  </g>
+  
+  <!-- After Dequeue() -->
+  <g transform="translate(50, 280)">
+    <text x="150" y="-10" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      After Dequeue()
+    </text>
+    
+    <!-- Removed element (faded) -->
+    <rect x="0" y="50" width="70" height="50" fill="#ef4444" rx="5" stroke="#dc2626" stroke-width="2" opacity="0.3" stroke-dasharray="5,5"/>
+    <text x="35" y="80" text-anchor="middle" fill="#991b1b" font-family="Arial, sans-serif" font-size="16" font-weight="bold" opacity="0.5">10</text>
+    
+    <!-- Queue elements -->
+    <rect x="80" y="50" width="70" height="50" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+    <text x="115" y="80" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">20</text>
+    
+    <rect x="160" y="50" width="70" height="50" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+    <text x="195" y="80" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">30</text>
+    
+    <rect x="240" y="50" width="70" height="50" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+    <text x="275" y="80" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">40</text>
+    
+    <!-- Front pointer -->
+    <path d="M 115 30 L 115 45" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowred)"/>
+    <text x="115" y="20" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="12" font-weight="bold">FRONT</text>
+    
+    <!-- Rear pointer -->
+    <path d="M 275 120 L 275 105" stroke="#10b981" stroke-width="2" marker-end="url(#arrowgreen)"/>
+    <text x="275" y="135" text-anchor="middle" fill="#10b981" font-family="Arial, sans-serif" font-size="12" font-weight="bold">REAR</text>
+    
+    <!-- Dequeue arrow -->
+    <path d="M -10 75 L -30 75" stroke="#ef4444" stroke-width="3" marker-end="url(#arrowred2)"/>
+    <text x="-100" y="70" fill="#ef4444" font-family="Arial, sans-serif" font-size="12" font-weight="bold">DEQUEUE</text>
+    <text x="-105" y="85" fill="#ef4444" font-family="Arial, sans-serif" font-size="10">(Remove from front)</text>
+    
+    <!-- Return value -->
+    <text x="35" y="130" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Returns: 10</text>
+  </g>
+  
+  <!-- Front() Operation -->
+  <g transform="translate(400, 280)">
+    <text x="150" y="-10" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Front()
+    </text>
+    
+    <!-- Queue elements -->
+    <rect x="0" y="50" width="70" height="50" fill="#f59e0b" rx="5" stroke="#d97706" stroke-width="3"/>
+    <text x="35" y="80" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">20</text>
+    
+    <rect x="80" y="50" width="70" height="50" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+    <text x="115" y="80" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">30</text>
+    
+    <rect x="160" y="50" width="70" height="50" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+    <text x="195" y="80" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">40</text>
+    
+    <!-- Front pointer -->
+    <path d="M 35 30 L 35 45" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowred)"/>
+    <text x="35" y="20" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="12" font-weight="bold">FRONT</text>
+    
+    <!-- Rear pointer -->
+    <path d="M 195 120 L 195 105" stroke="#10b981" stroke-width="2" marker-end="url(#arrowgreen)"/>
+    <text x="195" y="135" text-anchor="middle" fill="#10b981" font-family="Arial, sans-serif" font-size="12" font-weight="bold">REAR</text>
+    
+    <!-- Peek indicator -->
+    <circle cx="35" cy="75" r="40" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5,5"/>
+    
+    <!-- Return value -->
+    <text x="35" y="150" text-anchor="middle" fill="#059669" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Returns: 20</text>
+    <text x="35" y="165" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">(No removal)</text>
+  </g>
+  
+  <!-- Operation descriptions -->
+  <g transform="translate(50, 410)">
+    <rect x="0" y="0" width="700" height="75" fill="#ecfdf5" rx="8" stroke="#10b981" stroke-width="2"/>
+    
+    <text x="20" y="25" fill="#065f46" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+      Key Operations:
+    </text>
+    
+    <text x="20" y="45" fill="#374151" font-family="Arial, sans-serif" font-size="12">
+      • <tspan font-weight="bold" fill="#10b981">Enqueue(x)</tspan>: Add element x to the rear of the queue - O(1) time complexity
+    </text>
+    
+    <text x="20" y="63" fill="#374151" font-family="Arial, sans-serif" font-size="12">
+      • <tspan font-weight="bold" fill="#ef4444">Dequeue()</tspan>: Remove and return the front element - O(1) time complexity
+    </text>
+  </g>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowred" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ef4444" />
+    </marker>
+    <marker id="arrowred2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ef4444" />
+    </marker>
+    <marker id="arrowgreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#10b981" />
+    </marker>
+    <marker id="arrowgreen2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#10b981" />
+    </marker>
+  </defs>
+</svg>

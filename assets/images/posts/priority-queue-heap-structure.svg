@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="700" viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="heap-title heap-desc">
+  <title id="heap-title">Priority Queue Heap Structure</title>
+  <desc id="heap-desc">Visual representation of how a priority queue is implemented using a min-heap with array representation</desc>
+  
+  <!-- Background -->
+  <rect width="1000" height="700" fill="#f9fafb"/>
+  
+  <!-- Title -->
+  <text x="500" y="40" text-anchor="middle" fill="#1f2937" font-family="Arial, sans-serif" font-size="28" font-weight="bold">
+    Priority Queue: Min-Heap Implementation
+  </text>
+  
+  <!-- Tree visualization -->
+  <g transform="translate(200, 80)">
+    <text x="300" y="0" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+      Tree Structure (Min-Heap)
+    </text>
+    
+    <!-- Level 0 - Root -->
+    <g transform="translate(280, 40)">
+      <circle cx="20" cy="20" r="25" fill="#dc2626" stroke="#991b1b" stroke-width="3"/>
+      <text x="20" y="18" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">3</text>
+      <text x="20" y="32" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">Priority</text>
+      <text x="20" y="-15" text-anchor="middle" fill="#dc2626" font-family="Arial, sans-serif" font-size="11" font-weight="bold">ROOT</text>
+      <text x="20" y="65" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[0]</text>
+    </g>
+    
+    <!-- Level 1 -->
+    <g transform="translate(150, 140)">
+      <circle cx="20" cy="20" r="25" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+      <text x="20" y="18" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">5</text>
+      <text x="20" y="32" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">Priority</text>
+      <text x="20" y="60" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[1]</text>
+      
+      <!-- Line to parent -->
+      <line x1="20" y1="-5" x2="150" y2="-55" stroke="#9ca3af" stroke-width="2"/>
+    </g>
+    
+    <g transform="translate(410, 140)">
+      <circle cx="20" cy="20" r="25" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+      <text x="20" y="18" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">7</text>
+      <text x="20" y="32" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">Priority</text>
+      <text x="20" y="60" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[2]</text>
+      
+      <!-- Line to parent -->
+      <line x1="20" y1="-5" x2="-110" y2="-55" stroke="#9ca3af" stroke-width="2"/>
+    </g>
+    
+    <!-- Level 2 -->
+    <g transform="translate(70, 240)">
+      <circle cx="20" cy="20" r="25" fill="#3b82f6" stroke="#1e40af" stroke-width="2"/>
+      <text x="20" y="18" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">9</text>
+      <text x="20" y="32" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">Priority</text>
+      <text x="20" y="60" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[3]</text>
+      
+      <!-- Line to parent -->
+      <line x1="20" y1="-5" x2="80" y2="-55" stroke="#9ca3af" stroke-width="2"/>
+    </g>
+    
+    <g transform="translate(230, 240)">
+      <circle cx="20" cy="20" r="25" fill="#3b82f6" stroke="#1e40af" stroke-width="2"/>
+      <text x="20" y="18" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">12</text>
+      <text x="20" y="32" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8">Priority</text>
+      <text x="20" y="60" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[4]</text>
+      
+      <!-- Line to parent -->
+      <line x1="20" y1="-5" x2="-80" y2="-55" stroke="#9ca3af" stroke-width="2"/>
+    </g>
+    
+    <g transform="translate(330, 240)">
+      <circle cx="20" cy="20" r="25" fill="#3b82f6" stroke="#1e40af" stroke-width="2"/>
+      <text x="20" y="18" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">15</text>
+      <text x="20" y="32" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8">Priority</text>
+      <text x="20" y="60" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[5]</text>
+      
+      <!-- Line to parent -->
+      <line x1="20" y1="-5" x2="80" y2="-55" stroke="#9ca3af" stroke-width="2"/>
+    </g>
+    
+    <g transform="translate(490, 240)">
+      <circle cx="20" cy="20" r="25" fill="#3b82f6" stroke="#1e40af" stroke-width="2"/>
+      <text x="20" y="18" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">18</text>
+      <text x="20" y="32" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8">Priority</text>
+      <text x="20" y="60" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10">[6]</text>
+      
+      <!-- Line to parent -->
+      <line x1="20" y1="-5" x2="-80" y2="-55" stroke="#9ca3af" stroke-width="2"/>
+    </g>
+    
+    <!-- Min-Heap property annotation -->
+    <g transform="translate(0, 340)">
+      <rect x="0" y="0" width="600" height="60" fill="#fef2f2" rx="8" stroke="#dc2626" stroke-width="2"/>
+      <text x="300" y="25" text-anchor="middle" fill="#991b1b" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+        Min-Heap Property: Parent ≤ Children
+      </text>
+      <text x="300" y="45" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="12">
+        Smallest priority always at root → Dequeue returns highest priority item
+      </text>
+    </g>
+  </g>
+  
+  <!-- Array representation -->
+  <g transform="translate(100, 450)">
+    <text x="400" y="0" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+      Array Representation (How it's stored in memory)
+    </text>
+    
+    <g transform="translate(0, 20)">
+      <rect x="0" y="0" width="100" height="60" fill="#dc2626" rx="5" stroke="#991b1b" stroke-width="3"/>
+      <text x="50" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="20" font-weight="bold">3</text>
+      <text x="50" y="48" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11">Priority</text>
+      <text x="50" y="75" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="11">[0]</text>
+      
+      <rect x="110" y="0" width="100" height="60" fill="#f59e0b" rx="5" stroke="#d97706" stroke-width="2"/>
+      <text x="160" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="20" font-weight="bold">5</text>
+      <text x="160" y="48" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11">Priority</text>
+      <text x="160" y="75" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="11">[1]</text>
+      
+      <rect x="220" y="0" width="100" height="60" fill="#f59e0b" rx="5" stroke="#d97706" stroke-width="2"/>
+      <text x="270" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="20" font-weight="bold">7</text>
+      <text x="270" y="48" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11">Priority</text>
+      <text x="270" y="75" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="11">[2]</text>
+      
+      <rect x="330" y="0" width="100" height="60" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+      <text x="380" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="20" font-weight="bold">9</text>
+      <text x="380" y="48" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11">Priority</text>
+      <text x="380" y="75" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="11">[3]</text>
+      
+      <rect x="440" y="0" width="100" height="60" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+      <text x="490" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="20" font-weight="bold">12</text>
+      <text x="490" y="48" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11">Priority</text>
+      <text x="490" y="75" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="11">[4]</text>
+      
+      <rect x="550" y="0" width="100" height="60" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+      <text x="600" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="20" font-weight="bold">15</text>
+      <text x="600" y="48" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11">Priority</text>
+      <text x="600" y="75" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="11">[5]</text>
+      
+      <rect x="660" y="0" width="100" height="60" fill="#3b82f6" rx="5" stroke="#1e40af" stroke-width="2"/>
+      <text x="710" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="20" font-weight="bold">18</text>
+      <text x="710" y="48" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11">Priority</text>
+      <text x="710" y="75" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="11">[6]</text>
+    </g>
+    
+    <!-- Parent-child relationship formulas -->
+    <g transform="translate(0, 110)">
+      <rect x="0" y="0" width="800" height="90" fill="#eff6ff" rx="8" stroke="#3b82f6" stroke-width="2"/>
+      
+      <text x="400" y="25" text-anchor="middle" fill="#1e40af" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+        Array Index Relationships
+      </text>
+      
+      <text x="30" y="50" fill="#374151" font-family="Courier New, monospace" font-size="12">
+        • Parent of node i: (i - 1) / 2
+      </text>
+      
+      <text x="30" y="70" fill="#374151" font-family="Courier New, monospace" font-size="12">
+        • Left child of node i: 2 * i + 1
+      </text>
+      
+      <text x="420" y="50" fill="#374151" font-family="Courier New, monospace" font-size="12">
+        • Right child of node i: 2 * i + 2
+      </text>
+      
+      <text x="420" y="70" fill="#6b7280" font-family="Arial, sans-serif" font-size="11" font-style="italic">
+        Example: Node[1] children are [3] and [4]
+      </text>
+    </g>
+  </g>
+  
+  <!-- Operations box -->
+  <g transform="translate(100, 620)">
+    <rect x="0" y="0" width="800" height="65" fill="#fef3c7" rx="8" stroke="#f59e0b" stroke-width="2"/>
+    
+    <text x="400" y="22" text-anchor="middle" fill="#92400e" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+      Priority Queue Operations
+    </text>
+    
+    <text x="30" y="42" fill="#374151" font-family="Arial, sans-serif" font-size="12">
+      • <tspan font-weight="bold">Enqueue</tspan>: Add to end, then "bubble up" to maintain heap property - O(log n)
+    </text>
+    
+    <text x="30" y="58" fill="#374151" font-family="Arial, sans-serif" font-size="12">
+      • <tspan font-weight="bold">Dequeue</tspan>: Remove root (min), move last to root, "bubble down" - O(log n)
+    </text>
+  </g>
+</svg>

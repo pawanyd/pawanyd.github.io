@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="600" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="memory-title memory-desc">
+  <title id="memory-title">Stack Memory Layout Comparison</title>
+  <desc id="memory-desc">Comparison of array-based vs linked-list stack implementation showing memory addresses and pointers</desc>
+  
+  <!-- Background -->
+  <rect width="1000" height="600" fill="#f9fafb"/>
+  
+  <!-- Title -->
+  <text x="500" y="40" text-anchor="middle" fill="#1f2937" font-family="Arial, sans-serif" font-size="28" font-weight="bold">
+    Memory Layout: Array-Based vs Linked-List Stack
+  </text>
+  
+  <!-- Array-Based Stack -->
+  <g transform="translate(50, 80)">
+    <rect x="0" y="0" width="420" height="480" fill="#eff6ff" rx="10" stroke="#3b82f6" stroke-width="3"/>
+    
+    <text x="210" y="35" text-anchor="middle" fill="#1e40af" font-family="Arial, sans-serif" font-size="22" font-weight="bold">
+      Array-Based Stack
+    </text>
+    
+    <!-- Memory representation -->
+    <g transform="translate(30, 60)">
+      <text x="0" y="0" fill="#374151" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+        Contiguous Memory Block:
+      </text>
+      
+      <!-- Memory addresses -->
+      <text x="0" y="35" fill="#6b7280" font-family="Courier New, monospace" font-size="11">Address</text>
+      <text x="100" y="35" fill="#6b7280" font-family="Arial, sans-serif" font-size="11">Value</text>
+      <text x="200" y="35" fill="#6b7280" font-family="Arial, sans-serif" font-size="11">Index</text>
+      
+      <!-- Array elements -->
+      <rect x="0" y="45" width="360" height="45" fill="white" rx="5" stroke="#cbd5e1" stroke-width="2"/>
+      <text x="10" y="72" fill="#6b7280" font-family="Courier New, monospace" font-size="12">0x1000</text>
+      <rect x="90" y="52" width="80" height="30" fill="#3b82f6" rx="3"/>
+      <text x="130" y="72" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">10</text>
+      <text x="210" y="72" fill="#374151" font-family="Arial, sans-serif" font-size="12">arr[0]</text>
+      <path d="M 320 67 L 340 67" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowred)"/>
+      <text x="350" y="72" fill="#ef4444" font-family="Arial, sans-serif" font-size="11" font-weight="bold">TOP</text>
+      
+      <rect x="0" y="95" width="360" height="45" fill="white" rx="5" stroke="#cbd5e1" stroke-width="2"/>
+      <text x="10" y="122" fill="#6b7280" font-family="Courier New, monospace" font-size="12">0x1004</text>
+      <rect x="90" y="102" width="80" height="30" fill="#3b82f6" rx="3"/>
+      <text x="130" y="122" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">20</text>
+      <text x="210" y="122" fill="#374151" font-family="Arial, sans-serif" font-size="12">arr[1]</text>
+      
+      <rect x="0" y="145" width="360" height="45" fill="white" rx="5" stroke="#cbd5e1" stroke-width="2"/>
+      <text x="10" y="172" fill="#6b7280" font-family="Courier New, monospace" font-size="12">0x1008</text>
+      <rect x="90" y="152" width="80" height="30" fill="#3b82f6" rx="3"/>
+      <text x="130" y="172" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">30</text>
+      <text x="210" y="172" fill="#374151" font-family="Arial, sans-serif" font-size="12">arr[2]</text>
+      
+      <rect x="0" y="195" width="360" height="45" fill="white" rx="5" stroke="#cbd5e1" stroke-width="2"/>
+      <text x="10" y="222" fill="#6b7280" font-family="Courier New, monospace" font-size="12">0x100C</text>
+      <rect x="90" y="202" width="80" height="30" fill="#e5e7eb" rx="3" stroke="#9ca3af" stroke-dasharray="3,3"/>
+      <text x="130" y="222" text-anchor="middle" fill="#9ca3af" font-family="Arial, sans-serif" font-size="14">empty</text>
+      <text x="210" y="222" fill="#9ca3af" font-family="Arial, sans-serif" font-size="12">arr[3]</text>
+      
+      <rect x="0" y="245" width="360" height="45" fill="white" rx="5" stroke="#cbd5e1" stroke-width="2"/>
+      <text x="10" y="272" fill="#6b7280" font-family="Courier New, monospace" font-size="12">0x1010</text>
+      <rect x="90" y="252" width="80" height="30" fill="#e5e7eb" rx="3" stroke="#9ca3af" stroke-dasharray="3,3"/>
+      <text x="130" y="272" text-anchor="middle" fill="#9ca3af" font-family="Arial, sans-serif" font-size="14">empty</text>
+      <text x="210" y="272" fill="#9ca3af" font-family="Arial, sans-serif" font-size="12">arr[4]</text>
+    </g>
+    
+    <!-- Characteristics -->
+    <g transform="translate(30, 360)">
+      <text x="0" y="0" fill="#1e40af" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+        Characteristics:
+      </text>
+      <text x="0" y="22" fill="#374151" font-family="Arial, sans-serif" font-size="12">
+        ✓ Cache-friendly (contiguous memory)
+      </text>
+      <text x="0" y="40" fill="#374151" font-family="Arial, sans-serif" font-size="12">
+        ✓ Fast access: O(1) with simple arithmetic
+      </text>
+      <text x="0" y="58" fill="#374151" font-family="Arial, sans-serif" font-size="12">
+        ✓ Low memory overhead (no pointers)
+      </text>
+      <text x="0" y="76" fill="#991b1b" font-family="Arial, sans-serif" font-size="12">
+        ✗ Fixed size (or expensive resize)
+      </text>
+      <text x="0" y="94" fill="#991b1b" font-family="Arial, sans-serif" font-size="12">
+        ✗ Wasted space if not full
+      </text>
+    </g>
+  </g>
+  
+  <!-- Linked-List Stack -->
+  <g transform="translate(530, 80)">
+    <rect x="0" y="0" width="420" height="480" fill="#fef3c7" rx="10" stroke="#f59e0b" stroke-width="3"/>
+    
+    <text x="210" y="35" text-anchor="middle" fill="#92400e" font-family="Arial, sans-serif" font-size="22" font-weight="bold">
+      Linked-List Stack
+    </text>
+    
+    <!-- Memory representation -->
+    <g transform="translate(30, 60)">
+      <text x="0" y="0" fill="#374151" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+        Non-Contiguous Memory (Scattered):
+      </text>
+      
+      <!-- Node 1 (Top) -->
+      <g transform="translate(0, 30)">
+        <rect x="0" y="0" width="360" height="70" fill="white" rx="5" stroke="#f59e0b" stroke-width="3"/>
+        <text x="10" y="-8" fill="#ef4444" font-family="Arial, sans-serif" font-size="11" font-weight="bold">TOP →</text>
+        
+        <text x="10" y="20" fill="#6b7280" font-family="Courier New, monospace" font-size="11">Address: 0x2A40</text>
+        
+        <rect x="20" y="30" width="80" height="30" fill="#f59e0b" rx="3"/>
+        <text x="60" y="50" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">10</text>
+        <text x="110" y="50" fill="#374151" font-family="Arial, sans-serif" font-size="12">data</text>
+        
+        <rect x="200" y="30" width="140" height="30" fill="#fbbf24" rx="3"/>
+        <text x="270" y="50" text-anchor="middle" fill="#78350f" font-family="Courier New, monospace" font-size="11">next: 0x3C80</text>
+        
+        <path d="M 340 45 L 360 45 L 360 115 L 20 115 L 20 125" stroke="#f59e0b" stroke-width="2" marker-end="url(#arroworange)" fill="none"/>
+      </g>
+      
+      <!-- Node 2 -->
+      <g transform="translate(0, 125)">
+        <rect x="0" y="0" width="360" height="70" fill="white" rx="5" stroke="#f59e0b" stroke-width="2"/>
+        
+        <text x="10" y="20" fill="#6b7280" font-family="Courier New, monospace" font-size="11">Address: 0x3C80</text>
+        
+        <rect x="20" y="30" width="80" height="30" fill="#f59e0b" rx="3"/>
+        <text x="60" y="50" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">20</text>
+        <text x="110" y="50" fill="#374151" font-family="Arial, sans-serif" font-size="12">data</text>
+        
+        <rect x="200" y="30" width="140" height="30" fill="#fbbf24" rx="3"/>
+        <text x="270" y="50" text-anchor="middle" fill="#78350f" font-family="Courier New, monospace" font-size="11">next: 0x1F20</text>
+        
+        <path d="M 340 45 L 360 45 L 360 115 L 20 115 L 20 125" stroke="#f59e0b" stroke-width="2" marker-end="url(#arroworange)" fill="none"/>
+      </g>
+      
+      <!-- Node 3 -->
+      <g transform="translate(0, 220)">
+        <rect x="0" y="0" width="360" height="70" fill="white" rx="5" stroke="#f59e0b" stroke-width="2"/>
+        
+        <text x="10" y="20" fill="#6b7280" font-family="Courier New, monospace" font-size="11">Address: 0x1F20</text>
+        
+        <rect x="20" y="30" width="80" height="30" fill="#f59e0b" rx="3"/>
+        <text x="60" y="50" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">30</text>
+        <text x="110" y="50" fill="#374151" font-family="Arial, sans-serif" font-size="12">data</text>
+        
+        <rect x="200" y="30" width="140" height="30" fill="#9ca3af" rx="3"/>
+        <text x="270" y="50" text-anchor="middle" fill="white" font-family="Courier New, monospace" font-size="11">next: NULL</text>
+      </g>
+    </g>
+    
+    <!-- Characteristics -->
+    <g transform="translate(30, 360)">
+      <text x="0" y="0" fill="#92400e" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+        Characteristics:
+      </text>
+      <text x="0" y="22" fill="#374151" font-family="Arial, sans-serif" font-size="12">
+        ✓ Dynamic size (grows as needed)
+      </text>
+      <text x="0" y="40" fill="#374151" font-family="Arial, sans-serif" font-size="12">
+        ✓ No wasted space
+      </text>
+      <text x="0" y="58" fill="#374151" font-family="Arial, sans-serif" font-size="12">
+        ✓ Easy insertion/deletion
+      </text>
+      <text x="0" y="76" fill="#991b1b" font-family="Arial, sans-serif" font-size="12">
+        ✗ Memory overhead (pointers)
+      </text>
+      <text x="0" y="94" fill="#991b1b" font-family="Arial, sans-serif" font-size="12">
+        ✗ Poor cache locality (scattered)
+      </text>
+    </g>
+  </g>
+  
+  <!-- Bottom note -->
+  <text x="500" y="580" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="13" font-style="italic">
+    Array-based: Better for small, fixed-size stacks | Linked-list: Better for dynamic, unpredictable growth
+  </text>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowred" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ef4444" />
+    </marker>
+    <marker id="arroworange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#f59e0b" />
+    </marker>
+  </defs>
+</svg>
