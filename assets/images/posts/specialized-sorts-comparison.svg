@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" role="img">
+  <title>Specialized Sorts Comparison</title>
+  <rect width="1000" height="400" fill="#f3f4f6"/>
+  <text x="500" y="35" font-family="Arial" font-size="24" font-weight="bold" fill="#1f2937" text-anchor="middle">
+    Specialized Sorts: Linear Time Possible
+  </text>
+  <g transform="translate(50, 80)">
+    <rect width="280" height="280" rx="10" fill="#fff" stroke="#10b981" stroke-width="2"/>
+    <text x="140" y="30" font-family="Arial" font-size="18" font-weight="bold" fill="#10b981" text-anchor="middle">Counting Sort</text>
+    <text x="20" y="60" font-family="Arial" font-size="13" fill="#1f2937">Time: O(n + k)</text>
+    <text x="20" y="80" font-family="Arial" font-size="13" fill="#1f2937">Space: O(k)</text>
+    <text x="20" y="100" font-family="Arial" font-size="13" fill="#1f2937">Stable: Yes</text>
+    <text x="20" y="130" font-family="Arial" font-size="13" font-weight="bold" fill="#10b981">✓ Linear time O(n+k)</text>
+    <text x="20" y="150" font-family="Arial" font-size="13" font-weight="bold" fill="#10b981">✓ Stable</text>
+    <text x="20" y="180" font-family="Arial" font-size="13" font-weight="bold" fill="#ef4444">✗ Only for integers</text>
+    <text x="20" y="200" font-family="Arial" font-size="13" font-weight="bold" fill="#ef4444">✗ Needs range k</text>
+    <rect x="20" y="220" width="240" height="40" rx="6" fill="#10b981" opacity="0.1"/>
+    <text x="140" y="245" font-family="Arial" font-size="12" fill="#6b7280" text-anchor="middle">Use: Small integer range</text>
+  </g>
+  <g transform="translate(360, 80)">
+    <rect width="280" height="280" rx="10" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
+    <text x="140" y="30" font-family="Arial" font-size="18" font-weight="bold" fill="#3b82f6" text-anchor="middle">Radix Sort</text>
+    <text x="20" y="60" font-family="Arial" font-size="13" fill="#1f2937">Time: O(d(n + k))</text>
+    <text x="20" y="80" font-family="Arial" font-size="13" fill="#1f2937">Space: O(n + k)</text>
+    <text x="20" y="100" font-family="Arial" font-size="13" fill="#1f2937">Stable: Yes</text>
+    <text x="20" y="130" font-family="Arial" font-size="13" font-weight="bold" fill="#10b981">✓ Fast for fixed-length</text>
+    <text x="20" y="150" font-family="Arial" font-size="13" font-weight="bold" fill="#10b981">✓ Works on strings</text>
+    <text x="20" y="180" font-family="Arial" font-size="13" font-weight="bold" fill="#ef4444">✗ Needs digit count d</text>
+    <text x="20" y="200" font-family="Arial" font-size="13" font-weight="bold" fill="#ef4444">✗ Not in-place</text>
+    <rect x="20" y="220" width="240" height="40" rx="6" fill="#3b82f6" opacity="0.1"/>
+    <text x="140" y="245" font-family="Arial" font-size="12" fill="#6b7280" text-anchor="middle">Use: Strings, IP addresses</text>
+  </g>
+  <g transform="translate(670, 80)">
+    <rect width="280" height="280" rx="10" fill="#fff" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="140" y="30" font-family="Arial" font-size="18" font-weight="bold" fill="#8b5cf6" text-anchor="middle">Bucket Sort</text>
+    <text x="20" y="60" font-family="Arial" font-size="13" fill="#1f2937">Time: O(n + k) avg</text>
+    <text x="20" y="80" font-family="Arial" font-size="13" fill="#1f2937">Space: O(n + k)</text>
+    <text x="20" y="100" font-family="Arial" font-size="13" fill="#1f2937">Stable: Depends</text>
+    <text x="20" y="130" font-family="Arial" font-size="13" font-weight="bold" fill="#10b981">✓ Fast on uniform data</text>
+    <text x="20" y="150" font-family="Arial" font-size="13" font-weight="bold" fill="#10b981">✓ Parallelizable</text>
+    <text x="20" y="180" font-family="Arial" font-size="13" font-weight="bold" fill="#ef4444">✗ Needs uniform dist</text>
+    <text x="20" y="200" font-family="Arial" font-size="13" font-weight="bold" fill="#ef4444">✗ O(n²) worst case</text>
+    <rect x="20" y="220" width="240" height="40" rx="6" fill="#8b5cf6" opacity="0.1"/>
+    <text x="140" y="245" font-family="Arial" font-size="12" fill="#6b7280" text-anchor="middle">Use: Uniform floats</text>
+  </g>
+</svg>

@@ -105,7 +105,7 @@ The operations are identical—just flip the comparison. If you understand one, 
 
 ### Insertion: Bubble Up to Find Your Place
 
-When you add a new element to a heap, you can't just stick it anywhere—you need to maintain the heap property. Here's how it works:
+When you add a new element to a heap, you can't just stick it anywhere—you need to maintain the heap property. Here's how <span data-algorithm="max_heap_insert">heap insertion</span> works:
 
 **The process:**
 1. Add the new element at the next available position (end of the array, maintaining the complete tree property)
@@ -121,7 +121,7 @@ This "bubbling up" process is also called "heapify up" or "sift up." In the wors
 
 ### Extraction: Remove the Top and Reorganize
 
-Extracting the maximum (or minimum) from a heap is where the magic really happens. You can't just remove the root and call it a day—you need to maintain the complete tree structure and the heap property.
+<span data-algorithm="max_heap_extract">Extracting the maximum</span> (or minimum) from a heap is where the magic really happens. You can't just remove the root and call it a day—you need to maintain the complete tree structure and the heap property.
 
 **The process:**
 1. Save the root element (this is what you'll return)

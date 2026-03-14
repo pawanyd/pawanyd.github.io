@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" role="img" aria-labelledby="simple-title simple-desc">
+  <title id="simple-title">Simple Sorts Comparison</title>
+  <desc id="simple-desc">Comparison of bubble sort, selection sort, and insertion sort</desc>
+  
+  <rect width="1000" height="400" fill="#f3f4f6"/>
+  
+  <text x="500" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1f2937" text-anchor="middle">
+    Simple Sorts: O(n²) Algorithms
+  </text>
+  
+  <!-- Bubble Sort -->
+  <g transform="translate(50, 80)">
+    <rect x="0" y="0" width="280" height="280" rx="10" fill="#ffffff" stroke="#ef4444" stroke-width="2"/>
+    <text x="140" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ef4444" text-anchor="middle">
+      Bubble Sort
+    </text>
+    
+    <text x="20" y="60" font-family="Arial, sans-serif" font-size="13" fill="#1f2937">
+      Time: O(n²) / O(n²) / O(n)
+    </text>
+    <text x="20" y="80" font-family="Arial, sans-serif" font-size="13" fill="#1f2937">
+      Space: O(1)
+    </text>
+    <text x="20" y="100" font-family="Arial, sans-serif" font-size="13" fill="#1f2937">
+      Stable: Yes
+    </text>
+    
+    <text x="20" y="130" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#10b981">
+      ✓ Simple to understand
+    </text>
+    <text x="20" y="150" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#10b981">
+      ✓ Adaptive (fast on sorted)
+    </text>
+    
+    <text x="20" y="180" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ef4444">
+      ✗ Very slow on large data
+    </text>
+    <text x="20" y="200" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ef4444">
+      ✗ Many unnecessary swaps
+    </text>
+    
+    <rect x="20" y="220" width="240" height="40" rx="6" fill="#ef4444" opacity="0.1"/>
+    <text x="140" y="245" font-family="Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">
+      Use: Teaching only
+    </text>
+  </g>
+  
+  <!-- Selection Sort -->
+  <g transform="translate(360, 80)">
+    <rect x="0" y="0" width="280" height="280" rx="10" fill="#ffffff" stroke="#f59e0b" stroke-width="2"/>
+    <text x="140" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f59e0b" text-anchor="middle">
+      Selection Sort
+    </text>
+    
+    <text x="20" y="60" font-family="Arial, sans-serif" font-size="13" fill="#1f2937">
+      Time: O(n²) / O(n²) / O(n²)
+    </text>
+    <text x="20" y="80" font-family="Arial, sans-serif" font-size="13" fill="#1f2937">
+      Space: O(1)
+    </text>
+    <text x="20" y="100" font-family="Arial, sans-serif" font-size="13" fill="#1f2937">
+      Stable: No
+    </text>
+    
+    <text x="20" y="130" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#10b981">
+      ✓ Minimal swaps O(n)
+    </text>
+    <text x="20" y="150" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#10b981">
+      ✓ Good for expensive writes
+    </text>
+    
+    <text x="20" y="180" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ef4444">
+      ✗ Always O(n²)
+    </text>
+    <text x="20" y="200" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ef4444">
+      ✗ Not stable
+    </text>
+    
+    <rect x="20" y="220" width="240" height="40" rx="6" fill="#f59e0b" opacity="0.1"/>
+    <text x="140" y="245" font-family="Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">
+      Use: Flash memory writes
+    </text>
+  </g>
+  
+  <!-- Insertion Sort -->
+  <g transform="translate(670, 80)">
+    <rect x="0" y="0" width="280" height="280" rx="10" fill="#ffffff" stroke="#10b981" stroke-width="2"/>
+    <text x="140" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#10b981" text-anchor="middle">
+      Insertion Sort
+    </text>
+    
+    <text x="20" y="60" font-family="Arial, sans-serif" font-size="13" fill="#1f2937">
+      Time: O(n²) / O(n²) / O(n)
+    </text>
+    <text x="20" y="80" font-family="Arial, sans-serif" font-size="13" fill="#1f2937">
+      Space: O(1)
+    </text>
+    <text x="20" y="100" font-family="Arial, sans-serif" font-size="13" fill="#1f2937">
+      Stable: Yes
+    </text>
+    
+    <text x="20" y="130" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#10b981">
+      ✓ Fast on small data
+    </text>
+    <text x="20" y="150" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#10b981">
+      ✓ Adaptive O(n) on sorted
+    </text>
+    <text x="20" y="170" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#10b981">
+      ✓ Online (stream sorting)
+    </text>
+    
+    <text x="20" y="200" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ef4444">
+      ✗ Slow on large random data
+    </text>
+    
+    <rect x="20" y="220" width="240" height="40" rx="6" fill="#10b981" opacity="0.1"/>
+    <text x="140" y="245" font-family="Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">
+      Use: Small/nearly-sorted data
+    </text>
+  </g>
+</svg>

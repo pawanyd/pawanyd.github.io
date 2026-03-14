@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" role="img">
+  <title>Hybrid Sorts Strategy</title>
+  <rect width="1000" height="500" fill="#f3f4f6"/>
+  <text x="500" y="40" font-family="Arial" font-size="26" font-weight="bold" fill="#1f2937" text-anchor="middle">
+    Hybrid Sorting Strategies
+  </text>
+  <g transform="translate(50, 100)">
+    <rect width="420" height="350" rx="12" fill="#fff" stroke="#8b5cf6" stroke-width="3"/>
+    <text x="210" y="35" font-family="Arial" font-size="22" font-weight="bold" fill="#8b5cf6" text-anchor="middle">Timsort</text>
+    <text x="210" y="60" font-family="Arial" font-size="14" fill="#6b7280" text-anchor="middle">Python, Java (objects)</text>
+    <text x="30" y="100" font-family="Arial" font-size="15" font-weight="bold" fill="#1f2937">Strategy:</text>
+    <text x="30" y="125" font-family="Arial" font-size="14" fill="#1f2937">1. Find natural runs (sorted sequences)</text>
+    <text x="30" y="150" font-family="Arial" font-size="14" fill="#1f2937">2. Extend short runs with insertion sort</text>
+    <text x="30" y="175" font-family="Arial" font-size="14" fill="#1f2937">3. Merge runs intelligently</text>
+    <text x="30" y="215" font-family="Arial" font-size="15" font-weight="bold" fill="#10b981">Advantages:</text>
+    <text x="30" y="240" font-family="Arial" font-size="14" fill="#10b981">✓ Adaptive: O(n) on sorted data</text>
+    <text x="30" y="265" font-family="Arial" font-size="14" fill="#10b981">✓ Stable sorting</text>
+    <text x="30" y="290" font-family="Arial" font-size="14" fill="#10b981">✓ Exploits patterns in real data</text>
+    <rect x="30" y="310" width="360" height="25" rx="5" fill="#8b5cf6" opacity="0.1"/>
+    <text x="210" y="328" font-family="Arial" font-size="13" fill="#6b7280" text-anchor="middle">Best: O(n) | Avg: O(n log n) | Worst: O(n log n)</text>
+  </g>
+  <g transform="translate(530, 100)">
+    <rect width="420" height="350" rx="12" fill="#fff" stroke="#3b82f6" stroke-width="3"/>
+    <text x="210" y="35" font-family="Arial" font-size="22" font-weight="bold" fill="#3b82f6" text-anchor="middle">Introsort</text>
+    <text x="210" y="60" font-family="Arial" font-size="14" fill="#6b7280" text-anchor="middle">C++ std::sort()</text>
+    <text x="30" y="100" font-family="Arial" font-size="15" font-weight="bold" fill="#1f2937">Strategy:</text>
+    <text x="30" y="125" font-family="Arial" font-size="14" fill="#1f2937">1. Start with quicksort</text>
+    <text x="30" y="150" font-family="Arial" font-size="14" fill="#1f2937">2. Switch to heapsort if depth &gt; 2log(n)</text>
+    <text x="30" y="175" font-family="Arial" font-size="14" fill="#1f2937">3. Use insertion sort for small partitions</text>
+    <text x="30" y="215" font-family="Arial" font-size="15" font-weight="bold" fill="#10b981">Advantages:</text>
+    <text x="30" y="240" font-family="Arial" font-size="14" fill="#10b981">✓ Quicksort speed on average</text>
+    <text x="30" y="265" font-family="Arial" font-size="14" fill="#10b981">✓ Heapsort guarantee (no O(n²))</text>
+    <text x="30" y="290" font-family="Arial" font-size="14" fill="#10b981">✓ In-place sorting</text>
+    <rect x="30" y="310" width="360" height="25" rx="5" fill="#3b82f6" opacity="0.1"/>
+    <text x="210" y="328" font-family="Arial" font-size="13" fill="#6b7280" text-anchor="middle">Best: O(n log n) | Avg: O(n log n) | Worst: O(n log n)</text>
+  </g>
+</svg>

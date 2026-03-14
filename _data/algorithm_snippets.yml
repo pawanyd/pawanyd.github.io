@@ -4635,3 +4635,930 @@ trie_autocomplete:
           }
       }
       ?>
+# ============================================
+# SORTING ALGORITHMS
+# ============================================
+
+bubble_sort:
+  name: "Bubble Sort"
+  description: "Simple sorting by repeatedly swapping adjacent elements"
+  time_complexity: "O(n²)"
+  space_complexity: "O(1)"
+  languages:
+    python: |
+      def bubble_sort(arr):
+          """Sort array using bubble sort"""
+          n = len(arr)
+          for i in range(n):
+              swapped = False
+              for j in range(0, n - i - 1):
+                  if arr[j] > arr[j + 1]:
+                      arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                      swapped = True
+              if not swapped:
+                  break
+          return arr
+    javascript: |
+      function bubbleSort(arr) {
+        const n = arr.length;
+        for (let i = 0; i < n; i++) {
+          let swapped = false;
+          for (let j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+              [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+              swapped = true;
+            }
+          }
+          if (!swapped) break;
+        }
+        return arr;
+      }
+    typescript: |
+      function bubbleSort(arr: number[]): number[] {
+        const n = arr.length;
+        for (let i = 0; i < n; i++) {
+          let swapped = false;
+          for (let j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+              [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+              swapped = true;
+            }
+          }
+          if (!swapped) break;
+        }
+        return arr;
+      }
+    java: |
+      public static void bubbleSort(int[] arr) {
+          int n = arr.length;
+          for (int i = 0; i < n; i++) {
+              boolean swapped = false;
+              for (int j = 0; j < n - i - 1; j++) {
+                  if (arr[j] > arr[j + 1]) {
+                      int temp = arr[j];
+                      arr[j] = arr[j + 1];
+                      arr[j + 1] = temp;
+                      swapped = true;
+                  }
+              }
+              if (!swapped) break;
+          }
+      }
+    cpp: |
+      void bubbleSort(vector<int>& arr) {
+          int n = arr.size();
+          for (int i = 0; i < n; i++) {
+              bool swapped = false;
+              for (int j = 0; j < n - i - 1; j++) {
+                  if (arr[j] > arr[j + 1]) {
+                      swap(arr[j], arr[j + 1]);
+                      swapped = true;
+                  }
+              }
+              if (!swapped) break;
+          }
+      }
+    php: |
+      function bubbleSort(&$arr) {
+          $n = count($arr);
+          for ($i = 0; $i < $n; $i++) {
+              $swapped = false;
+              for ($j = 0; $j < $n - $i - 1; $j++) {
+                  if ($arr[$j] > $arr[$j + 1]) {
+                      $temp = $arr[$j];
+                      $arr[$j] = $arr[$j + 1];
+                      $arr[$j + 1] = $temp;
+                      $swapped = true;
+                  }
+              }
+              if (!$swapped) break;
+          }
+      }
+
+insertion_sort:
+  name: "Insertion Sort"
+  description: "Build sorted array one element at a time"
+  time_complexity: "O(n²) worst, O(n) best"
+  space_complexity: "O(1)"
+  languages:
+    python: |
+      def insertion_sort(arr):
+          """Sort array using insertion sort"""
+          for i in range(1, len(arr)):
+              key = arr[i]
+              j = i - 1
+              while j >= 0 and arr[j] > key:
+                  arr[j + 1] = arr[j]
+                  j -= 1
+              arr[j + 1] = key
+          return arr
+    javascript: |
+      function insertionSort(arr) {
+        for (let i = 1; i < arr.length; i++) {
+          let key = arr[i];
+          let j = i - 1;
+          while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
+          }
+          arr[j + 1] = key;
+        }
+        return arr;
+      }
+    typescript: |
+      function insertionSort(arr: number[]): number[] {
+        for (let i = 1; i < arr.length; i++) {
+          let key = arr[i];
+          let j = i - 1;
+          while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
+          }
+          arr[j + 1] = key;
+        }
+        return arr;
+      }
+    java: |
+      public static void insertionSort(int[] arr) {
+          for (int i = 1; i < arr.length; i++) {
+              int key = arr[i];
+              int j = i - 1;
+              while (j >= 0 && arr[j] > key) {
+                  arr[j + 1] = arr[j];
+                  j--;
+              }
+              arr[j + 1] = key;
+          }
+      }
+    cpp: |
+      void insertionSort(vector<int>& arr) {
+          for (int i = 1; i < arr.size(); i++) {
+              int key = arr[i];
+              int j = i - 1;
+              while (j >= 0 && arr[j] > key) {
+                  arr[j + 1] = arr[j];
+                  j--;
+              }
+              arr[j + 1] = key;
+          }
+      }
+    php: |
+      function insertionSort(&$arr) {
+          for ($i = 1; $i < count($arr); $i++) {
+              $key = $arr[$i];
+              $j = $i - 1;
+              while ($j >= 0 && $arr[$j] > $key) {
+                  $arr[$j + 1] = $arr[$j];
+                  $j--;
+              }
+              $arr[$j + 1] = $key;
+          }
+      }
+
+merge_sort:
+  name: "Merge Sort"
+  description: "Divide and conquer sorting with guaranteed O(n log n)"
+  time_complexity: "O(n log n)"
+  space_complexity: "O(n)"
+  languages:
+    python: |
+      def merge_sort(arr):
+          """Sort array using merge sort"""
+          if len(arr) <= 1:
+              return arr
+          
+          mid = len(arr) // 2
+          left = merge_sort(arr[:mid])
+          right = merge_sort(arr[mid:])
+          
+          return merge(left, right)
+      
+      def merge(left, right):
+          result = []
+          i = j = 0
+          while i < len(left) and j < len(right):
+              if left[i] <= right[j]:
+                  result.append(left[i])
+                  i += 1
+              else:
+                  result.append(right[j])
+                  j += 1
+          result.extend(left[i:])
+          result.extend(right[j:])
+          return result
+    javascript: |
+      function mergeSort(arr) {
+        if (arr.length <= 1) return arr;
+        
+        const mid = Math.floor(arr.length / 2);
+        const left = mergeSort(arr.slice(0, mid));
+        const right = mergeSort(arr.slice(mid));
+        
+        return merge(left, right);
+      }
+      
+      function merge(left, right) {
+        const result = [];
+        let i = 0, j = 0;
+        while (i < left.length && j < right.length) {
+          if (left[i] <= right[j]) {
+            result.push(left[i++]);
+          } else {
+            result.push(right[j++]);
+          }
+        }
+        return result.concat(left.slice(i)).concat(right.slice(j));
+      }
+    typescript: |
+      function mergeSort(arr: number[]): number[] {
+        if (arr.length <= 1) return arr;
+        
+        const mid = Math.floor(arr.length / 2);
+        const left = mergeSort(arr.slice(0, mid));
+        const right = mergeSort(arr.slice(mid));
+        
+        return merge(left, right);
+      }
+      
+      function merge(left: number[], right: number[]): number[] {
+        const result: number[] = [];
+        let i = 0, j = 0;
+        while (i < left.length && j < right.length) {
+          if (left[i] <= right[j]) {
+            result.push(left[i++]);
+          } else {
+            result.push(right[j++]);
+          }
+        }
+        return result.concat(left.slice(i)).concat(right.slice(j));
+      }
+    java: |
+      public static void mergeSort(int[] arr) {
+          if (arr.length <= 1) return;
+          mergeSortHelper(arr, 0, arr.length - 1);
+      }
+      
+      private static void mergeSortHelper(int[] arr, int left, int right) {
+          if (left < right) {
+              int mid = left + (right - left) / 2;
+              mergeSortHelper(arr, left, mid);
+              mergeSortHelper(arr, mid + 1, right);
+              merge(arr, left, mid, right);
+          }
+      }
+      
+      private static void merge(int[] arr, int left, int mid, int right) {
+          int[] temp = new int[right - left + 1];
+          int i = left, j = mid + 1, k = 0;
+          while (i <= mid && j <= right) {
+              temp[k++] = (arr[i] <= arr[j]) ? arr[i++] : arr[j++];
+          }
+          while (i <= mid) temp[k++] = arr[i++];
+          while (j <= right) temp[k++] = arr[j++];
+          System.arraycopy(temp, 0, arr, left, temp.length);
+      }
+    cpp: |
+      void merge(vector<int>& arr, int left, int mid, int right) {
+          vector<int> temp(right - left + 1);
+          int i = left, j = mid + 1, k = 0;
+          while (i <= mid && j <= right) {
+              temp[k++] = (arr[i] <= arr[j]) ? arr[i++] : arr[j++];
+          }
+          while (i <= mid) temp[k++] = arr[i++];
+          while (j <= right) temp[k++] = arr[j++];
+          for (int i = 0; i < temp.size(); i++) {
+              arr[left + i] = temp[i];
+          }
+      }
+      
+      void mergeSort(vector<int>& arr, int left, int right) {
+          if (left < right) {
+              int mid = left + (right - left) / 2;
+              mergeSort(arr, left, mid);
+              mergeSort(arr, mid + 1, right);
+              merge(arr, left, mid, right);
+          }
+      }
+    php: |
+      function mergeSort($arr) {
+          if (count($arr) <= 1) return $arr;
+          
+          $mid = floor(count($arr) / 2);
+          $left = mergeSort(array_slice($arr, 0, $mid));
+          $right = mergeSort(array_slice($arr, $mid));
+          
+          return merge($left, $right);
+      }
+      
+      function merge($left, $right) {
+          $result = [];
+          while (count($left) > 0 && count($right) > 0) {
+              if ($left[0] <= $right[0]) {
+                  $result[] = array_shift($left);
+              } else {
+                  $result[] = array_shift($right);
+              }
+          }
+          return array_merge($result, $left, $right);
+      }
+
+quick_sort:
+  name: "Quick Sort"
+  description: "Fast divide and conquer with pivot partitioning"
+  time_complexity: "O(n log n) avg, O(n²) worst"
+  space_complexity: "O(log n)"
+  languages:
+    python: |
+      def quick_sort(arr):
+          """Sort array using quick sort"""
+          if len(arr) <= 1:
+              return arr
+          
+          pivot = arr[len(arr) // 2]
+          left = [x for x in arr if x < pivot]
+          middle = [x for x in arr if x == pivot]
+          right = [x for x in arr if x > pivot]
+          
+          return quick_sort(left) + middle + quick_sort(right)
+    javascript: |
+      function quickSort(arr) {
+        if (arr.length <= 1) return arr;
+        
+        const pivot = arr[Math.floor(arr.length / 2)];
+        const left = arr.filter(x => x < pivot);
+        const middle = arr.filter(x => x === pivot);
+        const right = arr.filter(x => x > pivot);
+        
+        return [...quickSort(left), ...middle, ...quickSort(right)];
+      }
+    typescript: |
+      function quickSort(arr: number[]): number[] {
+        if (arr.length <= 1) return arr;
+        
+        const pivot = arr[Math.floor(arr.length / 2)];
+        const left = arr.filter(x => x < pivot);
+        const middle = arr.filter(x => x === pivot);
+        const right = arr.filter(x => x > pivot);
+        
+        return [...quickSort(left), ...middle, ...quickSort(right)];
+      }
+    java: |
+      public static void quickSort(int[] arr, int low, int high) {
+          if (low < high) {
+              int pi = partition(arr, low, high);
+              quickSort(arr, low, pi - 1);
+              quickSort(arr, pi + 1, high);
+          }
+      }
+      
+      private static int partition(int[] arr, int low, int high) {
+          int pivot = arr[high];
+          int i = low - 1;
+          for (int j = low; j < high; j++) {
+              if (arr[j] < pivot) {
+                  i++;
+                  int temp = arr[i];
+                  arr[i] = arr[j];
+                  arr[j] = temp;
+              }
+          }
+          int temp = arr[i + 1];
+          arr[i + 1] = arr[high];
+          arr[high] = temp;
+          return i + 1;
+      }
+    cpp: |
+      int partition(vector<int>& arr, int low, int high) {
+          int pivot = arr[high];
+          int i = low - 1;
+          for (int j = low; j < high; j++) {
+              if (arr[j] < pivot) {
+                  i++;
+                  swap(arr[i], arr[j]);
+              }
+          }
+          swap(arr[i + 1], arr[high]);
+          return i + 1;
+      }
+      
+      void quickSort(vector<int>& arr, int low, int high) {
+          if (low < high) {
+              int pi = partition(arr, low, high);
+              quickSort(arr, low, pi - 1);
+              quickSort(arr, pi + 1, high);
+          }
+      }
+    php: |
+      function quickSort($arr) {
+          if (count($arr) <= 1) return $arr;
+          
+          $pivot = $arr[floor(count($arr) / 2)];
+          $left = array_filter($arr, fn($x) => $x < $pivot);
+          $middle = array_filter($arr, fn($x) => $x === $pivot);
+          $right = array_filter($arr, fn($x) => $x > $pivot);
+          
+          return array_merge(quickSort($left), $middle, quickSort($right));
+      }
+
+heap_sort:
+  name: "Heap Sort"
+  description: "Sort using heap data structure for guaranteed O(n log n)"
+  time_complexity: "O(n log n)"
+  space_complexity: "O(1)"
+  languages:
+    python: |
+      def heap_sort(arr):
+          """Sort array using heap sort"""
+          n = len(arr)
+          
+          # Build max heap
+          for i in range(n // 2 - 1, -1, -1):
+              heapify(arr, n, i)
+          
+          # Extract elements from heap
+          for i in range(n - 1, 0, -1):
+              arr[0], arr[i] = arr[i], arr[0]
+              heapify(arr, i, 0)
+          
+          return arr
+      
+      def heapify(arr, n, i):
+          largest = i
+          left = 2 * i + 1
+          right = 2 * i + 2
+          
+          if left < n and arr[left] > arr[largest]:
+              largest = left
+          if right < n and arr[right] > arr[largest]:
+              largest = right
+          
+          if largest != i:
+              arr[i], arr[largest] = arr[largest], arr[i]
+              heapify(arr, n, largest)
+    javascript: |
+      function heapSort(arr) {
+        const n = arr.length;
+        
+        // Build max heap
+        for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
+          heapify(arr, n, i);
+        }
+        
+        // Extract elements from heap
+        for (let i = n - 1; i > 0; i--) {
+          [arr[0], arr[i]] = [arr[i], arr[0]];
+          heapify(arr, i, 0);
+        }
+        
+        return arr;
+      }
+      
+      function heapify(arr, n, i) {
+        let largest = i;
+        const left = 2 * i + 1;
+        const right = 2 * i + 2;
+        
+        if (left < n && arr[left] > arr[largest]) largest = left;
+        if (right < n && arr[right] > arr[largest]) largest = right;
+        
+        if (largest !== i) {
+          [arr[i], arr[largest]] = [arr[largest], arr[i]];
+          heapify(arr, n, largest);
+        }
+      }
+    typescript: |
+      function heapSort(arr: number[]): number[] {
+        const n = arr.length;
+        
+        for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
+          heapify(arr, n, i);
+        }
+        
+        for (let i = n - 1; i > 0; i--) {
+          [arr[0], arr[i]] = [arr[i], arr[0]];
+          heapify(arr, i, 0);
+        }
+        
+        return arr;
+      }
+      
+      function heapify(arr: number[], n: number, i: number): void {
+        let largest = i;
+        const left = 2 * i + 1;
+        const right = 2 * i + 2;
+        
+        if (left < n && arr[left] > arr[largest]) largest = left;
+        if (right < n && arr[right] > arr[largest]) largest = right;
+        
+        if (largest !== i) {
+          [arr[i], arr[largest]] = [arr[largest], arr[i]];
+          heapify(arr, n, largest);
+        }
+      }
+    java: |
+      public static void heapSort(int[] arr) {
+          int n = arr.length;
+          
+          for (int i = n / 2 - 1; i >= 0; i--) {
+              heapify(arr, n, i);
+          }
+          
+          for (int i = n - 1; i > 0; i--) {
+              int temp = arr[0];
+              arr[0] = arr[i];
+              arr[i] = temp;
+              heapify(arr, i, 0);
+          }
+      }
+      
+      private static void heapify(int[] arr, int n, int i) {
+          int largest = i;
+          int left = 2 * i + 1;
+          int right = 2 * i + 2;
+          
+          if (left < n && arr[left] > arr[largest]) largest = left;
+          if (right < n && arr[right] > arr[largest]) largest = right;
+          
+          if (largest != i) {
+              int temp = arr[i];
+              arr[i] = arr[largest];
+              arr[largest] = temp;
+              heapify(arr, n, largest);
+          }
+      }
+    cpp: |
+      void heapify(vector<int>& arr, int n, int i) {
+          int largest = i;
+          int left = 2 * i + 1;
+          int right = 2 * i + 2;
+          
+          if (left < n && arr[left] > arr[largest]) largest = left;
+          if (right < n && arr[right] > arr[largest]) largest = right;
+          
+          if (largest != i) {
+              swap(arr[i], arr[largest]);
+              heapify(arr, n, largest);
+          }
+      }
+      
+      void heapSort(vector<int>& arr) {
+          int n = arr.size();
+          
+          for (int i = n / 2 - 1; i >= 0; i--) {
+              heapify(arr, n, i);
+          }
+          
+          for (int i = n - 1; i > 0; i--) {
+              swap(arr[0], arr[i]);
+              heapify(arr, i, 0);
+          }
+      }
+    php: |
+      function heapSort(&$arr) {
+          $n = count($arr);
+          
+          for ($i = floor($n / 2) - 1; $i >= 0; $i--) {
+              heapify($arr, $n, $i);
+          }
+          
+          for ($i = $n - 1; $i > 0; $i--) {
+              $temp = $arr[0];
+              $arr[0] = $arr[$i];
+              $arr[$i] = $temp;
+              heapify($arr, $i, 0);
+          }
+      }
+      
+      function heapify(&$arr, $n, $i) {
+          $largest = $i;
+          $left = 2 * $i + 1;
+          $right = 2 * $i + 2;
+          
+          if ($left < $n && $arr[$left] > $arr[$largest]) $largest = $left;
+          if ($right < $n && $arr[$right] > $arr[$largest]) $largest = $right;
+          
+          if ($largest != $i) {
+              $temp = $arr[$i];
+              $arr[$i] = $arr[$largest];
+              $arr[$largest] = $temp;
+              heapify($arr, $n, $largest);
+          }
+      }
+
+# ============================================
+# HEAP & PRIORITY QUEUE OPERATIONS
+# ============================================
+
+max_heap_insert:
+  name: "Max Heap Insert"
+  description: "Insert element into max heap and bubble up"
+  time_complexity: "O(log n)"
+  space_complexity: "O(1)"
+  languages:
+    python: |
+      def heap_insert(heap, value):
+          """Insert value into max heap"""
+          heap.append(value)
+          bubble_up(heap, len(heap) - 1)
+      
+      def bubble_up(heap, index):
+          while index > 0:
+              parent = (index - 1) // 2
+              if heap[index] > heap[parent]:
+                  heap[index], heap[parent] = heap[parent], heap[index]
+                  index = parent
+              else:
+                  break
+    javascript: |
+      function heapInsert(heap, value) {
+        heap.push(value);
+        bubbleUp(heap, heap.length - 1);
+      }
+      
+      function bubbleUp(heap, index) {
+        while (index > 0) {
+          const parent = Math.floor((index - 1) / 2);
+          if (heap[index] > heap[parent]) {
+            [heap[index], heap[parent]] = [heap[parent], heap[index]];
+            index = parent;
+          } else {
+            break;
+          }
+        }
+      }
+    typescript: |
+      function heapInsert(heap: number[], value: number): void {
+        heap.push(value);
+        bubbleUp(heap, heap.length - 1);
+      }
+      
+      function bubbleUp(heap: number[], index: number): void {
+        while (index > 0) {
+          const parent = Math.floor((index - 1) / 2);
+          if (heap[index] > heap[parent]) {
+            [heap[index], heap[parent]] = [heap[parent], heap[index]];
+            index = parent;
+          } else {
+            break;
+          }
+        }
+      }
+    java: |
+      public static void heapInsert(List<Integer> heap, int value) {
+          heap.add(value);
+          bubbleUp(heap, heap.size() - 1);
+      }
+      
+      private static void bubbleUp(List<Integer> heap, int index) {
+          while (index > 0) {
+              int parent = (index - 1) / 2;
+              if (heap.get(index) > heap.get(parent)) {
+                  Collections.swap(heap, index, parent);
+                  index = parent;
+              } else {
+                  break;
+              }
+          }
+      }
+    cpp: |
+      void heapInsert(vector<int>& heap, int value) {
+          heap.push_back(value);
+          bubbleUp(heap, heap.size() - 1);
+      }
+      
+      void bubbleUp(vector<int>& heap, int index) {
+          while (index > 0) {
+              int parent = (index - 1) / 2;
+              if (heap[index] > heap[parent]) {
+                  swap(heap[index], heap[parent]);
+                  index = parent;
+              } else {
+                  break;
+              }
+          }
+      }
+    php: |
+      function heapInsert(&$heap, $value) {
+          $heap[] = $value;
+          bubbleUp($heap, count($heap) - 1);
+      }
+      
+      function bubbleUp(&$heap, $index) {
+          while ($index > 0) {
+              $parent = floor(($index - 1) / 2);
+              if ($heap[$index] > $heap[$parent]) {
+                  $temp = $heap[$index];
+                  $heap[$index] = $heap[$parent];
+                  $heap[$parent] = $temp;
+                  $index = $parent;
+              } else {
+                  break;
+              }
+          }
+      }
+
+max_heap_extract:
+  name: "Max Heap Extract Max"
+  description: "Remove and return maximum element from max heap"
+  time_complexity: "O(log n)"
+  space_complexity: "O(1)"
+  languages:
+    python: |
+      def heap_extract_max(heap):
+          """Extract maximum from max heap"""
+          if not heap:
+              return None
+          
+          max_val = heap[0]
+          heap[0] = heap[-1]
+          heap.pop()
+          
+          if heap:
+              heapify_down(heap, 0)
+          
+          return max_val
+      
+      def heapify_down(heap, index):
+          n = len(heap)
+          while True:
+              largest = index
+              left = 2 * index + 1
+              right = 2 * index + 2
+              
+              if left < n and heap[left] > heap[largest]:
+                  largest = left
+              if right < n and heap[right] > heap[largest]:
+                  largest = right
+              
+              if largest != index:
+                  heap[index], heap[largest] = heap[largest], heap[index]
+                  index = largest
+              else:
+                  break
+    javascript: |
+      function heapExtractMax(heap) {
+        if (heap.length === 0) return null;
+        
+        const maxVal = heap[0];
+        heap[0] = heap[heap.length - 1];
+        heap.pop();
+        
+        if (heap.length > 0) {
+          heapifyDown(heap, 0);
+        }
+        
+        return maxVal;
+      }
+      
+      function heapifyDown(heap, index) {
+        const n = heap.length;
+        while (true) {
+          let largest = index;
+          const left = 2 * index + 1;
+          const right = 2 * index + 2;
+          
+          if (left < n && heap[left] > heap[largest]) largest = left;
+          if (right < n && heap[right] > heap[largest]) largest = right;
+          
+          if (largest !== index) {
+            [heap[index], heap[largest]] = [heap[largest], heap[index]];
+            index = largest;
+          } else {
+            break;
+          }
+        }
+      }
+    typescript: |
+      function heapExtractMax(heap: number[]): number | null {
+        if (heap.length === 0) return null;
+        
+        const maxVal = heap[0];
+        heap[0] = heap[heap.length - 1];
+        heap.pop();
+        
+        if (heap.length > 0) {
+          heapifyDown(heap, 0);
+        }
+        
+        return maxVal;
+      }
+      
+      function heapifyDown(heap: number[], index: number): void {
+        const n = heap.length;
+        while (true) {
+          let largest = index;
+          const left = 2 * index + 1;
+          const right = 2 * index + 2;
+          
+          if (left < n && heap[left] > heap[largest]) largest = left;
+          if (right < n && heap[right] > heap[largest]) largest = right;
+          
+          if (largest !== index) {
+            [heap[index], heap[largest]] = [heap[largest], heap[index]];
+            index = largest;
+          } else {
+            break;
+          }
+        }
+      }
+    java: |
+      public static Integer heapExtractMax(List<Integer> heap) {
+          if (heap.isEmpty()) return null;
+          
+          int maxVal = heap.get(0);
+          heap.set(0, heap.get(heap.size() - 1));
+          heap.remove(heap.size() - 1);
+          
+          if (!heap.isEmpty()) {
+              heapifyDown(heap, 0);
+          }
+          
+          return maxVal;
+      }
+      
+      private static void heapifyDown(List<Integer> heap, int index) {
+          int n = heap.size();
+          while (true) {
+              int largest = index;
+              int left = 2 * index + 1;
+              int right = 2 * index + 2;
+              
+              if (left < n && heap.get(left) > heap.get(largest)) largest = left;
+              if (right < n && heap.get(right) > heap.get(largest)) largest = right;
+              
+              if (largest != index) {
+                  Collections.swap(heap, index, largest);
+                  index = largest;
+              } else {
+                  break;
+              }
+          }
+      }
+    cpp: |
+      int heapExtractMax(vector<int>& heap) {
+          if (heap.empty()) return -1;
+          
+          int maxVal = heap[0];
+          heap[0] = heap[heap.size() - 1];
+          heap.pop_back();
+          
+          if (!heap.empty()) {
+              heapifyDown(heap, 0);
+          }
+          
+          return maxVal;
+      }
+      
+      void heapifyDown(vector<int>& heap, int index) {
+          int n = heap.size();
+          while (true) {
+              int largest = index;
+              int left = 2 * index + 1;
+              int right = 2 * index + 2;
+              
+              if (left < n && heap[left] > heap[largest]) largest = left;
+              if (right < n && heap[right] > heap[largest]) largest = right;
+              
+              if (largest != index) {
+                  swap(heap[index], heap[largest]);
+                  index = largest;
+              } else {
+                  break;
+              }
+          }
+      }
+    php: |
+      function heapExtractMax(&$heap) {
+          if (empty($heap)) return null;
+          
+          $maxVal = $heap[0];
+          $heap[0] = $heap[count($heap) - 1];
+          array_pop($heap);
+          
+          if (!empty($heap)) {
+              heapifyDown($heap, 0);
+          }
+          
+          return $maxVal;
+      }
+      
+      function heapifyDown(&$heap, $index) {
+          $n = count($heap);
+          while (true) {
+              $largest = $index;
+              $left = 2 * $index + 1;
+              $right = 2 * $index + 2;
+              
+              if ($left < $n && $heap[$left] > $heap[$largest]) $largest = $left;
+              if ($right < $n && $heap[$right] > $heap[$largest]) $largest = $right;
+              
+              if ($largest != $index) {
+                  $temp = $heap[$index];
+                  $heap[$index] = $heap[$largest];
+                  $heap[$largest] = $temp;
+                  $index = $largest;
+              } else {
+                  break;
+              }
+          }
+      }

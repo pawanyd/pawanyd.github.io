@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" role="img" aria-labelledby="dc-title dc-desc">
+  <title id="dc-title">Divide and Conquer Sorts</title>
+  <desc id="dc-desc">Comparison of merge sort, quick sort, and heap sort</desc>
+  
+  <rect width="1000" height="450" fill="#f3f4f6"/>
+  
+  <text x="500" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1f2937" text-anchor="middle">
+    Divide & Conquer: O(n log n) Algorithms
+  </text>
+  
+  <!-- Merge Sort -->
+  <g transform="translate(50, 80)">
+    <rect x="0" y="0" width="280" height="320" rx="10" fill="#ffffff" stroke="#3b82f6" stroke-width="2"/>
+    <text x="140" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#3b82f6" text-anchor="middle">
+      Merge Sort
+    </text>
+    
+    <text x="20" y="60" font-family="Arial, sans-serif" font-size="13" fill="#1f2937">
+      Time: O(n log n) always
+    </text>
+    <text x="20" y="80" font-family="Arial, sans-serif" font-size="13" fill="#1f2937">
+      Space: O(n)
+    </text>
+    <text x="20" y="100" font-family="Arial, sans-serif" font-size="13" fill="#1f2937">
+      Stable: Yes
+    </text>
+    
+    <text x="20" y="130" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#10b981">
+      ✓ Guaranteed O(n log n)
+    </text>
+    <text x="20" y="150" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#10b981">
+      ✓ Stable
+    </text>
+    <text x="20" y="170" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#10b981">
+      ✓ Predictable performance
+    </text>
+    <text x="20" y="190" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#10b981">
+      ✓ Good for linked lists
+    </text>
+    
+    <text x="20" y="220" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ef4444">
+      ✗ Requires O(n) extra space
+    </text>
+    <text x="20" y="240" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ef4444">
+      ✗ Not adaptive
+    </text>
+    
+    <rect x="20" y="260" width="240" height="40" rx="6" fill="#3b82f6" opacity="0.1"/>
+    <text x="140" y="285" font-family="Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">
+      Use: Stability required
+    </text>
+  </g>
+  
+  <!-- Quick Sort -->
+  <g transform="translate(360, 80)">
+    <rect x="0" y="0" width="280" height="320" rx="10" fill="#ffffff" stroke="#10b981" stroke-width="2"/>
+    <text x="140" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#10b981" text-anchor="middle">
+      Quick Sort
+    </text>
+    
+    <text x="20" y="60" font-family="Arial, sans-serif" font-size="13" fill="#1f2937">
+      Time: O(n log n) avg, O(n²) worst
+    </text>
+    <text x="20" y="80" font-family="Arial, sans-serif" font-size="13" fill="#1f2937">
+      Space: O(log n)
+    </text>
+    <text x="20" y="100" font-family="Arial, sans-serif" font-size="13" fill="#1f2937">
+      Stable: No
+    </text>
+    
+    <text x="20" y="130" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#10b981">
+      ✓ Fastest average case
+    </text>
+    <text x="20" y="150" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#10b981">
+      ✓ In-place sorting
+    </text>
+    <text x="20" y="170" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#10b981">
+      ✓ Cache-friendly
+    </text>
+    <text x="20" y="190" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#10b981">
+      ✓ Low constant factors
+    </text>
+    
+    <text x="20" y="220" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ef4444">
+      ✗ O(n²) worst case
+    </text>
+    <text x="20" y="240" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ef4444">
+      ✗ Not stable
+    </text>
+    
+    <rect x="20" y="260" width="240" height="40" rx="6" fill="#10b981" opacity="0.1"/>
+    <text x="140" y="285" font-family="Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">
+      Use: General purpose (fast)
+    </text>
+  </g>
+  
+  <!-- Heap Sort -->
+  <g transform="translate(670, 80)">
+    <rect x="0" y="0" width="280" height="320" rx="10" fill="#ffffff" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="140" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#8b5cf6" text-anchor="middle">
+      Heap Sort
+    </text>
+    
+    <text x="20" y="60" font-family="Arial, sans-serif" font-size="13" fill="#1f2937">
+      Time: O(n log n) always
+    </text>
+    <text x="20" y="80" font-family="Arial, sans-serif" font-size="13" fill="#1f2937">
+      Space: O(1)
+    </text>
+    <text x="20" y="100" font-family="Arial, sans-serif" font-size="13" fill="#1f2937">
+      Stable: No
+    </text>
+    
+    <text x="20" y="130" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#10b981">
+      ✓ Guaranteed O(n log n)
+    </text>
+    <text x="20" y="150" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#10b981">
+      ✓ In-place O(1) space
+    </text>
+    <text x="20" y="170" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#10b981">
+      ✓ No worst-case surprises
+    </text>
+    
+    <text x="20" y="200" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ef4444">
+      ✗ Not stable
+    </text>
+    <text x="20" y="220" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ef4444">
+      ✗ Poor cache locality
+    </text>
+    <text x="20" y="240" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ef4444">
+      ✗ Slower than quicksort
+    </text>
+    
+    <rect x="20" y="260" width="240" height="40" rx="6" fill="#8b5cf6" opacity="0.1"/>
+    <text x="140" y="285" font-family="Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">
+      Use: Limited memory
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" role="img">
+  <title>Sorting Algorithm Decision Tree</title>
+  <rect width="1000" height="700" fill="#f3f4f6"/>
+  <text x="500" y="35" font-family="Arial" font-size="26" font-weight="bold" fill="#1f2937" text-anchor="middle">
+    Choosing the Right Sorting Algorithm
+  </text>
+  <g transform="translate(350, 80)">
+    <rect width="300" height="60" rx="10" fill="#3b82f6" stroke="#1e40af" stroke-width="2"/>
+    <text x="150" y="38" font-family="Arial" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">
+      What's your data like?
+    </text>
+  </g>
+  <line x1="500" y1="140" x2="250" y2="200" stroke="#6b7280" stroke-width="2"/>
+  <line x1="500" y1="140" x2="500" y2="200" stroke="#6b7280" stroke-width="2"/>
+  <line x1="500" y1="140" x2="750" y2="200" stroke="#6b7280" stroke-width="2"/>
+  <g transform="translate(50, 200)">
+    <rect width="200" height="50" rx="8" fill="#10b981" opacity="0.9"/>
+    <text x="100" y="32" font-family="Arial" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">Small (&lt;50 elements)</text>
+  </g>
+  <g transform="translate(300, 200)">
+    <rect width="200" height="50" rx="8" fill="#f59e0b" opacity="0.9"/>
+    <text x="100" y="32" font-family="Arial" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">Nearly sorted</text>
+  </g>
+  <g transform="translate(550, 200)">
+    <rect width="200" height="50" rx="8" fill="#8b5cf6" opacity="0.9"/>
+    <text x="100" y="32" font-family="Arial" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">Random/Large</text>
+  </g>
+  <line x1="150" y1="250" x2="150" y2="300" stroke="#6b7280" stroke-width="2"/>
+  <line x1="400" y1="250" x2="400" y2="300" stroke="#6b7280" stroke-width="2"/>
+  <line x1="650" y1="250" x2="550" y2="300" stroke="#6b7280" stroke-width="2"/>
+  <line x1="650" y1="250" x2="750" y2="300" stroke="#6b7280" stroke-width="2"/>
+  <g transform="translate(50, 300)">
+    <rect width="200" height="80" rx="8" fill="#fff" stroke="#10b981" stroke-width="2"/>
+    <text x="100" y="25" font-family="Arial" font-size="16" font-weight="bold" fill="#10b981" text-anchor="middle">Insertion Sort</text>
+    <text x="100" y="50" font-family="Arial" font-size="12" fill="#6b7280" text-anchor="middle">Simple, fast</text>
+    <text x="100" y="68" font-family="Arial" font-size="12" fill="#6b7280" text-anchor="middle">Low overhead</text>
+  </g>
+  <g transform="translate(300, 300)">
+    <rect width="200" height="80" rx="8" fill="#fff" stroke="#f59e0b" stroke-width="2"/>
+    <text x="100" y="25" font-family="Arial" font-size="16" font-weight="bold" fill="#f59e0b" text-anchor="middle">Timsort</text>
+    <text x="100" y="50" font-family="Arial" font-size="12" fill="#6b7280" text-anchor="middle">Adaptive O(n)</text>
+    <text x="100" y="68" font-family="Arial" font-size="12" fill="#6b7280" text-anchor="middle">Exploits order</text>
+  </g>
+  <g transform="translate(450, 300)">
+    <rect width="200" height="50" rx="8" fill="#3b82f6" opacity="0.9"/>
+    <text x="100" y="32" font-family="Arial" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">Need stability?</text>
+  </g>
+  <g transform="translate(700, 300)">
+    <rect width="200" height="50" rx="8" fill="#ef4444" opacity="0.9"/>
+    <text x="100" y="32" font-family="Arial" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">Limited memory?</text>
+  </g>
+  <line x1="550" y1="350" x2="500" y2="400" stroke="#6b7280" stroke-width="2"/>
+  <line x1="550" y1="350" x2="600" y2="400" stroke="#6b7280" stroke-width="2"/>
+  <line x1="800" y1="350" x2="750" y2="400" stroke="#6b7280" stroke-width="2"/>
+  <line x1="800" y1="350" x2="850" y2="400" stroke="#6b7280" stroke-width="2"/>
+  <g transform="translate(400, 400)">
+    <rect width="200" height="80" rx="8" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
+    <text x="100" y="25" font-family="Arial" font-size="16" font-weight="bold" fill="#3b82f6" text-anchor="middle">Merge Sort</text>
+    <text x="100" y="50" font-family="Arial" font-size="12" fill="#6b7280" text-anchor="middle">Stable</text>
+    <text x="100" y="68" font-family="Arial" font-size="12" fill="#6b7280" text-anchor="middle">O(n log n) guaranteed</text>
+  </g>
+  <g transform="translate(650, 400)">
+    <rect width="200" height="80" rx="8" fill="#fff" stroke="#10b981" stroke-width="2"/>
+    <text x="100" y="25" font-family="Arial" font-size="16" font-weight="bold" fill="#10b981" text-anchor="middle">Quick Sort</text>
+    <text x="100" y="50" font-family="Arial" font-size="12" fill="#6b7280" text-anchor="middle">Fastest average</text>
+    <text x="100" y="68" font-family="Arial" font-size="12" fill="#6b7280" text-anchor="middle">In-place</text>
+  </g>
+  <g transform="translate(900, 400)">
+    <rect width="200" height="80" rx="8" fill="#fff" stroke="#ef4444" stroke-width="2"/>
+    <text x="100" y="25" font-family="Arial" font-size="16" font-weight="bold" fill="#ef4444" text-anchor="middle">Heap Sort</text>
+    <text x="100" y="50" font-family="Arial" font-size="12" fill="#6b7280" text-anchor="middle">O(1) space</text>
+    <text x="100" y="68" font-family="Arial" font-size="12" fill="#6b7280" text-anchor="middle">O(n log n) guaranteed</text>
+  </g>
+  <g transform="translate(50, 520)">
+    <rect width="900" height="140" rx="10" fill="#fff" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="450" y="30" font-family="Arial" font-size="18" font-weight="bold" fill="#8b5cf6" text-anchor="middle">
+      Special Cases
+    </text>
+    <text x="30" y="60" font-family="Arial" font-size="14" fill="#1f2937">
+      • Integers in limited range → Counting Sort O(n+k)
+    </text>
+    <text x="30" y="85" font-family="Arial" font-size="14" fill="#1f2937">
+      • Fixed-length strings/keys → Radix Sort O(d(n+k))
+    </text>
+    <text x="30" y="110" font-family="Arial" font-size="14" fill="#1f2937">
+      • Uniformly distributed floats → Bucket Sort O(n+k)
+    </text>
+    <text x="450" y="135" font-family="Arial" font-size="13" font-weight="bold" fill="#6b7280" text-anchor="middle">
+      Production: Use built-in sorts (Timsort/Introsort) unless you have specific needs
+    </text>
+  </g>
+</svg>

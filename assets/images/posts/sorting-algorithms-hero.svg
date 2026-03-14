@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="hero-title hero-desc">
+  <title id="hero-title">Sorting Algorithms</title>
+  <desc id="hero-desc">Visual representation of various sorting algorithms with performance comparison</desc>
+  
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Title -->
+  <text x="600" y="80" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    Sorting Algorithms
+  </text>
+  <text x="600" y="120" font-family="Arial, sans-serif" font-size="24" fill="#a78bfa" text-anchor="middle">
+    From O(n²) to O(n log n) — Choosing the Right Sort
+  </text>
+  
+  <!-- Unsorted array -->
+  <g transform="translate(200, 180)">
+    <text x="200" y="-10" font-family="Arial, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle">Unsorted</text>
+    <rect x="0" y="0" width="50" height="120" fill="#ef4444" opacity="0.8"/>
+    <text x="25" y="140" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">8</text>
+    
+    <rect x="60" y="30" width="50" height="90" fill="#f59e0b" opacity="0.8"/>
+    <text x="85" y="140" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">6</text>
+    
+    <rect x="120" y="60" width="50" height="60" fill="#10b981" opacity="0.8"/>
+    <text x="145" y="140" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">4</text>
+    
+    <rect x="180" y="10" width="50" height="110" fill="#3b82f6" opacity="0.8"/>
+    <text x="205" y="140" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">7</text>
+    
+    <rect x="240" y="80" width="50" height="40" fill="#8b5cf6" opacity="0.8"/>
+    <text x="265" y="140" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">2</text>
+    
+    <rect x="300" y="40" width="50" height="80" fill="#ec4899" opacity="0.8"/>
+    <text x="325" y="140" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">5</text>
+    
+    <rect x="360" y="90" width="50" height="30" fill="#06b6d4" opacity="0.8"/>
+    <text x="385" y="140" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">1</text>
+  </g>
+  
+  <!-- Arrow -->
+  <g transform="translate(600, 320)">
+    <path d="M -30 0 L 30 0 L 20 -10 M 30 0 L 20 10" stroke="#ffffff" stroke-width="4" fill="none"/>
+    <text x="0" y="-20" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">Sort</text>
+  </g>
+  
+  <!-- Sorted array -->
+  <g transform="translate(200, 380)">
+    <text x="200" y="-10" font-family="Arial, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle">Sorted</text>
+    <rect x="0" y="90" width="50" height="30" fill="#06b6d4" opacity="0.8"/>
+    <text x="25" y="140" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">1</text>
+    
+    <rect x="60" y="80" width="50" height="40" fill="#8b5cf6" opacity="0.8"/>
+    <text x="85" y="140" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">2</text>
+    
+    <rect x="120" y="60" width="50" height="60" fill="#10b981" opacity="0.8"/>
+    <text x="145" y="140" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">4</text>
+    
+    <rect x="180" y="40" width="50" height="80" fill="#ec4899" opacity="0.8"/>
+    <text x="205" y="140" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">5</text>
+    
+    <rect x="240" y="30" width="50" height="90" fill="#f59e0b" opacity="0.8"/>
+    <text x="265" y="140" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">6</text>
+    
+    <rect x="300" y="10" width="50" height="110" fill="#3b82f6" opacity="0.8"/>
+    <text x="325" y="140" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">7</text>
+    
+    <rect x="360" y="0" width="50" height="120" fill="#ef4444" opacity="0.8"/>
+    <text x="385" y="140" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">8</text>
+  </g>
+  
+  <!-- Algorithm boxes -->
+  <g transform="translate(750, 200)">
+    <rect x="0" y="0" width="180" height="60" rx="8" fill="#1e40af" opacity="0.9"/>
+    <text x="90" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">Quick Sort</text>
+    <text x="90" y="45" font-family="Arial, sans-serif" font-size="12" fill="#93c5fd" text-anchor="middle">O(n log n) avg</text>
+  </g>
+  
+  <g transform="translate(750, 280)">
+    <rect x="0" y="0" width="180" height="60" rx="8" fill="#1e40af" opacity="0.9"/>
+    <text x="90" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">Merge Sort</text>
+    <text x="90" y="45" font-family="Arial, sans-serif" font-size="12" fill="#93c5fd" text-anchor="middle">O(n log n) guaranteed</text>
+  </g>
+  
+  <g transform="translate(750, 360)">
+    <rect x="0" y="0" width="180" height="60" rx="8" fill="#1e40af" opacity="0.9"/>
+    <text x="90" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">Heap Sort</text>
+    <text x="90" y="45" font-family="Arial, sans-serif" font-size="12" fill="#93c5fd" text-anchor="middle">O(n log n) in-place</text>
+  </g>
+  
+  <g transform="translate(750, 440)">
+    <rect x="0" y="0" width="180" height="60" rx="8" fill="#1e40af" opacity="0.9"/>
+    <text x="90" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">Timsort</text>
+    <text x="90" y="45" font-family="Arial, sans-serif" font-size="12" fill="#93c5fd" text-anchor="middle">O(n) to O(n log n)</text>
+  </g>
+  
+  <!-- Bottom note -->
+  <rect x="200" y="560" width="800" height="50" rx="8" fill="#7c3aed" opacity="0.9"/>
+  <text x="600" y="590" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    The right algorithm depends on your data, constraints, and requirements
+  </text>
+</svg>
