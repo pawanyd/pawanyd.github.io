@@ -1,7 +1,7 @@
 ---
 layout: post-detail
 title: "Hash Tables: The Secret Weapon Every Developer Should Master"
-date: 2026-03-14
+date: 2025-06-20
 category: "DSA"
 tags: ["Hash Tables", "Data Structures", "DSA", "Interview Prep", "Algorithms", "Performance"]
 image: "/assets/images/posts/hash-tables-hero.svg"
