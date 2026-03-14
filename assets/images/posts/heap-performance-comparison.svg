@@ -1,0 +1,237 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" role="img" aria-labelledby="perf-title perf-desc">
+  <title id="perf-title">Heap Performance Comparison</title>
+  <desc id="perf-desc">Comparison of time complexity for heap operations versus other data structures</desc>
+  
+  <!-- Background -->
+  <rect width="1000" height="600" fill="#f3f4f6"/>
+  
+  <!-- Title -->
+  <text x="500" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#1f2937" text-anchor="middle">
+    Performance Comparison: Heaps vs Other Data Structures
+  </text>
+  
+  <!-- Table headers -->
+  <g transform="translate(50, 80)">
+    <rect x="0" y="0" width="200" height="50" fill="#3b82f6" stroke="#1e40af" stroke-width="2"/>
+    <text x="100" y="32" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      Operation
+    </text>
+    
+    <rect x="200" y="0" width="180" height="50" fill="#3b82f6" stroke="#1e40af" stroke-width="2"/>
+    <text x="290" y="32" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      Binary Heap
+    </text>
+    
+    <rect x="380" y="0" width="180" height="50" fill="#3b82f6" stroke="#1e40af" stroke-width="2"/>
+    <text x="470" y="32" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      Sorted Array
+    </text>
+    
+    <rect x="560" y="0" width="180" height="50" fill="#3b82f6" stroke="#1e40af" stroke-width="2"/>
+    <text x="650" y="32" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      Unsorted Array
+    </text>
+    
+    <rect x="740" y="0" width="180" height="50" fill="#3b82f6" stroke="#1e40af" stroke-width="2"/>
+    <text x="830" y="32" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      Balanced BST
+    </text>
+  </g>
+  
+  <!-- Row 1: Insert -->
+  <g transform="translate(50, 130)">
+    <rect x="0" y="0" width="200" height="60" fill="#ffffff" stroke="#d1d5db" stroke-width="1"/>
+    <text x="100" y="35" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2937" text-anchor="middle">
+      Insert
+    </text>
+    
+    <rect x="200" y="0" width="180" height="60" fill="#10b981" opacity="0.2" stroke="#d1d5db" stroke-width="1"/>
+    <text x="290" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#059669" text-anchor="middle">
+      O(log n)
+    </text>
+    
+    <rect x="380" y="0" width="180" height="60" fill="#ef4444" opacity="0.2" stroke="#d1d5db" stroke-width="1"/>
+    <text x="470" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#dc2626" text-anchor="middle">
+      O(n)
+    </text>
+    
+    <rect x="560" y="0" width="180" height="60" fill="#10b981" opacity="0.3" stroke="#d1d5db" stroke-width="1"/>
+    <text x="650" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#059669" text-anchor="middle">
+      O(1)
+    </text>
+    
+    <rect x="740" y="0" width="180" height="60" fill="#10b981" opacity="0.2" stroke="#d1d5db" stroke-width="1"/>
+    <text x="830" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#059669" text-anchor="middle">
+      O(log n)
+    </text>
+  </g>
+  
+  <!-- Row 2: Extract Max/Min -->
+  <g transform="translate(50, 190)">
+    <rect x="0" y="0" width="200" height="60" fill="#ffffff" stroke="#d1d5db" stroke-width="1"/>
+    <text x="100" y="35" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2937" text-anchor="middle">
+      Extract Max/Min
+    </text>
+    
+    <rect x="200" y="0" width="180" height="60" fill="#10b981" opacity="0.2" stroke="#d1d5db" stroke-width="1"/>
+    <text x="290" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#059669" text-anchor="middle">
+      O(log n)
+    </text>
+    
+    <rect x="380" y="0" width="180" height="60" fill="#10b981" opacity="0.3" stroke="#d1d5db" stroke-width="1"/>
+    <text x="470" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#059669" text-anchor="middle">
+      O(1)
+    </text>
+    
+    <rect x="560" y="0" width="180" height="60" fill="#ef4444" opacity="0.2" stroke="#d1d5db" stroke-width="1"/>
+    <text x="650" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#dc2626" text-anchor="middle">
+      O(n)
+    </text>
+    
+    <rect x="740" y="0" width="180" height="60" fill="#10b981" opacity="0.2" stroke="#d1d5db" stroke-width="1"/>
+    <text x="830" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#059669" text-anchor="middle">
+      O(log n)
+    </text>
+  </g>
+  
+  <!-- Row 3: Peek -->
+  <g transform="translate(50, 250)">
+    <rect x="0" y="0" width="200" height="60" fill="#ffffff" stroke="#d1d5db" stroke-width="1"/>
+    <text x="100" y="35" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2937" text-anchor="middle">
+      Peek Max/Min
+    </text>
+    
+    <rect x="200" y="0" width="180" height="60" fill="#10b981" opacity="0.3" stroke="#d1d5db" stroke-width="1"/>
+    <text x="290" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#059669" text-anchor="middle">
+      O(1)
+    </text>
+    
+    <rect x="380" y="0" width="180" height="60" fill="#10b981" opacity="0.3" stroke="#d1d5db" stroke-width="1"/>
+    <text x="470" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#059669" text-anchor="middle">
+      O(1)
+    </text>
+    
+    <rect x="560" y="0" width="180" height="60" fill="#ef4444" opacity="0.2" stroke="#d1d5db" stroke-width="1"/>
+    <text x="650" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#dc2626" text-anchor="middle">
+      O(n)
+    </text>
+    
+    <rect x="740" y="0" width="180" height="60" fill="#10b981" opacity="0.2" stroke="#d1d5db" stroke-width="1"/>
+    <text x="830" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#059669" text-anchor="middle">
+      O(log n)
+    </text>
+  </g>
+  
+  <!-- Row 4: Search -->
+  <g transform="translate(50, 310)">
+    <rect x="0" y="0" width="200" height="60" fill="#ffffff" stroke="#d1d5db" stroke-width="1"/>
+    <text x="100" y="35" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2937" text-anchor="middle">
+      Search Element
+    </text>
+    
+    <rect x="200" y="0" width="180" height="60" fill="#ef4444" opacity="0.2" stroke="#d1d5db" stroke-width="1"/>
+    <text x="290" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#dc2626" text-anchor="middle">
+      O(n)
+    </text>
+    
+    <rect x="380" y="0" width="180" height="60" fill="#10b981" opacity="0.2" stroke="#d1d5db" stroke-width="1"/>
+    <text x="470" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#059669" text-anchor="middle">
+      O(log n)
+    </text>
+    
+    <rect x="560" y="0" width="180" height="60" fill="#ef4444" opacity="0.2" stroke="#d1d5db" stroke-width="1"/>
+    <text x="650" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#dc2626" text-anchor="middle">
+      O(n)
+    </text>
+    
+    <rect x="740" y="0" width="180" height="60" fill="#10b981" opacity="0.2" stroke="#d1d5db" stroke-width="1"/>
+    <text x="830" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#059669" text-anchor="middle">
+      O(log n)
+    </text>
+  </g>
+  
+  <!-- Row 5: Build from Array -->
+  <g transform="translate(50, 370)">
+    <rect x="0" y="0" width="200" height="60" fill="#ffffff" stroke="#d1d5db" stroke-width="1"/>
+    <text x="100" y="35" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2937" text-anchor="middle">
+      Build from Array
+    </text>
+    
+    <rect x="200" y="0" width="180" height="60" fill="#10b981" opacity="0.3" stroke="#d1d5db" stroke-width="1"/>
+    <text x="290" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#059669" text-anchor="middle">
+      O(n)
+    </text>
+    
+    <rect x="380" y="0" width="180" height="60" fill="#f59e0b" opacity="0.2" stroke="#d1d5db" stroke-width="1"/>
+    <text x="470" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#d97706" text-anchor="middle">
+      O(n log n)
+    </text>
+    
+    <rect x="560" y="0" width="180" height="60" fill="#10b981" opacity="0.3" stroke="#d1d5db" stroke-width="1"/>
+    <text x="650" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#059669" text-anchor="middle">
+      O(1)
+    </text>
+    
+    <rect x="740" y="0" width="180" height="60" fill="#f59e0b" opacity="0.2" stroke="#d1d5db" stroke-width="1"/>
+    <text x="830" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#d97706" text-anchor="middle">
+      O(n log n)
+    </text>
+  </g>
+  
+  <!-- Row 6: Space Complexity -->
+  <g transform="translate(50, 430)">
+    <rect x="0" y="0" width="200" height="60" fill="#ffffff" stroke="#d1d5db" stroke-width="1"/>
+    <text x="100" y="35" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2937" text-anchor="middle">
+      Space Complexity
+    </text>
+    
+    <rect x="200" y="0" width="180" height="60" fill="#10b981" opacity="0.3" stroke="#d1d5db" stroke-width="1"/>
+    <text x="290" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#059669" text-anchor="middle">
+      O(n)
+    </text>
+    
+    <rect x="380" y="0" width="180" height="60" fill="#10b981" opacity="0.3" stroke="#d1d5db" stroke-width="1"/>
+    <text x="470" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#059669" text-anchor="middle">
+      O(n)
+    </text>
+    
+    <rect x="560" y="0" width="180" height="60" fill="#10b981" opacity="0.3" stroke="#d1d5db" stroke-width="1"/>
+    <text x="650" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#059669" text-anchor="middle">
+      O(n)
+    </text>
+    
+    <rect x="740" y="0" width="180" height="60" fill="#10b981" opacity="0.3" stroke="#d1d5db" stroke-width="1"/>
+    <text x="830" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#059669" text-anchor="middle">
+      O(n)
+    </text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(200, 520)">
+    <circle cx="0" cy="0" r="8" fill="#10b981" opacity="0.3"/>
+    <text x="15" y="5" font-family="Arial, sans-serif" font-size="14" fill="#1f2937">
+      Best Performance
+    </text>
+    
+    <circle cx="180" cy="0" r="8" fill="#10b981" opacity="0.2"/>
+    <text x="195" y="5" font-family="Arial, sans-serif" font-size="14" fill="#1f2937">
+      Good Performance
+    </text>
+    
+    <circle cx="360" cy="0" r="8" fill="#f59e0b" opacity="0.2"/>
+    <text x="375" y="5" font-family="Arial, sans-serif" font-size="14" fill="#1f2937">
+      Moderate Performance
+    </text>
+    
+    <circle cx="560" cy="0" r="8" fill="#ef4444" opacity="0.2"/>
+    <text x="575" y="5" font-family="Arial, sans-serif" font-size="14" fill="#1f2937">
+      Poor Performance
+    </text>
+  </g>
+  
+  <!-- Bottom note -->
+  <rect x="100" y="560" width="800" height="30" rx="6" fill="#3b82f6" opacity="0.9"/>
+  <text x="500" y="580" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    Heaps excel at priority queue operations: balanced insert/extract performance with O(1) peek
+  </text>
+</svg>

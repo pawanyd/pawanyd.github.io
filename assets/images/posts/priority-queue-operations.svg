@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" role="img" aria-labelledby="pq-title pq-desc">
+  <title id="pq-title">Priority Queue Operations</title>
+  <desc id="pq-desc">Visual representation of priority queue operations with heap implementation</desc>
+  
+  <!-- Background -->
+  <rect width="1000" height="500" fill="#f3f4f6"/>
+  
+  <!-- Title -->
+  <text x="500" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#1f2937" text-anchor="middle">
+    Priority Queue Operations
+  </text>
+  
+  <!-- Central heap visualization -->
+  <g transform="translate(350, 100)">
+    <text x="150" y="-10" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#3b82f6" text-anchor="middle">
+      Heap-Based Priority Queue
+    </text>
+    
+    <!-- Heap structure -->
+    <circle cx="150" cy="50" r="28" fill="#3b82f6" stroke="#1e40af" stroke-width="2"/>
+    <text x="150" y="58" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle">100</text>
+    
+    <line x1="150" y1="78" x2="100" y2="118" stroke="#9ca3af" stroke-width="2"/>
+    <line x1="150" y1="78" x2="200" y2="118" stroke="#9ca3af" stroke-width="2"/>
+    
+    <circle cx="100" cy="140" r="24" fill="#60a5fa" stroke="#3b82f6" stroke-width="2"/>
+    <text x="100" y="147" font-family="Arial, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle">85</text>
+    
+    <circle cx="200" cy="140" r="24" fill="#60a5fa" stroke="#3b82f6" stroke-width="2"/>
+    <text x="200" y="147" font-family="Arial, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle">90</text>
+    
+    <line x1="100" y1="164" x2="70" y2="204" stroke="#9ca3af" stroke-width="2"/>
+    <line x1="100" y1="164" x2="130" y2="204" stroke="#9ca3af" stroke-width="2"/>
+    
+    <circle cx="70" cy="225" r="20" fill="#93c5fd" stroke="#60a5fa" stroke-width="2"/>
+    <text x="70" y="231" font-family="Arial, sans-serif" font-size="16" fill="#1f2937" text-anchor="middle">70</text>
+    
+    <circle cx="130" cy="225" r="20" fill="#93c5fd" stroke="#60a5fa" stroke-width="2"/>
+    <text x="130" y="231" font-family="Arial, sans-serif" font-size="16" fill="#1f2937" text-anchor="middle">75</text>
+  </g>
+  
+  <!-- Insert operation -->
+  <g transform="translate(50, 120)">
+    <rect x="0" y="0" width="200" height="100" rx="10" fill="#10b981" opacity="0.1" stroke="#10b981" stroke-width="2"/>
+    <text x="100" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#10b981" text-anchor="middle">
+      INSERT
+    </text>
+    <text x="100" y="55" font-family="Arial, sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">
+      insert(element, priority)
+    </text>
+    <text x="100" y="80" font-family="Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">
+      O(log n) - Bubble up
+    </text>
+    
+    <!-- Arrow pointing to heap -->
+    <path d="M 210 50 L 330 150" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#arrowGreen)"/>
+  </g>
+  
+  <!-- Extract-Max operation -->
+  <g transform="translate(750, 120)">
+    <rect x="0" y="0" width="200" height="100" rx="10" fill="#ef4444" opacity="0.1" stroke="#ef4444" stroke-width="2"/>
+    <text x="100" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ef4444" text-anchor="middle">
+      EXTRACT-MAX
+    </text>
+    <text x="100" y="55" font-family="Arial, sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">
+      extractMax()
+    </text>
+    <text x="100" y="80" font-family="Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">
+      O(log n) - Heapify down
+    </text>
+    
+    <!-- Arrow pointing from heap -->
+    <path d="M 670 150 L 740 170" stroke="#ef4444" stroke-width="2" fill="none" marker-end="url(#arrowRed)"/>
+  </g>
+  
+  <!-- Peek operation -->
+  <g transform="translate(400, 350)">
+    <rect x="0" y="0" width="200" height="80" rx="10" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="2"/>
+    <text x="100" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f59e0b" text-anchor="middle">
+      PEEK
+    </text>
+    <text x="100" y="55" font-family="Arial, sans-serif" font-size="14" fill="#1f2937" text-anchor="middle">
+      peek() → 100
+    </text>
+    <text x="100" y="72" font-family="Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">
+      O(1) - Just view root
+    </text>
+    
+    <!-- Arrow pointing to heap -->
+    <path d="M 500 340 L 500 280" stroke="#f59e0b" stroke-width="2" fill="none" marker-end="url(#arrowOrange)"/>
+  </g>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#10b981" />
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ef4444" />
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#f59e0b" />
+    </marker>
+  </defs>
+  
+  <!-- Bottom summary -->
+  <rect x="100" y="450" width="800" height="40" rx="8" fill="#3b82f6" opacity="0.9"/>
+  <text x="500" y="475" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    Priority Queue = Abstract Interface | Heap = Efficient Implementation
+  </text>
+</svg>
