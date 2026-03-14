@@ -1,0 +1,51 @@
+# UTM Configuration for External Links
+# This file manages all UTM parameters for consistent tracking across the site
+
+# Base UTM Parameters
+base:
+  source: "pawanyd.github.io"  # Always use our website URL as source
+  medium: "referral"           # Traffic type
+
+# Campaign-specific UTM parameters
+campaigns:
+  dsa_resources:
+    name: "dsa_resources"
+    description: "DSA page external resource links"
+    
+  system_design_resources:
+    name: "system_design_resources"
+    description: "System Design page external resource links"
+    
+  blog_general:
+    name: "blog_general"
+    description: "General blog external links"
+    
+  navigation_links:
+    name: "navigation_links"
+    description: "Links from navigation menu"
+
+# Content-specific identifiers for detailed tracking
+content:
+  # DSA Resources
+  dsa:
+    leetcode: "leetcode_link"
+    hackerrank: "hackerrank_link"
+    geeksforgeeks: "geeksforgeeks_link"
+    visualgo: "visualgo_link"
+    
+  # System Design Resources
+  system_design:
+    ddia_book: "ddia_book"
+    educative_course: "educative_course"
+    drawio_tool: "drawio_tool"
+    github_primer: "github_primer"
+    
+  # General Resources (for future use)
+  general:
+    github_profile: "github_profile"
+    linkedin_profile: "linkedin_profile"
+    resume_download: "resume_download"
+
+# Helper function to build UTM URLs (for Jekyll liquid templates)
+# Usage: {{ site.data.utm.base.source }}
+# Full URL example: https://example.com?utm_source={{ site.data.utm.base.source }}&utm_medium={{ site.data.utm.base.medium }}&utm_campaign={{ site.data.utm.campaigns.dsa_resources.name }}&utm_content={{ site.data.utm.content.dsa.leetcode }}

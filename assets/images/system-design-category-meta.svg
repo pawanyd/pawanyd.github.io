@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3730a3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0891b2;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#60a5fa" />
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Circuit pattern overlay -->
+  <defs>
+    <pattern id="circuit" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 0 30 L 30 30 M 30 0 L 30 60 M 30 30 L 60 30" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      <circle cx="30" cy="30" r="3" fill="rgba(255,255,255,0.1)"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#circuit)"/>
+  
+  <!-- Title -->
+  <text x="600" y="150" text-anchor="middle" fill="#f3f4f6" font-family="Arial, sans-serif" font-size="56" font-weight="bold">
+    System Design
+  </text>
+  <text x="600" y="190" text-anchor="middle" fill="#93c5fd" font-family="Arial, sans-serif" font-size="28">
+    &amp; Architecture
+  </text>
+  
+  <!-- System Architecture Diagram -->
+  <g transform="translate(200, 250)">
+    
+    <!-- Client/User -->
+    <g transform="translate(0, 80)">
+      <rect x="0" y="0" width="80" height="50" fill="#3b82f6" stroke="#60a5fa" stroke-width="2" rx="8"/>
+      <text x="40" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Client</text>
+      <i class="fas fa-user" x="20" y="20" fill="white"></i>
+    </g>
+    
+    <!-- Load Balancer -->
+    <g transform="translate(150, 80)">
+      <rect x="0" y="0" width="80" height="50" fill="#10b981" stroke="#34d399" stroke-width="2" rx="8"/>
+      <text x="40" y="20" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Load</text>
+      <text x="40" y="35" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Balancer</text>
+    </g>
+    
+    <!-- Web Servers -->
+    <g transform="translate(300, 30)">
+      <rect x="0" y="0" width="70" height="40" fill="#8b5cf6" stroke="#a78bfa" stroke-width="2" rx="6"/>
+      <text x="35" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Server 1</text>
+    </g>
+    
+    <g transform="translate(300, 80)">
+      <rect x="0" y="0" width="70" height="40" fill="#8b5cf6" stroke="#a78bfa" stroke-width="2" rx="6"/>
+      <text x="35" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Server 2</text>
+    </g>
+    
+    <g transform="translate(300, 130)">
+      <rect x="0" y="0" width="70" height="40" fill="#8b5cf6" stroke="#a78bfa" stroke-width="2" rx="6"/>
+      <text x="35" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Server 3</text>
+    </g>
+    
+    <!-- Cache -->
+    <g transform="translate(450, 50)">
+      <rect x="0" y="0" width="70" height="40" fill="#f59e0b" stroke="#fbbf24" stroke-width="2" rx="6"/>
+      <text x="35" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Cache</text>
+    </g>
+    
+    <!-- Database -->
+    <g transform="translate(450, 110)">
+      <rect x="0" y="0" width="70" height="40" fill="#ef4444" stroke="#f87171" stroke-width="2" rx="6"/>
+      <text x="35" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Database</text>
+    </g>
+    
+    <!-- Message Queue -->
+    <g transform="translate(600, 80)">
+      <rect x="0" y="0" width="70" height="40" fill="#06b6d4" stroke="#67e8f9" stroke-width="2" rx="6"/>
+      <text x="35" y="20" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Message</text>
+      <text x="35" y="32" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Queue</text>
+    </g>
+    
+    <!-- CDN -->
+    <g transform="translate(750, 50)">
+      <rect x="0" y="0" width="70" height="40" fill="#84cc16" stroke="#a3e635" stroke-width="2" rx="6"/>
+      <text x="35" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">CDN</text>
+    </g>
+    
+    <!-- Analytics -->
+    <g transform="translate(750, 110)">
+      <rect x="0" y="0" width="70" height="40" fill="#ec4899" stroke="#f472b6" stroke-width="2" rx="6"/>
+      <text x="35" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Analytics</text>
+    </g>
+    
+    <!-- Connection Lines -->
+    <!-- Client to Load Balancer -->
+    <line x1="80" y1="105" x2="150" y2="105" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <!-- Load Balancer to Servers -->
+    <line x1="230" y1="95" x2="300" y2="50" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="230" y1="105" x2="300" y2="100" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="230" y1="115" x2="300" y2="150" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <!-- Servers to Cache and Database -->
+    <line x1="370" y1="70" x2="450" y2="70" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="370" y1="130" x2="450" y2="130" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <!-- To Message Queue -->
+    <line x1="370" y1="100" x2="600" y2="100" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <!-- To CDN and Analytics -->
+    <line x1="520" y1="70" x2="750" y2="70" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="520" y1="130" x2="750" y2="130" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrow)"/>
+    
+  </g>
+  
+  <!-- Key Concepts -->
+  <g transform="translate(100, 480)">
+    <text x="0" y="0" fill="#93c5fd" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Key Concepts:</text>
+    
+    <g transform="translate(0, 25)">
+      <circle cx="8" cy="8" r="4" fill="#3b82f6"/>
+      <text x="20" y="12" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="14">Scalability</text>
+    </g>
+    
+    <g transform="translate(120, 25)">
+      <circle cx="8" cy="8" r="4" fill="#10b981"/>
+      <text x="20" y="12" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="14">Reliability</text>
+    </g>
+    
+    <g transform="translate(220, 25)">
+      <circle cx="8" cy="8" r="4" fill="#f59e0b"/>
+      <text x="20" y="12" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="14">Performance</text>
+    </g>
+    
+    <g transform="translate(330, 25)">
+      <circle cx="8" cy="8" r="4" fill="#ef4444"/>
+      <text x="20" y="12" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="14">Consistency</text>
+    </g>
+    
+    <g transform="translate(440, 25)">
+      <circle cx="8" cy="8" r="4" fill="#8b5cf6"/>
+      <text x="20" y="12" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="14">Availability</text>
+    </g>
+  </g>
+  
+  <!-- Scale indicators -->
+  <g transform="translate(950, 300)">
+    <text x="0" y="0" fill="#60a5fa" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Scale:</text>
+    <text x="0" y="20" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="12">• Millions of users</text>
+    <text x="0" y="35" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="12">• Petabytes of data</text>
+    <text x="0" y="50" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="12">• Global distribution</text>
+    <text x="0" y="65" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="12">• 99.99% uptime</text>
+  </g>
+  
+  <!-- Subtitle -->
+  <text x="600" y="580" text-anchor="middle" fill="#93c5fd" font-family="Arial, sans-serif" font-size="18">
+    Learn to build scalable, distributed systems that handle millions of users
+  </text>
+</svg>

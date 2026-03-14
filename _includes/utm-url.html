@@ -1,0 +1,12 @@
+{% comment %}
+UTM URL Generator Include
+Usage: {% include utm-url.html base_url="https://example.com" campaign="dsa_resources" content="leetcode_link" %}
+Returns: Complete URL with UTM parameters
+{% endcomment %}
+
+{% assign utm_source = site.data.utm.base.source %}
+{% assign utm_medium = site.data.utm.base.medium %}
+{% assign utm_campaign = site.data.utm.campaigns[include.campaign].name %}
+{% assign utm_content = site.data.utm.content[include.category][include.content] %}
+
+{{ include.base_url }}?utm_source={{ utm_source }}&utm_medium={{ utm_medium }}&utm_campaign={{ utm_campaign }}&utm_content={{ utm_content }}

@@ -72,7 +72,7 @@
             <article class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
                 <a href="${escHtml(post.url)}" class="block relative overflow-hidden h-48 sm:h-44 md:h-52 lg:h-48" onclick="trackVisit('${escHtml(post.url)}','${escHtml(post.title)}','${escHtml(post.image||'')}')">
                     <img src="${escHtml(post.image||'')}" alt="${escHtml(post.title)}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
-                    <span class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full shadow-md">${escHtml(post.category)}</span>
+                    <span class="absolute top-3 left-3 ${post.category === 'DSA' ? 'bg-purple-600' : 'bg-blue-600'} text-white text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full shadow-md">${escHtml(post.category)}</span>
                 </a>
                 <div class="p-4 lg:p-5 flex flex-col flex-1">
                     <h2 class="text-base font-bold text-gray-900 leading-snug mb-2">
@@ -83,9 +83,9 @@
                         <span class="text-gray-300">•</span>
                         <span>📖 ${calcReadTime(post.content)}</span>
                     </div>
-                    ${post.tags && post.tags.length ? `<div class="flex flex-wrap gap-1 mb-3">${post.tags.slice(0,3).map(t=>`<span class="text-xs px-2 py-0.5 bg-blue-50 text-blue-600 rounded-full font-medium">${escHtml(t)}</span>`).join('')}</div>` : ''}
+                    ${post.tags && post.tags.length ? `<div class="flex flex-wrap gap-1 mb-3">${post.tags.slice(0,3).map(t=>`<span class="text-xs px-2 py-0.5 ${post.category === 'DSA' ? 'bg-purple-50 text-purple-600' : 'bg-blue-50 text-blue-600'} rounded-full font-medium">${escHtml(t)}</span>`).join('')}</div>` : ''}
                     <p class="text-gray-500 text-sm leading-relaxed mb-4 flex-1">${escHtml(post.excerpt||'').split(' ').slice(0,18).join(' ')}...</p>
-                    <a href="${escHtml(post.url)}" class="inline-flex items-center gap-2 text-blue-600 text-sm font-semibold hover:gap-3 transition-all duration-200">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+                    <a href="${escHtml(post.url)}" class="inline-flex items-center gap-2 ${post.category === 'DSA' ? 'text-purple-600' : 'text-blue-600'} text-sm font-semibold hover:gap-3 transition-all duration-200">Read More <i class="fas fa-arrow-right text-xs"></i></a>
                 </div>
             </article>
         `).join('');
@@ -125,18 +125,24 @@
 
     function buildPostCard(post) {
         const tags = Array.isArray(post.tags) ? post.tags : (post.tags ? [post.tags] : []);
+        const isDSA = post.category === 'DSA';
+        const categoryColor = isDSA ? 'bg-purple-600' : 'bg-blue-600';
+        const tagColor = isDSA ? 'bg-purple-50 text-purple-600' : 'bg-blue-50 text-blue-600';
+        const linkColor = isDSA ? 'text-purple-600' : 'text-blue-600';
+        const hoverColor = isDSA ? 'hover:text-purple-600' : 'hover:text-blue-600';
+        
         const tagsHtml = tags.length
-            ? `<div class="flex flex-wrap gap-1 mb-3">${tags.slice(0, 3).map(t => `<span class="text-xs px-2 py-0.5 bg-blue-50 text-blue-600 rounded-full font-medium">${escHtml(t)}</span>`).join('')}</div>`
+            ? `<div class="flex flex-wrap gap-1 mb-3">${tags.slice(0, 3).map(t => `<span class="text-xs px-2 py-0.5 ${tagColor} rounded-full font-medium">${escHtml(t)}</span>`).join('')}</div>`
             : '';
         return `
             <article class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col" data-category="${escHtml(post.category)}" data-url="${escHtml(post.url)}">
                 <a href="${escHtml(post.url)}" class="block relative overflow-hidden h-48 sm:h-44 md:h-52 lg:h-48" onclick="trackVisit('${escHtml(post.url)}','${escHtml(post.title)}','${escHtml(post.image||'')}')">
                     <img src="${escHtml(post.image||'')}" alt="${escHtml(post.title)}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
-                    <span class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full shadow-md">${escHtml(post.category)}</span>
+                    <span class="absolute top-3 left-3 ${categoryColor} text-white text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full shadow-md">${escHtml(post.category)}</span>
                 </a>
                 <div class="p-4 lg:p-5 flex flex-col flex-1">
                     <h2 class="text-base font-bold text-gray-900 leading-snug mb-2">
-                        <a href="${escHtml(post.url)}" class="hover:text-blue-600 transition-colors duration-200">${escHtml(post.title)}</a>
+                        <a href="${escHtml(post.url)}" class="${hoverColor} transition-colors duration-200">${escHtml(post.title)}</a>
                     </h2>
                     <div class="flex items-center gap-2 text-gray-500 text-xs mb-3">
                         <time>${escHtml(post.date)}</time>
@@ -145,7 +151,7 @@
                     </div>
                     ${tagsHtml}
                     <p class="text-gray-500 text-sm leading-relaxed mb-4 flex-1">${escHtml(post.excerpt||'').split(' ').slice(0, 18).join(' ')}...</p>
-                    <a href="${escHtml(post.url)}" class="inline-flex items-center gap-2 text-blue-600 text-sm font-semibold hover:gap-3 transition-all duration-200">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+                    <a href="${escHtml(post.url)}" class="inline-flex items-center gap-2 ${linkColor} text-sm font-semibold hover:gap-3 transition-all duration-200">Read More <i class="fas fa-arrow-right text-xs"></i></a>
                 </div>
             </article>`;
     }
@@ -184,14 +190,18 @@
             const isActive = p.dataset.cat === cat;
             if (isActive) {
                 p.classList.remove('bg-gray-50', 'text-gray-600', 'border-gray-200', 'hover:border-blue-300', 'hover:bg-blue-50', 'hover:text-blue-600');
-                p.classList.add('bg-blue-600', 'text-white', 'border-blue-600', 'shadow-md', 'active');
+                if (cat === 'DSA') {
+                    p.classList.add('bg-purple-600', 'text-white', 'border-purple-600', 'shadow-md', 'active');
+                } else {
+                    p.classList.add('bg-blue-600', 'text-white', 'border-blue-600', 'shadow-md', 'active');
+                }
                 const countSpan = p.querySelector('span');
                 if (countSpan) {
                     countSpan.classList.remove('text-gray-400');
                     countSpan.classList.add('text-white', 'opacity-80');
                 }
             } else {
-                p.classList.remove('bg-blue-600', 'text-white', 'border-blue-600', 'shadow-md', 'active');
+                p.classList.remove('bg-blue-600', 'bg-purple-600', 'text-white', 'border-blue-600', 'border-purple-600', 'shadow-md', 'active');
                 p.classList.add('bg-gray-50', 'text-gray-600', 'border-gray-200', 'hover:border-blue-300', 'hover:bg-blue-50', 'hover:text-blue-600');
                 const countSpan = p.querySelector('span');
                 if (countSpan) {
@@ -348,6 +358,18 @@
     }
 
     els.categoryPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+            if (els.searchInput && els.searchInput.value) {
+                els.searchInput.value = '';
+                if (els.clearBtn) els.clearBtn.style.display = 'none';
+                resetSearch();
+            }
+            applyCategoryFilter(pill.dataset.cat);
+        });
+    });
+
+    // Handle featured category buttons
+    document.querySelectorAll('.cat-pill').forEach(pill => {
         pill.addEventListener('click', () => {
             if (els.searchInput && els.searchInput.value) {
                 els.searchInput.value = '';

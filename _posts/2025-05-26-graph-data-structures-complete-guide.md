@@ -2,7 +2,7 @@
 layout: post-detail
 title: "Graph Data Structures: The Complete Guide to Modeling Complex Relationships"
 date: 2025-05-26
-category: "Technology"
+category: "DSA"
 tags: ["Data Structures", "Algorithms", "Programming", "Graph Theory", "Networks", "System Design"]
 image: "/assets/images/posts/graph-data-structures-hero.svg"
 excerpt: "Ever tried to model friendships with arrays? Yeah, that doesn't work. Discover why graphs are the secret weapon behind Google Maps, LinkedIn recommendations, and every complex system you use daily."

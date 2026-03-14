@@ -2,7 +2,7 @@
 layout: post-detail
 title: "Linked Lists: The Complete Guide to Understanding and Mastering Dynamic Data Structures"
 date: 2025-05-10
-category: "Technology"
+category: "DSA"
 tags: ["Data Structures", "Algorithms", "Programming", "Computer Science", "Software Development", "Coding"]
 image: "/assets/images/posts/linked-lists-hero.svg"
 excerpt: "Ever wondered why your favorite music app can seamlessly add songs to your playlist? Dive deep into linked lists and discover the elegant data structure powering dynamic collections everywhere."

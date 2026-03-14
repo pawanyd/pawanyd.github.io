@@ -24,10 +24,17 @@
   link: /contact
 - name: Blogs
   link: /blogs
+  submenu:
+    - name: All Posts
+      link: /blogs
+    - name: Data Structures & Algorithms
+      link: /blogs/data-structures-algorithms
+    - name: System Design
+      link: /blogs/system-design
 - name: Resume
   link: /assets/resume.pdf
   target: _blank
 - name: GitHub
-  link: https://github.com/pawanyd
+  link: https://github.com/pawanyd?utm_source={{ site.data.utm.base.source }}&utm_medium={{ site.data.utm.base.medium }}&utm_campaign={{ site.data.utm.campaigns.navigation_links.name }}&utm_content={{ site.data.utm.content.general.github_profile }}
   target: _blank
   icon: fab fa-github

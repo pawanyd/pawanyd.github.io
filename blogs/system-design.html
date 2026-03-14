@@ -1,0 +1,396 @@
+---
+layout: profile
+title: "System Design & Architecture - Pawan Kumar's Blog"
+meta_title: "System Design & Architecture Blog | Scalable Systems Tutorials"
+meta_description: "Master system design and architecture with comprehensive guides on building scalable, distributed systems. From rate limiters to video streaming platforms, learn how to design systems that scale."
+meta_image: "/assets/images/system-design-category-meta.svg"
+---
+
+<!-- System Design Category Hero Section -->
+<section class="bg-gradient-to-br from-blue-900 via-indigo-900 to-cyan-900 py-10 md:py-14 px-4 sm:px-6 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20" style="background: radial-gradient(ellipse at 70% 50%, #3b82f6 0%, transparent 60%);"></div>
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center justify-between gap-4 md:gap-6 relative z-10">
+        <div>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight mb-2">
+                System Design & Architecture
+            </h1>
+            <p class="text-gray-300 text-base sm:text-lg mb-4">
+                Learn to build scalable, distributed systems that handle millions of users
+            </p>
+            <div class="flex flex-wrap gap-2">
+                <span class="bg-blue-600 bg-opacity-80 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    Scalable Systems
+                </span>
+                <span class="bg-indigo-600 bg-opacity-80 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    Real-world Examples
+                </span>
+                <span class="bg-cyan-600 bg-opacity-80 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    Production Ready
+                </span>
+            </div>
+        </div>
+        <div class="flex gap-3 sm:gap-4">
+            {% assign system_design_posts = site.posts | where: "category", "System Design & Architecture" %}
+            <div class="bg-white bg-opacity-10 border border-white border-opacity-20 rounded-xl px-4 sm:px-5 py-2 sm:py-3 text-center backdrop-blur-sm">
+                <span class="block text-2xl sm:text-3xl font-extrabold text-blue-400">{{ system_design_posts | size }}</span>
+                <span class="text-xs text-gray-400 uppercase tracking-widest">Design Guides</span>
+            </div>
+            <div class="bg-white bg-opacity-10 border border-white border-opacity-20 rounded-xl px-4 sm:px-5 py-2 sm:py-3 text-center backdrop-blur-sm">
+                <span class="block text-2xl sm:text-3xl font-extrabold text-blue-400">∞</span>
+                <span class="text-xs text-gray-400 uppercase tracking-widest">Scale</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- System Design Learning Path -->
+<section class="bg-gray-50 py-8 lg:py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">System Design Learning Path</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Master system design through a structured approach, from basic concepts to complex distributed systems.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <!-- Fundamentals -->
+            <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-play text-green-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900">Fundamentals</h3>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-green-500 text-xs"></i>
+                        Scalability Basics
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-green-500 text-xs"></i>
+                        Load Balancing
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-green-500 text-xs"></i>
+                        Caching Strategies
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-green-500 text-xs"></i>
+                        Database Design
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Intermediate -->
+            <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-chart-line text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900">Intermediate</h3>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-green-500 text-xs"></i>
+                        Distributed Systems
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-green-500 text-xs"></i>
+                        Microservices
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-green-500 text-xs"></i>
+                        API Design
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-circle text-gray-300 text-xs"></i>
+                        Message Queues
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Advanced -->
+            <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-rocket text-purple-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900">Advanced</h3>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-green-500 text-xs"></i>
+                        Consistent Hashing
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-circle text-gray-300 text-xs"></i>
+                        CAP Theorem
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-circle text-gray-300 text-xs"></i>
+                        Event Sourcing
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-circle text-gray-300 text-xs"></i>
+                        CQRS Pattern
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Popular System Design Patterns -->
+<section class="bg-white py-8 lg:py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Popular System Design Patterns</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Essential patterns and concepts you'll encounter in real-world system design.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            <!-- Rate Limiting -->
+            <div class="bg-gradient-to-br from-red-50 to-pink-50 border border-red-200 rounded-xl p-6 text-center">
+                <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-shield-alt text-red-600 text-xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Rate Limiting</h3>
+                <p class="text-sm text-gray-600 mb-3">Control API usage and prevent abuse</p>
+                <div class="flex flex-wrap gap-1 justify-center">
+                    <span class="text-xs px-2 py-1 bg-red-100 text-red-700 rounded-full">Token Bucket</span>
+                    <span class="text-xs px-2 py-1 bg-red-100 text-red-700 rounded-full">Sliding Window</span>
+                </div>
+            </div>
+            
+            <!-- Load Balancing -->
+            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6 text-center">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-balance-scale text-blue-600 text-xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Load Balancing</h3>
+                <p class="text-sm text-gray-600 mb-3">Distribute traffic across servers</p>
+                <div class="flex flex-wrap gap-1 justify-center">
+                    <span class="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded-full">Round Robin</span>
+                    <span class="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded-full">Weighted</span>
+                </div>
+            </div>
+            
+            <!-- Caching -->
+            <div class="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-xl p-6 text-center">
+                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-tachometer-alt text-green-600 text-xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Caching</h3>
+                <p class="text-sm text-gray-600 mb-3">Speed up data access</p>
+                <div class="flex flex-wrap gap-1 justify-center">
+                    <span class="text-xs px-2 py-1 bg-green-100 text-green-700 rounded-full">Redis</span>
+                    <span class="text-xs px-2 py-1 bg-green-100 text-green-700 rounded-full">CDN</span>
+                </div>
+            </div>
+            
+            <!-- Database Sharding -->
+            <div class="bg-gradient-to-br from-purple-50 to-violet-50 border border-purple-200 rounded-xl p-6 text-center">
+                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-database text-purple-600 text-xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Database Sharding</h3>
+                <p class="text-sm text-gray-600 mb-3">Scale database horizontally</p>
+                <div class="flex flex-wrap gap-1 justify-center">
+                    <span class="text-xs px-2 py-1 bg-purple-100 text-purple-700 rounded-full">Horizontal</span>
+                    <span class="text-xs px-2 py-1 bg-purple-100 text-purple-700 rounded-full">Vertical</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- System Design Posts Grid -->
+<section class="bg-gray-100 py-8 lg:py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="flex items-center justify-between mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900">System Design Articles</h2>
+            <a href="/blogs/" class="text-blue-600 hover:text-blue-700 font-semibold text-sm flex items-center gap-1">
+                <i class="fas fa-arrow-left text-xs"></i> All Categories
+            </a>
+        </div>
+        
+        {% if system_design_posts.size > 0 %}
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% for post in system_design_posts %}
+            <article class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                <a href="{{ post.url }}" class="block relative overflow-hidden h-48">
+                    <img src="{{ post.image }}" alt="{{ post.title }}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+                    <span class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full shadow-md">System Design</span>
+                </a>
+                <div class="p-5 flex flex-col flex-1">
+                    <h3 class="text-lg font-bold text-gray-900 leading-snug mb-2">
+                        <a href="{{ post.url }}" class="hover:text-blue-600 transition-colors duration-200">{{ post.title }}</a>
+                    </h3>
+                    <div class="flex items-center gap-2 text-gray-500 text-xs mb-3">
+                        <time>{{ post.date | date: "%b %d, %Y" }}</time>
+                        <span class="text-gray-300">•</span>
+                        <span>📖 {% assign words = post.content | number_of_words %}{% if words < 360 %}1 min read{% else %}{{ words | divided_by: 180 }} min read{% endif %}</span>
+                    </div>
+                    {% if post.tags and post.tags.size > 0 %}
+                    <div class="flex flex-wrap gap-1 mb-3">
+                        {% for tag in post.tags limit:3 %}
+                        <span class="text-xs px-2 py-0.5 bg-blue-50 text-blue-600 rounded-full font-medium">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4 flex-1">{{ post.excerpt | strip_html | truncatewords: 18 }}</p>
+                    <a href="{{ post.url }}" class="inline-flex items-center gap-2 text-blue-600 text-sm font-semibold hover:gap-3 transition-all duration-200">
+                        Read More <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="text-center py-16 text-gray-400">
+            <i class="fas fa-sitemap text-5xl mb-4 block"></i>
+            <p class="text-lg font-medium text-gray-500">System design articles coming soon!</p>
+            <p class="text-sm text-gray-400 mt-1">Check back for comprehensive guides on building scalable systems.</p>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- System Design Interview Prep -->
+<section class="bg-white py-8 lg:py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">System Design Interview Prep</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Essential topics and questions commonly asked in system design interviews.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+            <!-- Common Questions -->
+            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-200">
+                <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                    <i class="fas fa-question-circle text-blue-600"></i>
+                    Common Interview Questions
+                </h3>
+                <ul class="space-y-3 text-sm text-gray-700">
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check text-blue-600 text-xs mt-1"></i>
+                        <span>Design a URL shortener (like Bit.ly)</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check text-blue-600 text-xs mt-1"></i>
+                        <span>Design a video streaming service (like YouTube)</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check text-blue-600 text-xs mt-1"></i>
+                        <span>Design a chat application (like WhatsApp)</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check text-blue-600 text-xs mt-1"></i>
+                        <span>Design a social media feed (like Twitter)</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check text-blue-600 text-xs mt-1"></i>
+                        <span>Design a key-value store (like Redis)</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Key Concepts -->
+            <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border border-green-200">
+                <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                    <i class="fas fa-lightbulb text-green-600"></i>
+                    Key Concepts to Master
+                </h3>
+                <ul class="space-y-3 text-sm text-gray-700">
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-star text-green-600 text-xs mt-1"></i>
+                        <span>Scalability & Performance</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-star text-green-600 text-xs mt-1"></i>
+                        <span>Reliability & Availability</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-star text-green-600 text-xs mt-1"></i>
+                        <span>Consistency & Partition Tolerance</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-star text-green-600 text-xs mt-1"></i>
+                        <span>Data Storage & Retrieval</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-star text-green-600 text-xs mt-1"></i>
+                        <span>Security & Privacy</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- System Design Resources -->
+<section class="bg-gray-50 py-8 lg:py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Additional Resources</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Recommended books, courses, and tools to deepen your system design knowledge.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Books -->
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm">
+                <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-book text-orange-600 text-xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Essential Books</h3>
+                <p class="text-sm text-gray-600 mb-3">Designing Data-Intensive Applications</p>
+                <a href="https://dataintensive.net?utm_source={{ site.data.utm.base.source }}&utm_medium={{ site.data.utm.base.medium }}&utm_campaign={{ site.data.utm.campaigns.system_design_resources.name }}&utm_content={{ site.data.utm.content.system_design.ddia_book }}" target="_blank" class="text-orange-600 text-xs font-semibold hover:text-orange-700">
+                    Learn More →
+                </a>
+            </div>
+            
+            <!-- Courses -->
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm">
+                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-graduation-cap text-green-600 text-xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Online Courses</h3>
+                <p class="text-sm text-gray-600 mb-3">Grokking System Design Interview</p>
+                <a href="https://educative.io/courses/grokking-the-system-design-interview?utm_source={{ site.data.utm.base.source }}&utm_medium={{ site.data.utm.base.medium }}&utm_campaign={{ site.data.utm.campaigns.system_design_resources.name }}&utm_content={{ site.data.utm.content.system_design.educative_course }}" target="_blank" class="text-green-600 text-xs font-semibold hover:text-green-700">
+                    Visit Platform →
+                </a>
+            </div>
+            
+            <!-- Tools -->
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-tools text-blue-600 text-xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Design Tools</h3>
+                <p class="text-sm text-gray-600 mb-3">Draw.io for system diagrams</p>
+                <a href="https://draw.io?utm_source={{ site.data.utm.base.source }}&utm_medium={{ site.data.utm.base.medium }}&utm_campaign={{ site.data.utm.campaigns.system_design_resources.name }}&utm_content={{ site.data.utm.content.system_design.drawio_tool }}" target="_blank" class="text-blue-600 text-xs font-semibold hover:text-blue-700">
+                    Visit Tool →
+                </a>
+            </div>
+            
+            <!-- Practice -->
+            <div class="bg-white rounded-xl p-6 text-center shadow-sm">
+                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-code text-purple-600 text-xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Practice</h3>
+                <p class="text-sm text-gray-600 mb-3">System design interview questions</p>
+                <a href="https://github.com/donnemartin/system-design-primer?utm_source={{ site.data.utm.base.source }}&utm_medium={{ site.data.utm.base.medium }}&utm_campaign={{ site.data.utm.campaigns.system_design_resources.name }}&utm_content={{ site.data.utm.content.system_design.github_primer }}" target="_blank" class="text-purple-600 text-xs font-semibold hover:text-purple-700">
+                    GitHub Repo →
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

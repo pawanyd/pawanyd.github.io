@@ -1,0 +1,256 @@
+---
+layout: profile
+title: "Data Structures & Algorithms - Pawan Kumar's Blog"
+meta_title: "Data Structures & Algorithms Blog | DSA Tutorials & Guides"
+meta_description: "Master Data Structures and Algorithms with comprehensive guides, tutorials, and practical examples. From linked lists to graph algorithms, learn DSA concepts that matter."
+meta_image: "/assets/images/dsa-category-meta.svg"
+---
+
+<!-- DSA Category Hero Section -->
+<section class="bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 py-10 md:py-14 px-4 sm:px-6 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20" style="background: radial-gradient(ellipse at 70% 50%, #8b5cf6 0%, transparent 60%);"></div>
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center justify-between gap-4 md:gap-6 relative z-10">
+        <div>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight mb-2">
+                Data Structures & Algorithms
+            </h1>
+            <p class="text-gray-300 text-base sm:text-lg mb-4">
+                Master the fundamentals that power every great software system
+            </p>
+            <div class="flex flex-wrap gap-2">
+                <span class="bg-purple-600 bg-opacity-80 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    Practical Guides
+                </span>
+                <span class="bg-blue-600 bg-opacity-80 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    Real-world Examples
+                </span>
+                <span class="bg-indigo-600 bg-opacity-80 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    Interview Prep
+                </span>
+            </div>
+        </div>
+        <div class="flex gap-3 sm:gap-4">
+            {% assign dsa_posts = site.posts | where: "category", "DSA" %}
+            <div class="bg-white bg-opacity-10 border border-white border-opacity-20 rounded-xl px-4 sm:px-5 py-2 sm:py-3 text-center backdrop-blur-sm">
+                <span class="block text-2xl sm:text-3xl font-extrabold text-purple-400">{{ dsa_posts | size }}</span>
+                <span class="text-xs text-gray-400 uppercase tracking-widest">DSA Articles</span>
+            </div>
+            <div class="bg-white bg-opacity-10 border border-white border-opacity-20 rounded-xl px-4 sm:px-5 py-2 sm:py-3 text-center backdrop-blur-sm">
+                <span class="block text-2xl sm:text-3xl font-extrabold text-purple-400">∞</span>
+                <span class="text-xs text-gray-400 uppercase tracking-widest">More Coming</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DSA Learning Path -->
+<section class="bg-gray-50 py-8 lg:py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">DSA Learning Path</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Follow this structured path to master data structures and algorithms, from basics to advanced concepts.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <!-- Fundamentals -->
+            <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-play text-green-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900">Fundamentals</h3>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-green-500 text-xs"></i>
+                        Arrays & Strings
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-green-500 text-xs"></i>
+                        Linked Lists
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-circle text-gray-300 text-xs"></i>
+                        Stacks & Queues
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-circle text-gray-300 text-xs"></i>
+                        Hash Tables
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Intermediate -->
+            <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-chart-line text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900">Intermediate</h3>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-circle text-gray-300 text-xs"></i>
+                        Trees & BST
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-circle text-gray-300 text-xs"></i>
+                        Heaps & Priority Queues
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-circle text-gray-300 text-xs"></i>
+                        Sorting Algorithms
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-circle text-gray-300 text-xs"></i>
+                        Binary Search
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Advanced -->
+            <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-rocket text-purple-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900">Advanced</h3>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-green-500 text-xs"></i>
+                        Graph Algorithms
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-circle text-gray-300 text-xs"></i>
+                        Dynamic Programming
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-circle text-gray-300 text-xs"></i>
+                        Backtracking
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-circle text-gray-300 text-xs"></i>
+                        Advanced Trees
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DSA Posts Grid -->
+<section class="bg-gray-100 py-8 lg:py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="flex items-center justify-between mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900">DSA Articles</h2>
+            <a href="/blogs/" class="text-blue-600 hover:text-blue-700 font-semibold text-sm flex items-center gap-1">
+                <i class="fas fa-arrow-left text-xs"></i> All Categories
+            </a>
+        </div>
+        
+        {% if dsa_posts.size > 0 %}
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% for post in dsa_posts %}
+            <article class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                <a href="{{ post.url }}" class="block relative overflow-hidden h-48">
+                    <img src="{{ post.image }}" alt="{{ post.title }}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+                    <span class="absolute top-3 left-3 bg-purple-600 text-white text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full shadow-md">DSA</span>
+                </a>
+                <div class="p-5 flex flex-col flex-1">
+                    <h3 class="text-lg font-bold text-gray-900 leading-snug mb-2">
+                        <a href="{{ post.url }}" class="hover:text-purple-600 transition-colors duration-200">{{ post.title }}</a>
+                    </h3>
+                    <div class="flex items-center gap-2 text-gray-500 text-xs mb-3">
+                        <time>{{ post.date | date: "%b %d, %Y" }}</time>
+                        <span class="text-gray-300">•</span>
+                        <span>📖 {% assign words = post.content | number_of_words %}{% if words < 360 %}1 min read{% else %}{{ words | divided_by: 180 }} min read{% endif %}</span>
+                    </div>
+                    {% if post.tags and post.tags.size > 0 %}
+                    <div class="flex flex-wrap gap-1 mb-3">
+                        {% for tag in post.tags limit:3 %}
+                        <span class="text-xs px-2 py-0.5 bg-purple-50 text-purple-600 rounded-full font-medium">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4 flex-1">{{ post.excerpt | strip_html | truncatewords: 18 }}</p>
+                    <a href="{{ post.url }}" class="inline-flex items-center gap-2 text-purple-600 text-sm font-semibold hover:gap-3 transition-all duration-200">
+                        Read More <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="text-center py-16 text-gray-400">
+            <i class="fas fa-code text-5xl mb-4 block"></i>
+            <p class="text-lg font-medium text-gray-500">DSA articles coming soon!</p>
+            <p class="text-sm text-gray-400 mt-1">Check back for comprehensive guides on data structures and algorithms.</p>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- DSA Resources -->
+<section class="bg-white py-8 lg:py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Additional DSA Resources</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Complement your learning with these recommended resources and practice platforms.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- LeetCode -->
+            <div class="bg-gray-50 rounded-xl p-6 text-center">
+                <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-code text-orange-600 text-xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">LeetCode</h3>
+                <p class="text-sm text-gray-600 mb-3">Practice coding problems with detailed solutions</p>
+                <a href="https://leetcode.com?utm_source={{ site.data.utm.base.source }}&utm_medium={{ site.data.utm.base.medium }}&utm_campaign={{ site.data.utm.campaigns.dsa_resources.name }}&utm_content={{ site.data.utm.content.dsa.leetcode }}" target="_blank" class="text-orange-600 text-xs font-semibold hover:text-orange-700">
+                    Visit Platform →
+                </a>
+            </div>
+            
+            <!-- HackerRank -->
+            <div class="bg-gray-50 rounded-xl p-6 text-center">
+                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-trophy text-green-600 text-xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">HackerRank</h3>
+                <p class="text-sm text-gray-600 mb-3">Skill assessments and coding challenges</p>
+                <a href="https://hackerrank.com?utm_source={{ site.data.utm.base.source }}&utm_medium={{ site.data.utm.base.medium }}&utm_campaign={{ site.data.utm.campaigns.dsa_resources.name }}&utm_content={{ site.data.utm.content.dsa.hackerrank }}" target="_blank" class="text-green-600 text-xs font-semibold hover:text-green-700">
+                    Visit Platform →
+                </a>
+            </div>
+            
+            <!-- GeeksforGeeks -->
+            <div class="bg-gray-50 rounded-xl p-6 text-center">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-book text-blue-600 text-xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">GeeksforGeeks</h3>
+                <p class="text-sm text-gray-600 mb-3">Comprehensive DSA tutorials and articles</p>
+                <a href="https://geeksforgeeks.org?utm_source={{ site.data.utm.base.source }}&utm_medium={{ site.data.utm.base.medium }}&utm_campaign={{ site.data.utm.campaigns.dsa_resources.name }}&utm_content={{ site.data.utm.content.dsa.geeksforgeeks }}" target="_blank" class="text-blue-600 text-xs font-semibold hover:text-blue-700">
+                    Visit Platform →
+                </a>
+            </div>
+            
+            <!-- Visualgo -->
+            <div class="bg-gray-50 rounded-xl p-6 text-center">
+                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-eye text-purple-600 text-xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">VisuAlgo</h3>
+                <p class="text-sm text-gray-600 mb-3">Visualize algorithms and data structures</p>
+                <a href="https://visualgo.net?utm_source={{ site.data.utm.base.source }}&utm_medium={{ site.data.utm.base.medium }}&utm_campaign={{ site.data.utm.campaigns.dsa_resources.name }}&utm_content={{ site.data.utm.content.dsa.visualgo }}" target="_blank" class="text-purple-600 text-xs font-semibold hover:text-purple-700">
+                    Visit Platform →
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

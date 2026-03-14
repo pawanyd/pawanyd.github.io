@@ -2,7 +2,7 @@
 layout: post-detail
 title: "DSA Roadmap: Where to Start and How to Actually Get Good"
 date: 2025-03-11
-category: "Technology"
+category: "DSA"
 tags: ["DSA", "Data Structures", "Algorithms", "LeetCode", "Interview Prep", "Programming"]
 image: "/assets/images/posts/dsa-roadmap-hero.svg"
 excerpt: "A 15-year veteran's honest DSA roadmap — exactly where to start, what order to follow, and how to stop feeling lost when staring at LeetCode."
