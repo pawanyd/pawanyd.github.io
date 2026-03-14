@@ -1,0 +1,81 @@
+<svg role="img" aria-labelledby="title desc" viewBox="0 0 900 450" xmlns="http://www.w3.org/2000/svg">
+  <title id="title">Binary Search Performance Comparison</title>
+  <desc id="desc">Performance comparison between linear search, binary search, and hash table lookup</desc>
+  
+  <rect width="900" height="450" fill="#f8fafc"/>
+  
+  <text x="450" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1e293b" text-anchor="middle">
+    Search Algorithm Performance Comparison
+  </text>
+  
+  <!-- Y-axis -->
+  <line x1="80" y1="80" x2="80" y2="380" stroke="#64748b" stroke-width="2"/>
+  <text x="40" y="85" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="end">1M</text>
+  <text x="40" y="155" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="end">100K</text>
+  <text x="40" y="225" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="end">10K</text>
+  <text x="40" y="295" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="end">1K</text>
+  <text x="40" y="365" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="end">100</text>
+  <text x="40" y="395" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="end">1</text>
+  
+  <text x="20" y="230" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#64748b" text-anchor="middle" transform="rotate(-90, 20, 230)">
+    Comparisons (log scale)
+  </text>
+  
+  <!-- X-axis -->
+  <line x1="80" y1="380" x2="850" y2="380" stroke="#64748b" stroke-width="2"/>
+  <text x="150" y="405" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">100</text>
+  <text x="300" y="405" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">1K</text>
+  <text x="450" y="405" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">10K</text>
+  <text x="600" y="405" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">100K</text>
+  <text x="750" y="405" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">1M</text>
+  
+  <text x="450" y="435" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#64748b" text-anchor="middle">
+    Dataset Size
+  </text>
+  
+  <!-- Linear Search Line (O(n)) -->
+  <polyline points="80,380 150,365 300,295 450,225 600,155 750,85" 
+            fill="none" stroke="#ef4444" stroke-width="3"/>
+  
+  <!-- Binary Search Line (O(log n)) -->
+  <polyline points="80,380 150,375 300,365 450,355 600,345 750,335" 
+            fill="none" stroke="#2563eb" stroke-width="3"/>
+  
+  <!-- Hash Table Line (O(1)) -->
+  <polyline points="80,380 150,380 300,380 450,380 600,380 750,380" 
+            fill="none" stroke="#10b981" stroke-width="3" stroke-dasharray="5,5"/>
+  
+  <!-- Legend -->
+  <g transform="translate(600, 60)">
+    <rect x="0" y="0" width="220" height="90" fill="white" stroke="#cbd5e1" stroke-width="1" rx="4"/>
+    
+    <line x1="15" y1="25" x2="45" y2="25" stroke="#ef4444" stroke-width="3"/>
+    <text x="55" y="30" font-family="Arial, sans-serif" font-size="13" fill="#1e293b">
+      Linear Search O(n)
+    </text>
+    
+    <line x1="15" y1="50" x2="45" y2="50" stroke="#2563eb" stroke-width="3"/>
+    <text x="55" y="55" font-family="Arial, sans-serif" font-size="13" fill="#1e293b">
+      Binary Search O(log n)
+    </text>
+    
+    <line x1="15" y1="75" x2="45" y2="75" stroke="#10b981" stroke-width="3" stroke-dasharray="5,5"/>
+    <text x="55" y="80" font-family="Arial, sans-serif" font-size="13" fill="#1e293b">
+      Hash Table O(1)
+    </text>
+  </g>
+  
+  <!-- Key Insight Box -->
+  <g transform="translate(100, 60)">
+    <rect x="0" y="0" width="280" height="70" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+    <text x="140" y="25" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2563eb" text-anchor="middle">
+      For 1M items:
+    </text>
+    <text x="140" y="45" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">
+      Linear: ~500K comparisons
+    </text>
+    <text x="140" y="62" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">
+      Binary: ~20 comparisons (25,000x faster!)
+    </text>
+  </g>
+</svg>

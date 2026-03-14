@@ -1,0 +1,147 @@
+<svg role="img" aria-labelledby="title desc" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+  <title id="title">Binary Search Variations</title>
+  <desc id="desc">Different variations and applications of binary search algorithm</desc>
+  
+  <rect width="1000" height="500" fill="#f8fafc"/>
+  
+  <text x="500" y="35" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle">
+    Binary Search Variations
+  </text>
+  
+  <!-- Classic Binary Search -->
+  <g transform="translate(50, 70)">
+    <rect x="0" y="0" width="200" height="90" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="8"/>
+    <text x="100" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2563eb" text-anchor="middle">
+      Classic Binary Search
+    </text>
+    <text x="100" y="50" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">
+      Find exact match
+    </text>
+    <text x="100" y="70" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">
+      O(log n)
+    </text>
+  </g>
+  
+  <!-- Lower Bound -->
+  <g transform="translate(280, 70)">
+    <rect x="0" y="0" width="200" height="90" fill="#e0e7ff" stroke="#7c3aed" stroke-width="2" rx="8"/>
+    <text x="100" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#7c3aed" text-anchor="middle">
+      Lower Bound
+    </text>
+    <text x="100" y="50" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">
+      First element ≥ target
+    </text>
+    <text x="100" y="70" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">
+      Used by LinkedIn
+    </text>
+  </g>
+  
+  <!-- Upper Bound -->
+  <g transform="translate(510, 70)">
+    <rect x="0" y="0" width="200" height="90" fill="#e0e7ff" stroke="#7c3aed" stroke-width="2" rx="8"/>
+    <text x="100" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#7c3aed" text-anchor="middle">
+      Upper Bound
+    </text>
+    <text x="100" y="50" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">
+      First element &gt; target
+    </text>
+    <text x="100" y="70" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">
+      Range queries
+    </text>
+  </g>
+  
+  <!-- Rotated Array -->
+  <g transform="translate(740, 70)">
+    <rect x="0" y="0" width="210" height="90" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/>
+    <text x="105" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f59e0b" text-anchor="middle">
+      Rotated Array Search
+    </text>
+    <text x="105" y="50" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">
+      Search in rotated sorted
+    </text>
+    <text x="105" y="70" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">
+      Used by Uber
+    </text>
+  </g>
+  
+  <!-- Peak Element -->
+  <g transform="translate(50, 190)">
+    <rect x="0" y="0" width="200" height="90" fill="#d1fae5" stroke="#10b981" stroke-width="2" rx="8"/>
+    <text x="100" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#10b981" text-anchor="middle">
+      Peak Element
+    </text>
+    <text x="100" y="50" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">
+      Find local maximum
+    </text>
+    <text x="100" y="70" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">
+      Stock analysis
+    </text>
+  </g>
+  
+  <!-- Square Root -->
+  <g transform="translate(280, 190)">
+    <rect x="0" y="0" width="200" height="90" fill="#d1fae5" stroke="#10b981" stroke-width="2" rx="8"/>
+    <text x="100" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#10b981" text-anchor="middle">
+      Square Root / Power
+    </text>
+    <text x="100" y="50" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">
+      Binary search on answer
+    </text>
+    <text x="100" y="70" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">
+      Math libraries
+    </text>
+  </g>
+  
+  <!-- 2D Matrix -->
+  <g transform="translate(510, 190)">
+    <rect x="0" y="0" width="200" height="90" fill="#fce7f3" stroke="#ec4899" stroke-width="2" rx="8"/>
+    <text x="100" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ec4899" text-anchor="middle">
+      2D Matrix Search
+    </text>
+    <text x="100" y="50" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">
+      Sorted rows &amp; columns
+    </text>
+    <text x="100" y="70" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">
+      Database indexing
+    </text>
+  </g>
+  
+  <!-- Answer Space -->
+  <g transform="translate(740, 190)">
+    <rect x="0" y="0" width="210" height="90" fill="#fce7f3" stroke="#ec4899" stroke-width="2" rx="8"/>
+    <text x="105" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ec4899" text-anchor="middle">
+      Binary Search on Answer
+    </text>
+    <text x="105" y="50" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">
+      Minimize/maximize result
+    </text>
+    <text x="105" y="70" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">
+      Optimization problems
+    </text>
+  </g>
+  
+  <!-- Use Cases -->
+  <g transform="translate(50, 310)">
+    <text x="0" y="20" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">
+      Real-World Applications:
+    </text>
+    <text x="20" y="45" font-family="Arial, sans-serif" font-size="13" fill="#64748b">
+      • Google: Autocomplete suggestions (classic binary search)
+    </text>
+    <text x="20" y="70" font-family="Arial, sans-serif" font-size="13" fill="#64748b">
+      • Netflix: Video frame seeking (lower/upper bound)
+    </text>
+    <text x="20" y="95" font-family="Arial, sans-serif" font-size="13" fill="#64748b">
+      • Amazon: Price range filtering (boundary search)
+    </text>
+    <text x="20" y="120" font-family="Arial, sans-serif" font-size="13" fill="#64748b">
+      • Uber: Circular route optimization (rotated array search)
+    </text>
+    <text x="20" y="145" font-family="Arial, sans-serif" font-size="13" fill="#64748b">
+      • Databases: B-tree indexing (multi-level binary search)
+    </text>
+    <text x="20" y="170" font-family="Arial, sans-serif" font-size="13" fill="#64748b">
+      • Robinhood: Stock price analysis (peak finding)
+    </text>
+  </g>
+</svg>

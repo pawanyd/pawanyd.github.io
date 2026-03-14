@@ -1,0 +1,78 @@
+<svg role="img" aria-labelledby="title desc" viewBox="0 0 1000 350" xmlns="http://www.w3.org/2000/svg">
+  <title id="title">Binary Search Common Pitfalls</title>
+  <desc id="desc">Illustrates common mistakes in binary search implementation</desc>
+  
+  <rect width="1000" height="350" fill="#f8fafc"/>
+  
+  <text x="500" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1e293b" text-anchor="middle">
+    Common Binary Search Pitfalls
+  </text>
+  
+  <!-- Pitfall 1: Integer Overflow -->
+  <g transform="translate(50, 60)">
+    <rect x="0" y="0" width="280" height="120" fill="#fee2e2" stroke="#ef4444" stroke-width="2" rx="8"/>
+    <text x="140" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ef4444" text-anchor="middle">
+      ❌ Integer Overflow
+    </text>
+    <text x="140" y="50" font-family="monospace" font-size="12" fill="#1e293b" text-anchor="middle">
+      mid = (left + right) / 2
+    </text>
+    <text x="140" y="75" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">
+      Fails when left + right &gt; MAX_INT
+    </text>
+    <text x="140" y="100" font-family="monospace" font-size="12" fill="#10b981" text-anchor="middle">
+      ✓ mid = left + (right - left) / 2
+    </text>
+  </g>
+  
+  <!-- Pitfall 2: Off-by-One -->
+  <g transform="translate(360, 60)">
+    <rect x="0" y="0" width="280" height="120" fill="#fee2e2" stroke="#ef4444" stroke-width="2" rx="8"/>
+    <text x="140" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ef4444" text-anchor="middle">
+      ❌ Off-by-One Errors
+    </text>
+    <text x="140" y="50" font-family="monospace" font-size="12" fill="#1e293b" text-anchor="middle">
+      while (left &lt; right)
+    </text>
+    <text x="140" y="70" font-family="monospace" font-size="12" fill="#1e293b" text-anchor="middle">
+      right = mid
+    </text>
+    <text x="140" y="95" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">
+      May miss the target element
+    </text>
+  </g>
+  
+  <!-- Pitfall 3: Unsorted Data -->
+  <g transform="translate(670, 60)">
+    <rect x="0" y="0" width="280" height="120" fill="#fee2e2" stroke="#ef4444" stroke-width="2" rx="8"/>
+    <text x="140" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ef4444" text-anchor="middle">
+      ❌ Unsorted Data
+    </text>
+    <text x="140" y="50" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">
+      [5, 12, 3, 45, 23, 67]
+    </text>
+    <text x="140" y="75" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">
+      Binary search requires sorted data!
+    </text>
+    <text x="140" y="100" font-family="Arial, sans-serif" font-size="12" fill="#10b981" text-anchor="middle">
+      ✓ Sort first or use linear search
+    </text>
+  </g>
+  
+  <!-- Best Practices -->
+  <g transform="translate(50, 210)">
+    <rect x="0" y="0" width="900" height="110" fill="#d1fae5" stroke="#10b981" stroke-width="2" rx="8"/>
+    <text x="450" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#10b981" text-anchor="middle">
+      ✓ Best Practices
+    </text>
+    <text x="30" y="55" font-family="Arial, sans-serif" font-size="13" fill="#1e293b">
+      • Use left + (right - left) / 2 for midpoint calculation
+    </text>
+    <text x="30" y="75" font-family="Arial, sans-serif" font-size="13" fill="#1e293b">
+      • For exact match: while (left &lt;= right), then left = mid + 1 and right = mid - 1
+    </text>
+    <text x="30" y="95" font-family="Arial, sans-serif" font-size="13" fill="#1e293b">
+      • Always verify data is sorted before applying binary search
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,71 @@
+<svg role="img" aria-labelledby="title desc" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <title id="title">Binary Search Hero Image</title>
+  <desc id="desc">Visual representation of binary search algorithm dividing search space in half with each step</desc>
+  
+  <!-- Background -->
+  <defs>
+    <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#heroGrad)"/>
+  
+  <!-- Title -->
+  <text x="600" y="80" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="white" text-anchor="middle">
+    Binary Search
+  </text>
+  <text x="600" y="130" font-family="Arial, sans-serif" font-size="24" fill="#e0e7ff" text-anchor="middle">
+    O(log n) - The Algorithm That Powers Billions of Searches
+  </text>
+  
+  <!-- Array visualization -->
+  <g transform="translate(150, 200)">
+    <!-- Full array -->
+    <rect x="0" y="0" width="900" height="60" fill="white" opacity="0.2" stroke="white" stroke-width="2"/>
+    <text x="450" y="40" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">
+      1,000,000 items
+    </text>
+    
+    <!-- After 1st comparison -->
+    <rect x="0" y="100" width="450" height="60" fill="white" opacity="0.3" stroke="white" stroke-width="2"/>
+    <text x="225" y="140" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">
+      500,000 items
+    </text>
+    <text x="950" y="140" font-family="Arial, sans-serif" font-size="14" fill="#10b981" text-anchor="end">
+      Step 1
+    </text>
+    
+    <!-- After 2nd comparison -->
+    <rect x="0" y="200" width="225" height="60" fill="white" opacity="0.4" stroke="white" stroke-width="2"/>
+    <text x="112" y="240" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">
+      250,000 items
+    </text>
+    <text x="950" y="240" font-family="Arial, sans-serif" font-size="14" fill="#10b981" text-anchor="end">
+      Step 2
+    </text>
+    
+    <!-- After 3rd comparison -->
+    <rect x="0" y="300" width="112" height="60" fill="white" opacity="0.5" stroke="white" stroke-width="2"/>
+    <text x="56" y="340" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">
+      125,000
+    </text>
+    <text x="950" y="340" font-family="Arial, sans-serif" font-size="14" fill="#10b981" text-anchor="end">
+      Step 3
+    </text>
+    
+    <!-- Dots -->
+    <text x="56" y="400" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle">
+      ...
+    </text>
+    
+    <!-- Final -->
+    <rect x="0" y="420" width="20" height="40" fill="#10b981" stroke="white" stroke-width="2"/>
+    <text x="10" y="445" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle">
+      1
+    </text>
+    <text x="950" y="445" font-family="Arial, sans-serif" font-size="14" fill="#10b981" text-anchor="end">
+      Step 20
+    </text>
+  </g>
+</svg>

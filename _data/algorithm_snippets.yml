@@ -5562,3 +5562,148 @@ max_heap_extract:
               }
           }
       }
+
+
+# ============================================
+# SEARCHING ALGORITHMS
+# ============================================
+
+binary_search:
+  name: "Binary Search"
+  description: "Search for target in sorted array using divide and conquer"
+  time_complexity: "O(log n)"
+  space_complexity: "O(1)"
+  languages:
+    python: |
+      def binary_search(arr, target):
+          """Search for target in sorted array"""
+          left, right = 0, len(arr) - 1
+          
+          while left <= right:
+              # Avoid integer overflow
+              mid = left + (right - left) // 2
+              
+              if arr[mid] == target:
+                  return mid  # Found target
+              elif arr[mid] < target:
+                  left = mid + 1  # Search right half
+              else:
+                  right = mid - 1  # Search left half
+          
+          return -1  # Target not found
+    
+    javascript: |
+      function binarySearch(arr, target) {
+        // Search for target in sorted array
+        let left = 0;
+        let right = arr.length - 1;
+        
+        while (left <= right) {
+          // Avoid integer overflow
+          const mid = left + Math.floor((right - left) / 2);
+          
+          if (arr[mid] === target) {
+            return mid;  // Found target
+          } else if (arr[mid] < target) {
+            left = mid + 1;  // Search right half
+          } else {
+            right = mid - 1;  // Search left half
+          }
+        }
+        
+        return -1;  // Target not found
+      }
+    
+    typescript: |
+      function binarySearch(arr: number[], target: number): number {
+        // Search for target in sorted array
+        let left = 0;
+        let right = arr.length - 1;
+        
+        while (left <= right) {
+          // Avoid integer overflow
+          const mid = left + Math.floor((right - left) / 2);
+          
+          if (arr[mid] === target) {
+            return mid;  // Found target
+          } else if (arr[mid] < target) {
+            left = mid + 1;  // Search right half
+          } else {
+            right = mid - 1;  // Search left half
+          }
+        }
+        
+        return -1;  // Target not found
+      }
+    
+    java: |
+      public class BinarySearch {
+          public static int binarySearch(int[] arr, int target) {
+              // Search for target in sorted array
+              int left = 0;
+              int right = arr.length - 1;
+              
+              while (left <= right) {
+                  // Avoid integer overflow
+                  int mid = left + (right - left) / 2;
+                  
+                  if (arr[mid] == target) {
+                      return mid;  // Found target
+                  } else if (arr[mid] < target) {
+                      left = mid + 1;  // Search right half
+                  } else {
+                      right = mid - 1;  // Search left half
+                  }
+              }
+              
+              return -1;  // Target not found
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      
+      int binarySearch(const std::vector<int>& arr, int target) {
+          // Search for target in sorted array
+          int left = 0;
+          int right = arr.size() - 1;
+          
+          while (left <= right) {
+              // Avoid integer overflow
+              int mid = left + (right - left) / 2;
+              
+              if (arr[mid] == target) {
+                  return mid;  // Found target
+              } else if (arr[mid] < target) {
+                  left = mid + 1;  // Search right half
+              } else {
+                  right = mid - 1;  // Search left half
+              }
+          }
+          
+          return -1;  // Target not found
+      }
+    
+    php: |
+      <?php
+      function binarySearch($arr, $target) {
+          // Search for target in sorted array
+          $left = 0;
+          $right = count($arr) - 1;
+          
+          while ($left <= $right) {
+              // Avoid integer overflow
+              $mid = $left + intdiv($right - $left, 2);
+              
+              if ($arr[$mid] == $target) {
+                  return $mid;  // Found target
+              } elseif ($arr[$mid] < $target) {
+                  $left = $mid + 1;  // Search right half
+              } else {
+                  $right = $mid - 1;  // Search left half
+              }
+          }
+          
+          return -1;  // Target not found
+      }
+      ?>

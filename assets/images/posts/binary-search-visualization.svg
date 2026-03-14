@@ -1,0 +1,83 @@
+<svg role="img" aria-labelledby="title desc" viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <title id="title">Binary Search Step-by-Step Visualization</title>
+  <desc id="desc">Shows how binary search narrows down the search space by comparing with middle element</desc>
+  
+  <!-- Background -->
+  <rect width="1000" height="400" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="500" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1e293b" text-anchor="middle">
+    Searching for 37 in Sorted Array
+  </text>
+  
+  <!-- Array -->
+  <g transform="translate(50, 60)">
+    <!-- Array elements -->
+    <rect x="0" y="0" width="50" height="50" fill="#e0e7ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="25" y="32" font-family="Arial, sans-serif" font-size="16" fill="#1e293b" text-anchor="middle">5</text>
+    
+    <rect x="60" y="0" width="50" height="50" fill="#e0e7ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="85" y="32" font-family="Arial, sans-serif" font-size="16" fill="#1e293b" text-anchor="middle">12</text>
+    
+    <rect x="120" y="0" width="50" height="50" fill="#e0e7ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="145" y="32" font-family="Arial, sans-serif" font-size="16" fill="#1e293b" text-anchor="middle">23</text>
+    
+    <rect x="180" y="0" width="50" height="50" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+    <text x="205" y="32" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">31</text>
+    <text x="205" y="75" font-family="Arial, sans-serif" font-size="12" fill="#f59e0b" text-anchor="middle">mid</text>
+    
+    <rect x="240" y="0" width="50" height="50" fill="#e0e7ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="265" y="32" font-family="Arial, sans-serif" font-size="16" fill="#1e293b" text-anchor="middle">37</text>
+    
+    <rect x="300" y="0" width="50" height="50" fill="#e0e7ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="325" y="32" font-family="Arial, sans-serif" font-size="16" fill="#1e293b" text-anchor="middle">45</text>
+    
+    <rect x="360" y="0" width="50" height="50" fill="#e0e7ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="385" y="32" font-family="Arial, sans-serif" font-size="16" fill="#1e293b" text-anchor="middle">58</text>
+    
+    <rect x="420" y="0" width="50" height="50" fill="#e0e7ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="445" y="32" font-family="Arial, sans-serif" font-size="16" fill="#1e293b" text-anchor="middle">67</text>
+    
+    <rect x="480" y="0" width="50" height="50" fill="#e0e7ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="505" y="32" font-family="Arial, sans-serif" font-size="16" fill="#1e293b" text-anchor="middle">89</text>
+    
+    <!-- Step 1 annotation -->
+    <text x="450" y="110" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">
+      Step 1: 37 &gt; 31, search right half →
+    </text>
+  </g>
+  
+  <!-- Step 2 -->
+  <g transform="translate(290, 180)">
+    <rect x="0" y="0" width="50" height="50" fill="#e0e7ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="25" y="32" font-family="Arial, sans-serif" font-size="16" fill="#1e293b" text-anchor="middle">37</text>
+    
+    <rect x="60" y="0" width="50" height="50" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+    <text x="85" y="32" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">45</text>
+    <text x="85" y="75" font-family="Arial, sans-serif" font-size="12" fill="#f59e0b" text-anchor="middle">mid</text>
+    
+    <rect x="120" y="0" width="50" height="50" fill="#e0e7ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="145" y="32" font-family="Arial, sans-serif" font-size="16" fill="#1e293b" text-anchor="middle">58</text>
+    
+    <rect x="180" y="0" width="50" height="50" fill="#e0e7ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="205" y="32" font-family="Arial, sans-serif" font-size="16" fill="#1e293b" text-anchor="middle">67</text>
+    
+    <rect x="240" y="0" width="50" height="50" fill="#e0e7ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="265" y="32" font-family="Arial, sans-serif" font-size="16" fill="#1e293b" text-anchor="middle">89</text>
+    
+    <text x="145" y="110" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">
+      Step 2: 37 &lt; 45, search left half →
+    </text>
+  </g>
+  
+  <!-- Step 3 - Found -->
+  <g transform="translate(290, 300)">
+    <rect x="0" y="0" width="50" height="50" fill="#d1fae5" stroke="#10b981" stroke-width="3"/>
+    <text x="25" y="32" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">37</text>
+    <text x="25" y="75" font-family="Arial, sans-serif" font-size="12" fill="#10b981" text-anchor="middle">FOUND!</text>
+    
+    <text x="100" y="32" font-family="Arial, sans-serif" font-size="14" fill="#10b981" text-anchor="start">
+      ✓ Step 3: 37 == 37, target found!
+    </text>
+  </g>
+</svg>
