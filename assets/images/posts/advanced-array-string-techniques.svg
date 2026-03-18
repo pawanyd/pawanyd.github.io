@@ -1,0 +1,157 @@
+<svg role="img" aria-labelledby="title desc" viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <title id="title">Advanced Array and String Techniques</title>
+  <desc id="desc">Bit manipulation, matrix operations, and advanced string algorithms</desc>
+  
+  <rect width="1000" height="400" fill="#f8fafc"/>
+  
+  <text x="500" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1e293b" text-anchor="middle">
+    Advanced Techniques
+  </text>
+  
+  <!-- Bit Manipulation -->
+  <g transform="translate(50, 60)">
+    <text x="150" y="0" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2563eb" text-anchor="middle">
+      Bit Manipulation: XOR for Single Number
+    </text>
+    
+    <!-- Array with duplicates -->
+    <rect x="0" y="20" width="40" height="30" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+    <text x="20" y="40" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">4</text>
+    
+    <rect x="50" y="20" width="40" height="30" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+    <text x="70" y="40" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">1</text>
+    
+    <rect x="100" y="20" width="40" height="30" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+    <text x="120" y="40" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">2</text>
+    
+    <rect x="150" y="20" width="40" height="30" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+    <text x="170" y="40" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">1</text>
+    
+    <rect x="200" y="20" width="40" height="30" fill="#dcfce7" stroke="#10b981" stroke-width="2"/>
+    <text x="220" y="40" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">2</text>
+    
+    <!-- XOR operation -->
+    <text x="150" y="75" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">
+      4 ⊕ 1 ⊕ 2 ⊕ 1 ⊕ 2 = 4
+    </text>
+    <text x="150" y="95" font-family="Arial, sans-serif" font-size="11" fill="#10b981" text-anchor="middle">
+      Duplicates cancel out: a ⊕ a = 0
+    </text>
+  </g>
+  
+  <!-- Matrix Traversal -->
+  <g transform="translate(400, 60)">
+    <text x="150" y="0" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#7c3aed" text-anchor="middle">
+      Matrix Spiral Traversal
+    </text>
+    
+    <!-- 4x4 Matrix -->
+    <g transform="translate(50, 20)">
+      <!-- Row 1 -->
+      <rect x="0" y="0" width="25" height="25" fill="#f3e8ff" stroke="#7c3aed" stroke-width="1"/>
+      <text x="12" y="17" font-family="Arial, sans-serif" font-size="10" fill="#1e293b" text-anchor="middle">1</text>
+      
+      <rect x="25" y="0" width="25" height="25" fill="#f3e8ff" stroke="#7c3aed" stroke-width="1"/>
+      <text x="37" y="17" font-family="Arial, sans-serif" font-size="10" fill="#1e293b" text-anchor="middle">2</text>
+      
+      <rect x="50" y="0" width="25" height="25" fill="#f3e8ff" stroke="#7c3aed" stroke-width="1"/>
+      <text x="62" y="17" font-family="Arial, sans-serif" font-size="10" fill="#1e293b" text-anchor="middle">3</text>
+      
+      <rect x="75" y="0" width="25" height="25" fill="#f3e8ff" stroke="#7c3aed" stroke-width="1"/>
+      <text x="87" y="17" font-family="Arial, sans-serif" font-size="10" fill="#1e293b" text-anchor="middle">4</text>
+      
+      <!-- Row 2 -->
+      <rect x="0" y="25" width="25" height="25" fill="#f3e8ff" stroke="#7c3aed" stroke-width="1"/>
+      <text x="12" y="42" font-family="Arial, sans-serif" font-size="10" fill="#1e293b" text-anchor="middle">5</text>
+      
+      <rect x="25" y="25" width="25" height="25" fill="#f3e8ff" stroke="#7c3aed" stroke-width="1"/>
+      <text x="37" y="42" font-family="Arial, sans-serif" font-size="10" fill="#1e293b" text-anchor="middle">6</text>
+      
+      <rect x="50" y="25" width="25" height="25" fill="#f3e8ff" stroke="#7c3aed" stroke-width="1"/>
+      <text x="62" y="42" font-family="Arial, sans-serif" font-size="10" fill="#1e293b" text-anchor="middle">7</text>
+      
+      <rect x="75" y="25" width="25" height="25" fill="#f3e8ff" stroke="#7c3aed" stroke-width="1"/>
+      <text x="87" y="42" font-family="Arial, sans-serif" font-size="10" fill="#1e293b" text-anchor="middle">8</text>
+      
+      <!-- Spiral path -->
+      <path d="M12 12 L37 12 L62 12 L87 12 L87 37 L87 62 L62 62 L37 62 L12 62 L12 37 L37 37 L62 37" 
+            stroke="#10b981" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+    </g>
+    
+    <text x="150" y="120" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">
+      Output: 1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10
+    </text>
+  </g>
+  
+  <!-- String Algorithms -->
+  <g transform="translate(50, 220)">
+    <text x="200" y="0" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f59e0b" text-anchor="middle">
+      Advanced String Matching: KMP Algorithm
+    </text>
+    
+    <!-- Pattern and text -->
+    <text x="0" y="35" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Text:</text>
+    <text x="50" y="35" font-family="monospace" font-size="12" fill="#1e293b">ABABCABABA</text>
+    
+    <text x="0" y="55" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Pattern:</text>
+    <text x="50" y="55" font-family="monospace" font-size="12" fill="#f59e0b">ABABA</text>
+    
+    <!-- Failure function -->
+    <text x="0" y="85" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Failure function:</text>
+    <rect x="120" y="70" width="25" height="20" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="132" y="83" font-family="Arial, sans-serif" font-size="10" fill="#1e293b" text-anchor="middle">0</text>
+    
+    <rect x="145" y="70" width="25" height="20" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="157" y="83" font-family="Arial, sans-serif" font-size="10" fill="#1e293b" text-anchor="middle">0</text>
+    
+    <rect x="170" y="70" width="25" height="20" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="182" y="83" font-family="Arial, sans-serif" font-size="10" fill="#1e293b" text-anchor="middle">1</text>
+    
+    <rect x="195" y="70" width="25" height="20" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="207" y="83" font-family="Arial, sans-serif" font-size="10" fill="#1e293b" text-anchor="middle">2</text>
+    
+    <rect x="220" y="70" width="25" height="20" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="232" y="83" font-family="Arial, sans-serif" font-size="10" fill="#1e293b" text-anchor="middle">3</text>
+    
+    <text x="200" y="115" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">
+      Avoids redundant comparisons on mismatch
+    </text>
+  </g>
+  
+  <!-- Performance Comparison -->
+  <g transform="translate(550, 220)">
+    <rect x="0" y="0" width="400" height="140" fill="white" stroke="#e2e8f0" stroke-width="2" rx="8"/>
+    <text x="200" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">
+      Algorithm Complexity
+    </text>
+    
+    <text x="20" y="50" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1e293b">Technique</text>
+    <text x="150" y="50" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1e293b">Time</text>
+    <text x="220" y="50" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1e293b">Space</text>
+    <text x="290" y="50" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1e293b">Use Case</text>
+    
+    <line x1="20" y1="60" x2="360" y2="60" stroke="#e2e8f0" stroke-width="1"/>
+    
+    <text x="20" y="80" font-family="Arial, sans-serif" font-size="11" fill="#2563eb">XOR Single Number</text>
+    <text x="150" y="80" font-family="Arial, sans-serif" font-size="11" fill="#10b981">O(n)</text>
+    <text x="220" y="80" font-family="Arial, sans-serif" font-size="11" fill="#10b981">O(1)</text>
+    <text x="290" y="80" font-family="Arial, sans-serif" font-size="9" fill="#64748b">Find unique</text>
+    
+    <text x="20" y="100" font-family="Arial, sans-serif" font-size="11" fill="#7c3aed">Matrix Spiral</text>
+    <text x="150" y="100" font-family="Arial, sans-serif" font-size="11" fill="#10b981">O(m×n)</text>
+    <text x="220" y="100" font-family="Arial, sans-serif" font-size="11" fill="#10b981">O(1)</text>
+    <text x="290" y="100" font-family="Arial, sans-serif" font-size="9" fill="#64748b">Traversal</text>
+    
+    <text x="20" y="120" font-family="Arial, sans-serif" font-size="11" fill="#f59e0b">KMP Search</text>
+    <text x="150" y="120" font-family="Arial, sans-serif" font-size="11" fill="#10b981">O(n+m)</text>
+    <text x="220" y="120" font-family="Arial, sans-serif" font-size="11" fill="#f59e0b">O(m)</text>
+    <text x="290" y="120" font-family="Arial, sans-serif" font-size="9" fill="#64748b">Pattern match</text>
+  </g>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#10b981"/>
+    </marker>
+  </defs>
+</svg>

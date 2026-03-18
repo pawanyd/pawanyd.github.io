@@ -5707,3 +5707,566 @@ binary_search:
           return -1;  // Target not found
       }
       ?>
+
+# ============================================
+# ARRAY & STRING PATTERNS
+# ============================================
+
+two_pointers_palindrome:
+  name: "Two Pointers Palindrome Check"
+  description: "Check if a string is a palindrome using two pointers"
+  time_complexity: "O(n)"
+  space_complexity: "O(1)"
+  languages:
+    python: |
+      def is_palindrome(s):
+          """Check if string is palindrome using two pointers"""
+          left, right = 0, len(s) - 1
+          
+          while left < right:
+              if s[left] != s[right]:
+                  return False
+              left += 1
+              right -= 1
+          
+          return True
+    
+    javascript: |
+      function isPalindrome(s) {
+        // Check if string is palindrome using two pointers
+        let left = 0;
+        let right = s.length - 1;
+        
+        while (left < right) {
+          if (s[left] !== s[right]) {
+            return false;
+          }
+          left++;
+          right--;
+        }
+        
+        return true;
+      }
+    
+    typescript: |
+      function isPalindrome(s: string): boolean {
+        // Check if string is palindrome using two pointers
+        let left = 0;
+        let right = s.length - 1;
+        
+        while (left < right) {
+          if (s[left] !== s[right]) {
+            return false;
+          }
+          left++;
+          right--;
+        }
+        
+        return true;
+      }
+    
+    java: |
+      public class TwoPointers {
+          public static boolean isPalindrome(String s) {
+              // Check if string is palindrome using two pointers
+              int left = 0;
+              int right = s.length() - 1;
+              
+              while (left < right) {
+                  if (s.charAt(left) != s.charAt(right)) {
+                      return false;
+                  }
+                  left++;
+                  right--;
+              }
+              
+              return true;
+          }
+      }
+    
+    cpp: |
+      #include <string>
+      
+      bool isPalindrome(const std::string& s) {
+          // Check if string is palindrome using two pointers
+          int left = 0;
+          int right = s.length() - 1;
+          
+          while (left < right) {
+              if (s[left] != s[right]) {
+                  return false;
+              }
+              left++;
+              right--;
+          }
+          
+          return true;
+      }
+    
+    php: |
+      <?php
+      function isPalindrome($s) {
+          // Check if string is palindrome using two pointers
+          $left = 0;
+          $right = strlen($s) - 1;
+          
+          while ($left < $right) {
+              if ($s[$left] !== $s[$right]) {
+                  return false;
+              }
+              $left++;
+              $right--;
+          }
+          
+          return true;
+      }
+      ?>
+
+sliding_window_max_sum:
+  name: "Sliding Window Maximum Sum"
+  description: "Find maximum sum of subarray of size k using sliding window"
+  time_complexity: "O(n)"
+  space_complexity: "O(1)"
+  languages:
+    python: |
+      def max_sum_subarray(arr, k):
+          """Find maximum sum of subarray of size k"""
+          if len(arr) < k:
+              return None
+          
+          # Calculate sum of first window
+          window_sum = sum(arr[:k])
+          max_sum = window_sum
+          
+          # Slide the window
+          for i in range(k, len(arr)):
+              window_sum = window_sum - arr[i-k] + arr[i]
+              max_sum = max(max_sum, window_sum)
+          
+          return max_sum
+    
+    javascript: |
+      function maxSumSubarray(arr, k) {
+        // Find maximum sum of subarray of size k
+        if (arr.length < k) return null;
+        
+        // Calculate sum of first window
+        let windowSum = arr.slice(0, k).reduce((a, b) => a + b, 0);
+        let maxSum = windowSum;
+        
+        // Slide the window
+        for (let i = k; i < arr.length; i++) {
+          windowSum = windowSum - arr[i - k] + arr[i];
+          maxSum = Math.max(maxSum, windowSum);
+        }
+        
+        return maxSum;
+      }
+    
+    typescript: |
+      function maxSumSubarray(arr: number[], k: number): number | null {
+        // Find maximum sum of subarray of size k
+        if (arr.length < k) return null;
+        
+        // Calculate sum of first window
+        let windowSum = arr.slice(0, k).reduce((a, b) => a + b, 0);
+        let maxSum = windowSum;
+        
+        // Slide the window
+        for (let i = k; i < arr.length; i++) {
+          windowSum = windowSum - arr[i - k] + arr[i];
+          maxSum = Math.max(maxSum, windowSum);
+        }
+        
+        return maxSum;
+      }
+    
+    java: |
+      public class SlidingWindow {
+          public static int maxSumSubarray(int[] arr, int k) {
+              // Find maximum sum of subarray of size k
+              if (arr.length < k) return -1;
+              
+              // Calculate sum of first window
+              int windowSum = 0;
+              for (int i = 0; i < k; i++) {
+                  windowSum += arr[i];
+              }
+              int maxSum = windowSum;
+              
+              // Slide the window
+              for (int i = k; i < arr.length; i++) {
+                  windowSum = windowSum - arr[i - k] + arr[i];
+                  maxSum = Math.max(maxSum, windowSum);
+              }
+              
+              return maxSum;
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      #include <algorithm>
+      
+      int maxSumSubarray(const std::vector<int>& arr, int k) {
+          // Find maximum sum of subarray of size k
+          if (arr.size() < k) return -1;
+          
+          // Calculate sum of first window
+          int windowSum = 0;
+          for (int i = 0; i < k; i++) {
+              windowSum += arr[i];
+          }
+          int maxSum = windowSum;
+          
+          // Slide the window
+          for (int i = k; i < arr.size(); i++) {
+              windowSum = windowSum - arr[i - k] + arr[i];
+              maxSum = std::max(maxSum, windowSum);
+          }
+          
+          return maxSum;
+      }
+    
+    php: |
+      <?php
+      function maxSumSubarray($arr, $k) {
+          // Find maximum sum of subarray of size k
+          if (count($arr) < $k) return null;
+          
+          // Calculate sum of first window
+          $windowSum = array_sum(array_slice($arr, 0, $k));
+          $maxSum = $windowSum;
+          
+          // Slide the window
+          for ($i = $k; $i < count($arr); $i++) {
+              $windowSum = $windowSum - $arr[$i - $k] + $arr[$i];
+              $maxSum = max($maxSum, $windowSum);
+          }
+          
+          return $maxSum;
+      }
+      ?>
+
+longest_substring_unique:
+  name: "Longest Substring Without Repeating Characters"
+  description: "Find length of longest substring without repeating characters"
+  time_complexity: "O(n)"
+  space_complexity: "O(min(m,n))"
+  languages:
+    python: |
+      def longest_unique_substring(s):
+          """Find length of longest substring without repeating characters"""
+          char_set = set()
+          left = 0
+          max_length = 0
+          
+          for right in range(len(s)):
+              # Shrink window until no duplicates
+              while s[right] in char_set:
+                  char_set.remove(s[left])
+                  left += 1
+              
+              char_set.add(s[right])
+              max_length = max(max_length, right - left + 1)
+          
+          return max_length
+    
+    javascript: |
+      function longestUniqueSubstring(s) {
+        // Find length of longest substring without repeating characters
+        const charSet = new Set();
+        let left = 0;
+        let maxLength = 0;
+        
+        for (let right = 0; right < s.length; right++) {
+          // Shrink window until no duplicates
+          while (charSet.has(s[right])) {
+            charSet.delete(s[left]);
+            left++;
+          }
+          
+          charSet.add(s[right]);
+          maxLength = Math.max(maxLength, right - left + 1);
+        }
+        
+        return maxLength;
+      }
+    
+    typescript: |
+      function longestUniqueSubstring(s: string): number {
+        // Find length of longest substring without repeating characters
+        const charSet = new Set<string>();
+        let left = 0;
+        let maxLength = 0;
+        
+        for (let right = 0; right < s.length; right++) {
+          // Shrink window until no duplicates
+          while (charSet.has(s[right])) {
+            charSet.delete(s[left]);
+            left++;
+          }
+          
+          charSet.add(s[right]);
+          maxLength = Math.max(maxLength, right - left + 1);
+        }
+        
+        return maxLength;
+      }
+    
+    java: |
+      import java.util.HashSet;
+      import java.util.Set;
+      
+      public class LongestSubstring {
+          public static int longestUniqueSubstring(String s) {
+              // Find length of longest substring without repeating characters
+              Set<Character> charSet = new HashSet<>();
+              int left = 0;
+              int maxLength = 0;
+              
+              for (int right = 0; right < s.length(); right++) {
+                  // Shrink window until no duplicates
+                  while (charSet.contains(s.charAt(right))) {
+                      charSet.remove(s.charAt(left));
+                      left++;
+                  }
+                  
+                  charSet.add(s.charAt(right));
+                  maxLength = Math.max(maxLength, right - left + 1);
+              }
+              
+              return maxLength;
+          }
+      }
+    
+    cpp: |
+      #include <string>
+      #include <unordered_set>
+      #include <algorithm>
+      
+      int longestUniqueSubstring(const std::string& s) {
+          // Find length of longest substring without repeating characters
+          std::unordered_set<char> charSet;
+          int left = 0;
+          int maxLength = 0;
+          
+          for (int right = 0; right < s.length(); right++) {
+              // Shrink window until no duplicates
+              while (charSet.find(s[right]) != charSet.end()) {
+                  charSet.erase(s[left]);
+                  left++;
+              }
+              
+              charSet.insert(s[right]);
+              maxLength = std::max(maxLength, right - left + 1);
+          }
+          
+          return maxLength;
+      }
+    
+    php: |
+      <?php
+      function longestUniqueSubstring($s) {
+          // Find length of longest substring without repeating characters
+          $charSet = array();
+          $left = 0;
+          $maxLength = 0;
+          
+          for ($right = 0; $right < strlen($s); $right++) {
+              // Shrink window until no duplicates
+              while (in_array($s[$right], $charSet)) {
+                  $key = array_search($s[$left], $charSet);
+                  unset($charSet[$key]);
+                  $left++;
+              }
+              
+              $charSet[] = $s[$right];
+              $maxLength = max($maxLength, $right - $left + 1);
+          }
+          
+          return $maxLength;
+      }
+      ?>
+
+prefix_sum_range_query:
+  name: "Prefix Sum Range Query"
+  description: "Answer range sum queries in O(1) time using prefix sums"
+  time_complexity: "O(n) preprocessing, O(1) query"
+  space_complexity: "O(n)"
+  languages:
+    python: |
+      class PrefixSum:
+          def __init__(self, arr):
+              """Build prefix sum array for range queries"""
+              self.prefix = [0] * (len(arr) + 1)
+              for i in range(len(arr)):
+                  self.prefix[i + 1] = self.prefix[i] + arr[i]
+          
+          def range_sum(self, left, right):
+              """Get sum of elements from index left to right (inclusive)"""
+              return self.prefix[right + 1] - self.prefix[left]
+    
+    javascript: |
+      class PrefixSum {
+        constructor(arr) {
+          // Build prefix sum array for range queries
+          this.prefix = new Array(arr.length + 1).fill(0);
+          for (let i = 0; i < arr.length; i++) {
+            this.prefix[i + 1] = this.prefix[i] + arr[i];
+          }
+        }
+        
+        rangeSum(left, right) {
+          // Get sum of elements from index left to right (inclusive)
+          return this.prefix[right + 1] - this.prefix[left];
+        }
+      }
+    
+    typescript: |
+      class PrefixSum {
+        private prefix: number[];
+        
+        constructor(arr: number[]) {
+          // Build prefix sum array for range queries
+          this.prefix = new Array(arr.length + 1).fill(0);
+          for (let i = 0; i < arr.length; i++) {
+            this.prefix[i + 1] = this.prefix[i] + arr[i];
+          }
+        }
+        
+        rangeSum(left: number, right: number): number {
+          // Get sum of elements from index left to right (inclusive)
+          return this.prefix[right + 1] - this.prefix[left];
+        }
+      }
+    
+    java: |
+      public class PrefixSum {
+          private int[] prefix;
+          
+          public PrefixSum(int[] arr) {
+              // Build prefix sum array for range queries
+              prefix = new int[arr.length + 1];
+              for (int i = 0; i < arr.length; i++) {
+                  prefix[i + 1] = prefix[i] + arr[i];
+              }
+          }
+          
+          public int rangeSum(int left, int right) {
+              // Get sum of elements from index left to right (inclusive)
+              return prefix[right + 1] - prefix[left];
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      
+      class PrefixSum {
+      private:
+          std::vector<int> prefix;
+          
+      public:
+          PrefixSum(const std::vector<int>& arr) {
+              // Build prefix sum array for range queries
+              prefix.resize(arr.size() + 1, 0);
+              for (int i = 0; i < arr.size(); i++) {
+                  prefix[i + 1] = prefix[i] + arr[i];
+              }
+          }
+          
+          int rangeSum(int left, int right) {
+              // Get sum of elements from index left to right (inclusive)
+              return prefix[right + 1] - prefix[left];
+          }
+      };
+    
+    php: |
+      <?php
+      class PrefixSum {
+          private $prefix;
+          
+          public function __construct($arr) {
+              // Build prefix sum array for range queries
+              $this->prefix = array_fill(0, count($arr) + 1, 0);
+              for ($i = 0; $i < count($arr); $i++) {
+                  $this->prefix[$i + 1] = $this->prefix[$i] + $arr[$i];
+              }
+          }
+          
+          public function rangeSum($left, $right) {
+              // Get sum of elements from index left to right (inclusive)
+              return $this->prefix[$right + 1] - $this->prefix[$left];
+          }
+      }
+      ?>
+
+single_number_xor:
+  name: "Single Number Using XOR"
+  description: "Find the single number in array where every other number appears twice"
+  time_complexity: "O(n)"
+  space_complexity: "O(1)"
+  languages:
+    python: |
+      def single_number(nums):
+          """Find single number using XOR property: a ^ a = 0"""
+          result = 0
+          for num in nums:
+              result ^= num
+          return result
+    
+    javascript: |
+      function singleNumber(nums) {
+        // Find single number using XOR property: a ^ a = 0
+        let result = 0;
+        for (const num of nums) {
+          result ^= num;
+        }
+        return result;
+      }
+    
+    typescript: |
+      function singleNumber(nums: number[]): number {
+        // Find single number using XOR property: a ^ a = 0
+        let result = 0;
+        for (const num of nums) {
+          result ^= num;
+        }
+        return result;
+      }
+    
+    java: |
+      public class SingleNumber {
+          public static int singleNumber(int[] nums) {
+              // Find single number using XOR property: a ^ a = 0
+              int result = 0;
+              for (int num : nums) {
+                  result ^= num;
+              }
+              return result;
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      
+      int singleNumber(const std::vector<int>& nums) {
+          // Find single number using XOR property: a ^ a = 0
+          int result = 0;
+          for (int num : nums) {
+              result ^= num;
+          }
+          return result;
+      }
+    
+    php: |
+      <?php
+      function singleNumber($nums) {
+          // Find single number using XOR property: a ^ a = 0
+          $result = 0;
+          foreach ($nums as $num) {
+              $result ^= $num;
+          }
+          return $result;
+      }
+      ?>

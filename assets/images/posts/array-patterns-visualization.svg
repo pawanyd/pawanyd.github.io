@@ -1,0 +1,192 @@
+<svg role="img" aria-labelledby="title desc" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+  <title id="title">Array Patterns Visualization</title>
+  <desc id="desc">Visual demonstration of two pointers, sliding window, and prefix sum patterns</desc>
+  
+  <rect width="1000" height="500" fill="#f8fafc"/>
+  
+  <text x="500" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1e293b" text-anchor="middle">
+    Essential Array Patterns
+  </text>
+  
+  <!-- Two Pointers Pattern -->
+  <g transform="translate(50, 60)">
+    <text x="150" y="0" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2563eb" text-anchor="middle">
+      Two Pointers: Palindrome Check
+    </text>
+    
+    <!-- Array -->
+    <rect x="0" y="20" width="40" height="40" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="20" y="45" font-family="Arial, sans-serif" font-size="14" fill="#1e293b" text-anchor="middle">r</text>
+    
+    <rect x="40" y="20" width="40" height="40" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="60" y="45" font-family="Arial, sans-serif" font-size="14" fill="#1e293b" text-anchor="middle">a</text>
+    
+    <rect x="80" y="20" width="40" height="40" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="100" y="45" font-family="Arial, sans-serif" font-size="14" fill="#1e293b" text-anchor="middle">c</text>
+    
+    <rect x="120" y="20" width="40" height="40" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="140" y="45" font-family="Arial, sans-serif" font-size="14" fill="#1e293b" text-anchor="middle">e</text>
+    
+    <rect x="160" y="20" width="40" height="40" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="180" y="45" font-family="Arial, sans-serif" font-size="14" fill="#1e293b" text-anchor="middle">c</text>
+    
+    <rect x="200" y="20" width="40" height="40" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="220" y="45" font-family="Arial, sans-serif" font-size="14" fill="#1e293b" text-anchor="middle">a</text>
+    
+    <rect x="240" y="20" width="40" height="40" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="260" y="45" font-family="Arial, sans-serif" font-size="14" fill="#1e293b" text-anchor="middle">r</text>
+    
+    <!-- Pointers -->
+    <path d="M20 80 L20 70" stroke="#10b981" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <text x="20" y="95" font-family="Arial, sans-serif" font-size="12" fill="#10b981" text-anchor="middle">left</text>
+    
+    <path d="M260 80 L260 70" stroke="#ef4444" stroke-width="3" marker-end="url(#arrowhead2)"/>
+    <text x="260" y="95" font-family="Arial, sans-serif" font-size="12" fill="#ef4444" text-anchor="middle">right</text>
+    
+    <text x="140" y="120" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">
+      Compare characters, move pointers inward
+    </text>
+  </g>
+  
+  <!-- Sliding Window Pattern -->
+  <g transform="translate(400, 60)">
+    <text x="150" y="0" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#7c3aed" text-anchor="middle">
+      Sliding Window: Max Sum Subarray (k=3)
+    </text>
+    
+    <!-- Array -->
+    <rect x="0" y="20" width="40" height="40" fill="#f3e8ff" stroke="#7c3aed" stroke-width="1"/>
+    <text x="20" y="45" font-family="Arial, sans-serif" font-size="14" fill="#1e293b" text-anchor="middle">2</text>
+    
+    <rect x="40" y="20" width="40" height="40" fill="#e0e7ff" stroke="#7c3aed" stroke-width="3"/>
+    <text x="60" y="45" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">1</text>
+    
+    <rect x="80" y="20" width="40" height="40" fill="#e0e7ff" stroke="#7c3aed" stroke-width="3"/>
+    <text x="100" y="45" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">5</text>
+    
+    <rect x="120" y="20" width="40" height="40" fill="#e0e7ff" stroke="#7c3aed" stroke-width="3"/>
+    <text x="140" y="45" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">3</text>
+    
+    <rect x="160" y="20" width="40" height="40" fill="#f3e8ff" stroke="#7c3aed" stroke-width="1"/>
+    <text x="180" y="45" font-family="Arial, sans-serif" font-size="14" fill="#1e293b" text-anchor="middle">2</text>
+    
+    <rect x="200" y="20" width="40" height="40" fill="#f3e8ff" stroke="#7c3aed" stroke-width="1"/>
+    <text x="220" y="45" font-family="Arial, sans-serif" font-size="14" fill="#1e293b" text-anchor="middle">4</text>
+    
+    <rect x="240" y="20" width="40" height="40" fill="#f3e8ff" stroke="#7c3aed" stroke-width="1"/>
+    <text x="260" y="45" font-family="Arial, sans-serif" font-size="14" fill="#1e293b" text-anchor="middle">1</text>
+    
+    <!-- Window indicator -->
+    <rect x="35" y="15" width="130" height="50" fill="none" stroke="#10b981" stroke-width="3" stroke-dasharray="5,5" rx="5"/>
+    <text x="100" y="80" font-family="Arial, sans-serif" font-size="12" fill="#10b981" text-anchor="middle">
+      Current window: sum = 9
+    </text>
+    
+    <text x="140" y="100" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">
+      Slide window right, update sum efficiently
+    </text>
+  </g>
+  
+  <!-- Prefix Sum Pattern -->
+  <g transform="translate(50, 250)">
+    <text x="200" y="0" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f59e0b" text-anchor="middle">
+      Prefix Sum: Range Query O(1)
+    </text>
+    
+    <!-- Original Array -->
+    <text x="0" y="35" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Original:</text>
+    <rect x="80" y="20" width="40" height="30" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="100" y="40" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">3</text>
+    
+    <rect x="120" y="20" width="40" height="30" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="140" y="40" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">1</text>
+    
+    <rect x="160" y="20" width="40" height="30" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="180" y="40" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">4</text>
+    
+    <rect x="200" y="20" width="40" height="30" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="220" y="40" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">2</text>
+    
+    <rect x="240" y="20" width="40" height="30" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="260" y="40" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">5</text>
+    
+    <rect x="280" y="20" width="40" height="30" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="300" y="40" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" text-anchor="middle">1</text>
+    
+    <!-- Prefix Sum Array -->
+    <text x="0" y="85" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Prefix:</text>
+    <rect x="80" y="70" width="40" height="30" fill="#dcfce7" stroke="#10b981" stroke-width="2"/>
+    <text x="100" y="90" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">3</text>
+    
+    <rect x="120" y="70" width="40" height="30" fill="#dcfce7" stroke="#10b981" stroke-width="2"/>
+    <text x="140" y="90" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">4</text>
+    
+    <rect x="160" y="70" width="40" height="30" fill="#dcfce7" stroke="#10b981" stroke-width="2"/>
+    <text x="180" y="90" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">8</text>
+    
+    <rect x="200" y="70" width="40" height="30" fill="#dcfce7" stroke="#10b981" stroke-width="2"/>
+    <text x="220" y="90" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">10</text>
+    
+    <rect x="240" y="70" width="40" height="30" fill="#dcfce7" stroke="#10b981" stroke-width="2"/>
+    <text x="260" y="90" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">15</text>
+    
+    <rect x="280" y="70" width="40" height="30" fill="#dcfce7" stroke="#10b981" stroke-width="2"/>
+    <text x="300" y="90" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">16</text>
+    
+    <!-- Range query example -->
+    <rect x="155" y="15" width="90" height="40" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="5,5" rx="5"/>
+    <text x="200" y="125" font-family="Arial, sans-serif" font-size="12" fill="#ef4444" text-anchor="middle">
+      Sum(1,3) = prefix[3] - prefix[0] = 10 - 3 = 7
+    </text>
+    <text x="200" y="145" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">
+      Any range query in O(1) time!
+    </text>
+  </g>
+  
+  <!-- Performance Comparison -->
+  <g transform="translate(550, 250)">
+    <rect x="0" y="0" width="400" height="180" fill="white" stroke="#e2e8f0" stroke-width="2" rx="8"/>
+    <text x="200" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">
+      Pattern Performance
+    </text>
+    
+    <text x="20" y="55" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">Pattern</text>
+    <text x="150" y="55" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">Time</text>
+    <text x="220" y="55" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">Space</text>
+    <text x="290" y="55" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">Use Case</text>
+    
+    <line x1="20" y1="65" x2="360" y2="65" stroke="#e2e8f0" stroke-width="1"/>
+    
+    <text x="20" y="85" font-family="Arial, sans-serif" font-size="12" fill="#2563eb">Two Pointers</text>
+    <text x="150" y="85" font-family="Arial, sans-serif" font-size="12" fill="#10b981">O(n)</text>
+    <text x="220" y="85" font-family="Arial, sans-serif" font-size="12" fill="#10b981">O(1)</text>
+    <text x="290" y="85" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Palindromes, pairs</text>
+    
+    <text x="20" y="105" font-family="Arial, sans-serif" font-size="12" fill="#7c3aed">Sliding Window</text>
+    <text x="150" y="105" font-family="Arial, sans-serif" font-size="12" fill="#10b981">O(n)</text>
+    <text x="220" y="105" font-family="Arial, sans-serif" font-size="12" fill="#10b981">O(1)</text>
+    <text x="290" y="105" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Subarrays</text>
+    
+    <text x="20" y="125" font-family="Arial, sans-serif" font-size="12" fill="#f59e0b">Prefix Sum</text>
+    <text x="150" y="125" font-family="Arial, sans-serif" font-size="12" fill="#f59e0b">O(n) prep</text>
+    <text x="220" y="125" font-family="Arial, sans-serif" font-size="12" fill="#f59e0b">O(n)</text>
+    <text x="290" y="125" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Range queries</text>
+    
+    <text x="150" y="145" font-family="Arial, sans-serif" font-size="12" fill="#10b981">O(1) query</text>
+    
+    <text x="20" y="165" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Brute Force</text>
+    <text x="150" y="165" font-family="Arial, sans-serif" font-size="12" fill="#ef4444">O(n²)</text>
+    <text x="220" y="165" font-family="Arial, sans-serif" font-size="12" fill="#10b981">O(1)</text>
+    <text x="290" y="165" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Avoid this!</text>
+  </g>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
+    </marker>
+    <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ef4444"/>
+    </marker>
+  </defs>
+</svg>

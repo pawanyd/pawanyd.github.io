@@ -1,0 +1,108 @@
+<svg role="img" aria-labelledby="title desc" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <title id="title">Arrays and Strings Hero Image</title>
+  <desc id="desc">Visual representation of arrays and strings as the foundation of programming</desc>
+  
+  <!-- Background -->
+  <defs>
+    <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#heroGrad)"/>
+  
+  <!-- Title -->
+  <text x="600" y="80" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="white" text-anchor="middle">
+    Arrays &amp; Strings
+  </text>
+  <text x="600" y="130" font-family="Arial, sans-serif" font-size="24" fill="#e0f2fe" text-anchor="middle">
+    The Foundation Every Developer Must Master
+  </text>
+  
+  <!-- Array visualization -->
+  <g transform="translate(150, 200)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">
+      Array: Random Access O(1)
+    </text>
+    
+    <!-- Array boxes -->
+    <rect x="0" y="20" width="60" height="50" fill="white" stroke="#2563eb" stroke-width="2" rx="4"/>
+    <text x="30" y="50" font-family="Arial, sans-serif" font-size="16" fill="#1e293b" text-anchor="middle">0</text>
+    
+    <rect x="70" y="20" width="60" height="50" fill="white" stroke="#2563eb" stroke-width="2" rx="4"/>
+    <text x="100" y="50" font-family="Arial, sans-serif" font-size="16" fill="#1e293b" text-anchor="middle">1</text>
+    
+    <rect x="140" y="20" width="60" height="50" fill="white" stroke="#2563eb" stroke-width="2" rx="4"/>
+    <text x="170" y="50" font-family="Arial, sans-serif" font-size="16" fill="#1e293b" text-anchor="middle">2</text>
+    
+    <rect x="210" y="20" width="60" height="50" fill="#10b981" stroke="#059669" stroke-width="3" rx="4"/>
+    <text x="240" y="50" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">3</text>
+    
+    <rect x="280" y="20" width="60" height="50" fill="white" stroke="#2563eb" stroke-width="2" rx="4"/>
+    <text x="310" y="50" font-family="Arial, sans-serif" font-size="16" fill="#1e293b" text-anchor="middle">4</text>
+    
+    <!-- Arrow pointing to index 3 -->
+    <path d="M240 90 L240 80" stroke="#10b981" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <text x="240" y="110" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle">
+      Direct access to index 3
+    </text>
+  </g>
+  
+  <!-- String visualization -->
+  <g transform="translate(150, 350)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">
+      String: Character Array Processing
+    </text>
+    
+    <!-- String characters -->
+    <rect x="0" y="20" width="40" height="50" fill="white" stroke="#7c3aed" stroke-width="2" rx="4"/>
+    <text x="20" y="50" font-family="Arial, sans-serif" font-size="16" fill="#1e293b" text-anchor="middle">H</text>
+    
+    <rect x="50" y="20" width="40" height="50" fill="white" stroke="#7c3aed" stroke-width="2" rx="4"/>
+    <text x="70" y="50" font-family="Arial, sans-serif" font-size="16" fill="#1e293b" text-anchor="middle">e</text>
+    
+    <rect x="100" y="20" width="40" height="50" fill="white" stroke="#7c3aed" stroke-width="2" rx="4"/>
+    <text x="120" y="50" font-family="Arial, sans-serif" font-size="16" fill="#1e293b" text-anchor="middle">l</text>
+    
+    <rect x="150" y="20" width="40" height="50" fill="white" stroke="#7c3aed" stroke-width="2" rx="4"/>
+    <text x="170" y="50" font-family="Arial, sans-serif" font-size="16" fill="#1e293b" text-anchor="middle">l</text>
+    
+    <rect x="200" y="20" width="40" height="50" fill="white" stroke="#7c3aed" stroke-width="2" rx="4"/>
+    <text x="220" y="50" font-family="Arial, sans-serif" font-size="16" fill="#1e293b" text-anchor="middle">o</text>
+    
+    <text x="125" y="100" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle">
+      Pattern matching, manipulation, encoding
+    </text>
+  </g>
+  
+  <!-- Performance indicators -->
+  <g transform="translate(650, 250)">
+    <rect x="0" y="0" width="400" height="200" fill="rgba(255,255,255,0.1)" stroke="white" stroke-width="2" rx="8"/>
+    <text x="200" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">
+      Real-World Impact
+    </text>
+    
+    <text x="20" y="60" font-family="Arial, sans-serif" font-size="14" fill="white">
+      • Google: 8.5B searches/day using array algorithms
+    </text>
+    <text x="20" y="85" font-family="Arial, sans-serif" font-size="14" fill="white">
+      • Netflix: 230M users, array-based recommendations
+    </text>
+    <text x="20" y="110" font-family="Arial, sans-serif" font-size="14" fill="white">
+      • Facebook: String processing for news feed ranking
+    </text>
+    <text x="20" y="135" font-family="Arial, sans-serif" font-size="14" fill="white">
+      • Stripe: Array patterns for fraud detection
+    </text>
+    <text x="20" y="170" font-family="Arial, sans-serif" font-size="14" fill="white">
+      • Performance: 60x improvement with right algorithm
+    </text>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
+    </marker>
+  </defs>
+</svg>
