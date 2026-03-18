@@ -1,0 +1,199 @@
+<svg role="img" aria-labelledby="dp-patterns-title dp-patterns-desc" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <title id="dp-patterns-title">Dynamic Programming Problem Patterns</title>
+  <desc id="dp-patterns-desc">Visual guide showing common DP problem patterns: knapsack, coin change, and longest common subsequence with their characteristics</desc>
+  
+  <!-- Background -->
+  <rect width="1200" height="600" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e293b">
+    Classic DP Problem Patterns
+  </text>
+  
+  <!-- Knapsack Pattern -->
+  <g transform="translate(50, 80)">
+    <!-- Pattern Box -->
+    <rect x="0" y="0" width="320" height="220" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    
+    <!-- Title -->
+    <text x="160" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1e40af">
+      Knapsack Pattern
+    </text>
+    
+    <!-- Visual representation -->
+    <rect x="20" y="50" width="80" height="60" rx="6" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
+    <text x="60" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">
+      Knapsack
+    </text>
+    <text x="60" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+      Capacity: W
+    </text>
+    
+    <!-- Items -->
+    <circle cx="140" cy="65" r="15" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+    <text x="140" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">$5</text>
+    <text x="140" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#92400e">w=2</text>
+    
+    <circle cx="180" cy="65" r="18" fill="#10b981" stroke="#059669" stroke-width="2"/>
+    <text x="180" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">$8</text>
+    <text x="180" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#065f46">w=3</text>
+    
+    <circle cx="220" cy="65" r="12" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/>
+    <text x="220" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="white">$3</text>
+    <text x="220" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#5b21b6">w=1</text>
+    
+    <!-- Problem description -->
+    <text x="160" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e40af">
+      Maximize value within constraint
+    </text>
+    
+    <!-- Characteristics -->
+    <text x="20" y="155" font-family="Arial, sans-serif" font-size="12" fill="#374151">• Binary choices (take/skip)</text>
+    <text x="20" y="175" font-family="Arial, sans-serif" font-size="12" fill="#374151">• Resource constraints</text>
+    <text x="20" y="195" font-family="Arial, sans-serif" font-size="12" fill="#374151">• Optimization goal</text>
+  </g>
+  
+  <!-- Coin Change Pattern -->
+  <g transform="translate(440, 80)">
+    <!-- Pattern Box -->
+    <rect x="0" y="0" width="320" height="220" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    
+    <!-- Title -->
+    <text x="160" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#15803d">
+      Coin Change Pattern
+    </text>
+    
+    <!-- Visual representation -->
+    <text x="160" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#15803d">
+      Target: $11
+    </text>
+    
+    <!-- Coins -->
+    <circle cx="80" cy="85" r="20" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <text x="80" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#92400e">$1</text>
+    
+    <circle cx="140" cy="85" r="22" fill="#fb923c" stroke="#ea580c" stroke-width="2"/>
+    <text x="140" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">$5</text>
+    
+    <circle cx="200" cy="85" r="24" fill="#f87171" stroke="#dc2626" stroke-width="2"/>
+    <text x="200" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">$10</text>
+    
+    <!-- Arrow and result -->
+    <path d="M 240 85 L 280 85" stroke="#16a34a" stroke-width="3" marker-end="url(#greenArrow)"/>
+    <text x="160" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#15803d">
+      Min coins: 2 ($10 + $1)
+    </text>
+    
+    <!-- Problem description -->
+    <text x="160" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#15803d">
+      Minimize resources to reach target
+    </text>
+    
+    <!-- Characteristics -->
+    <text x="20" y="170" font-family="Arial, sans-serif" font-size="12" fill="#374151">• Unlimited use of items</text>
+    <text x="20" y="190" font-family="Arial, sans-serif" font-size="12" fill="#374151">• Target-based decisions</text>
+    <text x="20" y="210" font-family="Arial, sans-serif" font-size="12" fill="#374151">• Minimize/count solutions</text>
+  </g>
+  
+  <!-- LCS Pattern -->
+  <g transform="translate(830, 80)">
+    <!-- Pattern Box -->
+    <rect x="0" y="0" width="320" height="220" rx="12" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+    
+    <!-- Title -->
+    <text x="160" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#92400e">
+      Sequence Matching Pattern
+    </text>
+    
+    <!-- Visual representation -->
+    <text x="160" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#92400e">
+      String 1: "ABCDGH"
+    </text>
+    <text x="160" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#92400e">
+      String 2: "AEDFHR"
+    </text>
+    
+    <!-- Highlight common subsequence -->
+    <g transform="translate(60, 90)">
+      <rect x="0" y="0" width="200" height="25" rx="4" fill="#fed7aa" stroke="#ea580c" stroke-width="1"/>
+      <text x="100" y="17" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#9a3412">
+        LCS: "ADH" (length = 3)
+      </text>
+    </g>
+    
+    <!-- Grid representation -->
+    <g transform="translate(80, 125)">
+      <rect x="0" y="0" width="20" height="15" fill="#fbbf24" stroke="#f59e0b" stroke-width="1"/>
+      <text x="10" y="11" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">A</text>
+      
+      <rect x="40" y="0" width="20" height="15" fill="#fbbf24" stroke="#f59e0b" stroke-width="1"/>
+      <text x="50" y="11" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">D</text>
+      
+      <rect x="80" y="0" width="20" height="15" fill="#fbbf24" stroke="#f59e0b" stroke-width="1"/>
+      <text x="90" y="11" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="white">H</text>
+      
+      <text x="60" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#92400e">
+        Common characters in order
+      </text>
+    </g>
+    
+    <!-- Problem description -->
+    <text x="160" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#92400e">
+      Find optimal alignment/matching
+    </text>
+    
+    <!-- Characteristics -->
+    <text x="20" y="200" font-family="Arial, sans-serif" font-size="12" fill="#374151">• Two sequences comparison</text>
+    <text x="20" y="220" font-family="Arial, sans-serif" font-size="12" fill="#374151">• Order preservation</text>
+  </g>
+  
+  <!-- Bottom Section: Pattern Recognition -->
+  <g transform="translate(100, 350)">
+    <rect x="0" y="0" width="1000" height="200" rx="12" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    
+    <text x="500" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#334155">
+      How to Recognize DP Patterns
+    </text>
+    
+    <!-- Pattern indicators -->
+    <g transform="translate(50, 50)">
+      <rect x="0" y="0" width="280" height="120" rx="8" fill="#e0f2fe" stroke="#0891b2" stroke-width="2"/>
+      <text x="140" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0e7490">
+        Optimization Keywords
+      </text>
+      <text x="20" y="50" font-family="Arial, sans-serif" font-size="14" fill="#155e75">• "Maximum" or "Minimum"</text>
+      <text x="20" y="70" font-family="Arial, sans-serif" font-size="14" fill="#155e75">• "Optimal" solution</text>
+      <text x="20" y="90" font-family="Arial, sans-serif" font-size="14" fill="#155e75">• "Best" way to do something</text>
+      <text x="20" y="110" font-family="Arial, sans-serif" font-size="14" fill="#155e75">• Resource constraints</text>
+    </g>
+    
+    <g transform="translate(360, 50)">
+      <rect x="0" y="0" width="280" height="120" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+      <text x="140" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#92400e">
+        Counting Keywords
+      </text>
+      <text x="20" y="50" font-family="Arial, sans-serif" font-size="14" fill="#92400e">• "How many ways"</text>
+      <text x="20" y="70" font-family="Arial, sans-serif" font-size="14" fill="#92400e">• "Count the number"</text>
+      <text x="20" y="90" font-family="Arial, sans-serif" font-size="14" fill="#92400e">• "Is it possible"</text>
+      <text x="20" y="110" font-family="Arial, sans-serif" font-size="14" fill="#92400e">• Boolean decisions</text>
+    </g>
+    
+    <g transform="translate(670, 50)">
+      <rect x="0" y="0" width="280" height="120" rx="8" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/>
+      <text x="140" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#be185d">
+        Structure Clues
+      </text>
+      <text x="20" y="50" font-family="Arial, sans-serif" font-size="14" fill="#be185d">• Choices at each step</text>
+      <text x="20" y="70" font-family="Arial, sans-serif" font-size="14" fill="#be185d">• Subproblems overlap</text>
+      <text x="20" y="90" font-family="Arial, sans-serif" font-size="14" fill="#be185d">• Recursive nature</text>
+      <text x="20" y="110" font-family="Arial, sans-serif" font-size="14" fill="#be185d">• State transitions</text>
+    </g>
+  </g>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="greenArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+  </defs>
+</svg>

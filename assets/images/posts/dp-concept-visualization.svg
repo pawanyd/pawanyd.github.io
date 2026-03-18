@@ -1,0 +1,150 @@
+<svg role="img" aria-labelledby="dp-concept-title dp-concept-desc" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <title id="dp-concept-title">Dynamic Programming Core Concepts</title>
+  <desc id="dp-concept-desc">Diagram showing optimal substructure and overlapping subproblems - the two pillars of dynamic programming</desc>
+  
+  <!-- Background -->
+  <rect width="1200" height="600" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e293b">
+    Dynamic Programming: Two Core Principles
+  </text>
+  
+  <!-- Left Section: Optimal Substructure -->
+  <g transform="translate(50, 80)">
+    <!-- Section Title -->
+    <text x="250" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2563eb">
+      Optimal Substructure
+    </text>
+    
+    <!-- Main Problem Box -->
+    <rect x="175" y="50" width="150" height="60" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="250" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e40af">
+      Find Shortest Path
+    </text>
+    <text x="250" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1e40af">
+      A → C
+    </text>
+    
+    <!-- Arrow down -->
+    <path d="M 250 120 L 250 140" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Subproblems -->
+    <rect x="75" y="160" width="120" height="50" rx="6" fill="#e0f2fe" stroke="#0891b2" stroke-width="2"/>
+    <text x="135" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#0e7490">
+      Shortest Path
+    </text>
+    <text x="135" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0e7490">
+      A → B
+    </text>
+    
+    <rect x="305" y="160" width="120" height="50" rx="6" fill="#e0f2fe" stroke="#0891b2" stroke-width="2"/>
+    <text x="365" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#0e7490">
+      Shortest Path
+    </text>
+    <text x="365" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0e7490">
+      B → C
+    </text>
+    
+    <!-- Arrows from main to subproblems -->
+    <path d="M 220 120 L 160 150" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M 280 120 L 340 150" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Key insight -->
+    <rect x="50" y="240" width="400" height="80" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+    <text x="250" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#92400e">
+      Key Insight: Optimal Solution Contains
+    </text>
+    <text x="250" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#92400e">
+      Optimal Solutions to Subproblems
+    </text>
+    <text x="250" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#92400e">
+      If A→C is optimal via B, then A→B and B→C must also be optimal
+    </text>
+  </g>
+  
+  <!-- Right Section: Overlapping Subproblems -->
+  <g transform="translate(650, 80)">
+    <!-- Section Title -->
+    <text x="250" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#7c3aed">
+      Overlapping Subproblems
+    </text>
+    
+    <!-- Fibonacci Tree -->
+    <!-- F(5) -->
+    <circle cx="250" cy="70" r="25" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+    <text x="250" y="77" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#5b21b6">F(5)</text>
+    
+    <!-- F(4) and F(3) -->
+    <circle cx="180" cy="130" r="22" fill="#f3e8ff" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="180" y="137" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#6b21a8">F(4)</text>
+    
+    <circle cx="320" cy="130" r="22" fill="#f3e8ff" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="320" y="137" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#6b21a8">F(3)</text>
+    
+    <!-- F(3), F(2), F(2), F(1) -->
+    <circle cx="130" cy="190" r="20" fill="#fae8ff" stroke="#a855f7" stroke-width="2"/>
+    <text x="130" y="197" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#7e22ce">F(3)</text>
+    
+    <circle cx="230" cy="190" r="20" fill="#fae8ff" stroke="#a855f7" stroke-width="2"/>
+    <text x="230" y="197" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#7e22ce">F(2)</text>
+    
+    <circle cx="280" cy="190" r="20" fill="#fae8ff" stroke="#a855f7" stroke-width="2"/>
+    <text x="280" y="197" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#7e22ce">F(2)</text>
+    
+    <circle cx="360" cy="190" r="20" fill="#fae8ff" stroke="#a855f7" stroke-width="2"/>
+    <text x="360" y="197" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#7e22ce">F(1)</text>
+    
+    <!-- Connection lines -->
+    <path d="M 235 90 L 195 115" stroke="#64748b" stroke-width="2"/>
+    <path d="M 265 90 L 305 115" stroke="#64748b" stroke-width="2"/>
+    <path d="M 165 145 L 145 175" stroke="#64748b" stroke-width="2"/>
+    <path d="M 195 145 L 215 175" stroke="#64748b" stroke-width="2"/>
+    <path d="M 305 145 L 295 175" stroke="#64748b" stroke-width="2"/>
+    <path d="M 335 145 L 345 175" stroke="#64748b" stroke-width="2"/>
+    
+    <!-- Highlight overlapping F(3) and F(2) -->
+    <ellipse cx="130" cy="190" rx="35" ry="35" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="5,5"/>
+    <ellipse cx="280" cy="190" rx="35" ry="35" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="5,5"/>
+    
+    <!-- Overlap indicators -->
+    <text x="80" y="240" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#dc2626">Same F(3)</text>
+    <text x="320" y="240" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#dc2626">Same F(2)</text>
+    
+    <!-- Key insight -->
+    <rect x="50" y="260" width="400" height="60" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+    <text x="250" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#dc2626">
+      Problem: Same Subproblems Solved Multiple Times
+    </text>
+    <text x="250" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#dc2626">
+      DP Solution: Store results and reuse them
+    </text>
+  </g>
+  
+  <!-- Bottom Section: DP Solution -->
+  <g transform="translate(200, 420)">
+    <rect x="0" y="0" width="800" height="120" rx="12" fill="#f0fdf4" stroke="#10b981" stroke-width="3"/>
+    
+    <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#065f46">
+      Dynamic Programming = Optimal Substructure + Overlapping Subproblems
+    </text>
+    
+    <text x="200" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#047857">
+      ✓ Break into optimal subproblems
+    </text>
+    <text x="600" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#047857">
+      ✓ Store and reuse solutions
+    </text>
+    
+    <text x="400" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#047857">
+      Result: Exponential → Polynomial Time Complexity
+    </text>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+  </defs>
+</svg>

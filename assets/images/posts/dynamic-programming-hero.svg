@@ -1,0 +1,126 @@
+<svg role="img" aria-labelledby="title desc" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <title id="title">Dynamic Programming Hero Image</title>
+  <desc id="desc">Visual representation of dynamic programming transforming exponential problems into polynomial solutions</desc>
+  
+  <!-- Background -->
+  <defs>
+    <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#heroGrad)"/>
+  
+  <!-- Title -->
+  <text x="600" y="80" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="white" text-anchor="middle">
+    Dynamic Programming
+  </text>
+  <text x="600" y="130" font-family="Arial, sans-serif" font-size="24" fill="#e0e7ff" text-anchor="middle">
+    Turning Impossible Problems Into Elegant Solutions
+  </text>
+  
+  <!-- Problem transformation visualization -->
+  <g transform="translate(100, 180)">
+    <!-- Before DP: Exponential -->
+    <text x="200" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">
+      Without DP: Exponential O(2ⁿ)
+    </text>
+    
+    <!-- Tree showing exponential growth -->
+    <g transform="translate(100, 20)">
+      <!-- Level 1 -->
+      <circle cx="100" cy="20" r="12" fill="#ef4444" stroke="white" stroke-width="2"/>
+      <text x="100" y="26" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">F(n)</text>
+      
+      <!-- Level 2 -->
+      <line x1="100" y1="32" x2="70" y2="58" stroke="white" stroke-width="2"/>
+      <line x1="100" y1="32" x2="130" y2="58" stroke="white" stroke-width="2"/>
+      <circle cx="70" cy="65" r="10" fill="#ef4444" stroke="white" stroke-width="2"/>
+      <circle cx="130" cy="65" r="10" fill="#ef4444" stroke="white" stroke-width="2"/>
+      
+      <!-- Level 3 -->
+      <line x1="70" y1="75" x2="50" y2="95" stroke="white" stroke-width="1"/>
+      <line x1="70" y1="75" x2="90" y2="95" stroke="white" stroke-width="1"/>
+      <line x1="130" y1="75" x2="110" y2="95" stroke="white" stroke-width="1"/>
+      <line x1="130" y1="75" x2="150" y2="95" stroke="white" stroke-width="1"/>
+      <circle cx="50" cy="100" r="8" fill="#ef4444" stroke="white" stroke-width="1"/>
+      <circle cx="90" cy="100" r="8" fill="#ef4444" stroke="white" stroke-width="1"/>
+      <circle cx="110" cy="100" r="8" fill="#ef4444" stroke="white" stroke-width="1"/>
+      <circle cx="150" cy="100" r="8" fill="#ef4444" stroke="white" stroke-width="1"/>
+      
+      <!-- More levels indicated -->
+      <text x="100" y="130" font-family="Arial, sans-serif" font-size="12" fill="#fca5a5" text-anchor="middle">
+        Millions of redundant calculations...
+      </text>
+    </g>
+  </g>
+  
+  <!-- Arrow -->
+  <g transform="translate(500, 300)">
+    <path d="M0 0 L80 0" stroke="white" stroke-width="4" marker-end="url(#arrowhead)"/>
+    <text x="40" y="-10" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle">DP</text>
+  </g>
+  
+  <!-- After DP: Polynomial -->
+  <g transform="translate(650, 180)">
+    <text x="200" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">
+      With DP: Polynomial O(n)
+    </text>
+    
+    <!-- Table showing memoization -->
+    <g transform="translate(100, 30)">
+      <rect x="0" y="0" width="200" height="120" fill="rgba(255,255,255,0.1)" stroke="white" stroke-width="2" rx="8"/>
+      <text x="100" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">
+        Memoization Table
+      </text>
+      
+      <!-- Table entries -->
+      <rect x="20" y="30" width="40" height="20" fill="#10b981" stroke="white" stroke-width="1"/>
+      <text x="40" y="44" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">F(1)=1</text>
+      
+      <rect x="70" y="30" width="40" height="20" fill="#10b981" stroke="white" stroke-width="1"/>
+      <text x="90" y="44" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">F(2)=1</text>
+      
+      <rect x="120" y="30" width="40" height="20" fill="#10b981" stroke="white" stroke-width="1"/>
+      <text x="140" y="44" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">F(3)=2</text>
+      
+      <rect x="20" y="60" width="40" height="20" fill="#10b981" stroke="white" stroke-width="1"/>
+      <text x="40" y="74" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">F(4)=3</text>
+      
+      <rect x="70" y="60" width="40" height="20" fill="#10b981" stroke="white" stroke-width="1"/>
+      <text x="90" y="74" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">F(5)=5</text>
+      
+      <rect x="120" y="60" width="40" height="20" fill="#f59e0b" stroke="white" stroke-width="2"/>
+      <text x="140" y="74" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">F(n)=?</text>
+      
+      <text x="100" y="105" font-family="Arial, sans-serif" font-size="11" fill="#d1fae5" text-anchor="middle">
+        Each subproblem solved once!
+      </text>
+    </g>
+  </g>
+  
+  <!-- Performance comparison -->
+  <g transform="translate(200, 450)">
+    <rect x="0" y="0" width="800" height="100" fill="rgba(255,255,255,0.1)" stroke="white" stroke-width="2" rx="8"/>
+    <text x="400" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">
+      Real-World Impact
+    </text>
+    
+    <text x="50" y="50" font-family="Arial, sans-serif" font-size="14" fill="white">
+      • Netflix: Content delivery optimization saves millions in bandwidth
+    </text>
+    <text x="50" y="70" font-family="Arial, sans-serif" font-size="14" fill="white">
+      • Google: Route planning through billions of road segments
+    </text>
+    <text x="50" y="90" font-family="Arial, sans-serif" font-size="14" fill="white">
+      • Amazon: Pricing algorithms across millions of products
+    </text>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="white"/>
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,213 @@
+<svg role="img" aria-labelledby="dp-learning-title dp-learning-desc" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <title id="dp-learning-title">Dynamic Programming Learning Path</title>
+  <desc id="dp-learning-desc">Step-by-step learning roadmap for mastering dynamic programming from basics to advanced applications</desc>
+  
+  <!-- Background -->
+  <rect width="1200" height="600" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e293b">
+    Your DP Mastery Journey
+  </text>
+  
+  <!-- Learning Path -->
+  <g transform="translate(100, 80)">
+    
+    <!-- Step 1: Fundamentals -->
+    <g transform="translate(0, 0)">
+      <circle cx="50" cy="50" r="35" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+      <text x="50" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e40af">Step</text>
+      <text x="50" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e40af">1</text>
+      
+      <rect x="100" y="20" width="200" height="60" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+      <text x="200" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e40af">
+        Master the Fundamentals
+      </text>
+      <text x="110" y="58" font-family="Arial, sans-serif" font-size="12" fill="#1e40af">• Fibonacci (both approaches)</text>
+      <text x="110" y="72" font-family="Arial, sans-serif" font-size="12" fill="#1e40af">• Understand memoization vs tabulation</text>
+    </g>
+    
+    <!-- Arrow 1 -->
+    <path d="M 200 90 L 200 120" stroke="#64748b" stroke-width="3" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 2: Classic Problems -->
+    <g transform="translate(0, 130)">
+      <circle cx="50" cy="50" r="35" fill="#dcfce7" stroke="#16a34a" stroke-width="3"/>
+      <text x="50" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#15803d">Step</text>
+      <text x="50" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#15803d">2</text>
+      
+      <rect x="100" y="20" width="200" height="60" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+      <text x="200" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#15803d">
+        Solve Classic Problems
+      </text>
+      <text x="110" y="58" font-family="Arial, sans-serif" font-size="12" fill="#15803d">• Coin Change, Knapsack, LCS</text>
+      <text x="110" y="72" font-family="Arial, sans-serif" font-size="12" fill="#15803d">• Focus on state definition</text>
+    </g>
+    
+    <!-- Arrow 2 -->
+    <path d="M 200 220 L 200 250" stroke="#64748b" stroke-width="3" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 3: Pattern Recognition -->
+    <g transform="translate(0, 260)">
+      <circle cx="50" cy="50" r="35" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+      <text x="50" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#92400e">Step</text>
+      <text x="50" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#92400e">3</text>
+      
+      <rect x="100" y="20" width="200" height="60" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+      <text x="200" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#92400e">
+        Build Pattern Recognition
+      </text>
+      <text x="110" y="58" font-family="Arial, sans-serif" font-size="12" fill="#92400e">• Identify DP problems quickly</text>
+      <text x="110" y="72" font-family="Arial, sans-serif" font-size="12" fill="#92400e">• Practice state transitions</text>
+    </g>
+    
+    <!-- Arrow 3 -->
+    <path d="M 200 350 L 200 380" stroke="#64748b" stroke-width="3" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 4: Optimization -->
+    <g transform="translate(0, 390)">
+      <circle cx="50" cy="50" r="35" fill="#fce7f3" stroke="#ec4899" stroke-width="3"/>
+      <text x="50" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#be185d">Step</text>
+      <text x="50" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#be185d">4</text>
+      
+      <rect x="100" y="20" width="200" height="60" rx="8" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/>
+      <text x="200" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#be185d">
+        Learn Optimizations
+      </text>
+      <text x="110" y="58" font-family="Arial, sans-serif" font-size="12" fill="#be185d">• Space optimization techniques</text>
+      <text x="110" y="72" font-family="Arial, sans-serif" font-size="12" fill="#be185d">• State compression methods</text>
+    </g>
+  </g>
+  
+  <!-- Right Side: Advanced Path -->
+  <g transform="translate(450, 80)">
+    
+    <!-- Step 5: Advanced Problems -->
+    <g transform="translate(0, 0)">
+      <circle cx="50" cy="50" r="35" fill="#e0e7ff" stroke="#6366f1" stroke-width="3"/>
+      <text x="50" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#4338ca">Step</text>
+      <text x="50" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#4338ca">5</text>
+      
+      <rect x="100" y="20" width="200" height="60" rx="8" fill="#e0e7ff" stroke="#6366f1" stroke-width="2"/>
+      <text x="200" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#4338ca">
+        Tackle Advanced Problems
+      </text>
+      <text x="110" y="58" font-family="Arial, sans-serif" font-size="12" fill="#4338ca">• Multi-dimensional DP</text>
+      <text x="110" y="72" font-family="Arial, sans-serif" font-size="12" fill="#4338ca">• Complex state spaces</text>
+    </g>
+    
+    <!-- Arrow 5 -->
+    <path d="M 200 90 L 200 120" stroke="#64748b" stroke-width="3" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 6: Real Applications -->
+    <g transform="translate(0, 130)">
+      <circle cx="50" cy="50" r="35" fill="#f3e8ff" stroke="#8b5cf6" stroke-width="3"/>
+      <text x="50" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#7c3aed">Step</text>
+      <text x="50" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#7c3aed">6</text>
+      
+      <rect x="100" y="20" width="200" height="60" rx="8" fill="#f3e8ff" stroke="#8b5cf6" stroke-width="2"/>
+      <text x="200" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#7c3aed">
+        Apply to Real Problems
+      </text>
+      <text x="110" y="58" font-family="Arial, sans-serif" font-size="12" fill="#7c3aed">• System design with DP</text>
+      <text x="110" y="72" font-family="Arial, sans-serif" font-size="12" fill="#7c3aed">• Production optimizations</text>
+    </g>
+    
+    <!-- Arrow 6 -->
+    <path d="M 200 220 L 200 250" stroke="#64748b" stroke-width="3" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 7: Mastery -->
+    <g transform="translate(0, 260)">
+      <circle cx="50" cy="50" r="35" fill="#fef2f2" stroke="#ef4444" stroke-width="3"/>
+      <text x="50" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#dc2626">Step</text>
+      <text x="50" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#dc2626">7</text>
+      
+      <rect x="100" y="20" width="200" height="60" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+      <text x="200" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#dc2626">
+        Achieve Mastery
+      </text>
+      <text x="110" y="58" font-family="Arial, sans-serif" font-size="12" fill="#dc2626">• Teach others DP concepts</text>
+      <text x="110" y="72" font-family="Arial, sans-serif" font-size="12" fill="#dc2626">• Create novel solutions</text>
+    </g>
+    
+    <!-- Success Badge -->
+    <g transform="translate(0, 350)">
+      <circle cx="200" cy="50" r="40" fill="#fbbf24" stroke="#f59e0b" stroke-width="3"/>
+      <text x="200" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#92400e">DP</text>
+      <text x="200" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#92400e">Expert</text>
+      <text x="200" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#92400e">🏆</text>
+    </g>
+  </g>
+  
+  <!-- Practice Tips -->
+  <g transform="translate(800, 100)">
+    <rect x="0" y="0" width="300" height="400" rx="12" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    
+    <text x="150" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#334155">
+      Practice Tips
+    </text>
+    
+    <!-- Tip 1 -->
+    <g transform="translate(20, 50)">
+      <circle cx="10" cy="10" r="8" fill="#10b981" stroke="#047857" stroke-width="2"/>
+      <text x="10" y="14" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">1</text>
+      <text x="30" y="8" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#334155">Start Small</text>
+      <text x="30" y="22" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Master Fibonacci before</text>
+      <text x="30" y="36" font-family="Arial, sans-serif" font-size="12" fill="#64748b">moving to complex problems</text>
+    </g>
+    
+    <!-- Tip 2 -->
+    <g transform="translate(20, 100)">
+      <circle cx="10" cy="10" r="8" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
+      <text x="10" y="14" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">2</text>
+      <text x="30" y="8" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#334155">Draw It Out</text>
+      <text x="30" y="22" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Visualize the recurrence</text>
+      <text x="30" y="36" font-family="Arial, sans-serif" font-size="12" fill="#64748b">relation and state transitions</text>
+    </g>
+    
+    <!-- Tip 3 -->
+    <g transform="translate(20, 150)">
+      <circle cx="10" cy="10" r="8" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+      <text x="10" y="14" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">3</text>
+      <text x="30" y="8" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#334155">Both Approaches</text>
+      <text x="30" y="22" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Implement memoization AND</text>
+      <text x="30" y="36" font-family="Arial, sans-serif" font-size="12" fill="#64748b">tabulation for each problem</text>
+    </g>
+    
+    <!-- Tip 4 -->
+    <g transform="translate(20, 200)">
+      <circle cx="10" cy="10" r="8" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/>
+      <text x="10" y="14" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">4</text>
+      <text x="30" y="8" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#334155">Time Yourself</text>
+      <text x="30" y="22" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Practice recognizing DP</text>
+      <text x="30" y="36" font-family="Arial, sans-serif" font-size="12" fill="#64748b">patterns quickly</text>
+    </g>
+    
+    <!-- Tip 5 -->
+    <g transform="translate(20, 250)">
+      <circle cx="10" cy="10" r="8" fill="#ef4444" stroke="#dc2626" stroke-width="2"/>
+      <text x="10" y="14" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">5</text>
+      <text x="30" y="8" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#334155">Optimize Later</text>
+      <text x="30" y="22" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Get the correct solution</text>
+      <text x="30" y="36" font-family="Arial, sans-serif" font-size="12" fill="#64748b">first, then optimize</text>
+    </g>
+    
+    <!-- Resources -->
+    <g transform="translate(20, 310)">
+      <text x="0" y="15" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#334155">Recommended Resources:</text>
+      <text x="0" y="35" font-family="Arial, sans-serif" font-size="12" fill="#64748b">• LeetCode DP problems</text>
+      <text x="0" y="50" font-family="Arial, sans-serif" font-size="12" fill="#64748b">• Codeforces DP contests</text>
+      <text x="0" y="65" font-family="Arial, sans-serif" font-size="12" fill="#64748b">• AtCoder educational DP</text>
+    </g>
+  </g>
+  
+  <!-- Connection arrow from Step 4 to Step 5 -->
+  <path d="M 350 470 Q 400 470 450 130" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrowhead)" stroke-dasharray="5,5"/>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+  </defs>
+</svg>
