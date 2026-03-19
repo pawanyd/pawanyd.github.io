@@ -7251,3 +7251,2205 @@ multidimensional_dp:
           return $dp[$m][$n][$p];
       }
       ?>
+# ============================================
+# BACKTRACKING ALGORITHMS
+# ============================================
+
+backtracking_template:
+  name: "Backtracking Template"
+  description: "Generic backtracking algorithm template for solving constraint satisfaction problems"
+  time_complexity: "O(b^d) where b is branching factor, d is depth"
+  space_complexity: "O(d) recursion stack"
+  languages:
+    python: |
+      def backtrack(solution, choices):
+          """Generic backtracking template"""
+          # Base case: check if we have a complete solution
+          if is_complete(solution):
+              return solution
+          
+          # Try each possible choice
+          for choice in get_choices(solution, choices):
+              # Make the choice
+              solution.append(choice)
+              
+              # Check if choice is valid
+              if is_valid(solution):
+                  # Recursively try to complete the solution
+                  result = backtrack(solution, choices)
+                  if result is not None:
+                      return result
+              
+              # Backtrack: undo the choice
+              solution.pop()
+          
+          return None  # No solution found
+      
+      def is_complete(solution):
+          # Check if solution is complete
+          pass
+      
+      def get_choices(solution, choices):
+          # Return available choices given current solution
+          pass
+      
+      def is_valid(solution):
+          # Check if current solution satisfies constraints
+          pass
+    
+    javascript: |
+      function backtrack(solution, choices) {
+        // Base case: check if we have a complete solution
+        if (isComplete(solution)) {
+          return [...solution];
+        }
+        
+        // Try each possible choice
+        for (const choice of getChoices(solution, choices)) {
+          // Make the choice
+          solution.push(choice);
+          
+          // Check if choice is valid
+          if (isValid(solution)) {
+            // Recursively try to complete the solution
+            const result = backtrack(solution, choices);
+            if (result !== null) {
+              return result;
+            }
+          }
+          
+          // Backtrack: undo the choice
+          solution.pop();
+        }
+        
+        return null; // No solution found
+      }
+      
+      function isComplete(solution) {
+        // Check if solution is complete
+      }
+      
+      function getChoices(solution, choices) {
+        // Return available choices given current solution
+      }
+      
+      function isValid(solution) {
+        // Check if current solution satisfies constraints
+      }
+    
+    typescript: |
+      function backtrack<T>(solution: T[], choices: T[]): T[] | null {
+        // Base case: check if we have a complete solution
+        if (isComplete(solution)) {
+          return [...solution];
+        }
+        
+        // Try each possible choice
+        for (const choice of getChoices(solution, choices)) {
+          // Make the choice
+          solution.push(choice);
+          
+          // Check if choice is valid
+          if (isValid(solution)) {
+            // Recursively try to complete the solution
+            const result = backtrack(solution, choices);
+            if (result !== null) {
+              return result;
+            }
+          }
+          
+          // Backtrack: undo the choice
+          solution.pop();
+        }
+        
+        return null; // No solution found
+      }
+      
+      function isComplete<T>(solution: T[]): boolean {
+        // Check if solution is complete
+        return false;
+      }
+      
+      function getChoices<T>(solution: T[], choices: T[]): T[] {
+        // Return available choices given current solution
+        return [];
+      }
+      
+      function isValid<T>(solution: T[]): boolean {
+        // Check if current solution satisfies constraints
+        return true;
+      }
+    
+    java: |
+      import java.util.*;
+      
+      public class BacktrackingTemplate {
+          public static <T> List<T> backtrack(List<T> solution, List<T> choices) {
+              // Base case: check if we have a complete solution
+              if (isComplete(solution)) {
+                  return new ArrayList<>(solution);
+              }
+              
+              // Try each possible choice
+              for (T choice : getChoices(solution, choices)) {
+                  // Make the choice
+                  solution.add(choice);
+                  
+                  // Check if choice is valid
+                  if (isValid(solution)) {
+                      // Recursively try to complete the solution
+                      List<T> result = backtrack(solution, choices);
+                      if (result != null) {
+                          return result;
+                      }
+                  }
+                  
+                  // Backtrack: undo the choice
+                  solution.remove(solution.size() - 1);
+              }
+              
+              return null; // No solution found
+          }
+          
+          private static <T> boolean isComplete(List<T> solution) {
+              // Check if solution is complete
+              return false;
+          }
+          
+          private static <T> List<T> getChoices(List<T> solution, List<T> choices) {
+              // Return available choices given current solution
+              return new ArrayList<>();
+          }
+          
+          private static <T> boolean isValid(List<T> solution) {
+              // Check if current solution satisfies constraints
+              return true;
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      using namespace std;
+      
+      template<typename T>
+      vector<T> backtrack(vector<T>& solution, const vector<T>& choices) {
+          // Base case: check if we have a complete solution
+          if (isComplete(solution)) {
+              return solution;
+          }
+          
+          // Try each possible choice
+          for (const T& choice : getChoices(solution, choices)) {
+              // Make the choice
+              solution.push_back(choice);
+              
+              // Check if choice is valid
+              if (isValid(solution)) {
+                  // Recursively try to complete the solution
+                  vector<T> result = backtrack(solution, choices);
+                  if (!result.empty()) {
+                      return result;
+                  }
+              }
+              
+              // Backtrack: undo the choice
+              solution.pop_back();
+          }
+          
+          return {}; // No solution found
+      }
+      
+      template<typename T>
+      bool isComplete(const vector<T>& solution) {
+          // Check if solution is complete
+          return false;
+      }
+      
+      template<typename T>
+      vector<T> getChoices(const vector<T>& solution, const vector<T>& choices) {
+          // Return available choices given current solution
+          return {};
+      }
+      
+      template<typename T>
+      bool isValid(const vector<T>& solution) {
+          // Check if current solution satisfies constraints
+          return true;
+      }
+    
+    php: |
+      <?php
+      function backtrack($solution, $choices) {
+          // Base case: check if we have a complete solution
+          if (isComplete($solution)) {
+              return $solution;
+          }
+          
+          // Try each possible choice
+          foreach (getChoices($solution, $choices) as $choice) {
+              // Make the choice
+              $solution[] = $choice;
+              
+              // Check if choice is valid
+              if (isValid($solution)) {
+                  // Recursively try to complete the solution
+                  $result = backtrack($solution, $choices);
+                  if ($result !== null) {
+                      return $result;
+                  }
+              }
+              
+              // Backtrack: undo the choice
+              array_pop($solution);
+          }
+          
+          return null; // No solution found
+      }
+      
+      function isComplete($solution) {
+          // Check if solution is complete
+          return false;
+      }
+      
+      function getChoices($solution, $choices) {
+          // Return available choices given current solution
+          return [];
+      }
+      
+      function isValid($solution) {
+          // Check if current solution satisfies constraints
+          return true;
+      }
+      ?>
+n_queens:
+  name: "N-Queens Problem"
+  description: "Place N queens on NxN chessboard so no two queens attack each other"
+  time_complexity: "O(N!) worst case, much better with pruning"
+  space_complexity: "O(N)"
+  languages:
+    python: |
+      def solve_n_queens(n):
+          """Solve N-Queens problem using backtracking"""
+          def is_safe(board, row, col):
+              # Check column
+              for i in range(row):
+                  if board[i] == col:
+                      return False
+              
+              # Check diagonal
+              for i in range(row):
+                  if abs(board[i] - col) == abs(i - row):
+                      return False
+              
+              return True
+          
+          def backtrack(board, row):
+              if row == n:
+                  return [board[:]]  # Found solution
+              
+              solutions = []
+              for col in range(n):
+                  if is_safe(board, row, col):
+                      board[row] = col
+                      solutions.extend(backtrack(board, row + 1))
+                      # No need to explicitly backtrack for this implementation
+              
+              return solutions
+          
+          return backtrack([-1] * n, 0)
+    
+    javascript: |
+      function solveNQueens(n) {
+        function isSafe(board, row, col) {
+          // Check column
+          for (let i = 0; i < row; i++) {
+            if (board[i] === col) return false;
+          }
+          
+          // Check diagonal
+          for (let i = 0; i < row; i++) {
+            if (Math.abs(board[i] - col) === Math.abs(i - row)) {
+              return false;
+            }
+          }
+          
+          return true;
+        }
+        
+        function backtrack(board, row) {
+          if (row === n) {
+            return [board.slice()]; // Found solution
+          }
+          
+          const solutions = [];
+          for (let col = 0; col < n; col++) {
+            if (isSafe(board, row, col)) {
+              board[row] = col;
+              solutions.push(...backtrack(board, row + 1));
+            }
+          }
+          
+          return solutions;
+        }
+        
+        return backtrack(new Array(n).fill(-1), 0);
+      }
+    
+    typescript: |
+      function solveNQueens(n: number): number[][] {
+        function isSafe(board: number[], row: number, col: number): boolean {
+          // Check column
+          for (let i = 0; i < row; i++) {
+            if (board[i] === col) return false;
+          }
+          
+          // Check diagonal
+          for (let i = 0; i < row; i++) {
+            if (Math.abs(board[i] - col) === Math.abs(i - row)) {
+              return false;
+            }
+          }
+          
+          return true;
+        }
+        
+        function backtrack(board: number[], row: number): number[][] {
+          if (row === n) {
+            return [board.slice()]; // Found solution
+          }
+          
+          const solutions: number[][] = [];
+          for (let col = 0; col < n; col++) {
+            if (isSafe(board, row, col)) {
+              board[row] = col;
+              solutions.push(...backtrack(board, row + 1));
+            }
+          }
+          
+          return solutions;
+        }
+        
+        return backtrack(new Array(n).fill(-1), 0);
+      }
+    
+    java: |
+      import java.util.*;
+      
+      public class NQueens {
+          public static List<List<Integer>> solveNQueens(int n) {
+              List<List<Integer>> solutions = new ArrayList<>();
+              int[] board = new int[n];
+              Arrays.fill(board, -1);
+              backtrack(board, 0, n, solutions);
+              return solutions;
+          }
+          
+          private static void backtrack(int[] board, int row, int n, List<List<Integer>> solutions) {
+              if (row == n) {
+                  List<Integer> solution = new ArrayList<>();
+                  for (int col : board) {
+                      solution.add(col);
+                  }
+                  solutions.add(solution);
+                  return;
+              }
+              
+              for (int col = 0; col < n; col++) {
+                  if (isSafe(board, row, col)) {
+                      board[row] = col;
+                      backtrack(board, row + 1, n, solutions);
+                      board[row] = -1; // backtrack
+                  }
+              }
+          }
+          
+          private static boolean isSafe(int[] board, int row, int col) {
+              for (int i = 0; i < row; i++) {
+                  if (board[i] == col || Math.abs(board[i] - col) == Math.abs(i - row)) {
+                      return false;
+                  }
+              }
+              return true;
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      #include <cmath>
+      using namespace std;
+      
+      class NQueens {
+      public:
+          vector<vector<int>> solveNQueens(int n) {
+              vector<vector<int>> solutions;
+              vector<int> board(n, -1);
+              backtrack(board, 0, n, solutions);
+              return solutions;
+          }
+          
+      private:
+          void backtrack(vector<int>& board, int row, int n, vector<vector<int>>& solutions) {
+              if (row == n) {
+                  solutions.push_back(board);
+                  return;
+              }
+              
+              for (int col = 0; col < n; col++) {
+                  if (isSafe(board, row, col)) {
+                      board[row] = col;
+                      backtrack(board, row + 1, n, solutions);
+                      board[row] = -1; // backtrack
+                  }
+              }
+          }
+          
+          bool isSafe(const vector<int>& board, int row, int col) {
+              for (int i = 0; i < row; i++) {
+                  if (board[i] == col || abs(board[i] - col) == abs(i - row)) {
+                      return false;
+                  }
+              }
+              return true;
+          }
+      };
+    
+    php: |
+      <?php
+      function solveNQueens($n) {
+          function isSafe($board, $row, $col) {
+              for ($i = 0; $i < $row; $i++) {
+                  if ($board[$i] == $col || abs($board[$i] - $col) == abs($i - $row)) {
+                      return false;
+                  }
+              }
+              return true;
+          }
+          
+          function backtrack($board, $row, $n) {
+              if ($row == $n) {
+                  return [$board];
+              }
+              
+              $solutions = [];
+              for ($col = 0; $col < $n; $col++) {
+                  if (isSafe($board, $row, $col)) {
+                      $board[$row] = $col;
+                      $solutions = array_merge($solutions, backtrack($board, $row + 1, $n));
+                  }
+              }
+              
+              return $solutions;
+          }
+          
+          return backtrack(array_fill(0, $n, -1), 0, $n);
+      }
+      ?>
+sudoku_solver:
+  name: "Sudoku Solver"
+  description: "Solve 9x9 Sudoku puzzle using backtracking with constraint checking"
+  time_complexity: "O(9^(n*n)) worst case, much better with pruning"
+  space_complexity: "O(n*n)"
+  languages:
+    python: |
+      def solve_sudoku(board):
+          """Solve Sudoku puzzle using backtracking"""
+          def is_valid(board, row, col, num):
+              # Check row
+              for j in range(9):
+                  if board[row][j] == num:
+                      return False
+              
+              # Check column
+              for i in range(9):
+                  if board[i][col] == num:
+                      return False
+              
+              # Check 3x3 box
+              start_row, start_col = 3 * (row // 3), 3 * (col // 3)
+              for i in range(start_row, start_row + 3):
+                  for j in range(start_col, start_col + 3):
+                      if board[i][j] == num:
+                          return False
+              
+              return True
+          
+          def backtrack():
+              for i in range(9):
+                  for j in range(9):
+                      if board[i][j] == 0:  # Empty cell
+                          for num in range(1, 10):
+                              if is_valid(board, i, j, num):
+                                  board[i][j] = num
+                                  
+                                  if backtrack():
+                                      return True
+                                  
+                                  board[i][j] = 0  # Backtrack
+                          
+                          return False  # No valid number found
+              
+              return True  # All cells filled
+          
+          return backtrack()
+    
+    javascript: |
+      function solveSudoku(board) {
+        function isValid(board, row, col, num) {
+          // Check row
+          for (let j = 0; j < 9; j++) {
+            if (board[row][j] === num) return false;
+          }
+          
+          // Check column
+          for (let i = 0; i < 9; i++) {
+            if (board[i][col] === num) return false;
+          }
+          
+          // Check 3x3 box
+          const startRow = Math.floor(row / 3) * 3;
+          const startCol = Math.floor(col / 3) * 3;
+          for (let i = startRow; i < startRow + 3; i++) {
+            for (let j = startCol; j < startCol + 3; j++) {
+              if (board[i][j] === num) return false;
+            }
+          }
+          
+          return true;
+        }
+        
+        function backtrack() {
+          for (let i = 0; i < 9; i++) {
+            for (let j = 0; j < 9; j++) {
+              if (board[i][j] === 0) { // Empty cell
+                for (let num = 1; num <= 9; num++) {
+                  if (isValid(board, i, j, num)) {
+                    board[i][j] = num;
+                    
+                    if (backtrack()) return true;
+                    
+                    board[i][j] = 0; // Backtrack
+                  }
+                }
+                return false; // No valid number found
+              }
+            }
+          }
+          return true; // All cells filled
+        }
+        
+        return backtrack();
+      }
+    
+    typescript: |
+      function solveSudoku(board: number[][]): boolean {
+        function isValid(board: number[][], row: number, col: number, num: number): boolean {
+          // Check row
+          for (let j = 0; j < 9; j++) {
+            if (board[row][j] === num) return false;
+          }
+          
+          // Check column
+          for (let i = 0; i < 9; i++) {
+            if (board[i][col] === num) return false;
+          }
+          
+          // Check 3x3 box
+          const startRow = Math.floor(row / 3) * 3;
+          const startCol = Math.floor(col / 3) * 3;
+          for (let i = startRow; i < startRow + 3; i++) {
+            for (let j = startCol; j < startCol + 3; j++) {
+              if (board[i][j] === num) return false;
+            }
+          }
+          
+          return true;
+        }
+        
+        function backtrack(): boolean {
+          for (let i = 0; i < 9; i++) {
+            for (let j = 0; j < 9; j++) {
+              if (board[i][j] === 0) { // Empty cell
+                for (let num = 1; num <= 9; num++) {
+                  if (isValid(board, i, j, num)) {
+                    board[i][j] = num;
+                    
+                    if (backtrack()) return true;
+                    
+                    board[i][j] = 0; // Backtrack
+                  }
+                }
+                return false; // No valid number found
+              }
+            }
+          }
+          return true; // All cells filled
+        }
+        
+        return backtrack();
+      }
+    
+    java: |
+      public class SudokuSolver {
+          public static boolean solveSudoku(int[][] board) {
+              return backtrack(board);
+          }
+          
+          private static boolean backtrack(int[][] board) {
+              for (int i = 0; i < 9; i++) {
+                  for (int j = 0; j < 9; j++) {
+                      if (board[i][j] == 0) { // Empty cell
+                          for (int num = 1; num <= 9; num++) {
+                              if (isValid(board, i, j, num)) {
+                                  board[i][j] = num;
+                                  
+                                  if (backtrack(board)) return true;
+                                  
+                                  board[i][j] = 0; // Backtrack
+                              }
+                          }
+                          return false; // No valid number found
+                      }
+                  }
+              }
+              return true; // All cells filled
+          }
+          
+          private static boolean isValid(int[][] board, int row, int col, int num) {
+              // Check row
+              for (int j = 0; j < 9; j++) {
+                  if (board[row][j] == num) return false;
+              }
+              
+              // Check column
+              for (int i = 0; i < 9; i++) {
+                  if (board[i][col] == num) return false;
+              }
+              
+              // Check 3x3 box
+              int startRow = (row / 3) * 3;
+              int startCol = (col / 3) * 3;
+              for (int i = startRow; i < startRow + 3; i++) {
+                  for (int j = startCol; j < startCol + 3; j++) {
+                      if (board[i][j] == num) return false;
+                  }
+              }
+              
+              return true;
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      using namespace std;
+      
+      class SudokuSolver {
+      public:
+          bool solveSudoku(vector<vector<int>>& board) {
+              return backtrack(board);
+          }
+          
+      private:
+          bool backtrack(vector<vector<int>>& board) {
+              for (int i = 0; i < 9; i++) {
+                  for (int j = 0; j < 9; j++) {
+                      if (board[i][j] == 0) { // Empty cell
+                          for (int num = 1; num <= 9; num++) {
+                              if (isValid(board, i, j, num)) {
+                                  board[i][j] = num;
+                                  
+                                  if (backtrack(board)) return true;
+                                  
+                                  board[i][j] = 0; // Backtrack
+                              }
+                          }
+                          return false; // No valid number found
+                      }
+                  }
+              }
+              return true; // All cells filled
+          }
+          
+          bool isValid(const vector<vector<int>>& board, int row, int col, int num) {
+              // Check row
+              for (int j = 0; j < 9; j++) {
+                  if (board[row][j] == num) return false;
+              }
+              
+              // Check column
+              for (int i = 0; i < 9; i++) {
+                  if (board[i][col] == num) return false;
+              }
+              
+              // Check 3x3 box
+              int startRow = (row / 3) * 3;
+              int startCol = (col / 3) * 3;
+              for (int i = startRow; i < startRow + 3; i++) {
+                  for (int j = startCol; j < startCol + 3; j++) {
+                      if (board[i][j] == num) return false;
+                  }
+              }
+              
+              return true;
+          }
+      };
+    
+    php: |
+      <?php
+      function solveSudoku(&$board) {
+          function isValid($board, $row, $col, $num) {
+              // Check row
+              for ($j = 0; $j < 9; $j++) {
+                  if ($board[$row][$j] == $num) return false;
+              }
+              
+              // Check column
+              for ($i = 0; $i < 9; $i++) {
+                  if ($board[$i][$col] == $num) return false;
+              }
+              
+              // Check 3x3 box
+              $startRow = intval($row / 3) * 3;
+              $startCol = intval($col / 3) * 3;
+              for ($i = $startRow; $i < $startRow + 3; $i++) {
+                  for ($j = $startCol; $j < $startCol + 3; $j++) {
+                      if ($board[$i][$j] == $num) return false;
+                  }
+              }
+              
+              return true;
+          }
+          
+          function backtrack(&$board) {
+              for ($i = 0; $i < 9; $i++) {
+                  for ($j = 0; $j < 9; $j++) {
+                      if ($board[$i][$j] == 0) { // Empty cell
+                          for ($num = 1; $num <= 9; $num++) {
+                              if (isValid($board, $i, $j, $num)) {
+                                  $board[$i][$j] = $num;
+                                  
+                                  if (backtrack($board)) return true;
+                                  
+                                  $board[$i][$j] = 0; // Backtrack
+                              }
+                          }
+                          return false; // No valid number found
+                      }
+                  }
+              }
+              return true; // All cells filled
+          }
+          
+          return backtrack($board);
+      }
+      ?>
+subset_sum_backtracking:
+  name: "Subset Sum with Backtracking"
+  description: "Find if there exists a subset that sums to target using backtracking"
+  time_complexity: "O(2^n) worst case"
+  space_complexity: "O(n) recursion stack"
+  languages:
+    python: |
+      def subset_sum(nums, target):
+          """Find if subset exists that sums to target"""
+          def backtrack(index, current_sum, subset):
+              # Base case: found target sum
+              if current_sum == target:
+                  return subset[:]
+              
+              # Base case: exceeded target or no more numbers
+              if current_sum > target or index >= len(nums):
+                  return None
+              
+              # Choice 1: Include current number
+              subset.append(nums[index])
+              result = backtrack(index + 1, current_sum + nums[index], subset)
+              if result is not None:
+                  return result
+              subset.pop()  # Backtrack
+              
+              # Choice 2: Exclude current number
+              result = backtrack(index + 1, current_sum, subset)
+              if result is not None:
+                  return result
+              
+              return None
+          
+          return backtrack(0, 0, [])
+    
+    javascript: |
+      function subsetSum(nums, target) {
+        function backtrack(index, currentSum, subset) {
+          // Base case: found target sum
+          if (currentSum === target) {
+            return [...subset];
+          }
+          
+          // Base case: exceeded target or no more numbers
+          if (currentSum > target || index >= nums.length) {
+            return null;
+          }
+          
+          // Choice 1: Include current number
+          subset.push(nums[index]);
+          let result = backtrack(index + 1, currentSum + nums[index], subset);
+          if (result !== null) return result;
+          subset.pop(); // Backtrack
+          
+          // Choice 2: Exclude current number
+          result = backtrack(index + 1, currentSum, subset);
+          if (result !== null) return result;
+          
+          return null;
+        }
+        
+        return backtrack(0, 0, []);
+      }
+    
+    typescript: |
+      function subsetSum(nums: number[], target: number): number[] | null {
+        function backtrack(index: number, currentSum: number, subset: number[]): number[] | null {
+          // Base case: found target sum
+          if (currentSum === target) {
+            return [...subset];
+          }
+          
+          // Base case: exceeded target or no more numbers
+          if (currentSum > target || index >= nums.length) {
+            return null;
+          }
+          
+          // Choice 1: Include current number
+          subset.push(nums[index]);
+          let result = backtrack(index + 1, currentSum + nums[index], subset);
+          if (result !== null) return result;
+          subset.pop(); // Backtrack
+          
+          // Choice 2: Exclude current number
+          result = backtrack(index + 1, currentSum, subset);
+          if (result !== null) return result;
+          
+          return null;
+        }
+        
+        return backtrack(0, 0, []);
+      }
+    
+    java: |
+      import java.util.*;
+      
+      public class SubsetSum {
+          public static List<Integer> subsetSum(int[] nums, int target) {
+              List<Integer> result = new ArrayList<>();
+              if (backtrack(nums, 0, 0, target, new ArrayList<>(), result)) {
+                  return result;
+              }
+              return null;
+          }
+          
+          private static boolean backtrack(int[] nums, int index, int currentSum, 
+                                         int target, List<Integer> subset, List<Integer> result) {
+              // Base case: found target sum
+              if (currentSum == target) {
+                  result.addAll(subset);
+                  return true;
+              }
+              
+              // Base case: exceeded target or no more numbers
+              if (currentSum > target || index >= nums.length) {
+                  return false;
+              }
+              
+              // Choice 1: Include current number
+              subset.add(nums[index]);
+              if (backtrack(nums, index + 1, currentSum + nums[index], target, subset, result)) {
+                  return true;
+              }
+              subset.remove(subset.size() - 1); // Backtrack
+              
+              // Choice 2: Exclude current number
+              if (backtrack(nums, index + 1, currentSum, target, subset, result)) {
+                  return true;
+              }
+              
+              return false;
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      using namespace std;
+      
+      class SubsetSum {
+      public:
+          vector<int> subsetSum(vector<int>& nums, int target) {
+              vector<int> subset;
+              if (backtrack(nums, 0, 0, target, subset)) {
+                  return subset;
+              }
+              return {};
+          }
+          
+      private:
+          bool backtrack(vector<int>& nums, int index, int currentSum, 
+                        int target, vector<int>& subset) {
+              // Base case: found target sum
+              if (currentSum == target) {
+                  return true;
+              }
+              
+              // Base case: exceeded target or no more numbers
+              if (currentSum > target || index >= nums.size()) {
+                  return false;
+              }
+              
+              // Choice 1: Include current number
+              subset.push_back(nums[index]);
+              if (backtrack(nums, index + 1, currentSum + nums[index], target, subset)) {
+                  return true;
+              }
+              subset.pop_back(); // Backtrack
+              
+              // Choice 2: Exclude current number
+              if (backtrack(nums, index + 1, currentSum, target, subset)) {
+                  return true;
+              }
+              
+              return false;
+          }
+      };
+    
+    php: |
+      <?php
+      function subsetSum($nums, $target) {
+          function backtrack($nums, $index, $currentSum, $target, &$subset) {
+              // Base case: found target sum
+              if ($currentSum == $target) {
+                  return true;
+              }
+              
+              // Base case: exceeded target or no more numbers
+              if ($currentSum > $target || $index >= count($nums)) {
+                  return false;
+              }
+              
+              // Choice 1: Include current number
+              $subset[] = $nums[$index];
+              if (backtrack($nums, $index + 1, $currentSum + $nums[$index], $target, $subset)) {
+                  return true;
+              }
+              array_pop($subset); // Backtrack
+              
+              // Choice 2: Exclude current number
+              if (backtrack($nums, $index + 1, $currentSum, $target, $subset)) {
+                  return true;
+              }
+              
+              return false;
+          }
+          
+          $subset = [];
+          if (backtrack($nums, 0, 0, $target, $subset)) {
+              return $subset;
+          }
+          return null;
+      }
+      ?>
+constraint_propagation:
+  name: "Constraint Propagation"
+  description: "Backtracking with constraint propagation for improved pruning"
+  time_complexity: "Better than basic backtracking due to early pruning"
+  space_complexity: "O(n) for constraint tracking"
+  languages:
+    python: |
+      def solve_with_propagation(variables, domains, constraints):
+          """Backtracking with constraint propagation"""
+          def propagate_constraints(var, value, domains):
+              """Propagate constraints after assigning value to var"""
+              new_domains = {v: domain[:] for v, domain in domains.items()}
+              
+              # Remove value from variable's domain
+              new_domains[var] = [value]
+              
+              # Apply constraints to reduce other domains
+              for constraint in constraints:
+                  if var in constraint['variables']:
+                      # Apply constraint-specific propagation
+                      for other_var in constraint['variables']:
+                          if other_var != var:
+                              # Remove conflicting values
+                              new_domains[other_var] = [
+                                  v for v in new_domains[other_var]
+                                  if constraint['check'](var, value, other_var, v)
+                              ]
+                              
+                              # Check for empty domain (failure)
+                              if not new_domains[other_var]:
+                                  return None
+              
+              return new_domains
+          
+          def backtrack(assignment, domains):
+              if len(assignment) == len(variables):
+                  return assignment
+              
+              # Choose unassigned variable (MRV heuristic)
+              unassigned = [v for v in variables if v not in assignment]
+              var = min(unassigned, key=lambda v: len(domains[v]))
+              
+              # Try each value in domain
+              for value in domains[var]:
+                  # Propagate constraints
+                  new_domains = propagate_constraints(var, value, domains)
+                  if new_domains is not None:
+                      assignment[var] = value
+                      result = backtrack(assignment, new_domains)
+                      if result is not None:
+                          return result
+                      del assignment[var]
+              
+              return None
+          
+          return backtrack({}, domains)
+    
+    javascript: |
+      function solveWithPropagation(variables, domains, constraints) {
+        function propagateConstraints(variable, value, domains) {
+          const newDomains = {};
+          for (const [v, domain] of Object.entries(domains)) {
+            newDomains[v] = [...domain];
+          }
+          
+          // Remove value from variable's domain
+          newDomains[variable] = [value];
+          
+          // Apply constraints to reduce other domains
+          for (const constraint of constraints) {
+            if (constraint.variables.includes(variable)) {
+              for (const otherVar of constraint.variables) {
+                if (otherVar !== variable) {
+                  newDomains[otherVar] = newDomains[otherVar].filter(v =>
+                    constraint.check(variable, value, otherVar, v)
+                  );
+                  
+                  if (newDomains[otherVar].length === 0) {
+                    return null; // Failure
+                  }
+                }
+              }
+            }
+          }
+          
+          return newDomains;
+        }
+        
+        function backtrack(assignment, domains) {
+          if (Object.keys(assignment).length === variables.length) {
+            return assignment;
+          }
+          
+          // Choose unassigned variable (MRV heuristic)
+          const unassigned = variables.filter(v => !(v in assignment));
+          const variable = unassigned.reduce((min, v) =>
+            domains[v].length < domains[min].length ? v : min
+          );
+          
+          // Try each value in domain
+          for (const value of domains[variable]) {
+            const newDomains = propagateConstraints(variable, value, domains);
+            if (newDomains !== null) {
+              assignment[variable] = value;
+              const result = backtrack(assignment, newDomains);
+              if (result !== null) return result;
+              delete assignment[variable];
+            }
+          }
+          
+          return null;
+        }
+        
+        return backtrack({}, domains);
+      }
+    
+    typescript: |
+      interface Constraint {
+        variables: string[];
+        check: (var1: string, val1: any, var2: string, val2: any) => boolean;
+      }
+      
+      function solveWithPropagation(
+        variables: string[],
+        domains: Record<string, any[]>,
+        constraints: Constraint[]
+      ): Record<string, any> | null {
+        function propagateConstraints(
+          variable: string,
+          value: any,
+          domains: Record<string, any[]>
+        ): Record<string, any[]> | null {
+          const newDomains: Record<string, any[]> = {};
+          for (const [v, domain] of Object.entries(domains)) {
+            newDomains[v] = [...domain];
+          }
+          
+          newDomains[variable] = [value];
+          
+          for (const constraint of constraints) {
+            if (constraint.variables.includes(variable)) {
+              for (const otherVar of constraint.variables) {
+                if (otherVar !== variable) {
+                  newDomains[otherVar] = newDomains[otherVar].filter(v =>
+                    constraint.check(variable, value, otherVar, v)
+                  );
+                  
+                  if (newDomains[otherVar].length === 0) {
+                    return null;
+                  }
+                }
+              }
+            }
+          }
+          
+          return newDomains;
+        }
+        
+        function backtrack(
+          assignment: Record<string, any>,
+          domains: Record<string, any[]>
+        ): Record<string, any> | null {
+          if (Object.keys(assignment).length === variables.length) {
+            return assignment;
+          }
+          
+          const unassigned = variables.filter(v => !(v in assignment));
+          const variable = unassigned.reduce((min, v) =>
+            domains[v].length < domains[min].length ? v : min
+          );
+          
+          for (const value of domains[variable]) {
+            const newDomains = propagateConstraints(variable, value, domains);
+            if (newDomains !== null) {
+              assignment[variable] = value;
+              const result = backtrack(assignment, newDomains);
+              if (result !== null) return result;
+              delete assignment[variable];
+            }
+          }
+          
+          return null;
+        }
+        
+        return backtrack({}, domains);
+      }
+    
+    java: |
+      import java.util.*;
+      
+      public class ConstraintPropagation {
+          interface Constraint {
+              boolean check(String var1, Object val1, String var2, Object val2);
+              List<String> getVariables();
+          }
+          
+          public static Map<String, Object> solveWithPropagation(
+              List<String> variables,
+              Map<String, List<Object>> domains,
+              List<Constraint> constraints) {
+              
+              return backtrack(new HashMap<>(), new HashMap<>(domains), variables, constraints);
+          }
+          
+          private static Map<String, List<Object>> propagateConstraints(
+              String variable, Object value,
+              Map<String, List<Object>> domains,
+              List<Constraint> constraints) {
+              
+              Map<String, List<Object>> newDomains = new HashMap<>();
+              for (Map.Entry<String, List<Object>> entry : domains.entrySet()) {
+                  newDomains.put(entry.getKey(), new ArrayList<>(entry.getValue()));
+              }
+              
+              newDomains.put(variable, Arrays.asList(value));
+              
+              for (Constraint constraint : constraints) {
+                  if (constraint.getVariables().contains(variable)) {
+                      for (String otherVar : constraint.getVariables()) {
+                          if (!otherVar.equals(variable)) {
+                              List<Object> filteredDomain = new ArrayList<>();
+                              for (Object v : newDomains.get(otherVar)) {
+                                  if (constraint.check(variable, value, otherVar, v)) {
+                                      filteredDomain.add(v);
+                                  }
+                              }
+                              newDomains.put(otherVar, filteredDomain);
+                              
+                              if (filteredDomain.isEmpty()) {
+                                  return null;
+                              }
+                          }
+                      }
+                  }
+              }
+              
+              return newDomains;
+          }
+          
+          private static Map<String, Object> backtrack(
+              Map<String, Object> assignment,
+              Map<String, List<Object>> domains,
+              List<String> variables,
+              List<Constraint> constraints) {
+              
+              if (assignment.size() == variables.size()) {
+                  return assignment;
+              }
+              
+              // Choose variable with smallest domain (MRV)
+              String variable = variables.stream()
+                  .filter(v -> !assignment.containsKey(v))
+                  .min(Comparator.comparing(v -> domains.get(v).size()))
+                  .orElse(null);
+              
+              for (Object value : domains.get(variable)) {
+                  Map<String, List<Object>> newDomains = propagateConstraints(variable, value, domains, constraints);
+                  if (newDomains != null) {
+                      assignment.put(variable, value);
+                      Map<String, Object> result = backtrack(assignment, newDomains, variables, constraints);
+                      if (result != null) return result;
+                      assignment.remove(variable);
+                  }
+              }
+              
+              return null;
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      #include <unordered_map>
+      #include <unordered_set>
+      #include <string>
+      #include <algorithm>
+      using namespace std;
+      
+      class ConstraintPropagation {
+      public:
+          struct Constraint {
+              vector<string> variables;
+              function<bool(const string&, int, const string&, int)> check;
+          };
+          
+          unordered_map<string, int> solveWithPropagation(
+              const vector<string>& variables,
+              unordered_map<string, vector<int>> domains,
+              const vector<Constraint>& constraints) {
+              
+              unordered_map<string, int> assignment;
+              return backtrack(assignment, domains, variables, constraints) ? assignment : unordered_map<string, int>{};
+          }
+          
+      private:
+          unordered_map<string, vector<int>> propagateConstraints(
+              const string& variable, int value,
+              const unordered_map<string, vector<int>>& domains,
+              const vector<Constraint>& constraints) {
+              
+              auto newDomains = domains;
+              newDomains[variable] = {value};
+              
+              for (const auto& constraint : constraints) {
+                  if (find(constraint.variables.begin(), constraint.variables.end(), variable) != constraint.variables.end()) {
+                      for (const auto& otherVar : constraint.variables) {
+                          if (otherVar != variable) {
+                              vector<int> filteredDomain;
+                              for (int v : newDomains[otherVar]) {
+                                  if (constraint.check(variable, value, otherVar, v)) {
+                                      filteredDomain.push_back(v);
+                                  }
+                              }
+                              newDomains[otherVar] = filteredDomain;
+                              
+                              if (filteredDomain.empty()) {
+                                  return {}; // Failure
+                              }
+                          }
+                      }
+                  }
+              }
+              
+              return newDomains;
+          }
+          
+          bool backtrack(unordered_map<string, int>& assignment,
+                        const unordered_map<string, vector<int>>& domains,
+                        const vector<string>& variables,
+                        const vector<Constraint>& constraints) {
+              
+              if (assignment.size() == variables.size()) {
+                  return true;
+              }
+              
+              // Choose variable with smallest domain (MRV)
+              string variable;
+              int minDomainSize = INT_MAX;
+              for (const auto& var : variables) {
+                  if (assignment.find(var) == assignment.end()) {
+                      if (domains.at(var).size() < minDomainSize) {
+                          minDomainSize = domains.at(var).size();
+                          variable = var;
+                      }
+                  }
+              }
+              
+              for (int value : domains.at(variable)) {
+                  auto newDomains = propagateConstraints(variable, value, domains, constraints);
+                  if (!newDomains.empty()) {
+                      assignment[variable] = value;
+                      if (backtrack(assignment, newDomains, variables, constraints)) {
+                          return true;
+                      }
+                      assignment.erase(variable);
+                  }
+              }
+              
+              return false;
+          }
+      };
+    
+    php: |
+      <?php
+      function solveWithPropagation($variables, $domains, $constraints) {
+          function propagateConstraints($variable, $value, $domains, $constraints) {
+              $newDomains = [];
+              foreach ($domains as $v => $domain) {
+                  $newDomains[$v] = $domain;
+              }
+              
+              $newDomains[$variable] = [$value];
+              
+              foreach ($constraints as $constraint) {
+                  if (in_array($variable, $constraint['variables'])) {
+                      foreach ($constraint['variables'] as $otherVar) {
+                          if ($otherVar !== $variable) {
+                              $filteredDomain = [];
+                              foreach ($newDomains[$otherVar] as $v) {
+                                  if ($constraint['check']($variable, $value, $otherVar, $v)) {
+                                      $filteredDomain[] = $v;
+                                  }
+                              }
+                              $newDomains[$otherVar] = $filteredDomain;
+                              
+                              if (empty($filteredDomain)) {
+                                  return null;
+                              }
+                          }
+                      }
+                  }
+              }
+              
+              return $newDomains;
+          }
+          
+          function backtrack($assignment, $domains, $variables, $constraints) {
+              if (count($assignment) === count($variables)) {
+                  return $assignment;
+              }
+              
+              // Choose variable with smallest domain (MRV)
+              $unassigned = array_filter($variables, function($v) use ($assignment) {
+                  return !isset($assignment[$v]);
+              });
+              
+              $variable = array_reduce($unassigned, function($min, $v) use ($domains) {
+                  return $min === null || count($domains[$v]) < count($domains[$min]) ? $v : $min;
+              });
+              
+              foreach ($domains[$variable] as $value) {
+                  $newDomains = propagateConstraints($variable, $value, $domains, $constraints);
+                  if ($newDomains !== null) {
+                      $assignment[$variable] = $value;
+                      $result = backtrack($assignment, $newDomains, $variables, $constraints);
+                      if ($result !== null) return $result;
+                      unset($assignment[$variable]);
+                  }
+              }
+              
+              return null;
+          }
+          
+          return backtrack([], $domains, $variables, $constraints);
+      }
+      ?>
+heuristic_backtracking:
+  name: "Heuristic-Guided Backtracking"
+  description: "Backtracking with MRV and LCV heuristics for better performance"
+  time_complexity: "Much better than basic backtracking in practice"
+  space_complexity: "O(n)"
+  languages:
+    python: |
+      def heuristic_backtracking(variables, domains, constraints):
+          """Backtracking with MRV and LCV heuristics"""
+          def mrv_heuristic(assignment, domains):
+              """Most Remaining Values - choose variable with smallest domain"""
+              unassigned = [v for v in variables if v not in assignment]
+              return min(unassigned, key=lambda v: len(domains[v]))
+          
+          def lcv_heuristic(var, domains, constraints):
+              """Least Constraining Value - order values by impact on other domains"""
+              def count_conflicts(value):
+                  conflicts = 0
+                  for constraint in constraints:
+                      if var in constraint['variables']:
+                          for other_var in constraint['variables']:
+                              if other_var != var and other_var not in assignment:
+                                  for other_val in domains[other_var]:
+                                      if not constraint['check'](var, value, other_var, other_val):
+                                          conflicts += 1
+                  return conflicts
+              
+              return sorted(domains[var], key=count_conflicts)
+          
+          def backtrack(assignment):
+              if len(assignment) == len(variables):
+                  return assignment
+              
+              # Choose variable using MRV heuristic
+              var = mrv_heuristic(assignment, domains)
+              
+              # Order values using LCV heuristic
+              ordered_values = lcv_heuristic(var, domains, constraints)
+              
+              for value in ordered_values:
+                  # Check if assignment is consistent
+                  consistent = True
+                  for constraint in constraints:
+                      if var in constraint['variables']:
+                          for other_var in constraint['variables']:
+                              if other_var in assignment:
+                                  if not constraint['check'](var, value, other_var, assignment[other_var]):
+                                      consistent = False
+                                      break
+                          if not consistent:
+                              break
+                  
+                  if consistent:
+                      assignment[var] = value
+                      result = backtrack(assignment)
+                      if result is not None:
+                          return result
+                      del assignment[var]
+              
+              return None
+          
+          return backtrack({})
+    
+    javascript: |
+      function heuristicBacktracking(variables, domains, constraints) {
+        function mrvHeuristic(assignment, domains) {
+          const unassigned = variables.filter(v => !(v in assignment));
+          return unassigned.reduce((min, v) =>
+            domains[v].length < domains[min].length ? v : min
+          );
+        }
+        
+        function lcvHeuristic(variable, domains, constraints, assignment) {
+          function countConflicts(value) {
+            let conflicts = 0;
+            for (const constraint of constraints) {
+              if (constraint.variables.includes(variable)) {
+                for (const otherVar of constraint.variables) {
+                  if (otherVar !== variable && !(otherVar in assignment)) {
+                    for (const otherVal of domains[otherVar]) {
+                      if (!constraint.check(variable, value, otherVar, otherVal)) {
+                        conflicts++;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            return conflicts;
+          }
+          
+          return domains[variable].slice().sort((a, b) => 
+            countConflicts(a) - countConflicts(b)
+          );
+        }
+        
+        function backtrack(assignment) {
+          if (Object.keys(assignment).length === variables.length) {
+            return assignment;
+          }
+          
+          const variable = mrvHeuristic(assignment, domains);
+          const orderedValues = lcvHeuristic(variable, domains, constraints, assignment);
+          
+          for (const value of orderedValues) {
+            let consistent = true;
+            for (const constraint of constraints) {
+              if (constraint.variables.includes(variable)) {
+                for (const otherVar of constraint.variables) {
+                  if (otherVar in assignment) {
+                    if (!constraint.check(variable, value, otherVar, assignment[otherVar])) {
+                      consistent = false;
+                      break;
+                    }
+                  }
+                }
+                if (!consistent) break;
+              }
+            }
+            
+            if (consistent) {
+              assignment[variable] = value;
+              const result = backtrack(assignment);
+              if (result !== null) return result;
+              delete assignment[variable];
+            }
+          }
+          
+          return null;
+        }
+        
+        return backtrack({});
+      }
+    
+    typescript: |
+      interface Constraint {
+        variables: string[];
+        check: (var1: string, val1: any, var2: string, val2: any) => boolean;
+      }
+      
+      function heuristicBacktracking(
+        variables: string[],
+        domains: Record<string, any[]>,
+        constraints: Constraint[]
+      ): Record<string, any> | null {
+        function mrvHeuristic(assignment: Record<string, any>, domains: Record<string, any[]>): string {
+          const unassigned = variables.filter(v => !(v in assignment));
+          return unassigned.reduce((min, v) =>
+            domains[v].length < domains[min].length ? v : min
+          );
+        }
+        
+        function lcvHeuristic(
+          variable: string,
+          domains: Record<string, any[]>,
+          constraints: Constraint[],
+          assignment: Record<string, any>
+        ): any[] {
+          function countConflicts(value: any): number {
+            let conflicts = 0;
+            for (const constraint of constraints) {
+              if (constraint.variables.includes(variable)) {
+                for (const otherVar of constraint.variables) {
+                  if (otherVar !== variable && !(otherVar in assignment)) {
+                    for (const otherVal of domains[otherVar]) {
+                      if (!constraint.check(variable, value, otherVar, otherVal)) {
+                        conflicts++;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            return conflicts;
+          }
+          
+          return domains[variable].slice().sort((a, b) => 
+            countConflicts(a) - countConflicts(b)
+          );
+        }
+        
+        function backtrack(assignment: Record<string, any>): Record<string, any> | null {
+          if (Object.keys(assignment).length === variables.length) {
+            return assignment;
+          }
+          
+          const variable = mrvHeuristic(assignment, domains);
+          const orderedValues = lcvHeuristic(variable, domains, constraints, assignment);
+          
+          for (const value of orderedValues) {
+            let consistent = true;
+            for (const constraint of constraints) {
+              if (constraint.variables.includes(variable)) {
+                for (const otherVar of constraint.variables) {
+                  if (otherVar in assignment) {
+                    if (!constraint.check(variable, value, otherVar, assignment[otherVar])) {
+                      consistent = false;
+                      break;
+                    }
+                  }
+                }
+                if (!consistent) break;
+              }
+            }
+            
+            if (consistent) {
+              assignment[variable] = value;
+              const result = backtrack(assignment);
+              if (result !== null) return result;
+              delete assignment[variable];
+            }
+          }
+          
+          return null;
+        }
+        
+        return backtrack({});
+      }
+    
+    java: |
+      import java.util.*;
+      import java.util.stream.Collectors;
+      
+      public class HeuristicBacktracking {
+          interface Constraint {
+              boolean check(String var1, Object val1, String var2, Object val2);
+              List<String> getVariables();
+          }
+          
+          public static Map<String, Object> heuristicBacktracking(
+              List<String> variables,
+              Map<String, List<Object>> domains,
+              List<Constraint> constraints) {
+              
+              return backtrack(new HashMap<>(), variables, domains, constraints);
+          }
+          
+          private static String mrvHeuristic(Map<String, Object> assignment, 
+                                           List<String> variables,
+                                           Map<String, List<Object>> domains) {
+              return variables.stream()
+                  .filter(v -> !assignment.containsKey(v))
+                  .min(Comparator.comparing(v -> domains.get(v).size()))
+                  .orElse(null);
+          }
+          
+          private static List<Object> lcvHeuristic(String variable,
+                                                  Map<String, List<Object>> domains,
+                                                  List<Constraint> constraints,
+                                                  Map<String, Object> assignment) {
+              return domains.get(variable).stream()
+                  .sorted(Comparator.comparing(value -> countConflicts(variable, value, domains, constraints, assignment)))
+                  .collect(Collectors.toList());
+          }
+          
+          private static int countConflicts(String variable, Object value,
+                                          Map<String, List<Object>> domains,
+                                          List<Constraint> constraints,
+                                          Map<String, Object> assignment) {
+              int conflicts = 0;
+              for (Constraint constraint : constraints) {
+                  if (constraint.getVariables().contains(variable)) {
+                      for (String otherVar : constraint.getVariables()) {
+                          if (!otherVar.equals(variable) && !assignment.containsKey(otherVar)) {
+                              for (Object otherVal : domains.get(otherVar)) {
+                                  if (!constraint.check(variable, value, otherVar, otherVal)) {
+                                      conflicts++;
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+              return conflicts;
+          }
+          
+          private static Map<String, Object> backtrack(Map<String, Object> assignment,
+                                                      List<String> variables,
+                                                      Map<String, List<Object>> domains,
+                                                      List<Constraint> constraints) {
+              if (assignment.size() == variables.size()) {
+                  return assignment;
+              }
+              
+              String variable = mrvHeuristic(assignment, variables, domains);
+              List<Object> orderedValues = lcvHeuristic(variable, domains, constraints, assignment);
+              
+              for (Object value : orderedValues) {
+                  boolean consistent = true;
+                  for (Constraint constraint : constraints) {
+                      if (constraint.getVariables().contains(variable)) {
+                          for (String otherVar : constraint.getVariables()) {
+                              if (assignment.containsKey(otherVar)) {
+                                  if (!constraint.check(variable, value, otherVar, assignment.get(otherVar))) {
+                                      consistent = false;
+                                      break;
+                                  }
+                              }
+                          }
+                          if (!consistent) break;
+                      }
+                  }
+                  
+                  if (consistent) {
+                      assignment.put(variable, value);
+                      Map<String, Object> result = backtrack(assignment, variables, domains, constraints);
+                      if (result != null) return result;
+                      assignment.remove(variable);
+                  }
+              }
+              
+              return null;
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      #include <unordered_map>
+      #include <string>
+      #include <algorithm>
+      #include <functional>
+      using namespace std;
+      
+      class HeuristicBacktracking {
+      public:
+          struct Constraint {
+              vector<string> variables;
+              function<bool(const string&, int, const string&, int)> check;
+          };
+          
+          unordered_map<string, int> heuristicBacktracking(
+              const vector<string>& variables,
+              const unordered_map<string, vector<int>>& domains,
+              const vector<Constraint>& constraints) {
+              
+              unordered_map<string, int> assignment;
+              return backtrack(assignment, variables, domains, constraints) ? assignment : unordered_map<string, int>{};
+          }
+          
+      private:
+          string mrvHeuristic(const unordered_map<string, int>& assignment,
+                             const vector<string>& variables,
+                             const unordered_map<string, vector<int>>& domains) {
+              string bestVar;
+              int minDomainSize = INT_MAX;
+              
+              for (const auto& var : variables) {
+                  if (assignment.find(var) == assignment.end()) {
+                      int domainSize = domains.at(var).size();
+                      if (domainSize < minDomainSize) {
+                          minDomainSize = domainSize;
+                          bestVar = var;
+                      }
+                  }
+              }
+              
+              return bestVar;
+          }
+          
+          vector<int> lcvHeuristic(const string& variable,
+                                  const unordered_map<string, vector<int>>& domains,
+                                  const vector<Constraint>& constraints,
+                                  const unordered_map<string, int>& assignment) {
+              auto values = domains.at(variable);
+              
+              sort(values.begin(), values.end(), [&](int a, int b) {
+                  return countConflicts(variable, a, domains, constraints, assignment) <
+                         countConflicts(variable, b, domains, constraints, assignment);
+              });
+              
+              return values;
+          }
+          
+          int countConflicts(const string& variable, int value,
+                            const unordered_map<string, vector<int>>& domains,
+                            const vector<Constraint>& constraints,
+                            const unordered_map<string, int>& assignment) {
+              int conflicts = 0;
+              
+              for (const auto& constraint : constraints) {
+                  if (find(constraint.variables.begin(), constraint.variables.end(), variable) != constraint.variables.end()) {
+                      for (const auto& otherVar : constraint.variables) {
+                          if (otherVar != variable && assignment.find(otherVar) == assignment.end()) {
+                              for (int otherVal : domains.at(otherVar)) {
+                                  if (!constraint.check(variable, value, otherVar, otherVal)) {
+                                      conflicts++;
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+              
+              return conflicts;
+          }
+          
+          bool backtrack(unordered_map<string, int>& assignment,
+                        const vector<string>& variables,
+                        const unordered_map<string, vector<int>>& domains,
+                        const vector<Constraint>& constraints) {
+              if (assignment.size() == variables.size()) {
+                  return true;
+              }
+              
+              string variable = mrvHeuristic(assignment, variables, domains);
+              vector<int> orderedValues = lcvHeuristic(variable, domains, constraints, assignment);
+              
+              for (int value : orderedValues) {
+                  bool consistent = true;
+                  
+                  for (const auto& constraint : constraints) {
+                      if (find(constraint.variables.begin(), constraint.variables.end(), variable) != constraint.variables.end()) {
+                          for (const auto& otherVar : constraint.variables) {
+                              if (assignment.find(otherVar) != assignment.end()) {
+                                  if (!constraint.check(variable, value, otherVar, assignment.at(otherVar))) {
+                                      consistent = false;
+                                      break;
+                                  }
+                              }
+                          }
+                          if (!consistent) break;
+                      }
+                  }
+                  
+                  if (consistent) {
+                      assignment[variable] = value;
+                      if (backtrack(assignment, variables, domains, constraints)) {
+                          return true;
+                      }
+                      assignment.erase(variable);
+                  }
+              }
+              
+              return false;
+          }
+      };
+    
+    php: |
+      <?php
+      function heuristicBacktracking($variables, $domains, $constraints) {
+          function mrvHeuristic($assignment, $variables, $domains) {
+              $unassigned = array_filter($variables, function($v) use ($assignment) {
+                  return !isset($assignment[$v]);
+              });
+              
+              return array_reduce($unassigned, function($min, $v) use ($domains) {
+                  return $min === null || count($domains[$v]) < count($domains[$min]) ? $v : $min;
+              });
+          }
+          
+          function lcvHeuristic($variable, $domains, $constraints, $assignment) {
+              function countConflicts($variable, $value, $domains, $constraints, $assignment) {
+                  $conflicts = 0;
+                  foreach ($constraints as $constraint) {
+                      if (in_array($variable, $constraint['variables'])) {
+                          foreach ($constraint['variables'] as $otherVar) {
+                              if ($otherVar !== $variable && !isset($assignment[$otherVar])) {
+                                  foreach ($domains[$otherVar] as $otherVal) {
+                                      if (!$constraint['check']($variable, $value, $otherVar, $otherVal)) {
+                                          $conflicts++;
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  }
+                  return $conflicts;
+              }
+              
+              $values = $domains[$variable];
+              usort($values, function($a, $b) use ($variable, $domains, $constraints, $assignment) {
+                  return countConflicts($variable, $a, $domains, $constraints, $assignment) -
+                         countConflicts($variable, $b, $domains, $constraints, $assignment);
+              });
+              
+              return $values;
+          }
+          
+          function backtrack($assignment, $variables, $domains, $constraints) {
+              if (count($assignment) === count($variables)) {
+                  return $assignment;
+              }
+              
+              $variable = mrvHeuristic($assignment, $variables, $domains);
+              $orderedValues = lcvHeuristic($variable, $domains, $constraints, $assignment);
+              
+              foreach ($orderedValues as $value) {
+                  $consistent = true;
+                  foreach ($constraints as $constraint) {
+                      if (in_array($variable, $constraint['variables'])) {
+                          foreach ($constraint['variables'] as $otherVar) {
+                              if (isset($assignment[$otherVar])) {
+                                  if (!$constraint['check']($variable, $value, $otherVar, $assignment[$otherVar])) {
+                                      $consistent = false;
+                                      break 2;
+                                  }
+                              }
+                          }
+                      }
+                  }
+                  
+                  if ($consistent) {
+                      $assignment[$variable] = $value;
+                      $result = backtrack($assignment, $variables, $domains, $constraints);
+                      if ($result !== null) return $result;
+                      unset($assignment[$variable]);
+                  }
+              }
+              
+              return null;
+          }
+          
+          return backtrack([], $variables, $domains, $constraints);
+      }
+      ?>
+
+iterative_deepening_backtracking:
+  name: "Iterative Deepening Backtracking"
+  description: "Backtracking with iterative deepening for unknown solution depths"
+  time_complexity: "O(b^d) where b is branching factor, d is solution depth"
+  space_complexity: "O(d) instead of O(b^d)"
+  languages:
+    python: |
+      def iterative_deepening_backtracking(initial_state, goal_test, get_successors):
+          """Iterative deepening backtracking for memory efficiency"""
+          def depth_limited_search(state, path, depth_limit):
+              if goal_test(state):
+                  return path + [state]
+              
+              if depth_limit <= 0:
+                  return None
+              
+              for successor in get_successors(state):
+                  if successor not in path:  # Avoid cycles
+                      result = depth_limited_search(successor, path + [state], depth_limit - 1)
+                      if result is not None:
+                          return result
+              
+              return None
+          
+          # Iteratively increase depth limit
+          depth = 1
+          while depth <= 100:  # Reasonable upper bound
+              result = depth_limited_search(initial_state, [], depth)
+              if result is not None:
+                  return result
+              depth += 1
+          
+          return None  # No solution found within depth limit
+    
+    javascript: |
+      function iterativeDeepeningBacktracking(initialState, goalTest, getSuccessors) {
+        function depthLimitedSearch(state, path, depthLimit) {
+          if (goalTest(state)) {
+            return [...path, state];
+          }
+          
+          if (depthLimit <= 0) {
+            return null;
+          }
+          
+          for (const successor of getSuccessors(state)) {
+            if (!path.includes(successor)) { // Avoid cycles
+              const result = depthLimitedSearch(successor, [...path, state], depthLimit - 1);
+              if (result !== null) {
+                return result;
+              }
+            }
+          }
+          
+          return null;
+        }
+        
+        // Iteratively increase depth limit
+        for (let depth = 1; depth <= 100; depth++) {
+          const result = depthLimitedSearch(initialState, [], depth);
+          if (result !== null) {
+            return result;
+          }
+        }
+        
+        return null; // No solution found
+      }
+    
+    typescript: |
+      function iterativeDeepeningBacktracking<T>(
+        initialState: T,
+        goalTest: (state: T) => boolean,
+        getSuccessors: (state: T) => T[]
+      ): T[] | null {
+        function depthLimitedSearch(state: T, path: T[], depthLimit: number): T[] | null {
+          if (goalTest(state)) {
+            return [...path, state];
+          }
+          
+          if (depthLimit <= 0) {
+            return null;
+          }
+          
+          for (const successor of getSuccessors(state)) {
+            if (!path.includes(successor)) { // Avoid cycles
+              const result = depthLimitedSearch(successor, [...path, state], depthLimit - 1);
+              if (result !== null) {
+                return result;
+              }
+            }
+          }
+          
+          return null;
+        }
+        
+        // Iteratively increase depth limit
+        for (let depth = 1; depth <= 100; depth++) {
+          const result = depthLimitedSearch(initialState, [], depth);
+          if (result !== null) {
+            return result;
+          }
+        }
+        
+        return null; // No solution found
+      }
+    
+    java: |
+      import java.util.*;
+      import java.util.function.Function;
+      import java.util.function.Predicate;
+      
+      public class IterativeDeepeningBacktracking {
+          public static <T> List<T> iterativeDeepeningBacktracking(
+              T initialState,
+              Predicate<T> goalTest,
+              Function<T, List<T>> getSuccessors) {
+              
+              // Iteratively increase depth limit
+              for (int depth = 1; depth <= 100; depth++) {
+                  List<T> result = depthLimitedSearch(initialState, new ArrayList<>(), depth, goalTest, getSuccessors);
+                  if (result != null) {
+                      return result;
+                  }
+              }
+              
+              return null; // No solution found
+          }
+          
+          private static <T> List<T> depthLimitedSearch(
+              T state,
+              List<T> path,
+              int depthLimit,
+              Predicate<T> goalTest,
+              Function<T, List<T>> getSuccessors) {
+              
+              if (goalTest.test(state)) {
+                  List<T> result = new ArrayList<>(path);
+                  result.add(state);
+                  return result;
+              }
+              
+              if (depthLimit <= 0) {
+                  return null;
+              }
+              
+              for (T successor : getSuccessors.apply(state)) {
+                  if (!path.contains(successor)) { // Avoid cycles
+                      List<T> newPath = new ArrayList<>(path);
+                      newPath.add(state);
+                      List<T> result = depthLimitedSearch(successor, newPath, depthLimit - 1, goalTest, getSuccessors);
+                      if (result != null) {
+                          return result;
+                      }
+                  }
+              }
+              
+              return null;
+          }
+      }
+    
+    cpp: |
+      #include <vector>
+      #include <functional>
+      #include <algorithm>
+      using namespace std;
+      
+      template<typename T>
+      class IterativeDeepeningBacktracking {
+      public:
+          vector<T> iterativeDeepeningBacktracking(
+              const T& initialState,
+              function<bool(const T&)> goalTest,
+              function<vector<T>(const T&)> getSuccessors) {
+              
+              // Iteratively increase depth limit
+              for (int depth = 1; depth <= 100; depth++) {
+                  vector<T> path;
+                  vector<T> result = depthLimitedSearch(initialState, path, depth, goalTest, getSuccessors);
+                  if (!result.empty()) {
+                      return result;
+                  }
+              }
+              
+              return {}; // No solution found
+          }
+          
+      private:
+          vector<T> depthLimitedSearch(
+              const T& state,
+              vector<T>& path,
+              int depthLimit,
+              function<bool(const T&)> goalTest,
+              function<vector<T>(const T&)> getSuccessors) {
+              
+              if (goalTest(state)) {
+                  vector<T> result = path;
+                  result.push_back(state);
+                  return result;
+              }
+              
+              if (depthLimit <= 0) {
+                  return {};
+              }
+              
+              for (const T& successor : getSuccessors(state)) {
+                  if (find(path.begin(), path.end(), successor) == path.end()) { // Avoid cycles
+                      path.push_back(state);
+                      vector<T> result = depthLimitedSearch(successor, path, depthLimit - 1, goalTest, getSuccessors);
+                      if (!result.empty()) {
+                          return result;
+                      }
+                      path.pop_back();
+                  }
+              }
+              
+              return {};
+          }
+      };
+    
+    php: |
+      <?php
+      function iterativeDeepeningBacktracking($initialState, $goalTest, $getSuccessors) {
+          function depthLimitedSearch($state, $path, $depthLimit, $goalTest, $getSuccessors) {
+              if ($goalTest($state)) {
+                  $result = $path;
+                  $result[] = $state;
+                  return $result;
+              }
+              
+              if ($depthLimit <= 0) {
+                  return null;
+              }
+              
+              foreach ($getSuccessors($state) as $successor) {
+                  if (!in_array($successor, $path)) { // Avoid cycles
+                      $newPath = $path;
+                      $newPath[] = $state;
+                      $result = depthLimitedSearch($successor, $newPath, $depthLimit - 1, $goalTest, $getSuccessors);
+                      if ($result !== null) {
+                          return $result;
+                      }
+                  }
+              }
+              
+              return null;
+          }
+          
+          // Iteratively increase depth limit
+          for ($depth = 1; $depth <= 100; $depth++) {
+              $result = depthLimitedSearch($initialState, [], $depth, $goalTest, $getSuccessors);
+              if ($result !== null) {
+                  return $result;
+              }
+          }
+          
+          return null; // No solution found
+      }
+      ?>

@@ -1,0 +1,166 @@
+<svg role="img" aria-labelledby="backtracking-hero-title backtracking-hero-desc" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <title id="backtracking-hero-title">Backtracking Algorithm Hero Image</title>
+  <desc id="backtracking-hero-desc">Visual representation of backtracking algorithm showing systematic exploration with intelligent pruning and backtracking when dead ends are encountered</desc>
+  
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#334155;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#475569;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34d399;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="deadEndGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f87171;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="600" fill="url(#heroGradient)"/>
+  
+  <!-- Title -->
+  <text x="600" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="white">
+    Backtracking: Intelligent Trial and Error
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#cbd5e1">
+    Systematic exploration with smart pruning
+  </text>
+  
+  <!-- Main maze/tree visualization -->
+  <g transform="translate(100, 130)">
+    
+    <!-- Start node -->
+    <circle cx="50" cy="200" r="25" fill="#3b82f6" stroke="#1d4ed8" stroke-width="3"/>
+    <text x="50" y="207" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">START</text>
+    
+    <!-- Level 1 nodes -->
+    <circle cx="200" cy="120" r="20" fill="#6366f1" stroke="#4f46e5" stroke-width="2"/>
+    <text x="200" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">A</text>
+    
+    <circle cx="200" cy="200" r="20" fill="#6366f1" stroke="#4f46e5" stroke-width="2"/>
+    <text x="200" y="206" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">B</text>
+    
+    <circle cx="200" cy="280" r="20" fill="#6366f1" stroke="#4f46e5" stroke-width="2"/>
+    <text x="200" y="286" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">C</text>
+    
+    <!-- Level 2 nodes -->
+    <circle cx="350" cy="80" r="18" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/>
+    <text x="350" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">A1</text>
+    
+    <circle cx="350" cy="160" r="18" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/>
+    <text x="350" y="166" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">A2</text>
+    
+    <!-- Dead end nodes (crossed out) -->
+    <circle cx="350" cy="240" r="18" fill="#ef4444" stroke="#dc2626" stroke-width="2"/>
+    <text x="350" y="246" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">B1</text>
+    <path d="M 335 225 L 365 255" stroke="#dc2626" stroke-width="3"/>
+    <path d="M 365 225 L 335 255" stroke="#dc2626" stroke-width="3"/>
+    
+    <circle cx="350" cy="320" r="18" fill="#ef4444" stroke="#dc2626" stroke-width="2"/>
+    <text x="350" y="326" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">C1</text>
+    <path d="M 335 305 L 365 335" stroke="#dc2626" stroke-width="3"/>
+    <path d="M 365 305 L 335 335" stroke="#dc2626" stroke-width="3"/>
+    
+    <!-- Level 3 - Solution path -->
+    <circle cx="500" cy="160" r="25" fill="#10b981" stroke="#047857" stroke-width="3"/>
+    <text x="500" y="167" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">GOAL</text>
+    
+    <!-- Connection lines -->
+    <!-- From start to level 1 -->
+    <path d="M 75 200 L 180 120" stroke="#64748b" stroke-width="2"/>
+    <path d="M 75 200 L 180 200" stroke="url(#pathGradient)" stroke-width="4"/>
+    <path d="M 75 200 L 180 280" stroke="#64748b" stroke-width="2"/>
+    
+    <!-- From level 1 to level 2 -->
+    <path d="M 220 120 L 330 80" stroke="#64748b" stroke-width="2"/>
+    <path d="M 220 120 L 330 160" stroke="url(#pathGradient)" stroke-width="4"/>
+    <path d="M 220 200 L 330 240" stroke="url(#deadEndGradient)" stroke-width="2" stroke-dasharray="5,5"/>
+    <path d="M 220 280 L 330 320" stroke="url(#deadEndGradient)" stroke-width="2" stroke-dasharray="5,5"/>
+    
+    <!-- From level 2 to goal -->
+    <path d="M 368 160 L 475 160" stroke="url(#pathGradient)" stroke-width="4"/>
+    
+    <!-- Backtracking arrows -->
+    <path d="M 320 250 Q 280 270 240 250" stroke="#f59e0b" stroke-width="3" fill="none" marker-end="url(#backtrackArrow)" stroke-dasharray="8,4"/>
+    <text x="280" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f59e0b">Backtrack</text>
+    
+    <path d="M 320 330 Q 280 350 240 330" stroke="#f59e0b" stroke-width="3" fill="none" marker-end="url(#backtrackArrow)" stroke-dasharray="8,4"/>
+    
+    <!-- Success path highlight -->
+    <text x="275" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#10b981">✓ Valid Path</text>
+    <text x="275" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ef4444">✗ Dead Ends</text>
+  </g>
+  
+  <!-- Right side: Key concepts -->
+  <g transform="translate(650, 150)">
+    <rect x="0" y="0" width="450" height="350" rx="15" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+    
+    <text x="225" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white">
+      Backtracking Principles
+    </text>
+    
+    <!-- Principle 1 -->
+    <g transform="translate(30, 65)">
+      <circle cx="15" cy="15" r="12" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
+      <text x="15" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">1</text>
+      <text x="40" y="12" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">Make a Choice</text>
+      <text x="40" y="30" font-family="Arial, sans-serif" font-size="13" fill="#cbd5e1">Select from available options</text>
+    </g>
+    
+    <!-- Principle 2 -->
+    <g transform="translate(30, 125)">
+      <circle cx="15" cy="15" r="12" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/>
+      <text x="15" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">2</text>
+      <text x="40" y="12" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">Check Constraints</text>
+      <text x="40" y="30" font-family="Arial, sans-serif" font-size="13" fill="#cbd5e1">Validate if choice is valid</text>
+    </g>
+    
+    <!-- Principle 3 -->
+    <g transform="translate(30, 185)">
+      <circle cx="15" cy="15" r="12" fill="#10b981" stroke="#047857" stroke-width="2"/>
+      <text x="15" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">3</text>
+      <text x="40" y="12" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">Recurse or Goal?</text>
+      <text x="40" y="30" font-family="Arial, sans-serif" font-size="13" fill="#cbd5e1">Continue or check if done</text>
+    </g>
+    
+    <!-- Principle 4 -->
+    <g transform="translate(30, 245)">
+      <circle cx="15" cy="15" r="12" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+      <text x="15" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">4</text>
+      <text x="40" y="12" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">Backtrack</text>
+      <text x="40" y="30" font-family="Arial, sans-serif" font-size="13" fill="#cbd5e1">Undo choice and try next</text>
+    </g>
+    
+    <!-- Performance note -->
+    <g transform="translate(30, 295)">
+      <rect x="0" y="0" width="390" height="45" rx="8" fill="rgba(16, 185, 129, 0.2)" stroke="#10b981" stroke-width="2"/>
+      <text x="195" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#10b981">
+        Smart Pruning = Exponential Speedup
+      </text>
+      <text x="195" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6ee7b7">
+        Early constraint checking eliminates branches
+      </text>
+    </g>
+  </g>
+  
+  <!-- Bottom stats -->
+  <g transform="translate(200, 520)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8">
+      Used by: Google (Resource Allocation) • Amazon (Warehouse Optimization) • Uber (Route Planning)
+    </text>
+  </g>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="backtrackArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f59e0b"/>
+    </marker>
+  </defs>
+</svg>
