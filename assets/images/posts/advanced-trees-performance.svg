@@ -1,0 +1,148 @@
+<svg role="img" aria-labelledby="advanced-trees-perf-title advanced-trees-perf-desc" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <title id="advanced-trees-perf-title">Advanced Trees Performance Characteristics</title>
+  <desc id="advanced-trees-perf-desc">Performance comparison chart showing operation complexities and real-world benchmarks for different tree structures</desc>
+  
+  <!-- Background -->
+  <rect width="1200" height="600" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e293b">
+    Performance Characteristics Comparison
+  </text>
+  
+  <!-- Complexity Table -->
+  <g transform="translate(100, 80)">
+    <rect x="0" y="0" width="1000" height="220" rx="12" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    
+    <text x="500" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#334155">
+      Time Complexity Comparison
+    </text>
+    
+    <!-- Table headers -->
+    <g transform="translate(30, 50)">
+      <text x="0" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#475569">Structure</text>
+      <text x="200" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#475569">Search</text>
+      <text x="350" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#475569">Insert</text>
+      <text x="500" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#475569">Delete</text>
+      <text x="650" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#475569">Space</text>
+      <text x="800" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#475569">Best For</text>
+    </g>
+    
+    <!-- AVL Tree -->
+    <g transform="translate(30, 85)">
+      <rect x="0" y="0" width="940" height="30" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+      <text x="10" y="20" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1e40af">AVL Tree</text>
+      <text x="200" y="20" font-family="Arial, sans-serif" font-size="12" fill="#374151">O(log n)</text>
+      <text x="350" y="20" font-family="Arial, sans-serif" font-size="12" fill="#374151">O(log n)</text>
+      <text x="500" y="20" font-family="Arial, sans-serif" font-size="12" fill="#374151">O(log n)</text>
+      <text x="650" y="20" font-family="Arial, sans-serif" font-size="12" fill="#374151">O(n)</text>
+      <text x="800" y="20" font-family="Arial, sans-serif" font-size="11" fill="#374151">Read-heavy</text>
+    </g>
+    
+    <!-- Red-Black Tree -->
+    <g transform="translate(30, 120)">
+      <rect x="0" y="0" width="940" height="30" fill="#fee2e2" stroke="#ef4444" stroke-width="1"/>
+      <text x="10" y="20" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#dc2626">Red-Black Tree</text>
+      <text x="200" y="20" font-family="Arial, sans-serif" font-size="12" fill="#374151">O(log n)</text>
+      <text x="350" y="20" font-family="Arial, sans-serif" font-size="12" fill="#374151">O(log n)</text>
+      <text x="500" y="20" font-family="Arial, sans-serif" font-size="12" fill="#374151">O(log n)</text>
+      <text x="650" y="20" font-family="Arial, sans-serif" font-size="12" fill="#374151">O(n)</text>
+      <text x="800" y="20" font-family="Arial, sans-serif" font-size="11" fill="#374151">Mixed workload</text>
+    </g>
+    
+    <!-- B-Tree -->
+    <g transform="translate(30, 155)">
+      <rect x="0" y="0" width="940" height="30" fill="#f3e8ff" stroke="#8b5cf6" stroke-width="1"/>
+      <text x="10" y="20" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#7c3aed">B-Tree</text>
+      <text x="200" y="20" font-family="Arial, sans-serif" font-size="12" fill="#374151">O(log n)</text>
+      <text x="350" y="20" font-family="Arial, sans-serif" font-size="12" fill="#374151">O(log n)</text>
+      <text x="500" y="20" font-family="Arial, sans-serif" font-size="12" fill="#374151">O(log n)</text>
+      <text x="650" y="20" font-family="Arial, sans-serif" font-size="12" fill="#374151">O(n)</text>
+      <text x="800" y="20" font-family="Arial, sans-serif" font-size="11" fill="#374151">Disk storage</text>
+    </g>
+    
+    <!-- Segment Tree -->
+    <g transform="translate(30, 190)">
+      <rect x="0" y="0" width="940" height="30" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+      <text x="10" y="20" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#92400e">Segment Tree</text>
+      <text x="200" y="20" font-family="Arial, sans-serif" font-size="12" fill="#374151">O(log n)</text>
+      <text x="350" y="20" font-family="Arial, sans-serif" font-size="12" fill="#374151">O(log n)</text>
+      <text x="500" y="20" font-family="Arial, sans-serif" font-size="12" fill="#374151">O(log n)</text>
+      <text x="650" y="20" font-family="Arial, sans-serif" font-size="12" fill="#374151">O(n)</text>
+      <text x="800" y="20" font-family="Arial, sans-serif" font-size="11" fill="#374151">Range queries</text>
+    </g>
+  </g>
+  
+  <!-- Real-World Benchmarks -->
+  <g transform="translate(100, 330)">
+    <rect x="0" y="0" width="1000" height="230" rx="12" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    
+    <text x="500" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#334155">
+      Real-World Performance (1M elements)
+    </text>
+    
+    <!-- Search Performance -->
+    <g transform="translate(50, 60)">
+      <text x="0" y="0" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#334155">
+        Search Operations (ops/sec)
+      </text>
+      
+      <!-- AVL -->
+      <text x="0" y="30" font-family="Arial, sans-serif" font-size="13" fill="#1e40af">AVL Tree</text>
+      <rect x="120" y="17" width="280" height="18" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1"/>
+      <text x="410" y="30" font-family="Arial, sans-serif" font-size="12" fill="#374151">2.8M ops/sec</text>
+      
+      <!-- Red-Black -->
+      <text x="0" y="60" font-family="Arial, sans-serif" font-size="13" fill="#dc2626">Red-Black</text>
+      <rect x="120" y="47" width="260" height="18" fill="#ef4444" stroke="#dc2626" stroke-width="1"/>
+      <text x="390" y="60" font-family="Arial, sans-serif" font-size="12" fill="#374151">2.6M ops/sec</text>
+      
+      <!-- B-Tree -->
+      <text x="0" y="90" font-family="Arial, sans-serif" font-size="13" fill="#7c3aed">B-Tree</text>
+      <rect x="120" y="77" width="240" height="18" fill="#8b5cf6" stroke="#7c3aed" stroke-width="1"/>
+      <text x="370" y="90" font-family="Arial, sans-serif" font-size="12" fill="#374151">2.4M ops/sec</text>
+    </g>
+    
+    <!-- Insert Performance -->
+    <g transform="translate(550, 60)">
+      <text x="0" y="0" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#334155">
+        Insert Operations (ops/sec)
+      </text>
+      
+      <!-- Red-Black -->
+      <text x="0" y="30" font-family="Arial, sans-serif" font-size="13" fill="#dc2626">Red-Black</text>
+      <rect x="120" y="17" width="240" height="18" fill="#ef4444" stroke="#dc2626" stroke-width="1"/>
+      <text x="370" y="30" font-family="Arial, sans-serif" font-size="12" fill="#374151">1.8M ops/sec</text>
+      
+      <!-- AVL -->
+      <text x="0" y="60" font-family="Arial, sans-serif" font-size="13" fill="#1e40af">AVL Tree</text>
+      <rect x="120" y="47" width="180" height="18" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1"/>
+      <text x="310" y="60" font-family="Arial, sans-serif" font-size="12" fill="#374151">1.4M ops/sec</text>
+      
+      <!-- B-Tree -->
+      <text x="0" y="90" font-family="Arial, sans-serif" font-size="13" fill="#7c3aed">B-Tree</text>
+      <rect x="120" y="77" width="200" height="18" fill="#8b5cf6" stroke="#7c3aed" stroke-width="1"/>
+      <text x="330" y="90" font-family="Arial, sans-serif" font-size="12" fill="#374151">1.5M ops/sec</text>
+    </g>
+    
+    <!-- Memory Usage -->
+    <g transform="translate(50, 170)">
+      <text x="0" y="0" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#334155">
+        Memory Overhead per Node
+      </text>
+      
+      <text x="0" y="30" font-family="Arial, sans-serif" font-size="13" fill="#374151">
+        AVL: 24 bytes (2 pointers + balance factor)
+      </text>
+      <text x="0" y="50" font-family="Arial, sans-serif" font-size="13" fill="#374151">
+        Red-Black: 25 bytes (2 pointers + color bit)
+      </text>
+      <text x="450" y="30" font-family="Arial, sans-serif" font-size="13" fill="#374151">
+        B-Tree: Variable (multiple keys per node)
+      </text>
+      <text x="450" y="50" font-family="Arial, sans-serif" font-size="13" fill="#374151">
+        Trie: High (one node per character)
+      </text>
+    </g>
+  </g>
+</svg>

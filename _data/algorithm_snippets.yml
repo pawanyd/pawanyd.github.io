@@ -9453,3 +9453,1357 @@ iterative_deepening_backtracking:
           return null; // No solution found
       }
       ?>
+
+
+# Advanced Trees Algorithms
+avl_insert:
+  name: "AVL Tree Insertion"
+  description: "Insert a node into an AVL tree and rebalance using rotations"
+  complexity:
+    time: "O(log n)"
+    space: "O(log n) for recursion stack"
+  implementations:
+    python: |
+      class AVLNode:
+          def __init__(self, key):
+              self.key = key
+              self.left = None
+              self.right = None
+              self.height = 1
+      
+      def get_height(node):
+          return node.height if node else 0
+      
+      def get_balance(node):
+          return get_height(node.left) - get_height(node.right) if node else 0
+      
+      def right_rotate(y):
+          x = y.left
+          T2 = x.right
+          
+          x.right = y
+          y.left = T2
+          
+          y.height = 1 + max(get_height(y.left), get_height(y.right))
+          x.height = 1 + max(get_height(x.left), get_height(x.right))
+          
+          return x
+      
+      def left_rotate(x):
+          y = x.right
+          T2 = y.left
+          
+          y.left = x
+          x.right = T2
+          
+          x.height = 1 + max(get_height(x.left), get_height(x.right))
+          y.height = 1 + max(get_height(y.left), get_height(y.right))
+          
+          return y
+      
+      def insert(node, key):
+          # Standard BST insertion
+          if not node:
+              return AVLNode(key)
+          
+          if key < node.key:
+              node.left = insert(node.left, key)
+          elif key > node.key:
+              node.right = insert(node.right, key)
+          else:
+              return node  # Duplicate keys not allowed
+          
+          # Update height
+          node.height = 1 + max(get_height(node.left), get_height(node.right))
+          
+          # Get balance factor
+          balance = get_balance(node)
+          
+          # Left Left Case
+          if balance > 1 and key < node.left.key:
+              return right_rotate(node)
+          
+          # Right Right Case
+          if balance < -1 and key > node.right.key:
+              return left_rotate(node)
+          
+          # Left Right Case
+          if balance > 1 and key > node.left.key:
+              node.left = left_rotate(node.left)
+              return right_rotate(node)
+          
+          # Right Left Case
+          if balance < -1 and key < node.right.key:
+              node.right = right_rotate(node.right)
+              return left_rotate(node)
+          
+          return node
+    javascript: |
+      class AVLNode {
+          constructor(key) {
+              this.key = key;
+              this.left = null;
+              this.right = null;
+              this.height = 1;
+          }
+      }
+      
+      function getHeight(node) {
+          return node ? node.height : 0;
+      }
+      
+      function getBalance(node) {
+          return node ? getHeight(node.left) - getHeight(node.right) : 0;
+      }
+      
+      function rightRotate(y) {
+          const x = y.left;
+          const T2 = x.right;
+          
+          x.right = y;
+          y.left = T2;
+          
+          y.height = 1 + Math.max(getHeight(y.left), getHeight(y.right));
+          x.height = 1 + Math.max(getHeight(x.left), getHeight(x.right));
+          
+          return x;
+      }
+      
+      function leftRotate(x) {
+          const y = x.right;
+          const T2 = y.left;
+          
+          y.left = x;
+          x.right = T2;
+          
+          x.height = 1 + Math.max(getHeight(x.left), getHeight(x.right));
+          y.height = 1 + Math.max(getHeight(y.left), getHeight(y.right));
+          
+          return y;
+      }
+      
+      function insert(node, key) {
+          // Standard BST insertion
+          if (!node) return new AVLNode(key);
+          
+          if (key < node.key) {
+              node.left = insert(node.left, key);
+          } else if (key > node.key) {
+              node.right = insert(node.right, key);
+          } else {
+              return node; // Duplicate keys not allowed
+          }
+          
+          // Update height
+          node.height = 1 + Math.max(getHeight(node.left), getHeight(node.right));
+          
+          // Get balance factor
+          const balance = getBalance(node);
+          
+          // Left Left Case
+          if (balance > 1 && key < node.left.key) {
+              return rightRotate(node);
+          }
+          
+          // Right Right Case
+          if (balance < -1 && key > node.right.key) {
+              return leftRotate(node);
+          }
+          
+          // Left Right Case
+          if (balance > 1 && key > node.left.key) {
+              node.left = leftRotate(node.left);
+              return rightRotate(node);
+          }
+          
+          // Right Left Case
+          if (balance < -1 && key < node.right.key) {
+              node.right = rightRotate(node.right);
+              return leftRotate(node);
+          }
+          
+          return node;
+      }
+    typescript: |
+      class AVLNode {
+          key: number;
+          left: AVLNode | null;
+          right: AVLNode | null;
+          height: number;
+          
+          constructor(key: number) {
+              this.key = key;
+              this.left = null;
+              this.right = null;
+              this.height = 1;
+          }
+      }
+      
+      function getHeight(node: AVLNode | null): number {
+          return node ? node.height : 0;
+      }
+      
+      function getBalance(node: AVLNode | null): number {
+          return node ? getHeight(node.left) - getHeight(node.right) : 0;
+      }
+      
+      function rightRotate(y: AVLNode): AVLNode {
+          const x = y.left!;
+          const T2 = x.right;
+          
+          x.right = y;
+          y.left = T2;
+          
+          y.height = 1 + Math.max(getHeight(y.left), getHeight(y.right));
+          x.height = 1 + Math.max(getHeight(x.left), getHeight(x.right));
+          
+          return x;
+      }
+      
+      function leftRotate(x: AVLNode): AVLNode {
+          const y = x.right!;
+          const T2 = y.left;
+          
+          y.left = x;
+          x.right = T2;
+          
+          x.height = 1 + Math.max(getHeight(x.left), getHeight(x.right));
+          y.height = 1 + Math.max(getHeight(y.left), getHeight(y.right));
+          
+          return y;
+      }
+      
+      function insert(node: AVLNode | null, key: number): AVLNode {
+          if (!node) return new AVLNode(key);
+          
+          if (key < node.key) {
+              node.left = insert(node.left, key);
+          } else if (key > node.key) {
+              node.right = insert(node.right, key);
+          } else {
+              return node;
+          }
+          
+          node.height = 1 + Math.max(getHeight(node.left), getHeight(node.right));
+          const balance = getBalance(node);
+          
+          if (balance > 1 && key < node.left!.key) {
+              return rightRotate(node);
+          }
+          
+          if (balance < -1 && key > node.right!.key) {
+              return leftRotate(node);
+          }
+          
+          if (balance > 1 && key > node.left!.key) {
+              node.left = leftRotate(node.left!);
+              return rightRotate(node);
+          }
+          
+          if (balance < -1 && key < node.right!.key) {
+              node.right = rightRotate(node.right!);
+              return leftRotate(node);
+          }
+          
+          return node;
+      }
+    java: |
+      class AVLNode {
+          int key, height;
+          AVLNode left, right;
+          
+          AVLNode(int key) {
+              this.key = key;
+              this.height = 1;
+          }
+      }
+      
+      class AVLTree {
+          int getHeight(AVLNode node) {
+              return node == null ? 0 : node.height;
+          }
+          
+          int getBalance(AVLNode node) {
+              return node == null ? 0 : getHeight(node.left) - getHeight(node.right);
+          }
+          
+          AVLNode rightRotate(AVLNode y) {
+              AVLNode x = y.left;
+              AVLNode T2 = x.right;
+              
+              x.right = y;
+              y.left = T2;
+              
+              y.height = 1 + Math.max(getHeight(y.left), getHeight(y.right));
+              x.height = 1 + Math.max(getHeight(x.left), getHeight(x.right));
+              
+              return x;
+          }
+          
+          AVLNode leftRotate(AVLNode x) {
+              AVLNode y = x.right;
+              AVLNode T2 = y.left;
+              
+              y.left = x;
+              x.right = T2;
+              
+              x.height = 1 + Math.max(getHeight(x.left), getHeight(x.right));
+              y.height = 1 + Math.max(getHeight(y.left), getHeight(y.right));
+              
+              return y;
+          }
+          
+          AVLNode insert(AVLNode node, int key) {
+              if (node == null) return new AVLNode(key);
+              
+              if (key < node.key) {
+                  node.left = insert(node.left, key);
+              } else if (key > node.key) {
+                  node.right = insert(node.right, key);
+              } else {
+                  return node;
+              }
+              
+              node.height = 1 + Math.max(getHeight(node.left), getHeight(node.right));
+              int balance = getBalance(node);
+              
+              // Left Left Case
+              if (balance > 1 && key < node.left.key) {
+                  return rightRotate(node);
+              }
+              
+              // Right Right Case
+              if (balance < -1 && key > node.right.key) {
+                  return leftRotate(node);
+              }
+              
+              // Left Right Case
+              if (balance > 1 && key > node.left.key) {
+                  node.left = leftRotate(node.left);
+                  return rightRotate(node);
+              }
+              
+              // Right Left Case
+              if (balance < -1 && key < node.right.key) {
+                  node.right = rightRotate(node.right);
+                  return leftRotate(node);
+              }
+              
+              return node;
+          }
+      }
+    cpp: |
+      struct AVLNode {
+          int key;
+          AVLNode* left;
+          AVLNode* right;
+          int height;
+          
+          AVLNode(int k) : key(k), left(nullptr), right(nullptr), height(1) {}
+      };
+      
+      int getHeight(AVLNode* node) {
+          return node ? node->height : 0;
+      }
+      
+      int getBalance(AVLNode* node) {
+          return node ? getHeight(node->left) - getHeight(node->right) : 0;
+      }
+      
+      AVLNode* rightRotate(AVLNode* y) {
+          AVLNode* x = y->left;
+          AVLNode* T2 = x->right;
+          
+          x->right = y;
+          y->left = T2;
+          
+          y->height = 1 + std::max(getHeight(y->left), getHeight(y->right));
+          x->height = 1 + std::max(getHeight(x->left), getHeight(x->right));
+          
+          return x;
+      }
+      
+      AVLNode* leftRotate(AVLNode* x) {
+          AVLNode* y = x->right;
+          AVLNode* T2 = y->left;
+          
+          y->left = x;
+          x->right = T2;
+          
+          x->height = 1 + std::max(getHeight(x->left), getHeight(x->right));
+          y->height = 1 + std::max(getHeight(y->left), getHeight(y->right));
+          
+          return y;
+      }
+      
+      AVLNode* insert(AVLNode* node, int key) {
+          if (!node) return new AVLNode(key);
+          
+          if (key < node->key) {
+              node->left = insert(node->left, key);
+          } else if (key > node->key) {
+              node->right = insert(node->right, key);
+          } else {
+              return node;
+          }
+          
+          node->height = 1 + std::max(getHeight(node->left), getHeight(node->right));
+          int balance = getBalance(node);
+          
+          // Left Left Case
+          if (balance > 1 && key < node->left->key) {
+              return rightRotate(node);
+          }
+          
+          // Right Right Case
+          if (balance < -1 && key > node->right->key) {
+              return leftRotate(node);
+          }
+          
+          // Left Right Case
+          if (balance > 1 && key > node->left->key) {
+              node->left = leftRotate(node->left);
+              return rightRotate(node);
+          }
+          
+          // Right Left Case
+          if (balance < -1 && key < node->right->key) {
+              node->right = rightRotate(node->right);
+              return leftRotate(node);
+          }
+          
+          return node;
+      }
+    php: |
+      <?php
+      class AVLNode {
+          public $key;
+          public $left;
+          public $right;
+          public $height;
+          
+          public function __construct($key) {
+              $this->key = $key;
+              $this->left = null;
+              $this->right = null;
+              $this->height = 1;
+          }
+      }
+      
+      function getHeight($node) {
+          return $node ? $node->height : 0;
+      }
+      
+      function getBalance($node) {
+          return $node ? getHeight($node->left) - getHeight($node->right) : 0;
+      }
+      
+      function rightRotate($y) {
+          $x = $y->left;
+          $T2 = $x->right;
+          
+          $x->right = $y;
+          $y->left = $T2;
+          
+          $y->height = 1 + max(getHeight($y->left), getHeight($y->right));
+          $x->height = 1 + max(getHeight($x->left), getHeight($x->right));
+          
+          return $x;
+      }
+      
+      function leftRotate($x) {
+          $y = $x->right;
+          $T2 = $y->left;
+          
+          $y->left = $x;
+          $x->right = $T2;
+          
+          $x->height = 1 + max(getHeight($x->left), getHeight($x->right));
+          $y->height = 1 + max(getHeight($y->left), getHeight($y->right));
+          
+          return $y;
+      }
+      
+      function insert($node, $key) {
+          if (!$node) return new AVLNode($key);
+          
+          if ($key < $node->key) {
+              $node->left = insert($node->left, $key);
+          } elseif ($key > $node->key) {
+              $node->right = insert($node->right, $key);
+          } else {
+              return $node;
+          }
+          
+          $node->height = 1 + max(getHeight($node->left), getHeight($node->right));
+          $balance = getBalance($node);
+          
+          // Left Left Case
+          if ($balance > 1 && $key < $node->left->key) {
+              return rightRotate($node);
+          }
+          
+          // Right Right Case
+          if ($balance < -1 && $key > $node->right->key) {
+              return leftRotate($node);
+          }
+          
+          // Left Right Case
+          if ($balance > 1 && $key > $node->left->key) {
+              $node->left = leftRotate($node->left);
+              return rightRotate($node);
+          }
+          
+          // Right Left Case
+          if ($balance < -1 && $key < $node->right->key) {
+              $node->right = rightRotate($node->right);
+              return leftRotate($node);
+          }
+          
+          return $node;
+      }
+      ?>
+
+
+red_black_insert:
+  name: "Red-Black Tree Insertion"
+  description: "Insert a node into a Red-Black tree and maintain color properties"
+  complexity:
+    time: "O(log n)"
+    space: "O(1) iterative, O(log n) recursive"
+  implementations:
+    python: |
+      class Color:
+          RED = 0
+          BLACK = 1
+      
+      class RBNode:
+          def __init__(self, key):
+              self.key = key
+              self.left = None
+              self.right = None
+              self.parent = None
+              self.color = Color.RED
+      
+      class RedBlackTree:
+          def __init__(self):
+              self.NIL = RBNode(0)
+              self.NIL.color = Color.BLACK
+              self.root = self.NIL
+          
+          def left_rotate(self, x):
+              y = x.right
+              x.right = y.left
+              if y.left != self.NIL:
+                  y.left.parent = x
+              y.parent = x.parent
+              if x.parent == None:
+                  self.root = y
+              elif x == x.parent.left:
+                  x.parent.left = y
+              else:
+                  x.parent.right = y
+              y.left = x
+              x.parent = y
+          
+          def right_rotate(self, x):
+              y = x.left
+              x.left = y.right
+              if y.right != self.NIL:
+                  y.right.parent = x
+              y.parent = x.parent
+              if x.parent == None:
+                  self.root = y
+              elif x == x.parent.right:
+                  x.parent.right = y
+              else:
+                  x.parent.left = y
+              y.right = x
+              x.parent = y
+          
+          def insert(self, key):
+              node = RBNode(key)
+              node.left = self.NIL
+              node.right = self.NIL
+              
+              parent = None
+              current = self.root
+              
+              while current != self.NIL:
+                  parent = current
+                  if node.key < current.key:
+                      current = current.left
+                  else:
+                      current = current.right
+              
+              node.parent = parent
+              if parent == None:
+                  self.root = node
+              elif node.key < parent.key:
+                  parent.left = node
+              else:
+                  parent.right = node
+              
+              if node.parent == None:
+                  node.color = Color.BLACK
+                  return
+              
+              if node.parent.parent == None:
+                  return
+              
+              self.fix_insert(node)
+          
+          def fix_insert(self, k):
+              while k.parent.color == Color.RED:
+                  if k.parent == k.parent.parent.right:
+                      u = k.parent.parent.left
+                      if u.color == Color.RED:
+                          u.color = Color.BLACK
+                          k.parent.color = Color.BLACK
+                          k.parent.parent.color = Color.RED
+                          k = k.parent.parent
+                      else:
+                          if k == k.parent.left:
+                              k = k.parent
+                              self.right_rotate(k)
+                          k.parent.color = Color.BLACK
+                          k.parent.parent.color = Color.RED
+                          self.left_rotate(k.parent.parent)
+                  else:
+                      u = k.parent.parent.right
+                      if u.color == Color.RED:
+                          u.color = Color.BLACK
+                          k.parent.color = Color.BLACK
+                          k.parent.parent.color = Color.RED
+                          k = k.parent.parent
+                      else:
+                          if k == k.parent.right:
+                              k = k.parent
+                              self.left_rotate(k)
+                          k.parent.color = Color.BLACK
+                          k.parent.parent.color = Color.RED
+                          self.right_rotate(k.parent.parent)
+                  if k == self.root:
+                      break
+              self.root.color = Color.BLACK
+    javascript: |
+      const Color = { RED: 0, BLACK: 1 };
+      
+      class RBNode {
+          constructor(key) {
+              this.key = key;
+              this.left = null;
+              this.right = null;
+              this.parent = null;
+              this.color = Color.RED;
+          }
+      }
+      
+      class RedBlackTree {
+          constructor() {
+              this.NIL = new RBNode(0);
+              this.NIL.color = Color.BLACK;
+              this.root = this.NIL;
+          }
+          
+          leftRotate(x) {
+              const y = x.right;
+              x.right = y.left;
+              if (y.left !== this.NIL) {
+                  y.left.parent = x;
+              }
+              y.parent = x.parent;
+              if (x.parent === null) {
+                  this.root = y;
+              } else if (x === x.parent.left) {
+                  x.parent.left = y;
+              } else {
+                  x.parent.right = y;
+              }
+              y.left = x;
+              x.parent = y;
+          }
+          
+          insert(key) {
+              const node = new RBNode(key);
+              node.left = this.NIL;
+              node.right = this.NIL;
+              
+              let parent = null;
+              let current = this.root;
+              
+              while (current !== this.NIL) {
+                  parent = current;
+                  if (node.key < current.key) {
+                      current = current.left;
+                  } else {
+                      current = current.right;
+                  }
+              }
+              
+              node.parent = parent;
+              if (parent === null) {
+                  this.root = node;
+              } else if (node.key < parent.key) {
+                  parent.left = node;
+              } else {
+                  parent.right = node;
+              }
+              
+              if (node.parent === null) {
+                  node.color = Color.BLACK;
+                  return;
+              }
+              
+              if (node.parent.parent === null) {
+                  return;
+              }
+              
+              this.fixInsert(node);
+          }
+          
+          fixInsert(k) {
+              while (k.parent.color === Color.RED) {
+                  if (k.parent === k.parent.parent.right) {
+                      const u = k.parent.parent.left;
+                      if (u.color === Color.RED) {
+                          u.color = Color.BLACK;
+                          k.parent.color = Color.BLACK;
+                          k.parent.parent.color = Color.RED;
+                          k = k.parent.parent;
+                      } else {
+                          if (k === k.parent.left) {
+                              k = k.parent;
+                              this.rightRotate(k);
+                          }
+                          k.parent.color = Color.BLACK;
+                          k.parent.parent.color = Color.RED;
+                          this.leftRotate(k.parent.parent);
+                      }
+                  } else {
+                      const u = k.parent.parent.right;
+                      if (u.color === Color.RED) {
+                          u.color = Color.BLACK;
+                          k.parent.color = Color.BLACK;
+                          k.parent.parent.color = Color.RED;
+                          k = k.parent.parent;
+                      } else {
+                          if (k === k.parent.right) {
+                              k = k.parent;
+                              this.leftRotate(k);
+                          }
+                          k.parent.color = Color.BLACK;
+                          k.parent.parent.color = Color.RED;
+                          this.rightRotate(k.parent.parent);
+                      }
+                  }
+                  if (k === this.root) {
+                      break;
+                  }
+              }
+              this.root.color = Color.BLACK;
+          }
+      }
+    typescript: |
+      enum Color { RED, BLACK }
+      
+      class RBNode {
+          key: number;
+          left: RBNode | null;
+          right: RBNode | null;
+          parent: RBNode | null;
+          color: Color;
+          
+          constructor(key: number) {
+              this.key = key;
+              this.left = null;
+              this.right = null;
+              this.parent = null;
+              this.color = Color.RED;
+          }
+      }
+      
+      class RedBlackTree {
+          NIL: RBNode;
+          root: RBNode;
+          
+          constructor() {
+              this.NIL = new RBNode(0);
+              this.NIL.color = Color.BLACK;
+              this.root = this.NIL;
+          }
+          
+          insert(key: number): void {
+              const node = new RBNode(key);
+              node.left = this.NIL;
+              node.right = this.NIL;
+              
+              let parent: RBNode | null = null;
+              let current = this.root;
+              
+              while (current !== this.NIL) {
+                  parent = current;
+                  if (node.key < current.key) {
+                      current = current.left!;
+                  } else {
+                      current = current.right!;
+                  }
+              }
+              
+              node.parent = parent;
+              if (parent === null) {
+                  this.root = node;
+              } else if (node.key < parent.key) {
+                  parent.left = node;
+              } else {
+                  parent.right = node;
+              }
+              
+              if (node.parent === null) {
+                  node.color = Color.BLACK;
+                  return;
+              }
+              
+              if (node.parent.parent === null) {
+                  return;
+              }
+              
+              this.fixInsert(node);
+          }
+      }
+    java: |
+      enum Color { RED, BLACK }
+      
+      class RBNode {
+          int key;
+          RBNode left, right, parent;
+          Color color;
+          
+          RBNode(int key) {
+              this.key = key;
+              this.color = Color.RED;
+          }
+      }
+      
+      class RedBlackTree {
+          private RBNode NIL;
+          private RBNode root;
+          
+          public RedBlackTree() {
+              NIL = new RBNode(0);
+              NIL.color = Color.BLACK;
+              root = NIL;
+          }
+          
+          private void leftRotate(RBNode x) {
+              RBNode y = x.right;
+              x.right = y.left;
+              if (y.left != NIL) {
+                  y.left.parent = x;
+              }
+              y.parent = x.parent;
+              if (x.parent == null) {
+                  root = y;
+              } else if (x == x.parent.left) {
+                  x.parent.left = y;
+              } else {
+                  x.parent.right = y;
+              }
+              y.left = x;
+              x.parent = y;
+          }
+          
+          public void insert(int key) {
+              RBNode node = new RBNode(key);
+              node.left = NIL;
+              node.right = NIL;
+              
+              RBNode parent = null;
+              RBNode current = root;
+              
+              while (current != NIL) {
+                  parent = current;
+                  if (node.key < current.key) {
+                      current = current.left;
+                  } else {
+                      current = current.right;
+                  }
+              }
+              
+              node.parent = parent;
+              if (parent == null) {
+                  root = node;
+              } else if (node.key < parent.key) {
+                  parent.left = node;
+              } else {
+                  parent.right = node;
+              }
+              
+              if (node.parent == null) {
+                  node.color = Color.BLACK;
+                  return;
+              }
+              
+              if (node.parent.parent == null) {
+                  return;
+              }
+              
+              fixInsert(node);
+          }
+      }
+    cpp: |
+      enum Color { RED, BLACK };
+      
+      struct RBNode {
+          int key;
+          RBNode* left;
+          RBNode* right;
+          RBNode* parent;
+          Color color;
+          
+          RBNode(int k) : key(k), left(nullptr), right(nullptr), 
+                          parent(nullptr), color(RED) {}
+      };
+      
+      class RedBlackTree {
+      private:
+          RBNode* NIL;
+          RBNode* root;
+          
+          void leftRotate(RBNode* x) {
+              RBNode* y = x->right;
+              x->right = y->left;
+              if (y->left != NIL) {
+                  y->left->parent = x;
+              }
+              y->parent = x->parent;
+              if (x->parent == nullptr) {
+                  root = y;
+              } else if (x == x->parent->left) {
+                  x->parent->left = y;
+              } else {
+                  x->parent->right = y;
+              }
+              y->left = x;
+              x->parent = y;
+          }
+          
+      public:
+          RedBlackTree() {
+              NIL = new RBNode(0);
+              NIL->color = BLACK;
+              root = NIL;
+          }
+          
+          void insert(int key) {
+              RBNode* node = new RBNode(key);
+              node->left = NIL;
+              node->right = NIL;
+              
+              RBNode* parent = nullptr;
+              RBNode* current = root;
+              
+              while (current != NIL) {
+                  parent = current;
+                  if (node->key < current->key) {
+                      current = current->left;
+                  } else {
+                      current = current->right;
+                  }
+              }
+              
+              node->parent = parent;
+              if (parent == nullptr) {
+                  root = node;
+              } else if (node->key < parent->key) {
+                  parent->left = node;
+              } else {
+                  parent->right = node;
+              }
+              
+              if (node->parent == nullptr) {
+                  node->color = BLACK;
+                  return;
+              }
+              
+              if (node->parent->parent == nullptr) {
+                  return;
+              }
+              
+              fixInsert(node);
+          }
+      };
+    php: |
+      <?php
+      class Color {
+          const RED = 0;
+          const BLACK = 1;
+      }
+      
+      class RBNode {
+          public $key;
+          public $left;
+          public $right;
+          public $parent;
+          public $color;
+          
+          public function __construct($key) {
+              $this->key = $key;
+              $this->left = null;
+              $this->right = null;
+              $this->parent = null;
+              $this->color = Color::RED;
+          }
+      }
+      
+      class RedBlackTree {
+          private $NIL;
+          private $root;
+          
+          public function __construct() {
+              $this->NIL = new RBNode(0);
+              $this->NIL->color = Color::BLACK;
+              $this->root = $this->NIL;
+          }
+          
+          public function insert($key) {
+              $node = new RBNode($key);
+              $node->left = $this->NIL;
+              $node->right = $this->NIL;
+              
+              $parent = null;
+              $current = $this->root;
+              
+              while ($current !== $this->NIL) {
+                  $parent = $current;
+                  if ($node->key < $current->key) {
+                      $current = $current->left;
+                  } else {
+                      $current = $current->right;
+                  }
+              }
+              
+              $node->parent = $parent;
+              if ($parent === null) {
+                  $this->root = $node;
+              } elseif ($node->key < $parent->key) {
+                  $parent->left = $node;
+              } else {
+                  $parent->right = $node;
+              }
+              
+              if ($node->parent === null) {
+                  $node->color = Color::BLACK;
+                  return;
+              }
+              
+              if ($node->parent->parent === null) {
+                  return;
+              }
+              
+              $this->fixInsert($node);
+          }
+      }
+      ?>
+
+b_tree_search:
+  name: "B-Tree Search"
+  description: "Search for a key in a B-tree optimized for disk access"
+  complexity:
+    time: "O(log n)"
+    space: "O(1)"
+  implementations:
+    python: |
+      class BTreeNode:
+          def __init__(self, leaf=True):
+              self.keys = []
+              self.children = []
+              self.leaf = leaf
+      
+      def search(node, key):
+          """Search for key in B-tree"""
+          i = 0
+          # Find the first key greater than or equal to key
+          while i < len(node.keys) and key > node.keys[i]:
+              i += 1
+          
+          # If key found
+          if i < len(node.keys) and key == node.keys[i]:
+              return (node, i)
+          
+          # If leaf node, key not found
+          if node.leaf:
+              return None
+          
+          # Recursively search in appropriate child
+          return search(node.children[i], key)
+    javascript: |
+      class BTreeNode {
+          constructor(leaf = true) {
+              this.keys = [];
+              this.children = [];
+              this.leaf = leaf;
+          }
+      }
+      
+      function search(node, key) {
+          let i = 0;
+          while (i < node.keys.length && key > node.keys[i]) {
+              i++;
+          }
+          
+          if (i < node.keys.length && key === node.keys[i]) {
+              return { node, index: i };
+          }
+          
+          if (node.leaf) {
+              return null;
+          }
+          
+          return search(node.children[i], key);
+      }
+
+segment_tree_query:
+  name: "Segment Tree Range Query"
+  description: "Query sum/min/max over a range in O(log n) time"
+  complexity:
+    time: "O(log n)"
+    space: "O(n)"
+  implementations:
+    python: |
+      class SegmentTree:
+          def __init__(self, arr):
+              self.n = len(arr)
+              self.tree = [0] * (4 * self.n)
+              self.build(arr, 0, 0, self.n - 1)
+          
+          def build(self, arr, node, start, end):
+              if start == end:
+                  self.tree[node] = arr[start]
+              else:
+                  mid = (start + end) // 2
+                  self.build(arr, 2*node+1, start, mid)
+                  self.build(arr, 2*node+2, mid+1, end)
+                  self.tree[node] = self.tree[2*node+1] + self.tree[2*node+2]
+          
+          def query(self, node, start, end, l, r):
+              """Query sum in range [l, r]"""
+              if r < start or end < l:
+                  return 0
+              
+              if l <= start and end <= r:
+                  return self.tree[node]
+              
+              mid = (start + end) // 2
+              left_sum = self.query(2*node+1, start, mid, l, r)
+              right_sum = self.query(2*node+2, mid+1, end, l, r)
+              return left_sum + right_sum
+          
+          def range_query(self, l, r):
+              return self.query(0, 0, self.n-1, l, r)
+    javascript: |
+      class SegmentTree {
+          constructor(arr) {
+              this.n = arr.length;
+              this.tree = new Array(4 * this.n).fill(0);
+              this.build(arr, 0, 0, this.n - 1);
+          }
+          
+          build(arr, node, start, end) {
+              if (start === end) {
+                  this.tree[node] = arr[start];
+              } else {
+                  const mid = Math.floor((start + end) / 2);
+                  this.build(arr, 2*node+1, start, mid);
+                  this.build(arr, 2*node+2, mid+1, end);
+                  this.tree[node] = this.tree[2*node+1] + this.tree[2*node+2];
+              }
+          }
+          
+          query(node, start, end, l, r) {
+              if (r < start || end < l) {
+                  return 0;
+              }
+              
+              if (l <= start && end <= r) {
+                  return this.tree[node];
+              }
+              
+              const mid = Math.floor((start + end) / 2);
+              const leftSum = this.query(2*node+1, start, mid, l, r);
+              const rightSum = this.query(2*node+2, mid+1, end, l, r);
+              return leftSum + rightSum;
+          }
+          
+          rangeQuery(l, r) {
+              return this.query(0, 0, this.n-1, l, r);
+          }
+      }
+
+trie_insert:
+  name: "Trie Insertion and Search"
+  description: "Insert and search strings in a trie for prefix matching"
+  complexity:
+    time: "O(m) where m is string length"
+    space: "O(m * n) where n is number of strings"
+  implementations:
+    python: |
+      class TrieNode:
+          def __init__(self):
+              self.children = {}
+              self.is_end_of_word = False
+      
+      class Trie:
+          def __init__(self):
+              self.root = TrieNode()
+          
+          def insert(self, word):
+              """Insert a word into the trie"""
+              node = self.root
+              for char in word:
+                  if char not in node.children:
+                      node.children[char] = TrieNode()
+                  node = node.children[char]
+              node.is_end_of_word = True
+          
+          def search(self, word):
+              """Search for exact word match"""
+              node = self.root
+              for char in word:
+                  if char not in node.children:
+                      return False
+                  node = node.children[char]
+              return node.is_end_of_word
+          
+          def starts_with(self, prefix):
+              """Check if any word starts with prefix"""
+              node = self.root
+              for char in prefix:
+                  if char not in node.children:
+                      return False
+                  node = node.children[char]
+              return True
+    javascript: |
+      class TrieNode {
+          constructor() {
+              this.children = new Map();
+              this.isEndOfWord = false;
+          }
+      }
+      
+      class Trie {
+          constructor() {
+              this.root = new TrieNode();
+          }
+          
+          insert(word) {
+              let node = this.root;
+              for (const char of word) {
+                  if (!node.children.has(char)) {
+                      node.children.set(char, new TrieNode());
+                  }
+                  node = node.children.get(char);
+              }
+              node.isEndOfWord = true;
+          }
+          
+          search(word) {
+              let node = this.root;
+              for (const char of word) {
+                  if (!node.children.has(char)) {
+                      return false;
+                  }
+                  node = node.children.get(char);
+              }
+              return node.isEndOfWord;
+          }
+          
+          startsWith(prefix) {
+              let node = this.root;
+              for (const char of prefix) {
+                  if (!node.children.has(char)) {
+                      return false;
+                  }
+                  node = node.children.get(char);
+              }
+              return true;
+          }
+      }
+
+tree_rotation:
+  name: "Tree Rotation Operations"
+  description: "Left and right rotations for self-balancing trees"
+  complexity:
+    time: "O(1)"
+    space: "O(1)"
+  implementations:
+    python: |
+      class TreeNode:
+          def __init__(self, key):
+              self.key = key
+              self.left = None
+              self.right = None
+      
+      def right_rotate(y):
+          """
+          Right rotation:
+              y                x
+             / \              / \
+            x   C    =>      A   y
+           / \                  / \
+          A   B                B   C
+          """
+          x = y.left
+          B = x.right
+          
+          # Perform rotation
+          x.right = y
+          y.left = B
+          
+          return x  # New root
+      
+      def left_rotate(x):
+          """
+          Left rotation:
+            x                  y
+           / \                / \
+          A   y      =>      x   C
+             / \            / \
+            B   C          A   B
+          """
+          y = x.right
+          B = y.left
+          
+          # Perform rotation
+          y.left = x
+          x.right = B
+          
+          return y  # New root
+    javascript: |
+      class TreeNode {
+          constructor(key) {
+              this.key = key;
+              this.left = null;
+              this.right = null;
+          }
+      }
+      
+      function rightRotate(y) {
+          const x = y.left;
+          const B = x.right;
+          
+          x.right = y;
+          y.left = B;
+          
+          return x;
+      }
+      
+      function leftRotate(x) {
+          const y = x.right;
+          const B = y.left;
+          
+          y.left = x;
+          x.right = B;
+          
+          return y;
+      }

@@ -1,0 +1,256 @@
+<svg role="img" aria-labelledby="advanced-trees-hero-title advanced-trees-hero-desc" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <title id="advanced-trees-hero-title">Advanced Trees Hero Image</title>
+  <desc id="advanced-trees-hero-desc">Visual representation of advanced tree structures including AVL trees, Red-Black trees, B-trees, Segment trees, and Tries with self-balancing properties</desc>
+  
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#334155;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#475569;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="avlGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="rbGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f87171;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="600" fill="url(#heroGradient)"/>
+  
+  <!-- Title -->
+  <text x="600" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="white">
+    Advanced Trees: Self-Balancing Structures
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#cbd5e1">
+    The invisible infrastructure powering modern databases and systems
+  </text>
+  
+  <!-- Left: AVL Tree Example -->
+  <g transform="translate(80, 140)">
+    <text x="120" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#60a5fa">
+      AVL Tree (Strict Balance)
+    </text>
+    
+    <!-- AVL Tree nodes -->
+    <circle cx="120" cy="60" r="20" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
+    <text x="120" y="66" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">50</text>
+    
+    <circle cx="70" cy="120" r="18" fill="#60a5fa" stroke="#3b82f6" stroke-width="2"/>
+    <text x="70" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="white">30</text>
+    
+    <circle cx="170" cy="120" r="18" fill="#60a5fa" stroke="#3b82f6" stroke-width="2"/>
+    <text x="170" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="white">70</text>
+    
+    <circle cx="40" cy="170" r="15" fill="#93c5fd" stroke="#60a5fa" stroke-width="2"/>
+    <text x="40" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">20</text>
+    
+    <circle cx="100" cy="170" r="15" fill="#93c5fd" stroke="#60a5fa" stroke-width="2"/>
+    <text x="100" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">40</text>
+    
+    <circle cx="140" cy="170" r="15" fill="#93c5fd" stroke="#60a5fa" stroke-width="2"/>
+    <text x="140" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">60</text>
+    
+    <circle cx="200" cy="170" r="15" fill="#93c5fd" stroke="#60a5fa" stroke-width="2"/>
+    <text x="200" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">80</text>
+    
+    <!-- Connections -->
+    <path d="M 105 75 L 82 105" stroke="#60a5fa" stroke-width="2"/>
+    <path d="M 135 75 L 158 105" stroke="#60a5fa" stroke-width="2"/>
+    <path d="M 58 135 L 47 155" stroke="#93c5fd" stroke-width="2"/>
+    <path d="M 82 135 L 93 155" stroke="#93c5fd" stroke-width="2"/>
+    <path d="M 158 135 L 147 155" stroke="#93c5fd" stroke-width="2"/>
+    <path d="M 182 135 L 193 155" stroke="#93c5fd" stroke-width="2"/>
+    
+    <!-- Balance indicator -->
+    <text x="120" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6ee7b7">
+      Height diff ≤ 1
+    </text>
+  </g>
+  
+  <!-- Center: Red-Black Tree Example -->
+  <g transform="translate(380, 140)">
+    <text x="120" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f87171">
+      Red-Black Tree (Relaxed Balance)
+    </text>
+    
+    <!-- Red-Black Tree nodes -->
+    <circle cx="120" cy="60" r="20" fill="#1f2937" stroke="#374151" stroke-width="2"/>
+    <text x="120" y="66" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">50</text>
+    
+    <circle cx="70" cy="120" r="18" fill="#ef4444" stroke="#dc2626" stroke-width="2"/>
+    <text x="70" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="white">30</text>
+    
+    <circle cx="170" cy="120" r="18" fill="#1f2937" stroke="#374151" stroke-width="2"/>
+    <text x="170" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="white">70</text>
+    
+    <circle cx="40" cy="170" r="15" fill="#1f2937" stroke="#374151" stroke-width="2"/>
+    <text x="40" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">20</text>
+    
+    <circle cx="100" cy="170" r="15" fill="#1f2937" stroke="#374151" stroke-width="2"/>
+    <text x="100" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">40</text>
+    
+    <circle cx="140" cy="170" r="15" fill="#ef4444" stroke="#dc2626" stroke-width="2"/>
+    <text x="140" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">60</text>
+    
+    <circle cx="200" cy="170" r="15" fill="#ef4444" stroke="#dc2626" stroke-width="2"/>
+    <text x="200" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">80</text>
+    
+    <!-- Connections -->
+    <path d="M 105 75 L 82 105" stroke="#94a3b8" stroke-width="2"/>
+    <path d="M 135 75 L 158 105" stroke="#94a3b8" stroke-width="2"/>
+    <path d="M 58 135 L 47 155" stroke="#94a3b8" stroke-width="2"/>
+    <path d="M 82 135 L 93 155" stroke="#94a3b8" stroke-width="2"/>
+    <path d="M 158 135 L 147 155" stroke="#94a3b8" stroke-width="2"/>
+    <path d="M 182 135 L 193 155" stroke="#94a3b8" stroke-width="2"/>
+    
+    <!-- Color legend -->
+    <g transform="translate(20, 200)">
+      <circle cx="10" cy="5" r="6" fill="#1f2937" stroke="#374151" stroke-width="1"/>
+      <text x="20" y="9" font-family="Arial, sans-serif" font-size="10" fill="#cbd5e1">Black</text>
+      
+      <circle cx="70" cy="5" r="6" fill="#ef4444" stroke="#dc2626" stroke-width="1"/>
+      <text x="80" y="9" font-family="Arial, sans-serif" font-size="10" fill="#cbd5e1">Red</text>
+    </g>
+  </g>
+  
+  <!-- Right: B-Tree Example -->
+  <g transform="translate(680, 140)">
+    <text x="200" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#a78bfa">
+      B-Tree (Disk Optimized)
+    </text>
+    
+    <!-- B-Tree nodes (multi-key) -->
+    <rect x="120" y="45" width="160" height="35" rx="5" fill="#7c3aed" stroke="#6d28d9" stroke-width="2"/>
+    <text x="200" y="67" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="white">50 | 70 | 90</text>
+    
+    <rect x="50" y="110" width="100" height="30" rx="4" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/>
+    <text x="100" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">20 | 30</text>
+    
+    <rect x="170" y="110" width="100" height="30" rx="4" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/>
+    <text x="220" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">60 | 65</text>
+    
+    <rect x="290" y="110" width="100" height="30" rx="4" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/>
+    <text x="340" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">80 | 85</text>
+    
+    <!-- Connections -->
+    <path d="M 150 80 L 100 110" stroke="#a78bfa" stroke-width="2"/>
+    <path d="M 200 80 L 220 110" stroke="#a78bfa" stroke-width="2"/>
+    <path d="M 250 80 L 340 110" stroke="#a78bfa" stroke-width="2"/>
+    
+    <!-- Disk block indicator -->
+    <text x="200" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#c4b5fd">
+      Multiple keys per node
+    </text>
+    <text x="200" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#c4b5fd">
+      Minimizes disk reads
+    </text>
+  </g>
+  
+  <!-- Bottom: Trie Example -->
+  <g transform="translate(80, 370)">
+    <text x="150" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#34d399">
+      Trie (Prefix Matching)
+    </text>
+    
+    <!-- Trie structure -->
+    <circle cx="150" cy="60" r="15" fill="#10b981" stroke="#047857" stroke-width="2"/>
+    <text x="150" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">root</text>
+    
+    <!-- First level -->
+    <circle cx="100" cy="110" r="12" fill="#34d399" stroke="#10b981" stroke-width="2"/>
+    <text x="100" y="114" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">c</text>
+    
+    <circle cx="150" cy="110" r="12" fill="#34d399" stroke="#10b981" stroke-width="2"/>
+    <text x="150" y="114" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">d</text>
+    
+    <circle cx="200" cy="110" r="12" fill="#34d399" stroke="#10b981" stroke-width="2"/>
+    <text x="200" y="114" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">t</text>
+    
+    <!-- Second level -->
+    <circle cx="80" cy="150" r="12" fill="#6ee7b7" stroke="#34d399" stroke-width="2"/>
+    <text x="80" y="154" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">a</text>
+    
+    <circle cx="120" cy="150" r="12" fill="#6ee7b7" stroke="#34d399" stroke-width="2"/>
+    <text x="120" y="154" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">o</text>
+    
+    <circle cx="200" cy="150" r="12" fill="#6ee7b7" stroke="#34d399" stroke-width="2"/>
+    <text x="200" y="154" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">o</text>
+    
+    <!-- Third level -->
+    <circle cx="80" cy="190" r="12" fill="#a7f3d0" stroke="#6ee7b7" stroke-width="2"/>
+    <text x="80" y="194" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">t</text>
+    
+    <circle cx="120" cy="190" r="12" fill="#a7f3d0" stroke="#6ee7b7" stroke-width="2"/>
+    <text x="120" y="194" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">d</text>
+    
+    <!-- Connections -->
+    <path d="M 140 70 L 107 98" stroke="#34d399" stroke-width="2"/>
+    <path d="M 150 75 L 150 98" stroke="#34d399" stroke-width="2"/>
+    <path d="M 160 70 L 193 98" stroke="#34d399" stroke-width="2"/>
+    
+    <path d="M 95 120 L 85 138" stroke="#6ee7b7" stroke-width="1.5"/>
+    <path d="M 105 120 L 115 138" stroke="#6ee7b7" stroke-width="1.5"/>
+    <path d="M 200 122 L 200 138" stroke="#6ee7b7" stroke-width="1.5"/>
+    
+    <path d="M 80 162 L 80 178" stroke="#a7f3d0" stroke-width="1.5"/>
+    <path d="M 120 162 L 120 178" stroke="#a7f3d0" stroke-width="1.5"/>
+    
+    <!-- Words -->
+    <text x="50" y="210" font-family="Arial, sans-serif" font-size="10" fill="#6ee7b7">"cat"</text>
+    <text x="100" y="210" font-family="Arial, sans-serif" font-size="10" fill="#6ee7b7">"cod"</text>
+    <text x="180" y="165" font-family="Arial, sans-serif" font-size="10" fill="#6ee7b7">"to"</text>
+  </g>
+  
+  <!-- Bottom: Segment Tree Example -->
+  <g transform="translate(450, 370)">
+    <text x="150" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#fbbf24">
+      Segment Tree (Range Queries)
+    </text>
+    
+    <!-- Segment tree nodes with ranges -->
+    <rect x="100" y="45" width="100" height="30" rx="5" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+    <text x="150" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">[0-7]: 36</text>
+    
+    <rect x="50" y="95" width="80" height="25" rx="4" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <text x="90" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">[0-3]: 18</text>
+    
+    <rect x="170" y="95" width="80" height="25" rx="4" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <text x="210" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">[4-7]: 18</text>
+    
+    <rect x="30" y="140" width="60" height="20" rx="3" fill="#fcd34d" stroke="#fbbf24" stroke-width="1"/>
+    <text x="60" y="154" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#78350f">[0-1]: 9</text>
+    
+    <rect x="110" y="140" width="60" height="20" rx="3" fill="#fcd34d" stroke="#fbbf24" stroke-width="1"/>
+    <text x="140" y="154" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#78350f">[2-3]: 9</text>
+    
+    <rect x="190" y="140" width="60" height="20" rx="3" fill="#fcd34d" stroke="#fbbf24" stroke-width="1"/>
+    <text x="220" y="154" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#78350f">[4-5]: 9</text>
+    
+    <!-- Connections -->
+    <path d="M 130 75 L 95 95" stroke="#fbbf24" stroke-width="2"/>
+    <path d="M 170 75 L 205 95" stroke="#fbbf24" stroke-width="2"/>
+    <path d="M 75 120 L 65 140" stroke="#fcd34d" stroke-width="1.5"/>
+    <path d="M 105 120 L 135 140" stroke="#fcd34d" stroke-width="1.5"/>
+    <path d="M 195 120 L 215 140" stroke="#fcd34d" stroke-width="1.5"/>
+    
+    <!-- Query indicator -->
+    <text x="150" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fcd34d">
+      O(log n) range queries
+    </text>
+  </g>
+  
+  <!-- Bottom stats -->
+  <g transform="translate(100, 560)">
+    <text x="500" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#94a3b8">
+      Used by: MySQL (B-trees) • Linux Kernel (Red-Black) • Google (Tries) • Netflix (Segment Trees)
+    </text>
+  </g>
+</svg>

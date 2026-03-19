@@ -1,0 +1,214 @@
+<svg role="img" aria-labelledby="advanced-trees-learning-title advanced-trees-learning-desc" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <title id="advanced-trees-learning-title">Advanced Trees Learning Path</title>
+  <desc id="advanced-trees-learning-desc">Step-by-step roadmap for mastering advanced tree structures from basic concepts to production implementation</desc>
+  
+  <!-- Background -->
+  <rect width="1200" height="600" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e293b">
+    Your Advanced Trees Mastery Journey
+  </text>
+  
+  <!-- Learning Path -->
+  <g transform="translate(100, 80)">
+    
+    <!-- Step 1: Master Basic Trees -->
+    <g transform="translate(0, 0)">
+      <circle cx="50" cy="50" r="35" fill="#dbeafe" stroke="#3b82f6" stroke-width="3"/>
+      <text x="50" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e40af">Step</text>
+      <text x="50" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e40af">1</text>
+      
+      <rect x="100" y="20" width="200" height="60" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+      <text x="200" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e40af">
+        Master Basic Trees
+      </text>
+      <text x="110" y="58" font-family="Arial, sans-serif" font-size="12" fill="#1e40af">• BST operations thoroughly</text>
+      <text x="110" y="72" font-family="Arial, sans-serif" font-size="12" fill="#1e40af">• Understand tree rotations</text>
+    </g>
+    
+    <!-- Arrow 1 -->
+    <path d="M 200 90 L 200 120" stroke="#64748b" stroke-width="3" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 2: Learn AVL Trees -->
+    <g transform="translate(0, 130)">
+      <circle cx="50" cy="50" r="35" fill="#dcfce7" stroke="#16a34a" stroke-width="3"/>
+      <text x="50" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#15803d">Step</text>
+      <text x="50" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#15803d">2</text>
+      
+      <rect x="100" y="20" width="200" height="60" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+      <text x="200" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#15803d">
+        Implement AVL Trees
+      </text>
+      <text x="110" y="58" font-family="Arial, sans-serif" font-size="12" fill="#15803d">• Balance factor tracking</text>
+      <text x="110" y="72" font-family="Arial, sans-serif" font-size="12" fill="#15803d">• Four rotation cases</text>
+    </g>
+    
+    <!-- Arrow 2 -->
+    <path d="M 200 220 L 200 250" stroke="#64748b" stroke-width="3" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 3: Study Red-Black Trees -->
+    <g transform="translate(0, 260)">
+      <circle cx="50" cy="50" r="35" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+      <text x="50" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#92400e">Step</text>
+      <text x="50" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#92400e">3</text>
+      
+      <rect x="100" y="20" width="200" height="60" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+      <text x="200" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#92400e">
+        Study Red-Black Trees
+      </text>
+      <text x="110" y="58" font-family="Arial, sans-serif" font-size="12" fill="#92400e">• Color properties</text>
+      <text x="110" y="72" font-family="Arial, sans-serif" font-size="12" fill="#92400e">• Recoloring &amp; rotations</text>
+    </g>
+    
+    <!-- Arrow 3 -->
+    <path d="M 200 350 L 200 380" stroke="#64748b" stroke-width="3" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 4: Explore B-Trees -->
+    <g transform="translate(0, 390)">
+      <circle cx="50" cy="50" r="35" fill="#fce7f3" stroke="#ec4899" stroke-width="3"/>
+      <text x="50" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#be185d">Step</text>
+      <text x="50" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#be185d">4</text>
+      
+      <rect x="100" y="20" width="200" height="60" rx="8" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/>
+      <text x="200" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#be185d">
+        Explore B-Trees
+      </text>
+      <text x="110" y="58" font-family="Arial, sans-serif" font-size="12" fill="#be185d">• Multi-key nodes</text>
+      <text x="110" y="72" font-family="Arial, sans-serif" font-size="12" fill="#be185d">• Disk optimization</text>
+    </g>
+  </g>
+  
+  <!-- Right Side: Advanced Path -->
+  <g transform="translate(450, 80)">
+    
+    <!-- Step 5: Learn Segment Trees -->
+    <g transform="translate(0, 0)">
+      <circle cx="50" cy="50" r="35" fill="#e0e7ff" stroke="#6366f1" stroke-width="3"/>
+      <text x="50" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#4338ca">Step</text>
+      <text x="50" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#4338ca">5</text>
+      
+      <rect x="100" y="20" width="200" height="60" rx="8" fill="#e0e7ff" stroke="#6366f1" stroke-width="2"/>
+      <text x="200" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#4338ca">
+        Learn Segment Trees
+      </text>
+      <text x="110" y="58" font-family="Arial, sans-serif" font-size="12" fill="#4338ca">• Range query patterns</text>
+      <text x="110" y="72" font-family="Arial, sans-serif" font-size="12" fill="#4338ca">• Lazy propagation</text>
+    </g>
+    
+    <!-- Arrow 5 -->
+    <path d="M 200 90 L 200 120" stroke="#64748b" stroke-width="3" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 6: Master Tries -->
+    <g transform="translate(0, 130)">
+      <circle cx="50" cy="50" r="35" fill="#f3e8ff" stroke="#8b5cf6" stroke-width="3"/>
+      <text x="50" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#7c3aed">Step</text>
+      <text x="50" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#7c3aed">6</text>
+      
+      <rect x="100" y="20" width="200" height="60" rx="8" fill="#f3e8ff" stroke="#8b5cf6" stroke-width="2"/>
+      <text x="200" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#7c3aed">
+        Master Tries
+      </text>
+      <text x="110" y="58" font-family="Arial, sans-serif" font-size="12" fill="#7c3aed">• Prefix operations</text>
+      <text x="110" y="72" font-family="Arial, sans-serif" font-size="12" fill="#7c3aed">• Compression techniques</text>
+    </g>
+    
+    <!-- Arrow 6 -->
+    <path d="M 200 220 L 200 250" stroke="#64748b" stroke-width="3" marker-end="url(#arrowhead)"/>
+    
+    <!-- Step 7: Production Systems -->
+    <g transform="translate(0, 260)">
+      <circle cx="50" cy="50" r="35" fill="#fef2f2" stroke="#ef4444" stroke-width="3"/>
+      <text x="50" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#dc2626">Step</text>
+      <text x="50" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#dc2626">7</text>
+      
+      <rect x="100" y="20" width="200" height="60" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+      <text x="200" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#dc2626">
+        Production Systems
+      </text>
+      <text x="110" y="58" font-family="Arial, sans-serif" font-size="12" fill="#dc2626">• Study database code</text>
+      <text x="110" y="72" font-family="Arial, sans-serif" font-size="12" fill="#dc2626">• Benchmark performance</text>
+    </g>
+    
+    <!-- Success Badge -->
+    <g transform="translate(0, 350)">
+      <circle cx="200" cy="50" r="40" fill="#fbbf24" stroke="#f59e0b" stroke-width="3"/>
+      <text x="200" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#92400e">Advanced</text>
+      <text x="200" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#92400e">Trees</text>
+      <text x="200" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#92400e">🏆 Master</text>
+    </g>
+  </g>
+  
+  <!-- Practice Resources -->
+  <g transform="translate(800, 100)">
+    <rect x="0" y="0" width="300" height="400" rx="12" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    
+    <text x="150" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#334155">
+      Practice Resources
+    </text>
+    
+    <!-- Resource 1 -->
+    <g transform="translate(20, 50)">
+      <circle cx="10" cy="10" r="8" fill="#10b981" stroke="#047857" stroke-width="2"/>
+      <text x="10" y="14" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">1</text>
+      <text x="30" y="8" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#334155">Implement from Scratch</text>
+      <text x="30" y="24" font-family="Arial, sans-serif" font-size="11" fill="#64748b">Build AVL and Red-Black</text>
+      <text x="30" y="37" font-family="Arial, sans-serif" font-size="11" fill="#64748b">trees without libraries</text>
+    </g>
+    
+    <!-- Resource 2 -->
+    <g transform="translate(20, 100)">
+      <circle cx="10" cy="10" r="8" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
+      <text x="10" y="14" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">2</text>
+      <text x="30" y="8" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#334155">Visualize Operations</text>
+      <text x="30" y="24" font-family="Arial, sans-serif" font-size="11" fill="#64748b">Draw trees and rotations</text>
+      <text x="30" y="37" font-family="Arial, sans-serif" font-size="11" fill="#64748b">on paper for intuition</text>
+    </g>
+    
+    <!-- Resource 3 -->
+    <g transform="translate(20, 150)">
+      <circle cx="10" cy="10" r="8" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+      <text x="10" y="14" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">3</text>
+      <text x="30" y="8" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#334155">Read Production Code</text>
+      <text x="30" y="24" font-family="Arial, sans-serif" font-size="11" fill="#64748b">Study std::map, TreeMap</text>
+      <text x="30" y="37" font-family="Arial, sans-serif" font-size="11" fill="#64748b">implementations</text>
+    </g>
+    
+    <!-- Resource 4 -->
+    <g transform="translate(20, 200)">
+      <circle cx="10" cy="10" r="8" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/>
+      <text x="10" y="14" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">4</text>
+      <text x="30" y="8" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#334155">Benchmark Different Trees</text>
+      <text x="30" y="24" font-family="Arial, sans-serif" font-size="11" fill="#64748b">Compare performance on</text>
+      <text x="30" y="37" font-family="Arial, sans-serif" font-size="11" fill="#64748b">different workloads</text>
+    </g>
+    
+    <!-- Resource 5 -->
+    <g transform="translate(20, 250)">
+      <circle cx="10" cy="10" r="8" fill="#ef4444" stroke="#dc2626" stroke-width="2"/>
+      <text x="10" y="14" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">5</text>
+      <text x="30" y="8" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#334155">Solve Real Problems</text>
+      <text x="30" y="24" font-family="Arial, sans-serif" font-size="11" fill="#64748b">Build autocomplete, range</text>
+      <text x="30" y="37" font-family="Arial, sans-serif" font-size="11" fill="#64748b">query systems</text>
+    </g>
+    
+    <!-- Key Problems -->
+    <g transform="translate(20, 310)">
+      <text x="0" y="15" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#334155">Practice Problems:</text>
+      <text x="0" y="35" font-family="Arial, sans-serif" font-size="11" fill="#64748b">• Implement AVL Tree</text>
+      <text x="0" y="50" font-family="Arial, sans-serif" font-size="11" fill="#64748b">• Design Autocomplete</text>
+      <text x="0" y="65" font-family="Arial, sans-serif" font-size="11" fill="#64748b">• Range Sum Queries</text>
+      <text x="0" y="80" font-family="Arial, sans-serif" font-size="11" fill="#64748b">• Word Dictionary</text>
+    </g>
+  </g>
+  
+  <!-- Connection arrow from Step 4 to Step 5 -->
+  <path d="M 350 470 Q 400 470 450 130" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrowhead)" stroke-dasharray="5,5"/>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+  </defs>
+</svg>
