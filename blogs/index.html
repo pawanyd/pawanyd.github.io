@@ -9,22 +9,64 @@ pagination:
 ---
 
 <!-- Blog Hero Section -->
-<section class="bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 py-10 md:py-14 px-4 sm:px-6 relative overflow-hidden">
-    <div class="absolute inset-0 opacity-20" style="background: radial-gradient(ellipse at 70% 50%, #3b82f6 0%, transparent 60%);"></div>
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center justify-between gap-4 md:gap-6 relative z-10">
-        <div>
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight mb-2">Latest Blog Posts</h1>
-            <p class="text-gray-400 text-base sm:text-lg">Stay updated with the latest insights, tutorials, and industry trends.</p>
-        </div>
-        <div class="flex gap-3 sm:gap-4">
-            <div class="bg-white bg-opacity-10 border border-white border-opacity-20 rounded-xl px-4 sm:px-5 py-2 sm:py-3 text-center backdrop-blur-sm">
-                <span class="block text-2xl sm:text-3xl font-extrabold text-blue-400">{{ site.posts | size }}</span>
-                <span class="text-xs text-gray-400 uppercase tracking-widest">Articles</span>
+<section class="relative overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 py-20 md:py-28">
+    <!-- Animated Background -->
+    <div class="absolute inset-0 opacity-20">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+    </div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="text-white">
+                <div class="inline-block mb-4">
+                    <span class="inline-flex items-center gap-2 px-5 py-2 bg-white/10 backdrop-blur-md text-purple-200 rounded-full text-sm font-bold border border-white/20">
+                        <i class="fas fa-blog"></i>
+                        <span>Tech Insights & Tutorials</span>
+                    </span>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-black mb-6 leading-tight">
+                    Latest Blog<br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Posts</span>
+                </h1>
+                <p class="text-xl text-purple-100 leading-relaxed mb-8">
+                    Stay updated with the latest insights, tutorials, and industry trends in software development
+                </p>
+                <div class="flex flex-wrap gap-3 mb-8">
+                    <span class="px-4 py-2 bg-indigo-600/50 backdrop-blur-sm text-white text-sm font-bold rounded-xl border border-indigo-400">
+                        <i class="fas fa-check-circle text-green-300"></i> Expert Insights
+                    </span>
+                    <span class="px-4 py-2 bg-purple-600/50 backdrop-blur-sm text-white text-sm font-bold rounded-xl border border-purple-400">
+                        <i class="fas fa-check-circle text-green-300"></i> Practical Guides
+                    </span>
+                    <span class="px-4 py-2 bg-pink-600/50 backdrop-blur-sm text-white text-sm font-bold rounded-xl border border-pink-400">
+                        <i class="fas fa-check-circle text-green-300"></i> 100% Free
+                    </span>
+                </div>
+                <a href="#blog-posts" class="inline-flex items-center gap-3 bg-white text-purple-900 px-8 py-4 rounded-xl font-black text-lg hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                    <i class="fas fa-arrow-down"></i>
+                    <span>Start Reading</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
-            {% assign all_cats = site.posts | map: "category" | uniq %}
-            <div class="bg-white bg-opacity-10 border border-white border-opacity-20 rounded-xl px-4 sm:px-5 py-2 sm:py-3 text-center backdrop-blur-sm">
-                <span class="block text-2xl sm:text-3xl font-extrabold text-blue-400">{{ all_cats | size }}</span>
-                <span class="text-xs text-gray-400 uppercase tracking-widest">Categories</span>
+            
+            <div class="grid grid-cols-2 gap-6">
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 text-center">
+                    <div class="text-5xl font-black text-white mb-3">{{ site.posts | size }}</div>
+                    <div class="text-sm text-purple-200 font-bold">Articles</div>
+                </div>
+                {% assign all_cats = site.posts | map: "category" | uniq %}
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 text-center">
+                    <div class="text-5xl font-black text-white mb-3">{{ all_cats | size }}</div>
+                    <div class="text-sm text-pink-200 font-bold">Categories</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 text-center">
+                    <div class="text-5xl font-black text-white mb-3">10K+</div>
+                    <div class="text-sm text-indigo-200 font-bold">Readers</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 text-center">
+                    <div class="text-5xl font-black text-white mb-3">∞</div>
+                    <div class="text-sm text-green-200 font-bold">More Coming</div>
+                </div>
             </div>
         </div>
     </div>
