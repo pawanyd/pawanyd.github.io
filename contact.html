@@ -6,6 +6,125 @@ meta_description: "Reach out to Pawan Kumar for SaaS development, web solutions,
 meta_image: "/assets/images/contact-meta.jpg"
 ---
 
+<!-- Contact Hero Section - Split Screen Design -->
+<section class="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 py-20 md:py-28">
+    <!-- Animated Background Waves -->
+    <div class="absolute inset-0 overflow-hidden opacity-20">
+        <svg class="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path fill="rgba(59, 130, 246, 0.3)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                <animate attributeName="d" dur="10s" repeatCount="indefinite" values="
+                    M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
+                    M0,160L48,149.3C96,139,192,117,288,128C384,139,480,181,576,186.7C672,192,768,160,864,138.7C960,117,1056,107,1152,112C1248,117,1344,139,1392,149.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
+                    M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" />
+            </path>
+        </svg>
+    </div>
+    
+    <!-- Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- Left Side - Text Content -->
+            <div class="text-white space-y-8">
+                <div>
+                    <div class="inline-block mb-4">
+                        <span class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md text-blue-200 rounded-full text-sm font-semibold border border-white/20">
+                            <i class="fas fa-envelope-open-text"></i>
+                            <span>Let's Connect</span>
+                        </span>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                        Ready to Start<br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Something Amazing?</span>
+                    </h1>
+                    <p class="text-xl text-blue-100 leading-relaxed">
+                        Whether you have a project in mind, need consultation, or just want to say hello, I'd love to hear from you. Let's build something great together!
+                    </p>
+                </div>
+                
+                <!-- Quick Response Badge -->
+                <div class="flex items-center gap-3 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 w-fit">
+                    <div class="relative">
+                        <div class="w-3 h-3 bg-green-400 rounded-full animate-ping absolute"></div>
+                        <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+                    </div>
+                    <span class="text-sm font-semibold">Usually responds within 24 hours</span>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="flex flex-wrap gap-4">
+                    {% for social in site.data.social.social_links %}
+                    <a href="{{ social.url }}" target="_blank" rel="noopener noreferrer" 
+                       class="group w-14 h-14 flex items-center justify-center bg-white/10 backdrop-blur-md rounded-xl border border-white/20 hover:bg-white hover:border-white transition-all duration-300 transform hover:scale-110" 
+                       title="{{ social.name | capitalize }}">
+                        <i class="fab fa-{{ social.name }} text-2xl text-white group-hover:text-blue-600 transition-colors"></i>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <!-- Right Side - Contact Cards -->
+            <div class="space-y-6">
+                <!-- Email Card -->
+                <div class="group bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+                    <div class="flex items-start gap-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-xl">
+                            <i class="fas fa-envelope text-white text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-white font-bold text-xl mb-2">Email Me</h3>
+                            <p class="text-blue-200 text-sm mb-3">Drop me a line anytime</p>
+                            <a href="mailto:iampawanyd@gmail.com" class="text-white font-semibold hover:text-blue-300 transition-colors break-all">
+                                iampawanyd@gmail.com
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Phone Card -->
+                <div class="group bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+                    <div class="flex items-start gap-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-xl">
+                            <i class="fas fa-phone text-white text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-white font-bold text-xl mb-2">Call Me</h3>
+                            <p class="text-purple-200 text-sm mb-3">Let's have a conversation</p>
+                            <a href="tel:+917737507050" class="text-white font-semibold hover:text-purple-300 transition-colors">
+                                +91 7737507050
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Location Card -->
+                <div class="group bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+                    <div class="flex items-start gap-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-xl">
+                            <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-white font-bold text-xl mb-2">Visit Me</h3>
+                            <p class="text-green-200 text-sm mb-3">Based in India</p>
+                            <p class="text-white font-semibold">
+                                Gurgaon, India
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom CTA -->
+        <div class="text-center mt-16">
+            <a href="#contact-form" class="group inline-flex items-center gap-3 bg-white text-blue-900 px-10 py-5 rounded-xl text-lg font-bold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                <i class="fas fa-paper-plane group-hover:translate-x-1 transition-transform"></i>
+                <span>Send Me a Message</span>
+                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
 <!-- Contact Page -->
 <section class="py-16 bg-gray-100 text-center">
     <div class="max-w-4xl mx-auto">
