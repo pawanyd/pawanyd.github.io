@@ -125,110 +125,297 @@ meta_image: "/assets/images/contact-meta.jpg"
     </div>
 </section>
 
-<!-- Contact Page -->
-<section class="py-16 bg-gray-100 text-center">
-    <div class="max-w-4xl mx-auto">
-        <h1 class="text-4xl font-bold text-gray-800">Get in Touch</h1>
-        <p class="mt-4 text-gray-600 text-lg">If you’d like to collaborate, have any questions, or just want to connect, feel free to reach out using the details below.</p>
+<!-- Why Contact Section -->
+<section class="py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 relative overflow-hidden">
+    <!-- Decorative Elements -->
+    <div class="absolute top-0 left-0 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+    <div class="absolute bottom-0 right-0 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+    
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-12">
+            <div class="inline-block mb-4">
+                <span class="inline-flex items-center gap-2 px-5 py-2 bg-white rounded-full text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg border-2 border-purple-200">
+                    <i class="fas fa-comments text-purple-600"></i>
+                    <span>Let's Work Together</span>
+                </span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-4">Get in Touch</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">If you'd like to collaborate, have any questions, or just want to connect, feel free to reach out using the details below.</p>
+        </div>
+        
+        <!-- Benefits Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-transparent hover:border-blue-300">
+                <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                    <i class="fas fa-bolt text-white text-2xl"></i>
+                </div>
+                <h3 class="text-lg font-black text-gray-900 mb-2 text-center">Quick Response</h3>
+                <p class="text-sm text-gray-600 text-center">Usually respond within 24 hours</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-transparent hover:border-purple-300">
+                <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                    <i class="fas fa-handshake text-white text-2xl"></i>
+                </div>
+                <h3 class="text-lg font-black text-gray-900 mb-2 text-center">Free Consultation</h3>
+                <p class="text-sm text-gray-600 text-center">No obligation initial discussion</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-transparent hover:border-pink-300">
+                <div class="w-14 h-14 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                    <i class="fas fa-calendar-check text-white text-2xl"></i>
+                </div>
+                <h3 class="text-lg font-black text-gray-900 mb-2 text-center">Flexible Schedule</h3>
+                <p class="text-sm text-gray-600 text-center">Available for your timezone</p>
+            </div>
+        </div>
     </div>
 </section>
 
+<style>
+@keyframes blob {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+.animate-blob {
+    animation: blob 7s infinite;
+}
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+</style>
+
 <!-- Contact Details -->
-<section class="py-12">
-    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-            <i class="fa-solid fa-envelope text-4xl text-blue-600"></i>
-            <h3 class="text-xl font-semibold text-gray-800 mt-4">Email</h3>
-            <p class="text-gray-600 mt-2">iampawanyd@gmail.com</p>
+<section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-3">Contact Information</h2>
+            <p class="text-gray-600">Choose your preferred way to reach out</p>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-            <i class="fa-solid fa-phone text-4xl text-blue-600"></i>
-            <h3 class="text-xl font-semibold text-gray-800 mt-4">Phone</h3>
-            <p class="text-gray-600 mt-2">+91 7737507050</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-            <i class="fa-solid fa-location-dot text-4xl text-blue-600"></i>
-            <h3 class="text-xl font-semibold text-gray-800 mt-4">Location</h3>
-            <p class="text-gray-600 mt-2">Gurgaon, India</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Email Card -->
+            <a href="mailto:iampawanyd@gmail.com" class="group block bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border-2 border-blue-200 hover:border-blue-400">
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-xl">
+                        <i class="fa-solid fa-envelope text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-gray-900 mb-2">Email</h3>
+                    <p class="text-sm text-gray-600 mb-3">Drop me a line</p>
+                    <p class="text-blue-700 font-bold break-all">iampawanyd@gmail.com</p>
+                    <div class="mt-4 inline-flex items-center gap-2 text-blue-600 font-bold text-sm">
+                        <span>Send Email</span>
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Phone Card -->
+            <a href="tel:+917737507050" class="group block bg-gradient-to-br from-purple-50 to-purple-100 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border-2 border-purple-200 hover:border-purple-400">
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-xl">
+                        <i class="fa-solid fa-phone text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-gray-900 mb-2">Phone</h3>
+                    <p class="text-sm text-gray-600 mb-3">Give me a call</p>
+                    <p class="text-purple-700 font-bold">+91 7737507050</p>
+                    <div class="mt-4 inline-flex items-center gap-2 text-purple-600 font-bold text-sm">
+                        <span>Call Now</span>
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Location Card -->
+            <div class="group bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border-2 border-green-200 hover:border-green-400">
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-xl">
+                        <i class="fa-solid fa-location-dot text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-gray-900 mb-2">Location</h3>
+                    <p class="text-sm text-gray-600 mb-3">Based in</p>
+                    <p class="text-green-700 font-bold">Gurgaon, India</p>
+                    <div class="mt-4 inline-flex items-center gap-2 text-green-600 font-bold text-sm">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>IST Timezone (UTC+5:30)</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- Contact Form -->
-<section class="py-12">
-    <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold text-gray-800 mb-6">Send Me a Message</h2>
-        <form id="contact-form" action="https://formspree.io/f/xyzebelp" method="POST" class="bg-white p-8 rounded-xl shadow-xl space-y-6">
-            <div id="form-status" class="hidden mb-4 text-center text-lg font-semibold rounded px-4 py-3"></div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                    <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Your Name" class="w-full p-4 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 transition placeholder-gray-400">
-                </div>
-                <div>
-                    <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
-                    <input type="email" id="email" name="email" required placeholder="you@email.com" class="w-full p-4 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 transition placeholder-gray-400">
-                </div>
+<section id="contact-form" class="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-12">
+            <div class="inline-block mb-4">
+                <span class="inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full text-sm font-bold shadow-lg">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Send a Message</span>
+                </span>
             </div>
-            <div>
-                <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
-                <textarea id="message" name="message" rows="5" required placeholder="Type your message here..." class="w-full p-4 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 transition placeholder-gray-400 resize-none"></textarea>
-            </div>
-            <button id="submit-btn" type="submit" class="w-full bg-blue-600 text-white px-6 py-3 rounded text-lg font-semibold shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition">Send Message</button>
-        </form>
-        <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('contact-form');
-            const status = document.getElementById('form-status');
-            const submitBtn = document.getElementById('submit-btn');
-            const defaultBtnText = submitBtn.textContent;
-            form.addEventListener('submit', async function (e) {
-                e.preventDefault();
-                status.classList.add('hidden');
-                status.textContent = '';
-                const data = new FormData(form);
-                try {
-                    const response = await fetch(form.action, {
-                        method: 'POST',
-                        body: data,
-                        headers: { 'Accept': 'application/json' }
-                    });
-                    if (response.ok) {
-                        status.textContent = 'Thank you! Your message has been sent.';
-                        status.className = 'mb-4 text-center text-lg font-semibold rounded px-4 py-3 bg-green-600 text-white';
-                        status.classList.remove('hidden');
-                        form.reset();
-                        submitBtn.textContent = 'Thank you! Your message has been sent.';
-                        submitBtn.disabled = true;
-                        setTimeout(() => {
-                            submitBtn.textContent = defaultBtnText;
-                            submitBtn.disabled = false;
-                        }, 5000);
-                    } else {
-                        const resData = await response.json();
-                        status.textContent = resData.errors ? resData.errors.map(e => e.message).join(', ') : 'Oops! Something went wrong.';
-                        status.className = 'mb-4 text-center text-lg font-semibold text-red-600';
-                        status.classList.remove('hidden');
-                    }
-                } catch (error) {
-                    status.textContent = 'Oops! There was a problem submitting your form.';
-                    status.className = 'mb-4 text-center text-lg font-semibold text-red-600';
-                    status.classList.remove('hidden');
-                }
-            });
-        });
-        </script>
+            <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-3">Let's Start a Conversation</h2>
+            <p class="text-gray-600">Fill out the form and I'll get back to you within 24 hours</p>
+        </div>
+        
+        <div class="bg-white rounded-3xl shadow-2xl border-2 border-gray-100 overflow-hidden">
+            <form id="contact-form-element" action="https://formspree.io/f/xyzebelp" method="POST" class="p-8 md:p-12 space-y-6">
+                
+                <!-- Status Message -->
+                <div id="form-status" class="hidden rounded-2xl px-6 py-4 text-center font-bold"></div>
+                
+                <!-- Name and Email Row -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="name" class="block text-gray-900 font-bold mb-3 flex items-center gap-2">
+                            <i class="fas fa-user text-blue-600"></i>
+                            Your Name
+                        </label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe" 
+                               class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all duration-300 placeholder-gray-400 font-medium text-gray-900">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-900 font-bold mb-3 flex items-center gap-2">
+                            <i class="fas fa-envelope text-purple-600"></i>
+                            Your Email
+                        </label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com" 
+                               class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 focus:ring-4 focus:ring-purple-100 transition-all duration-300 placeholder-gray-400 font-medium text-gray-900">
+                    </div>
+                </div>
+                
+                <!-- Subject -->
+                <div>
+                    <label for="subject" class="block text-gray-900 font-bold mb-3 flex items-center gap-2">
+                        <i class="fas fa-tag text-pink-600"></i>
+                        Subject (Optional)
+                    </label>
+                    <input type="text" id="subject" name="subject" placeholder="What's this about?" 
+                           class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-pink-500 focus:ring-4 focus:ring-pink-100 transition-all duration-300 placeholder-gray-400 font-medium text-gray-900">
+                </div>
+                
+                <!-- Message -->
+                <div>
+                    <label for="message" class="block text-gray-900 font-bold mb-3 flex items-center gap-2">
+                        <i class="fas fa-comment-dots text-green-600"></i>
+                        Your Message
+                    </label>
+                    <textarea id="message" name="message" rows="6" required placeholder="Tell me about your project, idea, or question..." 
+                              class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-green-500 focus:ring-4 focus:ring-green-100 transition-all duration-300 placeholder-gray-400 resize-none font-medium text-gray-900"></textarea>
+                </div>
+                
+                <!-- Submit Button -->
+                <button id="submit-btn" type="submit" 
+                        class="group w-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white px-8 py-5 rounded-xl text-lg font-black shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center gap-3">
+                    <i class="fas fa-paper-plane group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                    <span>Send Message</span>
+                    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </button>
+                
+                <!-- Privacy Note -->
+                <p class="text-center text-sm text-gray-500 flex items-center justify-center gap-2">
+                    <i class="fas fa-shield-alt text-green-600"></i>
+                    Your information is safe and will never be shared
+                </p>
+            </form>
+        </div>
     </div>
 </section>
 
+<!-- Form JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contact-form-element');
+    const status = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
+    const defaultBtnHTML = submitBtn.innerHTML;
+    
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        
+        // Hide previous status
+        status.classList.add('hidden');
+        
+        // Update button
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        
+        const data = new FormData(form);
+        
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            });
+            
+            if (response.ok) {
+                status.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully.';
+                status.className = 'rounded-2xl px-6 py-4 text-center font-bold bg-gradient-to-r from-green-500 to-emerald-600 text-white shadow-lg';
+                status.classList.remove('hidden');
+                form.reset();
+                
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+                
+                setTimeout(() => {
+                    submitBtn.innerHTML = defaultBtnHTML;
+                    submitBtn.disabled = false;
+                    status.classList.add('hidden');
+                }, 5000);
+            } else {
+                const resData = await response.json();
+                status.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + (resData.errors ? resData.errors.map(e => e.message).join(', ') : 'Oops! Something went wrong.');
+                status.className = 'rounded-2xl px-6 py-4 text-center font-bold bg-red-500 text-white shadow-lg';
+                status.classList.remove('hidden');
+                
+                submitBtn.innerHTML = defaultBtnHTML;
+                submitBtn.disabled = false;
+            }
+        } catch (error) {
+            status.innerHTML = '<i class="fas fa-exclamation-circle"></i> Oops! There was a problem submitting your form.';
+            status.className = 'rounded-2xl px-6 py-4 text-center font-bold bg-red-500 text-white shadow-lg';
+            status.classList.remove('hidden');
+            
+            submitBtn.innerHTML = defaultBtnHTML;
+            submitBtn.disabled = false;
+        }
+    });
+});
+</script>
+
 <!-- Social Media Section -->
-<section class="py-12 bg-gray-100 text-center">
-    <h2 class="text-3xl font-bold text-gray-800">Connect with Me</h2>
-    <div class="flex justify-center space-x-6 mt-6">
-        {% for social in site.data.social.social_links %}
-        <a href="{{ social.url }}" class="text-blue-600 text-3xl hover:text-blue-800" target="_blank">
-            <i class="fa-brands fa-{{ social.name }}"></i>
-        </a>
-        {% endfor %}
+<section class="py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 relative overflow-hidden">
+    <!-- Decorative Pattern -->
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+    </div>
+    
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+        <div class="inline-block mb-6">
+            <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto border-4 border-white/30 shadow-2xl">
+                <i class="fas fa-share-alt text-white text-3xl"></i>
+            </div>
+        </div>
+        
+        <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Connect with Me</h2>
+        <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+            Follow me on social media for updates, insights, and behind-the-scenes content
+        </p>
+        
+        <div class="flex flex-wrap justify-center gap-4 mb-8">
+            {% for social in site.data.social.social_links %}
+            <a href="{{ social.url }}" target="_blank" rel="noopener noreferrer"
+               class="group w-16 h-16 flex items-center justify-center bg-white/20 backdrop-blur-md rounded-2xl border-2 border-white/30 hover:bg-white hover:border-white transition-all duration-300 transform hover:scale-110 shadow-xl" 
+               title="{{ social.name | capitalize }}">
+                <i class="fa-brands fa-{{ social.name }} text-3xl text-white group-hover:text-purple-600 transition-colors"></i>
+            </a>
+            {% endfor %}
+        </div>
+        
+        <p class="text-white/80 text-sm">
+            <i class="fas fa-heart text-red-300"></i> Let's stay connected and build something amazing together
+        </p>
     </div>
 </section>
