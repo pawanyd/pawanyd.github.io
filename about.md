@@ -451,20 +451,60 @@ html {
 
 <!-- Experience Timeline Section -->
 <section class="py-16 bg-gray-100">
-    <div class="max-w-6xl mx-auto">
+<!-- Experience Timeline Section - Enhanced -->
+<section class="py-16 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4">
         <h2 class="text-4xl font-bold text-gray-800 text-center mb-12">My Professional Journey</h2>
         <div class="relative flex flex-col items-center">
-            <div class="absolute w-1 bg-blue-600 h-full left-1/2 transform -translate-x-1/2"></div>
+            <!-- Timeline center line -->
+            <div class="absolute w-1 bg-gradient-to-b from-blue-600 via-purple-600 to-blue-600 h-full left-1/2 transform -translate-x-1/2"></div>
+            
             {% for experience in site.data.about.experience_list reversed %}
-            <div class="w-full md:w-1/2 {% cycle 'ml-auto pr-10', 'mr-auto pl-10' %} relative mb-16">
-                <div class="absolute {% cycle '-right-4 md:-right-6', '-left-4 md:-left-6' %} top-1/2 transform -translate-y-1/2 w-6 h-6 bg-blue-600 rounded-full border-2 border-white flex items-center justify-center">
-                    <i class="fa-solid fa-briefcase text-white text-xs"></i>
+            <div class="w-full md:w-7/12 {% cycle 'ml-auto md:pr-12', 'mr-auto md:pl-12' %} relative mb-16">
+                <!-- Timeline dot -->
+                <div class="absolute {% cycle '-right-6 md:-right-14', '-left-6 md:-left-14' %} top-8 w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full border-4 border-white shadow-lg flex items-center justify-center z-10">
+                    <i class="fa-solid fa-briefcase text-white text-sm"></i>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 relative">
-                    <h3 class="text-2xl font-bold text-gray-800">{{ experience.company }}</h3>
-                    <p class="text-gray-500 mt-2 text-sm">{{ experience.duration }}</p>
-                    <p class="text-gray-600 mt-3">{{ experience.role }}</p>
-                    <span class="absolute -top-4 {% cycle 'left-4', 'right-4' %} bg-gray-200 px-4 py-1 rounded-full text-xs font-semibold uppercase">Step {{ forloop.index }}</span>
+                
+                <!-- Experience Card -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 relative border-l-4 {% cycle 'border-blue-600', 'border-purple-600' %}">
+                    <!-- Step Badge -->
+                    <span class="absolute -top-4 {% cycle 'left-6', 'right-6' %} bg-gradient-to-r from-blue-600 to-purple-600 text-white px-5 py-2 rounded-full text-xs font-bold shadow-lg">
+                        STEP {{ forloop.index }}
+                    </span>
+                    
+                    <!-- Company Name -->
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2 mt-2">{{ experience.company }}</h3>
+                    
+                    <!-- Role -->
+                    <p class="text-lg font-semibold text-purple-600 mb-3">{{ experience.role }}</p>
+                    
+                    <!-- Duration -->
+                    <div class="flex items-center gap-2 text-gray-600 mb-4">
+                        <i class="fa-solid fa-calendar-alt text-blue-600"></i>
+                        <p class="text-sm font-medium">{{ experience.duration }}</p>
+                    </div>
+                    
+                    <!-- Description -->
+                    <p class="text-gray-700 leading-relaxed mb-6">{{ experience.description }}</p>
+                    
+                    <!-- Key Achievements -->
+                    {% if experience.highlights %}
+                    <div class="mt-6 bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl border border-blue-100">
+                        <div class="flex items-center gap-2 mb-4">
+                            <i class="fa-solid fa-star text-yellow-500 text-lg"></i>
+                            <h4 class="text-lg font-bold text-gray-800">Key Achievements</h4>
+                        </div>
+                        <ul class="space-y-3">
+                            {% for highlight in experience.highlights %}
+                            <li class="flex items-start gap-3 group">
+                                <div class="flex-shrink-0 w-2 h-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mt-2 group-hover:scale-150 transition-transform duration-300"></div>
+                                <span class="text-gray-700 text-sm leading-relaxed flex-1">{{ highlight }}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
             {% endfor %}
@@ -519,24 +559,118 @@ html {
   </div>
 </section>
 
-<!-- Contact Section -->
-<section id="contact" class="text-center py-16 bg-gradient-to-br from-blue-50 to-purple-50">
-    <h2 class="text-4xl font-bold text-gray-800">{{ site.data.about.contact_title }}</h2>
-    <p class="mt-4 text-gray-600 text-lg max-w-2xl mx-auto">{{ site.data.about.contact_description }}</p>
+<!-- Contact Section - Enhanced -->
+<section id="contact" class="relative py-20 overflow-hidden">
+    <!-- Animated Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700"></div>
     
-    <!-- Social Media Links -->
-    <div class="flex justify-center gap-6 mt-8 mb-8">
-        {% for social in site.data.social.social_links %}
-        <a href="{{ social.url }}" target="_blank" rel="noopener noreferrer" 
-           class="w-14 h-14 flex items-center justify-center bg-white rounded-full text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl" 
-           title="{{ social.name | capitalize }}">
-            <i class="fab fa-{{ social.name }} text-2xl"></i>
-        </a>
-        {% endfor %}
+    <!-- Animated Shapes -->
+    <div class="absolute inset-0 opacity-20">
+        <div class="absolute top-10 left-10 w-72 h-72 bg-white rounded-full mix-blend-overlay filter blur-3xl animate-blob"></div>
+        <div class="absolute top-10 right-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-overlay filter blur-3xl animate-blob animation-delay-2000"></div>
+        <div class="absolute bottom-10 left-1/2 w-72 h-72 bg-blue-300 rounded-full mix-blend-overlay filter blur-3xl animate-blob animation-delay-4000"></div>
     </div>
     
-    <a href="{{ site.data.about.contact_button_link }}" class="mt-6 inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl">
-        {{ site.data.about.contact_button_text }}
-        <i class="fas fa-envelope"></i>
-    </a>
+    <!-- Content -->
+    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+        <!-- Icon -->
+        <div class="inline-flex items-center justify-center w-20 h-20 bg-white/10 backdrop-blur-sm rounded-full mb-6 border-2 border-white/20">
+            <i class="fas fa-paper-plane text-white text-3xl"></i>
+        </div>
+        
+        <!-- Title -->
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">{{ site.data.about.contact_title }}</h2>
+        <p class="text-xl text-blue-100 max-w-2xl mx-auto mb-12">{{ site.data.about.contact_description }}</p>
+        
+        <!-- Contact Cards Grid -->
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <!-- Email Card -->
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2">
+                <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-envelope text-white text-2xl"></i>
+                </div>
+                <h3 class="text-white font-bold text-lg mb-2">Email Me</h3>
+                <p class="text-blue-100 text-sm">Drop me a message anytime</p>
+            </div>
+            
+            <!-- Connect Card -->
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2">
+                <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-users text-white text-2xl"></i>
+                </div>
+                <h3 class="text-white font-bold text-lg mb-2">Let's Collaborate</h3>
+                <p class="text-blue-100 text-sm">Open to exciting projects</p>
+            </div>
+            
+            <!-- Social Card -->
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2">
+                <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-share-alt text-white text-2xl"></i>
+                </div>
+                <h3 class="text-white font-bold text-lg mb-2">Follow Me</h3>
+                <p class="text-blue-100 text-sm">Stay connected on socials</p>
+            </div>
+        </div>
+        
+        <!-- Social Media Links -->
+        <div class="flex flex-wrap justify-center gap-4 mb-10">
+            {% for social in site.data.social.social_links %}
+            <a href="{{ social.url }}" target="_blank" rel="noopener noreferrer" 
+               class="group relative w-14 h-14 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white hover:border-white transition-all duration-300 transform hover:scale-110 hover:rotate-6" 
+               title="{{ social.name | capitalize }}">
+                <i class="fab fa-{{ social.name }} text-2xl text-white group-hover:text-blue-600 transition-colors duration-300"></i>
+                <!-- Tooltip -->
+                <span class="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-white text-gray-800 text-xs font-semibold px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap shadow-lg">
+                    {{ social.name | capitalize }}
+                </span>
+            </a>
+            {% endfor %}
+        </div>
+        
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="{{ site.data.about.contact_button_link }}" class="inline-flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-bold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl group">
+                <i class="fas fa-envelope group-hover:animate-bounce"></i>
+                <span>{{ site.data.about.contact_button_text }}</span>
+                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
+            </a>
+            
+            <a href="#intro" class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-full text-lg font-bold border-2 border-white/30 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+                <i class="fas fa-user"></i>
+                <span>Learn More About Me</span>
+            </a>
+        </div>
+        
+        <!-- Decorative Line -->
+        <div class="mt-12 flex items-center justify-center gap-4">
+            <div class="w-20 h-0.5 bg-white/30"></div>
+            <i class="fas fa-heart text-white text-xl animate-pulse"></i>
+            <div class="w-20 h-0.5 bg-white/30"></div>
+        </div>
+        
+        <p class="mt-6 text-blue-100 text-sm">
+            Available for freelance opportunities and full-time positions
+        </p>
+    </div>
 </section>
+
+<style>
+@keyframes blob {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(20px, -20px) scale(1.1); }
+    50% { transform: translate(-20px, 20px) scale(0.9); }
+    75% { transform: translate(20px, 20px) scale(1.05); }
+}
+
+.animate-blob {
+    animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+    animation-delay: 4s;
+}
+</style>
