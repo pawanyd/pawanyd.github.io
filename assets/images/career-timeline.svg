@@ -1,0 +1,246 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="1400" height="900">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="timelineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="33%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="66%" style="stop-color:#ec4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  
+  <rect width="1400" height="900" fill="url(#bgGradient)" />
+  
+  <g transform="translate(700, 60)">
+    <text x="0" y="0" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="36" font-weight="bold">
+      Career Journey Timeline
+    </text>
+    <text x="0" y="35" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="18">
+      10+ Years of Innovation and Growth • 2016 - Present
+    </text>
+  </g>
+  
+  <g transform="translate(100, 150)">
+    <line x1="50" y1="100" x2="50" y2="650" stroke="url(#timelineGradient)" stroke-width="4" filter="url(#glow)" />
+    
+    <circle cx="50" cy="100" r="6" fill="#3b82f6" filter="url(#glow)">
+      <animate attributeName="cy" values="100;650;100" dur="8s" repeatCount="indefinite" />
+    </circle>
+    
+    <g transform="translate(0, 550)">
+      <circle cx="50" cy="0" r="20" fill="#3b82f6" filter="url(#glow)" stroke="#1e40af" stroke-width="3" />
+      <text x="50" y="7" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">1</text>
+      
+      <g transform="translate(100, -80)">
+        <rect x="0" y="0" width="500" height="160" rx="12" fill="rgba(30, 58, 138, 0.9)" filter="url(#shadow)" stroke="#3b82f6" stroke-width="2" />
+        <rect x="0" y="0" width="500" height="45" rx="12" fill="#3b82f6" opacity="0.3" />
+        <text x="20" y="28" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+          Grepix Infotech Pvt. Ltd.
+        </text>
+        <text x="480" y="28" text-anchor="end" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="14">
+          Mar 2016 - Oct 2017
+        </text>
+        <text x="20" y="65" fill="#60a5fa" font-family="Arial, sans-serif" font-size="15" font-weight="bold">
+          Associate Software Developer to Software Engineer
+        </text>
+        <text x="20" y="88" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="13">
+          <tspan x="20" dy="0">Started career learning PHP, CakePHP, MySQL fundamentals</tspan>
+          <tspan x="20" dy="18">Promoted to Software Engineer</tspan>
+          <tspan x="20" dy="18">Built Taxi Booking Platform with real-time ride management</tspan>
+        </text>
+      </g>
+      <text x="-30" y="7" text-anchor="end" fill="#3b82f6" font-family="Arial, sans-serif" font-size="20" font-weight="bold">2016</text>
+    </g>
+    
+    <g transform="translate(0, 400)">
+      <circle cx="50" cy="0" r="20" fill="#8b5cf6" filter="url(#glow)" stroke="#6d28d9" stroke-width="3" />
+      <text x="50" y="7" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">2</text>
+      
+      <g transform="translate(100, -80)">
+        <rect x="0" y="0" width="500" height="160" rx="12" fill="rgba(91, 33, 182, 0.9)" filter="url(#shadow)" stroke="#8b5cf6" stroke-width="2" />
+        <rect x="0" y="0" width="500" height="45" rx="12" fill="#8b5cf6" opacity="0.3" />
+        <text x="20" y="28" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+          Monet Network (Ashmarip)
+        </text>
+        <text x="480" y="28" text-anchor="end" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="14">
+          Oct 2017 - May 2018
+        </text>
+        <text x="20" y="65" fill="#c4b5fd" font-family="Arial, sans-serif" font-size="15" font-weight="bold">
+          Software Engineer to Senior Software Engineer
+        </text>
+        <text x="20" y="88" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="13">
+          <tspan x="20" dy="0">Built Emotion Detection Platform for Marvel and Big Brother</tspan>
+          <tspan x="20" dy="18">Implemented WebRTC video capture and real-time processing</tspan>
+          <tspan x="20" dy="18">100,000+ sessions processed with 98% accuracy</tspan>
+        </text>
+      </g>
+      <text x="-30" y="7" text-anchor="end" fill="#8b5cf6" font-family="Arial, sans-serif" font-size="20" font-weight="bold">2017</text>
+    </g>
+    
+    <g transform="translate(0, 250)">
+      <circle cx="50" cy="0" r="20" fill="#ec4899" filter="url(#glow)" stroke="#be185d" stroke-width="3" />
+      <text x="50" y="7" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">3</text>
+      
+      <g transform="translate(100, -80)">
+        <rect x="0" y="0" width="500" height="160" rx="12" fill="rgba(159, 18, 57, 0.9)" filter="url(#shadow)" stroke="#ec4899" stroke-width="2" />
+        <rect x="0" y="0" width="500" height="45" rx="12" fill="#ec4899" opacity="0.3" />
+        <text x="20" y="28" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+          Always Infotech Pvt. Ltd.
+        </text>
+        <text x="480" y="28" text-anchor="end" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="14">
+          June 2018 - May 2019
+        </text>
+        <text x="20" y="65" fill="#f9a8d4" font-family="Arial, sans-serif" font-size="15" font-weight="bold">
+          Senior Software Engineer to Full Stack Developer
+        </text>
+        <text x="20" y="88" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="13">
+          <tspan x="20" dy="0">Architected Stock Market Trading Platform (millions of users)</tspan>
+          <tspan x="20" dy="18">Developed reusable component libraries across teams</tspan>
+          <tspan x="20" dy="18">System design expertise (LLD/HLD) and AWS implementation</tspan>
+        </text>
+      </g>
+      <text x="-30" y="7" text-anchor="end" fill="#ec4899" font-family="Arial, sans-serif" font-size="20" font-weight="bold">2018</text>
+    </g>
+    
+    <g transform="translate(0, 50)">
+      <circle cx="50" cy="0" r="25" fill="#10b981" filter="url(#glow)" stroke="#059669" stroke-width="4">
+        <animate attributeName="r" values="25;28;25" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <text x="50" y="8" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">4</text>
+      
+      <rect x="25" y="-45" width="50" height="20" rx="10" fill="#10b981" filter="url(#glow)" />
+      <text x="50" y="-30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">CURRENT</text>
+      
+      <g transform="translate(100, -100)">
+        <rect x="0" y="0" width="500" height="200" rx="12" fill="rgba(6, 95, 70, 0.9)" filter="url(#shadow)" stroke="#10b981" stroke-width="3" />
+        <rect x="0" y="0" width="500" height="45" rx="12" fill="#10b981" opacity="0.3" />
+        <text x="20" y="28" fill="white" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+          SingleInterface
+        </text>
+        <text x="480" y="28" text-anchor="end" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="14">
+          May 2019 - Present
+        </text>
+        <text x="20" y="65" fill="#6ee7b7" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+          Principal Software Developer
+        </text>
+        <text x="20" y="90" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="13">
+          <tspan x="20" dy="0">No-Code Website Builder: 99% reduction in onboarding</tspan>
+          <tspan x="20" dy="18">AI-Powered Component Generation: 70% faster development</tspan>
+          <tspan x="20" dy="18">Custom Validation Module: Zero developer dependency</tspan>
+          <tspan x="20" dy="18">Microservices Transformation for scalability</tspan>
+          <tspan x="20" dy="18">Global Event Tracking and Lead Management (millions of users)</tspan>
+        </text>
+      </g>
+      <text x="-30" y="7" text-anchor="end" fill="#10b981" font-family="Arial, sans-serif" font-size="20" font-weight="bold">2019</text>
+    </g>
+    
+    <g transform="translate(650, 50)">
+      <rect x="0" y="0" width="550" height="600" rx="15" fill="rgba(30, 41, 59, 0.6)" filter="url(#shadow)" stroke="#475569" stroke-width="2" />
+      <rect x="0" y="0" width="550" height="50" rx="15" fill="rgba(59, 130, 246, 0.2)" />
+      <text x="275" y="33" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="22" font-weight="bold">
+        Key Achievements
+      </text>
+      
+      <g transform="translate(30, 80)">
+        <circle cx="0" cy="0" r="8" fill="#10b981" filter="url(#glow)" />
+        <text x="20" y="5" fill="white" font-family="Arial, sans-serif" font-size="15" font-weight="bold">
+          99% Onboarding Reduction
+        </text>
+        <text x="20" y="25" fill="#94a3b8" font-family="Arial, sans-serif" font-size="13">
+          From 2 months to 2 hours with no-code builder
+        </text>
+      </g>
+      
+      <g transform="translate(30, 140)">
+        <circle cx="0" cy="0" r="8" fill="#3b82f6" filter="url(#glow)" />
+        <text x="20" y="5" fill="white" font-family="Arial, sans-serif" font-size="15" font-weight="bold">
+          70% Development Speed Increase
+        </text>
+        <text x="20" y="25" fill="#94a3b8" font-family="Arial, sans-serif" font-size="13">
+          AI-powered component generation
+        </text>
+      </g>
+      
+      <g transform="translate(30, 200)">
+        <circle cx="0" cy="0" r="8" fill="#8b5cf6" filter="url(#glow)" />
+        <text x="20" y="5" fill="white" font-family="Arial, sans-serif" font-size="15" font-weight="bold">
+          Millions of Concurrent Users
+        </text>
+        <text x="20" y="25" fill="#94a3b8" font-family="Arial, sans-serif" font-size="13">
+          Stock trading and SaaS platforms at scale
+        </text>
+      </g>
+      
+      <g transform="translate(30, 260)">
+        <circle cx="0" cy="0" r="8" fill="#ec4899" filter="url(#glow)" />
+        <text x="20" y="5" fill="white" font-family="Arial, sans-serif" font-size="15" font-weight="bold">
+          100,000+ Emotion Analysis Sessions
+        </text>
+        <text x="20" y="25" fill="#94a3b8" font-family="Arial, sans-serif" font-size="13">
+          98% accuracy for Marvel and entertainment studios
+        </text>
+      </g>
+      
+      <g transform="translate(30, 320)">
+        <circle cx="0" cy="0" r="8" fill="#f59e0b" filter="url(#glow)" />
+        <text x="20" y="5" fill="white" font-family="Arial, sans-serif" font-size="15" font-weight="bold">
+          Zero Developer Dependency
+        </text>
+        <text x="20" y="25" fill="#94a3b8" font-family="Arial, sans-serif" font-size="13">
+          Custom validation module empowering teams
+        </text>
+      </g>
+      
+      <g transform="translate(0, 380)">
+        <line x1="30" y1="0" x2="520" y2="0" stroke="#475569" stroke-width="1" />
+        <text x="275" y="30" text-anchor="middle" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+          Skills Evolution
+        </text>
+        <text x="30" y="55" fill="#94a3b8" font-family="Arial, sans-serif" font-size="13">
+          <tspan x="30" dy="0">2016: PHP, MySQL, CakePHP</tspan>
+          <tspan x="30" dy="20">2017: WebRTC, Face Detection, Real-time Processing</tspan>
+          <tspan x="30" dy="20">2018: System Design, AWS, Microservices</tspan>
+          <tspan x="30" dy="20">2019: Architecture, Leadership, Mentoring</tspan>
+          <tspan x="30" dy="20">2020+: AI/ML, No-Code Platforms, Innovation</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+  
+  <g transform="translate(100, 820)">
+    <rect x="0" y="0" width="1200" height="60" rx="10" fill="rgba(59, 130, 246, 0.1)" stroke="#3b82f6" stroke-width="2" />
+    <g transform="translate(100, 30)">
+      <text x="0" y="0" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">10+ Years</text>
+      <text x="0" y="18" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">Experience</text>
+    </g>
+    <g transform="translate(350, 30)">
+      <text x="0" y="0" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">4 Companies</text>
+      <text x="0" y="18" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">Career Growth</text>
+    </g>
+    <g transform="translate(600, 30)">
+      <text x="0" y="0" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">6 Promotions</text>
+      <text x="0" y="18" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">Career Progression</text>
+    </g>
+    <g transform="translate(850, 30)">
+      <text x="0" y="0" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Millions of Users</text>
+      <text x="0" y="18" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">Impact at Scale</text>
+    </g>
+  </g>
+</svg>
