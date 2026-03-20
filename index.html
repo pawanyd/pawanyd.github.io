@@ -17,24 +17,105 @@ meta_image: "/assets/images/profile-meta.jpg"
 </section>
 
 <!-- About Section -->
-<section class="py-16 bg-gray-100" style="content-visibility:visible">
-  <div class="max-w-6xl mx-auto px-6">
-      <div class="flex flex-col justify-center text-center">
-          <h2 class="text-4xl font-bold text-gray-800">{{ site.data.home.about.title }}</h2>
-          <p class="text-gray-600 mt-4 text-lg">{{ site.data.home.about.description }}</p>
-          <div class="mt-4 space-y-4">
-              {% for detail in site.data.home.about.details %}
-              <p class="text-gray-600 text-lg">{{ detail }}</p>
-              {% endfor %}
-          </div>
-          <div>
-              <a href="{{ site.data.home.about.learn_more_link }}" class="mt-6 inline-block bg-blue-600 text-white px-8 py-4 rounded-lg text-xl hover:bg-blue-700">
-                  Learn More
-              </a>
-          </div>
+<section class="py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 relative overflow-hidden" style="content-visibility:visible">
+  <!-- Decorative Background Elements -->
+  <div class="absolute top-0 left-0 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+  <div class="absolute top-0 right-0 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+  <div class="absolute bottom-0 left-1/2 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+  
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-5xl font-bold text-gray-900 mb-4">{{ site.data.home.about.title }}</h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+    </div>
+    
+    <!-- Main Content Card -->
+    <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-12 backdrop-blur-sm bg-opacity-95 border border-gray-100">
+      <!-- Introduction -->
+      <div class="mb-10">
+        <p class="text-xl text-gray-700 leading-relaxed text-center">
+          {{ site.data.home.about.description }}
+        </p>
       </div>
+      
+      <!-- Journey Cards -->
+      <div class="grid md:grid-cols-2 gap-6 mb-10">
+        {% for detail in site.data.home.about.details %}
+        <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6 border-l-4 border-blue-600 hover:shadow-lg transition-all duration-300 hover:scale-105">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
+                {{ forloop.index }}
+              </div>
+            </div>
+            <p class="text-gray-700 leading-relaxed flex-1">{{ detail }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      
+      <!-- Key Highlights -->
+      <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-8 mb-8">
+        <h3 class="text-2xl font-bold text-white text-center mb-6">Career Highlights</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="text-center">
+            <div class="text-4xl font-bold text-white mb-2">10+</div>
+            <div class="text-blue-100 text-sm">Years Experience</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-white mb-2">99%</div>
+            <div class="text-blue-100 text-sm">Time Reduction</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-white mb-2">70%</div>
+            <div class="text-blue-100 text-sm">Faster Dev</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-white mb-2">1M+</div>
+            <div class="text-blue-100 text-sm">Users Served</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- CTA Button -->
+      <div class="text-center">
+        <a href="{{ site.data.home.about.learn_more_link }}" 
+           class="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300 hover:scale-105 group">
+          <span>Learn More About My Journey</span>
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Bottom Accent -->
+    <div class="mt-8 text-center">
+      <p class="text-gray-600 italic">
+        "Building systems that scale elegantly and deliver measurable business impact"
+      </p>
+    </div>
   </div>
 </section>
+
+<!-- Add custom animations -->
+<style>
+  @keyframes blob {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+  }
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+</style>
 
 
 
