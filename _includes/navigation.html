@@ -49,7 +49,7 @@
                     </div>
                 {% else %}
                     <!-- Regular menu item -->
-                    <a href="{{ item.link }}" {% if item.target %}target="{{ item.target }}"{% endif %} class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 md:hover:bg-transparent block px-6 py-4 md:px-2 md:py-2 transition-colors text-base md:text-sm font-medium whitespace-nowrap">
+                    <a href="{{ item.link }}" {% if item.target %}target="{{ item.target }}"{% endif %} {% if item.download %}download{% endif %} class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 md:hover:bg-transparent block px-6 py-4 md:px-2 md:py-2 transition-colors text-base md:text-sm font-medium whitespace-nowrap">
                         {% if item.icon %}<i class="{{ item.icon }} mr-2 md:mr-1 text-gray-500"></i>{% endif %}<span>{{ item.name }}</span>
                     </a>
                 {% endif %}

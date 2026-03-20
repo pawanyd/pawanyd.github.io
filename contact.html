@@ -115,11 +115,15 @@ meta_image: "/assets/images/contact-meta.jpg"
         </div>
         
         <!-- Bottom CTA -->
-        <div class="text-center mt-16">
+        <div class="flex flex-wrap justify-center gap-4 mt-16">
             <a href="#contact-form" class="group inline-flex items-center gap-3 bg-white text-blue-900 px-10 py-5 rounded-xl text-lg font-bold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-2xl">
                 <i class="fas fa-paper-plane group-hover:translate-x-1 transition-transform"></i>
                 <span>Send Me a Message</span>
                 <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+            </a>
+            <a href="/assets/resume.pdf" download class="group inline-flex items-center gap-3 bg-white/10 backdrop-blur-md text-white px-10 py-5 rounded-xl text-lg font-bold hover:bg-white/20 transition-all duration-300 transform hover:scale-105 shadow-2xl border-2 border-white/30">
+                <i class="fas fa-download group-hover:translate-y-1 transition-transform"></i>
+                <span>Download Resume</span>
             </a>
         </div>
     </div>
@@ -185,6 +189,56 @@ meta_image: "/assets/images/contact-meta.jpg"
     animation-delay: 2s;
 }
 </style>
+
+<!-- Resume Download Section -->
+<section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="relative overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-3xl shadow-2xl">
+            <!-- Decorative Pattern -->
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 30px 30px;"></div>
+            </div>
+            
+            <div class="relative z-10 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="flex-1 text-white">
+                    <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-bold mb-4">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>Professional Resume</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-black mb-3">Want to Know More?</h2>
+                    <p class="text-white/90 text-lg mb-6">Download my complete resume with detailed experience, skills, and achievements</p>
+                    <div class="flex flex-wrap gap-3 text-sm">
+                        <span class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-lg">
+                            <i class="fas fa-check-circle text-green-300"></i>
+                            10+ Years Experience
+                        </span>
+                        <span class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-lg">
+                            <i class="fas fa-check-circle text-green-300"></i>
+                            50+ Projects
+                        </span>
+                        <span class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-lg">
+                            <i class="fas fa-check-circle text-green-300"></i>
+                            Full Stack Expert
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="flex-shrink-0">
+                    <a href="/assets/resume.pdf" download class="group inline-flex items-center gap-3 bg-white text-purple-600 px-8 py-5 rounded-2xl text-lg font-black hover:bg-gray-50 transition-all duration-300 transform hover:scale-110 shadow-2xl">
+                        <i class="fas fa-download text-2xl group-hover:translate-y-1 transition-transform"></i>
+                        <div class="text-left">
+                            <div class="text-sm font-normal text-gray-600">Get My</div>
+                            <div>Resume PDF</div>
+                        </div>
+                    </a>
+                    <p class="text-center text-white/70 text-xs mt-3">
+                        <i class="fas fa-file-pdf"></i> PDF Format • Updated 2024
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- Contact Details -->
 <section class="py-16 bg-white">
