@@ -24,6 +24,8 @@ plugins:
   - jekyll-postcss
   - jekyll-paginate
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
 
 paginate: 4
 paginate_path: "/blogs/page:num/"

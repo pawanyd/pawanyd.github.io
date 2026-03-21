@@ -44,6 +44,10 @@ GEM
     jekyll-postcss (0.5.0)
     jekyll-sass-converter (3.0.0)
       sass-embedded (~> 1.54)
+    jekyll-seo-tag (2.8.0)
+      jekyll (>= 3.8, < 5.0)
+    jekyll-sitemap (1.4.0)
+      jekyll (>= 3.7, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     json (2.9.1)
@@ -84,6 +88,8 @@ DEPENDENCIES
   jekyll-feed
   jekyll-paginate
   jekyll-postcss
+  jekyll-seo-tag
+  jekyll-sitemap
 
 BUNDLED WITH
    2.4.5
