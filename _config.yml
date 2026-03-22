@@ -32,3 +32,33 @@ paginate_path: "/blogs/page:num/"
 
 postcss:
   cache: true
+
+# Include important files that Jekyll might ignore
+include:
+  - _pages
+  - .htaccess
+
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .bundle
+  - .sass-cache
+  - .jekyll-cache
+  - gemfiles
+  - package.json
+  - package-lock.json
+  - postcss.config.js
+  - tailwind.config.js
+  - README.md
+  - SEO-CRAWLING-GUIDE.md
+  - .code
+  - .vscode
+  - .kiro
+
+# Keep important files
+keep_files:
+  - .git
+  - .nojekyll
