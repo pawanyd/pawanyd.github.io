@@ -1,0 +1,362 @@
+# System Design Tooltip Definitions
+# This file contains all technical term definitions used across the website
+
+# Core System Design Terms
+scalability:
+  term: "Scalability"
+  definition: "The ability of a system to handle increased load by adding resources. A scalable system maintains performance as demand grows."
+  link: "https://en.wikipedia.org/wiki/Scalability"
+
+vertical_scaling:
+  term: "Vertical Scaling"
+  definition: "Adding more power (CPU, RAM, storage) to an existing server. Also called 'scaling up'. Limited by hardware constraints but simpler to implement."
+  link: "https://en.wikipedia.org/wiki/Scalability#Vertical"
+
+horizontal_scaling:
+  term: "Horizontal Scaling"
+  definition: "Adding more servers to distribute the load. Also called 'scaling out'. Provides unlimited scaling potential but requires load balancing."
+  link: "https://en.wikipedia.org/wiki/Scalability#Horizontal"
+
+auto_scaling:
+  term: "Auto-Scaling"
+  definition: "Automatically adjusting the number of servers based on current demand. Adds servers during high traffic and removes them during low traffic to optimize costs."
+  link: "https://aws.amazon.com/autoscaling/"
+
+load_balancer:
+  term: "Load Balancer"
+  definition: "A server that distributes incoming network traffic across multiple backend servers to ensure no single server is overwhelmed."
+  link: "https://en.wikipedia.org/wiki/Load_balancing_(computing)"
+
+latency:
+  term: "Latency"
+  definition: "The time delay between a request and response. Measured in milliseconds. Lower latency means faster user experience."
+  link: "https://en.wikipedia.org/wiki/Latency_(engineering)"
+
+throughput:
+  term: "Throughput"
+  definition: "The number of requests a system can handle per unit of time. Usually measured in requests per second (RPS) or transactions per second (TPS)."
+  link: "https://en.wikipedia.org/wiki/Throughput"
+
+availability:
+  term: "Availability"
+  definition: "The percentage of time a system is operational and accessible. Measured in 'nines' (99.9%, 99.99%, etc.). Higher availability means less downtime."
+  link: "https://en.wikipedia.org/wiki/High_availability"
+
+sla:
+  term: "SLA"
+  definition: "Service Level Agreement - A commitment between a service provider and client defining expected service levels, including uptime guarantees and performance metrics."
+  link: "https://en.wikipedia.org/wiki/Service-level_agreement"
+
+reliability:
+  term: "Reliability"
+  definition: "The ability of a system to function correctly and consistently, even when components fail. Includes fault tolerance and recovery mechanisms."
+  link: "https://en.wikipedia.org/wiki/Reliability_engineering"
+
+consistency:
+  term: "Consistency"
+  definition: "Ensures all users see the same data at the same time. In distributed systems, maintaining consistency across multiple nodes is challenging."
+  link: "https://en.wikipedia.org/wiki/Consistency_(database_systems)"
+
+cap_theorem:
+  term: "CAP Theorem"
+  definition: "States that a distributed system can only guarantee two of three properties: Consistency, Availability, and Partition tolerance. You must choose which to prioritize."
+  link: "https://en.wikipedia.org/wiki/CAP_theorem"
+
+eventual_consistency:
+  term: "Eventual Consistency"
+  definition: "A consistency model where updates propagate to all nodes eventually, but not immediately. Prioritizes availability over immediate consistency."
+  link: "https://en.wikipedia.org/wiki/Eventual_consistency"
+
+strong_consistency:
+  term: "Strong Consistency"
+  definition: "Guarantees that all reads return the most recent write. All nodes see the same data at the same time, but may sacrifice availability."
+  link: "https://en.wikipedia.org/wiki/Strong_consistency"
+
+# Architecture Patterns
+monolithic:
+  term: "Monolithic Architecture"
+  definition: "An application built as a single unified unit where all components are interconnected and interdependent. Simpler to develop but harder to scale."
+  link: "https://en.wikipedia.org/wiki/Monolithic_application"
+
+microservices:
+  term: "Microservices"
+  definition: "An architectural style that structures an application as a collection of loosely coupled, independently deployable services. Each service handles a specific business function."
+  link: "https://en.wikipedia.org/wiki/Microservices"
+
+api_gateway:
+  term: "API Gateway"
+  definition: "A single entry point for all client requests that routes them to appropriate microservices. Handles authentication, rate limiting, and request routing."
+  link: "https://en.wikipedia.org/wiki/API_management"
+
+service_mesh:
+  term: "Service Mesh"
+  definition: "An infrastructure layer that handles service-to-service communication, providing features like load balancing, service discovery, and observability."
+  link: "https://en.wikipedia.org/wiki/Service_mesh"
+
+event_driven:
+  term: "Event-Driven Architecture"
+  definition: "A design pattern where components communicate by producing and consuming events. Enables loose coupling and asynchronous processing."
+  link: "https://en.wikipedia.org/wiki/Event-driven_architecture"
+
+# Database & Storage
+sql:
+  term: "SQL Database"
+  definition: "Relational database that stores structured data in tables with predefined schemas. Uses SQL for queries. Examples: PostgreSQL, MySQL. Best for structured data with relationships."
+  link: "https://en.wikipedia.org/wiki/SQL"
+
+nosql:
+  term: "NoSQL Database"
+  definition: "Non-relational database designed for flexible schemas and horizontal scaling. Types include document, key-value, column-family, and graph databases. Examples: MongoDB, Cassandra."
+  link: "https://en.wikipedia.org/wiki/NoSQL"
+
+sharding:
+  term: "Sharding"
+  definition: "Partitioning a database horizontally across multiple servers. Each shard contains a subset of data, enabling horizontal scaling of databases."
+  link: "https://en.wikipedia.org/wiki/Shard_(database_architecture)"
+
+replication:
+  term: "Replication"
+  definition: "Copying data across multiple database servers to improve availability and read performance. If one server fails, others can serve requests."
+  link: "https://en.wikipedia.org/wiki/Replication_(computing)"
+
+primary_replica:
+  term: "Primary-Replica Pattern"
+  definition: "Database architecture with one primary (master) for writes and multiple replicas (slaves) for reads. Also called master-slave replication."
+  link: "https://en.wikipedia.org/wiki/Replication_(computing)#Master-slave_replication"
+
+indexing:
+  term: "Database Indexing"
+  definition: "A data structure that improves the speed of data retrieval operations. Like a book index, it helps find data quickly without scanning entire tables."
+  link: "https://en.wikipedia.org/wiki/Database_index"
+
+acid:
+  term: "ACID"
+  definition: "Atomicity, Consistency, Isolation, Durability - Properties that guarantee reliable database transactions. Used by traditional SQL databases."
+  link: "https://en.wikipedia.org/wiki/ACID"
+
+base:
+  term: "BASE"
+  definition: "Basically Available, Soft state, Eventual consistency - An alternative to ACID used by NoSQL databases, prioritizing availability over immediate consistency."
+  link: "https://en.wikipedia.org/wiki/Eventual_consistency#BASE"
+
+# Caching
+cache:
+  term: "Cache"
+  definition: "Temporary storage layer that stores frequently accessed data in memory for fast retrieval. Reduces database load and improves response times."
+  link: "https://en.wikipedia.org/wiki/Cache_(computing)"
+
+cdn:
+  term: "CDN"
+  definition: "Content Delivery Network - A geographically distributed network of servers that delivers static content (images, videos, CSS, JS) from locations closest to users."
+  link: "https://en.wikipedia.org/wiki/Content_delivery_network"
+
+redis:
+  term: "Redis"
+  definition: "An in-memory data store used for caching, session management, and real-time analytics. Extremely fast with support for various data structures."
+  link: "https://redis.io/"
+
+memcached:
+  term: "Memcached"
+  definition: "A distributed memory caching system that stores key-value pairs in RAM. Simpler than Redis but very fast for basic caching needs."
+  link: "https://memcached.org/"
+
+cache_invalidation:
+  term: "Cache Invalidation"
+  definition: "The process of removing or updating stale data from cache when the underlying data changes. One of the hardest problems in computer science."
+  link: "https://en.wikipedia.org/wiki/Cache_invalidation"
+
+cache_hit_miss:
+  term: "Cache Hit/Miss"
+  definition: "Cache Hit: Data found in cache. Cache Miss: Data not in cache, must fetch from database. Hit rate measures cache effectiveness."
+  link: "https://en.wikipedia.org/wiki/Cache_(computing)#Cache_performance"
+
+ttl:
+  term: "TTL"
+  definition: "Time To Live - Duration that cached data remains valid before expiring. After TTL expires, data is refreshed from the source."
+  link: "https://en.wikipedia.org/wiki/Time_to_live"
+
+# Communication
+rest:
+  term: "REST API"
+  definition: "Representational State Transfer - An architectural style for web services using HTTP methods (GET, POST, PUT, DELETE) and stateless communication."
+  link: "https://en.wikipedia.org/wiki/Representational_state_transfer"
+
+graphql:
+  term: "GraphQL"
+  definition: "A query language for APIs that allows clients to request exactly the data they need. More flexible than REST but more complex to implement."
+  link: "https://graphql.org/"
+
+websocket:
+  term: "WebSocket"
+  definition: "A protocol providing full-duplex communication channels over a single TCP connection. Enables real-time bidirectional data flow between client and server."
+  link: "https://en.wikipedia.org/wiki/WebSocket"
+
+message_queue:
+  term: "Message Queue"
+  definition: "A form of asynchronous service-to-service communication. Messages are stored in a queue until processed, enabling decoupling and load smoothing."
+  link: "https://en.wikipedia.org/wiki/Message_queue"
+
+pubsub:
+  term: "Pub/Sub"
+  definition: "Publish-Subscribe pattern where publishers send messages to topics, and subscribers receive messages from topics they're interested in. Enables one-to-many communication."
+  link: "https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern"
+
+rpc:
+  term: "RPC"
+  definition: "Remote Procedure Call - A protocol that allows a program to execute a procedure on another computer as if it were a local call. Used for inter-service communication."
+  link: "https://en.wikipedia.org/wiki/Remote_procedure_call"
+
+# Performance & Optimization
+rate_limiting:
+  term: "Rate Limiting"
+  definition: "Controlling the number of requests a user can make in a given time period. Prevents abuse and ensures fair resource usage."
+  link: "https://en.wikipedia.org/wiki/Rate_limiting"
+
+throttling:
+  term: "Throttling"
+  definition: "Intentionally slowing down or limiting resource usage to prevent system overload. Similar to rate limiting but focuses on resource consumption."
+  link: "https://en.wikipedia.org/wiki/Throttling_process_(computing)"
+
+circuit_breaker:
+  term: "Circuit Breaker"
+  definition: "A design pattern that prevents cascading failures by stopping requests to a failing service. Automatically retries after a timeout period."
+  link: "https://en.wikipedia.org/wiki/Circuit_breaker_design_pattern"
+
+backpressure:
+  term: "Backpressure"
+  definition: "A mechanism to handle overload by signaling upstream components to slow down. Prevents system collapse under heavy load."
+  link: "https://en.wikipedia.org/wiki/Back_pressure"
+
+idempotency:
+  term: "Idempotency"
+  definition: "A property where performing the same operation multiple times produces the same result. Critical for reliable distributed systems and retry logic."
+  link: "https://en.wikipedia.org/wiki/Idempotence"
+
+async_processing:
+  term: "Asynchronous Processing"
+  definition: "Executing operations without blocking. The caller doesn't wait for completion, enabling better resource utilization and responsiveness."
+  link: "https://en.wikipedia.org/wiki/Asynchrony_(computer_programming)"
+
+# Infrastructure
+reverse_proxy:
+  term: "Reverse Proxy"
+  definition: "A server that sits in front of web servers and forwards client requests to them. Provides load balancing, caching, and security benefits."
+  link: "https://en.wikipedia.org/wiki/Reverse_proxy"
+
+forward_proxy:
+  term: "Forward Proxy"
+  definition: "A server that sits between clients and the internet, forwarding client requests. Used for anonymity, content filtering, and caching."
+  link: "https://en.wikipedia.org/wiki/Proxy_server#Forward_proxies"
+
+dns:
+  term: "DNS"
+  definition: "Domain Name System - Translates human-readable domain names (google.com) into IP addresses (172.217.164.46) that computers use to communicate."
+  link: "https://en.wikipedia.org/wiki/Domain_Name_System"
+
+failover:
+  term: "Failover"
+  definition: "Automatically switching to a backup system when the primary system fails. Ensures high availability and minimal downtime."
+  link: "https://en.wikipedia.org/wiki/Failover"
+
+health_check:
+  term: "Health Check"
+  definition: "Periodic monitoring of server status to detect failures. Load balancers use health checks to route traffic only to healthy servers."
+  link: "https://en.wikipedia.org/wiki/Health_check"
+
+blue_green:
+  term: "Blue-Green Deployment"
+  definition: "A deployment strategy with two identical environments (blue and green). Deploy to inactive environment, test, then switch traffic for zero downtime."
+  link: "https://en.wikipedia.org/wiki/Blue-green_deployment"
+
+canary:
+  term: "Canary Deployment"
+  definition: "Gradually rolling out changes to a small subset of users first. If successful, expand to all users. Minimizes risk of bad deployments."
+  link: "https://en.wikipedia.org/wiki/Feature_toggle#Canary_release"
+
+# Data & Processing
+partitioning:
+  term: "Data Partitioning"
+  definition: "Dividing a large dataset into smaller, manageable pieces distributed across multiple nodes. Improves performance and enables horizontal scaling."
+  link: "https://en.wikipedia.org/wiki/Partition_(database)"
+
+consistent_hashing:
+  term: "Consistent Hashing"
+  definition: "A hashing technique that minimizes data movement when nodes are added or removed. Used in distributed caching and databases."
+  link: "https://en.wikipedia.org/wiki/Consistent_hashing"
+
+mapreduce:
+  term: "MapReduce"
+  definition: "A programming model for processing large datasets in parallel across distributed clusters. Map phase processes data, Reduce phase aggregates results."
+  link: "https://en.wikipedia.org/wiki/MapReduce"
+
+stream_processing:
+  term: "Stream Processing"
+  definition: "Processing data in real-time as it arrives, rather than in batches. Used for analytics, monitoring, and event-driven applications."
+  link: "https://en.wikipedia.org/wiki/Stream_processing"
+
+batch_processing:
+  term: "Batch Processing"
+  definition: "Processing large volumes of data in groups at scheduled intervals. More efficient than real-time processing but with higher latency."
+  link: "https://en.wikipedia.org/wiki/Batch_processing"
+
+# Security
+authentication:
+  term: "Authentication"
+  definition: "The process of verifying a user's identity. Answers 'Who are you?' Common methods include passwords, biometrics, and multi-factor authentication."
+  link: "https://en.wikipedia.org/wiki/Authentication"
+
+authorization:
+  term: "Authorization"
+  definition: "The process of verifying what a user has permission to do. Answers 'What can you access?' Happens after authentication."
+  link: "https://en.wikipedia.org/wiki/Authorization"
+
+oauth:
+  term: "OAuth"
+  definition: "An open standard for access delegation. Allows users to grant third-party applications access to their resources without sharing passwords."
+  link: "https://oauth.net/"
+
+jwt:
+  term: "JWT"
+  definition: "JSON Web Token - A compact, URL-safe token format for securely transmitting information between parties. Commonly used for authentication and authorization."
+  link: "https://jwt.io/"
+
+encryption:
+  term: "Encryption"
+  definition: "Converting data into a coded format that can only be read with the correct decryption key. Protects data confidentiality during storage and transmission."
+  link: "https://en.wikipedia.org/wiki/Encryption"
+
+ssl_tls:
+  term: "SSL/TLS"
+  definition: "Secure Sockets Layer / Transport Layer Security - Cryptographic protocols that provide secure communication over networks. HTTPS uses TLS."
+  link: "https://en.wikipedia.org/wiki/Transport_Layer_Security"
+
+# Additional Important Terms
+stateless:
+  term: "Stateless"
+  definition: "A design where servers don't store client session data. Each request contains all necessary information. Enables easy horizontal scaling."
+  link: "https://en.wikipedia.org/wiki/Stateless_protocol"
+
+stateful:
+  term: "Stateful"
+  definition: "A design where servers maintain client session data between requests. Harder to scale but simpler for certain use cases."
+  link: "https://en.wikipedia.org/wiki/Stateful_protocol"
+
+single_point_failure:
+  term: "Single Point of Failure"
+  definition: "A component whose failure causes the entire system to fail. Should be eliminated through redundancy and failover mechanisms."
+  link: "https://en.wikipedia.org/wiki/Single_point_of_failure"
+
+redundancy:
+  term: "Redundancy"
+  definition: "Duplication of critical components to increase reliability. If one component fails, another takes over seamlessly."
+  link: "https://en.wikipedia.org/wiki/Redundancy_(engineering)"
+
+chaos_engineering:
+  term: "Chaos Engineering"
+  definition: "The practice of intentionally introducing failures into production systems to test resilience. Helps identify weaknesses before they cause real outages."
+  link: "https://principlesofchaos.org/"
+
+observability:
+  term: "Observability"
+  definition: "The ability to understand system internal state from external outputs. Includes logging, monitoring, tracing, and alerting."
+  link: "https://en.wikipedia.org/wiki/Observability"
