@@ -1,0 +1,79 @@
+/* 
+  GLOBAL TOOLTIP SYSTEM FOR TECHNICAL TERMS (Wikipedia-style)
+  
+  Usage: Wrap any technical term with this structure:
+  
+  <span class="term-tooltip relative inline cursor-help border-b border-dotted border-blue-600">
+    Term Name
+    <span class="tooltip-content absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-[300px] max-w-[90vw] bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm p-3 border border-gray-300 dark:border-gray-600 rounded-sm shadow-md transition-all duration-200 z-50">
+      Brief definition or explanation of the term (2-3 sentences max).
+      <a href="https://link-to-resource.com" target="_blank" rel="noopener" class="tooltip-link block mt-2 pt-2 border-t border-gray-200 dark:border-gray-700 text-xs text-blue-600 dark:text-blue-400 hover:underline">
+        Learn more →
+      </a>
+      <span class="tooltip-arrow"></span>
+    </span>
+  </span>
+  
+  Features:
+  - Built with Tailwind CSS utility classes + minimal custom CSS
+  - Wikipedia-style clean design
+  - Automatic light/dark mode support
+  - Appears on hover
+  - Optional "Learn more" link
+  - Mobile-friendly
+  - Works across entire website
+  
+  Example:
+  <span class="term-tooltip relative inline cursor-help border-b border-dotted border-blue-600">
+    Chaos Monkey
+    <span class="tooltip-content absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-[300px] max-w-[90vw] bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm p-3 border border-gray-300 dark:border-gray-600 rounded-sm shadow-md transition-all duration-200 z-50">
+      A tool developed by Netflix that randomly terminates instances in production to test system resilience and ensure services can withstand failures.
+      <a href="https://netflix.github.io/chaosmonkey/" target="_blank" rel="noopener" class="tooltip-link block mt-2 pt-2 border-t border-gray-200 dark:border-gray-700 text-xs text-blue-600 dark:text-blue-400 hover:underline">
+        Learn more →
+      </a>
+      <span class="tooltip-arrow"></span>
+    </span>
+  </span>
+*/
+
+/* Tooltip visibility control - hidden by default, visible on hover */
+.tooltip-content {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.term-tooltip:hover .tooltip-content {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Tooltip arrow (can't be done with Tailwind alone) */
+.tooltip-arrow {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+
+@media (prefers-color-scheme: dark) {
+  .tooltip-arrow {
+    border-color: rgb(31, 41, 55) transparent transparent transparent;
+  }
+}
+
+/* Accessibility: Focus state for keyboard navigation */
+.term-tooltip:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.term-tooltip:focus-visible .tooltip-content {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}

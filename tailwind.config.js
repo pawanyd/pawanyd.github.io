@@ -25,11 +25,10 @@ module.exports = {
       'border-gray-200',
       'hover:border-blue-300',
       'hover:bg-blue-50',
-      'hover:text-blue-600'
+      'hover:text-blue-600',
     ],
     theme: {
       extend: {},
     },
     plugins: [],
 };
-  
