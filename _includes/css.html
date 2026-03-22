@@ -1,6 +1,5 @@
-<!-- Preload critical CSS -->
-<link rel="preload" href="{{ '/assets/css/tailwind.min.css' | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="{{ '/assets/css/tailwind.min.css' | relative_url }}"></noscript>
+<!-- Tailwind CSS - render-blocking to prevent FOUC -->
+<link rel="stylesheet" href="{{ '/assets/css/tailwind.min.css' | relative_url }}">
 
 <!-- Defer non-critical CSS -->
 <link rel="stylesheet" href="{{ '/assets/css/github-widget.min.css' | relative_url }}" media="print" onload="this.media='all'">
