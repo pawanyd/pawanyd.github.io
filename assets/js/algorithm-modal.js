@@ -36,10 +36,18 @@
   
   // Open modal with specific algorithm
   function openModal(algorithmKey) {
+    // Check if algorithm data is loaded
+    if (!window.algorithmSnippets) {
+      console.error('Algorithm snippets data not loaded. Make sure algorithm_snippets.yml is configured.');
+      alert('Algorithm data not available. Please refresh the page.');
+      return;
+    }
+    
     const algorithm = window.algorithmSnippets[algorithmKey];
     
     if (!algorithm) {
       console.error(`Algorithm "${algorithmKey}" not found in config`);
+      alert(`Algorithm "${algorithmKey}" not found.`);
       return;
     }
     
@@ -83,7 +91,17 @@
   
   // Display code for selected language
   function displayCode(lang) {
-    if (!currentAlgorithm || !currentAlgorithm.languages[lang]) {
+    if (!currentAlgorithm) {
+      codeDisplay.textContent = '// Algorithm data not loaded';
+      return;
+    }
+    
+    if (!currentAlgorithm.languages) {
+      codeDisplay.textContent = '// No code snippets available for this algorithm';
+      return;
+    }
+    
+    if (!currentAlgorithm.languages[lang]) {
       codeDisplay.textContent = '// Code not available for this language';
       return;
     }
