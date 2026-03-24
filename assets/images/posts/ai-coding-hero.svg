@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-labelledby="ai-coding-title ai-coding-desc">
+  <title id="ai-coding-title">AI-Powered Coding Hero Image</title>
+  <desc id="ai-coding-desc">Visual representation of AI-assisted coding showing developer and AI working together with code suggestions and productivity improvements</desc>
+  
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="codeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="aiGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="600" fill="url(#bgGrad)"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="100" cy="100" r="50" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="1100" cy="500" r="70" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="200" cy="500" r="40" fill="rgba(255,255,255,0.08)"/>
+  
+  <!-- Title -->
+  <text x="600" y="80" text-anchor="middle" font-size="48" font-weight="bold" fill="white">
+    AI-Powered Coding
+  </text>
+  <text x="600" y="120" text-anchor="middle" font-size="20" fill="rgba(255,255,255,0.9)">
+    Human Creativity + AI Efficiency
+  </text>
+  
+  <!-- Developer side (left) -->
+  <g transform="translate(100, 180)">
+    <rect x="0" y="0" width="400" height="320" rx="12" fill="rgba(255,255,255,0.95)" stroke="white" stroke-width="2"/>
+    
+    <!-- Developer icon -->
+    <circle cx="200" cy="60" r="30" fill="#667eea"/>
+    <path d="M 200 90 Q 200 100, 210 100 L 210 120 Q 210 130, 200 130 Q 190 130, 190 120 L 190 100 Q 190 100, 200 90" fill="#667eea"/>
+    
+    <text x="200" y="160" text-anchor="middle" font-size="22" font-weight="bold" fill="#4c51bf">
+      Developer
+    </text>
+    
+    <!-- Developer tasks -->
+    <text x="30" y="200" font-size="14" fill="#4c51bf">✓ Architecture Design</text>
+    <text x="30" y="225" font-size="14" fill="#4c51bf">✓ Business Logic</text>
+    <text x="30" y="250" font-size="14" fill="#4c51bf">✓ Code Review</text>
+    <text x="30" y="275" font-size="14" fill="#4c51bf">✓ Strategic Decisions</text>
+    <text x="30" y="300" font-size="14" fill="#4c51bf">✓ Problem Solving</text>
+  </g>
+  
+  <!-- AI side (right) -->
+  <g transform="translate(700, 180)">
+    <rect x="0" y="0" width="400" height="320" rx="12" fill="rgba(255,255,255,0.95)" stroke="white" stroke-width="2"/>
+    
+    <!-- AI icon -->
+    <circle cx="200" cy="60" r="30" fill="#10b981"/>
+    <circle cx="190" cy="55" r="5" fill="white"/>
+    <circle cx="210" cy="55" r="5" fill="white"/>
+    <path d="M 180 70 Q 200 80, 220 70" stroke="white" stroke-width="3" fill="none"/>
+    
+    <text x="200" y="160" text-anchor="middle" font-size="22" font-weight="bold" fill="#059669">
+      AI Assistant
+    </text>
+    
+    <!-- AI tasks -->
+    <text x="30" y="200" font-size="14" fill="#059669">⚡ Boilerplate Code</text>
+    <text x="30" y="225" font-size="14" fill="#059669">⚡ Test Generation</text>
+    <text x="30" y="250" font-size="14" fill="#059669">⚡ Documentation</text>
+    <text x="30" y="275" font-size="14" fill="#059669">⚡ Code Suggestions</text>
+    <text x="30" y="300" font-size="14" fill="#059669">⚡ Refactoring</text>
+  </g>
+  
+  <!-- Connection arrows -->
+  <g>
+    <path d="M 500 340 L 700 340" stroke="white" stroke-width="4" fill="none"/>
+    <polygon points="690,335 700,340 690,345" fill="white"/>
+    <polygon points="510,335 500,340 510,345" fill="white"/>
+    <text x="600" y="330" text-anchor="middle" font-size="16" font-weight="bold" fill="white">
+      Collaboration
+    </text>
+  </g>
+  
+  <!-- Stats boxes -->
+  <g transform="translate(250, 530)">
+    <rect x="0" y="0" width="180" height="50" rx="8" fill="rgba(59, 130, 246, 0.9)"/>
+    <text x="90" y="25" text-anchor="middle" font-size="20" font-weight="bold" fill="white">55% Faster</text>
+    <text x="90" y="42" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.9)">Task Completion</text>
+  </g>
+  
+  <g transform="translate(510, 530)">
+    <rect x="0" y="0" width="180" height="50" rx="8" fill="rgba(16, 185, 129, 0.9)"/>
+    <text x="90" y="25" text-anchor="middle" font-size="20" font-weight="bold" fill="white">46% of Code</text>
+    <text x="90" y="42" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.9)">AI-Assisted</text>
+  </g>
+  
+  <g transform="translate(770, 530)">
+    <rect x="0" y="0" width="180" height="50" rx="8" fill="rgba(139, 92, 246, 0.9)"/>
+    <text x="90" y="25" text-anchor="middle" font-size="20" font-weight="bold" fill="white">88% Report</text>
+    <text x="90" y="42" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.9)">More Productive</text>
+  </g>
+</svg>
