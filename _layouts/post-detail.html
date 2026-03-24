@@ -323,8 +323,8 @@
     <!-- Include Footer -->
     {% include footer.html %}
     
-    <!-- Algorithm Code Modal (only for DSA posts) -->
-    {% if page.category == "DSA" %}
+    <!-- Algorithm Code Modal (for DSA and OOP posts) -->
+    {% if page.category == "DSA" or page.category == "OOPs & Design Patterns" %}
         {% include algorithm-code-modal.html %}
         <link rel="stylesheet" href="/assets/css/algorithm-trigger.css">
         <script src="/assets/js/algorithm-modal.js"></script>

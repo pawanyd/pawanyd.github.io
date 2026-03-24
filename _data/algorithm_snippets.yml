@@ -10807,3 +10807,484 @@ tree_rotation:
           
           return y;
       }
+
+
+# ============================================
+# OBJECT-ORIENTED PROGRAMMING EXAMPLES
+# ============================================
+
+oop_encapsulation:
+  name: "Encapsulation Example"
+  description: "Bank account with private data and public methods"
+  time_complexity: "O(1) for all operations"
+  space_complexity: "O(1)"
+  languages:
+    python: |
+      class BankAccount:
+          """Encapsulation: Hide internal data, expose controlled interface"""
+          
+          def __init__(self, account_number, initial_balance=0):
+              self.__account_number = account_number  # Private
+              self.__balance = initial_balance        # Private
+              self.__transaction_history = []         # Private
+          
+          def deposit(self, amount):
+              """Public method to deposit money"""
+              if amount <= 0:
+                  raise ValueError("Amount must be positive")
+              self.__balance += amount
+              self.__transaction_history.append(f"Deposit: +${amount}")
+              return self.__balance
+          
+          def withdraw(self, amount):
+              """Public method to withdraw money"""
+              if amount <= 0:
+                  raise ValueError("Amount must be positive")
+              if amount > self.__balance:
+                  raise ValueError("Insufficient funds")
+              self.__balance -= amount
+              self.__transaction_history.append(f"Withdraw: -${amount}")
+              return self.__balance
+          
+          def get_balance(self):
+              """Public method to check balance"""
+              return self.__balance
+          
+          def get_account_number(self):
+              """Public method to get account number"""
+              return self.__account_number
+    
+    typescript: |
+      class BankAccount {
+          // Private fields (TypeScript)
+          private accountNumber: string;
+          private balance: number;
+          private transactionHistory: string[];
+          
+          constructor(accountNumber: string, initialBalance: number = 0) {
+              this.accountNumber = accountNumber;
+              this.balance = initialBalance;
+              this.transactionHistory = [];
+          }
+          
+          // Public method to deposit money
+          deposit(amount: number): number {
+              if (amount <= 0) {
+                  throw new Error("Amount must be positive");
+              }
+              this.balance += amount;
+              this.transactionHistory.push(`Deposit: +$${amount}`);
+              return this.balance;
+          }
+          
+          // Public method to withdraw money
+          withdraw(amount: number): number {
+              if (amount <= 0) {
+                  throw new Error("Amount must be positive");
+              }
+              if (amount > this.balance) {
+                  throw new Error("Insufficient funds");
+              }
+              this.balance -= amount;
+              this.transactionHistory.push(`Withdraw: -$${amount}`);
+              return this.balance;
+          }
+          
+          // Public method to check balance
+          getBalance(): number {
+              return this.balance;
+          }
+          
+          // Public method to get account number
+          getAccountNumber(): string {
+              return this.accountNumber;
+          }
+      }
+
+oop_inheritance:
+  name: "Inheritance Example"
+  description: "Vehicle hierarchy with parent and child classes"
+  time_complexity: "O(1) for all operations"
+  space_complexity: "O(1)"
+  languages:
+    python: |
+      class Vehicle:
+          """Parent class with common vehicle properties"""
+          
+          def __init__(self, brand, model, year):
+              self.brand = brand
+              self.model = model
+              self.year = year
+              self.is_running = False
+          
+          def start(self):
+              """Start the vehicle"""
+              self.is_running = True
+              return f"{self.brand} {self.model} started"
+          
+          def stop(self):
+              """Stop the vehicle"""
+              self.is_running = False
+              return f"{self.brand} {self.model} stopped"
+          
+          def get_info(self):
+              """Get vehicle information"""
+              return f"{self.year} {self.brand} {self.model}"
+      
+      class Car(Vehicle):
+          """Child class inheriting from Vehicle"""
+          
+          def __init__(self, brand, model, year, num_doors, trunk_size):
+              super().__init__(brand, model, year)  # Call parent constructor
+              self.num_doors = num_doors
+              self.trunk_size = trunk_size
+          
+          def open_trunk(self):
+              """Car-specific method"""
+              return f"Trunk opened ({self.trunk_size}L capacity)"
+      
+      class Motorcycle(Vehicle):
+          """Another child class"""
+          
+          def __init__(self, brand, model, year, engine_cc, has_sidecar=False):
+              super().__init__(brand, model, year)
+              self.engine_cc = engine_cc
+              self.has_sidecar = has_sidecar
+          
+          def wheelie(self):
+              """Motorcycle-specific method"""
+              if self.is_running:
+                  return "Performing wheelie!"
+              return "Start the motorcycle first"
+    
+    typescript: |
+      class Vehicle {
+          // Parent class with common vehicle properties
+          protected brand: string;
+          protected model: string;
+          protected year: number;
+          protected isRunning: boolean;
+          
+          constructor(brand: string, model: string, year: number) {
+              this.brand = brand;
+              this.model = model;
+              this.year = year;
+              this.isRunning = false;
+          }
+          
+          start(): string {
+              this.isRunning = true;
+              return `${this.brand} ${this.model} started`;
+          }
+          
+          stop(): string {
+              this.isRunning = false;
+              return `${this.brand} ${this.model} stopped`;
+          }
+          
+          getInfo(): string {
+              return `${this.year} ${this.brand} ${this.model}`;
+          }
+      }
+      
+      class Car extends Vehicle {
+          // Child class inheriting from Vehicle
+          private numDoors: number;
+          private trunkSize: number;
+          
+          constructor(brand: string, model: string, year: number, 
+                      numDoors: number, trunkSize: number) {
+              super(brand, model, year);  // Call parent constructor
+              this.numDoors = numDoors;
+              this.trunkSize = trunkSize;
+          }
+          
+          openTrunk(): string {
+              return `Trunk opened (${this.trunkSize}L capacity)`;
+          }
+      }
+      
+      class Motorcycle extends Vehicle {
+          private engineCC: number;
+          private hasSidecar: boolean;
+          
+          constructor(brand: string, model: string, year: number,
+                      engineCC: number, hasSidecar: boolean = false) {
+              super(brand, model, year);
+              this.engineCC = engineCC;
+              this.hasSidecar = hasSidecar;
+          }
+          
+          wheelie(): string {
+              if (this.isRunning) {
+                  return "Performing wheelie!";
+              }
+              return "Start the motorcycle first";
+          }
+      }
+
+oop_polymorphism:
+  name: "Polymorphism Example"
+  description: "Payment processing with multiple implementations"
+  time_complexity: "O(1) for all operations"
+  space_complexity: "O(1)"
+  languages:
+    python: |
+      from abc import ABC, abstractmethod
+      
+      class Payment(ABC):
+          """Abstract base class defining payment interface"""
+          
+          @abstractmethod
+          def process_payment(self, amount):
+              """Process payment - must be implemented by subclasses"""
+              pass
+          
+          @abstractmethod
+          def refund(self, amount):
+              """Process refund - must be implemented by subclasses"""
+              pass
+      
+      class CreditCardPayment(Payment):
+          """Credit card payment implementation"""
+          
+          def __init__(self, card_number, cvv):
+              self.card_number = card_number
+              self.cvv = cvv
+          
+          def process_payment(self, amount):
+              # Validate card, check CVV, charge via Stripe
+              return f"Charged ${amount} to card ending in {self.card_number[-4:]}"
+          
+          def refund(self, amount):
+              return f"Refunded ${amount} to card ending in {self.card_number[-4:]}"
+      
+      class PayPalPayment(Payment):
+          """PayPal payment implementation"""
+          
+          def __init__(self, email):
+              self.email = email
+          
+          def process_payment(self, amount):
+              # Redirect to PayPal, get authorization
+              return f"Charged ${amount} via PayPal ({self.email})"
+          
+          def refund(self, amount):
+              return f"Refunded ${amount} via PayPal ({self.email})"
+      
+      class ApplePayPayment(Payment):
+          """Apple Pay implementation"""
+          
+          def __init__(self, device_id):
+              self.device_id = device_id
+          
+          def process_payment(self, amount):
+              # Request Touch ID, get encrypted token
+              return f"Charged ${amount} via Apple Pay"
+          
+          def refund(self, amount):
+              return f"Refunded ${amount} via Apple Pay"
+      
+      # Usage: Same interface, different implementations
+      def checkout(payment: Payment, amount: float):
+          """Process checkout - works with any payment type"""
+          return payment.process_payment(amount)
+    
+    typescript: |
+      // Interface defining payment contract
+      interface Payment {
+          processPayment(amount: number): string;
+          refund(amount: number): string;
+      }
+      
+      class CreditCardPayment implements Payment {
+          private cardNumber: string;
+          private cvv: string;
+          
+          constructor(cardNumber: string, cvv: string) {
+              this.cardNumber = cardNumber;
+              this.cvv = cvv;
+          }
+          
+          processPayment(amount: number): string {
+              // Validate card, check CVV, charge via Stripe
+              const lastFour = this.cardNumber.slice(-4);
+              return `Charged $${amount} to card ending in ${lastFour}`;
+          }
+          
+          refund(amount: number): string {
+              const lastFour = this.cardNumber.slice(-4);
+              return `Refunded $${amount} to card ending in ${lastFour}`;
+          }
+      }
+      
+      class PayPalPayment implements Payment {
+          private email: string;
+          
+          constructor(email: string) {
+              this.email = email;
+          }
+          
+          processPayment(amount: number): string {
+              // Redirect to PayPal, get authorization
+              return `Charged $${amount} via PayPal (${this.email})`;
+          }
+          
+          refund(amount: number): string {
+              return `Refunded $${amount} via PayPal (${this.email})`;
+          }
+      }
+      
+      class ApplePayPayment implements Payment {
+          private deviceId: string;
+          
+          constructor(deviceId: string) {
+              this.deviceId = deviceId;
+          }
+          
+          processPayment(amount: number): string {
+              // Request Touch ID, get encrypted token
+              return `Charged $${amount} via Apple Pay`;
+          }
+          
+          refund(amount: number): string {
+              return `Refunded $${amount} via Apple Pay`;
+          }
+      }
+      
+      // Usage: Same interface, different implementations
+      function checkout(payment: Payment, amount: number): string {
+          return payment.processPayment(amount);
+      }
+
+oop_abstraction:
+  name: "Abstraction Example"
+  description: "Email service hiding complex implementation"
+  time_complexity: "O(1) for interface methods"
+  space_complexity: "O(1)"
+  languages:
+    python: |
+      class EmailService:
+          """Abstraction: Simple interface hiding complex email logic"""
+          
+          def __init__(self, smtp_server, port, username, password):
+              self.__smtp_server = smtp_server
+              self.__port = port
+              self.__username = username
+              self.__password = password
+              self.__connection = None
+          
+          def send_email(self, to, subject, body, attachments=None):
+              """
+              Simple public interface to send email.
+              Hides all the complexity of SMTP, TLS, MIME, etc.
+              """
+              # Complex implementation hidden from user
+              self.__validate_email(to)
+              self.__connect_to_server()
+              self.__authenticate()
+              self.__format_message(to, subject, body, attachments)
+              self.__send_via_smtp()
+              self.__log_delivery()
+              
+              return f"Email sent to {to}"
+          
+          # Private methods - implementation details hidden
+          def __validate_email(self, email):
+              """Validate email format"""
+              if '@' not in email:
+                  raise ValueError("Invalid email")
+          
+          def __connect_to_server(self):
+              """Establish SMTP connection with TLS"""
+              # Complex SMTP connection logic
+              pass
+          
+          def __authenticate(self):
+              """Authenticate with SMTP server"""
+              # Authentication logic
+              pass
+          
+          def __format_message(self, to, subject, body, attachments):
+              """Format MIME message with attachments"""
+              # MIME formatting logic
+              pass
+          
+          def __send_via_smtp(self):
+              """Send message via SMTP protocol"""
+              # SMTP sending logic
+              pass
+          
+          def __log_delivery(self):
+              """Log delivery status"""
+              # Logging logic
+              pass
+      
+      # Usage: User only sees simple interface
+      # email_service = EmailService(config)
+      # email_service.send_email("user@example.com", "Hello", "Message")
+    
+    typescript: |
+      class EmailService {
+          // Abstraction: Simple interface hiding complex email logic
+          private smtpServer: string;
+          private port: number;
+          private username: string;
+          private password: string;
+          private connection: any;
+          
+          constructor(smtpServer: string, port: number, 
+                      username: string, password: string) {
+              this.smtpServer = smtpServer;
+              this.port = port;
+              this.username = username;
+              this.password = password;
+              this.connection = null;
+          }
+          
+          // Simple public interface to send email
+          sendEmail(to: string, subject: string, body: string, 
+                   attachments?: string[]): string {
+              // Complex implementation hidden from user
+              this.validateEmail(to);
+              this.connectToServer();
+              this.authenticate();
+              this.formatMessage(to, subject, body, attachments);
+              this.sendViaSMTP();
+              this.logDelivery();
+              
+              return `Email sent to ${to}`;
+          }
+          
+          // Private methods - implementation details hidden
+          private validateEmail(email: string): void {
+              if (!email.includes('@')) {
+                  throw new Error("Invalid email");
+              }
+          }
+          
+          private connectToServer(): void {
+              // Complex SMTP connection logic with TLS
+          }
+          
+          private authenticate(): void {
+              // Authentication logic
+          }
+          
+          private formatMessage(to: string, subject: string, 
+                               body: string, attachments?: string[]): void {
+              // MIME formatting logic
+          }
+          
+          private sendViaSMTP(): void {
+              // SMTP sending logic
+          }
+          
+          private logDelivery(): void {
+              // Logging logic
+          }
+      }
+      
+      // Usage: User only sees simple interface
+      // const emailService = new EmailService(config);
+      // emailService.sendEmail("user@example.com", "Hello", "Message");
