@@ -1025,7 +1025,7 @@ Users are global. A user in Tokyo shouldn't wait for data to travel from a US se
   
   <!-- Arrows from users to CDN -->
   <path d="M 170 150 L 185 150" stroke="#10b981" stroke-width="2"/>
-  <path d="M 835" y1="150" x2="820" y2="150" stroke="#10b981" stroke-width="2"/>
+  <line x1="835" y1="150" x2="820" y2="150" stroke="#10b981" stroke-width="2"/>
   
   <!-- Stats -->
   <rect x="100" y="530" width="800" height="50" rx="6" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
