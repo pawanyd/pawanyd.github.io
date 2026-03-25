@@ -30,6 +30,9 @@ plugins:
 paginate: 4
 paginate_path: "/blogs/page:num/"
 
+# New blog badge threshold (in days)
+new_blog_days_threshold: 60
+
 postcss:
   cache: true
 

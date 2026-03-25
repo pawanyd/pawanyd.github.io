@@ -243,6 +243,15 @@ meta_image: "/assets/images/system-design-category-meta.svg"
                 <a href="{{ post.url }}" class="block relative overflow-hidden h-48">
                     <img src="{{ post.image }}" alt="{{ post.title }}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
                     <span class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full shadow-md">System Design</span>
+                    {% assign current_timestamp = site.time | date: '%s' %}
+                    {% assign post_timestamp = post.date | date: '%s' %}
+                    {% assign seconds_diff = current_timestamp | minus: post_timestamp %}
+                    {% assign days_since_post = seconds_diff | divided_by: 86400 %}
+                    {% if days_since_post <= site.new_blog_days_threshold %}
+                    <span class="absolute top-3 right-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full shadow-md animate-pulse">
+                        <i class="fas fa-fire"></i> NEW
+                    </span>
+                    {% endif %}
                 </a>
                 <div class="p-5 flex flex-col flex-1">
                     <h3 class="text-lg font-bold text-gray-900 leading-snug mb-2">

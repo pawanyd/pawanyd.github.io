@@ -239,6 +239,15 @@ pagination:
                         {% else %}
                         <span class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-black uppercase px-4 py-2 rounded-full shadow-xl">{{ post.category }}</span>
                         {% endif %}
+                        {% assign current_timestamp = site.time | date: '%s' %}
+                        {% assign post_timestamp = post.date | date: '%s' %}
+                        {% assign seconds_diff = current_timestamp | minus: post_timestamp %}
+                        {% assign days_since_post = seconds_diff | divided_by: 86400 %}
+                        {% if days_since_post <= site.new_blog_days_threshold %}
+                        <span class="absolute top-4 right-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-black uppercase px-4 py-2 rounded-full shadow-xl animate-pulse">
+                            <i class="fas fa-fire"></i> NEW
+                        </span>
+                        {% endif %}
                     </a>
                     <div class="p-6">
                         <h2 class="text-xl font-black text-gray-900 leading-tight mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
