@@ -1,0 +1,88 @@
+<svg role="img" aria-labelledby="tcp-title tcp-desc" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <title id="tcp-title">TCP 3-Way Handshake</title>
+  <desc id="tcp-desc">Diagram showing the three steps of TCP connection establishment</desc>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="28" fill="#1f2937" text-anchor="middle" font-weight="bold">TCP 3-Way Handshake</text>
+  
+  <!-- Client -->
+  <g transform="translate(100, 100)">
+    <rect x="0" y="0" width="120" height="80" rx="8" fill="#3b82f6" stroke="#2563eb" stroke-width="2"/>
+    <text x="60" y="45" font-family="Arial, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold">Client</text>
+    <text x="60" y="65" font-family="Arial, sans-serif" font-size="14" fill="#dbeafe" text-anchor="middle">(Browser)</text>
+  </g>
+  
+  <!-- Server -->
+  <g transform="translate(580, 100)">
+    <rect x="0" y="0" width="120" height="80" rx="8" fill="#10b981" stroke="#059669" stroke-width="2"/>
+    <text x="60" y="45" font-family="Arial, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold">Server</text>
+    <text x="60" y="65" font-family="Arial, sans-serif" font-size="14" fill="#d1fae5" text-anchor="middle">(Netflix)</text>
+  </g>
+  
+  <!-- Vertical timeline lines -->
+  <line x1="160" y1="180" x2="160" y2="520" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="640" y1="180" x2="640" y2="520" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- Step 1: SYN -->
+  <g>
+    <path d="M 160 220 L 640 260" stroke="#3b82f6" stroke-width="3" fill="none" marker-end="url(#arrowBlue)"/>
+    <rect x="320" y="220" width="160" height="50" rx="6" fill="#3b82f6"/>
+    <text x="400" y="240" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">1. SYN</text>
+    <text x="400" y="260" font-family="Arial, sans-serif" font-size="13" fill="#dbeafe" text-anchor="middle">SEQ = 1000</text>
+  </g>
+  
+  <!-- Step 1 description -->
+  <text x="80" y="250" font-family="Arial, sans-serif" font-size="14" fill="#1f2937" text-anchor="end" font-weight="bold">Synchronize</text>
+  <text x="720" y="270" font-family="Arial, sans-serif" font-size="13" fill="#6b7280">"I want to connect"</text>
+  
+  <!-- Step 2: SYN-ACK -->
+  <g>
+    <path d="M 640 320 L 160 360" stroke="#10b981" stroke-width="3" fill="none" marker-end="url(#arrowGreen)"/>
+    <rect x="320" y="320" width="160" height="65" rx="6" fill="#10b981"/>
+    <text x="400" y="340" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">2. SYN-ACK</text>
+    <text x="400" y="360" font-family="Arial, sans-serif" font-size="13" fill="#d1fae5" text-anchor="middle">SEQ = 5000</text>
+    <text x="400" y="378" font-family="Arial, sans-serif" font-size="13" fill="#d1fae5" text-anchor="middle">ACK = 1001</text>
+  </g>
+  
+  <!-- Step 2 description -->
+  <text x="720" y="350" font-family="Arial, sans-serif" font-size="14" fill="#1f2937" font-weight="bold">Synchronize-Acknowledge</text>
+  <text x="80" y="370" font-family="Arial, sans-serif" font-size="13" fill="#6b7280" text-anchor="end">"I'm ready too!"</text>
+  
+  <!-- Step 3: ACK -->
+  <g>
+    <path d="M 160 420 L 640 460" stroke="#8b5cf6" stroke-width="3" fill="none" marker-end="url(#arrowPurple)"/>
+    <rect x="320" y="420" width="160" height="50" rx="6" fill="#8b5cf6"/>
+    <text x="400" y="440" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">3. ACK</text>
+    <text x="400" y="460" font-family="Arial, sans-serif" font-size="13" fill="#ede9fe" text-anchor="middle">ACK = 5001</text>
+  </g>
+  
+  <!-- Step 3 description -->
+  <text x="80" y="450" font-family="Arial, sans-serif" font-size="14" fill="#1f2937" text-anchor="end" font-weight="bold">Acknowledge</text>
+  <text x="720" y="470" font-family="Arial, sans-serif" font-size="13" fill="#6b7280">"Let's communicate!"</text>
+  
+  <!-- Connection established -->
+  <rect x="200" y="500" width="400" height="40" rx="6" fill="#10b981" opacity="0.2" stroke="#10b981" stroke-width="2"/>
+  <text x="400" y="525" font-family="Arial, sans-serif" font-size="18" fill="#059669" text-anchor="middle" font-weight="bold">✓ Connection Established</text>
+  
+  <!-- Time indicator -->
+  <g transform="translate(50, 560)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="16" fill="#1f2937" font-weight="bold">⏱️ Total Time: 50-200ms</text>
+    <text x="400" y="0" font-family="Arial, sans-serif" font-size="14" fill="#6b7280">(depends on distance to server)</text>
+  </g>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#10b981"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#8b5cf6"/>
+    </marker>
+  </defs>
+</svg>

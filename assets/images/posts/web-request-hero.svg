@@ -1,0 +1,64 @@
+<svg role="img" aria-labelledby="hero-title hero-desc" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <title id="hero-title">Web Request Journey Hero Image</title>
+  <desc id="hero-desc">Illustration showing the complete journey of a web request from browser to server</desc>
+  
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="glowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="600" fill="url(#bgGradient)"/>
+  
+  <!-- Browser on left -->
+  <g transform="translate(100, 200)">
+    <rect x="0" y="0" width="200" height="150" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+    <rect x="0" y="0" width="200" height="30" rx="10" fill="#f3f4f6"/>
+    <circle cx="15" cy="15" r="5" fill="#ef4444"/>
+    <circle cx="35" cy="15" r="5" fill="#f59e0b"/>
+    <circle cx="55" cy="15" r="5" fill="#10b981"/>
+    <text x="100" y="80" font-family="Arial, sans-serif" font-size="16" fill="#1f2937" text-anchor="middle" font-weight="bold">Browser</text>
+    <text x="100" y="105" font-family="Arial, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">User Types URL</text>
+  </g>
+  
+  <!-- Server on right -->
+  <g transform="translate(900, 200)">
+    <rect x="0" y="0" width="200" height="150" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+    <rect x="20" y="30" width="160" height="15" rx="3" fill="#3b82f6"/>
+    <rect x="20" y="55" width="160" height="15" rx="3" fill="#3b82f6"/>
+    <rect x="20" y="80" width="160" height="15" rx="3" fill="#3b82f6"/>
+    <rect x="20" y="105" width="160" height="15" rx="3" fill="#3b82f6"/>
+    <text x="100" y="140" font-family="Arial, sans-serif" font-size="16" fill="#1f2937" text-anchor="middle" font-weight="bold">Server</text>
+  </g>
+  
+  <!-- Connection path with glow -->
+  <path d="M 300 275 Q 600 150 900 275" stroke="url(#glowGradient)" stroke-width="4" fill="none" stroke-dasharray="10,5">
+    <animate attributeName="stroke-dashoffset" from="0" to="30" dur="2s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- DNS Cloud -->
+  <g transform="translate(500, 80)">
+    <ellipse cx="0" cy="0" rx="80" ry="50" fill="#ffffff" opacity="0.9"/>
+    <text x="0" y="-10" font-family="Arial, sans-serif" font-size="18" fill="#2563eb" text-anchor="middle" font-weight="bold">DNS</text>
+    <text x="0" y="10" font-family="Arial, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Resolution</text>
+  </g>
+  
+  <!-- Network nodes -->
+  <circle cx="400" cy="400" r="30" fill="#10b981" opacity="0.8"/>
+  <text x="400" y="405" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="bold">ISP</text>
+  
+  <circle cx="600" cy="450" r="30" fill="#f59e0b" opacity="0.8"/>
+  <text x="600" y="455" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="bold">CDN</text>
+  
+  <circle cx="800" cy="400" r="30" fill="#8b5cf6" opacity="0.8"/>
+  <text x="800" y="405" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="bold">Router</text>
+  
+  <!-- Title -->
+  <text x="600" y="550" font-family="Arial, sans-serif" font-size="32" fill="#ffffff" text-anchor="middle" font-weight="bold">The Complete Web Request Journey</text>
+</svg>

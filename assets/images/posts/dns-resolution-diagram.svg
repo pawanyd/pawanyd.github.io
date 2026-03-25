@@ -1,0 +1,90 @@
+<svg role="img" aria-labelledby="dns-title dns-desc" viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg">
+  <title id="dns-title">DNS Resolution Process</title>
+  <desc id="dns-desc">Step-by-step diagram showing how DNS resolves a domain name to an IP address</desc>
+  
+  <!-- Background -->
+  <rect width="1000" height="700" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="500" y="40" font-family="Arial, sans-serif" font-size="28" fill="#1f2937" text-anchor="middle" font-weight="bold">DNS Resolution: 4-Step Process</text>
+  
+  <!-- Step 1: Browser/Computer -->
+  <g transform="translate(100, 100)">
+    <rect x="0" y="0" width="150" height="100" rx="8" fill="#3b82f6" stroke="#2563eb" stroke-width="2"/>
+    <text x="75" y="45" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">Your Computer</text>
+    <text x="75" y="70" font-family="Arial, sans-serif" font-size="14" fill="#dbeafe" text-anchor="middle">Asks: What is</text>
+    <text x="75" y="88" font-family="Arial, sans-serif" font-size="14" fill="#dbeafe" text-anchor="middle">netflix.com?</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path d="M 250 150 L 350 150" stroke="#10b981" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="300" y="140" font-family="Arial, sans-serif" font-size="14" fill="#059669" text-anchor="middle" font-weight="bold">Query</text>
+  
+  <!-- Step 2: DNS Recursive Resolver -->
+  <g transform="translate(350, 100)">
+    <rect x="0" y="0" width="150" height="100" rx="8" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/>
+    <text x="75" y="40" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">DNS Resolver</text>
+    <text x="75" y="62" font-family="Arial, sans-serif" font-size="13" fill="#ede9fe" text-anchor="middle">(ISP or 8.8.8.8)</text>
+    <text x="75" y="82" font-family="Arial, sans-serif" font-size="13" fill="#ede9fe" text-anchor="middle">Checks cache</text>
+  </g>
+  
+  <!-- Arrow down to Root -->
+  <path d="M 425 200 L 425 280" stroke="#10b981" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="445" y="245" font-family="Arial, sans-serif" font-size="14" fill="#059669" font-weight="bold">1. Who handles .com?</text>
+  
+  <!-- Step 3: Root Name Server -->
+  <g transform="translate(350, 280)">
+    <rect x="0" y="0" width="150" height="100" rx="8" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+    <text x="75" y="40" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">Root Server</text>
+    <text x="75" y="62" font-family="Arial, sans-serif" font-size="13" fill="#fef3c7" text-anchor="middle">13 worldwide</text>
+    <text x="75" y="82" font-family="Arial, sans-serif" font-size="13" fill="#fef3c7" text-anchor="middle">Points to TLD</text>
+  </g>
+  
+  <!-- Arrow right to TLD -->
+  <path d="M 500 330 L 600 330" stroke="#10b981" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="550" y="320" font-family="Arial, sans-serif" font-size="14" fill="#059669" font-weight="bold">2. Ask .com TLD</text>
+  
+  <!-- Step 4: TLD Server -->
+  <g transform="translate(600, 280)">
+    <rect x="0" y="0" width="150" height="100" rx="8" fill="#ec4899" stroke="#db2777" stroke-width="2"/>
+    <text x="75" y="35" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">.com TLD</text>
+    <text x="75" y="55" font-family="Arial, sans-serif" font-size="13" fill="#fce7f3" text-anchor="middle">Server</text>
+    <text x="75" y="75" font-family="Arial, sans-serif" font-size="13" fill="#fce7f3" text-anchor="middle">Points to</text>
+    <text x="75" y="92" font-family="Arial, sans-serif" font-size="13" fill="#fce7f3" text-anchor="middle">Authoritative NS</text>
+  </g>
+  
+  <!-- Arrow down to Authoritative -->
+  <path d="M 675 380 L 675 460" stroke="#10b981" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="710" y="425" font-family="Arial, sans-serif" font-size="14" fill="#059669" font-weight="bold">3. Ask Netflix NS</text>
+  
+  <!-- Step 5: Authoritative Name Server -->
+  <g transform="translate(600, 460)">
+    <rect x="0" y="0" width="150" height="100" rx="8" fill="#10b981" stroke="#059669" stroke-width="2"/>
+    <text x="75" y="35" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">Netflix</text>
+    <text x="75" y="55" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">Name Server</text>
+    <text x="75" y="80" font-family="Arial, sans-serif" font-size="14" fill="#d1fae5" text-anchor="middle">Returns IP:</text>
+    <text x="75" y="97" font-family="Arial, sans-serif" font-size="14" fill="#d1fae5" text-anchor="middle">54.175.219.8</text>
+  </g>
+  
+  <!-- Arrow back to resolver -->
+  <path d="M 600 510 L 500 510 L 500 380" stroke="#2563eb" stroke-width="3" fill="none" marker-end="url(#arrowhead)" stroke-dasharray="5,5"/>
+  <text x="550" y="500" font-family="Arial, sans-serif" font-size="14" fill="#2563eb" font-weight="bold">4. Returns IP</text>
+  
+  <!-- Arrow back to computer -->
+  <path d="M 350 150 L 250 150" stroke="#2563eb" stroke-width="3" fill="none" marker-end="url(#arrowhead)" stroke-dasharray="5,5"/>
+  <text x="300" y="170" font-family="Arial, sans-serif" font-size="14" fill="#2563eb" text-anchor="middle" font-weight="bold">IP Address</text>
+  
+  <!-- Time indicators -->
+  <g transform="translate(50, 600)">
+    <rect x="0" y="0" width="900" height="60" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+    <text x="20" y="25" font-family="Arial, sans-serif" font-size="16" fill="#1f2937" font-weight="bold">⏱️ Total Time:</text>
+    <text x="20" y="48" font-family="Arial, sans-serif" font-size="14" fill="#6b7280">First visit: 20-120ms  |  Cached: 0-5ms  |  Cached for: 24 hours (typical TTL)</text>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#10b981"/>
+    </marker>
+  </defs>
+</svg>
