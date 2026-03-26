@@ -1,24 +1,49 @@
 <!-- Giscus Comments Section -->
 <section class="comments-section pt-8 border-t border-gray-200">
     <h3 class="text-2xl font-bold text-gray-900 mb-4">Comments & Discussion</h3>
-    <p class="text-gray-700 mb-6">Join the conversation! Share your thoughts, ask questions, or provide feedback below.</p>
-    
-    <script src="https://giscus.app/client.js"
-        data-repo="pawanyd/pawanyd.github.io"
-        data-repo-id="R_kgDON06V1w"
-        data-category="General"
-        data-category-id="DIC_kwDON06V184C5R8V"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="light"
-        data-lang="en"
-        crossorigin="anonymous"
-        async>
+    <p class="text-gray-700 mb-6">Join the conversation! Share your thoughts, ask questions, or provide feedback below.
+    </p>
+
+    <script src="https://giscus.app/client.js" data-repo="pawanyd/pawanyd.github.io" data-repo-id="R_kgDON06V1w"
+        data-category="General" data-category-id="DIC_kwDON06V184C5R8V" data-mapping="pathname" data-strict="0"
+        data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom"
+        data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async>
+        </script>
+
+    <script>
+        // Set Giscus theme based on current mode
+        (function () {
+            var savedTheme = localStorage.getItem('theme');
+            var isDark = savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            var giscusScript = document.querySelector('script[src="https://giscus.app/client.js"]');
+            if (giscusScript) {
+                giscusScript.setAttribute('data-theme', isDark ? 'dark' : 'light');
+            }
+        })();
+
+        // Listen for theme changes and update Giscus iframe
+        function updateGiscusTheme(theme) {
+            var iframe = document.querySelector('iframe.giscus-frame');
+            if (iframe) {
+                iframe.contentWindow.postMessage(
+                    { giscus: { setConfig: { theme: theme } } },
+                    'https://giscus.app'
+                );
+            }
+        }
+
+        // Observe html class changes for dark mode toggle
+        var giscusObserver = new MutationObserver(function (mutations) {
+            mutations.forEach(function (m) {
+                if (m.attributeName === 'class') {
+                    var isDark = document.documentElement.classList.contains('dark');
+                    updateGiscusTheme(isDark ? 'dark' : 'light');
+                }
+            });
+        });
+        giscusObserver.observe(document.documentElement, { attributes: true });
     </script>
-    
+
     <noscript>
         <p class="text-gray-500 italic">Please enable JavaScript to view comments.</p>
     </noscript>

@@ -1,0 +1,1164 @@
+/* ===========================================
+   Dark Mode Overrides
+   Targets existing Tailwind utility classes 
+   under html.dark to provide dark theme.
+   =========================================== */
+
+/* Smooth transition for theme switch */
+html {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html * {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ---- Body & Page Backgrounds ---- */
+html.dark body.bg-gray-100 {
+    background-color: #0f172a;
+}
+
+html.dark .bg-white {
+    background-color: #1e293b;
+}
+
+html.dark .bg-gray-50 {
+    background-color: #0f172a;
+}
+
+html.dark .bg-gray-100 {
+    background-color: #0f172a;
+}
+
+html.dark .bg-gray-200 {
+    background-color: #1e293b;
+}
+
+html.dark .bg-white\/95 {
+    background-color: rgba(30, 41, 59, 0.95);
+}
+
+/* ---- Navigation ---- */
+html.dark nav.bg-white {
+    background-color: #0f172a;
+    border-bottom: 1px solid #334155;
+}
+
+html.dark nav .bg-white,
+html.dark nav .md\:bg-white {
+    background-color: #0f172a;
+}
+
+html.dark #menu {
+    background-color: #0f172a;
+}
+
+html.dark .submenu {
+    background-color: #1e293b !important;
+}
+
+html.dark nav .text-gray-800,
+html.dark nav .text-gray-700 {
+    color: #e2e8f0;
+}
+
+html.dark nav a.text-xl.font-bold.text-gray-800 {
+    color: #f1f5f9;
+}
+
+html.dark nav .text-gray-500 {
+    color: #94a3b8;
+}
+
+html.dark nav .border-gray-100 {
+    border-color: #334155;
+}
+
+html.dark .submenu a.text-gray-700:hover,
+html.dark nav a.text-gray-700:hover {
+    color: #60a5fa;
+    background-color: rgba(59, 130, 246, 0.1);
+}
+
+/* ---- Primary Text Colors ---- */
+html.dark .text-gray-900 {
+    color: #f1f5f9;
+}
+
+html.dark .text-gray-800 {
+    color: #e2e8f0;
+}
+
+html.dark .text-gray-700 {
+    color: #cbd5e1;
+}
+
+html.dark .text-gray-600 {
+    color: #94a3b8;
+}
+
+html.dark .text-gray-500 {
+    color: #64748b;
+}
+
+/* ---- Borders ---- */
+html.dark .border-gray-100 {
+    border-color: #334155;
+}
+
+html.dark .border-gray-200 {
+    border-color: #334155;
+}
+
+html.dark .border-gray-300 {
+    border-color: #475569;
+}
+
+html.dark .border-white {
+    border-color: #334155;
+}
+
+/* ---- Cards & Shadows ---- */
+html.dark .shadow-lg,
+html.dark .shadow-xl,
+html.dark .shadow-2xl {
+    --tw-shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+html.dark .bg-white.rounded-lg,
+html.dark .bg-white.rounded-xl,
+html.dark .bg-white.rounded-2xl,
+html.dark .bg-white.rounded-3xl {
+    background-color: #1e293b;
+    border-color: #334155;
+}
+
+/* ---- Gradient Sections (Light Bg) ---- */
+html.dark .bg-gradient-to-br.from-gray-50,
+html.dark .bg-gradient-to-br.from-gray-50.via-blue-50,
+html.dark .bg-gradient-to-b.from-gray-50 {
+    background-image: linear-gradient(to bottom right, #0f172a, #0f172a);
+}
+
+html.dark .bg-gradient-to-br.from-gray-50.via-blue-50.to-purple-50 {
+    background-image: linear-gradient(to bottom right, #0f172a, #111827, #0f172a);
+}
+
+html.dark .bg-gradient-to-b.from-gray-50.to-white {
+    background-image: linear-gradient(to bottom, #0f172a, #1e293b);
+}
+
+html.dark .bg-gradient-to-br.from-gray-50.to-white {
+    background-image: linear-gradient(to bottom right, #0f172a, #1e293b);
+}
+
+/* ---- About Section Cards ---- */
+html.dark .bg-gradient-to-br.from-blue-50.to-purple-50 {
+    background-image: linear-gradient(to bottom right, rgba(30, 58, 138, 0.2), rgba(88, 28, 135, 0.2));
+}
+
+html.dark .bg-gradient-to-r.from-blue-50.to-purple-50 {
+    background-image: linear-gradient(to right, rgba(30, 58, 138, 0.2), rgba(88, 28, 135, 0.2));
+}
+
+html.dark .bg-gradient-to-r.from-blue-100.to-purple-100 {
+    background-image: linear-gradient(to right, rgba(30, 58, 138, 0.3), rgba(88, 28, 135, 0.3));
+}
+
+/* ---- Skill Cards ---- */
+html.dark .bg-white.p-6.rounded-lg.shadow-lg {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+}
+
+/* ---- Project Section ---- */
+html.dark .bg-white.rounded-lg.shadow-lg.hover\:shadow-2xl {
+    background-color: #1e293b;
+    border-color: #334155;
+}
+
+/* ---- Results & Learning Cards ---- */
+html.dark .bg-gradient-to-br.from-green-50.to-emerald-50 {
+    background-image: linear-gradient(to bottom right, rgba(6, 78, 59, 0.2), rgba(6, 78, 59, 0.15));
+}
+
+html.dark .bg-gradient-to-br.from-yellow-50.to-orange-50 {
+    background-image: linear-gradient(to bottom right, rgba(120, 53, 15, 0.2), rgba(120, 53, 15, 0.15));
+}
+
+html.dark .bg-gradient-to-r.from-orange-50.to-red-50 {
+    background-image: linear-gradient(to right, rgba(120, 53, 15, 0.2), rgba(120, 53, 15, 0.15));
+}
+
+html.dark .bg-gradient-to-r.from-purple-50.to-blue-50 {
+    background-image: linear-gradient(to right, rgba(88, 28, 135, 0.15), rgba(30, 58, 138, 0.15));
+}
+
+html.dark .bg-gradient-to-r.from-blue-50.to-indigo-50 {
+    background-image: linear-gradient(to right, rgba(30, 58, 138, 0.15), rgba(49, 46, 129, 0.15));
+}
+
+html.dark .bg-gradient-to-r.from-green-50.to-emerald-50 {
+    background-image: linear-gradient(to right, rgba(6, 78, 59, 0.15), rgba(6, 78, 59, 0.1));
+}
+
+/* ---- Features & Challenge Cards ---- */
+html.dark .bg-gradient-to-r.from-green-50.to-emerald-50 .text-gray-700,
+html.dark .bg-gradient-to-br.from-green-50.to-emerald-50 .text-gray-700 {
+    color: #cbd5e1;
+}
+
+html.dark .bg-green-100 {
+    background-color: rgba(6, 78, 59, 0.3);
+}
+
+html.dark .text-green-800 {
+    color: #4ade80;
+}
+
+html.dark .text-green-700 {
+    color: #4ade80;
+}
+
+html.dark .text-green-900 {
+    color: #86efac;
+}
+
+html.dark .text-purple-700 {
+    color: #c084fc;
+}
+
+html.dark .text-purple-900 {
+    color: #d8b4fe;
+}
+
+html.dark .text-blue-700 {
+    color: #93c5fd;
+}
+
+html.dark .text-blue-900 {
+    color: #bfdbfe;
+}
+
+html.dark .text-orange-700 {
+    color: #fb923c;
+}
+
+html.dark .text-orange-900 {
+    color: #fdba74;
+}
+
+html.dark .text-yellow-700 {
+    color: #fbbf24;
+}
+
+html.dark .text-yellow-800 {
+    color: #fcd34d;
+}
+
+html.dark .text-yellow-900 {
+    color: #fde68a;
+}
+
+html.dark .text-red-700 {
+    color: #fca5a5;
+}
+
+html.dark .text-red-800 {
+    color: #fca5a5;
+}
+
+/* ---- Colored Background Cards ---- */
+html.dark .bg-blue-50 {
+    background-color: rgba(30, 58, 138, 0.2);
+}
+
+html.dark .bg-blue-100 {
+    background-color: rgba(30, 58, 138, 0.3);
+}
+
+html.dark .bg-purple-50 {
+    background-color: rgba(88, 28, 135, 0.2);
+}
+
+html.dark .bg-purple-100 {
+    background-color: rgba(88, 28, 135, 0.3);
+}
+
+html.dark .bg-green-50 {
+    background-color: rgba(6, 78, 59, 0.2);
+}
+
+html.dark .bg-indigo-50 {
+    background-color: rgba(49, 46, 129, 0.2);
+}
+
+html.dark .bg-indigo-100 {
+    background-color: rgba(49, 46, 129, 0.3);
+}
+
+html.dark .bg-orange-100 {
+    background-color: rgba(120, 53, 15, 0.3);
+}
+
+html.dark .bg-pink-100 {
+    background-color: rgba(131, 24, 67, 0.3);
+}
+
+html.dark .bg-red-50 {
+    background-color: rgba(127, 29, 29, 0.2);
+}
+
+html.dark .bg-red-100 {
+    background-color: rgba(127, 29, 29, 0.3);
+}
+
+html.dark .bg-yellow-50 {
+    background-color: rgba(120, 53, 15, 0.2);
+}
+
+html.dark .bg-yellow-100 {
+    background-color: rgba(120, 53, 15, 0.3);
+}
+
+html.dark .bg-yellow-200 {
+    background-color: rgba(120, 53, 15, 0.4);
+}
+
+/* ---- Decorative Blobs ---- */
+html.dark .bg-blue-200.rounded-full.mix-blend-multiply {
+    background-color: rgba(59, 130, 246, 0.15);
+    mix-blend-mode: screen;
+}
+
+html.dark .bg-purple-200.rounded-full.mix-blend-multiply {
+    background-color: rgba(168, 85, 247, 0.15);
+    mix-blend-mode: screen;
+}
+
+html.dark .bg-pink-200.rounded-full.mix-blend-multiply {
+    background-color: rgba(236, 72, 153, 0.15);
+    mix-blend-mode: screen;
+}
+
+/* ---- Blog Post Content (Prose) ---- */
+html.dark .prose {
+    color: #cbd5e1;
+}
+
+html.dark .prose p,
+html.dark .prose li {
+    color: #cbd5e1;
+}
+
+html.dark .prose h1,
+html.dark .prose h2,
+html.dark .prose h3,
+html.dark .prose h4,
+html.dark .prose h5,
+html.dark .prose h6 {
+    color: #f1f5f9;
+}
+
+html.dark .prose strong {
+    color: #f1f5f9;
+}
+
+html.dark .prose a {
+    color: #60a5fa;
+}
+
+html.dark .prose a:hover {
+    color: #93c5fd;
+}
+
+html.dark .prose blockquote {
+    background-color: rgba(30, 58, 138, 0.15);
+    border-color: #3b82f6;
+    color: #94a3b8;
+}
+
+html.dark .prose code {
+    color: #f472b6;
+    background-color: rgba(131, 24, 67, 0.3);
+}
+
+html.dark .prose td,
+html.dark .prose th {
+    border-color: #334155;
+}
+
+html.dark .prose th {
+    background-color: #1e293b;
+    color: #f1f5f9;
+}
+
+html.dark .prose td {
+    color: #cbd5e1;
+}
+
+html.dark .prose hr {
+    border-color: #334155;
+}
+
+/* ---- SVG Images in Blog Posts ---- */
+html.dark .prose img[src$=".svg"] {
+    filter: invert(0.88) hue-rotate(180deg);
+    border-radius: 1rem;
+}
+
+/* ---- Form Elements ---- */
+html.dark input,
+html.dark textarea,
+html.dark select {
+    background-color: #1e293b;
+    color: #e2e8f0;
+    border-color: #475569;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+    color: #64748b;
+}
+
+html.dark input:focus,
+html.dark textarea:focus,
+html.dark select:focus {
+    border-color: #3b82f6;
+}
+
+/* ---- Opacity & Misc Background Overrides ---- */
+html.dark .bg-opacity-95 {
+    --tw-bg-opacity: 0.95;
+}
+
+/* ---- Tooltip ---- */
+html.dark .bg-gray-800 {
+    background-color: #0f172a;
+}
+
+html.dark .bg-gray-700 {
+    background-color: #1e293b;
+}
+
+/* ---- Comments Section ---- */
+html.dark .bg-white.py-12,
+html.dark section.bg-white {
+    background-color: #1e293b;
+}
+
+/* ---- Footer Note (default.html has inline footer) ---- */
+html.dark footer.bg-gray-900 {
+    background-color: #020617;
+}
+
+/* ---- Dark Mode Toggle Button ---- */
+#theme-toggle {
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: rgba(59, 130, 246, 0.1);
+}
+
+#theme-toggle i {
+    font-size: 1.25rem;
+    transition: transform 0.3s ease;
+}
+
+#theme-toggle:hover i {
+    transform: rotate(15deg);
+}
+
+html.dark #theme-toggle:hover {
+    background-color: rgba(250, 204, 21, 0.1);
+}
+
+/* Icon colors */
+#theme-toggle .fa-moon {
+    color: #64748b;
+}
+
+#theme-toggle .fa-sun {
+    color: #fbbf24;
+}
+
+/* ---- Scrollbar ---- */
+html.dark ::-webkit-scrollbar {
+    width: 8px;
+}
+
+html.dark ::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 4px;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
+
+/* ---- Blog listing borders ---- */
+html.dark .border-purple-200 {
+    border-color: rgba(168, 85, 247, 0.3);
+}
+
+html.dark .border-blue-200 {
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+html.dark .border-green-200 {
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+html.dark .border-orange-200 {
+    border-color: rgba(249, 115, 22, 0.3);
+}
+
+html.dark .border-yellow-200 {
+    border-color: rgba(234, 179, 8, 0.3);
+}
+
+html.dark .border-red-200 {
+    border-color: rgba(220, 38, 38, 0.3);
+}
+
+/* ---- White text on white bg fix for contact section ---- */
+html.dark .bg-gradient-to-r.from-indigo-600.to-blue-600 .bg-white {
+    background-color: #ffffff;
+}
+
+html.dark .bg-gradient-to-r.from-indigo-600.to-blue-600 .text-blue-600 {
+    color: #2563eb;
+}
+
+/* ---- Contact Page: Gradient Info Cards ---- */
+html.dark .bg-gradient-to-br.from-blue-50.to-blue-100 {
+    background-image: linear-gradient(to bottom right, rgba(30, 58, 138, 0.25), rgba(30, 58, 138, 0.35));
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+html.dark .bg-gradient-to-br.from-purple-50.to-purple-100 {
+    background-image: linear-gradient(to bottom right, rgba(88, 28, 135, 0.25), rgba(88, 28, 135, 0.35));
+    border-color: rgba(168, 85, 247, 0.3);
+}
+
+html.dark .bg-gradient-to-br.from-green-50.to-green-100 {
+    background-image: linear-gradient(to bottom right, rgba(6, 78, 59, 0.25), rgba(6, 78, 59, 0.35));
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+/* ---- Contact Page: "Why Contact" Section ---- */
+html.dark .bg-gradient-to-br.from-blue-50.via-purple-50.to-pink-50 {
+    background-image: linear-gradient(to bottom right, #0f172a, #111827, #0f172a);
+}
+
+/* ---- Contact Blobs (blue-300 and purple-300 variants) ---- */
+html.dark .bg-blue-300.rounded-full.mix-blend-multiply {
+    background-color: rgba(59, 130, 246, 0.1);
+    mix-blend-mode: screen;
+}
+
+html.dark .bg-purple-300.rounded-full.mix-blend-multiply {
+    background-color: rgba(168, 85, 247, 0.1);
+    mix-blend-mode: screen;
+}
+
+/* ---- Contact Hero CTA buttons (keep white bg) ---- */
+html.dark .bg-gradient-to-br.from-gray-900 .bg-white,
+html.dark section.bg-gradient-to-br.from-gray-900 a.bg-white {
+    background-color: #ffffff;
+    color: #1e3a8a;
+}
+
+/* ---- Purple-100 gradient fix ---- */
+html.dark .bg-purple-200 {
+    background-color: rgba(88, 28, 135, 0.35);
+}
+
+html.dark .bg-blue-200 {
+    background-color: rgba(30, 58, 138, 0.35);
+}
+
+html.dark .bg-green-100 {
+    background-color: rgba(6, 78, 59, 0.3);
+}
+
+/* ---- About Page: Intro Section (#intro) ---- */
+html.dark #intro {
+    background: #0f172a !important;
+    background-image: none !important;
+}
+
+html.dark #intro .bg-blue-100 {
+    background-color: rgba(59, 130, 246, 0.1) !important;
+    mix-blend-mode: screen;
+}
+
+html.dark #intro .bg-purple-100 {
+    background-color: rgba(168, 85, 247, 0.1) !important;
+    mix-blend-mode: screen;
+}
+
+/* ---- About Expertise Cards ---- */
+html.dark .from-blue-50.to-blue-100 {
+    background-image: linear-gradient(to bottom right, rgba(30, 58, 138, 0.25), rgba(30, 58, 138, 0.35)) !important;
+}
+
+html.dark .from-purple-50.to-purple-100 {
+    background-image: linear-gradient(to bottom right, rgba(88, 28, 135, 0.25), rgba(88, 28, 135, 0.35)) !important;
+}
+
+html.dark .from-green-50.to-green-100 {
+    background-image: linear-gradient(to bottom right, rgba(6, 78, 59, 0.25), rgba(6, 78, 59, 0.35)) !important;
+}
+
+/* ---- About Page: Experience timeline cards ---- */
+html.dark .bg-white.p-8.rounded-2xl {
+    background-color: #1e293b;
+    border-color: #334155;
+}
+
+/* Experience timeline dot border */
+html.dark .border-4.border-white {
+    border-color: #1e293b;
+}
+
+/* ---- About Page: Key Achievements box ---- */
+html.dark .from-blue-50.to-purple-50 {
+    background-image: linear-gradient(to bottom right, rgba(30, 58, 138, 0.2), rgba(88, 28, 135, 0.2)) !important;
+}
+
+/* ---- About Page: GitHub Widget Section ---- */
+html.dark .github-widget-section {
+    background: #0f172a !important;
+}
+
+html.dark .github-widget-section h2 {
+    color: #f1f5f9 !important;
+}
+
+html.dark .github-widget-section p {
+    color: #94a3b8 !important;
+}
+
+html.dark .github-stat,
+html.dark .github-repo-card {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+}
+
+html.dark .github-repo-card .repo-description {
+    color: #cbd5e1;
+}
+
+html.dark .github-repo-card .repo-footer {
+    color: #94a3b8;
+    border-top-color: #334155;
+}
+
+html.dark .github-repo-card .repo-name {
+    color: #60a5fa;
+}
+
+html.dark .github-widget-cta {
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%) !important;
+    color: white !important;
+}
+
+html.dark .loading-skeleton {
+    background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%) !important;
+    background-size: 200% 100% !important;
+}
+
+/* GitHub container with bg-white/50 */
+html.dark .bg-white\/50 {
+    background-color: rgba(30, 41, 59, 0.5) !important;
+}
+
+/* ---- About Page: Tech stack pills ---- */
+html.dark .bg-white.rounded-full {
+    background-color: #1e293b;
+    border-color: #334155;
+}
+
+/* ---- About Page: blue-100 border fix ---- */
+html.dark .border-blue-100 {
+    border-color: rgba(59, 130, 246, 0.2);
+}
+
+/* ---- Loading skeleton ---- */
+html.dark .loading-skeleton {
+    background-color: #1e293b;
+}
+
+/* ---- Purple text colors for roles ---- */
+html.dark .text-purple-600 {
+    color: #c084fc;
+}
+
+html.dark .text-blue-600 {
+    color: #60a5fa;
+}
+
+html.dark .text-green-600 {
+    color: #4ade80;
+}
+
+/* ---- Generic gradient overrides with !important for stubborn Tailwind ---- */
+html.dark .from-white {
+    --tw-gradient-from: #0f172a !important;
+}
+
+html.dark .to-gray-50 {
+    --tw-gradient-to: #0f172a !important;
+}
+
+html.dark .to-white {
+    --tw-gradient-to: #1e293b !important;
+}
+
+html.dark .from-gray-50 {
+    --tw-gradient-from: #0f172a !important;
+}
+
+html.dark .via-blue-50 {
+    --tw-gradient-via: #0f172a !important;
+}
+
+html.dark .via-purple-50 {
+    --tw-gradient-via: #0f172a !important;
+}
+
+html.dark .to-purple-50 {
+    --tw-gradient-to: rgba(88, 28, 135, 0.15) !important;
+}
+
+html.dark .to-pink-50 {
+    --tw-gradient-to: #0f172a !important;
+}
+
+html.dark .from-blue-50 {
+    --tw-gradient-from: rgba(30, 58, 138, 0.2) !important;
+}
+
+html.dark .from-purple-50 {
+    --tw-gradient-from: rgba(88, 28, 135, 0.2) !important;
+}
+
+html.dark .from-green-50 {
+    --tw-gradient-from: rgba(6, 78, 59, 0.2) !important;
+}
+
+html.dark .to-blue-100 {
+    --tw-gradient-to: rgba(30, 58, 138, 0.3) !important;
+}
+
+html.dark .to-purple-100 {
+    --tw-gradient-to: rgba(88, 28, 135, 0.3) !important;
+}
+
+html.dark .to-green-100 {
+    --tw-gradient-to: rgba(6, 78, 59, 0.3) !important;
+}
+
+/* Additional gradient variable overrides */
+html.dark .from-orange-50 {
+    --tw-gradient-from: rgba(124, 45, 18, 0.2) !important;
+}
+
+html.dark .to-red-50 {
+    --tw-gradient-to: rgba(127, 29, 29, 0.2) !important;
+}
+
+html.dark .to-cyan-50 {
+    --tw-gradient-to: rgba(22, 78, 99, 0.2) !important;
+}
+
+html.dark .to-emerald-50 {
+    --tw-gradient-to: rgba(6, 78, 59, 0.2) !important;
+}
+
+html.dark .to-indigo-50 {
+    --tw-gradient-to: rgba(49, 46, 129, 0.2) !important;
+}
+
+html.dark .from-indigo-900 {
+    --tw-gradient-from: #1e1b4b !important;
+}
+
+/* ==== BLOG LISTING PAGE ==== */
+
+/* ---- Featured Categories Section ---- */
+html.dark .bg-white.py-6.border-b {
+    background-color: #0f172a !important;
+    border-color: #1e293b !important;
+}
+
+/* Featured category card heading */
+html.dark .bg-white.py-6.border-b h2 {
+    color: #f1f5f9 !important;
+}
+
+html.dark .bg-white.py-6.border-b .text-gray-500 {
+    color: #64748b !important;
+}
+
+/* Direct overrides for featured category gradient cards */
+html.dark .bg-gradient-to-br.from-purple-50.to-indigo-50,
+html.dark .bg-gradient-to-br.from-blue-50.to-cyan-50,
+html.dark .bg-gradient-to-br.from-green-50.to-emerald-50,
+html.dark .bg-gradient-to-br.from-orange-50.to-red-50 {
+    background-image: none !important;
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+}
+
+/* Main blog section background */
+html.dark .bg-gray-100.py-8,
+html.dark .bg-gray-100.min-h-screen {
+    background-color: #0f172a !important;
+}
+
+/* Category card text overrides */
+html.dark .text-purple-900,
+html.dark .text-blue-900,
+html.dark .text-green-900,
+html.dark .text-orange-900 {
+    color: #e2e8f0 !important;
+}
+
+html.dark .text-purple-700,
+html.dark .text-blue-700,
+html.dark .text-green-700,
+html.dark .text-orange-700 {
+    color: #94a3b8 !important;
+}
+
+html.dark .border-purple-200,
+html.dark .border-blue-200,
+html.dark .border-green-200,
+html.dark .border-orange-200 {
+    border-color: #334155 !important;
+}
+
+/* ---- Blog Sidebar Widgets ---- */
+html.dark #blog-sidebar .bg-white {
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+}
+
+html.dark #blog-sidebar .text-gray-700 {
+    color: #94a3b8 !important;
+}
+
+html.dark #blog-sidebar .border-gray-100 {
+    border-color: #334155 !important;
+}
+
+/* Sidebar search input */
+html.dark #sidebar-search-input {
+    background-color: #0f172a !important;
+    border-color: #334155 !important;
+    color: #e2e8f0 !important;
+}
+
+/* Category pills in sidebar */
+html.dark .cat-pill {
+    background-color: #1e293b !important;
+    border-color: #475569 !important;
+    color: #cbd5e1 !important;
+}
+
+html.dark .cat-pill[data-cat="all"],
+html.dark .cat-pill.active {
+    background-color: #2563eb !important;
+    border-color: #2563eb !important;
+    color: #ffffff !important;
+}
+
+/* JS-generated sidebar titles (Most Visited / Recently Visited) */
+html.dark .text-slate-900 {
+    color: #e2e8f0 !important;
+}
+
+html.dark #most-visited-list .text-gray-400,
+html.dark #recently-visited-list .text-gray-400 {
+    color: #64748b !important;
+}
+
+html.dark #most-visited-list .text-gray-300,
+html.dark #recently-visited-list .text-gray-300 {
+    color: #475569 !important;
+}
+
+/* ---- Blog Post Cards ---- */
+html.dark #blog-posts article,
+html.dark #search-results article {
+    background-color: #1e293b !important;
+    border-color: transparent !important;
+}
+
+html.dark #blog-posts article:hover,
+html.dark #search-results article:hover {
+    border-color: #8b5cf6 !important;
+}
+
+html.dark #blog-posts .text-gray-900,
+html.dark #search-results .text-gray-900 {
+    color: #f1f5f9 !important;
+}
+
+html.dark #blog-posts .text-gray-600,
+html.dark #search-results .text-gray-600 {
+    color: #94a3b8 !important;
+}
+
+html.dark #blog-posts .text-gray-500,
+html.dark #search-results .text-gray-500 {
+    color: #64748b !important;
+}
+
+/* Tag pills in blog cards */
+html.dark #blog-posts .text-blue-700.rounded-lg,
+html.dark #search-results .text-blue-700.rounded-lg {
+    color: #93c5fd !important;
+    background: rgba(30, 58, 138, 0.25) !important;
+    border-color: rgba(59, 130, 246, 0.3) !important;
+}
+
+/* ---- Pagination ---- */
+html.dark #pagination-section a,
+html.dark #pagination-section span {
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+    color: #94a3b8 !important;
+}
+
+html.dark #pagination-section a:hover {
+    background-color: #1e3a5f !important;
+    border-color: #3b82f6 !important;
+    color: #60a5fa !important;
+}
+
+/* Active page */
+html.dark #pagination-section span.bg-blue-600 {
+    background-color: #2563eb !important;
+    border-color: #2563eb !important;
+    color: #ffffff !important;
+}
+
+/* Disabled pagination */
+html.dark #pagination-section span.opacity-50 {
+    background-color: #0f172a !important;
+    border-color: #1e293b !important;
+    color: #475569 !important;
+}
+
+/* ---- Filter Banner ---- */
+html.dark #active-filter-banner {
+    background-color: rgba(30, 58, 138, 0.2) !important;
+    border-color: rgba(59, 130, 246, 0.3) !important;
+}
+
+html.dark #active-filter-text {
+    color: #93c5fd !important;
+}
+
+/* Search count badge */
+html.dark #search-count {
+    background-color: #1e293b !important;
+    color: #94a3b8 !important;
+}
+
+/* No results message */
+html.dark #no-category-results .text-gray-500 {
+    color: #64748b !important;
+}
+
+/* ==== BLOG DETAIL PAGE ==== */
+
+/* ---- Blog Content Section Background ---- */
+html.dark .bg-gradient-to-b.from-gray-50.to-white {
+    background-image: none !important;
+    background-color: #0f172a !important;
+}
+
+/* Featured image border */
+html.dark .border-4.border-white {
+    border-color: #1e293b !important;
+}
+
+/* ---- Main Content Card ---- */
+html.dark .bg-white.rounded-3xl.shadow-xl {
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+}
+
+/* ---- Prose (Article Body) Dark Mode ---- */
+html.dark .prose {
+    color: #cbd5e1 !important;
+}
+
+html.dark .prose h1,
+html.dark .prose h2,
+html.dark .prose h3,
+html.dark .prose h4,
+html.dark .prose h5,
+html.dark .prose h6 {
+    color: #f1f5f9 !important;
+}
+
+html.dark .prose h2 {
+    border-color: #334155 !important;
+}
+
+html.dark .prose p,
+html.dark .prose li {
+    color: #cbd5e1 !important;
+}
+
+html.dark .prose strong {
+    color: #f1f5f9 !important;
+}
+
+html.dark .prose a {
+    color: #60a5fa !important;
+}
+
+html.dark .prose a:hover {
+    color: #93c5fd !important;
+}
+
+/* Inline code */
+html.dark .prose code {
+    color: #f472b6 !important;
+    background-color: rgba(244, 114, 182, 0.1) !important;
+}
+
+/* Code blocks */
+html.dark .prose pre {
+    background-color: #0f172a !important;
+    border-color: #334155 !important;
+}
+
+html.dark .prose pre code {
+    color: #e2e8f0 !important;
+    background-color: transparent !important;
+}
+
+/* Blockquotes */
+html.dark .prose blockquote {
+    background-color: rgba(30, 58, 138, 0.15) !important;
+    border-color: #3b82f6 !important;
+    color: #94a3b8 !important;
+}
+
+/* Tables */
+html.dark .prose th {
+    background-color: #1e293b !important;
+    color: #f1f5f9 !important;
+    border-color: #334155 !important;
+}
+
+html.dark .prose td {
+    color: #cbd5e1 !important;
+    border-color: #334155 !important;
+}
+
+html.dark .prose tr {
+    border-color: #334155 !important;
+}
+
+/* Horizontal rules */
+html.dark .prose hr {
+    border-color: #334155 !important;
+}
+
+/* SVG images in blog posts - invert for readability */
+html.dark .prose img[src$=".svg"] {
+    filter: invert(0.88) hue-rotate(180deg);
+}
+
+/* ---- Social Share Section ---- */
+html.dark .bg-gradient-to-r.from-blue-50.to-purple-50 {
+    background-image: none !important;
+    background-color: rgba(30, 58, 138, 0.15) !important;
+    border-color: #334155 !important;
+}
+
+html.dark .bg-gradient-to-r.from-blue-50.to-purple-50 h3 {
+    color: #f1f5f9 !important;
+}
+
+html.dark .bg-gradient-to-r.from-blue-50.to-purple-50 p {
+    color: #94a3b8 !important;
+}
+
+/* Social share buttons */
+html.dark .bg-gradient-to-r.from-blue-50.to-purple-50 a.bg-white,
+html.dark .bg-gradient-to-r.from-blue-50.to-purple-50 button.bg-white {
+    background-color: #0f172a !important;
+}
+
+/* ---- Comments Section ---- */
+html.dark .comments-section {
+    border-color: #334155 !important;
+}
+
+html.dark .comments-section h3 {
+    color: #f1f5f9 !important;
+}
+
+html.dark .comments-section p {
+    color: #94a3b8 !important;
+}
+
+html.dark section.bg-white:has(.comments-section) {
+    background-color: #0f172a !important;
+}
+
+/* Fallback for browsers without :has() */
+html.dark .py-12.bg-white {
+    background-color: #0f172a !important;
+}
+
+/* ---- Related Posts Section ---- */
+html.dark .bg-gradient-to-br.from-gray-50.to-white {
+    background-image: none !important;
+    background-color: #0f172a !important;
+}
+
+html.dark .bg-gradient-to-br.from-gray-50.to-white h2 {
+    color: #f1f5f9 !important;
+}
+
+html.dark .bg-gradient-to-br.from-gray-50.to-white p {
+    color: #94a3b8 !important;
+}
+
+/* Related post cards */
+html.dark .bg-gradient-to-br.from-gray-50.to-white article {
+    background-color: #1e293b !important;
+}
+
+/* Continue Reading badge */
+html.dark .bg-gradient-to-r.from-blue-100.to-purple-100 {
+    background-image: none !important;
+    background-color: rgba(59, 130, 246, 0.15) !important;
+    color: #93c5fd !important;
+    border-color: rgba(139, 92, 246, 0.3) !important;
+}
