@@ -577,11 +577,15 @@ html.dark .bg-purple-300.rounded-full.mix-blend-multiply {
     mix-blend-mode: screen;
 }
 
-/* ---- Contact Hero CTA buttons (keep white bg) ---- */
-html.dark .bg-gradient-to-br.from-gray-900 .bg-white,
-html.dark section.bg-gradient-to-br.from-gray-900 a.bg-white {
-    background-color: #ffffff;
-    color: #1e3a8a;
+/* ---- Contact Hero CTA buttons (dark bg with white text in dark mode) ---- */
+html.dark .bg-gradient-to-br.from-gray-900 a.bg-white.text-blue-900 {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+html.dark .bg-gradient-to-br.from-gray-900 a.bg-white.text-blue-900:hover {
+    background-color: #1e293b !important;
+    color: #ffffff !important;
 }
 
 /* ---- Purple-100 gradient fix ---- */
