@@ -13,7 +13,7 @@
     <script>
         // Set Giscus theme based on current mode
         (function () {
-            var savedTheme = localStorage.getItem('theme');
+            var savedTheme = localStorage.getItem('theme-preference');
             var isDark = savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
             var giscusScript = document.querySelector('script[src="https://giscus.app/client.js"]');
             if (giscusScript) {
