@@ -152,7 +152,8 @@ class QuizSystem {
       selectedOption,
       correctAnswer: currentQuestion.correctAnswer,
       isCorrect,
-      explanation: currentQuestion.explanation
+      explanation: currentQuestion.explanation,
+      skipped: false
     });
     
     return {
@@ -163,11 +164,45 @@ class QuizSystem {
   }
 
   /**
+   * Skip current question
+   */
+  skipCurrentQuestion() {
+    const currentQuestion = this.questions[this.currentQuestionIndex];
+    
+    this.answers.push({
+      questionId: currentQuestion.id,
+      question: currentQuestion.question,
+      selectedOption: null,
+      correctAnswer: currentQuestion.correctAnswer,
+      isCorrect: false,
+      explanation: currentQuestion.explanation,
+      skipped: true
+    });
+  }
+
+  /**
    * Move to next question
    */
   nextQuestion() {
     this.currentQuestionIndex++;
     return this.currentQuestionIndex < this.questions.length;
+  }
+
+  /**
+   * Move to previous question
+   */
+  previousQuestion() {
+    if (this.currentQuestionIndex > 0) {
+      this.currentQuestionIndex--;
+      // Remove the last answer from the array
+      const lastAnswer = this.answers.pop();
+      // Adjust score if the removed answer was correct
+      if (lastAnswer && lastAnswer.isCorrect) {
+        this.score--;
+      }
+      return true;
+    }
+    return false;
   }
 
   /**
