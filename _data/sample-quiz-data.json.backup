@@ -511,20 +511,6 @@
       "tags": ["algorithms", "graphs", "cycles"]
     },
     {
-      "category": "dsa",
-      "question": "What is memoization?",
-      "options": [
-        "Memorizing code",
-        "Caching function results to avoid recomputation",
-        "A sorting technique",
-        "A data structure"
-      ],
-      "correctAnswer": 1,
-      "explanation": "Memoization is an optimization technique that stores the results of expensive function calls and returns cached results for same inputs.",
-      "difficulty": "medium",
-      "tags": ["algorithms", "optimization", "dynamic-programming"]
-    },
-    {
       "category": "system-design",
       "question": "What is the primary purpose of a Load Balancer?",
       "options": [
@@ -1184,20 +1170,6 @@
       "explanation": "Gossip protocol is a peer-to-peer communication mechanism where nodes periodically exchange state information with random peers.",
       "difficulty": "hard",
       "tags": ["distributed-systems", "protocols"]
-    },
-    {
-      "category": "system-design",
-      "question": "What is the purpose of an idempotent API?",
-      "options": [
-        "Make APIs faster",
-        "Ensure same request produces same result multiple times",
-        "Encrypt requests",
-        "Cache responses"
-      ],
-      "correctAnswer": 1,
-      "explanation": "An idempotent API ensures that making the same request multiple times has the same effect as making it once, crucial for reliability.",
-      "difficulty": "medium",
-      "tags": ["api", "idempotency", "design"]
     },
     {
       "category": "javascript",

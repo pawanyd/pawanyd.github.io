@@ -1,6 +1,12 @@
 /**
  * Firebase Configuration
- * This file is safe to be public - security is handled by Firestore Rules
+ * 
+ * ⚠️ GITHUB SECURITY SCANNER NOTE:
+ * This is a Firebase CLIENT configuration, NOT a secret key.
+ * - These values are meant to be public and used in browser code
+ * - Security is enforced by Firestore Security Rules, not by hiding this config
+ * - API keys here only identify the Firebase project, they don't grant access
+ * - See: https://firebase.google.com/docs/projects/api-keys
  * 
  * Setup Instructions:
  * 1. Go to https://console.firebase.google.com/
