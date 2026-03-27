@@ -606,9 +606,15 @@ class QuizUI {
             <button onclick="location.reload()" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all">
               <i class="fas fa-redo mr-2"></i>Take Another Quiz
             </button>
-            <button onclick="quizUIInstance.showDetailedResults()" class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
-              <i class="fas fa-list mr-2"></i>View Details
-            </button>
+            ${window.authManager && window.authManager.isAuthenticated() ? `
+              <a href="/quiz/dashboard.html" class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors inline-flex items-center">
+                <i class="fas fa-chart-line mr-2"></i>View Dashboard
+              </a>
+            ` : `
+              <button onclick="quizUIInstance.showDetailedResults()" class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                <i class="fas fa-list mr-2"></i>View Details
+              </button>
+            `}
           </div>
         </div>
       </div>
