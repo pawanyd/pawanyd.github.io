@@ -1,0 +1,67 @@
+---
+layout: default
+title: Interview Preparation Quiz
+description: Practice quiz questions for technical interviews - DSA, System Design, and more
+---
+
+<section class="bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 py-12 min-h-screen">
+    <div class="max-w-6xl mx-auto px-4">
+        
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                <i class="fas fa-graduation-cap text-blue-600 mr-3"></i>
+                Interview Preparation Quiz
+            </h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Practice and test your knowledge with curated quiz questions for technical interviews
+            </p>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loading-state" class="text-center py-12">
+            <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+            <p class="mt-4 text-gray-600">Loading quiz categories...</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="error-state" class="hidden bg-red-50 border border-red-200 rounded-lg p-6 text-center">
+            <i class="fas fa-exclamation-triangle text-red-600 text-3xl mb-3"></i>
+            <h3 class="text-xl font-semibold text-red-800 mb-2">Unable to Load Quiz</h3>
+            <p class="text-red-600 mb-4" id="error-message"></p>
+            <button onclick="location.reload()" class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors">
+                Try Again
+            </button>
+        </div>
+
+        <!-- Quiz Categories -->
+        <div id="quiz-categories" class="hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="categories-grid">
+                <!-- Categories will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Quiz Interface (Hidden initially) -->
+        <div id="quiz-interface" class="hidden">
+            <!-- Will be populated by quiz-ui.js -->
+        </div>
+
+    </div>
+</section>
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+<!-- Quiz System Scripts -->
+<script src="{{ '/assets/js/firebase-config.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/quiz-system.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/quiz-ui.js' | relative_url }}"></script>
+
+<script>
+// Initialize quiz on page load
+document.addEventListener('DOMContentLoaded', async function() {
+    const quizUI = new QuizUI();
+    await quizUI.init();
+});
+</script>

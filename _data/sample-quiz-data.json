@@ -1,0 +1,161 @@
+{
+  "categories": [
+    {
+      "id": "dsa",
+      "name": "Data Structures & Algorithms",
+      "slug": "dsa",
+      "description": "Practice DSA questions for technical interviews",
+      "icon": "fa-code",
+      "questionCount": 10,
+      "order": 1
+    },
+    {
+      "id": "system-design",
+      "name": "System Design",
+      "slug": "system-design",
+      "description": "Learn system design concepts and patterns",
+      "icon": "fa-sitemap",
+      "questionCount": 8,
+      "order": 2
+    },
+    {
+      "id": "javascript",
+      "name": "JavaScript",
+      "slug": "javascript",
+      "description": "Test your JavaScript knowledge",
+      "icon": "fa-js",
+      "questionCount": 12,
+      "order": 3
+    }
+  ],
+  "questions": [
+    {
+      "category": "dsa",
+      "question": "What is the time complexity of binary search?",
+      "options": ["O(n)", "O(log n)", "O(n²)", "O(1)"],
+      "correctAnswer": 1,
+      "explanation": "Binary search divides the search space in half with each iteration, resulting in O(log n) time complexity.",
+      "difficulty": "easy",
+      "tags": ["algorithms", "searching", "complexity"]
+    },
+    {
+      "category": "dsa",
+      "question": "Which data structure uses LIFO (Last In First Out) principle?",
+      "options": ["Queue", "Stack", "Array", "Linked List"],
+      "correctAnswer": 1,
+      "explanation": "A Stack follows the LIFO principle where the last element added is the first one to be removed.",
+      "difficulty": "easy",
+      "tags": ["data-structures", "stack"]
+    },
+    {
+      "category": "dsa",
+      "question": "What is the worst-case time complexity of QuickSort?",
+      "options": ["O(n log n)", "O(n²)", "O(n)", "O(log n)"],
+      "correctAnswer": 1,
+      "explanation": "QuickSort has a worst-case time complexity of O(n²) when the pivot selection is poor, though average case is O(n log n).",
+      "difficulty": "medium",
+      "tags": ["algorithms", "sorting", "complexity"]
+    },
+    {
+      "category": "dsa",
+      "question": "Which traversal visits nodes in the order: Left, Root, Right?",
+      "options": ["Preorder", "Inorder", "Postorder", "Level-order"],
+      "correctAnswer": 1,
+      "explanation": "Inorder traversal visits the left subtree first, then the root, and finally the right subtree.",
+      "difficulty": "easy",
+      "tags": ["trees", "traversal"]
+    },
+    {
+      "category": "dsa",
+      "question": "What is the space complexity of merge sort?",
+      "options": ["O(1)", "O(log n)", "O(n)", "O(n²)"],
+      "correctAnswer": 2,
+      "explanation": "Merge sort requires O(n) additional space for the temporary arrays used during merging.",
+      "difficulty": "medium",
+      "tags": ["algorithms", "sorting", "complexity"]
+    },
+    {
+      "category": "system-design",
+      "question": "What is the primary purpose of a Load Balancer?",
+      "options": [
+        "Store data permanently",
+        "Distribute traffic across multiple servers",
+        "Cache frequently accessed data",
+        "Encrypt network traffic"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A Load Balancer distributes incoming network traffic across multiple servers to ensure no single server is overwhelmed.",
+      "difficulty": "easy",
+      "tags": ["load-balancing", "scalability"]
+    },
+    {
+      "category": "system-design",
+      "question": "Which database type is best for handling hierarchical data?",
+      "options": ["Relational Database", "Document Database", "Graph Database", "Key-Value Store"],
+      "correctAnswer": 2,
+      "explanation": "Graph databases are specifically designed to handle hierarchical and interconnected data efficiently.",
+      "difficulty": "medium",
+      "tags": ["databases", "data-modeling"]
+    },
+    {
+      "category": "system-design",
+      "question": "What does CAP theorem stand for?",
+      "options": [
+        "Consistency, Availability, Partition tolerance",
+        "Cache, API, Performance",
+        "Cluster, Availability, Processing",
+        "Connection, Authentication, Protocol"
+      ],
+      "correctAnswer": 0,
+      "explanation": "CAP theorem states that a distributed system can only guarantee two out of three: Consistency, Availability, and Partition tolerance.",
+      "difficulty": "medium",
+      "tags": ["distributed-systems", "theory"]
+    },
+    {
+      "category": "javascript",
+      "question": "What is the output of: typeof null?",
+      "options": ["'null'", "'undefined'", "'object'", "'number'"],
+      "correctAnswer": 2,
+      "explanation": "This is a known JavaScript quirk. typeof null returns 'object' due to a bug in the original JavaScript implementation.",
+      "difficulty": "easy",
+      "tags": ["javascript", "types"]
+    },
+    {
+      "category": "javascript",
+      "question": "What does the 'this' keyword refer to in an arrow function?",
+      "options": [
+        "The global object",
+        "The function itself",
+        "The lexical scope where it was defined",
+        "undefined"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Arrow functions don't have their own 'this' binding. They inherit 'this' from the enclosing lexical scope.",
+      "difficulty": "medium",
+      "tags": ["javascript", "arrow-functions", "this"]
+    },
+    {
+      "category": "javascript",
+      "question": "Which method is used to add elements to the end of an array?",
+      "options": ["unshift()", "push()", "concat()", "splice()"],
+      "correctAnswer": 1,
+      "explanation": "The push() method adds one or more elements to the end of an array and returns the new length.",
+      "difficulty": "easy",
+      "tags": ["javascript", "arrays"]
+    },
+    {
+      "category": "javascript",
+      "question": "What is a closure in JavaScript?",
+      "options": [
+        "A function that returns another function",
+        "A function with access to variables from its outer scope",
+        "A way to close browser windows",
+        "A method to end program execution"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A closure is a function that has access to variables in its outer (enclosing) lexical scope, even after the outer function has returned.",
+      "difficulty": "medium",
+      "tags": ["javascript", "closures", "scope"]
+    }
+  ]
+}
