@@ -455,16 +455,22 @@ html.dark footer.bg-gray-900 {
 /* ---- Dark Mode Toggle Button ---- */
 #theme-toggle {
     cursor: pointer;
-    padding: 0.5rem;
     border-radius: 0.5rem;
     border: none;
     background: transparent;
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
     transition: all 0.3s ease;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    #theme-toggle {
+        width: 2.5rem;
+        height: 2.5rem;
+        justify-content: center;
+    }
 }
 
 #theme-toggle:hover {
@@ -472,8 +478,15 @@ html.dark footer.bg-gray-900 {
 }
 
 #theme-toggle i {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+@media (min-width: 768px) {
+    #theme-toggle i {
+        font-size: 1.25rem;
+    }
 }
 
 #theme-toggle:hover i {
