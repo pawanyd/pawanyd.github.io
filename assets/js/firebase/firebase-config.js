@@ -19,7 +19,7 @@
  */
 const firebaseConfig = {
   apiKey: "AIzaSyA_TQdS9vrDqqsi1YHa43hD1bZBxpZwQc8",
-  authDomain: "pawanyd.github.io",
+  authDomain: "pawan-profile.firebaseapp.com",
   projectId: "pawan-profile",
   storageBucket: "pawan-profile.firebasestorage.app",
   messagingSenderId: "643165373948",
