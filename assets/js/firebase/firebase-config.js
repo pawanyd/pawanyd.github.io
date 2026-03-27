@@ -67,3 +67,10 @@ window.firebaseDB = {
   init: initializeFirebase,
   getDB: () => db
 };
+
+// Auto-initialize Firebase when script loads
+if (typeof firebase !== 'undefined') {
+  initializeFirebase();
+} else {
+  console.error('Firebase SDK not loaded. Make sure Firebase scripts are loaded before firebase-config.js');
+}

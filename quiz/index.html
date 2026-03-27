@@ -6,18 +6,23 @@ description: Practice quiz questions for technical interviews - DSA, System Desi
 
 <link rel="stylesheet" href="{{ '/assets/css/quiz.css' | relative_url }}">
 
-<section class="bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 py-12 min-h-screen">
+<section class="bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-12 min-h-screen">
     <div class="max-w-6xl mx-auto px-4">
         
-        <!-- Header -->
-        <div class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                <i class="fas fa-graduation-cap text-blue-600 mr-3"></i>
-                Interview Preparation Quiz
-            </h1>
-            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                Practice and test your knowledge with curated quiz questions for technical interviews
-            </p>
+        <!-- Header with Auth Button -->
+        <div class="flex justify-between items-center mb-8">
+            <div class="text-center flex-1">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+                    <i class="fas fa-graduation-cap text-blue-600 mr-3"></i>
+                    Interview Preparation Quiz
+                </h1>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Practice and test your knowledge with curated quiz questions for technical interviews
+                </p>
+            </div>
+            <div id="auth-button" class="absolute top-4 right-4">
+                <!-- Auth button will be rendered here -->
+            </div>
         </div>
 
         <!-- Loading State -->
@@ -54,11 +59,13 @@ description: Practice quiz questions for technical interviews - DSA, System Desi
 <!-- Firebase SDK -->
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
 
 <!-- Quiz System Scripts -->
-<script src="{{ '/assets/js/firebase-config.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/quiz-system.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/quiz-ui.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/firebase/firebase-config.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/firebase/auth.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/quiz/quiz-system.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/quiz/quiz-ui.js' | relative_url }}"></script>
 
 <script>
 // Initialize quiz on page load

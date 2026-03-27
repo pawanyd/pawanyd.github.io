@@ -547,6 +547,11 @@ class QuizUI {
     const seconds = results.timeTaken % 60;
     const skippedCount = results.answers.filter(a => a.skipped).length;
     
+    // Save quiz attempt if user is authenticated
+    if (window.authManager && window.authManager.isAuthenticated()) {
+      this.saveQuizAttempt(results);
+    }
+    
     const quizInterface = document.getElementById('quiz-interface');
     quizInterface.innerHTML = `
       <div class="max-w-3xl mx-auto">
@@ -555,6 +560,22 @@ class QuizUI {
             ${results.percentage >= 80 ? '🎉' : results.percentage >= 60 ? '👍' : '📚'}
           </div>
           <h2 class="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">Quiz Complete!</h2>
+          
+          ${window.authManager && window.authManager.isAuthenticated() ? `
+            <div class="bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-700 rounded-lg p-3 mb-6">
+              <p class="text-sm text-green-800 dark:text-green-300">
+                <i class="fas fa-check-circle mr-1"></i>
+                Your progress has been saved!
+              </p>
+            </div>
+          ` : `
+            <div class="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-700 rounded-lg p-3 mb-6">
+              <p class="text-sm text-blue-800 dark:text-blue-300">
+                <i class="fas fa-info-circle mr-1"></i>
+                Sign in to save your progress and track your performance!
+              </p>
+            </div>
+          `}
           
           <div class="text-6xl font-bold mb-6">
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
@@ -592,6 +613,28 @@ class QuizUI {
         </div>
       </div>
     `;
+  }
+
+  /**
+   * Save quiz attempt to Firebase
+   */
+  async saveQuizAttempt(results) {
+    try {
+      const result = await window.authManager.saveQuizAttempt({
+        category: this.quizSystem.currentCategory,
+        score: results.score,
+        totalQuestions: results.totalQuestions,
+        percentage: results.percentage,
+        timeTaken: results.timeTaken,
+        answers: results.answers
+      });
+      
+      if (result.success) {
+        console.log('✅ Quiz attempt saved successfully');
+      }
+    } catch (error) {
+      console.error('Error saving quiz attempt:', error);
+    }
   }
 
   /**
