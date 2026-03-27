@@ -257,7 +257,7 @@ class QuizUI {
           
           <div class="space-y-3" id="options-container">
             ${this.currentQuestion.options.map((option, index) => `
-              <button onclick="quizUIInstance.selectAnswer(${index})" 
+              <button data-option-index="${index}"
                       class="option-btn w-full text-left p-4 border-2 border-gray-200 dark:border-gray-600 rounded-lg hover:border-blue-500 dark:hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-all duration-200 font-medium text-gray-700 dark:text-gray-200">
                 <span class="inline-block w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 text-center leading-8 mr-3 font-semibold">
                   ${String.fromCharCode(65 + index)}
@@ -286,17 +286,33 @@ class QuizUI {
             </button>
             <button id="submit-answer-btn" disabled 
                     class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg">
-              ${this.currentQuestion.questionNumber === this.currentQuestion.totalQuestions ? 'Submit Quiz' : 'Next Question'}
+              ${this.currentQuestion.questionNumber === this.currentQuestion.totalQuestions ? '<i class="fas fa-flag-checkered mr-2"></i>Finish Quiz' : 'Submit & Next'}
             </button>
           </div>
         </div>
       </div>
     `;
     
+    // Add event listeners for option buttons
+    setTimeout(() => {
+      const optionButtons = document.querySelectorAll('.option-btn');
+      optionButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const index = parseInt(btn.getAttribute('data-option-index'));
+          this.selectAnswer(index);
+        });
+      });
+    }, 0);
+    
     // Handle submit
     const submitBtn = document.getElementById('submit-answer-btn');
     if (submitBtn) {
-      submitBtn.addEventListener('click', () => this.submitAnswer());
+      submitBtn.addEventListener('click', (e) => {
+        // Only proceed if button is not disabled
+        if (!submitBtn.disabled) {
+          this.submitAnswer();
+        }
+      });
     }
     
     // Handle back button
@@ -389,31 +405,83 @@ class QuizUI {
   selectAnswer(index) {
     this.selectedAnswer = index;
     
+    console.log('Answer selected:', index); // Debug log
+    
     // Update UI
     const buttons = document.querySelectorAll('.option-btn');
     buttons.forEach((btn, i) => {
       if (i === index) {
-        btn.classList.add('border-blue-600', 'dark:border-blue-400', 'bg-blue-50', 'dark:bg-blue-900/50');
+        btn.classList.add('border-blue-600', 'dark:border-blue-400', 'bg-blue-50', 'dark:bg-blue-900/50', '!text-gray-900', 'dark:!text-gray-100');
         btn.classList.remove('border-gray-200', 'dark:border-gray-600');
       } else {
-        btn.classList.remove('border-blue-600', 'dark:border-blue-400', 'bg-blue-50', 'dark:bg-blue-900/50');
+        btn.classList.remove('border-blue-600', 'dark:border-blue-400', 'bg-blue-50', 'dark:bg-blue-900/50', '!text-gray-900', 'dark:!text-gray-100');
         btn.classList.add('border-gray-200', 'dark:border-gray-600');
       }
     });
     
     // Enable submit button
-    document.getElementById('submit-answer-btn').disabled = false;
+    const submitBtn = document.getElementById('submit-answer-btn');
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      console.log('Submit button enabled'); // Debug log
+    }
   }
 
   /**
    * Submit answer
    */
   submitAnswer() {
-    // Check if an answer is selected
-    if (this.selectedAnswer === null) return;
+    console.log('Submit called, selectedAnswer:', this.selectedAnswer); // Debug log
     
-    const result = this.quizSystem.submitAnswer(this.selectedAnswer);
-    this.showAnswerFeedback(result);
+    // Check if an answer is selected
+    if (this.selectedAnswer === null) {
+      // Shake animation to indicate selection is required
+      this.shakeOptions();
+      return;
+    }
+    
+    // Store the selected answer before moving forward
+    const answerToSubmit = this.selectedAnswer;
+    
+    // Submit answer to quiz system
+    this.quizSystem.submitAnswer(answerToSubmit);
+    
+    // Move to next question or finish quiz
+    if (this.quizSystem.nextQuestion()) {
+      this.showQuestion();
+    } else {
+      this.finishQuiz();
+    }
+  }
+
+  /**
+   * Shake options to indicate selection is required
+   */
+  shakeOptions() {
+    const optionsContainer = document.getElementById('options-container');
+    if (optionsContainer) {
+      optionsContainer.classList.add('animate-shake');
+      
+      // Show message
+      const existingMsg = document.getElementById('selection-required-msg');
+      if (!existingMsg) {
+        const message = document.createElement('div');
+        message.id = 'selection-required-msg';
+        message.className = 'mt-4 p-3 bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-700 rounded-lg text-red-700 dark:text-red-300 text-center font-semibold';
+        message.innerHTML = '<i class="fas fa-exclamation-triangle mr-2"></i>Please select an answer before submitting!';
+        optionsContainer.parentElement.appendChild(message);
+        
+        // Remove message after 3 seconds
+        setTimeout(() => {
+          message.remove();
+        }, 3000);
+      }
+      
+      // Remove shake animation after it completes
+      setTimeout(() => {
+        optionsContainer.classList.remove('animate-shake');
+      }, 500);
+    }
   }
 
   /**
@@ -465,64 +533,7 @@ class QuizUI {
     }
   }
 
-  /**
-   * Show answer feedback
-   */
-  showAnswerFeedback(result) {
-    const buttons = document.querySelectorAll('.option-btn');
-    
-    buttons.forEach((btn, index) => {
-      btn.disabled = true;
-      btn.classList.remove('hover:border-blue-500', 'dark:hover:border-blue-400', 'hover:bg-blue-50', 'dark:hover:bg-blue-900/30');
-      
-      if (index === result.correctAnswer) {
-        btn.classList.add('border-green-500', 'dark:border-green-400', 'bg-green-50', 'dark:bg-green-900/30');
-        btn.innerHTML += ' <i class="fas fa-check-circle text-green-600 dark:text-green-400 float-right mt-1"></i>';
-      } else if (index === this.selectedAnswer && !result.isCorrect) {
-        btn.classList.add('border-red-500', 'dark:border-red-400', 'bg-red-50', 'dark:bg-red-900/30');
-        btn.innerHTML += ' <i class="fas fa-times-circle text-red-600 dark:text-red-400 float-right mt-1"></i>';
-      }
-    });
-    
-    // Show explanation
-    const explanationDiv = document.createElement('div');
-    explanationDiv.className = `mt-6 p-4 rounded-lg ${result.isCorrect ? 'bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-700' : 'bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-700'}`;
-    explanationDiv.innerHTML = `
-      <div class="flex items-start gap-3">
-        <i class="fas ${result.isCorrect ? 'fa-check-circle text-green-600 dark:text-green-400' : 'fa-info-circle text-red-600 dark:text-red-400'} text-2xl"></i>
-        <div>
-          <h4 class="font-semibold ${result.isCorrect ? 'text-green-800 dark:text-green-300' : 'text-red-800 dark:text-red-300'} mb-2">
-            ${result.isCorrect ? 'Correct!' : 'Incorrect'}
-          </h4>
-          <p class="text-gray-700 dark:text-gray-300">${result.explanation}</p>
-        </div>
-      </div>
-    `;
-    
-    const questionCard = document.querySelector('.bg-white.dark\\:bg-gray-800.rounded-2xl');
-    if (questionCard) {
-      questionCard.appendChild(explanationDiv);
-    }
-    
-    // Hide skip button, disable back button
-    const skipBtn = document.getElementById('skip-btn');
-    const backBtn = document.getElementById('back-btn');
-    if (skipBtn) skipBtn.style.display = 'none';
-    if (backBtn) backBtn.disabled = true;
-    
-    // Change submit button to next/finish
-    const submitBtn = document.getElementById('submit-answer-btn');
-    const isLastQuestion = this.quizSystem.currentQuestionIndex >= this.quizSystem.questions.length - 1;
-    submitBtn.innerHTML = isLastQuestion ? '<i class="fas fa-flag-checkered mr-2"></i>Finish Quiz' : 'Next Question <i class="fas fa-arrow-right ml-2"></i>';
-    submitBtn.disabled = false;
-    submitBtn.onclick = () => {
-      if (this.quizSystem.nextQuestion()) {
-        this.showQuestion();
-      } else {
-        this.finishQuiz();
-      }
-    };
-  }
+
 
   /**
    * Show quiz results
@@ -606,7 +617,6 @@ class QuizUI {
         
         <div class="space-y-4 max-h-[60vh] overflow-y-auto">
           ${results.answers.map((answer, index) => {
-            const question = this.quizSystem.questions[index];
             const borderColor = answer.skipped ? 'border-yellow-200 dark:border-yellow-700 bg-yellow-50 dark:bg-yellow-900/20' : 
                                answer.isCorrect ? 'border-green-200 dark:border-green-700 bg-green-50 dark:bg-green-900/20' : 
                                'border-red-200 dark:border-red-700 bg-red-50 dark:bg-red-900/20';
@@ -629,12 +639,12 @@ class QuizUI {
                     </p>
                   ` : `
                     <p class="text-sm text-gray-700 dark:text-gray-300 mb-1">
-                      <span class="font-semibold">Your answer:</span> ${question?.options[answer.selectedOption] || 'N/A'}
+                      <span class="font-semibold">Your answer:</span> ${answer.options[answer.selectedOption]}
                     </p>
                   `}
                   ${!answer.isCorrect ? `
                     <p class="text-sm text-gray-700 dark:text-gray-300 mb-2">
-                      <span class="font-semibold">Correct answer:</span> ${question?.options[answer.correctAnswer] || 'N/A'}
+                      <span class="font-semibold">Correct answer:</span> ${answer.options[answer.correctAnswer]}
                     </p>
                   ` : ''}
                   <p class="text-sm text-gray-600 dark:text-gray-400 italic">${answer.explanation}</p>

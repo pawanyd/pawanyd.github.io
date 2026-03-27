@@ -70,7 +70,8 @@ class QuizSystem {
         query = query.where('difficulty', '==', difficulty);
       }
       
-      const snapshot = await query.limit(limit).get();
+      // Fetch more questions than needed for better randomization
+      const snapshot = await query.get();
       
       const questions = [];
       snapshot.forEach(doc => {
@@ -80,8 +81,11 @@ class QuizSystem {
         });
       });
       
-      // Shuffle questions for randomness
-      return this.shuffleArray(questions);
+      // Shuffle all questions first
+      const shuffled = this.shuffleArray(questions);
+      
+      // Then take only the requested limit
+      return shuffled.slice(0, Math.min(limit, shuffled.length));
     } catch (error) {
       console.error('Error loading questions:', error);
       throw error;
@@ -149,6 +153,7 @@ class QuizSystem {
     this.answers.push({
       questionId: currentQuestion.id,
       question: currentQuestion.question,
+      options: currentQuestion.options, // Store options for detailed results
       selectedOption,
       correctAnswer: currentQuestion.correctAnswer,
       isCorrect,
@@ -172,6 +177,7 @@ class QuizSystem {
     this.answers.push({
       questionId: currentQuestion.id,
       question: currentQuestion.question,
+      options: currentQuestion.options, // Store options for detailed results
       selectedOption: null,
       correctAnswer: currentQuestion.correctAnswer,
       isCorrect: false,
