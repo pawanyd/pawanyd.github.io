@@ -1,0 +1,77 @@
+<svg role="img" aria-labelledby="hero-title hero-desc" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <title id="hero-title">Vector Embeddings Hero Image</title>
+  <desc id="hero-desc">Hero image showing transformation of text and images into vector embeddings in a high-dimensional space</desc>
+  
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+    <marker id="arrow-white" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#ffffff"/>
+    </marker>
+  </defs>
+  
+  <rect width="1200" height="600" fill="url(#bg-gradient)"/>
+  
+  <!-- Title -->
+  <text x="600" y="80" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#ffffff" text-anchor="middle">Vector Embeddings</text>
+  <text x="600" y="130" font-family="Arial, sans-serif" font-size="24" fill="#e0e7ff" text-anchor="middle">Converting Meaning into Mathematics</text>
+  
+  <!-- Left side: Real-world data -->
+  <g transform="translate(100, 220)">
+    <text x="100" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">Real-World Data</text>
+    
+    <!-- Text example -->
+    <rect x="10" y="20" width="180" height="60" fill="#ffffff" fill-opacity="0.2" stroke="#ffffff" stroke-width="2" rx="8"/>
+    <text x="100" y="45" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">"comfortable</text>
+    <text x="100" y="65" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">running shoes"</text>
+    
+    <!-- Image example -->
+    <rect x="10" y="100" width="180" height="60" fill="#ffffff" fill-opacity="0.2" stroke="#ffffff" stroke-width="2" rx="8"/>
+    <text x="100" y="135" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">🖼️ Product Image</text>
+    
+    <!-- Audio example -->
+    <rect x="10" y="180" width="180" height="60" fill="#ffffff" fill-opacity="0.2" stroke="#ffffff" stroke-width="2" rx="8"/>
+    <text x="100" y="215" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">🎵 Audio Clip</text>
+  </g>
+  
+  <!-- Arrows -->
+  <line x1="320" y1="300" x2="480" y2="300" stroke="#ffffff" stroke-width="3" marker-end="url(#arrow-white)"/>
+  <text x="400" y="290" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">Transform</text>
+  
+  <!-- Center: Neural Network -->
+  <g transform="translate(480, 220)">
+    <circle cx="100" cy="80" r="80" fill="#ffffff" fill-opacity="0.2" stroke="#ffffff" stroke-width="3"/>
+    <text x="100" y="75" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">Neural</text>
+    <text x="100" y="95" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">Network</text>
+  </g>
+  
+  <!-- Arrows -->
+  <line x1="680" y1="300" x2="840" y2="300" stroke="#ffffff" stroke-width="3" marker-end="url(#arrow-white)"/>
+  <text x="760" y="290" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">Encode</text>
+  
+  <!-- Right side: Vector embeddings -->
+  <g transform="translate(840, 220)">
+    <text x="130" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">Vector Embeddings</text>
+    
+    <!-- Vector 1 -->
+    <rect x="10" y="20" width="240" height="60" fill="#10b981" fill-opacity="0.3" stroke="#10b981" stroke-width="2" rx="8"/>
+    <text x="130" y="45" font-family="monospace" font-size="12" fill="#ffffff" text-anchor="middle">[0.23, -0.45, 0.89, 0.12,</text>
+    <text x="130" y="65" font-family="monospace" font-size="12" fill="#ffffff" text-anchor="middle">-0.67, 0.34, ...]</text>
+    
+    <!-- Vector 2 -->
+    <rect x="10" y="100" width="240" height="60" fill="#f59e0b" fill-opacity="0.3" stroke="#f59e0b" stroke-width="2" rx="8"/>
+    <text x="130" y="125" font-family="monospace" font-size="12" fill="#ffffff" text-anchor="middle">[0.78, 0.12, -0.34, 0.56,</text>
+    <text x="130" y="145" font-family="monospace" font-size="12" fill="#ffffff" text-anchor="middle">0.23, -0.89, ...]</text>
+    
+    <!-- Vector 3 -->
+    <rect x="10" y="180" width="240" height="60" fill="#ef4444" fill-opacity="0.3" stroke="#ef4444" stroke-width="2" rx="8"/>
+    <text x="130" y="205" font-family="monospace" font-size="12" fill="#ffffff" text-anchor="middle">[-0.45, 0.67, 0.23, -0.12,</text>
+    <text x="130" y="225" font-family="monospace" font-size="12" fill="#ffffff" text-anchor="middle">0.89, 0.34, ...]</text>
+  </g>
+  
+  <!-- Bottom tagline -->
+  <text x="600" y="540" font-family="Arial, sans-serif" font-size="20" fill="#e0e7ff" text-anchor="middle">Powering Search, Recommendations, and AI at Scale</text>
+</svg>
