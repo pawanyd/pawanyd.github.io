@@ -41,15 +41,15 @@ That's the entire foundation of how AI understands meaning. Convert things to ve
   <title id="vector-basics-title">Vector Basics in 2D and 3D Space</title>
   <desc id="vector-basics-desc">Diagram showing how vectors represent points in 2D and 3D coordinate systems with example coordinates</desc>
   
-  <!-- Background -->
-  <rect width="1200" height="600" fill="#f8fafc"/>
+  <!-- Background - transparent for dark mode compatibility -->
+  <rect width="1200" height="600" fill="transparent"/>
   
   <!-- Title -->
-  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e293b" text-anchor="middle">Understanding Vectors: From 2D to High Dimensions</text>
+  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#64748b" text-anchor="middle">Understanding Vectors: From 2D to High Dimensions</text>
   
   <!-- 2D Vector Section -->
   <g transform="translate(150, 100)">
-    <text x="150" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2563eb" text-anchor="middle">2D Vector Space</text>
+    <text x="150" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#3b82f6" text-anchor="middle">2D Vector Space</text>
     
     <!-- Axes -->
     <line x1="0" y1="300" x2="300" y2="300" stroke="#64748b" stroke-width="2"/>
@@ -60,18 +60,18 @@ That's the entire foundation of how AI understands meaning. Convert things to ve
     <text x="-10" y="-10" font-family="Arial, sans-serif" font-size="14" fill="#64748b">Y</text>
     
     <!-- Grid lines -->
-    <line x1="100" y1="300" x2="100" y2="295" stroke="#cbd5e1" stroke-width="1"/>
-    <line x1="200" y1="300" x2="200" y2="295" stroke="#cbd5e1" stroke-width="1"/>
-    <line x1="0" y1="200" x2="5" y2="200" stroke="#cbd5e1" stroke-width="1"/>
-    <line x1="0" y1="100" x2="5" y2="100" stroke="#cbd5e1" stroke-width="1"/>
+    <line x1="100" y1="300" x2="100" y2="295" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="200" y1="300" x2="200" y2="295" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="0" y1="200" x2="5" y2="200" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="0" y1="100" x2="5" y2="100" stroke="#94a3b8" stroke-width="1"/>
     
     <!-- Vector arrow -->
     <defs>
       <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-        <polygon points="0 0, 10 3, 0 6" fill="#2563eb"/>
+        <polygon points="0 0, 10 3, 0 6" fill="#3b82f6"/>
       </marker>
     </defs>
-    <line x1="0" y1="300" x2="200" y2="100" stroke="#2563eb" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <line x1="0" y1="300" x2="200" y2="100" stroke="#3b82f6" stroke-width="3" marker-end="url(#arrowhead)"/>
     
     <!-- Point -->
     <circle cx="200" cy="100" r="6" fill="#ef4444"/>
@@ -80,8 +80,8 @@ That's the entire foundation of how AI understands meaning. Convert things to ve
     <text x="220" y="95" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ef4444">[3, 5]</text>
     
     <!-- Dashed lines to axes -->
-    <line x1="200" y1="100" x2="200" y2="300" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="5,5"/>
-    <line x1="200" y1="100" x2="0" y2="100" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="200" y1="100" x2="200" y2="300" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="200" y1="100" x2="0" y2="100" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5,5"/>
     
     <!-- Axis values -->
     <text x="200" y="320" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">3</text>
@@ -90,7 +90,7 @@ That's the entire foundation of how AI understands meaning. Convert things to ve
   
   <!-- 3D Vector Section -->
   <g transform="translate(650, 100)">
-    <text x="150" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#7c3aed" text-anchor="middle">3D Vector Space</text>
+    <text x="150" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#8b5cf6" text-anchor="middle">3D Vector Space</text>
     
     <!-- 3D axes (isometric view) -->
     <line x1="150" y1="300" x2="300" y2="300" stroke="#64748b" stroke-width="2"/>
@@ -103,10 +103,10 @@ That's the entire foundation of how AI understands meaning. Convert things to ve
     <text x="35" y="245" font-family="Arial, sans-serif" font-size="14" fill="#64748b">Z</text>
     
     <!-- 3D Vector -->
-    <line x1="150" y1="300" x2="250" y2="150" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrowhead3d)"/>
+    <line x1="150" y1="300" x2="250" y2="150" stroke="#8b5cf6" stroke-width="3" marker-end="url(#arrowhead3d)"/>
     <defs>
       <marker id="arrowhead3d" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-        <polygon points="0 0, 10 3, 0 6" fill="#7c3aed"/>
+        <polygon points="0 0, 10 3, 0 6" fill="#8b5cf6"/>
       </marker>
     </defs>
     
@@ -117,15 +117,15 @@ That's the entire foundation of how AI understands meaning. Convert things to ve
     <text x="270" y="145" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ef4444">[4, 6, 3]</text>
     
     <!-- Helper lines -->
-    <line x1="250" y1="150" x2="250" y2="300" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="5,5"/>
-    <line x1="250" y1="300" x2="150" y2="300" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="250" y1="150" x2="250" y2="300" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="250" y1="300" x2="150" y2="300" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5,5"/>
   </g>
   
   <!-- High Dimensional Note -->
   <g transform="translate(100, 480)">
-    <rect x="0" y="0" width="1000" height="80" fill="#eff6ff" stroke="#2563eb" stroke-width="2" rx="8"/>
-    <text x="500" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">High-Dimensional Vectors Work the Same Way</text>
-    <text x="500" y="55" font-family="Arial, sans-serif" font-size="14" fill="#475569" text-anchor="middle">Vector [0.23, -0.45, 0.89, ..., 0.12] with 1,536 dimensions follows identical mathematical principles</text>
+    <rect x="0" y="0" width="1000" height="80" fill="#64748b" fill-opacity="0.1" stroke="#3b82f6" stroke-width="2" rx="8"/>
+    <text x="500" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#64748b" text-anchor="middle">High-Dimensional Vectors Work the Same Way</text>
+    <text x="500" y="55" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">Vector [0.23, -0.45, 0.89, ..., 0.12] with 1,536 dimensions follows identical mathematical principles</text>
   </g>
 </svg>
 
@@ -150,53 +150,53 @@ That's what embeddings do—they place similar things close together and dissimi
   <title id="embedding-concept-title">Vector Embeddings Concept</title>
   <desc id="embedding-concept-desc">Diagram showing how similar words are placed close together in vector space while dissimilar words are far apart</desc>
   
-  <!-- Background -->
-  <rect width="1200" height="600" fill="#f8fafc"/>
+  <!-- Background - transparent for dark mode -->
+  <rect width="1200" height="600" fill="transparent"/>
   
   <!-- Title -->
-  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e293b" text-anchor="middle">Vector Embeddings: Capturing Meaning in Numbers</text>
+  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#64748b" text-anchor="middle">Vector Embeddings: Capturing Meaning in Numbers</text>
   
   <!-- 2D projection of embedding space -->
   <g transform="translate(100, 100)">
     <!-- Axes -->
-    <line x1="0" y1="400" x2="1000" y2="400" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="5,5"/>
-    <line x1="500" y1="0" x2="500" y2="450" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="0" y1="400" x2="1000" y2="400" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="500" y1="0" x2="500" y2="450" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5,5"/>
     
     <!-- Royalty cluster -->
-    <circle cx="350" cy="200" r="80" fill="#dbeafe" opacity="0.5"/>
-    <text x="350" y="150" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2563eb" text-anchor="middle">Royalty Cluster</text>
+    <circle cx="350" cy="200" r="80" fill="#3b82f6" opacity="0.15" stroke="#3b82f6" stroke-width="2"/>
+    <text x="350" y="150" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#3b82f6" text-anchor="middle">Royalty Cluster</text>
     
-    <circle cx="330" cy="190" r="8" fill="#2563eb"/>
-    <text x="330" y="175" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle">King</text>
+    <circle cx="330" cy="190" r="8" fill="#3b82f6"/>
+    <text x="330" y="175" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#64748b" text-anchor="middle">King</text>
     
-    <circle cx="370" cy="210" r="8" fill="#2563eb"/>
-    <text x="370" y="235" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle">Queen</text>
+    <circle cx="370" cy="210" r="8" fill="#3b82f6"/>
+    <text x="370" y="235" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#64748b" text-anchor="middle">Queen</text>
     
-    <circle cx="345" cy="225" r="8" fill="#2563eb"/>
-    <text x="345" y="250" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle">Prince</text>
+    <circle cx="345" cy="225" r="8" fill="#3b82f6"/>
+    <text x="345" y="250" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#64748b" text-anchor="middle">Prince</text>
     
     <!-- Food cluster -->
-    <circle cx="750" cy="300" r="80" fill="#fef3c7" opacity="0.5"/>
+    <circle cx="750" cy="300" r="80" fill="#f59e0b" opacity="0.15" stroke="#f59e0b" stroke-width="2"/>
     <text x="750" y="250" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f59e0b" text-anchor="middle">Food Cluster</text>
     
     <circle cx="730" cy="290" r="8" fill="#f59e0b"/>
-    <text x="730" y="275" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle">Pizza</text>
+    <text x="730" y="275" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#64748b" text-anchor="middle">Pizza</text>
     
     <circle cx="770" cy="310" r="8" fill="#f59e0b"/>
-    <text x="770" y="335" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle">Burger</text>
+    <text x="770" y="335" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#64748b" text-anchor="middle">Burger</text>
     
     <circle cx="745" cy="325" r="8" fill="#f59e0b"/>
-    <text x="745" y="350" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle">Pasta</text>
+    <text x="745" y="350" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#64748b" text-anchor="middle">Pasta</text>
     
     <!-- Sports cluster -->
-    <circle cx="650" cy="150" r="70" fill="#dcfce7" opacity="0.5"/>
+    <circle cx="650" cy="150" r="70" fill="#10b981" opacity="0.15" stroke="#10b981" stroke-width="2"/>
     <text x="650" y="110" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#10b981" text-anchor="middle">Sports Cluster</text>
     
     <circle cx="640" cy="140" r="8" fill="#10b981"/>
-    <text x="640" y="125" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle">Soccer</text>
+    <text x="640" y="125" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#64748b" text-anchor="middle">Soccer</text>
     
     <circle cx="660" cy="160" r="8" fill="#10b981"/>
-    <text x="660" y="185" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle">Basketball</text>
+    <text x="660" y="185" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#64748b" text-anchor="middle">Basketball</text>
     
     <!-- Distance annotation -->
     <line x1="370" y1="210" x2="730" y2="290" stroke="#ef4444" stroke-width="2" stroke-dasharray="8,4"/>
@@ -209,9 +209,9 @@ That's what embeddings do—they place similar things close together and dissimi
   
   <!-- Key Insight Box -->
   <g transform="translate(100, 520)">
-    <rect x="0" y="0" width="1000" height="60" fill="#fef2f2" stroke="#ef4444" stroke-width="2" rx="8"/>
-    <text x="500" y="25" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle">Key Insight: Similar concepts cluster together in vector space</text>
-    <text x="500" y="45" font-family="Arial, sans-serif" font-size="14" fill="#475569" text-anchor="middle">Distance between vectors = Semantic similarity between concepts</text>
+    <rect x="0" y="0" width="1000" height="60" fill="#ef4444" fill-opacity="0.1" stroke="#ef4444" stroke-width="2" rx="8"/>
+    <text x="500" y="25" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#64748b" text-anchor="middle">Key Insight: Similar concepts cluster together in vector space</text>
+    <text x="500" y="45" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">Distance between vectors = Semantic similarity between concepts</text>
   </g>
 </svg>
 
@@ -246,30 +246,30 @@ The result? Dense vectors (typically 128 to 1,536 dimensions) where every dimens
   <desc id="encoding-comparison-desc">Comparison showing the difference between sparse one-hot encoding and dense learned embeddings with their characteristics</desc>
   
   <!-- Background -->
-  <rect width="1200" height="700" fill="#f8fafc"/>
+  <rect width="1200" height="700" fill="transparent"/>
   
   <!-- Title -->
-  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e293b" text-anchor="middle">One-Hot Encoding vs Learned Embeddings</text>
+  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#64748b" text-anchor="middle">One-Hot Encoding vs Learned Embeddings</text>
   
   <!-- One-Hot Encoding Section -->
   <g transform="translate(100, 100)">
-    <rect x="0" y="0" width="450" height="500" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" rx="8"/>
+    <rect x="0" y="0" width="450" height="500" fill="transparent" stroke="#94a3b8" stroke-width="2" rx="8"/>
     
     <text x="225" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ef4444" text-anchor="middle">One-Hot Encoding</text>
     <text x="225" y="55" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">(The Old Way)</text>
     
     <!-- Example vectors -->
-    <text x="30" y="100" font-family="monospace" font-size="14" fill="#1e293b" font-weight="bold">dog:</text>
+    <text x="30" y="100" font-family="monospace" font-size="14" fill="#64748b" font-weight="bold">dog:</text>
     <text x="30" y="125" font-family="monospace" font-size="13" fill="#64748b">[0, 0, 0, 1, 0, 0, 0, 0, 0, 0, ...]</text>
     
-    <text x="30" y="165" font-family="monospace" font-size="14" fill="#1e293b" font-weight="bold">cat:</text>
+    <text x="30" y="165" font-family="monospace" font-size="14" fill="#64748b" font-weight="bold">cat:</text>
     <text x="30" y="190" font-family="monospace" font-size="13" fill="#64748b">[0, 0, 0, 0, 1, 0, 0, 0, 0, 0, ...]</text>
     
-    <text x="30" y="230" font-family="monospace" font-size="14" fill="#1e293b" font-weight="bold">pizza:</text>
+    <text x="30" y="230" font-family="monospace" font-size="14" fill="#64748b" font-weight="bold">pizza:</text>
     <text x="30" y="255" font-family="monospace" font-size="13" fill="#64748b">[0, 0, 0, 0, 0, 0, 0, 1, 0, 0, ...]</text>
     
     <!-- Characteristics -->
-    <text x="225" y="300" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle">Characteristics:</text>
+    <text x="225" y="300" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#64748b" text-anchor="middle">Characteristics:</text>
     
     <text x="40" y="330" font-family="Arial, sans-serif" font-size="14" fill="#ef4444">✗ Sparse (mostly zeros)</text>
     <text x="40" y="355" font-family="Arial, sans-serif" font-size="14" fill="#ef4444">✗ Huge dimensions (vocab size)</text>
@@ -282,23 +282,23 @@ The result? Dense vectors (typically 128 to 1,536 dimensions) where every dimens
   
   <!-- Learned Embeddings Section -->
   <g transform="translate(650, 100)">
-    <rect x="0" y="0" width="450" height="500" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" rx="8"/>
+    <rect x="0" y="0" width="450" height="500" fill="transparent" stroke="#94a3b8" stroke-width="2" rx="8"/>
     
     <text x="225" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#10b981" text-anchor="middle">Learned Embeddings</text>
     <text x="225" y="55" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">(The Modern Way)</text>
     
     <!-- Example vectors -->
-    <text x="30" y="100" font-family="monospace" font-size="14" fill="#1e293b" font-weight="bold">dog:</text>
+    <text x="30" y="100" font-family="monospace" font-size="14" fill="#64748b" font-weight="bold">dog:</text>
     <text x="30" y="125" font-family="monospace" font-size="13" fill="#64748b">[0.23, -0.45, 0.89, 0.12, -0.67, ...]</text>
     
-    <text x="30" y="165" font-family="monospace" font-size="14" fill="#1e293b" font-weight="bold">cat:</text>
+    <text x="30" y="165" font-family="monospace" font-size="14" fill="#64748b" font-weight="bold">cat:</text>
     <text x="30" y="190" font-family="monospace" font-size="13" fill="#64748b">[0.21, -0.43, 0.91, 0.15, -0.65, ...]</text>
     
-    <text x="30" y="230" font-family="monospace" font-size="14" fill="#1e293b" font-weight="bold">pizza:</text>
+    <text x="30" y="230" font-family="monospace" font-size="14" fill="#64748b" font-weight="bold">pizza:</text>
     <text x="30" y="255" font-family="monospace" font-size="13" fill="#64748b">[-0.78, 0.34, -0.12, 0.89, 0.23, ...]</text>
     
     <!-- Characteristics -->
-    <text x="225" y="300" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle">Characteristics:</text>
+    <text x="225" y="300" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#64748b" text-anchor="middle">Characteristics:</text>
     
     <text x="40" y="330" font-family="Arial, sans-serif" font-size="14" fill="#10b981">✓ Dense (all values meaningful)</text>
     <text x="40" y="355" font-family="Arial, sans-serif" font-size="14" fill="#10b981">✓ Compact (128-1536 dimensions)</text>
@@ -311,8 +311,8 @@ The result? Dense vectors (typically 128 to 1,536 dimensions) where every dimens
   
   <!-- Bottom note -->
   <g transform="translate(100, 630)">
-    <rect x="0" y="0" width="1000" height="50" fill="#f0fdf4" stroke="#10b981" stroke-width="2" rx="8"/>
-    <text x="500" y="32" font-family="Arial, sans-serif" font-size="15" fill="#1e293b" text-anchor="middle">Learned embeddings compress meaning into dense vectors where distance = similarity</text>
+    <rect x="0" y="0" width="1000" height="50" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="2" rx="8"/>
+    <text x="500" y="32" font-family="Arial, sans-serif" font-size="15" fill="#64748b" text-anchor="middle">Learned embeddings compress meaning into dense vectors where distance = similarity</text>
   </g>
 </svg>
 
@@ -344,16 +344,16 @@ The vectors have learned the underlying structure of language. They understand r
   <desc id="desc-word-math">Diagram illustrating how vector arithmetic captures semantic relationships like king minus man plus woman equals queen</desc>
   
   <!-- Background -->
-  <rect width="1200" height="500" fill="#f8fafc"/>
+  <rect width="1200" height="500" fill="transparent"/>
   
   <!-- Title -->
-  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e293b" text-anchor="middle">Vector Arithmetic: Math with Meaning</text>
+  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#64748b" text-anchor="middle">Vector Arithmetic: Math with Meaning</text>
   
   <!-- Main equation -->
   <g transform="translate(200, 120)">
     <!-- King vector -->
-    <rect x="0" y="0" width="120" height="80" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="8"/>
-    <text x="60" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle">King</text>
+    <rect x="0" y="0" width="120" height="80" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="2" rx="8"/>
+    <text x="60" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#64748b" text-anchor="middle">King</text>
     <text x="60" y="55" font-family="monospace" font-size="11" fill="#64748b" text-anchor="middle">[0.8, 0.9, ...]</text>
     <text x="60" y="70" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">royalty + male</text>
     
@@ -361,8 +361,8 @@ The vectors have learned the underlying structure of language. They understand r
     <text x="160" y="50" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#ef4444">−</text>
     
     <!-- Man vector -->
-    <rect x="200" y="0" width="120" height="80" fill="#fee2e2" stroke="#ef4444" stroke-width="2" rx="8"/>
-    <text x="260" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle">Man</text>
+    <rect x="200" y="0" width="120" height="80" fill="#ef4444" fill-opacity="0.1" stroke="#ef4444" stroke-width="2" rx="8"/>
+    <text x="260" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#64748b" text-anchor="middle">Man</text>
     <text x="260" y="55" font-family="monospace" font-size="11" fill="#64748b" text-anchor="middle">[0.1, 0.9, ...]</text>
     <text x="260" y="70" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">male</text>
     
@@ -370,38 +370,38 @@ The vectors have learned the underlying structure of language. They understand r
     <text x="360" y="50" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#10b981">+</text>
     
     <!-- Woman vector -->
-    <rect x="400" y="0" width="120" height="80" fill="#dcfce7" stroke="#10b981" stroke-width="2" rx="8"/>
-    <text x="460" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle">Woman</text>
+    <rect x="400" y="0" width="120" height="80" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="2" rx="8"/>
+    <text x="460" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#64748b" text-anchor="middle">Woman</text>
     <text x="460" y="55" font-family="monospace" font-size="11" fill="#64748b" text-anchor="middle">[0.1, -0.9, ...]</text>
     <text x="460" y="70" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">female</text>
     
     <!-- Equals sign -->
-    <text x="560" y="50" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#7c3aed">≈</text>
+    <text x="560" y="50" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#8b5cf6">≈</text>
     
     <!-- Queen vector -->
-    <rect x="600" y="0" width="120" height="80" fill="#f3e8ff" stroke="#7c3aed" stroke-width="2" rx="8"/>
-    <text x="660" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle">Queen</text>
+    <rect x="600" y="0" width="120" height="80" fill="#8b5cf6" fill-opacity="0.1" stroke="#8b5cf6" stroke-width="2" rx="8"/>
+    <text x="660" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#64748b" text-anchor="middle">Queen</text>
     <text x="660" y="55" font-family="monospace" font-size="11" fill="#64748b" text-anchor="middle">[0.8, -0.9, ...]</text>
     <text x="660" y="70" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">royalty + female</text>
   </g>
   
   <!-- Explanation -->
   <g transform="translate(150, 240)">
-    <text x="400" y="0" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2563eb" text-anchor="middle">How It Works:</text>
+    <text x="400" y="0" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#3b82f6" text-anchor="middle">How It Works:</text>
     
-    <text x="50" y="35" font-family="Arial, sans-serif" font-size="14" fill="#1e293b">1. Start with "King" vector (contains royalty + male concepts)</text>
-    <text x="50" y="60" font-family="Arial, sans-serif" font-size="14" fill="#1e293b">2. Subtract "Man" vector (removes male concept)</text>
-    <text x="50" y="85" font-family="Arial, sans-serif" font-size="14" fill="#1e293b">3. Add "Woman" vector (adds female concept)</text>
-    <text x="50" y="110" font-family="Arial, sans-serif" font-size="14" fill="#1e293b">4. Result is closest to "Queen" vector (royalty + female)</text>
+    <text x="50" y="35" font-family="Arial, sans-serif" font-size="14" fill="#64748b">1. Start with "King" vector (contains royalty + male concepts)</text>
+    <text x="50" y="60" font-family="Arial, sans-serif" font-size="14" fill="#64748b">2. Subtract "Man" vector (removes male concept)</text>
+    <text x="50" y="85" font-family="Arial, sans-serif" font-size="14" fill="#64748b">3. Add "Woman" vector (adds female concept)</text>
+    <text x="50" y="110" font-family="Arial, sans-serif" font-size="14" fill="#64748b">4. Result is closest to "Queen" vector (royalty + female)</text>
   </g>
   
   <!-- More examples -->
   <g transform="translate(150, 380)">
-    <rect x="0" y="0" width="900" height="90" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/>
-    <text x="450" y="30" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle">More Examples of Vector Arithmetic:</text>
+    <rect x="0" y="0" width="900" height="90" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="8"/>
+    <text x="450" y="30" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#64748b" text-anchor="middle">More Examples of Vector Arithmetic:</text>
     
-    <text x="450" y="55" font-family="Arial, sans-serif" font-size="14" fill="#475569" text-anchor="middle">Paris − France + Italy ≈ Rome  |  Walking − Walk + Swim ≈ Swimming</text>
-    <text x="450" y="75" font-family="Arial, sans-serif" font-size="14" fill="#475569" text-anchor="middle">iPhone − Apple + Samsung ≈ Galaxy  |  Windows − Microsoft + Apple ≈ macOS</text>
+    <text x="450" y="55" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">Paris − France + Italy ≈ Rome  |  Walking − Walk + Swim ≈ Swimming</text>
+    <text x="450" y="75" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">iPhone − Apple + Samsung ≈ Galaxy  |  Windows − Microsoft + Apple ≈ macOS</text>
   </g>
 </svg>
 
@@ -476,24 +476,24 @@ Fast to compute, but sensitive to vector magnitude. Often used when vectors are 
   <desc id="similarity-metrics-desc">Visual comparison of cosine similarity, euclidean distance, and dot product methods for measuring vector similarity</desc>
   
   <!-- Background -->
-  <rect width="1200" height="650" fill="#f8fafc"/>
+  <rect width="1200" height="650" fill="transparent"/>
   
   <!-- Title -->
-  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e293b" text-anchor="middle">Measuring Vector Similarity: Three Approaches</text>
+  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#64748b" text-anchor="middle">Measuring Vector Similarity: Three Approaches</text>
   
   <!-- Cosine Similarity -->
   <g transform="translate(100, 100)">
-    <rect x="0" y="0" width="320" height="480" fill="#ffffff" stroke="#2563eb" stroke-width="2" rx="8"/>
+    <rect x="0" y="0" width="320" height="480" fill="transparent" stroke="#3b82f6" stroke-width="2" rx="8"/>
     
-    <text x="160" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2563eb" text-anchor="middle">Cosine Similarity</text>
+    <text x="160" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#3b82f6" text-anchor="middle">Cosine Similarity</text>
     
     <!-- Diagram -->
-    <line x1="50" y1="250" x2="270" y2="250" stroke="#cbd5e1" stroke-width="2"/>
-    <line x1="50" y1="250" x2="50" y2="80" stroke="#cbd5e1" stroke-width="2"/>
+    <line x1="50" y1="250" x2="270" y2="250" stroke="#94a3b8" stroke-width="2"/>
+    <line x1="50" y1="250" x2="50" y2="80" stroke="#94a3b8" stroke-width="2"/>
     
     <!-- Vector A -->
-    <line x1="50" y1="250" x2="200" y2="120" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)"/>
-    <text x="210" y="115" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2563eb">A</text>
+    <line x1="50" y1="250" x2="200" y2="120" stroke="#3b82f6" stroke-width="3" marker-end="url(#arrow-blue)"/>
+    <text x="210" y="115" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#3b82f6">A</text>
     
     <!-- Vector B -->
     <line x1="50" y1="250" x2="180" y2="140" stroke="#10b981" stroke-width="3" marker-end="url(#arrow-green)"/>
@@ -505,7 +505,7 @@ Fast to compute, but sensitive to vector magnitude. Often used when vectors are 
     
     <defs>
       <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-        <polygon points="0 0, 10 3, 0 6" fill="#2563eb"/>
+        <polygon points="0 0, 10 3, 0 6" fill="#3b82f6"/>
       </marker>
       <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
         <polygon points="0 0, 10 3, 0 6" fill="#10b981"/>
@@ -513,32 +513,32 @@ Fast to compute, but sensitive to vector magnitude. Often used when vectors are 
     </defs>
     
     <!-- Formula -->
-    <text x="160" y="300" font-family="monospace" font-size="12" fill="#1e293b" text-anchor="middle">cos(θ) = A·B / (||A|| ||B||)</text>
+    <text x="160" y="300" font-family="monospace" font-size="12" fill="#64748b" text-anchor="middle">cos(θ) = A·B / (||A|| ||B||)</text>
     
     <!-- Characteristics -->
-    <text x="160" y="340" font-family="Arial, sans-serif" font-size="14" fill="#1e293b" text-anchor="middle" font-weight="bold">Best For:</text>
-    <text x="160" y="365" font-family="Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">Text embeddings</text>
-    <text x="160" y="385" font-family="Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">Direction matters</text>
-    <text x="160" y="405" font-family="Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">Magnitude-independent</text>
+    <text x="160" y="340" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle" font-weight="bold">Best For:</text>
+    <text x="160" y="365" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Text embeddings</text>
+    <text x="160" y="385" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Direction matters</text>
+    <text x="160" y="405" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Magnitude-independent</text>
     
     <!-- Range -->
-    <rect x="20" y="430" width="280" height="35" fill="#eff6ff" stroke="#2563eb" stroke-width="1" rx="4"/>
-    <text x="160" y="452" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" text-anchor="middle">Range: -1 (opposite) to 1 (identical)</text>
+    <rect x="20" y="430" width="280" height="35" fill="#3b82f6" fill-opacity="0.1" stroke="#3b82f6" stroke-width="1" rx="4"/>
+    <text x="160" y="452" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Range: -1 (opposite) to 1 (identical)</text>
   </g>
   
   <!-- Euclidean Distance -->
   <g transform="translate(440, 100)">
-    <rect x="0" y="0" width="320" height="480" fill="#ffffff" stroke="#7c3aed" stroke-width="2" rx="8"/>
+    <rect x="0" y="0" width="320" height="480" fill="transparent" stroke="#8b5cf6" stroke-width="2" rx="8"/>
     
-    <text x="160" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#7c3aed" text-anchor="middle">Euclidean Distance</text>
+    <text x="160" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#8b5cf6" text-anchor="middle">Euclidean Distance</text>
     
     <!-- Diagram -->
-    <line x1="50" y1="250" x2="270" y2="250" stroke="#cbd5e1" stroke-width="2"/>
-    <line x1="50" y1="250" x2="50" y2="80" stroke="#cbd5e1" stroke-width="2"/>
+    <line x1="50" y1="250" x2="270" y2="250" stroke="#94a3b8" stroke-width="2"/>
+    <line x1="50" y1="250" x2="50" y2="80" stroke="#94a3b8" stroke-width="2"/>
     
     <!-- Point A -->
-    <circle cx="100" cy="180" r="8" fill="#7c3aed"/>
-    <text x="85" y="175" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#7c3aed">A</text>
+    <circle cx="100" cy="180" r="8" fill="#8b5cf6"/>
+    <text x="85" y="175" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#8b5cf6">A</text>
     
     <!-- Point B -->
     <circle cx="220" cy="140" r="8" fill="#10b981"/>
@@ -549,32 +549,32 @@ Fast to compute, but sensitive to vector magnitude. Often used when vectors are 
     <text x="160" y="150" font-family="Arial, sans-serif" font-size="13" fill="#ef4444" font-weight="bold">distance</text>
     
     <!-- Formula -->
-    <text x="160" y="300" font-family="monospace" font-size="11" fill="#1e293b" text-anchor="middle">d = √Σ(Aᵢ - Bᵢ)²</text>
+    <text x="160" y="300" font-family="monospace" font-size="11" fill="#64748b" text-anchor="middle">d = √Σ(Aᵢ - Bᵢ)²</text>
     
     <!-- Characteristics -->
-    <text x="160" y="340" font-family="Arial, sans-serif" font-size="14" fill="#1e293b" text-anchor="middle" font-weight="bold">Best For:</text>
-    <text x="160" y="365" font-family="Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">Image embeddings</text>
-    <text x="160" y="385" font-family="Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">Magnitude matters</text>
-    <text x="160" y="405" font-family="Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">Geometric distance</text>
+    <text x="160" y="340" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle" font-weight="bold">Best For:</text>
+    <text x="160" y="365" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Image embeddings</text>
+    <text x="160" y="385" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Magnitude matters</text>
+    <text x="160" y="405" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Geometric distance</text>
     
     <!-- Range -->
-    <rect x="20" y="430" width="280" height="35" fill="#faf5ff" stroke="#7c3aed" stroke-width="1" rx="4"/>
-    <text x="160" y="452" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" text-anchor="middle">Range: 0 (identical) to ∞ (very different)</text>
+    <rect x="20" y="430" width="280" height="35" fill="#8b5cf6" fill-opacity="0.1" stroke="#8b5cf6" stroke-width="1" rx="4"/>
+    <text x="160" y="452" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Range: 0 (identical) to ∞ (very different)</text>
   </g>
   
   <!-- Dot Product -->
   <g transform="translate(780, 100)">
-    <rect x="0" y="0" width="320" height="480" fill="#ffffff" stroke="#10b981" stroke-width="2" rx="8"/>
+    <rect x="0" y="0" width="320" height="480" fill="transparent" stroke="#10b981" stroke-width="2" rx="8"/>
     
     <text x="160" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#10b981" text-anchor="middle">Dot Product</text>
     
     <!-- Diagram -->
-    <line x1="50" y1="250" x2="270" y2="250" stroke="#cbd5e1" stroke-width="2"/>
-    <line x1="50" y1="250" x2="50" y2="80" stroke="#cbd5e1" stroke-width="2"/>
+    <line x1="50" y1="250" x2="270" y2="250" stroke="#94a3b8" stroke-width="2"/>
+    <line x1="50" y1="250" x2="50" y2="80" stroke="#94a3b8" stroke-width="2"/>
     
     <!-- Vector A -->
-    <line x1="50" y1="250" x2="180" y2="130" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue2)"/>
-    <text x="190" y="125" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2563eb">A</text>
+    <line x1="50" y1="250" x2="180" y2="130" stroke="#3b82f6" stroke-width="3" marker-end="url(#arrow-blue2)"/>
+    <text x="190" y="125" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#3b82f6">A</text>
     
     <!-- Vector B -->
     <line x1="50" y1="250" x2="200" y2="150" stroke="#10b981" stroke-width="3" marker-end="url(#arrow-green2)"/>
@@ -586,7 +586,7 @@ Fast to compute, but sensitive to vector magnitude. Often used when vectors are 
     
     <defs>
       <marker id="arrow-blue2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-        <polygon points="0 0, 10 3, 0 6" fill="#2563eb"/>
+        <polygon points="0 0, 10 3, 0 6" fill="#3b82f6"/>
       </marker>
       <marker id="arrow-green2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
         <polygon points="0 0, 10 3, 0 6" fill="#10b981"/>
@@ -594,17 +594,17 @@ Fast to compute, but sensitive to vector magnitude. Often used when vectors are 
     </defs>
     
     <!-- Formula -->
-    <text x="160" y="300" font-family="monospace" font-size="12" fill="#1e293b" text-anchor="middle">A · B = Σ(Aᵢ × Bᵢ)</text>
+    <text x="160" y="300" font-family="monospace" font-size="12" fill="#64748b" text-anchor="middle">A · B = Σ(Aᵢ × Bᵢ)</text>
     
     <!-- Characteristics -->
-    <text x="160" y="340" font-family="Arial, sans-serif" font-size="14" fill="#1e293b" text-anchor="middle" font-weight="bold">Best For:</text>
-    <text x="160" y="365" font-family="Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">Normalized vectors</text>
-    <text x="160" y="385" font-family="Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">Fast computation</text>
-    <text x="160" y="405" font-family="Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">Ranking/scoring</text>
+    <text x="160" y="340" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle" font-weight="bold">Best For:</text>
+    <text x="160" y="365" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Normalized vectors</text>
+    <text x="160" y="385" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Fast computation</text>
+    <text x="160" y="405" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Ranking/scoring</text>
     
     <!-- Range -->
-    <rect x="20" y="430" width="280" height="35" fill="#f0fdf4" stroke="#10b981" stroke-width="1" rx="4"/>
-    <text x="160" y="452" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" text-anchor="middle">Range: Higher = more similar</text>
+    <rect x="20" y="430" width="280" height="35" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1" rx="4"/>
+    <text x="160" y="452" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Range: Higher = more similar</text>
   </g>
   
   <!-- Bottom note -->
@@ -673,87 +673,87 @@ This drives 35% of Amazon's revenue. Not bad for some vectors.
   <desc id="applications-desc">Diagram showing six major application areas of vector embeddings with company examples</desc>
   
   <!-- Background -->
-  <rect width="1200" height="800" fill="#f8fafc"/>
+  <rect width="1200" height="800" fill="transparent"/>
   
   <!-- Title -->
-  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e293b" text-anchor="middle">Vector Embeddings in Production: Real-World Use Cases</text>
+  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#64748b" text-anchor="middle">Vector Embeddings in Production: Real-World Use Cases</text>
   
   <!-- Search -->
   <g transform="translate(100, 100)">
-    <rect x="0" y="0" width="320" height="180" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="8"/>
-    <text x="160" y="30" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#1e293b" text-anchor="middle">🔍 Semantic Search</text>
-    <text x="160" y="60" font-family="Arial, sans-serif" font-size="14" fill="#475569" text-anchor="middle">Find by meaning, not keywords</text>
-    <line x1="30" y1="75" x2="290" y2="75" stroke="#2563eb" stroke-width="1"/>
-    <text x="20" y="100" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" font-weight="bold">• Google Search</text>
-    <text x="20" y="120" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" font-weight="bold">• Elasticsearch</text>
-    <text x="20" y="140" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" font-weight="bold">• Notion</text>
+    <rect x="0" y="0" width="320" height="180" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="2" rx="8"/>
+    <text x="160" y="30" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#64748b" text-anchor="middle">🔍 Semantic Search</text>
+    <text x="160" y="60" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">Find by meaning, not keywords</text>
+    <line x1="30" y1="75" x2="290" y2="75" stroke="#3b82f6" stroke-width="1"/>
+    <text x="20" y="100" font-family="Arial, sans-serif" font-size="13" fill="#64748b" font-weight="bold">• Google Search</text>
+    <text x="20" y="120" font-family="Arial, sans-serif" font-size="13" fill="#64748b" font-weight="bold">• Elasticsearch</text>
+    <text x="20" y="140" font-family="Arial, sans-serif" font-size="13" fill="#64748b" font-weight="bold">• Notion</text>
     <text x="160" y="165" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">8.5B searches/day (Google)</text>
   </g>
   
   <!-- Recommendations -->
   <g transform="translate(460, 100)">
-    <rect x="0" y="0" width="320" height="180" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/>
-    <text x="160" y="30" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#1e293b" text-anchor="middle">⭐ Recommendations</text>
-    <text x="160" y="60" font-family="Arial, sans-serif" font-size="14" fill="#475569" text-anchor="middle">Suggest similar items</text>
+    <rect x="0" y="0" width="320" height="180" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="8"/>
+    <text x="160" y="30" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#64748b" text-anchor="middle">⭐ Recommendations</text>
+    <text x="160" y="60" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">Suggest similar items</text>
     <line x1="30" y1="75" x2="290" y2="75" stroke="#f59e0b" stroke-width="1"/>
-    <text x="20" y="100" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" font-weight="bold">• Netflix</text>
-    <text x="20" y="120" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" font-weight="bold">• Spotify</text>
-    <text x="20" y="140" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" font-weight="bold">• Amazon</text>
+    <text x="20" y="100" font-family="Arial, sans-serif" font-size="13" fill="#64748b" font-weight="bold">• Netflix</text>
+    <text x="20" y="120" font-family="Arial, sans-serif" font-size="13" fill="#64748b" font-weight="bold">• Spotify</text>
+    <text x="20" y="140" font-family="Arial, sans-serif" font-size="13" fill="#64748b" font-weight="bold">• Amazon</text>
     <text x="160" y="165" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">80% of Netflix views from recs</text>
   </g>
   
   <!-- Fraud Detection -->
   <g transform="translate(820, 100)">
-    <rect x="0" y="0" width="320" height="180" fill="#fee2e2" stroke="#ef4444" stroke-width="2" rx="8"/>
-    <text x="160" y="30" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#1e293b" text-anchor="middle">🛡️ Fraud Detection</text>
-    <text x="160" y="60" font-family="Arial, sans-serif" font-size="14" fill="#475569" text-anchor="middle">Detect anomalous patterns</text>
+    <rect x="0" y="0" width="320" height="180" fill="#ef4444" fill-opacity="0.1" stroke="#ef4444" stroke-width="2" rx="8"/>
+    <text x="160" y="30" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#64748b" text-anchor="middle">🛡️ Fraud Detection</text>
+    <text x="160" y="60" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">Detect anomalous patterns</text>
     <line x1="30" y1="75" x2="290" y2="75" stroke="#ef4444" stroke-width="1"/>
-    <text x="20" y="100" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" font-weight="bold">• Stripe</text>
-    <text x="20" y="120" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" font-weight="bold">• PayPal</text>
-    <text x="20" y="140" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" font-weight="bold">• Square</text>
+    <text x="20" y="100" font-family="Arial, sans-serif" font-size="13" fill="#64748b" font-weight="bold">• Stripe</text>
+    <text x="20" y="120" font-family="Arial, sans-serif" font-size="13" fill="#64748b" font-weight="bold">• PayPal</text>
+    <text x="20" y="140" font-family="Arial, sans-serif" font-size="13" fill="#64748b" font-weight="bold">• Square</text>
     <text x="160" y="165" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">19B transactions/year (PayPal)</text>
   </g>
   
   <!-- Content Moderation -->
   <g transform="translate(100, 320)">
-    <rect x="0" y="0" width="320" height="180" fill="#f3e8ff" stroke="#7c3aed" stroke-width="2" rx="8"/>
-    <text x="160" y="30" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#1e293b" text-anchor="middle">🚨 Content Moderation</text>
-    <text x="160" y="60" font-family="Arial, sans-serif" font-size="14" fill="#475569" text-anchor="middle">Detect harmful content</text>
-    <line x1="30" y1="75" x2="290" y2="75" stroke="#7c3aed" stroke-width="1"/>
-    <text x="20" y="100" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" font-weight="bold">• Facebook</text>
-    <text x="20" y="120" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" font-weight="bold">• YouTube</text>
-    <text x="20" y="140" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" font-weight="bold">• TikTok</text>
+    <rect x="0" y="0" width="320" height="180" fill="#8b5cf6" fill-opacity="0.1" stroke="#8b5cf6" stroke-width="2" rx="8"/>
+    <text x="160" y="30" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#64748b" text-anchor="middle">🚨 Content Moderation</text>
+    <text x="160" y="60" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">Detect harmful content</text>
+    <line x1="30" y1="75" x2="290" y2="75" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="20" y="100" font-family="Arial, sans-serif" font-size="13" fill="#64748b" font-weight="bold">• Facebook</text>
+    <text x="20" y="120" font-family="Arial, sans-serif" font-size="13" fill="#64748b" font-weight="bold">• YouTube</text>
+    <text x="20" y="140" font-family="Arial, sans-serif" font-size="13" fill="#64748b" font-weight="bold">• TikTok</text>
     <text x="160" y="165" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Billions of items moderated daily</text>
   </g>
   
   <!-- Personalization -->
   <g transform="translate(460, 320)">
-    <rect x="0" y="0" width="320" height="180" fill="#dcfce7" stroke="#10b981" stroke-width="2" rx="8"/>
-    <text x="160" y="30" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#1e293b" text-anchor="middle">👤 Personalization</text>
-    <text x="160" y="60" font-family="Arial, sans-serif" font-size="14" fill="#475569" text-anchor="middle">Customize user experience</text>
+    <rect x="0" y="0" width="320" height="180" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="2" rx="8"/>
+    <text x="160" y="30" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#64748b" text-anchor="middle">👤 Personalization</text>
+    <text x="160" y="60" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">Customize user experience</text>
     <line x1="30" y1="75" x2="290" y2="75" stroke="#10b981" stroke-width="1"/>
-    <text x="20" y="100" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" font-weight="bold">• LinkedIn</text>
-    <text x="20" y="120" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" font-weight="bold">• Twitter (X)</text>
-    <text x="20" y="140" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" font-weight="bold">• Instagram</text>
+    <text x="20" y="100" font-family="Arial, sans-serif" font-size="13" fill="#64748b" font-weight="bold">• LinkedIn</text>
+    <text x="20" y="120" font-family="Arial, sans-serif" font-size="13" fill="#64748b" font-weight="bold">• Twitter (X)</text>
+    <text x="20" y="140" font-family="Arial, sans-serif" font-size="13" fill="#64748b" font-weight="bold">• Instagram</text>
     <text x="160" y="165" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">900M+ users (LinkedIn)</text>
   </g>
   
   <!-- AI Assistants -->
   <g transform="translate(820, 320)">
-    <rect x="0" y="0" width="320" height="180" fill="#ffe4e6" stroke="#f43f5e" stroke-width="2" rx="8"/>
-    <text x="160" y="30" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#1e293b" text-anchor="middle">🤖 AI Assistants</text>
-    <text x="160" y="60" font-family="Arial, sans-serif" font-size="14" fill="#475569" text-anchor="middle">Retrieve relevant context</text>
+    <rect x="0" y="0" width="320" height="180" fill="#f43f5e" fill-opacity="0.1" stroke="#f43f5e" stroke-width="2" rx="8"/>
+    <text x="160" y="30" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#64748b" text-anchor="middle">🤖 AI Assistants</text>
+    <text x="160" y="60" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">Retrieve relevant context</text>
     <line x1="30" y1="75" x2="290" y2="75" stroke="#f43f5e" stroke-width="1"/>
-    <text x="20" y="100" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" font-weight="bold">• ChatGPT (RAG)</text>
-    <text x="20" y="120" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" font-weight="bold">• GitHub Copilot</text>
-    <text x="20" y="140" font-family="Arial, sans-serif" font-size="13" fill="#1e293b" font-weight="bold">• Perplexity AI</text>
+    <text x="20" y="100" font-family="Arial, sans-serif" font-size="13" fill="#64748b" font-weight="bold">• ChatGPT (RAG)</text>
+    <text x="20" y="120" font-family="Arial, sans-serif" font-size="13" fill="#64748b" font-weight="bold">• GitHub Copilot</text>
+    <text x="20" y="140" font-family="Arial, sans-serif" font-size="13" fill="#64748b" font-weight="bold">• Perplexity AI</text>
     <text x="160" y="165" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">100M+ weekly users (ChatGPT)</text>
   </g>
   
   <!-- Bottom insight -->
   <g transform="translate(100, 540)">
-    <rect x="0" y="0" width="1000" height="60" fill="#eff6ff" stroke="#2563eb" stroke-width="2" rx="8"/>
-    <text x="500" y="30" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle">Common Pattern: Convert data to vectors → Find similar vectors → Deliver relevant results</text>
+    <rect x="0" y="0" width="1000" height="60" fill="#3b82f6" fill-opacity="0.1" stroke="#3b82f6" stroke-width="2" rx="8"/>
+    <text x="500" y="30" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#64748b" text-anchor="middle">Common Pattern: Convert data to vectors → Find similar vectors → Deliver relevant results</text>
   </g>
 </svg>
 
@@ -787,81 +787,81 @@ The trade-off? You might miss the absolute closest vector, but you'll find somet
   <desc id="vector-search-desc">Step-by-step diagram showing how a search query is converted to a vector and matched against a database of embeddings</desc>
   
   <!-- Background -->
-  <rect width="1200" height="700" fill="#f8fafc"/>
+  <rect width="1200" height="700" fill="transparent"/>
   
   <!-- Title -->
-  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e293b" text-anchor="middle">Vector Search: From Query to Results</text>
+  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#64748b" text-anchor="middle">Vector Search: From Query to Results</text>
   
   <!-- Step 1: User Query -->
   <g transform="translate(100, 100)">
-    <rect x="0" y="0" width="200" height="100" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="8"/>
-    <text x="100" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">Step 1: User Query</text>
-    <text x="100" y="60" font-family="Arial, sans-serif" font-size="14" fill="#475569" text-anchor="middle">"comfortable</text>
-    <text x="100" y="80" font-family="Arial, sans-serif" font-size="14" fill="#475569" text-anchor="middle">running shoes"</text>
+    <rect x="0" y="0" width="200" height="100" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="2" rx="8"/>
+    <text x="100" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#64748b" text-anchor="middle">Step 1: User Query</text>
+    <text x="100" y="60" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">"comfortable</text>
+    <text x="100" y="80" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">running shoes"</text>
   </g>
   
   <!-- Arrow 1 -->
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-      <polygon points="0 0, 10 3, 0 6" fill="#2563eb"/>
+      <polygon points="0 0, 10 3, 0 6" fill="#3b82f6"/>
     </marker>
   </defs>
-  <line x1="300" y1="150" x2="380" y2="150" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="300" y1="150" x2="380" y2="150" stroke="#3b82f6" stroke-width="3" marker-end="url(#arrow)"/>
   <text x="340" y="140" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">encode</text>
   
   <!-- Step 2: Query Vector -->
   <g transform="translate(380, 100)">
-    <rect x="0" y="0" width="200" height="100" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/>
-    <text x="100" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">Step 2: Query Vector</text>
-    <text x="100" y="55" font-family="monospace" font-size="11" fill="#475569" text-anchor="middle">[0.23, -0.45, 0.89,</text>
-    <text x="100" y="70" font-family="monospace" font-size="11" fill="#475569" text-anchor="middle">0.12, -0.67, 0.34,</text>
-    <text x="100" y="85" font-family="monospace" font-size="11" fill="#475569" text-anchor="middle">...]</text>
+    <rect x="0" y="0" width="200" height="100" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="8"/>
+    <text x="100" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#64748b" text-anchor="middle">Step 2: Query Vector</text>
+    <text x="100" y="55" font-family="monospace" font-size="11" fill="#64748b" text-anchor="middle">[0.23, -0.45, 0.89,</text>
+    <text x="100" y="70" font-family="monospace" font-size="11" fill="#64748b" text-anchor="middle">0.12, -0.67, 0.34,</text>
+    <text x="100" y="85" font-family="monospace" font-size="11" fill="#64748b" text-anchor="middle">...]</text>
   </g>
   
   <!-- Arrow 2 -->
-  <line x1="580" y1="150" x2="660" y2="150" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="580" y1="150" x2="660" y2="150" stroke="#3b82f6" stroke-width="3" marker-end="url(#arrow)"/>
   <text x="620" y="140" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">search</text>
   
   <!-- Step 3: Vector Database -->
   <g transform="translate(660, 100)">
-    <rect x="0" y="0" width="200" height="100" fill="#dcfce7" stroke="#10b981" stroke-width="2" rx="8"/>
-    <text x="100" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">Step 3: Search DB</text>
-    <text x="100" y="55" font-family="Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">10M product</text>
-    <text x="100" y="75" font-family="Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">embeddings</text>
+    <rect x="0" y="0" width="200" height="100" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="2" rx="8"/>
+    <text x="100" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#64748b" text-anchor="middle">Step 3: Search DB</text>
+    <text x="100" y="55" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">10M product</text>
+    <text x="100" y="75" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">embeddings</text>
     <text x="100" y="92" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">(HNSW index)</text>
   </g>
   
   <!-- Arrow 3 -->
-  <line x1="860" y1="150" x2="940" y2="150" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="860" y1="150" x2="940" y2="150" stroke="#3b82f6" stroke-width="3" marker-end="url(#arrow)"/>
   <text x="900" y="140" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">rank</text>
   
   <!-- Step 4: Results -->
   <g transform="translate(940, 100)">
-    <rect x="0" y="0" width="200" height="100" fill="#f3e8ff" stroke="#7c3aed" stroke-width="2" rx="8"/>
-    <text x="100" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">Step 4: Results</text>
-    <text x="100" y="55" font-family="Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">Top 10 most</text>
-    <text x="100" y="75" font-family="Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">similar products</text>
+    <rect x="0" y="0" width="200" height="100" fill="#8b5cf6" fill-opacity="0.1" stroke="#8b5cf6" stroke-width="2" rx="8"/>
+    <text x="100" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#64748b" text-anchor="middle">Step 4: Results</text>
+    <text x="100" y="55" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Top 10 most</text>
+    <text x="100" y="75" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">similar products</text>
   </g>
   
   <!-- Database visualization -->
   <g transform="translate(200, 280)">
-    <text x="400" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle">Inside the Vector Database</text>
+    <text x="400" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#64748b" text-anchor="middle">Inside the Vector Database</text>
     
     <!-- Product vectors -->
-    <rect x="50" y="30" width="700" height="280" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" rx="8"/>
+    <rect x="50" y="30" width="700" height="280" fill="transparent" stroke="#94a3b8" stroke-width="2" rx="8"/>
     
     <!-- Sample products -->
     <g transform="translate(80, 60)">
-      <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" fill="#1e293b" font-weight="bold">Product Embeddings:</text>
+      <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" fill="#64748b" font-weight="bold">Product Embeddings:</text>
       
       <circle cx="100" cy="80" r="6" fill="#10b981"/>
-      <text x="115" y="85" font-family="Arial, sans-serif" font-size="13" fill="#1e293b">Nike Air Zoom (0.92 similarity)</text>
+      <text x="115" y="85" font-family="Arial, sans-serif" font-size="13" fill="#64748b">Nike Air Zoom (0.92 similarity)</text>
       
       <circle cx="120" cy="120" r="6" fill="#10b981"/>
-      <text x="135" y="125" font-family="Arial, sans-serif" font-size="13" fill="#1e293b">Adidas Ultraboost (0.89 similarity)</text>
+      <text x="135" y="125" font-family="Arial, sans-serif" font-size="13" fill="#64748b">Adidas Ultraboost (0.89 similarity)</text>
       
       <circle cx="110" cy="160" r="6" fill="#10b981"/>
-      <text x="125" y="165" font-family="Arial, sans-serif" font-size="13" fill="#1e293b">ASICS Gel-Kayano (0.87 similarity)</text>
+      <text x="125" y="165" font-family="Arial, sans-serif" font-size="13" fill="#64748b">ASICS Gel-Kayano (0.87 similarity)</text>
       
       <circle cx="450" cy="90" r="6" fill="#64748b"/>
       <text x="465" y="95" font-family="Arial, sans-serif" font-size="13" fill="#64748b">Laptop Stand (0.12 similarity)</text>
@@ -870,8 +870,8 @@ The trade-off? You might miss the absolute closest vector, but you'll find somet
       <text x="495" y="185" font-family="Arial, sans-serif" font-size="13" fill="#64748b">Coffee Maker (0.05 similarity)</text>
       
       <!-- Query vector -->
-      <circle cx="95" cy="40" r="8" fill="#2563eb"/>
-      <text x="110" y="45" font-family="Arial, sans-serif" font-size="14" fill="#2563eb" font-weight="bold">Query Vector</text>
+      <circle cx="95" cy="40" r="8" fill="#3b82f6"/>
+      <text x="110" y="45" font-family="Arial, sans-serif" font-size="14" fill="#3b82f6" font-weight="bold">Query Vector</text>
       
       <!-- Similarity lines -->
       <line x1="95" y1="40" x2="100" y2="80" stroke="#10b981" stroke-width="2" stroke-dasharray="5,5"/>
@@ -882,8 +882,8 @@ The trade-off? You might miss the absolute closest vector, but you'll find somet
   
   <!-- Performance note -->
   <g transform="translate(100, 620)">
-    <rect x="0" y="0" width="1000" height="60" fill="#fef2f2" stroke="#ef4444" stroke-width="2" rx="8"/>
-    <text x="500" y="28" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle">Performance: &lt;50ms to search 10M vectors using ANN algorithms</text>
+    <rect x="0" y="0" width="1000" height="60" fill="#ef4444" fill-opacity="0.1" stroke="#ef4444" stroke-width="2" rx="8"/>
+    <text x="500" y="28" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#64748b" text-anchor="middle">Performance: &lt;50ms to search 10M vectors using ANN algorithms</text>
     <text x="500" y="50" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Brute force would take 5+ seconds • ANN achieves 99%+ accuracy with 100x speedup</text>
   </g>
 </svg>
@@ -950,36 +950,36 @@ The entire pipeline should take under 100ms. Embedding generation is usually 10-
   <desc id="pipeline-desc">Complete architecture diagram showing the embedding generation pipeline and search flow</desc>
   
   <!-- Background -->
-  <rect width="1200" height="600" fill="#f8fafc"/>
+  <rect width="1200" height="600" fill="transparent"/>
   
   <!-- Title -->
-  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e293b" text-anchor="middle">Complete Embedding System Architecture</text>
+  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#64748b" text-anchor="middle">Complete Embedding System Architecture</text>
   
   <!-- Offline: Embedding Generation -->
   <g transform="translate(100, 80)">
     <text x="0" y="0" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ef4444">Offline: Embedding Generation (One-time)</text>
     
     <!-- Product Database -->
-    <rect x="0" y="20" width="180" height="80" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="8"/>
-    <text x="90" y="50" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">Product Database</text>
+    <rect x="0" y="20" width="180" height="80" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="2" rx="8"/>
+    <text x="90" y="50" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle">Product Database</text>
     <text x="90" y="70" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">10M products</text>
     <text x="90" y="85" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">with descriptions</text>
     
     <!-- Arrow -->
-    <line x1="180" y1="60" x2="240" y2="60" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="180" y1="60" x2="240" y2="60" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow)"/>
     
     <!-- Embedding Model -->
-    <rect x="240" y="20" width="180" height="80" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/>
-    <text x="330" y="50" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">Embedding Model</text>
+    <rect x="240" y="20" width="180" height="80" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="8"/>
+    <text x="330" y="50" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle">Embedding Model</text>
     <text x="330" y="70" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Sentence</text>
     <text x="330" y="85" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Transformer</text>
     
     <!-- Arrow -->
-    <line x1="420" y1="60" x2="480" y2="60" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="420" y1="60" x2="480" y2="60" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow)"/>
     
     <!-- Vector Database -->
-    <rect x="480" y="20" width="180" height="80" fill="#dcfce7" stroke="#10b981" stroke-width="2" rx="8"/>
-    <text x="570" y="50" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">Vector Database</text>
+    <rect x="480" y="20" width="180" height="80" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="2" rx="8"/>
+    <text x="570" y="50" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle">Vector Database</text>
     <text x="570" y="70" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">10M vectors</text>
     <text x="570" y="85" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">with HNSW index</text>
   </g>
@@ -989,52 +989,52 @@ The entire pipeline should take under 100ms. Embedding generation is usually 10-
     <text x="0" y="0" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#10b981">Online: Search Flow (Real-time)</text>
     
     <!-- User -->
-    <rect x="0" y="20" width="140" height="80" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="8"/>
-    <text x="70" y="50" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">User Query</text>
+    <rect x="0" y="20" width="140" height="80" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="2" rx="8"/>
+    <text x="70" y="50" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle">User Query</text>
     <text x="70" y="70" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">"running shoes"</text>
     <text x="70" y="90" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">~5ms</text>
     
     <!-- Arrow -->
-    <line x1="140" y1="60" x2="190" y2="60" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="140" y1="60" x2="190" y2="60" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow)"/>
     
     <!-- Encode -->
-    <rect x="190" y="20" width="140" height="80" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/>
-    <text x="260" y="50" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">Encode Query</text>
+    <rect x="190" y="20" width="140" height="80" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="8"/>
+    <text x="260" y="50" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle">Encode Query</text>
     <text x="260" y="70" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">to vector</text>
     <text x="260" y="90" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">~15ms</text>
     
     <!-- Arrow -->
-    <line x1="330" y1="60" x2="380" y2="60" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="330" y1="60" x2="380" y2="60" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow)"/>
     
     <!-- Vector Search -->
-    <rect x="380" y="20" width="140" height="80" fill="#dcfce7" stroke="#10b981" stroke-width="2" rx="8"/>
-    <text x="450" y="50" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">Vector Search</text>
+    <rect x="380" y="20" width="140" height="80" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="2" rx="8"/>
+    <text x="450" y="50" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle">Vector Search</text>
     <text x="450" y="70" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">ANN algorithm</text>
     <text x="450" y="90" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">~30ms</text>
     
     <!-- Arrow -->
-    <line x1="520" y1="60" x2="570" y2="60" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="520" y1="60" x2="570" y2="60" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow)"/>
     
     <!-- Re-rank -->
-    <rect x="570" y="20" width="140" height="80" fill="#f3e8ff" stroke="#7c3aed" stroke-width="2" rx="8"/>
-    <text x="640" y="50" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">Re-rank</text>
+    <rect x="570" y="20" width="140" height="80" fill="#8b5cf6" fill-opacity="0.1" stroke="#8b5cf6" stroke-width="2" rx="8"/>
+    <text x="640" y="50" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle">Re-rank</text>
     <text x="640" y="70" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">+ popularity</text>
     <text x="640" y="90" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">~10ms</text>
     
     <!-- Arrow -->
-    <line x1="710" y1="60" x2="760" y2="60" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="710" y1="60" x2="760" y2="60" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow)"/>
     
     <!-- Results -->
-    <rect x="760" y="20" width="140" height="80" fill="#fee2e2" stroke="#ef4444" stroke-width="2" rx="8"/>
-    <text x="830" y="50" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">Return Results</text>
+    <rect x="760" y="20" width="140" height="80" fill="#ef4444" fill-opacity="0.1" stroke="#ef4444" stroke-width="2" rx="8"/>
+    <text x="830" y="50" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle">Return Results</text>
     <text x="830" y="70" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Top 10 products</text>
     <text x="830" y="90" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">~5ms</text>
   </g>
   
   <!-- Total time -->
   <g transform="translate(100, 450)">
-    <rect x="0" y="0" width="1000" height="60" fill="#eff6ff" stroke="#2563eb" stroke-width="2" rx="8"/>
-    <text x="500" y="28" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">Total Search Latency: ~65ms (Fast enough for real-time search)</text>
+    <rect x="0" y="0" width="1000" height="60" fill="#3b82f6" fill-opacity="0.1" stroke="#3b82f6" stroke-width="2" rx="8"/>
+    <text x="500" y="28" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#64748b" text-anchor="middle">Total Search Latency: ~65ms (Fast enough for real-time search)</text>
     <text x="500" y="50" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Compare to traditional keyword search: 200-500ms with less relevant results</text>
   </g>
 </svg>
@@ -1193,67 +1193,67 @@ Most vector databases support quantization out of the box. Enable it unless you 
   <desc id="optimization-desc">Diagram showing four key optimization strategies for vector embedding systems with their impact metrics</desc>
   
   <!-- Background -->
-  <rect width="1200" height="650" fill="#f8fafc"/>
+  <rect width="1200" height="650" fill="transparent"/>
   
   <!-- Title -->
-  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e293b" text-anchor="middle">Optimization Strategies: Speed &amp; Cost Reduction</text>
+  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#64748b" text-anchor="middle">Optimization Strategies: Speed &amp; Cost Reduction</text>
   
   <!-- Caching -->
   <g transform="translate(100, 100)">
-    <rect x="0" y="0" width="500" height="200" fill="#ffffff" stroke="#2563eb" stroke-width="2" rx="8"/>
-    <text x="250" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2563eb" text-anchor="middle">1. Aggressive Caching</text>
+    <rect x="0" y="0" width="500" height="200" fill="transparent" stroke="#3b82f6" stroke-width="2" rx="8"/>
+    <text x="250" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#3b82f6" text-anchor="middle">1. Aggressive Caching</text>
     
-    <text x="30" y="70" font-family="Arial, sans-serif" font-size="14" fill="#1e293b">Cache popular query embeddings</text>
-    <text x="30" y="95" font-family="Arial, sans-serif" font-size="14" fill="#1e293b">Cache search results (5-10 min TTL)</text>
-    <text x="30" y="120" font-family="Arial, sans-serif" font-size="14" fill="#1e293b">Cache user embeddings</text>
+    <text x="30" y="70" font-family="Arial, sans-serif" font-size="14" fill="#64748b">Cache popular query embeddings</text>
+    <text x="30" y="95" font-family="Arial, sans-serif" font-size="14" fill="#64748b">Cache search results (5-10 min TTL)</text>
+    <text x="30" y="120" font-family="Arial, sans-serif" font-size="14" fill="#64748b">Cache user embeddings</text>
     
-    <rect x="30" y="140" width="440" height="45" fill="#eff6ff" stroke="#2563eb" stroke-width="1" rx="4"/>
+    <rect x="30" y="140" width="440" height="45" fill="#3b82f6" fill-opacity="0.1" stroke="#3b82f6" stroke-width="1" rx="4"/>
     <text x="250" y="165" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#10b981" text-anchor="middle">Impact: 80% cost reduction, 50% latency improvement</text>
   </g>
   
   <!-- Quantization -->
   <g transform="translate(650, 100)">
-    <rect x="0" y="0" width="450" height="200" fill="#ffffff" stroke="#f59e0b" stroke-width="2" rx="8"/>
+    <rect x="0" y="0" width="450" height="200" fill="transparent" stroke="#f59e0b" stroke-width="2" rx="8"/>
     <text x="225" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f59e0b" text-anchor="middle">2. Vector Quantization</text>
     
-    <text x="30" y="70" font-family="Arial, sans-serif" font-size="14" fill="#1e293b">float32 → int8 conversion</text>
-    <text x="30" y="95" font-family="Arial, sans-serif" font-size="14" fill="#1e293b">75% storage reduction</text>
-    <text x="30" y="120" font-family="Arial, sans-serif" font-size="14" fill="#1e293b">Faster similarity computation</text>
+    <text x="30" y="70" font-family="Arial, sans-serif" font-size="14" fill="#64748b">float32 → int8 conversion</text>
+    <text x="30" y="95" font-family="Arial, sans-serif" font-size="14" fill="#64748b">75% storage reduction</text>
+    <text x="30" y="120" font-family="Arial, sans-serif" font-size="14" fill="#64748b">Faster similarity computation</text>
     
-    <rect x="30" y="140" width="390" height="45" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="4"/>
+    <rect x="30" y="140" width="390" height="45" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="1" rx="4"/>
     <text x="225" y="165" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#10b981" text-anchor="middle">Impact: 75% storage savings, &lt;1% accuracy loss</text>
   </g>
   
   <!-- Batch Processing -->
   <g transform="translate(100, 340)">
-    <rect x="0" y="0" width="500" height="200" fill="#ffffff" stroke="#10b981" stroke-width="2" rx="8"/>
+    <rect x="0" y="0" width="500" height="200" fill="transparent" stroke="#10b981" stroke-width="2" rx="8"/>
     <text x="250" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#10b981" text-anchor="middle">3. Batch Processing</text>
     
-    <text x="30" y="70" font-family="Arial, sans-serif" font-size="14" fill="#1e293b">Process 32-128 items at once</text>
-    <text x="30" y="95" font-family="Arial, sans-serif" font-size="14" fill="#1e293b">Reduce API calls by 90%</text>
-    <text x="30" y="120" font-family="Arial, sans-serif" font-size="14" fill="#1e293b">Better GPU utilization</text>
+    <text x="30" y="70" font-family="Arial, sans-serif" font-size="14" fill="#64748b">Process 32-128 items at once</text>
+    <text x="30" y="95" font-family="Arial, sans-serif" font-size="14" fill="#64748b">Reduce API calls by 90%</text>
+    <text x="30" y="120" font-family="Arial, sans-serif" font-size="14" fill="#64748b">Better GPU utilization</text>
     
-    <rect x="30" y="140" width="440" height="45" fill="#f0fdf4" stroke="#10b981" stroke-width="1" rx="4"/>
+    <rect x="30" y="140" width="440" height="45" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1" rx="4"/>
     <text x="250" y="165" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#10b981" text-anchor="middle">Impact: 10-20x faster embedding generation</text>
   </g>
   
   <!-- Index Tuning -->
   <g transform="translate(650, 340)">
-    <rect x="0" y="0" width="450" height="200" fill="#ffffff" stroke="#7c3aed" stroke-width="2" rx="8"/>
-    <text x="225" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#7c3aed" text-anchor="middle">4. Index Parameter Tuning</text>
+    <rect x="0" y="0" width="450" height="200" fill="transparent" stroke="#8b5cf6" stroke-width="2" rx="8"/>
+    <text x="225" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#8b5cf6" text-anchor="middle">4. Index Parameter Tuning</text>
     
-    <text x="30" y="70" font-family="Arial, sans-serif" font-size="14" fill="#1e293b">Optimize M and efSearch values</text>
-    <text x="30" y="95" font-family="Arial, sans-serif" font-size="14" fill="#1e293b">Balance accuracy vs speed</text>
-    <text x="30" y="120" font-family="Arial, sans-serif" font-size="14" fill="#1e293b">Test with production queries</text>
+    <text x="30" y="70" font-family="Arial, sans-serif" font-size="14" fill="#64748b">Optimize M and efSearch values</text>
+    <text x="30" y="95" font-family="Arial, sans-serif" font-size="14" fill="#64748b">Balance accuracy vs speed</text>
+    <text x="30" y="120" font-family="Arial, sans-serif" font-size="14" fill="#64748b">Test with production queries</text>
     
-    <rect x="30" y="140" width="390" height="45" fill="#faf5ff" stroke="#7c3aed" stroke-width="1" rx="4"/>
+    <rect x="30" y="140" width="390" height="45" fill="#8b5cf6" fill-opacity="0.1" stroke="#8b5cf6" stroke-width="1" rx="4"/>
     <text x="225" y="165" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#10b981" text-anchor="middle">Impact: 2-3x faster search with 99%+ accuracy</text>
   </g>
   
   <!-- Bottom note -->
   <g transform="translate(100, 570)">
-    <rect x="0" y="0" width="1000" height="60" fill="#fef2f2" stroke="#ef4444" stroke-width="2" rx="8"/>
-    <text x="500" y="28" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle">Combined Impact: 10x cost reduction, 5x speed improvement, 99%+ accuracy maintained</text>
+    <rect x="0" y="0" width="1000" height="60" fill="#ef4444" fill-opacity="0.1" stroke="#ef4444" stroke-width="2" rx="8"/>
+    <text x="500" y="28" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#64748b" text-anchor="middle">Combined Impact: 10x cost reduction, 5x speed improvement, 99%+ accuracy maintained</text>
     <text x="500" y="50" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">These optimizations are essential for production systems at scale</text>
   </g>
 </svg>
@@ -1445,25 +1445,25 @@ Most production systems end up with hybrid approaches. Embeddings for the "fuzzy
   <desc id="decision-framework-desc">Decision tree showing when to use vector embeddings versus traditional search approaches</desc>
   
   <!-- Background -->
-  <rect width="1200" height="700" fill="#f8fafc"/>
+  <rect width="1200" height="700" fill="transparent"/>
   
   <!-- Title -->
-  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e293b" text-anchor="middle">Should You Use Vector Embeddings? Decision Framework</text>
+  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#64748b" text-anchor="middle">Should You Use Vector Embeddings? Decision Framework</text>
   
   <!-- Start -->
   <g transform="translate(500, 80)">
-    <rect x="0" y="0" width="200" height="60" fill="#dbeafe" stroke="#2563eb" stroke-width="3" rx="8"/>
-    <text x="100" y="35" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">Building a search</text>
-    <text x="100" y="52" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">or recommendation?</text>
+    <rect x="0" y="0" width="200" height="60" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="3" rx="8"/>
+    <text x="100" y="35" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#64748b" text-anchor="middle">Building a search</text>
+    <text x="100" y="52" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#64748b" text-anchor="middle">or recommendation?</text>
   </g>
   
   <!-- Question 1 -->
-  <line x1="600" y1="140" x2="600" y2="180" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="600" y1="140" x2="600" y2="180" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow)"/>
   
   <g transform="translate(450, 180)">
-    <rect x="0" y="0" width="300" height="60" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/>
-    <text x="150" y="25" font-family="Arial, sans-serif" font-size="14" fill="#1e293b" text-anchor="middle">Do you need semantic</text>
-    <text x="150" y="45" font-family="Arial, sans-serif" font-size="14" fill="#1e293b" text-anchor="middle">understanding (meaning)?</text>
+    <rect x="0" y="0" width="300" height="60" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="8"/>
+    <text x="150" y="25" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">Do you need semantic</text>
+    <text x="150" y="45" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">understanding (meaning)?</text>
   </g>
   
   <!-- Yes branch -->
@@ -1471,9 +1471,9 @@ Most production systems end up with hybrid approaches. Embeddings for the "fuzzy
   <text x="360" y="240" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#10b981">YES</text>
   
   <g transform="translate(150, 270)">
-    <rect x="0" y="0" width="300" height="60" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/>
-    <text x="150" y="25" font-family="Arial, sans-serif" font-size="14" fill="#1e293b" text-anchor="middle">Do you have 10,000+</text>
-    <text x="150" y="45" font-family="Arial, sans-serif" font-size="14" fill="#1e293b" text-anchor="middle">items to search?</text>
+    <rect x="0" y="0" width="300" height="60" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="8"/>
+    <text x="150" y="25" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">Do you have 10,000+</text>
+    <text x="150" y="45" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">items to search?</text>
   </g>
   
   <!-- No branch from first question -->
@@ -1481,10 +1481,10 @@ Most production systems end up with hybrid approaches. Embeddings for the "fuzzy
   <text x="840" y="240" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ef4444">NO</text>
   
   <g transform="translate(750, 270)">
-    <rect x="0" y="0" width="300" height="80" fill="#fee2e2" stroke="#ef4444" stroke-width="2" rx="8"/>
-    <text x="150" y="30" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle">Use Traditional Search</text>
-    <text x="150" y="52" font-family="Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">Keyword matching, filters,</text>
-    <text x="150" y="70" font-family="Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">SQL queries</text>
+    <rect x="0" y="0" width="300" height="80" fill="#ef4444" fill-opacity="0.1" stroke="#ef4444" stroke-width="2" rx="8"/>
+    <text x="150" y="30" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#64748b" text-anchor="middle">Use Traditional Search</text>
+    <text x="150" y="52" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Keyword matching, filters,</text>
+    <text x="150" y="70" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">SQL queries</text>
   </g>
   
   <!-- Yes from second question -->
@@ -1492,9 +1492,9 @@ Most production systems end up with hybrid approaches. Embeddings for the "fuzzy
   <text x="320" y="365" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#10b981">YES</text>
   
   <g transform="translate(150, 390)">
-    <rect x="0" y="0" width="300" height="60" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/>
-    <text x="150" y="25" font-family="Arial, sans-serif" font-size="14" fill="#1e293b" text-anchor="middle">Can you tolerate &lt;100ms</text>
-    <text x="150" y="45" font-family="Arial, sans-serif" font-size="14" fill="#1e293b" text-anchor="middle">search latency?</text>
+    <rect x="0" y="0" width="300" height="60" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="8"/>
+    <text x="150" y="25" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">Can you tolerate &lt;100ms</text>
+    <text x="150" y="45" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">search latency?</text>
   </g>
   
   <!-- No from second question -->
@@ -1502,10 +1502,10 @@ Most production systems end up with hybrid approaches. Embeddings for the "fuzzy
   <text x="540" y="340" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ef4444">NO</text>
   
   <g transform="translate(450, 390)">
-    <rect x="0" y="0" width="300" height="80" fill="#fee2e2" stroke="#ef4444" stroke-width="2" rx="8"/>
-    <text x="150" y="30" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle">Too Small for Embeddings</text>
-    <text x="150" y="52" font-family="Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">Use simple keyword search</text>
-    <text x="150" y="70" font-family="Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">or fuzzy matching</text>
+    <rect x="0" y="0" width="300" height="80" fill="#ef4444" fill-opacity="0.1" stroke="#ef4444" stroke-width="2" rx="8"/>
+    <text x="150" y="30" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#64748b" text-anchor="middle">Too Small for Embeddings</text>
+    <text x="150" y="52" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Use simple keyword search</text>
+    <text x="150" y="70" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">or fuzzy matching</text>
   </g>
   
   <!-- Yes from third question -->
@@ -1513,11 +1513,11 @@ Most production systems end up with hybrid approaches. Embeddings for the "fuzzy
   <text x="320" y="485" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#10b981">YES</text>
   
   <g transform="translate(150, 510)">
-    <rect x="0" y="0" width="300" height="100" fill="#dcfce7" stroke="#10b981" stroke-width="3" rx="8"/>
+    <rect x="0" y="0" width="300" height="100" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="3" rx="8"/>
     <text x="150" y="30" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#10b981" text-anchor="middle">✓ Use Vector Embeddings</text>
-    <text x="150" y="55" font-family="Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">Start with Sentence Transformers</text>
-    <text x="150" y="73" font-family="Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">Use pgvector or Pinecone</text>
-    <text x="150" y="91" font-family="Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">Consider hybrid search</text>
+    <text x="150" y="55" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Start with Sentence Transformers</text>
+    <text x="150" y="73" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Use pgvector or Pinecone</text>
+    <text x="150" y="91" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Consider hybrid search</text>
   </g>
   
   <!-- No from third question -->
@@ -1525,17 +1525,17 @@ Most production systems end up with hybrid approaches. Embeddings for the "fuzzy
   <text x="540" y="460" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ef4444">NO</text>
   
   <g transform="translate(450, 510)">
-    <rect x="0" y="0" width="300" height="100" fill="#fee2e2" stroke="#ef4444" stroke-width="2" rx="8"/>
-    <text x="150" y="30" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle">Latency Too Critical</text>
-    <text x="150" y="52" font-family="Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">Use traditional search with</text>
-    <text x="150" y="70" font-family="Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">heavy caching, or consider</text>
-    <text x="150" y="88" font-family="Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">hybrid approach</text>
+    <rect x="0" y="0" width="300" height="100" fill="#ef4444" fill-opacity="0.1" stroke="#ef4444" stroke-width="2" rx="8"/>
+    <text x="150" y="30" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#64748b" text-anchor="middle">Latency Too Critical</text>
+    <text x="150" y="52" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Use traditional search with</text>
+    <text x="150" y="70" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">heavy caching, or consider</text>
+    <text x="150" y="88" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">hybrid approach</text>
   </g>
   
   <!-- Bottom note -->
   <g transform="translate(100, 640)">
-    <rect x="0" y="0" width="1000" height="45" fill="#eff6ff" stroke="#2563eb" stroke-width="2" rx="8"/>
-    <text x="500" y="28" font-family="Arial, sans-serif" font-size="14" fill="#1e293b" text-anchor="middle">Most production systems use hybrid search: embeddings for semantic similarity + keywords for precision</text>
+    <rect x="0" y="0" width="1000" height="45" fill="#3b82f6" fill-opacity="0.1" stroke="#3b82f6" stroke-width="2" rx="8"/>
+    <text x="500" y="28" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">Most production systems use hybrid search: embeddings for semantic similarity + keywords for precision</text>
   </g>
 </svg>
 
