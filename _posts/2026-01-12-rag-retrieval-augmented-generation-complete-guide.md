@@ -1,7 +1,7 @@
 ---
 layout: post-detail
 title: "RAG Explained: Traditional vs Vectorless Retrieval-Augmented Generation"
-date: 2026-03-29
+date: 2026-01-12
 category: "Machine Learning & AI"
 tags: ["RAG", "Retrieval-Augmented Generation", "AI", "LLM", "Vector Search", "Machine Learning", "ChatGPT"]
 author: "Pawan Kumar"
