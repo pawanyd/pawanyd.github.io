@@ -2,6 +2,7 @@
 layout: post-detail
 title: "Building a No-Code Platform: Architecture & Challenges"
 date: 2026-01-15
+author: "Pawan Kumar"
 category: "Technology"
 tags: ["No-Code", "Architecture", "React", "Node.js", "MongoDB", "System Design"]
 image: "/assets/images/posts/generative-ai-for-coding.webp"

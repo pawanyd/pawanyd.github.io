@@ -2,6 +2,7 @@
 layout: post-detail
 title: "HTTP Explained: Everything You Need to Know About the Web's Most Important Protocol"
 date: 2025-03-10
+author: "Pawan Kumar"
 category: "Technology"
 tags: ["HTTP", "Networking", "Web Development", "HTTPS", "Performance", "Backend"]
 image: "/assets/images/posts/http-hero.svg"

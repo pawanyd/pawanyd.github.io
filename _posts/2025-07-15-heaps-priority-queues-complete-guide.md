@@ -2,6 +2,7 @@
 layout: post-detail
 title: "Heaps & Priority Queues: The Data Structure That Powers Everything from Task Scheduling to Dijkstra's Algorithm"
 date: 2025-07-15
+author: "Pawan Kumar"
 category: "DSA"
 tags: ["Heaps", "Priority Queues", "Data Structures", "Algorithms", "Interview Prep", "DSA"]
 image: "/assets/images/posts/heaps-priority-queues-hero.svg"

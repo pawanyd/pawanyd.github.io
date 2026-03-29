@@ -2,6 +2,7 @@
 layout: post-detail
 title: "Designing a Rate Limiter: A Complete System Design Guide"
 date: 2026-03-11
+author: "Pawan Kumar"
 category: "System Design & Architecture"
 tags: ["System Design", "Rate Limiting", "API Design", "Scalability", "Distributed Systems", "Architecture"]
 image: "/assets/images/posts/rate-limiter-hero.svg"

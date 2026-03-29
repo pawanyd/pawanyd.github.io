@@ -2,6 +2,7 @@
 layout: post-detail
 title: "Scaling Real-Time Systems: Lessons from Stock Trading Platform"
 date: 2026-01-20
+author: "Pawan Kumar"
 category: "Technology"
 tags: ["Scalability", "Real-Time", "Redis", "AWS", "Performance", "System Design", "Trading"]
 image: "/assets/images/posts/devops.webp"

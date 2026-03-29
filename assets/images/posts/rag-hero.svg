@@ -1,0 +1,116 @@
+<svg role="img" aria-labelledby="rag-hero-title rag-hero-desc" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <title id="rag-hero-title">RAG: Retrieval-Augmented Generation</title>
+  <desc id="rag-hero-desc">Hero image showing how RAG combines retrieval from knowledge bases with LLM generation to produce accurate, grounded responses</desc>
+  
+  <!-- Background -->
+  <rect width="1200" height="600" fill="transparent"/>
+  
+  <!-- Title -->
+  <text x="600" y="60" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#64748b" text-anchor="middle">Retrieval-Augmented Generation</text>
+  <text x="600" y="95" font-family="Arial, sans-serif" font-size="20" fill="#64748b" text-anchor="middle">Making LLMs Smarter with External Knowledge</text>
+  
+  <!-- Left Side: Knowledge Sources -->
+  <g transform="translate(80, 150)">
+    <text x="150" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#3b82f6" text-anchor="middle">Knowledge Sources</text>
+    
+    <!-- Documents -->
+    <g transform="translate(0, 30)">
+      <rect x="0" y="0" width="130" height="80" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="2" rx="6"/>
+      <text x="65" y="30" font-family="Arial, sans-serif" font-size="28" fill="#3b82f6" text-anchor="middle">📄</text>
+      <text x="65" y="55" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Documents</text>
+      <text x="65" y="72" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">PDFs, Articles</text>
+    </g>
+    
+    <!-- Databases -->
+    <g transform="translate(170, 30)">
+      <rect x="0" y="0" width="130" height="80" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="2" rx="6"/>
+      <text x="65" y="30" font-family="Arial, sans-serif" font-size="28" fill="#10b981" text-anchor="middle">🗄️</text>
+      <text x="65" y="55" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Databases</text>
+      <text x="65" y="72" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">SQL, NoSQL</text>
+    </g>
+    
+    <!-- APIs -->
+    <g transform="translate(0, 130)">
+      <rect x="0" y="0" width="130" height="80" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="2" rx="6"/>
+      <text x="65" y="30" font-family="Arial, sans-serif" font-size="28" fill="#f59e0b" text-anchor="middle">🔌</text>
+      <text x="65" y="55" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">APIs</text>
+      <text x="65" y="72" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Real-time Data</text>
+    </g>
+    
+    <!-- Web -->
+    <g transform="translate(170, 130)">
+      <rect x="0" y="0" width="130" height="80" fill="#8b5cf6" fill-opacity="0.1" stroke="#8b5cf6" stroke-width="2" rx="6"/>
+      <text x="65" y="30" font-family="Arial, sans-serif" font-size="28" fill="#8b5cf6" text-anchor="middle">🌐</text>
+      <text x="65" y="55" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Web Search</text>
+      <text x="65" y="72" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Live Content</text>
+    </g>
+  </g>
+  
+  <!-- Center: RAG Process -->
+  <g transform="translate(450, 200)">
+    <!-- Retrieval -->
+    <rect x="0" y="0" width="300" height="90" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="3" rx="8"/>
+    <text x="150" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#3b82f6" text-anchor="middle">1. RETRIEVAL</text>
+    <text x="150" y="55" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">Find relevant information</text>
+    <text x="150" y="75" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Vector search • SQL • APIs • Keywords</text>
+    
+    <!-- Arrow -->
+    <line x1="150" y1="90" x2="150" y2="120" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+    <defs>
+      <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+        <polygon points="0 0, 10 3, 0 6" fill="#64748b"/>
+      </marker>
+    </defs>
+    
+    <!-- Augmentation -->
+    <rect x="0" y="120" width="300" height="90" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="3" rx="8"/>
+    <text x="150" y="150" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#10b981" text-anchor="middle">2. AUGMENTATION</text>
+    <text x="150" y="175" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">Add to LLM context</text>
+    <text x="150" y="195" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Query + Retrieved Docs → LLM</text>
+    
+    <!-- Arrow -->
+    <line x1="150" y1="210" x2="150" y2="240" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+    
+    <!-- Generation -->
+    <rect x="0" y="240" width="300" height="90" fill="#8b5cf6" fill-opacity="0.1" stroke="#8b5cf6" stroke-width="3" rx="8"/>
+    <text x="150" y="270" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#8b5cf6" text-anchor="middle">3. GENERATION</text>
+    <text x="150" y="295" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">Produce accurate response</text>
+    <text x="150" y="315" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Grounded in retrieved facts</text>
+  </g>
+  
+  <!-- Right Side: Benefits -->
+  <g transform="translate(820, 150)">
+    <text x="150" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#10b981" text-anchor="middle">Benefits</text>
+    
+    <!-- Current Info -->
+    <g transform="translate(0, 30)">
+      <rect x="0" y="0" width="300" height="70" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="2" rx="6"/>
+      <text x="150" y="28" font-family="Arial, sans-serif" font-size="15" fill="#64748b" text-anchor="middle">✓ Current Information</text>
+      <text x="150" y="48" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">No knowledge cutoff</text>
+      <text x="150" y="63" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Always up-to-date</text>
+    </g>
+    
+    <!-- Accurate -->
+    <g transform="translate(0, 115)">
+      <rect x="0" y="0" width="300" height="70" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="2" rx="6"/>
+      <text x="150" y="28" font-family="Arial, sans-serif" font-size="15" fill="#64748b" text-anchor="middle">✓ Reduced Hallucinations</text>
+      <text x="150" y="48" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Grounded in facts</text>
+      <text x="150" y="63" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Citable sources</text>
+    </g>
+    
+    <!-- Domain Knowledge -->
+    <g transform="translate(0, 200)">
+      <rect x="0" y="0" width="300" height="70" fill="#8b5cf6" fill-opacity="0.1" stroke="#8b5cf6" stroke-width="2" rx="6"/>
+      <text x="150" y="28" font-family="Arial, sans-serif" font-size="15" fill="#64748b" text-anchor="middle">✓ Domain Expertise</text>
+      <text x="150" y="48" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Your company's data</text>
+      <text x="150" y="63" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Private knowledge</text>
+    </g>
+  </g>
+  
+  <!-- Bottom Stats -->
+  <g transform="translate(100, 520)">
+    <rect x="0" y="0" width="1000" height="60" fill="#3b82f6" fill-opacity="0.1" stroke="#3b82f6" stroke-width="2" rx="8"/>
+    <text x="500" y="28" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#64748b" text-anchor="middle">Used by ChatGPT, Perplexity, Notion, GitHub Copilot, and thousands of enterprise AI applications</text>
+    <text x="500" y="50" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">RAG is the foundation of production AI systems in 2026</text>
+  </g>
+</svg>

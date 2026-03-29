@@ -2,6 +2,7 @@
 layout: post-detail
 title: "Trees & Binary Search Trees: The Backbone of Efficient Data Organization"
 date: 2025-07-03
+author: "Pawan Kumar"
 category: "DSA"
 tags: ["Trees", "Binary Search Trees", "Data Structures", "DSA", "Interview Prep", "Algorithms"]
 image: "/assets/images/posts/trees-bst-hero.svg"

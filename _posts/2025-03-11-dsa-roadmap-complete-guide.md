@@ -2,6 +2,7 @@
 layout: post-detail
 title: "DSA Roadmap: Where to Start and How to Actually Get Good"
 date: 2025-03-11
+author: "Pawan Kumar"
 category: "DSA"
 tags: ["DSA", "Data Structures", "Algorithms", "LeetCode", "Interview Prep", "Programming"]
 image: "/assets/images/posts/dsa-roadmap-hero.svg"

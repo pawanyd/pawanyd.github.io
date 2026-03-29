@@ -2,6 +2,7 @@
 layout: post-detail
 title: "Stacks & Queues: The Foundation of Every Developer's Toolkit"
 date: 2025-06-02
+author: "Pawan Kumar"
 category: "DSA"
 tags: ["Data Structures", "Stacks", "Queues", "Algorithms", "Programming", "Interview Prep"]
 image: "/assets/images/posts/stacks-queues-hero.svg"

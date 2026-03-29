@@ -2,6 +2,7 @@
 layout: post-detail
 title: "Consistent Hashing: The Secret Behind Scalable Distributed Systems"
 date: 2026-03-10
+author: "Pawan Kumar"
 category: "System Design & Architecture"
 tags: ["Consistent Hashing", "Distributed Systems", "System Design", "Scalability", "Load Balancing", "Caching"]
 image: "/assets/images/posts/consistent-hashing-hero.svg"

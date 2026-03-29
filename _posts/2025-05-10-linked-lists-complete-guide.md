@@ -2,6 +2,7 @@
 layout: post-detail
 title: "Linked Lists: The Complete Guide to Understanding and Mastering Dynamic Data Structures"
 date: 2025-05-10
+author: "Pawan Kumar"
 category: "DSA"
 tags: ["Data Structures", "Algorithms", "Programming", "Computer Science", "Software Development", "Coding"]
 image: "/assets/images/posts/linked-lists-hero.svg"

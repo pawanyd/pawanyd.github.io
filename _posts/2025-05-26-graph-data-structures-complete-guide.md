@@ -2,6 +2,7 @@
 layout: post-detail
 title: "Graph Data Structures: The Complete Guide to Modeling Complex Relationships"
 date: 2025-05-26
+author: "Pawan Kumar"
 category: "DSA"
 tags: ["Data Structures", "Algorithms", "Programming", "Graph Theory", "Networks", "System Design"]
 image: "/assets/images/posts/graph-data-structures-hero.svg"

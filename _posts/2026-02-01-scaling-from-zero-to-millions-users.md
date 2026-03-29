@@ -2,6 +2,7 @@
 layout: post-detail
 title: "Scaling from Zero to Millions of Users: A Practical Journey"
 date: 2026-02-01
+author: "Pawan Kumar"
 category: "Technology"
 tags: ["Scalability", "System Design", "Architecture", "Performance", "Infrastructure", "Cloud"]
 image: "/assets/images/posts/scaling-systems.svg"

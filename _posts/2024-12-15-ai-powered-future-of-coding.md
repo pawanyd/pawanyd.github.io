@@ -2,6 +2,7 @@
 layout: post-detail
 title: "The AI-Powered Future of Coding"
 date: 2024-12-15
+author: "Pawan Kumar"
 category: "Code | AI"
 tags: ["AI", "Future of Work", "Development", "Automation", "Innovation"]
 image: "/assets/images/posts/ai-power.webp"

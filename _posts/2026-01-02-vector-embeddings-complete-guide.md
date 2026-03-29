@@ -4,6 +4,7 @@ title: "Vector Embeddings: How AI Understands Meaning at Scale"
 date: 2026-01-02
 category: "Machine Learning & AI"
 tags: ["Vector Embeddings", "Machine Learning", "AI", "Semantic Search", "NLP", "Recommendation Systems"]
+author: "Pawan Kumar"
 image: "/assets/images/posts/vector-embeddings-hero.svg"
 excerpt: "Discover how vector embeddings power modern AI applications. Learn how companies like Google, Netflix, and Spotify use vectors to understand meaning, build recommendations, and search billions of items in milliseconds."
 ---

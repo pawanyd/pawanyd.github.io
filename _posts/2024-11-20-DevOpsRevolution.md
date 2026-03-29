@@ -2,6 +2,7 @@
 layout: post-detail
 title: "DevOps: Transforming Software Delivery and Shaping Modern IT Careers"
 date: 2024-11-20
+author: "Pawan Kumar"
 category: "DevOps"
 tags: ["DevOps", "CI/CD", "Cloud", "Automation", "Infrastructure"]
 image: "/assets/images/posts/devops.webp"

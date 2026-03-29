@@ -2,6 +2,7 @@
 layout: post-detail
 title: "Leadership in Software Development: Building and Scaling High-Performance Teams"
 date: 2024-12-20
+author: "Pawan Kumar"
 category: "Management"
 tags: ["Leadership", "Team Building", "Management", "Software Development", "Culture"]
 image: "/assets/images/posts/high-performing-team.webp"

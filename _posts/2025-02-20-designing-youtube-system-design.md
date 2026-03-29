@@ -2,6 +2,7 @@
 layout: post-detail
 title: "Designing YouTube: A Complete System Design Deep Dive"
 date: 2025-02-20
+author: "Pawan Kumar"
 category: "System Design & Architecture"
 tags: ["System Design", "Distributed Systems", "Video Streaming", "CDN", "Scalability", "Microservices"]
 image: "/assets/images/posts/youtube-hero.svg"

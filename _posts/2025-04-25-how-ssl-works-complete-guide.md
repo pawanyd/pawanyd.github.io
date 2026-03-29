@@ -2,6 +2,7 @@
 layout: post-detail
 title: "How SSL Works: The Complete Guide to Secure Web Communication"
 date: 2025-04-25
+author: "Pawan Kumar"
 category: "Technology"
 tags: ["SSL", "TLS", "Security", "Cryptography", "Web Development", "HTTPS"]
 image: "/assets/images/posts/ssl-works-hero.svg"

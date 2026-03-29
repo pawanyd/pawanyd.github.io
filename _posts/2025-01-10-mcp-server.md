@@ -2,6 +2,7 @@
 layout: post-detail
 title: "Understanding the Model Context Protocol (MCP) Server"
 date: 2025-01-10
+author: "Pawan Kumar"
 category: "Technology"
 tags: ["MCP", "AI", "Development", "Integration", "Tools"]
 image: "/assets/images/posts/mcp-server.webp"

@@ -2,6 +2,7 @@
 layout: post-detail
 title: "Coding Best Practices in the Era of Automation and AI"
 date: 2024-12-05
+author: "Pawan Kumar"
 category: "AI"
 tags: ["Best Practices", "Code Quality", "AI", "Automation", "Development"]
 image: "/assets/images/posts/codebestpracticesautoera.webp"

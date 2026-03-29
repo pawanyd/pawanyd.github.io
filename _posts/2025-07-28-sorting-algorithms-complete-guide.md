@@ -2,6 +2,7 @@
 layout: post-detail
 title: "Sorting Algorithms: The Complete Guide to Choosing the Right Sort for Your Data"
 date: 2025-07-28
+author: "Pawan Kumar"
 category: "DSA"
 tags: ["Sorting Algorithms", "Data Structures", "Algorithms", "Interview Prep", "Performance", "DSA"]
 image: "/assets/images/posts/sorting-algorithms-hero.svg"

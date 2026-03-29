@@ -2,6 +2,7 @@
 layout: post-detail
 title: "Designing a URL Shortener: From Bit.ly to Production Scale"
 date: 2025-04-14
+author: "Pawan Kumar"
 category: "System Design & Architecture"
 tags: ["System Design", "URL Shortener", "Scalability", "Distributed Systems", "API Design", "Hashing"]
 image: "/assets/images/posts/url-shortener-hero.svg"

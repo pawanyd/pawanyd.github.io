@@ -2,6 +2,7 @@
 layout: post-detail
 title: "Designing a Key-Value Store: Building the Foundation of Modern Databases"
 date: 2026-03-08
+author: "Pawan Kumar"
 category: "System Design & Architecture"
 tags: ["System Design", "Databases", "Distributed Systems", "NoSQL", "Scalability", "CAP Theorem"]
 image: "/assets/images/posts/key-value-store-hero.svg"

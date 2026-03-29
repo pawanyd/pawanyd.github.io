@@ -2,6 +2,7 @@
 layout: post-detail
 title: "AI Integration in Web Applications: Practical Guide"
 date: 2026-01-25
+author: "Pawan Kumar"
 category: "Technology"
 tags: ["AI", "Machine Learning", "TensorFlow", "Python", "Integration", "Web Development"]
 image: "/assets/images/posts/ai-power.webp"
