@@ -176,13 +176,23 @@ meta_image: "/assets/images/dsa-category-meta.svg"
             <article class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
                 <a href="{{ post.url }}" class="block relative overflow-hidden h-48">
                     <img src="{{ post.image }}" alt="{{ post.title }}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
-                    <span class="absolute top-3 left-3 bg-purple-600 text-white text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full shadow-md">DSA</span>
+                    
+                    <!-- Enhanced gradient overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent"></div>
+                    
+                    <!-- Category badge at bottom left -->
+                    <span class="absolute bottom-3 left-3 inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full shadow-md border border-white/20">
+                        <i class="fas fa-code"></i>
+                        <span>DSA</span>
+                    </span>
+                    
+                    <!-- NEW badge at top right -->
                     {% assign current_timestamp = site.time | date: '%s' %}
                     {% assign post_timestamp = post.date | date: '%s' %}
                     {% assign seconds_diff = current_timestamp | minus: post_timestamp %}
                     {% assign days_since_post = seconds_diff | divided_by: 86400 %}
                     {% if days_since_post <= site.new_blog_days_threshold %}
-                    <span class="absolute top-3 right-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full shadow-md animate-pulse">
+                    <span class="absolute top-3 right-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full shadow-md animate-pulse border border-yellow-300">
                         <i class="fas fa-fire"></i> NEW
                     </span>
                     {% endif %}
@@ -191,11 +201,27 @@ meta_image: "/assets/images/dsa-category-meta.svg"
                     <h3 class="text-lg font-bold text-gray-900 leading-snug mb-2">
                         <a href="{{ post.url }}" class="hover:text-purple-600 transition-colors duration-200">{{ post.title }}</a>
                     </h3>
-                    <div class="flex items-center gap-2 text-gray-500 text-xs mb-3">
-                        <time>{{ post.date | date: "%b %d, %Y" }}</time>
+                    
+                    <!-- Enhanced metadata with author -->
+                    <div class="flex flex-wrap items-center gap-2 text-gray-500 text-xs mb-3">
+                        <time class="flex items-center gap-1">
+                            <i class="fas fa-calendar text-blue-600"></i>
+                            {{ post.date | date: "%b %d, %Y" }}
+                        </time>
                         <span class="text-gray-300">•</span>
-                        <span>📖 {% assign words = post.content | number_of_words %}{% if words < 360 %}1 min read{% else %}{{ words | divided_by: 180 }} min read{% endif %}</span>
+                        <span class="flex items-center gap-1">
+                            <i class="fas fa-clock text-purple-600"></i>
+                            {% assign words = post.content | number_of_words %}{% if words < 360 %}1 min{% else %}{{ words | divided_by: 180 }} min{% endif %}
+                        </span>
+                        {% if post.author %}
+                        <span class="text-gray-300">•</span>
+                        <span class="flex items-center gap-1">
+                            <i class="fas fa-user text-pink-600"></i>
+                            {{ post.author }}
+                        </span>
+                        {% endif %}
                     </div>
+                    
                     {% if post.tags and post.tags.size > 0 %}
                     <div class="flex flex-wrap gap-1 mb-3">
                         {% for tag in post.tags limit:3 %}

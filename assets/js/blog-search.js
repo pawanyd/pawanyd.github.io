@@ -68,27 +68,53 @@
         if (els.searchCount) {
             els.searchCount.textContent = `Found ${posts.length} result${posts.length !== 1 ? 's' : ''} for "${query}"`;
         }
-        els.searchResults.innerHTML = posts.map(post => `
+        els.searchResults.innerHTML = posts.map(post => {
+            const categoryConfig = getCategoryConfig(post.category);
+            return `
             <article class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
                 <a href="${escHtml(post.url)}" class="block relative overflow-hidden h-48 sm:h-44 md:h-52 lg:h-48" onclick="trackVisit('${escHtml(post.url)}','${escHtml(post.title)}','${escHtml(post.image||'')}')">
                     <img src="${escHtml(post.image||'')}" alt="${escHtml(post.title)}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
-                    <span class="absolute top-3 left-3 ${post.category === 'DSA' ? 'bg-purple-600' : 'bg-blue-600'} text-white text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full shadow-md">${escHtml(post.category)}</span>
+                    
+                    <!-- Enhanced gradient overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent"></div>
+                    
+                    <!-- Category badge at bottom left -->
+                    <span class="absolute bottom-3 left-3 inline-flex items-center gap-2 ${categoryConfig.bgColor} backdrop-blur-sm text-white text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full shadow-md border border-white/20">
+                        <i class="${categoryConfig.icon}"></i>
+                        <span>${categoryConfig.label}</span>
+                    </span>
                 </a>
                 <div class="p-4 lg:p-5 flex flex-col flex-1">
                     <h2 class="text-base font-bold text-gray-900 leading-snug mb-2">
                         <a href="${escHtml(post.url)}" class="hover:text-blue-600 transition-colors duration-200">${highlightText(post.title, query)}</a>
                     </h2>
-                    <div class="flex items-center gap-2 text-gray-500 text-xs mb-3">
-                        <time>${escHtml(post.date)}</time>
+                    
+                    <!-- Enhanced metadata with author -->
+                    <div class="flex flex-wrap items-center gap-2 text-gray-500 text-xs mb-3">
+                        <time class="flex items-center gap-1">
+                            <i class="fas fa-calendar text-blue-600"></i>
+                            ${escHtml(post.date)}
+                        </time>
                         <span class="text-gray-300">•</span>
-                        <span>📖 ${calcReadTime(post.content)}</span>
+                        <span class="flex items-center gap-1">
+                            <i class="fas fa-clock text-purple-600"></i>
+                            ${calcReadTime(post.content)}
+                        </span>
+                        ${post.author ? `
+                        <span class="text-gray-300">•</span>
+                        <span class="flex items-center gap-1">
+                            <i class="fas fa-user text-pink-600"></i>
+                            ${escHtml(post.author)}
+                        </span>
+                        ` : ''}
                     </div>
-                    ${post.tags && post.tags.length ? `<div class="flex flex-wrap gap-1 mb-3">${post.tags.slice(0,3).map(t=>`<span class="text-xs px-2 py-0.5 ${post.category === 'DSA' ? 'bg-purple-50 text-purple-600' : 'bg-blue-50 text-blue-600'} rounded-full font-medium">${escHtml(t)}</span>`).join('')}</div>` : ''}
+                    
+                    ${post.tags && post.tags.length ? `<div class="flex flex-wrap gap-1 mb-3">${post.tags.slice(0,3).map(t=>`<span class="text-xs px-2 py-0.5 ${categoryConfig.tagColor} rounded-full font-medium">${escHtml(t)}</span>`).join('')}</div>` : ''}
                     <p class="text-gray-500 text-sm leading-relaxed mb-4 flex-1">${escHtml(post.excerpt||'').split(' ').slice(0,18).join(' ')}...</p>
-                    <a href="${escHtml(post.url)}" class="inline-flex items-center gap-2 ${post.category === 'DSA' ? 'text-purple-600' : 'text-blue-600'} text-sm font-semibold hover:gap-3 transition-all duration-200">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+                    <a href="${escHtml(post.url)}" class="inline-flex items-center gap-2 ${categoryConfig.linkColor} text-sm font-semibold hover:gap-3 transition-all duration-200">Read More <i class="fas fa-arrow-right text-xs"></i></a>
                 </div>
             </article>
-        `).join('');
+        `}).join('');
     }
 
     function showNoSearchResults(query) {
@@ -125,33 +151,53 @@
 
     function buildPostCard(post) {
         const tags = Array.isArray(post.tags) ? post.tags : (post.tags ? [post.tags] : []);
-        const isDSA = post.category === 'DSA';
-        const categoryColor = isDSA ? 'bg-purple-600' : 'bg-blue-600';
-        const tagColor = isDSA ? 'bg-purple-50 text-purple-600' : 'bg-blue-50 text-blue-600';
-        const linkColor = isDSA ? 'text-purple-600' : 'text-blue-600';
-        const hoverColor = isDSA ? 'hover:text-purple-600' : 'hover:text-blue-600';
+        const categoryConfig = getCategoryConfig(post.category);
         
         const tagsHtml = tags.length
-            ? `<div class="flex flex-wrap gap-1 mb-3">${tags.slice(0, 3).map(t => `<span class="text-xs px-2 py-0.5 ${tagColor} rounded-full font-medium">${escHtml(t)}</span>`).join('')}</div>`
+            ? `<div class="flex flex-wrap gap-1 mb-3">${tags.slice(0, 3).map(t => `<span class="text-xs px-2 py-0.5 ${categoryConfig.tagColor} rounded-full font-medium">${escHtml(t)}</span>`).join('')}</div>`
             : '';
         return `
             <article class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col" data-category="${escHtml(post.category)}" data-url="${escHtml(post.url)}">
                 <a href="${escHtml(post.url)}" class="block relative overflow-hidden h-48 sm:h-44 md:h-52 lg:h-48" onclick="trackVisit('${escHtml(post.url)}','${escHtml(post.title)}','${escHtml(post.image||'')}')">
                     <img src="${escHtml(post.image||'')}" alt="${escHtml(post.title)}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
-                    <span class="absolute top-3 left-3 ${categoryColor} text-white text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full shadow-md">${escHtml(post.category)}</span>
+                    
+                    <!-- Enhanced gradient overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent"></div>
+                    
+                    <!-- Category badge at bottom left -->
+                    <span class="absolute bottom-3 left-3 inline-flex items-center gap-2 ${categoryConfig.bgColor} backdrop-blur-sm text-white text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full shadow-md border border-white/20">
+                        <i class="${categoryConfig.icon}"></i>
+                        <span>${categoryConfig.label}</span>
+                    </span>
                 </a>
                 <div class="p-4 lg:p-5 flex flex-col flex-1">
                     <h2 class="text-base font-bold text-gray-900 leading-snug mb-2">
-                        <a href="${escHtml(post.url)}" class="${hoverColor} transition-colors duration-200">${escHtml(post.title)}</a>
+                        <a href="${escHtml(post.url)}" class="${categoryConfig.hoverColor} transition-colors duration-200">${escHtml(post.title)}</a>
                     </h2>
-                    <div class="flex items-center gap-2 text-gray-500 text-xs mb-3">
-                        <time>${escHtml(post.date)}</time>
+                    
+                    <!-- Enhanced metadata with author -->
+                    <div class="flex flex-wrap items-center gap-2 text-gray-500 text-xs mb-3">
+                        <time class="flex items-center gap-1">
+                            <i class="fas fa-calendar text-blue-600"></i>
+                            ${escHtml(post.date)}
+                        </time>
                         <span class="text-gray-300">•</span>
-                        <span>📖 ${calcReadTime(post.content)}</span>
+                        <span class="flex items-center gap-1">
+                            <i class="fas fa-clock text-purple-600"></i>
+                            ${calcReadTime(post.content)}
+                        </span>
+                        ${post.author ? `
+                        <span class="text-gray-300">•</span>
+                        <span class="flex items-center gap-1">
+                            <i class="fas fa-user text-pink-600"></i>
+                            ${escHtml(post.author)}
+                        </span>
+                        ` : ''}
                     </div>
+                    
                     ${tagsHtml}
                     <p class="text-gray-500 text-sm leading-relaxed mb-4 flex-1">${escHtml(post.excerpt||'').split(' ').slice(0, 18).join(' ')}...</p>
-                    <a href="${escHtml(post.url)}" class="inline-flex items-center gap-2 ${linkColor} text-sm font-semibold hover:gap-3 transition-all duration-200">Read More <i class="fas fa-arrow-right text-xs"></i></a>
+                    <a href="${escHtml(post.url)}" class="inline-flex items-center gap-2 ${categoryConfig.linkColor} text-sm font-semibold hover:gap-3 transition-all duration-200">Read More <i class="fas fa-arrow-right text-xs"></i></a>
                 </div>
             </article>`;
     }
@@ -293,6 +339,100 @@
     // ═══════════════════════════════════════════════════════════════════════════════
     // UTILITIES
     // ═══════════════════════════════════════════════════════════════════════════════
+
+    function getCategoryConfig(category) {
+        const configs = {
+            'DSA': {
+                bgColor: 'bg-white/10',
+                icon: 'fas fa-code',
+                label: 'DSA',
+                tagColor: 'bg-purple-50 text-purple-600',
+                linkColor: 'text-purple-600',
+                hoverColor: 'hover:text-purple-600'
+            },
+            'System Design & Architecture': {
+                bgColor: 'bg-white/10',
+                icon: 'fas fa-sitemap',
+                label: 'System Design',
+                tagColor: 'bg-cyan-50 text-cyan-600',
+                linkColor: 'text-cyan-600',
+                hoverColor: 'hover:text-cyan-600'
+            },
+            'Machine Learning & AI': {
+                bgColor: 'bg-white/10',
+                icon: 'fas fa-brain',
+                label: 'ML & AI',
+                tagColor: 'bg-pink-50 text-pink-600',
+                linkColor: 'text-pink-600',
+                hoverColor: 'hover:text-pink-600'
+            },
+            'OOPs & Design Patterns': {
+                bgColor: 'bg-white/10',
+                icon: 'fas fa-cubes',
+                label: 'OOP',
+                tagColor: 'bg-indigo-50 text-indigo-600',
+                linkColor: 'text-indigo-600',
+                hoverColor: 'hover:text-indigo-600'
+            },
+            'Web Fundamentals': {
+                bgColor: 'bg-white/10',
+                icon: 'fas fa-globe',
+                label: 'Web',
+                tagColor: 'bg-green-50 text-green-600',
+                linkColor: 'text-green-600',
+                hoverColor: 'hover:text-green-600'
+            },
+            'Technology': {
+                bgColor: 'bg-white/10',
+                icon: 'fas fa-laptop-code',
+                label: 'Tech',
+                tagColor: 'bg-orange-50 text-orange-600',
+                linkColor: 'text-orange-600',
+                hoverColor: 'hover:text-orange-600'
+            },
+            'DevOps': {
+                bgColor: 'bg-white/10',
+                icon: 'fas fa-server',
+                label: 'DevOps',
+                tagColor: 'bg-teal-50 text-teal-600',
+                linkColor: 'text-teal-600',
+                hoverColor: 'hover:text-teal-600'
+            },
+            'Management': {
+                bgColor: 'bg-white/10',
+                icon: 'fas fa-users',
+                label: 'Management',
+                tagColor: 'bg-amber-50 text-amber-600',
+                linkColor: 'text-amber-600',
+                hoverColor: 'hover:text-amber-600'
+            },
+            'Code | AI': {
+                bgColor: 'bg-white/10',
+                icon: 'fas fa-robot',
+                label: 'Code | AI',
+                tagColor: 'bg-blue-50 text-blue-600',
+                linkColor: 'text-blue-600',
+                hoverColor: 'hover:text-blue-600'
+            },
+            'AI': {
+                bgColor: 'bg-white/10',
+                icon: 'fas fa-brain',
+                label: 'AI',
+                tagColor: 'bg-pink-50 text-pink-600',
+                linkColor: 'text-pink-600',
+                hoverColor: 'hover:text-pink-600'
+            }
+        };
+        
+        return configs[category] || {
+            bgColor: 'bg-white/10',
+            icon: 'fas fa-folder',
+            label: category || 'Blog',
+            tagColor: 'bg-blue-50 text-blue-600',
+            linkColor: 'text-blue-600',
+            hoverColor: 'hover:text-blue-600'
+        };
+    }
 
     function highlightText(text, query) {
         if (!query || !text) return escHtml(text);
