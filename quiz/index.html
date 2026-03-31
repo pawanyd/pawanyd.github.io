@@ -68,9 +68,6 @@ description: Practice quiz questions for technical interviews - DSA, System Desi
 <script src="{{ '/assets/js/quiz/quiz-ui.js' | relative_url }}"></script>
 
 <script>
-// Initialize quiz on page load
-document.addEventListener('DOMContentLoaded', async function() {
-    const quizUI = new QuizUI();
-    await quizUI.init();
-});
+// Quiz UI will be initialized by quiz-ui.js
+// The global instance window.quizUIInstance will be available
 </script>

@@ -543,9 +543,25 @@ class QuizUI {
     this.stopTimer();
     
     const results = this.quizSystem.getResults();
+    
+    // Debug logging
+    console.log('=== QUIZ RESULTS DEBUG ===');
+    console.log('Full results object:', results);
+    console.log('Total answers:', results.answers.length);
+    console.log('Score:', results.score);
+    console.log('Total questions:', results.totalQuestions);
+    console.log('Answers array:', results.answers);
+    
     const minutes = Math.floor(results.timeTaken / 60);
     const seconds = results.timeTaken % 60;
     const skippedCount = results.answers.filter(a => a.skipped).length;
+    const correctCount = results.answers.filter(a => a.isCorrect && !a.skipped).length;
+    const incorrectCount = results.answers.filter(a => !a.isCorrect && !a.skipped).length;
+    
+    console.log('Correct count:', correctCount);
+    console.log('Incorrect count:', incorrectCount);
+    console.log('Skipped count:', skippedCount);
+    console.log('=========================');
     
     // Save quiz attempt if user is authenticated
     if (window.authManager && window.authManager.isAuthenticated()) {
@@ -584,18 +600,21 @@ class QuizUI {
           </div>
           
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
-              <div class="text-3xl font-bold text-green-600 dark:text-green-400">${results.score}</div>
+            <button onclick="quizUIInstance.showAnswersByType('correct')" class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 hover:bg-green-50 dark:hover:bg-green-900/30 transition-colors cursor-pointer border-2 border-transparent hover:border-green-500 dark:hover:border-green-400">
+              <div class="text-3xl font-bold text-green-600 dark:text-green-400">${correctCount}</div>
               <div class="text-sm text-gray-600 dark:text-gray-400">Correct</div>
-            </div>
-            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
-              <div class="text-3xl font-bold text-red-600 dark:text-red-400">${results.totalQuestions - results.score - skippedCount}</div>
+              <div class="text-xs text-gray-500 dark:text-gray-500 mt-1">Click to view</div>
+            </button>
+            <button onclick="quizUIInstance.showAnswersByType('incorrect')" class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 hover:bg-red-50 dark:hover:bg-red-900/30 transition-colors cursor-pointer border-2 border-transparent hover:border-red-500 dark:hover:border-red-400">
+              <div class="text-3xl font-bold text-red-600 dark:text-red-400">${incorrectCount}</div>
               <div class="text-sm text-gray-600 dark:text-gray-400">Incorrect</div>
-            </div>
-            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+              <div class="text-xs text-gray-500 dark:text-gray-500 mt-1">Click to view</div>
+            </button>
+            <button onclick="quizUIInstance.showAnswersByType('skipped')" class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 hover:bg-yellow-50 dark:hover:bg-yellow-900/30 transition-colors cursor-pointer border-2 border-transparent hover:border-yellow-500 dark:hover:border-yellow-400">
               <div class="text-3xl font-bold text-yellow-600 dark:text-yellow-400">${skippedCount}</div>
               <div class="text-sm text-gray-600 dark:text-gray-400">Skipped</div>
-            </div>
+              <div class="text-xs text-gray-500 dark:text-gray-500 mt-1">Click to view</div>
+            </button>
             <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
               <div class="text-3xl font-bold text-blue-600 dark:text-blue-400">${minutes}:${seconds.toString().padStart(2, '0')}</div>
               <div class="text-sm text-gray-600 dark:text-gray-400">Time</div>
@@ -641,6 +660,159 @@ class QuizUI {
     } catch (error) {
       console.error('Error saving quiz attempt:', error);
     }
+  }
+
+  /**
+   * Show answers filtered by type (correct/incorrect/skipped)
+   */
+  showAnswersByType(type) {
+    const results = this.quizSystem.getResults();
+    
+    // Debug log
+    console.log('Results:', results);
+    console.log('All answers:', results.answers);
+    
+    // Filter answers based on type
+    let filteredAnswers = [];
+    let title = '';
+    let emptyMessage = '';
+    let headerColor = '';
+    
+    if (type === 'correct') {
+      filteredAnswers = results.answers.filter(a => a.isCorrect && !a.skipped);
+      console.log('Correct answers:', filteredAnswers);
+      title = `✅ Correct Answers (${filteredAnswers.length})`;
+      emptyMessage = 'No correct answers yet. Keep practicing!';
+      headerColor = 'text-green-600 dark:text-green-400';
+    } else if (type === 'incorrect') {
+      filteredAnswers = results.answers.filter(a => !a.isCorrect && !a.skipped);
+      console.log('Incorrect answers:', filteredAnswers);
+      title = `❌ Incorrect Answers (${filteredAnswers.length})`;
+      emptyMessage = 'Great job! You didn\'t get any questions wrong.';
+      headerColor = 'text-red-600 dark:text-red-400';
+    } else if (type === 'skipped') {
+      filteredAnswers = results.answers.filter(a => a.skipped);
+      console.log('Skipped answers:', filteredAnswers);
+      title = `⏭️ Skipped Questions (${filteredAnswers.length})`;
+      emptyMessage = 'You didn\'t skip any questions!';
+      headerColor = 'text-yellow-600 dark:text-yellow-400';
+    }
+    
+    const modal = document.createElement('div');
+    modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 overflow-y-auto';
+    modal.onclick = (e) => {
+      if (e.target === modal) modal.remove();
+    };
+    
+    modal.innerHTML = `
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-4xl w-full p-8 my-8">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-3xl font-bold ${headerColor}">${title}</h2>
+          <button onclick="this.closest('.fixed').remove()" class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300">
+            <i class="fas fa-times text-2xl"></i>
+          </button>
+        </div>
+        
+        ${filteredAnswers.length === 0 ? `
+          <div class="text-center py-12">
+            <div class="text-6xl mb-4">🎯</div>
+            <p class="text-xl text-gray-600 dark:text-gray-400">${emptyMessage}</p>
+          </div>
+        ` : `
+          <div class="space-y-4 max-h-[60vh] overflow-y-auto">
+            ${filteredAnswers.map((answer, index) => {
+              const originalIndex = results.answers.indexOf(answer);
+              const borderColor = answer.skipped ? 'border-yellow-200 dark:border-yellow-700 bg-yellow-50 dark:bg-yellow-900/20' : 
+                                 answer.isCorrect ? 'border-green-200 dark:border-green-700 bg-green-50 dark:bg-green-900/20' : 
+                                 'border-red-200 dark:border-red-700 bg-red-50 dark:bg-red-900/20';
+              const badgeColor = answer.skipped ? 'bg-yellow-500' : answer.isCorrect ? 'bg-green-500' : 'bg-red-500';
+              const iconClass = answer.skipped ? 'fa-forward text-yellow-600 dark:text-yellow-400' : 
+                               answer.isCorrect ? 'fa-check-circle text-green-600 dark:text-green-400' : 
+                               'fa-times-circle text-red-600 dark:text-red-400';
+              
+              return `
+              <div class="border ${borderColor} rounded-lg p-4">
+                <div class="flex items-start gap-3">
+                  <span class="flex-shrink-0 w-8 h-8 rounded-full ${badgeColor} text-white flex items-center justify-center font-bold">
+                    ${originalIndex + 1}
+                  </span>
+                  <div class="flex-1">
+                    <h4 class="font-semibold text-gray-900 dark:text-gray-100 mb-3">${answer.question}</h4>
+                    
+                    <!-- Show all options with highlighting -->
+                    <div class="space-y-2 mb-3">
+                      ${answer.options.map((option, optIndex) => {
+                        const isUserAnswer = optIndex === answer.selectedOption;
+                        const isCorrectAnswer = optIndex === answer.correctAnswer;
+                        
+                        let optionClass = 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300';
+                        let optionIcon = '';
+                        
+                        if (isCorrectAnswer) {
+                          optionClass = 'bg-green-100 dark:bg-green-900/40 text-green-800 dark:text-green-300 border-2 border-green-500 dark:border-green-400';
+                          optionIcon = '<i class="fas fa-check-circle text-green-600 dark:text-green-400 ml-2"></i>';
+                        } else if (isUserAnswer && !answer.isCorrect) {
+                          optionClass = 'bg-red-100 dark:bg-red-900/40 text-red-800 dark:text-red-300 border-2 border-red-500 dark:border-red-400';
+                          optionIcon = '<i class="fas fa-times-circle text-red-600 dark:text-red-400 ml-2"></i>';
+                        }
+                        
+                        return `
+                          <div class="flex items-center p-3 rounded-lg ${optionClass}">
+                            <span class="inline-block w-6 h-6 rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 text-center leading-6 mr-3 font-semibold text-sm">
+                              ${String.fromCharCode(65 + optIndex)}
+                            </span>
+                            <span class="flex-1">${option}</span>
+                            ${optionIcon}
+                          </div>
+                        `;
+                      }).join('')}
+                    </div>
+                    
+                    ${answer.skipped ? `
+                      <div class="bg-yellow-100 dark:bg-yellow-900/30 border border-yellow-300 dark:border-yellow-700 rounded-lg p-3 mb-2">
+                        <p class="text-sm text-yellow-800 dark:text-yellow-300 font-semibold">
+                          <i class="fas fa-forward mr-1"></i>You skipped this question
+                        </p>
+                      </div>
+                    ` : ''}
+                    
+                    ${!answer.isCorrect && !answer.skipped ? `
+                      <div class="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-700 rounded-lg p-3">
+                        <p class="text-sm text-blue-800 dark:text-blue-300">
+                          <i class="fas fa-lightbulb mr-1"></i><span class="font-semibold">Explanation:</span> ${answer.explanation}
+                        </p>
+                      </div>
+                    ` : ''}
+                    
+                    ${answer.isCorrect ? `
+                      <div class="bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-700 rounded-lg p-3">
+                        <p class="text-sm text-green-800 dark:text-green-300">
+                          <i class="fas fa-check-circle mr-1"></i><span class="font-semibold">Correct!</span> ${answer.explanation}
+                        </p>
+                      </div>
+                    ` : ''}
+                  </div>
+                  <i class="fas ${iconClass} text-2xl"></i>
+                </div>
+              </div>
+            `}).join('')}
+          </div>
+        `}
+        
+        <div class="mt-6 flex gap-3 justify-center">
+          <button onclick="this.closest('.fixed').remove()" class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+            Close
+          </button>
+          ${filteredAnswers.length > 0 ? `
+            <button onclick="this.closest('.fixed').remove(); quizUIInstance.showDetailedResults();" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all">
+              <i class="fas fa-list mr-2"></i>View All Results
+            </button>
+          ` : ''}
+        </div>
+      </div>
+    `;
+    
+    document.body.appendChild(modal);
   }
 
   /**
@@ -724,6 +896,7 @@ window.quizUIInstance = null;
 window.QuizUI = QuizUI;
 
 // Initialize on load
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   window.quizUIInstance = new QuizUI();
+  await window.quizUIInstance.init();
 });
