@@ -26,80 +26,168 @@
       "icon": "fa-js",
       "questionCount": 50,
       "order": 3
+    },
+    {
+      "id": "nodejs",
+      "name": "Node.js",
+      "slug": "nodejs",
+      "description": "Master Node.js backend development",
+      "icon": "fa-node-js",
+      "questionCount": 50,
+      "order": 4
+    },
+    {
+      "id": "reactjs",
+      "name": "React.js",
+      "slug": "reactjs",
+      "description": "Test your React.js frontend skills",
+      "icon": "fa-react",
+      "questionCount": 50,
+      "order": 5
     }
   ],
   "questions": [
     {
       "category": "dsa",
       "question": "What is the time complexity of binary search?",
-      "options": ["O(n)", "O(log n)", "O(n²)", "O(1)"],
+      "options": [
+        "O(n)",
+        "O(log n)",
+        "O(n\u00b2)",
+        "O(1)"
+      ],
       "correctAnswer": 1,
       "explanation": "Binary search divides the search space in half with each iteration, resulting in O(log n) time complexity.",
       "difficulty": "easy",
-      "tags": ["algorithms", "searching", "complexity"]
+      "tags": [
+        "algorithms",
+        "searching",
+        "complexity"
+      ]
     },
     {
       "category": "dsa",
       "question": "Which data structure uses LIFO (Last In First Out) principle?",
-      "options": ["Queue", "Stack", "Array", "Linked List"],
+      "options": [
+        "Queue",
+        "Stack",
+        "Array",
+        "Linked List"
+      ],
       "correctAnswer": 1,
       "explanation": "A Stack follows the LIFO principle where the last element added is the first one to be removed.",
       "difficulty": "easy",
-      "tags": ["data-structures", "stack"]
+      "tags": [
+        "data-structures",
+        "stack"
+      ]
     },
     {
       "category": "dsa",
       "question": "What is the worst-case time complexity of QuickSort?",
-      "options": ["O(n log n)", "O(n²)", "O(n)", "O(log n)"],
+      "options": [
+        "O(n log n)",
+        "O(n\u00b2)",
+        "O(n)",
+        "O(log n)"
+      ],
       "correctAnswer": 1,
-      "explanation": "QuickSort has a worst-case time complexity of O(n²) when the pivot selection is poor, though average case is O(n log n).",
+      "explanation": "QuickSort has a worst-case time complexity of O(n\u00b2) when the pivot selection is poor, though average case is O(n log n).",
       "difficulty": "medium",
-      "tags": ["algorithms", "sorting", "complexity"]
+      "tags": [
+        "algorithms",
+        "sorting",
+        "complexity"
+      ]
     },
     {
       "category": "dsa",
       "question": "Which traversal visits nodes in the order: Left, Root, Right?",
-      "options": ["Preorder", "Inorder", "Postorder", "Level-order"],
+      "options": [
+        "Preorder",
+        "Inorder",
+        "Postorder",
+        "Level-order"
+      ],
       "correctAnswer": 1,
       "explanation": "Inorder traversal visits the left subtree first, then the root, and finally the right subtree.",
       "difficulty": "easy",
-      "tags": ["trees", "traversal"]
+      "tags": [
+        "trees",
+        "traversal"
+      ]
     },
     {
       "category": "dsa",
       "question": "What is the space complexity of merge sort?",
-      "options": ["O(1)", "O(log n)", "O(n)", "O(n²)"],
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n\u00b2)"
+      ],
       "correctAnswer": 2,
       "explanation": "Merge sort requires O(n) additional space for the temporary arrays used during merging.",
       "difficulty": "medium",
-      "tags": ["algorithms", "sorting", "complexity"]
+      "tags": [
+        "algorithms",
+        "sorting",
+        "complexity"
+      ]
     },
     {
       "category": "dsa",
       "question": "Which data structure is best for implementing a priority queue?",
-      "options": ["Array", "Linked List", "Heap", "Stack"],
+      "options": [
+        "Array",
+        "Linked List",
+        "Heap",
+        "Stack"
+      ],
       "correctAnswer": 2,
       "explanation": "A Heap (typically a binary heap) is the most efficient data structure for implementing a priority queue with O(log n) insertion and deletion.",
       "difficulty": "medium",
-      "tags": ["data-structures", "heap", "priority-queue"]
+      "tags": [
+        "data-structures",
+        "heap",
+        "priority-queue"
+      ]
     },
     {
       "category": "dsa",
       "question": "What is the time complexity of accessing an element in a hash table (average case)?",
-      "options": ["O(1)", "O(log n)", "O(n)", "O(n²)"],
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n\u00b2)"
+      ],
       "correctAnswer": 0,
       "explanation": "Hash tables provide O(1) average-case time complexity for insertion, deletion, and lookup operations.",
       "difficulty": "easy",
-      "tags": ["data-structures", "hash-table", "complexity"]
+      "tags": [
+        "data-structures",
+        "hash-table",
+        "complexity"
+      ]
     },
     {
       "category": "dsa",
       "question": "Which algorithm is used to find the shortest path in a weighted graph?",
-      "options": ["BFS", "DFS", "Dijkstra's Algorithm", "Binary Search"],
+      "options": [
+        "BFS",
+        "DFS",
+        "Dijkstra's Algorithm",
+        "Binary Search"
+      ],
       "correctAnswer": 2,
       "explanation": "Dijkstra's Algorithm finds the shortest path from a source vertex to all other vertices in a weighted graph with non-negative weights.",
       "difficulty": "medium",
-      "tags": ["algorithms", "graphs", "shortest-path"]
+      "tags": [
+        "algorithms",
+        "graphs",
+        "shortest-path"
+      ]
     },
     {
       "category": "dsa",
@@ -113,16 +201,28 @@
       "correctAnswer": 1,
       "explanation": "A balanced BST maintains a height difference of at most 1 between left and right subtrees for all nodes, ensuring O(log n) operations.",
       "difficulty": "medium",
-      "tags": ["data-structures", "trees", "balanced-tree"]
+      "tags": [
+        "data-structures",
+        "trees",
+        "balanced-tree"
+      ]
     },
     {
       "category": "dsa",
       "question": "Which sorting algorithm is most efficient for nearly sorted data?",
-      "options": ["Quick Sort", "Merge Sort", "Insertion Sort", "Heap Sort"],
+      "options": [
+        "Quick Sort",
+        "Merge Sort",
+        "Insertion Sort",
+        "Heap Sort"
+      ],
       "correctAnswer": 2,
       "explanation": "Insertion Sort performs very well on nearly sorted data with O(n) time complexity in the best case.",
       "difficulty": "medium",
-      "tags": ["algorithms", "sorting"]
+      "tags": [
+        "algorithms",
+        "sorting"
+      ]
     },
     {
       "category": "dsa",
@@ -136,133 +236,263 @@
       "correctAnswer": 1,
       "explanation": "A sentinel (dummy) node simplifies code by eliminating special cases for empty lists and boundary conditions.",
       "difficulty": "medium",
-      "tags": ["data-structures", "linked-list"]
+      "tags": [
+        "data-structures",
+        "linked-list"
+      ]
     },
     {
       "category": "dsa",
       "question": "Which data structure would you use to implement undo functionality?",
-      "options": ["Queue", "Stack", "Tree", "Graph"],
+      "options": [
+        "Queue",
+        "Stack",
+        "Tree",
+        "Graph"
+      ],
       "correctAnswer": 1,
       "explanation": "A Stack is ideal for undo functionality as it follows LIFO - the most recent action is undone first.",
       "difficulty": "easy",
-      "tags": ["data-structures", "stack", "applications"]
+      "tags": [
+        "data-structures",
+        "stack",
+        "applications"
+      ]
     },
     {
       "category": "dsa",
       "question": "What is the time complexity of building a heap from an unsorted array?",
-      "options": ["O(n)", "O(n log n)", "O(log n)", "O(n²)"],
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(log n)",
+        "O(n\u00b2)"
+      ],
       "correctAnswer": 0,
       "explanation": "Building a heap from an unsorted array using the heapify process takes O(n) time, not O(n log n) as commonly assumed.",
       "difficulty": "hard",
-      "tags": ["data-structures", "heap", "complexity"]
+      "tags": [
+        "data-structures",
+        "heap",
+        "complexity"
+      ]
     },
     {
       "category": "dsa",
       "question": "Which algorithm detects cycles in a linked list?",
-      "options": ["Binary Search", "Floyd's Cycle Detection", "Dijkstra's Algorithm", "Bubble Sort"],
+      "options": [
+        "Binary Search",
+        "Floyd's Cycle Detection",
+        "Dijkstra's Algorithm",
+        "Bubble Sort"
+      ],
       "correctAnswer": 1,
       "explanation": "Floyd's Cycle Detection (Tortoise and Hare) uses two pointers moving at different speeds to detect cycles in O(n) time and O(1) space.",
       "difficulty": "medium",
-      "tags": ["algorithms", "linked-list", "cycle-detection"]
+      "tags": [
+        "algorithms",
+        "linked-list",
+        "cycle-detection"
+      ]
     },
     {
       "category": "dsa",
       "question": "What is the maximum number of nodes in a binary tree of height h?",
-      "options": ["2^h", "2^h - 1", "2^(h+1) - 1", "h²"],
+      "options": [
+        "2^h",
+        "2^h - 1",
+        "2^(h+1) - 1",
+        "h\u00b2"
+      ],
       "correctAnswer": 2,
       "explanation": "A complete binary tree of height h has a maximum of 2^(h+1) - 1 nodes.",
       "difficulty": "medium",
-      "tags": ["data-structures", "trees", "mathematics"]
+      "tags": [
+        "data-structures",
+        "trees",
+        "mathematics"
+      ]
     },
     {
       "category": "dsa",
       "question": "Which data structure is used in BFS traversal?",
-      "options": ["Stack", "Queue", "Heap", "Hash Table"],
+      "options": [
+        "Stack",
+        "Queue",
+        "Heap",
+        "Hash Table"
+      ],
       "correctAnswer": 1,
       "explanation": "BFS (Breadth-First Search) uses a Queue to process nodes level by level in FIFO order.",
       "difficulty": "easy",
-      "tags": ["algorithms", "graphs", "traversal"]
+      "tags": [
+        "algorithms",
+        "graphs",
+        "traversal"
+      ]
     },
     {
       "category": "dsa",
       "question": "What is the time complexity of deleting a node from the middle of a doubly linked list?",
-      "options": ["O(1)", "O(log n)", "O(n)", "O(n²)"],
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n\u00b2)"
+      ],
       "correctAnswer": 0,
       "explanation": "If you have a pointer to the node, deletion in a doubly linked list is O(1) as you can update prev and next pointers directly.",
       "difficulty": "easy",
-      "tags": ["data-structures", "linked-list", "complexity"]
+      "tags": [
+        "data-structures",
+        "linked-list",
+        "complexity"
+      ]
     },
     {
       "category": "dsa",
       "question": "Which algorithm is used for topological sorting?",
-      "options": ["BFS", "DFS", "Both BFS and DFS", "Binary Search"],
+      "options": [
+        "BFS",
+        "DFS",
+        "Both BFS and DFS",
+        "Binary Search"
+      ],
       "correctAnswer": 2,
       "explanation": "Topological sorting can be implemented using both DFS (with recursion) and BFS (Kahn's algorithm).",
       "difficulty": "medium",
-      "tags": ["algorithms", "graphs", "topological-sort"]
+      "tags": [
+        "algorithms",
+        "graphs",
+        "topological-sort"
+      ]
     },
     {
       "category": "dsa",
       "question": "What is a trie data structure primarily used for?",
-      "options": ["Sorting numbers", "String searching and prefix matching", "Graph traversal", "Memory management"],
+      "options": [
+        "Sorting numbers",
+        "String searching and prefix matching",
+        "Graph traversal",
+        "Memory management"
+      ],
       "correctAnswer": 1,
       "explanation": "A Trie (prefix tree) is optimized for string operations like autocomplete, spell checking, and prefix matching.",
       "difficulty": "medium",
-      "tags": ["data-structures", "trie", "strings"]
+      "tags": [
+        "data-structures",
+        "trie",
+        "strings"
+      ]
     },
     {
       "category": "dsa",
       "question": "What is the space complexity of recursive DFS?",
-      "options": ["O(1)", "O(log n)", "O(h) where h is height", "O(n²)"],
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(h) where h is height",
+        "O(n\u00b2)"
+      ],
       "correctAnswer": 2,
       "explanation": "Recursive DFS uses the call stack, requiring O(h) space where h is the maximum depth/height of recursion.",
       "difficulty": "medium",
-      "tags": ["algorithms", "graphs", "complexity", "recursion"]
+      "tags": [
+        "algorithms",
+        "graphs",
+        "complexity",
+        "recursion"
+      ]
     },
     {
       "category": "dsa",
       "question": "Which sorting algorithm is stable and has O(n log n) worst-case complexity?",
-      "options": ["Quick Sort", "Heap Sort", "Merge Sort", "Selection Sort"],
+      "options": [
+        "Quick Sort",
+        "Heap Sort",
+        "Merge Sort",
+        "Selection Sort"
+      ],
       "correctAnswer": 2,
       "explanation": "Merge Sort is stable (preserves relative order of equal elements) and guarantees O(n log n) in all cases.",
       "difficulty": "medium",
-      "tags": ["algorithms", "sorting", "stability"]
+      "tags": [
+        "algorithms",
+        "sorting",
+        "stability"
+      ]
     },
     {
       "category": "dsa",
       "question": "What is the minimum number of nodes in an AVL tree of height h?",
-      "options": ["h", "2^h", "Fibonacci(h+2) - 1", "h²"],
+      "options": [
+        "h",
+        "2^h",
+        "Fibonacci(h+2) - 1",
+        "h\u00b2"
+      ],
       "correctAnswer": 2,
       "explanation": "The minimum number of nodes in an AVL tree of height h follows the Fibonacci sequence: F(h+2) - 1.",
       "difficulty": "hard",
-      "tags": ["data-structures", "trees", "avl-tree"]
+      "tags": [
+        "data-structures",
+        "trees",
+        "avl-tree"
+      ]
     },
     {
       "category": "dsa",
       "question": "Which algorithm finds the Minimum Spanning Tree?",
-      "options": ["Dijkstra's", "Kruskal's or Prim's", "Floyd-Warshall", "Bellman-Ford"],
+      "options": [
+        "Dijkstra's",
+        "Kruskal's or Prim's",
+        "Floyd-Warshall",
+        "Bellman-Ford"
+      ],
       "correctAnswer": 1,
       "explanation": "Both Kruskal's and Prim's algorithms find the Minimum Spanning Tree of a weighted undirected graph.",
       "difficulty": "medium",
-      "tags": ["algorithms", "graphs", "mst"]
+      "tags": [
+        "algorithms",
+        "graphs",
+        "mst"
+      ]
     },
     {
       "category": "dsa",
       "question": "What is the time complexity of finding an element in a balanced BST?",
-      "options": ["O(1)", "O(log n)", "O(n)", "O(n log n)"],
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n log n)"
+      ],
       "correctAnswer": 1,
       "explanation": "In a balanced BST, search operations take O(log n) time due to the tree's balanced height.",
       "difficulty": "easy",
-      "tags": ["data-structures", "trees", "complexity"]
+      "tags": [
+        "data-structures",
+        "trees",
+        "complexity"
+      ]
     },
     {
       "category": "dsa",
       "question": "Which data structure is best for implementing LRU cache?",
-      "options": ["Array", "Hash Map + Doubly Linked List", "Stack", "Binary Tree"],
+      "options": [
+        "Array",
+        "Hash Map + Doubly Linked List",
+        "Stack",
+        "Binary Tree"
+      ],
       "correctAnswer": 1,
       "explanation": "LRU cache is efficiently implemented using a Hash Map for O(1) lookup and a Doubly Linked List for O(1) insertion/deletion.",
       "difficulty": "hard",
-      "tags": ["data-structures", "cache", "design"]
+      "tags": [
+        "data-structures",
+        "cache",
+        "design"
+      ]
     },
     {
       "category": "dsa",
@@ -276,34 +506,63 @@
       "correctAnswer": 1,
       "explanation": "Dynamic Programming is an optimization technique that solves complex problems by breaking them down and storing solutions to subproblems.",
       "difficulty": "medium",
-      "tags": ["algorithms", "dynamic-programming"]
+      "tags": [
+        "algorithms",
+        "dynamic-programming"
+      ]
     },
     {
       "category": "dsa",
       "question": "Which algorithm is used to find strongly connected components?",
-      "options": ["BFS", "Kosaraju's Algorithm", "Binary Search", "Merge Sort"],
+      "options": [
+        "BFS",
+        "Kosaraju's Algorithm",
+        "Binary Search",
+        "Merge Sort"
+      ],
       "correctAnswer": 1,
       "explanation": "Kosaraju's Algorithm (or Tarjan's) finds strongly connected components in a directed graph using two DFS passes.",
       "difficulty": "hard",
-      "tags": ["algorithms", "graphs", "scc"]
+      "tags": [
+        "algorithms",
+        "graphs",
+        "scc"
+      ]
     },
     {
       "category": "dsa",
       "question": "What is the time complexity of counting sort?",
-      "options": ["O(n + k)", "O(n log n)", "O(n²)", "O(k log k)"],
+      "options": [
+        "O(n + k)",
+        "O(n log n)",
+        "O(n\u00b2)",
+        "O(k log k)"
+      ],
       "correctAnswer": 0,
       "explanation": "Counting sort runs in O(n + k) time where n is the number of elements and k is the range of input values.",
       "difficulty": "medium",
-      "tags": ["algorithms", "sorting", "complexity"]
+      "tags": [
+        "algorithms",
+        "sorting",
+        "complexity"
+      ]
     },
     {
       "category": "dsa",
       "question": "Which data structure uses FIFO principle?",
-      "options": ["Stack", "Queue", "Tree", "Graph"],
+      "options": [
+        "Stack",
+        "Queue",
+        "Tree",
+        "Graph"
+      ],
       "correctAnswer": 1,
       "explanation": "A Queue follows the FIFO (First In First Out) principle where the first element added is the first one removed.",
       "difficulty": "easy",
-      "tags": ["data-structures", "queue"]
+      "tags": [
+        "data-structures",
+        "queue"
+      ]
     },
     {
       "category": "dsa",
@@ -317,16 +576,29 @@
       "correctAnswer": 1,
       "explanation": "The Master Theorem provides a way to analyze the time complexity of divide-and-conquer algorithms.",
       "difficulty": "hard",
-      "tags": ["algorithms", "complexity", "theory"]
+      "tags": [
+        "algorithms",
+        "complexity",
+        "theory"
+      ]
     },
     {
       "category": "dsa",
       "question": "Which operation is NOT efficient in an array?",
-      "options": ["Random access", "Insertion at beginning", "Accessing by index", "Iteration"],
+      "options": [
+        "Random access",
+        "Insertion at beginning",
+        "Accessing by index",
+        "Iteration"
+      ],
       "correctAnswer": 1,
       "explanation": "Inserting at the beginning of an array requires shifting all elements, making it O(n) operation.",
       "difficulty": "easy",
-      "tags": ["data-structures", "array", "complexity"]
+      "tags": [
+        "data-structures",
+        "array",
+        "complexity"
+      ]
     },
     {
       "category": "dsa",
@@ -340,52 +612,100 @@
       "correctAnswer": 1,
       "explanation": "A circular queue connects the rear position back to the front, efficiently utilizing array space.",
       "difficulty": "medium",
-      "tags": ["data-structures", "queue"]
+      "tags": [
+        "data-structures",
+        "queue"
+      ]
     },
     {
       "category": "dsa",
       "question": "Which algorithm solves the all-pairs shortest path problem?",
-      "options": ["Dijkstra's", "BFS", "Floyd-Warshall", "Prim's"],
+      "options": [
+        "Dijkstra's",
+        "BFS",
+        "Floyd-Warshall",
+        "Prim's"
+      ],
       "correctAnswer": 2,
-      "explanation": "Floyd-Warshall algorithm finds shortest paths between all pairs of vertices in O(n³) time.",
+      "explanation": "Floyd-Warshall algorithm finds shortest paths between all pairs of vertices in O(n\u00b3) time.",
       "difficulty": "medium",
-      "tags": ["algorithms", "graphs", "shortest-path"]
+      "tags": [
+        "algorithms",
+        "graphs",
+        "shortest-path"
+      ]
     },
     {
       "category": "dsa",
       "question": "What is the height of a complete binary tree with n nodes?",
-      "options": ["log₂(n)", "⌊log₂(n)⌋", "n", "√n"],
+      "options": [
+        "log\u2082(n)",
+        "\u230alog\u2082(n)\u230b",
+        "n",
+        "\u221an"
+      ],
       "correctAnswer": 1,
-      "explanation": "A complete binary tree with n nodes has height ⌊log₂(n)⌋ (floor of log base 2 of n).",
+      "explanation": "A complete binary tree with n nodes has height \u230alog\u2082(n)\u230b (floor of log base 2 of n).",
       "difficulty": "medium",
-      "tags": ["data-structures", "trees", "mathematics"]
+      "tags": [
+        "data-structures",
+        "trees",
+        "mathematics"
+      ]
     },
     {
       "category": "dsa",
       "question": "Which data structure is used in expression evaluation?",
-      "options": ["Queue", "Stack", "Tree", "Graph"],
+      "options": [
+        "Queue",
+        "Stack",
+        "Tree",
+        "Graph"
+      ],
       "correctAnswer": 1,
       "explanation": "Stack is used to evaluate postfix expressions and convert between infix, prefix, and postfix notations.",
       "difficulty": "easy",
-      "tags": ["data-structures", "stack", "applications"]
+      "tags": [
+        "data-structures",
+        "stack",
+        "applications"
+      ]
     },
     {
       "category": "dsa",
       "question": "What is the time complexity of the Bellman-Ford algorithm?",
-      "options": ["O(V + E)", "O(V * E)", "O(V²)", "O(E log V)"],
+      "options": [
+        "O(V + E)",
+        "O(V * E)",
+        "O(V\u00b2)",
+        "O(E log V)"
+      ],
       "correctAnswer": 1,
       "explanation": "Bellman-Ford algorithm runs in O(V * E) time where V is vertices and E is edges.",
       "difficulty": "medium",
-      "tags": ["algorithms", "graphs", "complexity"]
+      "tags": [
+        "algorithms",
+        "graphs",
+        "complexity"
+      ]
     },
     {
       "category": "dsa",
       "question": "Which tree traversal uses a stack implicitly?",
-      "options": ["Level-order", "Inorder (recursive)", "BFS", "None"],
+      "options": [
+        "Level-order",
+        "Inorder (recursive)",
+        "BFS",
+        "None"
+      ],
       "correctAnswer": 1,
       "explanation": "Recursive tree traversals (preorder, inorder, postorder) use the call stack implicitly.",
       "difficulty": "medium",
-      "tags": ["data-structures", "trees", "traversal"]
+      "tags": [
+        "data-structures",
+        "trees",
+        "traversal"
+      ]
     },
     {
       "category": "dsa",
@@ -399,52 +719,100 @@
       "correctAnswer": 0,
       "explanation": "A Deque (Double-Ended Queue) allows insertion and deletion at both front and rear ends.",
       "difficulty": "easy",
-      "tags": ["data-structures", "queue", "deque"]
+      "tags": [
+        "data-structures",
+        "queue",
+        "deque"
+      ]
     },
     {
       "category": "dsa",
       "question": "Which sorting algorithm has the best best-case time complexity?",
-      "options": ["Bubble Sort", "Quick Sort", "Merge Sort", "Insertion Sort"],
+      "options": [
+        "Bubble Sort",
+        "Quick Sort",
+        "Merge Sort",
+        "Insertion Sort"
+      ],
       "correctAnswer": 3,
       "explanation": "Insertion Sort has O(n) best-case complexity when the array is already sorted.",
       "difficulty": "medium",
-      "tags": ["algorithms", "sorting", "complexity"]
+      "tags": [
+        "algorithms",
+        "sorting",
+        "complexity"
+      ]
     },
     {
       "category": "dsa",
       "question": "What is the space complexity of iterative DFS using a stack?",
-      "options": ["O(1)", "O(V)", "O(E)", "O(V + E)"],
+      "options": [
+        "O(1)",
+        "O(V)",
+        "O(E)",
+        "O(V + E)"
+      ],
       "correctAnswer": 1,
       "explanation": "Iterative DFS using an explicit stack requires O(V) space in the worst case where V is the number of vertices.",
       "difficulty": "medium",
-      "tags": ["algorithms", "graphs", "complexity"]
+      "tags": [
+        "algorithms",
+        "graphs",
+        "complexity"
+      ]
     },
     {
       "category": "dsa",
       "question": "Which data structure is best for implementing a graph?",
-      "options": ["Array", "Adjacency List or Matrix", "Stack", "Queue"],
+      "options": [
+        "Array",
+        "Adjacency List or Matrix",
+        "Stack",
+        "Queue"
+      ],
       "correctAnswer": 1,
       "explanation": "Graphs are typically represented using Adjacency Lists (for sparse graphs) or Adjacency Matrices (for dense graphs).",
       "difficulty": "easy",
-      "tags": ["data-structures", "graphs"]
+      "tags": [
+        "data-structures",
+        "graphs"
+      ]
     },
     {
       "category": "dsa",
       "question": "What is the time complexity of heap sort?",
-      "options": ["O(n)", "O(n log n)", "O(n²)", "O(log n)"],
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(n\u00b2)",
+        "O(log n)"
+      ],
       "correctAnswer": 1,
       "explanation": "Heap Sort has O(n log n) time complexity in all cases (best, average, and worst).",
       "difficulty": "medium",
-      "tags": ["algorithms", "sorting", "complexity"]
+      "tags": [
+        "algorithms",
+        "sorting",
+        "complexity"
+      ]
     },
     {
       "category": "dsa",
       "question": "Which algorithm is greedy?",
-      "options": ["Merge Sort", "Dijkstra's Algorithm", "Binary Search", "DFS"],
+      "options": [
+        "Merge Sort",
+        "Dijkstra's Algorithm",
+        "Binary Search",
+        "DFS"
+      ],
       "correctAnswer": 1,
       "explanation": "Dijkstra's Algorithm is a greedy algorithm that always selects the vertex with minimum distance.",
       "difficulty": "medium",
-      "tags": ["algorithms", "greedy", "graphs"]
+      "tags": [
+        "algorithms",
+        "greedy",
+        "graphs"
+      ]
     },
     {
       "category": "dsa",
@@ -458,34 +826,65 @@
       "correctAnswer": 1,
       "explanation": "Self-balancing trees (like AVL, Red-Black) automatically maintain balance after insertions and deletions.",
       "difficulty": "medium",
-      "tags": ["data-structures", "trees", "balanced-tree"]
+      "tags": [
+        "data-structures",
+        "trees",
+        "balanced-tree"
+      ]
     },
     {
       "category": "dsa",
       "question": "Which data structure is used in recursion?",
-      "options": ["Queue", "Stack (call stack)", "Heap", "Hash Table"],
+      "options": [
+        "Queue",
+        "Stack (call stack)",
+        "Heap",
+        "Hash Table"
+      ],
       "correctAnswer": 1,
       "explanation": "Recursion uses the call stack to store function calls and local variables.",
       "difficulty": "easy",
-      "tags": ["data-structures", "stack", "recursion"]
+      "tags": [
+        "data-structures",
+        "stack",
+        "recursion"
+      ]
     },
     {
       "category": "dsa",
       "question": "What is the time complexity of radix sort?",
-      "options": ["O(d * (n + k))", "O(n log n)", "O(n²)", "O(n)"],
+      "options": [
+        "O(d * (n + k))",
+        "O(n log n)",
+        "O(n\u00b2)",
+        "O(n)"
+      ],
       "correctAnswer": 0,
       "explanation": "Radix sort runs in O(d * (n + k)) where d is the number of digits, n is the number of elements, and k is the range.",
       "difficulty": "hard",
-      "tags": ["algorithms", "sorting", "complexity"]
+      "tags": [
+        "algorithms",
+        "sorting",
+        "complexity"
+      ]
     },
     {
       "category": "dsa",
       "question": "Which algorithm uses divide and conquer?",
-      "options": ["Bubble Sort", "Merge Sort", "Insertion Sort", "Selection Sort"],
+      "options": [
+        "Bubble Sort",
+        "Merge Sort",
+        "Insertion Sort",
+        "Selection Sort"
+      ],
       "correctAnswer": 1,
       "explanation": "Merge Sort divides the array into halves, recursively sorts them, and merges the results.",
       "difficulty": "easy",
-      "tags": ["algorithms", "sorting", "divide-conquer"]
+      "tags": [
+        "algorithms",
+        "sorting",
+        "divide-conquer"
+      ]
     },
     {
       "category": "dsa",
@@ -499,16 +898,28 @@
       "correctAnswer": 1,
       "explanation": "In a max heap, parent is greater than children; in a min heap, parent is smaller than children.",
       "difficulty": "medium",
-      "tags": ["data-structures", "heap"]
+      "tags": [
+        "data-structures",
+        "heap"
+      ]
     },
     {
       "category": "dsa",
       "question": "Which algorithm detects negative weight cycles?",
-      "options": ["Dijkstra's", "Bellman-Ford", "Prim's", "Kruskal's"],
+      "options": [
+        "Dijkstra's",
+        "Bellman-Ford",
+        "Prim's",
+        "Kruskal's"
+      ],
       "correctAnswer": 1,
       "explanation": "Bellman-Ford algorithm can detect negative weight cycles in a graph.",
       "difficulty": "medium",
-      "tags": ["algorithms", "graphs", "cycles"]
+      "tags": [
+        "algorithms",
+        "graphs",
+        "cycles"
+      ]
     },
     {
       "category": "dsa",
@@ -522,7 +933,11 @@
       "correctAnswer": 1,
       "explanation": "Memoization is an optimization technique that stores the results of expensive function calls and returns cached results for same inputs.",
       "difficulty": "medium",
-      "tags": ["algorithms", "optimization", "dynamic-programming"]
+      "tags": [
+        "algorithms",
+        "optimization",
+        "dynamic-programming"
+      ]
     },
     {
       "category": "system-design",
@@ -536,16 +951,27 @@
       "correctAnswer": 1,
       "explanation": "A Load Balancer distributes incoming network traffic across multiple servers to ensure no single server is overwhelmed.",
       "difficulty": "easy",
-      "tags": ["load-balancing", "scalability"]
+      "tags": [
+        "load-balancing",
+        "scalability"
+      ]
     },
     {
       "category": "system-design",
       "question": "Which database type is best for handling hierarchical data?",
-      "options": ["Relational Database", "Document Database", "Graph Database", "Key-Value Store"],
+      "options": [
+        "Relational Database",
+        "Document Database",
+        "Graph Database",
+        "Key-Value Store"
+      ],
       "correctAnswer": 2,
       "explanation": "Graph databases are specifically designed to handle hierarchical and interconnected data efficiently.",
       "difficulty": "medium",
-      "tags": ["databases", "data-modeling"]
+      "tags": [
+        "databases",
+        "data-modeling"
+      ]
     },
     {
       "category": "system-design",
@@ -559,7 +985,10 @@
       "correctAnswer": 0,
       "explanation": "CAP theorem states that a distributed system can only guarantee two out of three: Consistency, Availability, and Partition tolerance.",
       "difficulty": "medium",
-      "tags": ["distributed-systems", "theory"]
+      "tags": [
+        "distributed-systems",
+        "theory"
+      ]
     },
     {
       "category": "system-design",
@@ -573,7 +1002,10 @@
       "correctAnswer": 1,
       "explanation": "Horizontal scaling (scale-out) means adding more machines to your pool of resources.",
       "difficulty": "easy",
-      "tags": ["scalability", "architecture"]
+      "tags": [
+        "scalability",
+        "architecture"
+      ]
     },
     {
       "category": "system-design",
@@ -587,16 +1019,27 @@
       "correctAnswer": 1,
       "explanation": "A CDN (Content Delivery Network) caches content at edge locations to reduce latency and improve load times.",
       "difficulty": "easy",
-      "tags": ["cdn", "performance"]
+      "tags": [
+        "cdn",
+        "performance"
+      ]
     },
     {
       "category": "system-design",
       "question": "Which caching strategy updates cache when data is written?",
-      "options": ["Cache-aside", "Write-through", "Write-back", "Read-through"],
+      "options": [
+        "Cache-aside",
+        "Write-through",
+        "Write-back",
+        "Read-through"
+      ],
       "correctAnswer": 1,
       "explanation": "Write-through caching writes data to both cache and database simultaneously, ensuring consistency.",
       "difficulty": "medium",
-      "tags": ["caching", "strategies"]
+      "tags": [
+        "caching",
+        "strategies"
+      ]
     },
     {
       "category": "system-design",
@@ -610,7 +1053,11 @@
       "correctAnswer": 1,
       "explanation": "Sharding is a horizontal partitioning strategy that distributes data across multiple database instances.",
       "difficulty": "medium",
-      "tags": ["databases", "sharding", "scalability"]
+      "tags": [
+        "databases",
+        "sharding",
+        "scalability"
+      ]
     },
     {
       "category": "system-design",
@@ -624,16 +1071,27 @@
       "correctAnswer": 1,
       "explanation": "Eventual consistency means that given enough time without updates, all replicas will converge to the same value.",
       "difficulty": "medium",
-      "tags": ["distributed-systems", "consistency"]
+      "tags": [
+        "distributed-systems",
+        "consistency"
+      ]
     },
     {
       "category": "system-design",
       "question": "Which protocol is used for real-time bidirectional communication?",
-      "options": ["HTTP", "WebSocket", "FTP", "SMTP"],
+      "options": [
+        "HTTP",
+        "WebSocket",
+        "FTP",
+        "SMTP"
+      ],
       "correctAnswer": 1,
       "explanation": "WebSocket provides full-duplex communication channels over a single TCP connection, ideal for real-time applications.",
       "difficulty": "easy",
-      "tags": ["protocols", "real-time"]
+      "tags": [
+        "protocols",
+        "real-time"
+      ]
     },
     {
       "category": "system-design",
@@ -647,7 +1105,10 @@
       "correctAnswer": 1,
       "explanation": "Message queues enable asynchronous communication between services, improving scalability and fault tolerance.",
       "difficulty": "medium",
-      "tags": ["message-queue", "architecture"]
+      "tags": [
+        "message-queue",
+        "architecture"
+      ]
     },
     {
       "category": "system-design",
@@ -661,7 +1122,10 @@
       "correctAnswer": 1,
       "explanation": "Microservices architecture structures an application as a collection of loosely coupled, independently deployable services.",
       "difficulty": "easy",
-      "tags": ["architecture", "microservices"]
+      "tags": [
+        "architecture",
+        "microservices"
+      ]
     },
     {
       "category": "system-design",
@@ -675,16 +1139,28 @@
       "correctAnswer": 1,
       "explanation": "An API Gateway acts as a reverse proxy, routing requests, aggregating responses, and handling cross-cutting concerns.",
       "difficulty": "medium",
-      "tags": ["api", "gateway", "architecture"]
+      "tags": [
+        "api",
+        "gateway",
+        "architecture"
+      ]
     },
     {
       "category": "system-design",
       "question": "Which database is best for time-series data?",
-      "options": ["MySQL", "MongoDB", "InfluxDB", "Redis"],
+      "options": [
+        "MySQL",
+        "MongoDB",
+        "InfluxDB",
+        "Redis"
+      ],
       "correctAnswer": 2,
       "explanation": "InfluxDB and similar time-series databases are optimized for storing and querying time-stamped data.",
       "difficulty": "medium",
-      "tags": ["databases", "time-series"]
+      "tags": [
+        "databases",
+        "time-series"
+      ]
     },
     {
       "category": "system-design",
@@ -698,7 +1174,10 @@
       "correctAnswer": 1,
       "explanation": "Database replication involves copying data from one database to one or more databases for redundancy and availability.",
       "difficulty": "easy",
-      "tags": ["databases", "replication"]
+      "tags": [
+        "databases",
+        "replication"
+      ]
     },
     {
       "category": "system-design",
@@ -712,7 +1191,10 @@
       "correctAnswer": 1,
       "explanation": "Rate limiting controls the number of requests a user can make in a given time period to prevent abuse and ensure fair usage.",
       "difficulty": "easy",
-      "tags": ["rate-limiting", "security"]
+      "tags": [
+        "rate-limiting",
+        "security"
+      ]
     },
     {
       "category": "system-design",
@@ -726,16 +1208,28 @@
       "correctAnswer": 1,
       "explanation": "A reverse proxy sits in front of web servers and forwards client requests to the appropriate backend server.",
       "difficulty": "medium",
-      "tags": ["proxy", "architecture"]
+      "tags": [
+        "proxy",
+        "architecture"
+      ]
     },
     {
       "category": "system-design",
       "question": "Which consistency model does Amazon DynamoDB use?",
-      "options": ["Strong consistency", "Eventual consistency", "Both options available", "No consistency"],
+      "options": [
+        "Strong consistency",
+        "Eventual consistency",
+        "Both options available",
+        "No consistency"
+      ],
       "correctAnswer": 2,
       "explanation": "DynamoDB offers both eventual consistency (default) and strong consistency options for read operations.",
       "difficulty": "medium",
-      "tags": ["databases", "consistency", "dynamodb"]
+      "tags": [
+        "databases",
+        "consistency",
+        "dynamodb"
+      ]
     },
     {
       "category": "system-design",
@@ -749,7 +1243,10 @@
       "correctAnswer": 1,
       "explanation": "Circuit breaker pattern prevents an application from repeatedly trying to execute an operation that's likely to fail.",
       "difficulty": "medium",
-      "tags": ["patterns", "fault-tolerance"]
+      "tags": [
+        "patterns",
+        "fault-tolerance"
+      ]
     },
     {
       "category": "system-design",
@@ -763,7 +1260,11 @@
       "correctAnswer": 1,
       "explanation": "Database indexes are data structures that improve the speed of data retrieval operations at the cost of additional storage.",
       "difficulty": "easy",
-      "tags": ["databases", "indexing", "performance"]
+      "tags": [
+        "databases",
+        "indexing",
+        "performance"
+      ]
     },
     {
       "category": "system-design",
@@ -777,7 +1278,11 @@
       "correctAnswer": 1,
       "explanation": "SQL databases use structured schemas and ACID transactions, while NoSQL databases offer flexible schemas and horizontal scalability.",
       "difficulty": "easy",
-      "tags": ["databases", "sql", "nosql"]
+      "tags": [
+        "databases",
+        "sql",
+        "nosql"
+      ]
     },
     {
       "category": "system-design",
@@ -791,7 +1296,10 @@
       "correctAnswer": 1,
       "explanation": "DHT is a distributed system that provides a lookup service similar to a hash table, used in P2P systems.",
       "difficulty": "hard",
-      "tags": ["distributed-systems", "dht"]
+      "tags": [
+        "distributed-systems",
+        "dht"
+      ]
     },
     {
       "category": "system-design",
@@ -805,7 +1313,10 @@
       "correctAnswer": 1,
       "explanation": "A service mesh provides infrastructure layer for handling service-to-service communication, including load balancing, encryption, and observability.",
       "difficulty": "hard",
-      "tags": ["microservices", "service-mesh"]
+      "tags": [
+        "microservices",
+        "service-mesh"
+      ]
     },
     {
       "category": "system-design",
@@ -819,7 +1330,10 @@
       "correctAnswer": 1,
       "explanation": "Normalization is the process of organizing data in a database to reduce redundancy and improve data integrity.",
       "difficulty": "medium",
-      "tags": ["databases", "normalization"]
+      "tags": [
+        "databases",
+        "normalization"
+      ]
     },
     {
       "category": "system-design",
@@ -833,7 +1347,11 @@
       "correctAnswer": 1,
       "explanation": "Apache Kafka is a distributed event streaming platform used for building real-time data pipelines and streaming applications.",
       "difficulty": "medium",
-      "tags": ["kafka", "streaming", "message-queue"]
+      "tags": [
+        "kafka",
+        "streaming",
+        "message-queue"
+      ]
     },
     {
       "category": "system-design",
@@ -847,7 +1365,10 @@
       "correctAnswer": 1,
       "explanation": "Vertical scaling (scale-up) means adding more power (CPU, RAM) to an existing machine.",
       "difficulty": "easy",
-      "tags": ["scalability", "architecture"]
+      "tags": [
+        "scalability",
+        "architecture"
+      ]
     },
     {
       "category": "system-design",
@@ -861,7 +1382,11 @@
       "correctAnswer": 1,
       "explanation": "Redis is an in-memory data structure store used as a database, cache, and message broker.",
       "difficulty": "easy",
-      "tags": ["redis", "caching", "databases"]
+      "tags": [
+        "redis",
+        "caching",
+        "databases"
+      ]
     },
     {
       "category": "system-design",
@@ -875,7 +1400,10 @@
       "correctAnswer": 1,
       "explanation": "Two-phase commit is a distributed algorithm that coordinates all processes participating in a distributed atomic transaction.",
       "difficulty": "hard",
-      "tags": ["distributed-systems", "transactions"]
+      "tags": [
+        "distributed-systems",
+        "transactions"
+      ]
     },
     {
       "category": "system-design",
@@ -889,7 +1417,11 @@
       "correctAnswer": 1,
       "explanation": "Denormalization adds redundancy to a database to improve read performance at the cost of write performance and storage.",
       "difficulty": "medium",
-      "tags": ["databases", "denormalization", "performance"]
+      "tags": [
+        "databases",
+        "denormalization",
+        "performance"
+      ]
     },
     {
       "category": "system-design",
@@ -903,7 +1435,11 @@
       "correctAnswer": 1,
       "explanation": "Elasticsearch is a distributed search and analytics engine built on Apache Lucene, used for full-text search.",
       "difficulty": "medium",
-      "tags": ["elasticsearch", "search", "analytics"]
+      "tags": [
+        "elasticsearch",
+        "search",
+        "analytics"
+      ]
     },
     {
       "category": "system-design",
@@ -917,7 +1453,11 @@
       "correctAnswer": 1,
       "explanation": "Saga pattern manages distributed transactions by breaking them into a sequence of local transactions with compensating actions.",
       "difficulty": "hard",
-      "tags": ["patterns", "distributed-systems", "transactions"]
+      "tags": [
+        "patterns",
+        "distributed-systems",
+        "transactions"
+      ]
     },
     {
       "category": "system-design",
@@ -931,7 +1471,10 @@
       "correctAnswer": 1,
       "explanation": "A bloom filter is a space-efficient probabilistic data structure that tests whether an element is a member of a set.",
       "difficulty": "hard",
-      "tags": ["data-structures", "bloom-filter"]
+      "tags": [
+        "data-structures",
+        "bloom-filter"
+      ]
     },
     {
       "category": "system-design",
@@ -945,7 +1488,10 @@
       "correctAnswer": 1,
       "explanation": "Database partitioning divides a large database into smaller, more manageable parts while maintaining logical unity.",
       "difficulty": "medium",
-      "tags": ["databases", "partitioning"]
+      "tags": [
+        "databases",
+        "partitioning"
+      ]
     },
     {
       "category": "system-design",
@@ -959,7 +1505,10 @@
       "correctAnswer": 1,
       "explanation": "Docker is a platform for developing, shipping, and running applications in isolated containers.",
       "difficulty": "easy",
-      "tags": ["docker", "containerization"]
+      "tags": [
+        "docker",
+        "containerization"
+      ]
     },
     {
       "category": "system-design",
@@ -973,7 +1522,10 @@
       "correctAnswer": 1,
       "explanation": "Kubernetes is an open-source container orchestration platform for automating deployment, scaling, and management of containerized applications.",
       "difficulty": "medium",
-      "tags": ["kubernetes", "orchestration"]
+      "tags": [
+        "kubernetes",
+        "orchestration"
+      ]
     },
     {
       "category": "system-design",
@@ -987,7 +1539,11 @@
       "correctAnswer": 1,
       "explanation": "ACID properties ensure reliable transaction processing: Atomicity, Consistency, Isolation, and Durability.",
       "difficulty": "easy",
-      "tags": ["databases", "acid", "transactions"]
+      "tags": [
+        "databases",
+        "acid",
+        "transactions"
+      ]
     },
     {
       "category": "system-design",
@@ -1001,7 +1557,11 @@
       "correctAnswer": 1,
       "explanation": "BASE is an alternative to ACID, emphasizing availability over consistency: Basically Available, Soft state, Eventually consistent.",
       "difficulty": "medium",
-      "tags": ["databases", "nosql", "base"]
+      "tags": [
+        "databases",
+        "nosql",
+        "base"
+      ]
     },
     {
       "category": "system-design",
@@ -1015,7 +1575,11 @@
       "correctAnswer": 1,
       "explanation": "CDN caches content at geographically distributed edge servers to reduce latency and improve performance.",
       "difficulty": "easy",
-      "tags": ["cdn", "performance", "caching"]
+      "tags": [
+        "cdn",
+        "performance",
+        "caching"
+      ]
     },
     {
       "category": "system-design",
@@ -1029,7 +1593,10 @@
       "correctAnswer": 1,
       "explanation": "Distributed locks ensure that only one process can access a shared resource at a time across multiple machines.",
       "difficulty": "hard",
-      "tags": ["distributed-systems", "concurrency"]
+      "tags": [
+        "distributed-systems",
+        "concurrency"
+      ]
     },
     {
       "category": "system-design",
@@ -1043,7 +1610,11 @@
       "correctAnswer": 1,
       "explanation": "A reverse proxy cache stores responses from backend servers to reduce load and improve response times.",
       "difficulty": "medium",
-      "tags": ["caching", "proxy", "performance"]
+      "tags": [
+        "caching",
+        "proxy",
+        "performance"
+      ]
     },
     {
       "category": "system-design",
@@ -1057,7 +1628,10 @@
       "correctAnswer": 1,
       "explanation": "Health checks monitor the status of services to ensure they are running correctly and can handle requests.",
       "difficulty": "easy",
-      "tags": ["monitoring", "health-check"]
+      "tags": [
+        "monitoring",
+        "health-check"
+      ]
     },
     {
       "category": "system-design",
@@ -1071,7 +1645,10 @@
       "correctAnswer": 1,
       "explanation": "A data warehouse is a central repository of integrated data from multiple sources, optimized for analysis and reporting.",
       "difficulty": "medium",
-      "tags": ["data-warehouse", "analytics"]
+      "tags": [
+        "data-warehouse",
+        "analytics"
+      ]
     },
     {
       "category": "system-design",
@@ -1085,7 +1662,10 @@
       "correctAnswer": 1,
       "explanation": "A data lake stores vast amounts of raw data in its native format until it's needed for analysis.",
       "difficulty": "medium",
-      "tags": ["data-lake", "big-data"]
+      "tags": [
+        "data-lake",
+        "big-data"
+      ]
     },
     {
       "category": "system-design",
@@ -1099,7 +1679,10 @@
       "correctAnswer": 1,
       "explanation": "A message broker is middleware that translates messages between formal messaging protocols, enabling service communication.",
       "difficulty": "medium",
-      "tags": ["message-broker", "architecture"]
+      "tags": [
+        "message-broker",
+        "architecture"
+      ]
     },
     {
       "category": "system-design",
@@ -1113,7 +1696,10 @@
       "correctAnswer": 1,
       "explanation": "A service registry maintains a list of available service instances and their network locations for service discovery.",
       "difficulty": "medium",
-      "tags": ["microservices", "service-discovery"]
+      "tags": [
+        "microservices",
+        "service-discovery"
+      ]
     },
     {
       "category": "system-design",
@@ -1127,7 +1713,10 @@
       "correctAnswer": 1,
       "explanation": "A dead letter queue stores messages that couldn't be successfully processed for later analysis or reprocessing.",
       "difficulty": "medium",
-      "tags": ["message-queue", "error-handling"]
+      "tags": [
+        "message-queue",
+        "error-handling"
+      ]
     },
     {
       "category": "system-design",
@@ -1141,7 +1730,11 @@
       "correctAnswer": 1,
       "explanation": "Connection pooling maintains a cache of database connections that can be reused, reducing the overhead of creating new connections.",
       "difficulty": "medium",
-      "tags": ["databases", "performance", "connection-pool"]
+      "tags": [
+        "databases",
+        "performance",
+        "connection-pool"
+      ]
     },
     {
       "category": "system-design",
@@ -1155,7 +1748,11 @@
       "correctAnswer": 1,
       "explanation": "WAL ensures durability by writing changes to a log before applying them to the database, enabling recovery after crashes.",
       "difficulty": "hard",
-      "tags": ["databases", "wal", "durability"]
+      "tags": [
+        "databases",
+        "wal",
+        "durability"
+      ]
     },
     {
       "category": "system-design",
@@ -1169,7 +1766,10 @@
       "correctAnswer": 1,
       "explanation": "Consistent hashing minimizes data movement when nodes are added or removed in a distributed system.",
       "difficulty": "hard",
-      "tags": ["distributed-systems", "hashing"]
+      "tags": [
+        "distributed-systems",
+        "hashing"
+      ]
     },
     {
       "category": "system-design",
@@ -1183,7 +1783,10 @@
       "correctAnswer": 1,
       "explanation": "Gossip protocol is a peer-to-peer communication mechanism where nodes periodically exchange state information with random peers.",
       "difficulty": "hard",
-      "tags": ["distributed-systems", "protocols"]
+      "tags": [
+        "distributed-systems",
+        "protocols"
+      ]
     },
     {
       "category": "system-design",
@@ -1197,16 +1800,28 @@
       "correctAnswer": 1,
       "explanation": "An idempotent API ensures that making the same request multiple times has the same effect as making it once, crucial for reliability.",
       "difficulty": "medium",
-      "tags": ["api", "idempotency", "design"]
+      "tags": [
+        "api",
+        "idempotency",
+        "design"
+      ]
     },
     {
       "category": "javascript",
       "question": "What is the output of: typeof null?",
-      "options": ["'null'", "'undefined'", "'object'", "'number'"],
+      "options": [
+        "'null'",
+        "'undefined'",
+        "'object'",
+        "'number'"
+      ],
       "correctAnswer": 2,
       "explanation": "This is a known JavaScript quirk. typeof null returns 'object' due to a bug in the original JavaScript implementation.",
       "difficulty": "easy",
-      "tags": ["javascript", "types"]
+      "tags": [
+        "javascript",
+        "types"
+      ]
     },
     {
       "category": "javascript",
@@ -1220,16 +1835,28 @@
       "correctAnswer": 2,
       "explanation": "Arrow functions don't have their own 'this' binding. They inherit 'this' from the enclosing lexical scope.",
       "difficulty": "medium",
-      "tags": ["javascript", "arrow-functions", "this"]
+      "tags": [
+        "javascript",
+        "arrow-functions",
+        "this"
+      ]
     },
     {
       "category": "javascript",
       "question": "Which method is used to add elements to the end of an array?",
-      "options": ["unshift()", "push()", "concat()", "splice()"],
+      "options": [
+        "unshift()",
+        "push()",
+        "concat()",
+        "splice()"
+      ],
       "correctAnswer": 1,
       "explanation": "The push() method adds one or more elements to the end of an array and returns the new length.",
       "difficulty": "easy",
-      "tags": ["javascript", "arrays"]
+      "tags": [
+        "javascript",
+        "arrays"
+      ]
     },
     {
       "category": "javascript",
@@ -1243,7 +1870,11 @@
       "correctAnswer": 1,
       "explanation": "A closure is a function that has access to variables in its outer (enclosing) lexical scope, even after the outer function has returned.",
       "difficulty": "medium",
-      "tags": ["javascript", "closures", "scope"]
+      "tags": [
+        "javascript",
+        "closures",
+        "scope"
+      ]
     },
     {
       "category": "javascript",
@@ -1257,7 +1888,11 @@
       "correctAnswer": 2,
       "explanation": "== performs type coercion before comparison, while === (strict equality) checks both type and value without coercion.",
       "difficulty": "easy",
-      "tags": ["javascript", "operators", "equality"]
+      "tags": [
+        "javascript",
+        "operators",
+        "equality"
+      ]
     },
     {
       "category": "javascript",
@@ -1271,7 +1906,11 @@
       "correctAnswer": 1,
       "explanation": "Hoisting is JavaScript's behavior of moving declarations to the top of their scope before code execution.",
       "difficulty": "medium",
-      "tags": ["javascript", "hoisting", "scope"]
+      "tags": [
+        "javascript",
+        "hoisting",
+        "scope"
+      ]
     },
     {
       "category": "javascript",
@@ -1285,7 +1924,10 @@
       "correctAnswer": 1,
       "explanation": "'use strict' enables strict mode, which catches common coding mistakes and prevents certain actions.",
       "difficulty": "easy",
-      "tags": ["javascript", "strict-mode"]
+      "tags": [
+        "javascript",
+        "strict-mode"
+      ]
     },
     {
       "category": "javascript",
@@ -1299,7 +1941,11 @@
       "correctAnswer": 1,
       "explanation": "The event loop is a mechanism that handles the execution of multiple chunks of code over time, managing the call stack and callback queue.",
       "difficulty": "medium",
-      "tags": ["javascript", "event-loop", "async"]
+      "tags": [
+        "javascript",
+        "event-loop",
+        "async"
+      ]
     },
     {
       "category": "javascript",
@@ -1313,7 +1959,11 @@
       "correctAnswer": 1,
       "explanation": "A Promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.",
       "difficulty": "medium",
-      "tags": ["javascript", "promises", "async"]
+      "tags": [
+        "javascript",
+        "promises",
+        "async"
+      ]
     },
     {
       "category": "javascript",
@@ -1327,7 +1977,11 @@
       "correctAnswer": 1,
       "explanation": "async/await is syntactic sugar built on top of Promises, making asynchronous code look and behave more like synchronous code.",
       "difficulty": "medium",
-      "tags": ["javascript", "async-await", "promises"]
+      "tags": [
+        "javascript",
+        "async-await",
+        "promises"
+      ]
     },
     {
       "category": "javascript",
@@ -1341,7 +1995,11 @@
       "correctAnswer": 1,
       "explanation": "var is function-scoped and can be redeclared; let is block-scoped and can be reassigned; const is block-scoped and cannot be reassigned.",
       "difficulty": "easy",
-      "tags": ["javascript", "variables", "scope"]
+      "tags": [
+        "javascript",
+        "variables",
+        "scope"
+      ]
     },
     {
       "category": "javascript",
@@ -1355,7 +2013,11 @@
       "correctAnswer": 1,
       "explanation": "Destructuring is a syntax that allows unpacking values from arrays or properties from objects into distinct variables.",
       "difficulty": "easy",
-      "tags": ["javascript", "destructuring", "es6"]
+      "tags": [
+        "javascript",
+        "destructuring",
+        "es6"
+      ]
     },
     {
       "category": "javascript",
@@ -1369,7 +2031,11 @@
       "correctAnswer": 1,
       "explanation": "The spread operator (...) expands an iterable (like an array) into individual elements, useful for copying and merging.",
       "difficulty": "easy",
-      "tags": ["javascript", "spread-operator", "es6"]
+      "tags": [
+        "javascript",
+        "spread-operator",
+        "es6"
+      ]
     },
     {
       "category": "javascript",
@@ -1383,7 +2049,11 @@
       "correctAnswer": 1,
       "explanation": "The rest parameter (...) collects all remaining arguments into an array, allowing functions to accept variable numbers of arguments.",
       "difficulty": "medium",
-      "tags": ["javascript", "rest-parameter", "es6"]
+      "tags": [
+        "javascript",
+        "rest-parameter",
+        "es6"
+      ]
     },
     {
       "category": "javascript",
@@ -1397,7 +2067,11 @@
       "correctAnswer": 1,
       "explanation": "A callback is a function passed as an argument to another function, to be executed later (often after an async operation).",
       "difficulty": "easy",
-      "tags": ["javascript", "callbacks", "functions"]
+      "tags": [
+        "javascript",
+        "callbacks",
+        "functions"
+      ]
     },
     {
       "category": "javascript",
@@ -1411,7 +2085,12 @@
       "correctAnswer": 1,
       "explanation": "undefined means a variable has been declared but not assigned a value; null is an assigned value representing 'no value'.",
       "difficulty": "easy",
-      "tags": ["javascript", "types", "null", "undefined"]
+      "tags": [
+        "javascript",
+        "types",
+        "null",
+        "undefined"
+      ]
     },
     {
       "category": "javascript",
@@ -1425,7 +2104,11 @@
       "correctAnswer": 1,
       "explanation": "bind() creates a new function with a specified 'this' value and optional initial arguments.",
       "difficulty": "medium",
-      "tags": ["javascript", "bind", "this"]
+      "tags": [
+        "javascript",
+        "bind",
+        "this"
+      ]
     },
     {
       "category": "javascript",
@@ -1439,7 +2122,12 @@
       "correctAnswer": 1,
       "explanation": "call() invokes a function with arguments provided individually, while apply() takes arguments as an array.",
       "difficulty": "medium",
-      "tags": ["javascript", "call", "apply", "this"]
+      "tags": [
+        "javascript",
+        "call",
+        "apply",
+        "this"
+      ]
     },
     {
       "category": "javascript",
@@ -1453,7 +2141,11 @@
       "correctAnswer": 1,
       "explanation": "A higher-order function is a function that takes one or more functions as arguments or returns a function.",
       "difficulty": "medium",
-      "tags": ["javascript", "higher-order-functions", "functional-programming"]
+      "tags": [
+        "javascript",
+        "higher-order-functions",
+        "functional-programming"
+      ]
     },
     {
       "category": "javascript",
@@ -1467,7 +2159,11 @@
       "correctAnswer": 1,
       "explanation": "map() creates a new array by calling a function on every element of the original array.",
       "difficulty": "easy",
-      "tags": ["javascript", "arrays", "map"]
+      "tags": [
+        "javascript",
+        "arrays",
+        "map"
+      ]
     },
     {
       "category": "javascript",
@@ -1481,7 +2177,11 @@
       "correctAnswer": 1,
       "explanation": "filter() creates a new array with all elements that pass the test implemented by the provided function.",
       "difficulty": "easy",
-      "tags": ["javascript", "arrays", "filter"]
+      "tags": [
+        "javascript",
+        "arrays",
+        "filter"
+      ]
     },
     {
       "category": "javascript",
@@ -1495,7 +2195,11 @@
       "correctAnswer": 1,
       "explanation": "reduce() executes a reducer function on each element, resulting in a single output value.",
       "difficulty": "medium",
-      "tags": ["javascript", "arrays", "reduce"]
+      "tags": [
+        "javascript",
+        "arrays",
+        "reduce"
+      ]
     },
     {
       "category": "javascript",
@@ -1509,7 +2213,11 @@
       "correctAnswer": 1,
       "explanation": "forEach() executes a provided function once for each array element, but doesn't return a new array.",
       "difficulty": "easy",
-      "tags": ["javascript", "arrays", "forEach"]
+      "tags": [
+        "javascript",
+        "arrays",
+        "forEach"
+      ]
     },
     {
       "category": "javascript",
@@ -1523,7 +2231,11 @@
       "correctAnswer": 1,
       "explanation": "for...in iterates over enumerable property names (keys), while for...of iterates over iterable object values.",
       "difficulty": "medium",
-      "tags": ["javascript", "loops", "iteration"]
+      "tags": [
+        "javascript",
+        "loops",
+        "iteration"
+      ]
     },
     {
       "category": "javascript",
@@ -1537,7 +2249,11 @@
       "correctAnswer": 1,
       "explanation": "Template literals use backticks (`) and allow embedded expressions with ${}, multi-line strings, and string interpolation.",
       "difficulty": "easy",
-      "tags": ["javascript", "template-literals", "es6"]
+      "tags": [
+        "javascript",
+        "template-literals",
+        "es6"
+      ]
     },
     {
       "category": "javascript",
@@ -1551,7 +2267,11 @@
       "correctAnswer": 1,
       "explanation": "Object.freeze() makes an object immutable - you cannot add, delete, or modify its properties.",
       "difficulty": "medium",
-      "tags": ["javascript", "objects", "immutability"]
+      "tags": [
+        "javascript",
+        "objects",
+        "immutability"
+      ]
     },
     {
       "category": "javascript",
@@ -1565,7 +2285,10 @@
       "correctAnswer": 1,
       "explanation": "Object.seal() prevents adding or removing properties, but existing properties can still be modified.",
       "difficulty": "medium",
-      "tags": ["javascript", "objects"]
+      "tags": [
+        "javascript",
+        "objects"
+      ]
     },
     {
       "category": "javascript",
@@ -1579,7 +2302,11 @@
       "correctAnswer": 1,
       "explanation": "JavaScript uses prototypal inheritance where objects can inherit properties and methods from other objects through the prototype chain.",
       "difficulty": "medium",
-      "tags": ["javascript", "prototypes", "inheritance"]
+      "tags": [
+        "javascript",
+        "prototypes",
+        "inheritance"
+      ]
     },
     {
       "category": "javascript",
@@ -1593,7 +2320,11 @@
       "correctAnswer": 1,
       "explanation": "Symbol is a primitive data type that creates unique, immutable identifiers, often used as object property keys.",
       "difficulty": "hard",
-      "tags": ["javascript", "symbols", "es6"]
+      "tags": [
+        "javascript",
+        "symbols",
+        "es6"
+      ]
     },
     {
       "category": "javascript",
@@ -1607,7 +2338,11 @@
       "correctAnswer": 1,
       "explanation": "Generator functions (function*) can pause execution with yield and resume later, useful for iterators and async operations.",
       "difficulty": "hard",
-      "tags": ["javascript", "generators", "es6"]
+      "tags": [
+        "javascript",
+        "generators",
+        "es6"
+      ]
     },
     {
       "category": "javascript",
@@ -1621,7 +2356,11 @@
       "correctAnswer": 1,
       "explanation": "WeakMap holds weak references to keys, allowing garbage collection if there are no other references to the key object.",
       "difficulty": "hard",
-      "tags": ["javascript", "weakmap", "memory"]
+      "tags": [
+        "javascript",
+        "weakmap",
+        "memory"
+      ]
     },
     {
       "category": "javascript",
@@ -1635,7 +2374,11 @@
       "correctAnswer": 1,
       "explanation": "WeakSet holds weak references to objects, allowing them to be garbage collected if no other references exist.",
       "difficulty": "hard",
-      "tags": ["javascript", "weakset", "memory"]
+      "tags": [
+        "javascript",
+        "weakset",
+        "memory"
+      ]
     },
     {
       "category": "javascript",
@@ -1649,7 +2392,11 @@
       "correctAnswer": 1,
       "explanation": "Proxy allows you to create a proxy for another object, intercepting and redefining fundamental operations.",
       "difficulty": "hard",
-      "tags": ["javascript", "proxy", "es6"]
+      "tags": [
+        "javascript",
+        "proxy",
+        "es6"
+      ]
     },
     {
       "category": "javascript",
@@ -1663,7 +2410,11 @@
       "correctAnswer": 1,
       "explanation": "Reflect provides methods for interceptable JavaScript operations, often used with Proxy for meta-programming.",
       "difficulty": "hard",
-      "tags": ["javascript", "reflect", "es6"]
+      "tags": [
+        "javascript",
+        "reflect",
+        "es6"
+      ]
     },
     {
       "category": "javascript",
@@ -1677,7 +2428,11 @@
       "correctAnswer": 1,
       "explanation": "Event bubbling is when an event propagates from the target element up through its ancestors in the DOM tree.",
       "difficulty": "medium",
-      "tags": ["javascript", "events", "dom"]
+      "tags": [
+        "javascript",
+        "events",
+        "dom"
+      ]
     },
     {
       "category": "javascript",
@@ -1691,7 +2446,11 @@
       "correctAnswer": 1,
       "explanation": "Event capturing (trickling) is when an event propagates from the root down to the target element.",
       "difficulty": "medium",
-      "tags": ["javascript", "events", "dom"]
+      "tags": [
+        "javascript",
+        "events",
+        "dom"
+      ]
     },
     {
       "category": "javascript",
@@ -1705,7 +2464,11 @@
       "correctAnswer": 1,
       "explanation": "preventDefault() prevents the default action associated with an event (like form submission or link navigation).",
       "difficulty": "easy",
-      "tags": ["javascript", "events", "dom"]
+      "tags": [
+        "javascript",
+        "events",
+        "dom"
+      ]
     },
     {
       "category": "javascript",
@@ -1719,7 +2482,11 @@
       "correctAnswer": 1,
       "explanation": "stopPropagation() prevents the event from propagating (bubbling or capturing) to other elements.",
       "difficulty": "easy",
-      "tags": ["javascript", "events", "dom"]
+      "tags": [
+        "javascript",
+        "events",
+        "dom"
+      ]
     },
     {
       "category": "javascript",
@@ -1733,7 +2500,10 @@
       "correctAnswer": 1,
       "explanation": "innerHTML parses and renders HTML tags, while textContent treats everything as plain text and is safer against XSS.",
       "difficulty": "easy",
-      "tags": ["javascript", "dom"]
+      "tags": [
+        "javascript",
+        "dom"
+      ]
     },
     {
       "category": "javascript",
@@ -1747,7 +2517,11 @@
       "correctAnswer": 1,
       "explanation": "localStorage stores key-value pairs in the browser with no expiration time, persisting even after browser restart.",
       "difficulty": "easy",
-      "tags": ["javascript", "storage", "web-api"]
+      "tags": [
+        "javascript",
+        "storage",
+        "web-api"
+      ]
     },
     {
       "category": "javascript",
@@ -1761,7 +2535,11 @@
       "correctAnswer": 1,
       "explanation": "localStorage persists data indefinitely, while sessionStorage clears data when the browser tab is closed.",
       "difficulty": "easy",
-      "tags": ["javascript", "storage", "web-api"]
+      "tags": [
+        "javascript",
+        "storage",
+        "web-api"
+      ]
     },
     {
       "category": "javascript",
@@ -1775,7 +2553,10 @@
       "correctAnswer": 1,
       "explanation": "JSON.stringify() converts a JavaScript object or value to a JSON string.",
       "difficulty": "easy",
-      "tags": ["javascript", "json"]
+      "tags": [
+        "javascript",
+        "json"
+      ]
     },
     {
       "category": "javascript",
@@ -1789,7 +2570,10 @@
       "correctAnswer": 1,
       "explanation": "JSON.parse() parses a JSON string and constructs the JavaScript value or object described by the string.",
       "difficulty": "easy",
-      "tags": ["javascript", "json"]
+      "tags": [
+        "javascript",
+        "json"
+      ]
     },
     {
       "category": "javascript",
@@ -1803,7 +2587,11 @@
       "correctAnswer": 1,
       "explanation": "setTimeout() executes a function or code after a specified delay in milliseconds.",
       "difficulty": "easy",
-      "tags": ["javascript", "timers", "async"]
+      "tags": [
+        "javascript",
+        "timers",
+        "async"
+      ]
     },
     {
       "category": "javascript",
@@ -1817,7 +2605,11 @@
       "correctAnswer": 1,
       "explanation": "setInterval() repeatedly executes a function or code at specified time intervals until cleared.",
       "difficulty": "easy",
-      "tags": ["javascript", "timers", "async"]
+      "tags": [
+        "javascript",
+        "timers",
+        "async"
+      ]
     },
     {
       "category": "javascript",
@@ -1831,7 +2623,10 @@
       "correctAnswer": 1,
       "explanation": "clearTimeout() cancels a timeout previously established by calling setTimeout().",
       "difficulty": "easy",
-      "tags": ["javascript", "timers"]
+      "tags": [
+        "javascript",
+        "timers"
+      ]
     },
     {
       "category": "javascript",
@@ -1845,7 +2640,10 @@
       "correctAnswer": 1,
       "explanation": "clearInterval() cancels a timed, repeating action previously established by calling setInterval().",
       "difficulty": "easy",
-      "tags": ["javascript", "timers"]
+      "tags": [
+        "javascript",
+        "timers"
+      ]
     },
     {
       "category": "javascript",
@@ -1859,7 +2657,12 @@
       "correctAnswer": 1,
       "explanation": "fetch() provides a modern interface for making HTTP requests and returns a Promise that resolves to the Response.",
       "difficulty": "medium",
-      "tags": ["javascript", "fetch", "http", "promises"]
+      "tags": [
+        "javascript",
+        "fetch",
+        "http",
+        "promises"
+      ]
     },
     {
       "category": "javascript",
@@ -1873,7 +2676,11 @@
       "correctAnswer": 1,
       "explanation": "The async keyword declares an asynchronous function that implicitly returns a Promise.",
       "difficulty": "medium",
-      "tags": ["javascript", "async-await", "promises"]
+      "tags": [
+        "javascript",
+        "async-await",
+        "promises"
+      ]
     },
     {
       "category": "javascript",
@@ -1887,7 +2694,1807 @@
       "correctAnswer": 1,
       "explanation": "await pauses async function execution until the Promise is resolved, then returns the resolved value.",
       "difficulty": "medium",
-      "tags": ["javascript", "async-await", "promises"]
+      "tags": [
+        "javascript",
+        "async-await",
+        "promises"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is Node.js?",
+      "options": [
+        "A JavaScript framework",
+        "A JavaScript runtime built on Chrome's V8 engine",
+        "A database",
+        "A web browser"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Node.js is a JavaScript runtime environment that executes JavaScript code outside a web browser.",
+      "difficulty": "easy",
+      "tags": [
+        "nodejs",
+        "basics"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "Which module is used to create a web server in Node.js?",
+      "options": [
+        "fs",
+        "http",
+        "path",
+        "url"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The 'http' module is used to create HTTP servers and handle HTTP requests and responses.",
+      "difficulty": "easy",
+      "tags": [
+        "nodejs",
+        "http",
+        "server"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is npm?",
+      "options": [
+        "Node Package Manager",
+        "Node Programming Module",
+        "New Project Manager",
+        "Node Process Manager"
+      ],
+      "correctAnswer": 0,
+      "explanation": "npm (Node Package Manager) is the default package manager for Node.js used to install and manage dependencies.",
+      "difficulty": "easy",
+      "tags": [
+        "nodejs",
+        "npm",
+        "packages"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of package.json?",
+      "options": [
+        "Store code",
+        "Manage project metadata and dependencies",
+        "Configure server",
+        "Store environment variables"
+      ],
+      "correctAnswer": 1,
+      "explanation": "package.json contains project metadata, dependencies, scripts, and configuration for Node.js projects.",
+      "difficulty": "easy",
+      "tags": [
+        "nodejs",
+        "npm",
+        "configuration"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "Which method is used to read a file asynchronously in Node.js?",
+      "options": [
+        "fs.readFileSync()",
+        "fs.readFile()",
+        "fs.read()",
+        "fs.open()"
+      ],
+      "correctAnswer": 1,
+      "explanation": "fs.readFile() reads files asynchronously with a callback, while fs.readFileSync() is synchronous.",
+      "difficulty": "easy",
+      "tags": [
+        "nodejs",
+        "fs",
+        "async"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is Express.js?",
+      "options": [
+        "A database",
+        "A web application framework for Node.js",
+        "A testing library",
+        "A package manager"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Express.js is a minimal and flexible Node.js web application framework for building web and mobile applications.",
+      "difficulty": "easy",
+      "tags": [
+        "nodejs",
+        "express",
+        "framework"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is middleware in Express.js?",
+      "options": [
+        "A database layer",
+        "Functions that execute during request-response cycle",
+        "A routing system",
+        "A template engine"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Middleware functions have access to request and response objects and can execute code, modify them, or end the cycle.",
+      "difficulty": "medium",
+      "tags": [
+        "nodejs",
+        "express",
+        "middleware"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the Event Loop in Node.js?",
+      "options": [
+        "A loop statement",
+        "Mechanism that handles asynchronous operations",
+        "A debugging tool",
+        "A module"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Event Loop is what allows Node.js to perform non-blocking I/O operations despite JavaScript being single-threaded.",
+      "difficulty": "medium",
+      "tags": [
+        "nodejs",
+        "event-loop",
+        "async"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of process.env?",
+      "options": [
+        "Process files",
+        "Access environment variables",
+        "Manage processes",
+        "Debug code"
+      ],
+      "correctAnswer": 1,
+      "explanation": "process.env is an object containing the user environment variables, commonly used for configuration.",
+      "difficulty": "easy",
+      "tags": [
+        "nodejs",
+        "environment",
+        "configuration"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "Which module is used for path operations in Node.js?",
+      "options": [
+        "fs",
+        "path",
+        "url",
+        "os"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The 'path' module provides utilities for working with file and directory paths.",
+      "difficulty": "easy",
+      "tags": [
+        "nodejs",
+        "path",
+        "filesystem"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is a callback function in Node.js?",
+      "options": [
+        "A function that calls back",
+        "A function passed as argument to be executed later",
+        "A recursive function",
+        "A built-in function"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A callback is a function passed as an argument to another function to be executed after an operation completes.",
+      "difficulty": "easy",
+      "tags": [
+        "nodejs",
+        "callbacks",
+        "async"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of require() in Node.js?",
+      "options": [
+        "Require user input",
+        "Import modules and files",
+        "Validate data",
+        "Create dependencies"
+      ],
+      "correctAnswer": 1,
+      "explanation": "require() is used to import modules, JSON files, and local files in Node.js applications.",
+      "difficulty": "easy",
+      "tags": [
+        "nodejs",
+        "modules",
+        "require"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is module.exports used for?",
+      "options": [
+        "Export modules",
+        "Make functions/objects available to other files",
+        "Delete modules",
+        "Import files"
+      ],
+      "correctAnswer": 1,
+      "explanation": "module.exports is used to export functions, objects, or values from a module to be used in other files.",
+      "difficulty": "easy",
+      "tags": [
+        "nodejs",
+        "modules",
+        "exports"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the difference between readFile and readFileSync?",
+      "options": [
+        "No difference",
+        "readFile is async, readFileSync is sync",
+        "readFile is faster",
+        "readFileSync is deprecated"
+      ],
+      "correctAnswer": 1,
+      "explanation": "readFile() is asynchronous (non-blocking), while readFileSync() is synchronous (blocking).",
+      "difficulty": "medium",
+      "tags": [
+        "nodejs",
+        "fs",
+        "async-sync"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is a stream in Node.js?",
+      "options": [
+        "A video stream",
+        "Objects for reading/writing data in chunks",
+        "A database connection",
+        "A network protocol"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Streams are objects that let you read data from a source or write data to a destination in a continuous manner.",
+      "difficulty": "medium",
+      "tags": [
+        "nodejs",
+        "streams",
+        "io"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "Which are the types of streams in Node.js?",
+      "options": [
+        "Read and Write only",
+        "Readable, Writable, Duplex, Transform",
+        "Input and Output",
+        "Stream and Buffer"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Node.js has four types of streams: Readable, Writable, Duplex (both), and Transform (modify data).",
+      "difficulty": "medium",
+      "tags": [
+        "nodejs",
+        "streams",
+        "types"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is Buffer in Node.js?",
+      "options": [
+        "A cache",
+        "Temporary storage for binary data",
+        "A database",
+        "A memory leak"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Buffer is a temporary storage area for binary data, used when working with streams and file operations.",
+      "difficulty": "medium",
+      "tags": [
+        "nodejs",
+        "buffer",
+        "binary"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of __dirname?",
+      "options": [
+        "Current directory name",
+        "Absolute path of directory containing current file",
+        "Home directory",
+        "Root directory"
+      ],
+      "correctAnswer": 1,
+      "explanation": "__dirname is a global variable that contains the absolute path of the directory containing the current file.",
+      "difficulty": "easy",
+      "tags": [
+        "nodejs",
+        "globals",
+        "path"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of __filename?",
+      "options": [
+        "File name only",
+        "Absolute path of current file",
+        "Relative path",
+        "File extension"
+      ],
+      "correctAnswer": 1,
+      "explanation": "__filename contains the absolute path of the currently executing file including the filename.",
+      "difficulty": "easy",
+      "tags": [
+        "nodejs",
+        "globals",
+        "path"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is cluster module used for?",
+      "options": [
+        "Group files",
+        "Create child processes to utilize multiple CPU cores",
+        "Manage databases",
+        "Handle errors"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The cluster module allows you to create child processes (workers) that share server ports to utilize multi-core systems.",
+      "difficulty": "hard",
+      "tags": [
+        "nodejs",
+        "cluster",
+        "performance"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of process.nextTick()?",
+      "options": [
+        "Next iteration",
+        "Execute callback after current operation completes",
+        "Create ticks",
+        "Measure time"
+      ],
+      "correctAnswer": 1,
+      "explanation": "process.nextTick() defers execution of a function until the next iteration of the event loop.",
+      "difficulty": "hard",
+      "tags": [
+        "nodejs",
+        "event-loop",
+        "async"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the difference between setImmediate() and process.nextTick()?",
+      "options": [
+        "No difference",
+        "nextTick executes before I/O, setImmediate after",
+        "setImmediate is faster",
+        "nextTick is deprecated"
+      ],
+      "correctAnswer": 1,
+      "explanation": "process.nextTick() executes before I/O events, while setImmediate() executes after I/O events in the event loop.",
+      "difficulty": "hard",
+      "tags": [
+        "nodejs",
+        "event-loop",
+        "timing"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is REPL in Node.js?",
+      "options": [
+        "A module",
+        "Read-Eval-Print-Loop interactive shell",
+        "A database",
+        "A framework"
+      ],
+      "correctAnswer": 1,
+      "explanation": "REPL is an interactive shell that processes Node.js expressions, useful for testing and debugging.",
+      "difficulty": "easy",
+      "tags": [
+        "nodejs",
+        "repl",
+        "debugging"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of util.promisify()?",
+      "options": [
+        "Create promises",
+        "Convert callback-based functions to promises",
+        "Validate promises",
+        "Chain promises"
+      ],
+      "correctAnswer": 1,
+      "explanation": "util.promisify() converts callback-based functions to promise-based functions for easier async/await usage.",
+      "difficulty": "medium",
+      "tags": [
+        "nodejs",
+        "promises",
+        "util"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is EventEmitter in Node.js?",
+      "options": [
+        "An event creator",
+        "A class for handling events",
+        "A debugging tool",
+        "A module loader"
+      ],
+      "correctAnswer": 1,
+      "explanation": "EventEmitter is a class that facilitates communication between objects in Node.js using events.",
+      "difficulty": "medium",
+      "tags": [
+        "nodejs",
+        "events",
+        "emitter"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "How do you emit an event in Node.js?",
+      "options": [
+        "event.emit()",
+        "emitter.emit('eventName')",
+        "emit('eventName')",
+        "trigger('eventName')"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Use emitter.emit('eventName', args) to emit an event from an EventEmitter instance.",
+      "difficulty": "easy",
+      "tags": [
+        "nodejs",
+        "events",
+        "emitter"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of child_process module?",
+      "options": [
+        "Create children",
+        "Spawn child processes",
+        "Manage threads",
+        "Handle errors"
+      ],
+      "correctAnswer": 1,
+      "explanation": "child_process module allows you to spawn child processes to execute system commands or run other programs.",
+      "difficulty": "medium",
+      "tags": [
+        "nodejs",
+        "child-process",
+        "system"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the difference between spawn() and exec()?",
+      "options": [
+        "No difference",
+        "spawn streams data, exec buffers data",
+        "exec is faster",
+        "spawn is deprecated"
+      ],
+      "correctAnswer": 1,
+      "explanation": "spawn() returns a stream for large data, while exec() buffers output and returns it all at once.",
+      "difficulty": "hard",
+      "tags": [
+        "nodejs",
+        "child-process",
+        "differences"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of crypto module?",
+      "options": [
+        "Cryptocurrency",
+        "Cryptographic functionality (hashing, encryption)",
+        "Data compression",
+        "File encryption"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The crypto module provides cryptographic functionality including hashing, HMAC, cipher, decipher, and more.",
+      "difficulty": "medium",
+      "tags": [
+        "nodejs",
+        "crypto",
+        "security"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of os module?",
+      "options": [
+        "Operating system",
+        "Provides OS-related utility methods",
+        "Manage files",
+        "Network operations"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The os module provides operating system-related utility methods and properties like platform, CPU, memory info.",
+      "difficulty": "easy",
+      "tags": [
+        "nodejs",
+        "os",
+        "system"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of querystring module?",
+      "options": [
+        "Query databases",
+        "Parse and format URL query strings",
+        "Search strings",
+        "Validate queries"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The querystring module provides utilities for parsing and formatting URL query strings.",
+      "difficulty": "easy",
+      "tags": [
+        "nodejs",
+        "querystring",
+        "url"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of url module?",
+      "options": [
+        "Create URLs",
+        "Parse and format URLs",
+        "Validate URLs",
+        "Shorten URLs"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The url module provides utilities for URL resolution and parsing.",
+      "difficulty": "easy",
+      "tags": [
+        "nodejs",
+        "url",
+        "parsing"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is middleware chaining in Express?",
+      "options": [
+        "Chain databases",
+        "Execute multiple middleware functions in sequence",
+        "Link routes",
+        "Connect servers"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Middleware chaining allows multiple middleware functions to be executed in order using next().",
+      "difficulty": "medium",
+      "tags": [
+        "nodejs",
+        "express",
+        "middleware"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of body-parser middleware?",
+      "options": [
+        "Parse bodies",
+        "Parse incoming request bodies",
+        "Validate data",
+        "Compress data"
+      ],
+      "correctAnswer": 1,
+      "explanation": "body-parser middleware parses incoming request bodies (JSON, URL-encoded) and makes it available under req.body.",
+      "difficulty": "easy",
+      "tags": [
+        "nodejs",
+        "express",
+        "middleware"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is CORS in Node.js?",
+      "options": [
+        "A database",
+        "Cross-Origin Resource Sharing",
+        "A security protocol",
+        "A routing system"
+      ],
+      "correctAnswer": 1,
+      "explanation": "CORS is a mechanism that allows restricted resources on a web page to be requested from another domain.",
+      "difficulty": "medium",
+      "tags": [
+        "nodejs",
+        "cors",
+        "security"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of helmet middleware?",
+      "options": [
+        "Protect head",
+        "Secure Express apps by setting HTTP headers",
+        "Validate input",
+        "Compress responses"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Helmet helps secure Express apps by setting various HTTP headers to protect against common vulnerabilities.",
+      "difficulty": "medium",
+      "tags": [
+        "nodejs",
+        "express",
+        "security"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is JWT?",
+      "options": [
+        "JavaScript Web Token",
+        "JSON Web Token",
+        "Java Web Tool",
+        "JSON Web Tool"
+      ],
+      "correctAnswer": 1,
+      "explanation": "JWT (JSON Web Token) is a compact, URL-safe means of representing claims to be transferred between two parties.",
+      "difficulty": "medium",
+      "tags": [
+        "nodejs",
+        "jwt",
+        "authentication"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of morgan middleware?",
+      "options": [
+        "Manage users",
+        "HTTP request logger",
+        "Handle errors",
+        "Parse data"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Morgan is an HTTP request logger middleware for Node.js that logs request details.",
+      "difficulty": "easy",
+      "tags": [
+        "nodejs",
+        "express",
+        "logging"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of dotenv package?",
+      "options": [
+        "Create dots",
+        "Load environment variables from .env file",
+        "Manage dependencies",
+        "Configure server"
+      ],
+      "correctAnswer": 1,
+      "explanation": "dotenv loads environment variables from a .env file into process.env for configuration management.",
+      "difficulty": "easy",
+      "tags": [
+        "nodejs",
+        "environment",
+        "configuration"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of nodemon?",
+      "options": [
+        "Monitor nodes",
+        "Automatically restart server on file changes",
+        "Debug code",
+        "Test applications"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Nodemon automatically restarts the Node.js application when file changes are detected during development.",
+      "difficulty": "easy",
+      "tags": [
+        "nodejs",
+        "development",
+        "tools"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of async/await in Node.js?",
+      "options": [
+        "Wait for users",
+        "Write asynchronous code in synchronous style",
+        "Create delays",
+        "Manage threads"
+      ],
+      "correctAnswer": 1,
+      "explanation": "async/await provides a cleaner syntax for working with promises, making asynchronous code look synchronous.",
+      "difficulty": "medium",
+      "tags": [
+        "nodejs",
+        "async-await",
+        "promises"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of Promise.all()?",
+      "options": [
+        "Create promises",
+        "Execute multiple promises concurrently",
+        "Chain promises",
+        "Validate promises"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Promise.all() takes an array of promises and returns a single promise that resolves when all promises resolve.",
+      "difficulty": "medium",
+      "tags": [
+        "nodejs",
+        "promises",
+        "async"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of try-catch in async/await?",
+      "options": [
+        "Try code",
+        "Handle errors in async operations",
+        "Test code",
+        "Catch bugs"
+      ],
+      "correctAnswer": 1,
+      "explanation": "try-catch blocks are used with async/await to handle errors from rejected promises.",
+      "difficulty": "easy",
+      "tags": [
+        "nodejs",
+        "error-handling",
+        "async-await"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of mongoose?",
+      "options": [
+        "An animal",
+        "MongoDB object modeling tool",
+        "A database",
+        "A web framework"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Mongoose is an ODM (Object Data Modeling) library for MongoDB and Node.js that provides schema-based modeling.",
+      "difficulty": "easy",
+      "tags": [
+        "nodejs",
+        "mongoose",
+        "mongodb"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of Sequelize?",
+      "options": [
+        "Sequence data",
+        "ORM for SQL databases",
+        "A database",
+        "A query language"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Sequelize is a promise-based ORM for Node.js that supports PostgreSQL, MySQL, SQLite, and MSSQL.",
+      "difficulty": "medium",
+      "tags": [
+        "nodejs",
+        "sequelize",
+        "orm"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of socket.io?",
+      "options": [
+        "Create sockets",
+        "Enable real-time bidirectional communication",
+        "Manage connections",
+        "Handle HTTP"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Socket.io enables real-time, bidirectional and event-based communication between browser and server.",
+      "difficulty": "medium",
+      "tags": [
+        "nodejs",
+        "socket-io",
+        "real-time"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of passport.js?",
+      "options": [
+        "Create passports",
+        "Authentication middleware",
+        "Validate users",
+        "Manage sessions"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Passport is authentication middleware for Node.js that supports various authentication strategies.",
+      "difficulty": "medium",
+      "tags": [
+        "nodejs",
+        "passport",
+        "authentication"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of multer?",
+      "options": [
+        "Multiply data",
+        "Handle multipart/form-data for file uploads",
+        "Parse JSON",
+        "Validate files"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Multer is a middleware for handling multipart/form-data, primarily used for uploading files.",
+      "difficulty": "medium",
+      "tags": [
+        "nodejs",
+        "multer",
+        "file-upload"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of joi?",
+      "options": [
+        "Create joy",
+        "Schema validation for JavaScript objects",
+        "Parse data",
+        "Format output"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Joi is a powerful schema description language and data validator for JavaScript objects.",
+      "difficulty": "medium",
+      "tags": [
+        "nodejs",
+        "joi",
+        "validation"
+      ]
+    },
+    {
+      "category": "nodejs",
+      "question": "What is the purpose of winston?",
+      "options": [
+        "Win games",
+        "Logging library",
+        "Debug code",
+        "Monitor performance"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Winston is a versatile logging library for Node.js that supports multiple transports and log levels.",
+      "difficulty": "medium",
+      "tags": [
+        "nodejs",
+        "winston",
+        "logging"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is React?",
+      "options": [
+        "A database",
+        "A JavaScript library for building user interfaces",
+        "A programming language",
+        "A web server"
+      ],
+      "correctAnswer": 1,
+      "explanation": "React is a JavaScript library developed by Facebook for building user interfaces, especially single-page applications.",
+      "difficulty": "easy",
+      "tags": [
+        "reactjs",
+        "basics"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is JSX?",
+      "options": [
+        "JavaScript XML",
+        "Java Syntax Extension",
+        "JSON Extension",
+        "JavaScript Extra"
+      ],
+      "correctAnswer": 0,
+      "explanation": "JSX is a syntax extension for JavaScript that allows you to write HTML-like code in JavaScript files.",
+      "difficulty": "easy",
+      "tags": [
+        "reactjs",
+        "jsx"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is a component in React?",
+      "options": [
+        "A function",
+        "Reusable piece of UI",
+        "A variable",
+        "A module"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A component is a reusable, independent piece of UI that can be composed to build complex interfaces.",
+      "difficulty": "easy",
+      "tags": [
+        "reactjs",
+        "components"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What are the two types of components in React?",
+      "options": [
+        "Big and Small",
+        "Functional and Class",
+        "Static and Dynamic",
+        "Parent and Child"
+      ],
+      "correctAnswer": 1,
+      "explanation": "React has Functional components (using functions) and Class components (using ES6 classes).",
+      "difficulty": "easy",
+      "tags": [
+        "reactjs",
+        "components",
+        "types"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is state in React?",
+      "options": [
+        "Location",
+        "Object that holds component data",
+        "A function",
+        "A prop"
+      ],
+      "correctAnswer": 1,
+      "explanation": "State is a built-in object that stores property values belonging to a component and can change over time.",
+      "difficulty": "easy",
+      "tags": [
+        "reactjs",
+        "state"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What are props in React?",
+      "options": [
+        "Properties",
+        "Arguments passed to components",
+        "State variables",
+        "Functions"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Props (properties) are arguments passed into React components, similar to function parameters.",
+      "difficulty": "easy",
+      "tags": [
+        "reactjs",
+        "props"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is the difference between state and props?",
+      "options": [
+        "No difference",
+        "State is mutable, props are immutable",
+        "Props are mutable",
+        "State is global"
+      ],
+      "correctAnswer": 1,
+      "explanation": "State is managed within the component and can change, while props are passed from parent and are read-only.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "state",
+        "props"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is the useState hook?",
+      "options": [
+        "Use state",
+        "Hook to add state to functional components",
+        "A class method",
+        "A lifecycle method"
+      ],
+      "correctAnswer": 1,
+      "explanation": "useState is a Hook that lets you add React state to functional components.",
+      "difficulty": "easy",
+      "tags": [
+        "reactjs",
+        "hooks",
+        "useState"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is the useEffect hook?",
+      "options": [
+        "Create effects",
+        "Hook for side effects in functional components",
+        "A state hook",
+        "A context hook"
+      ],
+      "correctAnswer": 1,
+      "explanation": "useEffect lets you perform side effects in functional components (data fetching, subscriptions, DOM updates).",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "hooks",
+        "useEffect"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is the Virtual DOM?",
+      "options": [
+        "A real DOM",
+        "Lightweight copy of actual DOM",
+        "A database",
+        "A component"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Virtual DOM is a lightweight copy of the actual DOM that React uses to optimize updates and improve performance.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "virtual-dom",
+        "performance"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is reconciliation in React?",
+      "options": [
+        "Reconcile data",
+        "Process of updating DOM efficiently",
+        "A lifecycle method",
+        "A hook"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Reconciliation is the process React uses to diff the Virtual DOM and update only changed parts of the actual DOM.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "reconciliation",
+        "virtual-dom"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is the purpose of keys in React lists?",
+      "options": [
+        "Unlock components",
+        "Help identify which items changed",
+        "Style elements",
+        "Store data"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Keys help React identify which items have changed, been added, or removed, optimizing list rendering.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "keys",
+        "lists"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is the useContext hook?",
+      "options": [
+        "Use context",
+        "Hook to consume context values",
+        "A state hook",
+        "A ref hook"
+      ],
+      "correctAnswer": 1,
+      "explanation": "useContext lets you subscribe to React context without introducing nesting in your component tree.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "hooks",
+        "context"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is React Context?",
+      "options": [
+        "A context menu",
+        "Way to pass data through component tree",
+        "A state manager",
+        "A router"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Context provides a way to pass data through the component tree without passing props manually at every level.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "context",
+        "state-management"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is the useRef hook?",
+      "options": [
+        "Use reference",
+        "Hook to create mutable ref object",
+        "A state hook",
+        "A context hook"
+      ],
+      "correctAnswer": 1,
+      "explanation": "useRef returns a mutable ref object that persists for the lifetime of the component, useful for DOM access.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "hooks",
+        "useRef"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is the useMemo hook?",
+      "options": [
+        "Memorize data",
+        "Hook to memoize expensive calculations",
+        "A state hook",
+        "A ref hook"
+      ],
+      "correctAnswer": 1,
+      "explanation": "useMemo returns a memoized value, recomputing only when dependencies change, optimizing performance.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "hooks",
+        "useMemo",
+        "performance"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is the useCallback hook?",
+      "options": [
+        "Use callback",
+        "Hook to memoize callback functions",
+        "A state hook",
+        "An effect hook"
+      ],
+      "correctAnswer": 1,
+      "explanation": "useCallback returns a memoized callback function, preventing unnecessary re-renders of child components.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "hooks",
+        "useCallback",
+        "performance"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is the useReducer hook?",
+      "options": [
+        "Reduce data",
+        "Hook for complex state logic",
+        "A state hook",
+        "A context hook"
+      ],
+      "correctAnswer": 1,
+      "explanation": "useReducer is an alternative to useState for managing complex state logic, similar to Redux reducers.",
+      "difficulty": "hard",
+      "tags": [
+        "reactjs",
+        "hooks",
+        "useReducer"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is React Router?",
+      "options": [
+        "A router device",
+        "Library for routing in React applications",
+        "A state manager",
+        "A component"
+      ],
+      "correctAnswer": 1,
+      "explanation": "React Router is a standard library for routing in React, enabling navigation between different views.",
+      "difficulty": "easy",
+      "tags": [
+        "reactjs",
+        "routing",
+        "react-router"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is the purpose of componentDidMount?",
+      "options": [
+        "Mount components",
+        "Lifecycle method called after component mounts",
+        "A hook",
+        "A prop"
+      ],
+      "correctAnswer": 1,
+      "explanation": "componentDidMount is invoked immediately after a component is mounted, ideal for API calls and subscriptions.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "lifecycle",
+        "class-components"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is the purpose of componentWillUnmount?",
+      "options": [
+        "Unmount components",
+        "Cleanup before component unmounts",
+        "A hook",
+        "A state method"
+      ],
+      "correctAnswer": 1,
+      "explanation": "componentWillUnmount is called before a component is unmounted, used for cleanup like canceling timers.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "lifecycle",
+        "cleanup"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is the purpose of shouldComponentUpdate?",
+      "options": [
+        "Update components",
+        "Optimize rendering by controlling updates",
+        "A hook",
+        "A prop"
+      ],
+      "correctAnswer": 1,
+      "explanation": "shouldComponentUpdate lets you control whether a component should re-render, optimizing performance.",
+      "difficulty": "hard",
+      "tags": [
+        "reactjs",
+        "lifecycle",
+        "performance"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is React.memo?",
+      "options": [
+        "Memorize components",
+        "Higher-order component for memoization",
+        "A hook",
+        "A state method"
+      ],
+      "correctAnswer": 1,
+      "explanation": "React.memo is a higher-order component that memoizes functional components to prevent unnecessary re-renders.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "memo",
+        "performance"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is prop drilling?",
+      "options": [
+        "Drilling holes",
+        "Passing props through multiple levels",
+        "A design pattern",
+        "A hook"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Prop drilling is passing props through multiple component levels to reach a deeply nested component.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "props",
+        "patterns"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is Redux?",
+      "options": [
+        "A database",
+        "State management library",
+        "A router",
+        "A component library"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Redux is a predictable state container for JavaScript apps, commonly used with React for state management.",
+      "difficulty": "easy",
+      "tags": [
+        "reactjs",
+        "redux",
+        "state-management"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What are the three principles of Redux?",
+      "options": [
+        "Read, Write, Delete",
+        "Single source of truth, State is read-only, Changes via pure functions",
+        "Props, State, Context",
+        "Components, Actions, Reducers"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Redux follows: single source of truth (one store), state is read-only, and changes are made with pure functions.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "redux",
+        "principles"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is an action in Redux?",
+      "options": [
+        "A function",
+        "Plain object describing what happened",
+        "A component",
+        "A reducer"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Actions are plain JavaScript objects that have a type field describing what happened in the application.",
+      "difficulty": "easy",
+      "tags": [
+        "reactjs",
+        "redux",
+        "actions"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is a reducer in Redux?",
+      "options": [
+        "Reduces data",
+        "Pure function that returns new state",
+        "A component",
+        "An action"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A reducer is a pure function that takes previous state and an action, and returns the next state.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "redux",
+        "reducers"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is the Redux store?",
+      "options": [
+        "A shop",
+        "Object that holds application state",
+        "A database",
+        "A component"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The store is an object that brings actions and reducers together and holds the entire state tree.",
+      "difficulty": "easy",
+      "tags": [
+        "reactjs",
+        "redux",
+        "store"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is the purpose of dispatch in Redux?",
+      "options": [
+        "Dispatch mail",
+        "Send actions to the store",
+        "Update state",
+        "Create actions"
+      ],
+      "correctAnswer": 1,
+      "explanation": "dispatch() is a function that sends actions to the Redux store to trigger state changes.",
+      "difficulty": "easy",
+      "tags": [
+        "reactjs",
+        "redux",
+        "dispatch"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is middleware in Redux?",
+      "options": [
+        "Middle layer",
+        "Functions that intercept actions",
+        "A component",
+        "A reducer"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Middleware provides a way to extend Redux with custom functionality, intercepting actions before they reach reducers.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "redux",
+        "middleware"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is Redux Thunk?",
+      "options": [
+        "A sound",
+        "Middleware for async actions",
+        "A component",
+        "A hook"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Redux Thunk is middleware that allows you to write action creators that return functions instead of actions.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "redux",
+        "thunk",
+        "async"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is the purpose of connect() in React-Redux?",
+      "options": [
+        "Connect components",
+        "Connect React components to Redux store",
+        "Create connections",
+        "Link pages"
+      ],
+      "correctAnswer": 1,
+      "explanation": "connect() is a function that connects a React component to the Redux store, providing state and dispatch.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "redux",
+        "connect"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is the useSelector hook in React-Redux?",
+      "options": [
+        "Select elements",
+        "Hook to extract data from Redux store",
+        "A state hook",
+        "A ref hook"
+      ],
+      "correctAnswer": 1,
+      "explanation": "useSelector allows you to extract data from the Redux store state using a selector function.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "redux",
+        "hooks"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is the useDispatch hook in React-Redux?",
+      "options": [
+        "Dispatch mail",
+        "Hook to access dispatch function",
+        "A state hook",
+        "An effect hook"
+      ],
+      "correctAnswer": 1,
+      "explanation": "useDispatch returns a reference to the dispatch function from the Redux store.",
+      "difficulty": "easy",
+      "tags": [
+        "reactjs",
+        "redux",
+        "hooks"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is React.Fragment?",
+      "options": [
+        "A broken component",
+        "Wrapper to group elements without extra DOM node",
+        "A component",
+        "A hook"
+      ],
+      "correctAnswer": 1,
+      "explanation": "React.Fragment lets you group a list of children without adding extra nodes to the DOM.",
+      "difficulty": "easy",
+      "tags": [
+        "reactjs",
+        "fragment"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is the purpose of React.StrictMode?",
+      "options": [
+        "Strict rules",
+        "Highlight potential problems in development",
+        "A production mode",
+        "A testing tool"
+      ],
+      "correctAnswer": 1,
+      "explanation": "StrictMode is a tool for highlighting potential problems, activating additional checks and warnings in development.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "strict-mode",
+        "development"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is lazy loading in React?",
+      "options": [
+        "Slow loading",
+        "Load components only when needed",
+        "A hook",
+        "A state method"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Lazy loading defers loading of components until they're needed, improving initial load time.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "lazy-loading",
+        "performance"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is React.lazy()?",
+      "options": [
+        "Make components lazy",
+        "Function for code-splitting components",
+        "A hook",
+        "A lifecycle method"
+      ],
+      "correctAnswer": 1,
+      "explanation": "React.lazy() lets you render a dynamic import as a regular component, enabling code-splitting.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "lazy",
+        "code-splitting"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is Suspense in React?",
+      "options": [
+        "Suspend components",
+        "Component to show fallback while loading",
+        "A hook",
+        "A state method"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Suspense lets you specify a loading indicator while waiting for lazy-loaded components to load.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "suspense",
+        "lazy-loading"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is the purpose of Error Boundaries?",
+      "options": [
+        "Create errors",
+        "Catch JavaScript errors in component tree",
+        "A hook",
+        "A testing tool"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Error Boundaries are React components that catch JavaScript errors anywhere in their child component tree.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "error-boundaries",
+        "error-handling"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is the purpose of getDerivedStateFromError?",
+      "options": [
+        "Get errors",
+        "Update state after error is thrown",
+        "A hook",
+        "A prop"
+      ],
+      "correctAnswer": 1,
+      "explanation": "getDerivedStateFromError is a lifecycle method used in error boundaries to update state after an error.",
+      "difficulty": "hard",
+      "tags": [
+        "reactjs",
+        "error-boundaries",
+        "lifecycle"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is the purpose of componentDidCatch?",
+      "options": [
+        "Catch components",
+        "Log error information",
+        "A hook",
+        "A state method"
+      ],
+      "correctAnswer": 1,
+      "explanation": "componentDidCatch is used in error boundaries to log error information and perform side effects.",
+      "difficulty": "hard",
+      "tags": [
+        "reactjs",
+        "error-boundaries",
+        "lifecycle"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is controlled component in React?",
+      "options": [
+        "Controlled by user",
+        "Form element controlled by React state",
+        "A class component",
+        "A functional component"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A controlled component is a form element whose value is controlled by React state via props and onChange.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "forms",
+        "controlled-components"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is uncontrolled component in React?",
+      "options": [
+        "Out of control",
+        "Form element that maintains its own state",
+        "A broken component",
+        "A stateless component"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An uncontrolled component stores its own state internally and uses refs to access current values.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "forms",
+        "uncontrolled-components"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is the purpose of React.createRef()?",
+      "options": [
+        "Create references",
+        "Create ref object to access DOM nodes",
+        "A hook",
+        "A state method"
+      ],
+      "correctAnswer": 1,
+      "explanation": "React.createRef() creates a ref object that can be attached to React elements via the ref attribute.",
+      "difficulty": "easy",
+      "tags": [
+        "reactjs",
+        "refs",
+        "dom"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is forwardRef in React?",
+      "options": [
+        "Forward mail",
+        "Pass refs to child components",
+        "A hook",
+        "A lifecycle method"
+      ],
+      "correctAnswer": 1,
+      "explanation": "forwardRef lets components pass a ref through to a child component, useful for reusable component libraries.",
+      "difficulty": "hard",
+      "tags": [
+        "reactjs",
+        "refs",
+        "forwardRef"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is the purpose of React.Children?",
+      "options": [
+        "Create children",
+        "Utilities for dealing with props.children",
+        "A component",
+        "A hook"
+      ],
+      "correctAnswer": 1,
+      "explanation": "React.Children provides utilities for dealing with the opaque data structure of props.children.",
+      "difficulty": "hard",
+      "tags": [
+        "reactjs",
+        "children",
+        "utilities"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is the purpose of React.cloneElement()?",
+      "options": [
+        "Clone components",
+        "Clone and return new React element",
+        "Copy state",
+        "Duplicate props"
+      ],
+      "correctAnswer": 1,
+      "explanation": "React.cloneElement() clones an element and returns a new element with new props merged in.",
+      "difficulty": "hard",
+      "tags": [
+        "reactjs",
+        "clone",
+        "elements"
+      ]
+    },
+    {
+      "category": "reactjs",
+      "question": "What is the purpose of React.isValidElement()?",
+      "options": [
+        "Validate elements",
+        "Check if object is a React element",
+        "Validate props",
+        "Check components"
+      ],
+      "correctAnswer": 1,
+      "explanation": "React.isValidElement() verifies that an object is a React element, returning true or false.",
+      "difficulty": "medium",
+      "tags": [
+        "reactjs",
+        "validation",
+        "elements"
+      ]
     }
   ]
 }
