@@ -200,12 +200,8 @@ class QuizSystem {
   previousQuestion() {
     if (this.currentQuestionIndex > 0) {
       this.currentQuestionIndex--;
-      // Remove the last answer from the array
-      const lastAnswer = this.answers.pop();
-      // Adjust score if the removed answer was correct
-      if (lastAnswer && lastAnswer.isCorrect) {
-        this.score--;
-      }
+      // DON'T remove the answer - keep it so user can see their previous selection
+      // The answer can be updated if user changes their selection
       return true;
     }
     return false;

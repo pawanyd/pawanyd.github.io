@@ -208,12 +208,18 @@ class QuizUI {
    */
   showQuestion() {
     this.currentQuestion = this.quizSystem.getCurrentQuestion();
-    this.selectedAnswer = null;
+    
+    // Check if we already have an answer for this question (when going back)
+    const existingAnswer = this.quizSystem.answers[this.currentQuestion.questionNumber - 1];
+    this.selectedAnswer = existingAnswer ? existingAnswer.selectedOption : null;
     
     if (!this.currentQuestion) {
       this.showResults();
       return;
     }
+    
+    // Update timer display (in case it was showing 00:00)
+    this.updateTimerDisplay();
     
     const quizInterface = document.getElementById('quiz-interface');
     quizInterface.innerHTML = `
@@ -296,12 +302,24 @@ class QuizUI {
     // Add event listeners for option buttons
     setTimeout(() => {
       const optionButtons = document.querySelectorAll('.option-btn');
-      optionButtons.forEach(btn => {
+      optionButtons.forEach((btn, index) => {
         btn.addEventListener('click', (e) => {
-          const index = parseInt(btn.getAttribute('data-option-index'));
-          this.selectAnswer(index);
+          const optionIndex = parseInt(btn.getAttribute('data-option-index'));
+          this.selectAnswer(optionIndex);
         });
+        
+        // Highlight previously selected answer
+        if (this.selectedAnswer !== null && index === this.selectedAnswer) {
+          btn.classList.add('border-blue-600', 'dark:border-blue-400', 'bg-blue-50', 'dark:bg-blue-900/50', '!text-gray-900', 'dark:!text-gray-100');
+          btn.classList.remove('border-gray-200', 'dark:border-gray-600');
+        }
       });
+      
+      // Enable submit button if answer was already selected
+      const submitBtn = document.getElementById('submit-answer-btn');
+      if (submitBtn && this.selectedAnswer !== null) {
+        submitBtn.disabled = false;
+      }
     }, 0);
     
     // Handle submit
@@ -367,6 +385,14 @@ class QuizUI {
         }
       }
     }, 1000);
+  }
+
+  /**
+   * Resume timer after navigation (when going back/forward)
+   */
+  resumeTimer() {
+    // Timer should already be running, just update the display
+    this.updateTimerDisplay();
   }
 
   /**
@@ -443,8 +469,41 @@ class QuizUI {
     // Store the selected answer before moving forward
     const answerToSubmit = this.selectedAnswer;
     
-    // Submit answer to quiz system
-    this.quizSystem.submitAnswer(answerToSubmit);
+    // Check if we're updating an existing answer (going back and changing answer)
+    const existingAnswerIndex = this.currentQuestion.questionNumber - 1;
+    const hasExistingAnswer = this.quizSystem.answers[existingAnswerIndex] !== undefined;
+    
+    if (hasExistingAnswer) {
+      // Update existing answer
+      const oldAnswer = this.quizSystem.answers[existingAnswerIndex];
+      
+      // Adjust score if needed
+      if (oldAnswer.isCorrect && !oldAnswer.skipped) {
+        this.quizSystem.score--;
+      }
+      
+      // Update the answer
+      const currentQuestion = this.quizSystem.questions[this.quizSystem.currentQuestionIndex];
+      const isCorrect = answerToSubmit === currentQuestion.correctAnswer;
+      
+      if (isCorrect) {
+        this.quizSystem.score++;
+      }
+      
+      this.quizSystem.answers[existingAnswerIndex] = {
+        questionId: currentQuestion.id,
+        question: currentQuestion.question,
+        options: currentQuestion.options,
+        selectedOption: answerToSubmit,
+        correctAnswer: currentQuestion.correctAnswer,
+        isCorrect,
+        explanation: currentQuestion.explanation,
+        skipped: false
+      };
+    } else {
+      // Submit new answer to quiz system
+      this.quizSystem.submitAnswer(answerToSubmit);
+    }
     
     // Move to next question or finish quiz
     if (this.quizSystem.nextQuestion()) {
@@ -514,8 +573,7 @@ class QuizUI {
    * Go to previous question
    */
   goToPreviousQuestion() {
-    // Stop timer
-    this.stopTimer();
+    // DON'T stop timer - keep it running
     
     // Go back in quiz system
     if (this.quizSystem.previousQuestion()) {
