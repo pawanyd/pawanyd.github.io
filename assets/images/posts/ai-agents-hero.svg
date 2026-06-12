@@ -1,0 +1,142 @@
+<svg role="img" aria-labelledby="ai-agents-title ai-agents-desc" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <title id="ai-agents-title">AI Agents Architecture</title>
+  <desc id="ai-agents-desc">Diagram showing AI agent system with user input, agent brain, tool calling, and execution flow</desc>
+  
+  <!-- Transparent background for dark mode compatibility -->
+  <rect width="1200" height="600" fill="transparent"/>
+  
+  <!-- Main Title -->
+  <text x="600" y="50" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#64748b" text-anchor="middle">AI Agent System Architecture</text>
+  
+  <!-- User Input Section -->
+  <g id="user-section">
+    <rect x="50" y="100" width="200" height="120" rx="10" fill="#3b82f6" fill-opacity="0.1" stroke="#3b82f6" stroke-width="2"/>
+    <text x="150" y="135" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#3b82f6" text-anchor="middle">👤 User</text>
+    <text x="150" y="165" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">"What's the weather</text>
+    <text x="150" y="185" font-family="Arial, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">in Tokyo?"</text>
+  </g>
+  
+  <!-- Arrow 1: User to Agent -->
+  <g id="arrow-1">
+    <line x1="250" y1="160" x2="330" y2="160" stroke="#94a3b8" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <text x="290" y="150" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Request</text>
+  </g>
+  
+  <!-- Agent Brain Section -->
+  <g id="agent-section">
+    <rect x="330" y="100" width="240" height="380" rx="10" fill="#8b5cf6" fill-opacity="0.1" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="450" y="135" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#8b5cf6" text-anchor="middle">🤖 AI Agent</text>
+    
+    <!-- Agent Components -->
+    <rect x="350" y="155" width="200" height="60" rx="5" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6" stroke-width="1.5"/>
+    <text x="450" y="180" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle">Language Model</text>
+    <text x="450" y="200" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">GPT-4 / Claude / Gemini</text>
+    
+    <rect x="350" y="230" width="200" height="60" rx="5" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6" stroke-width="1.5"/>
+    <text x="450" y="255" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle">Decision Engine</text>
+    <text x="450" y="275" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Which tool to call?</text>
+    
+    <rect x="350" y="305" width="200" height="60" rx="5" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6" stroke-width="1.5"/>
+    <text x="450" y="330" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle">Memory System</text>
+    <text x="450" y="350" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Conversation history</text>
+    
+    <rect x="350" y="380" width="200" height="60" rx="5" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6" stroke-width="1.5"/>
+    <text x="450" y="405" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle">Response Generator</text>
+    <text x="450" y="425" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Format final answer</text>
+  </g>
+  
+  <!-- Arrow 2: Agent to Tools -->
+  <g id="arrow-2">
+    <line x1="570" y1="250" x2="650" y2="250" stroke="#94a3b8" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <text x="610" y="240" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Tool Call</text>
+  </g>
+  
+  <!-- Tools Section -->
+  <g id="tools-section">
+    <rect x="650" y="100" width="220" height="380" rx="10" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="2"/>
+    <text x="760" y="135" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#10b981" text-anchor="middle">🛠️ Tools</text>
+    
+    <!-- Tool 1: Weather API -->
+    <g id="tool-1">
+      <rect x="670" y="155" width="180" height="50" rx="5" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="1.5"/>
+      <text x="760" y="175" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#64748b" text-anchor="middle">🌤️ get_weather()</text>
+      <text x="760" y="195" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Fetch weather data</text>
+    </g>
+    
+    <!-- Tool 2: Database -->
+    <g id="tool-2">
+      <rect x="670" y="220" width="180" height="50" rx="5" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="1.5"/>
+      <text x="760" y="240" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#64748b" text-anchor="middle">💾 query_database()</text>
+      <text x="760" y="260" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Search user data</text>
+    </g>
+    
+    <!-- Tool 3: Send Email -->
+    <g id="tool-3">
+      <rect x="670" y="285" width="180" height="50" rx="5" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="1.5"/>
+      <text x="760" y="305" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#64748b" text-anchor="middle">📧 send_email()</text>
+      <text x="760" y="325" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Send notifications</text>
+    </g>
+    
+    <!-- Tool 4: Calendar -->
+    <g id="tool-4">
+      <rect x="670" y="350" width="180" height="50" rx="5" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="1.5"/>
+      <text x="760" y="370" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#64748b" text-anchor="middle">📅 check_calendar()</text>
+      <text x="760" y="390" font-family="Arial, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Get availability</text>
+    </g>
+    
+    <!-- More tools indicator -->
+    <text x="760" y="425" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">+ more tools...</text>
+  </g>
+  
+  <!-- Arrow 3: Tools to Execution -->
+  <g id="arrow-3">
+    <line x1="870" y1="250" x2="950" y2="250" stroke="#94a3b8" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <text x="910" y="240" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Execute</text>
+  </g>
+  
+  <!-- Execution Section -->
+  <g id="execution-section">
+    <rect x="950" y="180" width="200" height="140" rx="10" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="2"/>
+    <text x="1050" y="210" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f59e0b" text-anchor="middle">⚡ Execution</text>
+    
+    <text x="1050" y="240" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">• Call external APIs</text>
+    <text x="1050" y="265" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">• Query databases</text>
+    <text x="1050" y="290" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">• Process results</text>
+  </g>
+  
+  <!-- Arrow 4: Results back to Agent -->
+  <g id="arrow-4">
+    <path d="M 950 320 Q 760 360 570 320" stroke="#94a3b8" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="760" y="380" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Results</text>
+  </g>
+  
+  <!-- Arrow 5: Agent to User -->
+  <g id="arrow-5">
+    <path d="M 330 400 Q 150 450 150 500" stroke="#94a3b8" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="200" y="460" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Response</text>
+  </g>
+  
+  <!-- Final Response -->
+  <g id="response-section">
+    <rect x="50" y="500" width="200" height="80" rx="10" fill="#3b82f6" fill-opacity="0.1" stroke="#3b82f6" stroke-width="2"/>
+    <text x="150" y="530" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#3b82f6" text-anchor="middle">✅ Response</text>
+    <text x="150" y="555" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">"It's 22°C and sunny</text>
+    <text x="150" y="572" font-family="Arial, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">in Tokyo"</text>
+  </g>
+  
+  <!-- Loop indicator -->
+  <g id="loop-indicator">
+    <path d="M 450 480 Q 600 520 450 560" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5,5" fill="none" marker-end="url(#arrowhead-purple)"/>
+    <text x="550" y="540" font-family="Arial, sans-serif" font-size="11" fill="#8b5cf6" text-anchor="middle">Loop if needed</text>
+  </g>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrowhead-purple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#8b5cf6"/>
+    </marker>
+  </defs>
+</svg>

@@ -11,3 +11,5 @@ _firebase/
 
 # Ignore Firebase service account keys (NEVER COMMIT THESE!)
 scripts/
+
+.DS_Store
